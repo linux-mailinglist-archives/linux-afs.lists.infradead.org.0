@@ -2,37 +2,37 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 067D3EC52
-	for <lists+linux-afs@lfdr.de>; Mon, 29 Apr 2019 23:57:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF081F15C
+	for <lists+linux-afs@lfdr.de>; Tue, 30 Apr 2019 09:34:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vF64YvRNvbgS4QG32JKb0wXLmioamcG7xLimdcN16+8=; b=N0dSlgdoHPhdUk
-	riSdUGPiVTT7RmXMRitlN38ZDYVE0p4WPWy2Mt3Oq24MYcOgs8R+vgAY9S93qGow0mKIXdk5y017w
-	ulTJW0aStHWQlpHiz5zZmu2rll4S4aQIISr9bb+ULnsGpER42YYQyqb6ECtyh/8hBnP6hFTfTdYfB
-	6wmWAU8he2XRScf9RK1yLVIqFWCnHZSFUQF55MXnTMgt1MLIwQGBJCfprSBwjD6BwiS5X61DvXK8E
-	5MkZcx/ZaCCK9qV32/X7wiNnTiYCLc5kMgemYhfCK41v3+x+EKxVQu7RyxfJrA1FTwaNF+Yb99Mvq
-	mSHkQXUkvpFT4GlQgsXg==;
+	List-Owner; bh=VQAp/QP20uLdqD6gx+2YN/YOcCzUDGQIa1XXWzkQDhM=; b=oWny+rNHA2xZAC
+	B6SKOdrtzFx/hVpf1asAGJ/TolzQKpVvZHVnj/TZH3U/mZB0PGM8xUK/4OG8HfmqUKtSHcZ1d2F4e
+	snCQJrJ4lqJjZKvL/XZHOY74k5/9ERwF2IKqDwsZistmwk37a9t/wQ7KBCcsD7PmOk67aEHMuUPe0
+	aK1vpQKfHEWD7Iw81tU6FIfKqX49eHQGP6cGBHu/Pjz7jfP5w3LWeJZwT5VHGVsjLT3gg6UGw46iv
+	7tPEEj1fipYE7cl5Ue7tTL/+hGzJkxJy9vBi4TneBUXGx5Oi406oxo1TkMWgZP8U48BIxBqN5J9gF
+	fgNeacXRNcZJ6yVuYm4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLEGv-0002l3-FD; Mon, 29 Apr 2019 21:57:13 +0000
+	id 1hLNHJ-0007GR-Sx; Tue, 30 Apr 2019 07:34:13 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLEGs-0002ke-36
- for linux-afs@lists.infradead.org; Mon, 29 Apr 2019 21:57:12 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
+ id 1hLNHH-0007G3-E5
+ for linux-afs@lists.infradead.org; Tue, 30 Apr 2019 07:34:12 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id EE21EA7DD;
- Mon, 29 Apr 2019 21:57:08 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id AF63F3084249;
+ Tue, 30 Apr 2019 07:34:10 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-121-98.rdu2.redhat.com
  [10.10.121.98])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0FA595D704;
- Mon, 29 Apr 2019 21:57:06 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B533B4BF;
+ Tue, 30 Apr 2019 07:34:09 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
@@ -40,16 +40,16 @@ Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
 Subject: [PATCH net] rxrpc: Fix net namespace cleanup
 From: David Howells <dhowells@redhat.com>
 To: netdev@vger.kernel.org
-Date: Mon, 29 Apr 2019 22:57:05 +0100
-Message-ID: <155657502537.15384.8971743326043723056.stgit@warthog.procyon.org.uk>
+Date: Tue, 30 Apr 2019 08:34:08 +0100
+Message-ID: <155660964874.18872.7446174793302616529.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.29]); Mon, 29 Apr 2019 21:57:09 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.40]); Tue, 30 Apr 2019 07:34:10 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_145710_169649_F6690A5D 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20190430_003411_507183_F2FCF014 
+X-CRM114-Status: GOOD (  16.07  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -57,8 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,6 +101,7 @@ section inside the if-body and dropping the return from there.  The
 function will then always go on to wait for the RCU cleanup on outstanding
 calls.
 
+Fixes: 2baec2c3f854 ("rxrpc: Support network namespacing")
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
