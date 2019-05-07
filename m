@@ -2,67 +2,72 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0566BFC75
-	for <lists+linux-afs@lfdr.de>; Tue, 30 Apr 2019 17:09:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84DFF15917
+	for <lists+linux-afs@lfdr.de>; Tue,  7 May 2019 07:33:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKMNsLRFFoFQxWM0f4Hs/2+1mMs+nMjckHOeHQi6n6A=; b=GQbhLNgRYhv+3F
-	hJJJeIUOK1Zg8FoIUh2s8F7WlE5z/WUYWmGrm0yHJhBnMoLaFY+oGoZjlR3lnVZPVNg75MhPHFy4m
-	KuUxx/HGUS7c21nQiCC35iLkxuyIHDSiUL5ntTbNSAD9EeftwSmhjyj3DnphKAr+rC8eNE7wAdWAA
-	rM/AFunTTTNu3TuFGWkqRV/DfyDKSY0aJOBDEWtAYfkC68sjZSfl53ft5l8MgIegua1OCyM14qvHe
-	wUrAMH+OqS9IYHeixFzntXQsPPfaMC9ul7iuf2s8sMwkyqjih8F7hudbkYpMHqXcGDhdlovmolC/u
-	B/29cyumlV3H661JTEJg==;
+	List-Owner; bh=zN5BBHYMX581kNMt2/bZYi2im/PlcxGSrsDx4Rhxnq0=; b=GUEjzdgip+b1e6
+	sYeDkHnvd9uB7vrygcarklkLjTCnl6vjvDW8FQARhHeXBYAdm3BmglsEFFyl6iqS935kdFTXiY0zy
+	Xb3Qh/NyULjfqSSVb/IYa+qFHFYY2Za3r6FDTMbuyJamyFoUBY0mra0XjMNr1AC8s//dJx9idHP/N
+	leV6UrR/AV6pzeRGg+OHMtxVTas+JuFxPaXD8CfxCv5U4aPXBtX+9VvLAlG3y+yUtaMwP3sbdi40b
+	k4+dvLhEa1H6axUeSjbprVAgzV0WBSeh8iSl7woOMHGPQhQJQBhZBLKirhy0S6kDsIOCs+k6evc6/
+	w/PHwOXII2abI+Rje5nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLUO5-0006Of-NG; Tue, 30 Apr 2019 15:09:41 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hNsjT-0007Wn-UA; Tue, 07 May 2019 05:33:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLUMk-0006IY-Fd
- for linux-afs@lists.infradead.org; Tue, 30 Apr 2019 15:08:20 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1hNsjR-0007W3-1V
+ for linux-afs@lists.infradead.org; Tue, 07 May 2019 05:33:38 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 24F8599C1D;
- Tue, 30 Apr 2019 15:08:18 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
- [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CF8962BE74;
- Tue, 30 Apr 2019 15:08:13 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 11/11] keys: Pass the network namespace into request_key
- mechanism [ver #2]
-From: David Howells <dhowells@redhat.com>
-To: ebiederm@xmission.com
-Date: Tue, 30 Apr 2019 16:08:13 +0100
-Message-ID: <155663689291.31331.12547059668009374278.stgit@warthog.procyon.org.uk>
-In-Reply-To: <155663679069.31331.3777091898004242996.stgit@warthog.procyon.org.uk>
-References: <155663679069.31331.3777091898004242996.stgit@warthog.procyon.org.uk>
-User-Agent: StGit/unknown-version
+ by mail.kernel.org (Postfix) with ESMTPSA id 44C5A21019;
+ Tue,  7 May 2019 05:33:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1557207216;
+ bh=Gza0Tf2zcIx0jq1gzVW4i2us7RjbkGM7Bg3NPcSyrGc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=DMrLt8ibwV0at3oqC6MtPYNEafulfvAtTzLOIifo5HvfspcZn7j0ngwDaNf36UsEW
+ iX59xvVHUiYIpoK0lvq7esjIYMX+mIALnj+QYUvbLlkgRko9s2rw/LHT6XOJAl+H8X
+ EwgPZ+upWVR143zoMJNSWrOg1YX5px6lo9hdoQNg=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.0 31/99] afs: Unlock pages for __pagevec_release()
+Date: Tue,  7 May 2019 01:31:25 -0400
+Message-Id: <20190507053235.29900-31-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190507053235.29900-1-sashal@kernel.org>
+References: <20190507053235.29900-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Tue, 30 Apr 2019 15:08:18 +0000 (UTC)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_080818_570502_B7E71020 
-X-CRM114-Status: GOOD (  25.34  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190506_223337_105037_43244DC1 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-X-Mailman-Approved-At: Tue, 30 Apr 2019 08:09:39 -0700
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,372 +79,45 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, dwalsh@redhat.com, linux-kernel@vger.kernel.org,
- dhowells@redhat.com, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-afs@lists.infradead.org, vgoyal@redhat.com
+Cc: Marc Dionne <marc.dionne@auristor.com>, David Howells <dhowells@redhat.com>,
+ linux-afs@lists.infradead.org, Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Create a request_key_net() function and use it to pass the network
-namespace domain tag into DNS revolver keys and rxrpc/AFS keys so that keys
-for different domains can coexist in the same keyring.
+From: Marc Dionne <marc.dionne@auristor.com>
 
+[ Upstream commit 21bd68f196ca91fc0f3d9bd1b32f6e530e8c1c88 ]
+
+__pagevec_release() complains loudly if any page in the vector is still
+locked.  The pages need to be locked for generic_error_remove_page(), but
+that function doesn't actually unlock them.
+
+Unlock the pages afterwards.
+
+Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
-cc: netdev@vger.kernel.org
-cc: linux-nfs@vger.kernel.org
-cc: linux-cifs@vger.kernel.org
-cc: linux-afs@lists.infradead.org
+Tested-by: Jonathan Billings <jsbillin@umich.edu>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
+ fs/afs/write.c | 1 +
+ 1 file changed, 1 insertion(+)
 
- fs/afs/addr_list.c           |    4 +--
- fs/afs/dynroot.c             |    7 +++--
- fs/cifs/dns_resolve.c        |    3 +-
- fs/nfs/dns_resolve.c         |    2 +
- include/linux/dns_resolver.h |    3 +-
- include/linux/key.h          |    6 ++++
- net/ceph/messenger.c         |    3 +-
- net/dns_resolver/dns_query.c |    6 +++-
- net/rxrpc/key.c              |    4 +--
- security/keys/internal.h     |    1 +
- security/keys/keyctl.c       |    2 +
- security/keys/keyring.c      |   11 +++++---
- security/keys/request_key.c  |   58 ++++++++++++++++++++++++++++++++++++++----
- 13 files changed, 86 insertions(+), 24 deletions(-)
-
-diff --git a/fs/afs/addr_list.c b/fs/afs/addr_list.c
-index 967db336d11a..bf8ddac5f402 100644
---- a/fs/afs/addr_list.c
-+++ b/fs/afs/addr_list.c
-@@ -250,8 +250,8 @@ struct afs_vlserver_list *afs_dns_query(struct afs_cell *cell, time64_t *_expiry
+diff --git a/fs/afs/write.c b/fs/afs/write.c
+index 72efcfcf9f95..0122d7445fba 100644
+--- a/fs/afs/write.c
++++ b/fs/afs/write.c
+@@ -264,6 +264,7 @@ static void afs_kill_pages(struct address_space *mapping,
+ 				first = page->index + 1;
+ 			lock_page(page);
+ 			generic_error_remove_page(mapping, page);
++			unlock_page(page);
+ 		}
  
- 	_enter("%s", cell->name);
- 
--	ret = dns_query("afsdb", cell->name, cell->name_len, "srv=1",
--			&result, _expiry);
-+	ret = dns_query(cell->net->net, "afsdb", cell->name, cell->name_len,
-+			"srv=1", &result, _expiry);
- 	if (ret < 0) {
- 		_leave(" = %d [dns]", ret);
- 		return ERR_PTR(ret);
-diff --git a/fs/afs/dynroot.c b/fs/afs/dynroot.c
-index a9ba81ddf154..07d010cd28e2 100644
---- a/fs/afs/dynroot.c
-+++ b/fs/afs/dynroot.c
-@@ -28,6 +28,7 @@ const struct file_operations afs_dynroot_file_operations = {
- static int afs_probe_cell_name(struct dentry *dentry)
- {
- 	struct afs_cell *cell;
-+	struct afs_net *net = afs_d2net(dentry);
- 	const char *name = dentry->d_name.name;
- 	size_t len = dentry->d_name.len;
- 	int ret;
-@@ -40,13 +41,13 @@ static int afs_probe_cell_name(struct dentry *dentry)
- 		len--;
- 	}
- 
--	cell = afs_lookup_cell_rcu(afs_d2net(dentry), name, len);
-+	cell = afs_lookup_cell_rcu(net, name, len);
- 	if (!IS_ERR(cell)) {
--		afs_put_cell(afs_d2net(dentry), cell);
-+		afs_put_cell(net, cell);
- 		return 0;
- 	}
- 
--	ret = dns_query("afsdb", name, len, "srv=1", NULL, NULL);
-+	ret = dns_query(net->net, "afsdb", name, len, "srv=1", NULL, NULL);
- 	if (ret == -ENODATA)
- 		ret = -EDESTADDRREQ;
- 	return ret;
-diff --git a/fs/cifs/dns_resolve.c b/fs/cifs/dns_resolve.c
-index 7ede7306599f..1239aa1b5d27 100644
---- a/fs/cifs/dns_resolve.c
-+++ b/fs/cifs/dns_resolve.c
-@@ -77,7 +77,8 @@ dns_resolve_server_name_to_ip(const char *unc, char **ip_addr)
- 		goto name_is_IP_address;
- 
- 	/* Perform the upcall */
--	rc = dns_query(NULL, hostname, len, NULL, ip_addr, NULL);
-+	rc = dns_query(current->nsproxy->net_ns, NULL, hostname, len,
-+		       NULL, ip_addr, NULL);
- 	if (rc < 0)
- 		cifs_dbg(FYI, "%s: unable to resolve: %*.*s\n",
- 			 __func__, len, len, hostname);
-diff --git a/fs/nfs/dns_resolve.c b/fs/nfs/dns_resolve.c
-index a7d3df85736d..8611d4b81b0e 100644
---- a/fs/nfs/dns_resolve.c
-+++ b/fs/nfs/dns_resolve.c
-@@ -22,7 +22,7 @@ ssize_t nfs_dns_resolve_name(struct net *net, char *name, size_t namelen,
- 	char *ip_addr = NULL;
- 	int ip_len;
- 
--	ip_len = dns_query(NULL, name, namelen, NULL, &ip_addr, NULL);
-+	ip_len = dns_query(net, NULL, name, namelen, NULL, &ip_addr, NULL);
- 	if (ip_len > 0)
- 		ret = rpc_pton(net, ip_addr, ip_len, sa, salen);
- 	else
-diff --git a/include/linux/dns_resolver.h b/include/linux/dns_resolver.h
-index 34a744a1bafc..3855395fa3c0 100644
---- a/include/linux/dns_resolver.h
-+++ b/include/linux/dns_resolver.h
-@@ -26,7 +26,8 @@
- 
- #include <uapi/linux/dns_resolver.h>
- 
--extern int dns_query(const char *type, const char *name, size_t namelen,
-+struct net;
-+extern int dns_query(struct net *net, const char *type, const char *name, size_t namelen,
- 		     const char *options, char **_result, time64_t *_expiry);
- 
- #endif /* _LINUX_DNS_RESOLVER_H */
-diff --git a/include/linux/key.h b/include/linux/key.h
-index 24db72f3839e..b72db0409801 100644
---- a/include/linux/key.h
-+++ b/include/linux/key.h
-@@ -36,6 +36,7 @@ typedef int32_t key_serial_t;
- typedef uint32_t key_perm_t;
- 
- struct key;
-+struct net;
- 
- #ifdef CONFIG_KEYS
- 
-@@ -306,6 +307,11 @@ extern struct key *request_key_with_auxdata(struct key_type *type,
- 					    size_t callout_len,
- 					    void *aux);
- 
-+extern struct key *request_key_net(struct key_type *type,
-+				   const char *description,
-+				   struct net *net,
-+				   const char *callout_info);
-+
- extern int wait_for_key_construction(struct key *key, bool intr);
- 
- extern int key_validate(const struct key *key);
-diff --git a/net/ceph/messenger.c b/net/ceph/messenger.c
-index 7e71b0df1fbc..d4549d42675b 100644
---- a/net/ceph/messenger.c
-+++ b/net/ceph/messenger.c
-@@ -1885,7 +1885,8 @@ static int ceph_dns_resolve_name(const char *name, size_t namelen,
- 		return -EINVAL;
- 
- 	/* do dns_resolve upcall */
--	ip_len = dns_query(NULL, name, end - name, NULL, &ip_addr, NULL);
-+	ip_len = dns_query(current->nsproxy->net_ns,
-+			   NULL, name, end - name, NULL, &ip_addr, NULL);
- 	if (ip_len > 0)
- 		ret = ceph_pton(ip_addr, ip_len, ss, -1, NULL);
- 	else
-diff --git a/net/dns_resolver/dns_query.c b/net/dns_resolver/dns_query.c
-index 76338c38738a..d88ea98da63e 100644
---- a/net/dns_resolver/dns_query.c
-+++ b/net/dns_resolver/dns_query.c
-@@ -48,6 +48,7 @@
- 
- /**
-  * dns_query - Query the DNS
-+ * @net: The network namespace to operate in.
-  * @type: Query type (or NULL for straight host->IP lookup)
-  * @name: Name to look up
-  * @namelen: Length of name
-@@ -68,7 +69,8 @@
-  *
-  * Returns the size of the result on success, -ve error code otherwise.
-  */
--int dns_query(const char *type, const char *name, size_t namelen,
-+int dns_query(struct net *net,
-+	      const char *type, const char *name, size_t namelen,
- 	      const char *options, char **_result, time64_t *_expiry)
- {
- 	struct key *rkey;
-@@ -122,7 +124,7 @@ int dns_query(const char *type, const char *name, size_t namelen,
- 	 * add_key() to preinstall malicious redirections
- 	 */
- 	saved_cred = override_creds(dns_resolver_cache);
--	rkey = request_key(&key_type_dns_resolver, desc, options);
-+	rkey = request_key_net(&key_type_dns_resolver, desc, net, options);
- 	revert_creds(saved_cred);
- 	kfree(desc);
- 	if (IS_ERR(rkey)) {
-diff --git a/net/rxrpc/key.c b/net/rxrpc/key.c
-index 2722189ec273..1cc6b0c6cc42 100644
---- a/net/rxrpc/key.c
-+++ b/net/rxrpc/key.c
-@@ -914,7 +914,7 @@ int rxrpc_request_key(struct rxrpc_sock *rx, char __user *optval, int optlen)
- 	if (IS_ERR(description))
- 		return PTR_ERR(description);
- 
--	key = request_key(&key_type_rxrpc, description, NULL);
-+	key = request_key_net(&key_type_rxrpc, description, sock_net(&rx->sk), NULL);
- 	if (IS_ERR(key)) {
- 		kfree(description);
- 		_leave(" = %ld", PTR_ERR(key));
-@@ -945,7 +945,7 @@ int rxrpc_server_keyring(struct rxrpc_sock *rx, char __user *optval,
- 	if (IS_ERR(description))
- 		return PTR_ERR(description);
- 
--	key = request_key(&key_type_keyring, description, NULL);
-+	key = request_key_net(&key_type_keyring, description, sock_net(&rx->sk), NULL);
- 	if (IS_ERR(key)) {
- 		kfree(description);
- 		_leave(" = %ld", PTR_ERR(key));
-diff --git a/security/keys/internal.h b/security/keys/internal.h
-index c07fcc756fdd..1fc8c283bdf4 100644
---- a/security/keys/internal.h
-+++ b/security/keys/internal.h
-@@ -152,6 +152,7 @@ extern int install_session_keyring_to_cred(struct cred *, struct key *);
- 
- extern struct key *request_key_and_link(struct key_type *type,
- 					const char *description,
-+					struct key_tag *domain_tag,
- 					const void *callout_info,
- 					size_t callout_len,
- 					void *aux,
-diff --git a/security/keys/keyctl.c b/security/keys/keyctl.c
-index d2023d550bd6..29c4fa71616b 100644
---- a/security/keys/keyctl.c
-+++ b/security/keys/keyctl.c
-@@ -210,7 +210,7 @@ SYSCALL_DEFINE4(request_key, const char __user *, _type,
- 	}
- 
- 	/* do the search */
--	key = request_key_and_link(ktype, description, callout_info,
-+	key = request_key_and_link(ktype, description, NULL, callout_info,
- 				   callout_len, NULL, key_ref_to_ptr(dest_ref),
- 				   KEY_ALLOC_IN_QUOTA);
- 	if (IS_ERR(key)) {
-diff --git a/security/keys/keyring.c b/security/keys/keyring.c
-index ffa368594a03..2597ae756191 100644
---- a/security/keys/keyring.c
-+++ b/security/keys/keyring.c
-@@ -222,10 +222,13 @@ void key_set_index_key(struct keyring_index_key *index_key)
- 
- 	memcpy(index_key->desc, index_key->description, n);
- 
--	if (index_key->type->flags & KEY_TYPE_NET_DOMAIN)
--		index_key->domain_tag = current->nsproxy->net_ns->key_domain;
--	else
--		index_key->domain_tag = &default_domain_tag;
-+	if (!index_key->domain_tag) {
-+		if (index_key->type->flags & KEY_TYPE_NET_DOMAIN)
-+			index_key->domain_tag = current->nsproxy->net_ns->key_domain;
-+		else
-+			index_key->domain_tag = &default_domain_tag;
-+	}
-+
- 	hash_key_type_and_desc(index_key);
- }
- 
-diff --git a/security/keys/request_key.c b/security/keys/request_key.c
-index eed975e57749..2bf00fa37f51 100644
---- a/security/keys/request_key.c
-+++ b/security/keys/request_key.c
-@@ -17,6 +17,7 @@
- #include <linux/err.h>
- #include <linux/keyctl.h>
- #include <linux/slab.h>
-+#include <net/net_namespace.h>
- #include "internal.h"
- #include <keys/request_key_auth-type.h>
- 
-@@ -501,16 +502,18 @@ static struct key *construct_key_and_link(struct keyring_search_context *ctx,
-  * request_key_and_link - Request a key and cache it in a keyring.
-  * @type: The type of key we want.
-  * @description: The searchable description of the key.
-+ * @domain_tag: The domain in which the key operates.
-  * @callout_info: The data to pass to the instantiation upcall (or NULL).
-  * @callout_len: The length of callout_info.
-  * @aux: Auxiliary data for the upcall.
-  * @dest_keyring: Where to cache the key.
-  * @flags: Flags to key_alloc().
-  *
-- * A key matching the specified criteria is searched for in the process's
-- * keyrings and returned with its usage count incremented if found.  Otherwise,
-- * if callout_info is not NULL, a key will be allocated and some service
-- * (probably in userspace) will be asked to instantiate it.
-+ * A key matching the specified criteria (type, description, domain_tag) is
-+ * searched for in the process's keyrings and returned with its usage count
-+ * incremented if found.  Otherwise, if callout_info is not NULL, a key will be
-+ * allocated and some service (probably in userspace) will be asked to
-+ * instantiate it.
-  *
-  * If successfully found or created, the key will be linked to the destination
-  * keyring if one is provided.
-@@ -526,6 +529,7 @@ static struct key *construct_key_and_link(struct keyring_search_context *ctx,
-  */
- struct key *request_key_and_link(struct key_type *type,
- 				 const char *description,
-+				 struct key_tag *domain_tag,
- 				 const void *callout_info,
- 				 size_t callout_len,
- 				 void *aux,
-@@ -644,7 +648,8 @@ struct key *request_key(struct key_type *type,
- 
- 	if (callout_info)
- 		callout_len = strlen(callout_info);
--	key = request_key_and_link(type, description, callout_info, callout_len,
-+	key = request_key_and_link(type, description, NULL,
-+				   callout_info, callout_len,
- 				   NULL, NULL, KEY_ALLOC_IN_QUOTA);
- 	if (!IS_ERR(key)) {
- 		ret = wait_for_key_construction(key, false);
-@@ -680,7 +685,8 @@ struct key *request_key_with_auxdata(struct key_type *type,
- 	struct key *key;
- 	int ret;
- 
--	key = request_key_and_link(type, description, callout_info, callout_len,
-+	key = request_key_and_link(type, description, NULL,
-+				   callout_info, callout_len,
- 				   aux, NULL, KEY_ALLOC_IN_QUOTA);
- 	if (!IS_ERR(key)) {
- 		ret = wait_for_key_construction(key, false);
-@@ -692,3 +698,43 @@ struct key *request_key_with_auxdata(struct key_type *type,
- 	return key;
- }
- EXPORT_SYMBOL(request_key_with_auxdata);
-+
-+/**
-+ * request_key_net - Request a key for a net namespace and wait for construction
-+ * @type: Type of key.
-+ * @description: The searchable description of the key.
-+ * @net: The network namespace that is the key's domain of operation.
-+ * @callout_info: The data to pass to the instantiation upcall (or NULL).
-+ *
-+ * As for request_key() except that it does not add the returned key to a
-+ * keyring if found, new keys are always allocated in the user's quota, the
-+ * callout_info must be a NUL-terminated string and no auxiliary data can be
-+ * passed.  Only keys that operate the specified network namespace are used.
-+ *
-+ * Furthermore, it then works as wait_for_key_construction() to wait for the
-+ * completion of keys undergoing construction with a non-interruptible wait.
-+ */
-+struct key *request_key_net(struct key_type *type,
-+			    const char *description,
-+			    struct net *net,
-+			    const char *callout_info)
-+{
-+	struct key *key;
-+	size_t callout_len = 0;
-+	int ret;
-+
-+	if (callout_info)
-+		callout_len = strlen(callout_info);
-+	key = request_key_and_link(type, description, net->key_domain,
-+				   callout_info, callout_len,
-+				   NULL, NULL, KEY_ALLOC_IN_QUOTA);
-+	if (!IS_ERR(key)) {
-+		ret = wait_for_key_construction(key, false);
-+		if (ret < 0) {
-+			key_put(key);
-+			return ERR_PTR(ret);
-+		}
-+	}
-+	return key;
-+}
-+EXPORT_SYMBOL(request_key_net);
+ 		__pagevec_release(&pv);
+-- 
+2.20.1
 
 
 _______________________________________________
