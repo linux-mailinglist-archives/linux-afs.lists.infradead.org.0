@@ -2,54 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 476BC1AB1A
-	for <lists+linux-afs@lfdr.de>; Sun, 12 May 2019 09:45:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FD951AB1D
+	for <lists+linux-afs@lfdr.de>; Sun, 12 May 2019 09:46:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BW/jl5wwPY7Ktkf8Eyg/Xi/V4Pz3CBj5rto2QatUJ8s=; b=LfB/feS6iZO4iJ
-	pptcHkqrPH5MNl/gf5eORi+qYP9XZHLFLxnblT3ih5Oaf51VyWqQzsqmUES7CR27Y6/7kY/rJwRj6
-	ak7IpekTJoFmtfigXinh6+tld+0xY0jS8hgYd0bq5zYS2pRpPgJuNhcC+lrmA0C40wm3iwgwyRW4V
-	zbXD3+j+aBppQSrvMfwhFy1lbe+iikhOquWg4LsmKg3Rgd3i6WTeiyaOLZSNAXoD+B5VQqV/ElDDa
-	u8oEcOVWD5SZeRKR/ydo9MnFXi/2TwF6CUlP+gz1PHppa555YoDwFXStaTOwP7LUOKQKyT4IlEVqh
-	6ZEmRuJXaeg8gOSgggFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/mdBeuUKPxn5XjAATVoCL/nKLCDuP4nKYyS0MvB3XTI=; b=UTDh7TaWMan6YN
+	h8kOVjqCsbXuFwT8TJhQnEMxGQpffLtJ+VnkjxdM5bSmRhNyz/z1hWYrUrPIeyiS+jW68hZ/PgCHJ
+	hnrRZN6Xw1Fj5vB7FDQw8Cbjm2DICIXgUk/TweF2KKRAtLFc7x8aLrOAyXt9WmFIVl+k/+A38BcBz
+	uUkQtB4EgXqW98nI69asXGsiV1Dmukvx62hO3YJAsLmplCyDx1k6PMGpDIkvvWsBomBkT9f8l1/Aw
+	aTynZ6cJ3rt+PTnutt5IekAvrMLhiLmWXMrcF/4DGH82bhan0/T04Hp6ZyUv5rYKEjLErwfPtLndN
+	IJ5j6lwVz8+2TJHxRwNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPjB5-0006Kt-7V; Sun, 12 May 2019 07:45:47 +0000
+	id 1hPjBC-0006Ma-Cu; Sun, 12 May 2019 07:45:54 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPjB1-0006Jt-VN
- for linux-afs@lists.infradead.org; Sun, 12 May 2019 07:45:45 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ id 1hPjB9-0006Ly-IF
+ for linux-afs@lists.infradead.org; Sun, 12 May 2019 07:45:53 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 79CFC85541;
- Sun, 12 May 2019 07:45:43 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 4921D81F1B;
+ Sun, 12 May 2019 07:45:51 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
  [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id E3DB5100164A;
- Sun, 12 May 2019 07:45:41 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 7F95F5D9C6;
+ Sun, 12 May 2019 07:45:49 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 1/2] afs: Fix incorrect error handling in afs_xattr_get_acl()
+Subject: [PATCH 2/2] afs: Fix afs_xattr_get_yfs() to not try freeing an
+ error value
 From: David Howells <dhowells@redhat.com>
 To: colin.king@canonical.com
-Date: Sun, 12 May 2019 08:45:41 +0100
-Message-ID: <155764714099.24080.1233326575922058381.stgit@warthog.procyon.org.uk>
+Date: Sun, 12 May 2019 08:45:48 +0100
+Message-ID: <155764714872.24080.15171754166782593095.stgit@warthog.procyon.org.uk>
+In-Reply-To: <155764714099.24080.1233326575922058381.stgit@warthog.procyon.org.uk>
+References: <155764714099.24080.1233326575922058381.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.28]); Sun, 12 May 2019 07:45:43 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.25]); Sun, 12 May 2019 07:45:51 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190512_004544_027399_59D0E2D8 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20190512_004551_638916_431DAD5B 
+X-CRM114-Status: GOOD (  22.72  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -77,40 +80,237 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Fix incorrect error handling in afs_xattr_get_acl() where there appears to
-be a redundant assignment before return, but in fact the return should be a
-goto to the error handling at the end of the function.
+afs_xattr_get_yfs() tries to free yacl, which may hold an error value (say
+if yfs_fs_fetch_opaque_acl() failed and returned an error).
 
-Fixes: 260f082bae6d ("afs: Get an AFS3 ACL as an xattr")
-Addresses-Coverity: ("Unused Value")
-Reported-by: Colin Ian King <colin.king@canonical.com>
+Fix this by allocating yacl up front (since it's a fixed-length struct,
+unlike afs_acl) and passing it in to the RPC function.  This also allows
+the flags to be placed in the object rather than passing them through to
+the RPC function.
+
+Fixes: ae46578b963f ("afs: Get YFS ACLs and information through xattrs")
 Signed-off-by: David Howells <dhowells@redhat.com>
-cc: Joe Perches <joe@perches.com>
 ---
 
- fs/afs/xattr.c |    9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
+ fs/afs/internal.h  |    2 +
+ fs/afs/xattr.c     |   86 ++++++++++++++++++++++++++++------------------------
+ fs/afs/yfsclient.c |   29 ++++--------------
+ 3 files changed, 53 insertions(+), 64 deletions(-)
 
+diff --git a/fs/afs/internal.h b/fs/afs/internal.h
+index b3cd6e8ad59d..74ee0f8ef8dd 100644
+--- a/fs/afs/internal.h
++++ b/fs/afs/internal.h
+@@ -1382,7 +1382,7 @@ struct yfs_acl {
+ };
+ 
+ extern void yfs_free_opaque_acl(struct yfs_acl *);
+-extern struct yfs_acl *yfs_fs_fetch_opaque_acl(struct afs_fs_cursor *, unsigned int);
++extern struct yfs_acl *yfs_fs_fetch_opaque_acl(struct afs_fs_cursor *, struct yfs_acl *);
+ extern int yfs_fs_store_opaque_acl2(struct afs_fs_cursor *, const struct afs_acl *);
+ 
+ /*
 diff --git a/fs/afs/xattr.c b/fs/afs/xattr.c
-index c81f85003fc7..b6c44e75b361 100644
+index b6c44e75b361..d12bcda911e1 100644
 --- a/fs/afs/xattr.c
 +++ b/fs/afs/xattr.c
-@@ -71,11 +71,10 @@ static int afs_xattr_get_acl(const struct xattr_handler *handler,
- 	if (ret == 0) {
- 		ret = acl->size;
- 		if (size > 0) {
--			ret = -ERANGE;
--			if (acl->size > size)
--				return -ERANGE;
--			memcpy(buffer, acl->data, acl->size);
--			ret = acl->size;
-+			if (acl->size <= size)
-+				memcpy(buffer, acl->data, acl->size);
-+			else
-+				ret = -ERANGE;
+@@ -148,9 +148,8 @@ static int afs_xattr_get_yfs(const struct xattr_handler *handler,
+ 	struct afs_vnode *vnode = AFS_FS_I(inode);
+ 	struct yfs_acl *yacl = NULL;
+ 	struct key *key;
+-	unsigned int flags = 0;
+ 	char buf[16], *data;
+-	int which = 0, dsize, ret;
++	int which = 0, dsize, ret = -ENOMEM;
+ 
+ 	if (strcmp(name, "acl") == 0)
+ 		which = 0;
+@@ -163,20 +162,26 @@ static int afs_xattr_get_yfs(const struct xattr_handler *handler,
+ 	else
+ 		return -EOPNOTSUPP;
+ 
++	yacl = kzalloc(sizeof(struct yfs_acl), GFP_KERNEL);
++	if (!yacl)
++		goto error;
++
+ 	if (which == 0)
+-		flags |= YFS_ACL_WANT_ACL;
++		yacl->flags |= YFS_ACL_WANT_ACL;
+ 	else if (which == 3)
+-		flags |= YFS_ACL_WANT_VOL_ACL;
++		yacl->flags |= YFS_ACL_WANT_VOL_ACL;
+ 
+ 	key = afs_request_key(vnode->volume->cell);
+-	if (IS_ERR(key))
+-		return PTR_ERR(key);
++	if (IS_ERR(key)) {
++		ret = PTR_ERR(key);
++		goto error_yacl;
++	}
+ 
+ 	ret = -ERESTARTSYS;
+ 	if (afs_begin_vnode_operation(&fc, vnode, key)) {
+ 		while (afs_select_fileserver(&fc)) {
+ 			fc.cb_break = afs_calc_vnode_cb_break(vnode);
+-			yacl = yfs_fs_fetch_opaque_acl(&fc, flags);
++			yfs_fs_fetch_opaque_acl(&fc, yacl);
  		}
- 		kfree(acl);
+ 
+ 		afs_check_for_remote_deletion(&fc, fc.vnode);
+@@ -184,44 +189,45 @@ static int afs_xattr_get_yfs(const struct xattr_handler *handler,
+ 		ret = afs_end_vnode_operation(&fc);
  	}
+ 
+-	if (ret == 0) {
+-		switch (which) {
+-		case 0:
+-			data = yacl->acl->data;
+-			dsize = yacl->acl->size;
+-			break;
+-		case 1:
+-			data = buf;
+-			dsize = snprintf(buf, sizeof(buf), "%u",
+-					 yacl->inherit_flag);
+-			break;
+-		case 2:
+-			data = buf;
+-			dsize = snprintf(buf, sizeof(buf), "%u",
+-					 yacl->num_cleaned);
+-			break;
+-		case 3:
+-			data = yacl->vol_acl->data;
+-			dsize = yacl->vol_acl->size;
+-			break;
+-		default:
+-			ret = -EOPNOTSUPP;
+-			goto out;
+-		}
++	if (ret < 0)
++		goto error_key;
++
++	switch (which) {
++	case 0:
++		data = yacl->acl->data;
++		dsize = yacl->acl->size;
++		break;
++	case 1:
++		data = buf;
++		dsize = snprintf(buf, sizeof(buf), "%u", yacl->inherit_flag);
++		break;
++	case 2:
++		data = buf;
++		dsize = snprintf(buf, sizeof(buf), "%u", yacl->num_cleaned);
++		break;
++	case 3:
++		data = yacl->vol_acl->data;
++		dsize = yacl->vol_acl->size;
++		break;
++	default:
++		ret = -EOPNOTSUPP;
++		goto error_key;
++	}
+ 
+-		ret = dsize;
+-		if (size > 0) {
+-			if (dsize > size) {
+-				ret = -ERANGE;
+-				goto out;
+-			}
+-			memcpy(buffer, data, dsize);
++	ret = dsize;
++	if (size > 0) {
++		if (dsize > size) {
++			ret = -ERANGE;
++			goto error_key;
+ 		}
++		memcpy(buffer, data, dsize);
+ 	}
+ 
+-out:
+-	yfs_free_opaque_acl(yacl);
++error_key:
+ 	key_put(key);
++error_yacl:
++	yfs_free_opaque_acl(yacl);
++error:
+ 	return ret;
+ }
+ 
+diff --git a/fs/afs/yfsclient.c b/fs/afs/yfsclient.c
+index 6cf7d161baa1..d3e9e3fe0b58 100644
+--- a/fs/afs/yfsclient.c
++++ b/fs/afs/yfsclient.c
+@@ -2333,12 +2333,6 @@ void yfs_free_opaque_acl(struct yfs_acl *yacl)
+ 	}
+ }
+ 
+-static void yfs_destroy_fs_fetch_opaque_acl(struct afs_call *call)
+-{
+-	yfs_free_opaque_acl(call->reply[0]);
+-	afs_flat_call_destructor(call);
+-}
+-
+ /*
+  * YFS.FetchOpaqueACL operation type
+  */
+@@ -2346,18 +2340,17 @@ static const struct afs_call_type yfs_RXYFSFetchOpaqueACL = {
+ 	.name		= "YFS.FetchOpaqueACL",
+ 	.op		= yfs_FS_FetchOpaqueACL,
+ 	.deliver	= yfs_deliver_fs_fetch_opaque_acl,
+-	.destructor	= yfs_destroy_fs_fetch_opaque_acl,
++	.destructor	= afs_flat_call_destructor,
+ };
+ 
+ /*
+  * Fetch the YFS advanced ACLs for a file.
+  */
+ struct yfs_acl *yfs_fs_fetch_opaque_acl(struct afs_fs_cursor *fc,
+-					unsigned int flags)
++					struct yfs_acl *yacl)
+ {
+ 	struct afs_vnode *vnode = fc->vnode;
+ 	struct afs_call *call;
+-	struct yfs_acl *yacl;
+ 	struct afs_net *net = afs_v2net(vnode);
+ 	__be32 *bp;
+ 
+@@ -2370,19 +2363,15 @@ struct yfs_acl *yfs_fs_fetch_opaque_acl(struct afs_fs_cursor *fc,
+ 				   sizeof(__be32) * 2 +
+ 				   sizeof(struct yfs_xdr_YFSFetchStatus) +
+ 				   sizeof(struct yfs_xdr_YFSVolSync));
+-	if (!call)
+-		goto nomem;
+-
+-	yacl = kzalloc(sizeof(struct yfs_acl), GFP_KERNEL);
+-	if (!yacl)
+-		goto nomem_call;
++	if (!call) {
++		fc->ac.error = -ENOMEM;
++		return ERR_PTR(-ENOMEM);
++	}
+ 
+-	yacl->flags = flags;
+ 	call->key = fc->key;
+ 	call->reply[0] = yacl;
+ 	call->reply[1] = vnode;
+ 	call->reply[2] = NULL; /* volsync */
+-	call->ret_reply0 = true;
+ 
+ 	/* marshall the parameters */
+ 	bp = call->request;
+@@ -2396,12 +2385,6 @@ struct yfs_acl *yfs_fs_fetch_opaque_acl(struct afs_fs_cursor *fc,
+ 	trace_afs_make_fs_call(call, &vnode->fid);
+ 	afs_make_call(&fc->ac, call, GFP_KERNEL);
+ 	return (struct yfs_acl *)afs_wait_for_call_to_complete(call, &fc->ac);
+-
+-nomem_call:
+-	afs_put_call(call);
+-nomem:
+-	fc->ac.error = -ENOMEM;
+-	return ERR_PTR(-ENOMEM);
+ }
+ 
+ /*
 
 
 _______________________________________________
