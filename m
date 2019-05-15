@@ -2,50 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D73361F879
-	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:25:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E41601F87A
+	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:25:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FpHMORhM0KjI1HorfI37y73hunzsuQTXI2iEQD0p11k=; b=bd1qlc3GDX23xR
-	3qsN8IuTNuSGDm+AI0nYqpnDUOfQNOfuNLFg9blLJwjgD4J5I29y5YDmK0AlwgSbMFDuiCK0RG7+n
-	mPIwU/yE9ipgK6VrkWYmCUeh7nJM6tibI0k4kPkuZaDxEHPkcHeWUCxqUU/uNSaUC0OlLxbFVcD7m
-	frZN5GUnhqcwxbUKY8R7ky1ZX/2ZjNh+OEuXaGNbMa1TbGx1QDkGFm4mWTUemvnd94sOl4IUtGSgm
-	vXI1+uOHTgLoP0tP0QvEsUtNo4mHaRSET0uXzCz73BvLFzQ87jAEGkzcLZtTnqnc2i2cYSfB4HGaY
-	7FhZCQcih/dqdArKbNHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xoDG0lJzysrTuATzhZqSZA9nD8RVjeNWVo3tx+YAa2c=; b=Fm2SmSRpLSxU+k
+	dBULFCeaFUOO9teuwcahenfH7zbB7zR5nPGlLxEDilnMp79q0TIQf3BuEczZuwz7N44PAvwypAAoe
+	AVdAicN0g+IF3smHiYDE0rftLvodB53LvNd7UV2bkHvvoIfjdygtSUHRMVn/nVrPERxPyDIjO3zbU
+	jtU0Db3Mfmc86doXDf2okKeq9iuu7soOoER6n9xxK/XbJMoK9Ovx9SRvAjATazS22NyDdw1Gv1mQF
+	RZX44S9dVYBl0btWKT+JfJjGGvmNFJuD6GmuS9E6vTZ452tdYOI00+Z5BrzEKOLDuVDXyjKby1KOR
+	2OOgFVa67RmmkMONWNdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQwiu-0001ST-W5; Wed, 15 May 2019 16:25:44 +0000
+	id 1hQwj0-0001WK-6k; Wed, 15 May 2019 16:25:50 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQwir-0001KC-IK
- for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:25:43 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ id 1hQwiw-0001Vh-TS
+ for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:25:48 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 1ADE18830A;
- Wed, 15 May 2019 16:25:40 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id A974F81F12;
+ Wed, 15 May 2019 16:25:46 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
  [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 4164A60F81;
- Wed, 15 May 2019 16:25:38 +0000 (UTC)
-Subject: [PATCH 00/15] AFS fixes
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0A9D3608A6;
+ Wed, 15 May 2019 16:25:45 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+Subject: [PATCH 01/15] afs: Fix key leak in afs_release() and afs_evict_inode()
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Wed, 15 May 2019 17:25:37 +0100
-Message-ID: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
+Date: Wed, 15 May 2019 17:25:45 +0100
+Message-ID: <155793754533.31671.10385071394174622444.stgit@warthog.procyon.org.uk>
+In-Reply-To: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
+References: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.28]); Wed, 15 May 2019 16:25:40 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.25]); Wed, 15 May 2019 16:25:46 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_092541_648139_660B904B 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20190515_092546_991716_D4DEE974 
+X-CRM114-Status: GOOD (  15.27  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,97 +72,69 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
- dhowells@redhat.com, Joe Perches <joe@perches.com>,
- Jonathan Billings <jsbillings@jsbillings.org>,
- Marc Dionne <marc.dionne@auristor.com>,
- Colin Ian King <colin.king@canonical.com>
+Cc: dhowells@redhat.com, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
+Fix afs_release() to go through the cleanup part of the function if
+FMODE_WRITE is set rather than exiting through vfs_fsync() (which skips the
+cleanup).  The cleanup involves discarding the refs on the key used for
+file ops and the writeback key record.
 
-Here's a set of patches for AFS that fix the following issues:
+Also fix afs_evict_inode() to clean up any left over wb keys attached to
+the inode/vnode when it is removed.
 
- (1) Leak of keys on file close.
-
- (2) Broken error handling in xattr functions.
-
- (3) Missing locking when updating VL server list.
-
- (4) Volume location server DNS lookup whereby preloaded cells may not ever
-     get a lookup and regular DNS lookups to maintain server lists consume
-     power unnecessarily.
-
- (5) Callback promise expiry time miscalculation.
-
- (6) Over invalidation of the callback promise on directories.
-
- (7) Double locking on callback break waking up file locking waiters.
-
- (8) Double increment of the vnode callback break counter.
-
-The patches can be found here:
-
-	http://git.kernel.org/cgit/linux/kernel/git/dhowells/linux-fs.git
-	tag afs-fixes-20190515
-
-David
+Fixes: 5a8132761609 ("afs: Do better accretion of small writes on newly created content")
+Signed-off-by: David Howells <dhowells@redhat.com>
 ---
-David Howells (15):
-      afs: Fix key leak in afs_release() and afs_evict_inode()
-      afs: Fix incorrect error handling in afs_xattr_get_acl()
-      afs: Fix afs_xattr_get_yfs() to not try freeing an error value
-      afs: Fix missing lock when replacing VL server list
-      afs: Fix afs_cell records to always have a VL server list record
-      dns_resolver: Allow used keys to be invalidated
-      Add wait_var_event_interruptible()
-      afs: Fix cell DNS lookup
-      rxrpc: Allow the kernel to mark a call as being non-interruptible
-      afs: Make some RPC operations non-interruptible
-      afs: Make dynamic root population wait uninterruptibly for proc_cells_lock
-      afs: Fix calculation of callback expiry time
-      afs: Don't invalidate callback if AFS_VNODE_DIR_VALID not set
-      afs: Fix lock-wait/callback-break double locking
-      afs: Fix double inc of vnode->cb_break
 
+ fs/afs/file.c  |    7 ++++---
+ fs/afs/inode.c |    1 +
+ 2 files changed, 5 insertions(+), 3 deletions(-)
 
- Documentation/networking/rxrpc.txt |   11 ++
- fs/afs/addr_list.c                 |    2 
- fs/afs/callback.c                  |    8 --
- fs/afs/cell.c                      |  187 ++++++++++++++++++++++--------------
- fs/afs/dir.c                       |   18 ++-
- fs/afs/dir_silly.c                 |    4 -
- fs/afs/dynroot.c                   |    5 -
- fs/afs/file.c                      |    9 +-
- fs/afs/flock.c                     |    9 +-
- fs/afs/fsclient.c                  |   76 +++++++++------
- fs/afs/inode.c                     |   12 +-
- fs/afs/internal.h                  |   21 +++-
- fs/afs/proc.c                      |    8 +-
- fs/afs/rotate.c                    |   27 +++--
- fs/afs/rxrpc.c                     |    3 -
- fs/afs/security.c                  |    4 -
- fs/afs/super.c                     |    2 
- fs/afs/vl_list.c                   |   20 ++--
- fs/afs/vl_rotate.c                 |   28 ++++-
- fs/afs/write.c                     |    2 
- fs/afs/xattr.c                     |  103 ++++++++++----------
- fs/afs/yfsclient.c                 |   98 +++++++++----------
- fs/cifs/dns_resolve.c              |    2 
- fs/nfs/dns_resolve.c               |    2 
- include/linux/dns_resolver.h       |    3 -
- include/linux/wait_bit.h           |   13 +++
- include/net/af_rxrpc.h             |    1 
- net/ceph/messenger.c               |    2 
- net/dns_resolver/dns_query.c       |    6 +
- net/rxrpc/af_rxrpc.c               |    3 +
- net/rxrpc/ar-internal.h            |    2 
- net/rxrpc/call_object.c            |    2 
- net/rxrpc/conn_client.c            |    8 +-
- net/rxrpc/sendmsg.c                |    4 +
- 34 files changed, 412 insertions(+), 293 deletions(-)
+diff --git a/fs/afs/file.c b/fs/afs/file.c
+index e8d6619890a9..eee2b5663b92 100644
+--- a/fs/afs/file.c
++++ b/fs/afs/file.c
+@@ -170,11 +170,12 @@ int afs_release(struct inode *inode, struct file *file)
+ {
+ 	struct afs_vnode *vnode = AFS_FS_I(inode);
+ 	struct afs_file *af = file->private_data;
++	int ret;
+ 
+ 	_enter("{%llx:%llu},", vnode->fid.vid, vnode->fid.vnode);
+ 
+ 	if ((file->f_mode & FMODE_WRITE))
+-		return vfs_fsync(file, 0);
++		ret = vfs_fsync(file, 0);
+ 
+ 	file->private_data = NULL;
+ 	if (af->wb)
+@@ -182,8 +183,8 @@ int afs_release(struct inode *inode, struct file *file)
+ 	key_put(af->key);
+ 	kfree(af);
+ 	afs_prune_wb_keys(vnode);
+-	_leave(" = 0");
+-	return 0;
++	_leave(" = %d", ret);
++	return ret;
+ }
+ 
+ /*
+diff --git a/fs/afs/inode.c b/fs/afs/inode.c
+index c4652b42d545..f30aa5eacd39 100644
+--- a/fs/afs/inode.c
++++ b/fs/afs/inode.c
+@@ -573,6 +573,7 @@ void afs_evict_inode(struct inode *inode)
+ 	}
+ #endif
+ 
++	afs_prune_wb_keys(vnode);
+ 	afs_put_permits(rcu_access_pointer(vnode->permit_cache));
+ 	key_put(vnode->silly_key);
+ 	vnode->silly_key = NULL;
 
 
 _______________________________________________
