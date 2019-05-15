@@ -2,56 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E41601F87A
-	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:25:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC02F1F87D
+	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:26:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xoDG0lJzysrTuATzhZqSZA9nD8RVjeNWVo3tx+YAa2c=; b=Fm2SmSRpLSxU+k
-	dBULFCeaFUOO9teuwcahenfH7zbB7zR5nPGlLxEDilnMp79q0TIQf3BuEczZuwz7N44PAvwypAAoe
-	AVdAicN0g+IF3smHiYDE0rftLvodB53LvNd7UV2bkHvvoIfjdygtSUHRMVn/nVrPERxPyDIjO3zbU
-	jtU0Db3Mfmc86doXDf2okKeq9iuu7soOoER6n9xxK/XbJMoK9Ovx9SRvAjATazS22NyDdw1Gv1mQF
-	RZX44S9dVYBl0btWKT+JfJjGGvmNFJuD6GmuS9E6vTZ452tdYOI00+Z5BrzEKOLDuVDXyjKby1KOR
-	2OOgFVa67RmmkMONWNdg==;
+	List-Owner; bh=BW/jl5wwPY7Ktkf8Eyg/Xi/V4Pz3CBj5rto2QatUJ8s=; b=D4EvQvtnIgWv+1
+	WNYNiUnPXWHxfW26jHTfpY0kcBWK7b2+0s+LRdNC9FAEwYjFetN57v+SN56sho8FEAOM4YMNTTTRj
+	Lp45oRCJMW02Uk3YmGYv9N+7DuHLbIqvnG0WZDM5qKnVwifk/ESUc2zKrgFBYXaUOjxtBvipjnKuR
+	zCXVfQjXmDA5prXGh8tRQ6+npy8NBUXT61w65qndF5s6Qya1CqcSyg/qm20aMrxWqM01kLaSG3tXl
+	3At+EpsxzElb72FGZUvAFQGu6kSJ1qLIfWoQ3vfuFSOZKnjjmZDt8VX3C/+UGxnEJwuzT5oJ4+h9t
+	b9gEr96o9Odf1vMM6KWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQwj0-0001WK-6k; Wed, 15 May 2019 16:25:50 +0000
+	id 1hQwj8-0001YQ-CS; Wed, 15 May 2019 16:25:58 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQwiw-0001Vh-TS
- for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:25:48 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
+ id 1hQwj5-0001Xb-3D
+ for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:25:56 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id A974F81F12;
- Wed, 15 May 2019 16:25:46 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id C9A5730018F6;
+ Wed, 15 May 2019 16:25:54 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
  [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0A9D3608A6;
- Wed, 15 May 2019 16:25:45 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B91B419C7E;
+ Wed, 15 May 2019 16:25:53 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 01/15] afs: Fix key leak in afs_release() and afs_evict_inode()
+Subject: [PATCH 02/15] afs: Fix incorrect error handling in afs_xattr_get_acl()
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Wed, 15 May 2019 17:25:45 +0100
-Message-ID: <155793754533.31671.10385071394174622444.stgit@warthog.procyon.org.uk>
+Date: Wed, 15 May 2019 17:25:51 +0100
+Message-ID: <155793755188.31671.13175909085892285666.stgit@warthog.procyon.org.uk>
 In-Reply-To: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
 References: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.25]); Wed, 15 May 2019 16:25:46 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.46]); Wed, 15 May 2019 16:25:54 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_092546_991716_D4DEE974 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20190515_092555_155508_2CD53F4A 
+X-CRM114-Status: GOOD (  15.86  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,69 +72,47 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-kernel@vger.kernel.org
+Cc: Joe Perches <joe@perches.com>, Colin Ian King <colin.king@canonical.com>,
+ dhowells@redhat.com, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Fix afs_release() to go through the cleanup part of the function if
-FMODE_WRITE is set rather than exiting through vfs_fsync() (which skips the
-cleanup).  The cleanup involves discarding the refs on the key used for
-file ops and the writeback key record.
+Fix incorrect error handling in afs_xattr_get_acl() where there appears to
+be a redundant assignment before return, but in fact the return should be a
+goto to the error handling at the end of the function.
 
-Also fix afs_evict_inode() to clean up any left over wb keys attached to
-the inode/vnode when it is removed.
-
-Fixes: 5a8132761609 ("afs: Do better accretion of small writes on newly created content")
+Fixes: 260f082bae6d ("afs: Get an AFS3 ACL as an xattr")
+Addresses-Coverity: ("Unused Value")
+Reported-by: Colin Ian King <colin.king@canonical.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
+cc: Joe Perches <joe@perches.com>
 ---
 
- fs/afs/file.c  |    7 ++++---
- fs/afs/inode.c |    1 +
- 2 files changed, 5 insertions(+), 3 deletions(-)
+ fs/afs/xattr.c |    9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
 
-diff --git a/fs/afs/file.c b/fs/afs/file.c
-index e8d6619890a9..eee2b5663b92 100644
---- a/fs/afs/file.c
-+++ b/fs/afs/file.c
-@@ -170,11 +170,12 @@ int afs_release(struct inode *inode, struct file *file)
- {
- 	struct afs_vnode *vnode = AFS_FS_I(inode);
- 	struct afs_file *af = file->private_data;
-+	int ret;
- 
- 	_enter("{%llx:%llu},", vnode->fid.vid, vnode->fid.vnode);
- 
- 	if ((file->f_mode & FMODE_WRITE))
--		return vfs_fsync(file, 0);
-+		ret = vfs_fsync(file, 0);
- 
- 	file->private_data = NULL;
- 	if (af->wb)
-@@ -182,8 +183,8 @@ int afs_release(struct inode *inode, struct file *file)
- 	key_put(af->key);
- 	kfree(af);
- 	afs_prune_wb_keys(vnode);
--	_leave(" = 0");
--	return 0;
-+	_leave(" = %d", ret);
-+	return ret;
- }
- 
- /*
-diff --git a/fs/afs/inode.c b/fs/afs/inode.c
-index c4652b42d545..f30aa5eacd39 100644
---- a/fs/afs/inode.c
-+++ b/fs/afs/inode.c
-@@ -573,6 +573,7 @@ void afs_evict_inode(struct inode *inode)
+diff --git a/fs/afs/xattr.c b/fs/afs/xattr.c
+index c81f85003fc7..b6c44e75b361 100644
+--- a/fs/afs/xattr.c
++++ b/fs/afs/xattr.c
+@@ -71,11 +71,10 @@ static int afs_xattr_get_acl(const struct xattr_handler *handler,
+ 	if (ret == 0) {
+ 		ret = acl->size;
+ 		if (size > 0) {
+-			ret = -ERANGE;
+-			if (acl->size > size)
+-				return -ERANGE;
+-			memcpy(buffer, acl->data, acl->size);
+-			ret = acl->size;
++			if (acl->size <= size)
++				memcpy(buffer, acl->data, acl->size);
++			else
++				ret = -ERANGE;
+ 		}
+ 		kfree(acl);
  	}
- #endif
- 
-+	afs_prune_wb_keys(vnode);
- 	afs_put_permits(rcu_access_pointer(vnode->permit_cache));
- 	key_put(vnode->silly_key);
- 	vnode->silly_key = NULL;
 
 
 _______________________________________________
