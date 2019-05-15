@@ -2,89 +2,59 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 977CB1B3B4
-	for <lists+linux-afs@lfdr.de>; Mon, 13 May 2019 12:14:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D73361F879
+	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:25:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:
-	Subject:To:MIME-Version:From:Date:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KfcCcexCo/TG/JLbcYjucaGHIVrfcx1l7jlhP7Lwt7A=; b=tyM76i4XgfIPX/
-	jChn3a0eAPgupVgV+TB3mKpUUyyHl8Yr1302Rw4lqtZIx8pQnzhWQ1sGDy8TUy6wv892/2G5JSXiM
-	1fjmQ1KJoAVfOtqzaju42hmQbFTHXcNJFNDqN+UbYcLYB1JowTp9rCusIk3FI4djjdlwiqk3jJzjP
-	uoo+mVWimxNZwq7mOwvE8Ds15fZmNhIrBY9RiPwXXPZdETi2Z33P95TDiiS4Is+0l6Djm7LH/FPpJ
-	btCVtXxYHgT/oUK12qCkUDyUN7n1K3adJZQrDPj2Kj7hyu4ELI9WQhermDwS8C3cUavSdsO8kn2bB
-	ADe7YEEOcDzbMySj1AwQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FpHMORhM0KjI1HorfI37y73hunzsuQTXI2iEQD0p11k=; b=bd1qlc3GDX23xR
+	3qsN8IuTNuSGDm+AI0nYqpnDUOfQNOfuNLFg9blLJwjgD4J5I29y5YDmK0AlwgSbMFDuiCK0RG7+n
+	mPIwU/yE9ipgK6VrkWYmCUeh7nJM6tibI0k4kPkuZaDxEHPkcHeWUCxqUU/uNSaUC0OlLxbFVcD7m
+	frZN5GUnhqcwxbUKY8R7ky1ZX/2ZjNh+OEuXaGNbMa1TbGx1QDkGFm4mWTUemvnd94sOl4IUtGSgm
+	vXI1+uOHTgLoP0tP0QvEsUtNo4mHaRSET0uXzCz73BvLFzQ87jAEGkzcLZtTnqnc2i2cYSfB4HGaY
+	7FhZCQcih/dqdArKbNHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQ7xy-0003Vy-8X; Mon, 13 May 2019 10:13:54 +0000
-Received: from mx01-fr.bfs.de ([193.174.231.67])
+	id 1hQwiu-0001ST-W5; Wed, 15 May 2019 16:25:44 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQ7xu-0003Uy-EE
- for linux-afs@lists.infradead.org; Mon, 13 May 2019 10:13:53 +0000
-Received: from mail-fr.bfs.de (mail-fr.bfs.de [10.177.18.200])
- by mx01-fr.bfs.de (Postfix) with ESMTPS id 6BDA2202D3;
- Mon, 13 May 2019 12:13:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bfs.de; s=dkim201901; 
- t=1557742420;
- h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=h5mgh4KCp63jsksPf9LEb/AYezgTUIq/azbAEZv5xKE=;
- b=KlhpbFtMT08WmEzekabJJrNbF0LR2M+P3ImvaqOsqMLfInyF0CAv7a5CaDN4nMLcKqpfQW
- kF0rf5m6UGFheax/OWvvGwQSWrsQQAOds5NNpeIdKhiL4YLdcxj4PUoh3dFuS/ZDzx5dws
- ZZtoPp8nlzU43Fq9gJDMLrP9Omel3Za6CibOdwRIio2GXJqmcR5MHYeGHArc0eBbb0AJGn
- UxE4VILzpGilsG6EMyjwKrhhi18JXRYJJSM3qtvMGmRQdxW8EUXJ/ehPnBRYnG5ueIWKyN
- AFF3WZ6GZvCnyRoMGp4BhEXqiFJmFdFKTpia0GEgijVVCY9jvT21KXIEcBlAkg==
-Received: from [134.92.181.33] (unknown [134.92.181.33])
- by mail-fr.bfs.de (Postfix) with ESMTPS id 12F82BEEBD;
- Mon, 13 May 2019 12:13:40 +0200 (CEST)
-Message-ID: <5CD94353.90702@bfs.de>
-Date: Mon, 13 May 2019 12:13:39 +0200
-From: walter harms <wharms@bfs.de>
-User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; de;
- rv:1.9.1.16) Gecko/20101125 SUSE/3.0.11 Thunderbird/3.0.11
+ id 1hQwir-0001KC-IK
+ for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:25:43 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 1ADE18830A;
+ Wed, 15 May 2019 16:25:40 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
+ [10.10.120.61])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4164A60F81;
+ Wed, 15 May 2019 16:25:38 +0000 (UTC)
+Subject: [PATCH 00/15] AFS fixes
+From: David Howells <dhowells@redhat.com>
+To: linux-afs@lists.infradead.org
+Date: Wed, 15 May 2019 17:25:37 +0100
+Message-ID: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH 2/2] afs: Fix afs_xattr_get_yfs() to not try freeing an
- error value
-References: <5CD8697B.6010004@bfs.de> <5CD844B0.5060206@bfs.de>
- <155764714099.24080.1233326575922058381.stgit@warthog.procyon.org.uk>
- <155764714872.24080.15171754166782593095.stgit@warthog.procyon.org.uk>
- <31808.1557684645@warthog.procyon.org.uk>
- <6819.1557691584@warthog.procyon.org.uk>
-In-Reply-To: <6819.1557691584@warthog.procyon.org.uk>
-X-Spam-Status: No, score=-3.08
-Authentication-Results: mx01-fr.bfs.de
-X-Spamd-Result: default: False [-3.08 / 7.00]; ARC_NA(0.00)[];
- HAS_REPLYTO(0.00)[wharms@bfs.de]; BAYES_HAM(-2.98)[99.91%];
- FROM_HAS_DN(0.00)[]; TO_DN_SOME(0.00)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
- REPLYTO_ADDR_EQ_FROM(0.00)[]; RCPT_COUNT_FIVE(0.00)[5];
- DKIM_SIGNED(0.00)[]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+]; RCVD_COUNT_TWO(0.00)[2];
- MID_RHS_MATCH_FROM(0.00)[]; RCVD_TLS_ALL(0.00)[]
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.28]); Wed, 15 May 2019 16:25:40 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_031351_502911_59BAAD5D 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: 2.4 (++)
+X-CRM114-CacheID: sfid-20190515_092541_648139_660B904B 
+X-CRM114-Status: GOOD (  13.76  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.4 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.6 RCVD_IN_SBL            RBL: Received via a relay in Spamhaus SBL
- [134.92.181.33 listed in zen.spamhaus.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,67 +66,98 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Reply-To: wharms@bfs.de
-Cc: linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-afs@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ dhowells@redhat.com, Joe Perches <joe@perches.com>,
+ Jonathan Billings <jsbillings@jsbillings.org>,
+ Marc Dionne <marc.dionne@auristor.com>,
+ Colin Ian King <colin.king@canonical.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 
+Here's a set of patches for AFS that fix the following issues:
 
-Am 12.05.2019 22:06, schrieb David Howells:
-> walter harms <wharms@bfs.de> wrote:
-> 
->> Sorry, you misunderstood me, my fault, i did not see that size is unsigned.
->> NTL i do not think size=0 is useful.
-> 
-> Allow me to quote from the getxattr manpage:
-> 
->        If size is specified as zero, these calls return the  current  size  of
->        the  named extended attribute (and leave value unchanged).  This can be
->        used to determine the size of the buffer that should be supplied  in  a
->        subsequent  call.   [...]
->  
-ok, sorry for the noise i did not know, for me that look unintended.
+ (1) Leak of keys on file close.
+
+ (2) Broken error handling in xattr functions.
+
+ (3) Missing locking when updating VL server list.
+
+ (4) Volume location server DNS lookup whereby preloaded cells may not ever
+     get a lookup and regular DNS lookups to maintain server lists consume
+     power unnecessarily.
+
+ (5) Callback promise expiry time miscalculation.
+
+ (6) Over invalidation of the callback promise on directories.
+
+ (7) Double locking on callback break waking up file locking waiters.
+
+ (8) Double increment of the vnode callback break counter.
+
+The patches can be found here:
+
+	http://git.kernel.org/cgit/linux/kernel/git/dhowells/linux-fs.git
+	tag afs-fixes-20190515
+
+David
+---
+David Howells (15):
+      afs: Fix key leak in afs_release() and afs_evict_inode()
+      afs: Fix incorrect error handling in afs_xattr_get_acl()
+      afs: Fix afs_xattr_get_yfs() to not try freeing an error value
+      afs: Fix missing lock when replacing VL server list
+      afs: Fix afs_cell records to always have a VL server list record
+      dns_resolver: Allow used keys to be invalidated
+      Add wait_var_event_interruptible()
+      afs: Fix cell DNS lookup
+      rxrpc: Allow the kernel to mark a call as being non-interruptible
+      afs: Make some RPC operations non-interruptible
+      afs: Make dynamic root population wait uninterruptibly for proc_cells_lock
+      afs: Fix calculation of callback expiry time
+      afs: Don't invalidate callback if AFS_VNODE_DIR_VALID not set
+      afs: Fix lock-wait/callback-break double locking
+      afs: Fix double inc of vnode->cb_break
 
 
+ Documentation/networking/rxrpc.txt |   11 ++
+ fs/afs/addr_list.c                 |    2 
+ fs/afs/callback.c                  |    8 --
+ fs/afs/cell.c                      |  187 ++++++++++++++++++++++--------------
+ fs/afs/dir.c                       |   18 ++-
+ fs/afs/dir_silly.c                 |    4 -
+ fs/afs/dynroot.c                   |    5 -
+ fs/afs/file.c                      |    9 +-
+ fs/afs/flock.c                     |    9 +-
+ fs/afs/fsclient.c                  |   76 +++++++++------
+ fs/afs/inode.c                     |   12 +-
+ fs/afs/internal.h                  |   21 +++-
+ fs/afs/proc.c                      |    8 +-
+ fs/afs/rotate.c                    |   27 +++--
+ fs/afs/rxrpc.c                     |    3 -
+ fs/afs/security.c                  |    4 -
+ fs/afs/super.c                     |    2 
+ fs/afs/vl_list.c                   |   20 ++--
+ fs/afs/vl_rotate.c                 |   28 ++++-
+ fs/afs/write.c                     |    2 
+ fs/afs/xattr.c                     |  103 ++++++++++----------
+ fs/afs/yfsclient.c                 |   98 +++++++++----------
+ fs/cifs/dns_resolve.c              |    2 
+ fs/nfs/dns_resolve.c               |    2 
+ include/linux/dns_resolver.h       |    3 -
+ include/linux/wait_bit.h           |   13 +++
+ include/net/af_rxrpc.h             |    1 
+ net/ceph/messenger.c               |    2 
+ net/dns_resolver/dns_query.c       |    6 +
+ net/rxrpc/af_rxrpc.c               |    3 +
+ net/rxrpc/ar-internal.h            |    2 
+ net/rxrpc/call_object.c            |    2 
+ net/rxrpc/conn_client.c            |    8 +-
+ net/rxrpc/sendmsg.c                |    4 +
+ 34 files changed, 412 insertions(+), 293 deletions(-)
 
->> while you are there:
->>   flags |= YFS_ACL_WANT_ACL is always flags = YFS_ACL_WANT_ACL;
->> since flags is 0 at this point.
->> IMHO that sould be moved to the strcmp() section.
-> 
-> Why?  It makes the strcmp() section more complicated and means I now either
-> have to cache flags in a variable or do the allocation of yacl first.
-> 
-
-no need to cache, the idea was only to make the correlation between the name
-and flags more obvious. (no need to hurry, i just noticed it)
-
-if (strcmp(name, "acl") == 0) {
-		which = 0;
-                flags = YFS_ACL_WANT_ACL;
-	}
-else if (strcmp(name, "acl_inherited") == 0) {
-		which = 1;
-                flags = 0;
-        }
-else if (strcmp(name, "acl_num_cleaned") == 0) {
-		which = 2;
-                flags = 0;
-	}
-else if (strcmp(name, "vol_acl") == 0) {
-		which = 3;
-                flags = YFS_ACL_WANT_VOL_ACL;
-}
-....
-
-re,
- wh
-> David
-> 
 
 _______________________________________________
 linux-afs mailing list
