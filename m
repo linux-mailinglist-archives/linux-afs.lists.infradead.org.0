@@ -2,56 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B3301F888
-	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:26:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 950E61F88A
+	for <lists+linux-afs@lfdr.de>; Wed, 15 May 2019 18:26:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XAoEzwdTx353Eu0+FmJmbRVsWjgZwv4Cx3lqP2V2oH8=; b=j2Ixqju04K4xFY
-	VQWc/pQXSNVYwMNNSOUnGFgCKu+tjEANXcvmZ8PYFRT7JWaNJ4d10TavtMwEegUdGq+C+87nS4Mjz
-	ROITHFw1x8cpTTpBBkSMJMeWU6nU7slJeuKz6jPf/qfZ7DRgFBUr/mQv69PXeaTyz31yDftNjUFKG
-	qAAqSB+0qt+XStvYKrU7tHNFi92l0v0VCx9wrwBhfGv7gelnSEagsVI+n7kAqk1dS5TB37VqbmLi5
-	sSNCc6eSfd2M7DmZ4trm1V/6l7tbqXVor+6e6iXT+DWZh34P8vyEb6mR6AklJFDGZO98PUcuEPtKG
-	Q01Af2Ydm7btpar4rcKw==;
+	List-Owner; bh=1xzW63BwhH1pGsQPtOfRFOhlR3ULEfQ5MV+YO/FZQKQ=; b=B1BmYnh9PX6riq
+	8cnPPIyHSLrhKU9+DAkcGmh5bhmIBmaCmfWfKOLt07qdBYz1+aNJZ99v3oESjL41G+d0iUjsTS4J7
+	5sa/T+3pAWpqQmZT/nG9MmVY3yF+XBYJw5viX5AeIrFce6EeD2ZTlUv+3hdGNLFUsDn9j7t4KnNHG
+	fHDXO3bodLlP2Nx7SAGXN6/pECoWYgNkMnJKhCVTaWeVWW0IkVoUIBfEkSkGZhi4zbc5t7YcTRKKB
+	MobG4834FwqMqCpo5zmC1Z7xrbiG9y293kVPMVs3oUX50r7Ul+yEKI/ZTS6fjLzOS/5Na9FgMxq1K
+	9QyA09J/I0BT2XfuIKug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQwjo-0001iX-Qe; Wed, 15 May 2019 16:26:40 +0000
+	id 1hQwjw-0001kj-04; Wed, 15 May 2019 16:26:48 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQwjl-0001i8-OC
- for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:26:39 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ id 1hQwjt-0001jy-EH
+ for linux-afs@lists.infradead.org; Wed, 15 May 2019 16:26:46 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 791BCE3DF1;
- Wed, 15 May 2019 16:26:37 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 347F03082162;
+ Wed, 15 May 2019 16:26:45 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
  [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 786B05DDAF;
- Wed, 15 May 2019 16:26:35 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4C79D5D73F;
+ Wed, 15 May 2019 16:26:43 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 08/15] afs: Fix cell DNS lookup
+Subject: [PATCH 09/15] rxrpc: Allow the kernel to mark a call as being
+ non-interruptible
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Wed, 15 May 2019 17:26:35 +0100
-Message-ID: <155793759518.31671.13432703876008980378.stgit@warthog.procyon.org.uk>
+Date: Wed, 15 May 2019 17:26:42 +0100
+Message-ID: <155793760271.31671.13683321275878281873.stgit@warthog.procyon.org.uk>
 In-Reply-To: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
 References: <155793753724.31671.7034451837854752319.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Wed, 15 May 2019 16:26:37 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.47]); Wed, 15 May 2019 16:26:45 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_092637_836446_5D4B8CE0 
-X-CRM114-Status: GOOD (  26.11  )
+X-CRM114-CacheID: sfid-20190515_092645_522260_81D916D2 
+X-CRM114-Status: GOOD (  23.88  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -61,8 +62,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,408 +79,191 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Currently, once configured, AFS cells are looked up in the DNS at regular
-intervals - which is a waste of resources if those cells aren't being
-used.  It also leads to a problem where cells preloaded, but not
-configured, before the network is brought up end up effectively statically
-configured with no VL servers and are unable to get any.
+Allow kernel services using AF_RXRPC to indicate that a call should be
+non-interruptible.  This allows kafs to make things like lock-extension and
+writeback data storage calls non-interruptible.
 
-Fix this by not doing the DNS lookup until the first time a cell is
-touched.  It is waited for if we don't have any cached records yet,
-otherwise the DNS lookup to maintain the record is done in the background.
+If this is set, signals will be ignored for operations on that call where
+possible - such as waiting to get a call channel on an rxrpc connection.
 
-This has the downside that the first time you touch a cell, you now have to
-wait for the upcall to do the required DNS lookups rather than them already
-being cached.
+It doesn't prevent UDP sendmsg from being interrupted, but that will be
+handled by packet retransmission.
 
-Further, the record is not replaced if the old record has at least one
-server in it and the new record doesn't have any.
+rxrpc_kernel_recv_data() isn't affected by this since that never waits,
+preferring instead to return -EAGAIN and leave the waiting to the caller.
 
-Fixes: 0a5143f2f89c ("afs: Implement VL server rotation")
+Userspace initiated calls can't be set to be uninterruptible at this time.
+
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/afs/cell.c      |  169 ++++++++++++++++++++++++++++++++--------------------
- fs/afs/internal.h  |   10 ++-
- fs/afs/vl_rotate.c |   26 +++++++-
- 3 files changed, 130 insertions(+), 75 deletions(-)
+ Documentation/networking/rxrpc.txt |   11 ++++++++++-
+ fs/afs/rxrpc.c                     |    1 +
+ include/net/af_rxrpc.h             |    1 +
+ net/rxrpc/af_rxrpc.c               |    3 +++
+ net/rxrpc/ar-internal.h            |    2 ++
+ net/rxrpc/call_object.c            |    2 ++
+ net/rxrpc/conn_client.c            |    8 ++++++--
+ net/rxrpc/sendmsg.c                |    4 +++-
+ 8 files changed, 28 insertions(+), 4 deletions(-)
 
-diff --git a/fs/afs/cell.c b/fs/afs/cell.c
-index 47f96be05163..9c3b07ba2222 100644
---- a/fs/afs/cell.c
-+++ b/fs/afs/cell.c
-@@ -152,8 +152,6 @@ static struct afs_cell *afs_alloc_cell(struct afs_net *net,
+diff --git a/Documentation/networking/rxrpc.txt b/Documentation/networking/rxrpc.txt
+index cd7303d7fa25..2e059e832034 100644
+--- a/Documentation/networking/rxrpc.txt
++++ b/Documentation/networking/rxrpc.txt
+@@ -796,7 +796,9 @@ The kernel interface functions are as follows:
+ 				s64 tx_total_len,
+ 				gfp_t gfp,
+ 				rxrpc_notify_rx_t notify_rx,
+-				bool upgrade);
++				bool upgrade,
++				bool intr,
++				unsigned int debug_id);
  
- 	atomic_set(&cell->usage, 2);
- 	INIT_WORK(&cell->manager, afs_manage_cell);
--	cell->flags = ((1 << AFS_CELL_FL_NOT_READY) |
--		       (1 << AFS_CELL_FL_NO_LOOKUP_YET));
- 	INIT_LIST_HEAD(&cell->proc_volumes);
- 	rwlock_init(&cell->proc_lock);
- 	rwlock_init(&cell->vl_servers_lock);
-@@ -170,17 +168,25 @@ static struct afs_cell *afs_alloc_cell(struct afs_net *net,
- 			goto parse_failed;
- 		}
+      This allocates the infrastructure to make a new RxRPC call and assigns
+      call and connection numbers.  The call will be made on the UDP port that
+@@ -824,6 +826,13 @@ The kernel interface functions are as follows:
+      the server upgrade the service to a better one.  The resultant service ID
+      is returned by rxrpc_kernel_recv_data().
  
-+		vllist->source = DNS_RECORD_FROM_CONFIG;
-+		vllist->status = DNS_LOOKUP_NOT_DONE;
- 		cell->dns_expiry = TIME64_MAX;
- 	} else {
- 		ret = -ENOMEM;
- 		vllist = afs_alloc_vlserver_list(0);
- 		if (!vllist)
- 			goto error;
-+		vllist->source = DNS_RECORD_UNAVAILABLE;
-+		vllist->status = DNS_LOOKUP_NOT_DONE;
- 		cell->dns_expiry = ktime_get_real_seconds();
- 	}
- 
- 	rcu_assign_pointer(cell->vl_servers, vllist);
- 
-+	cell->dns_source = vllist->source;
-+	cell->dns_status = vllist->status;
-+	smp_store_release(&cell->dns_lookup_count, 1); /* vs source/status */
++     intr should be set to true if the call should be interruptible.  If this
++     is not set, this function may not return until a channel has been
++     allocated; if it is set, the function may return -ERESTARTSYS.
 +
- 	_leave(" = %p", cell);
- 	return cell;
- 
-@@ -212,6 +218,7 @@ struct afs_cell *afs_lookup_cell(struct afs_net *net,
++     debug_id is the call debugging ID to be used for tracing.  This can be
++     obtained by atomically incrementing rxrpc_debug_id.
++
+      If this function is successful, an opaque reference to the RxRPC call is
+      returned.  The caller now holds a reference on this and it must be
+      properly ended.
+diff --git a/fs/afs/rxrpc.c b/fs/afs/rxrpc.c
+index a34a89c75c6a..47cb5e6ef9bd 100644
+--- a/fs/afs/rxrpc.c
++++ b/fs/afs/rxrpc.c
+@@ -417,6 +417,7 @@ void afs_make_call(struct afs_addr_cursor *ac, struct afs_call *call, gfp_t gfp)
+ 					  afs_wake_up_async_call :
+ 					  afs_wake_up_call_waiter),
+ 					 call->upgrade,
++					 true,
+ 					 call->debug_id);
+ 	if (IS_ERR(rxcall)) {
+ 		ret = PTR_ERR(rxcall);
+diff --git a/include/net/af_rxrpc.h b/include/net/af_rxrpc.h
+index 78c856cba4f5..e4d322c7dee6 100644
+--- a/include/net/af_rxrpc.h
++++ b/include/net/af_rxrpc.h
+@@ -45,6 +45,7 @@ struct rxrpc_call *rxrpc_kernel_begin_call(struct socket *,
+ 					   gfp_t,
+ 					   rxrpc_notify_rx_t,
+ 					   bool,
++					   bool,
+ 					   unsigned int);
+ int rxrpc_kernel_send_data(struct socket *, struct rxrpc_call *,
+ 			   struct msghdr *, size_t,
+diff --git a/net/rxrpc/af_rxrpc.c b/net/rxrpc/af_rxrpc.c
+index ae8c5d7f3bf1..22760f4b5d17 100644
+--- a/net/rxrpc/af_rxrpc.c
++++ b/net/rxrpc/af_rxrpc.c
+@@ -270,6 +270,7 @@ static int rxrpc_listen(struct socket *sock, int backlog)
+  * @gfp: The allocation constraints
+  * @notify_rx: Where to send notifications instead of socket queue
+  * @upgrade: Request service upgrade for call
++ * @intr: The call is interruptible
+  * @debug_id: The debug ID for tracing to be assigned to the call
+  *
+  * Allow a kernel service to begin a call on the nominated socket.  This just
+@@ -287,6 +288,7 @@ struct rxrpc_call *rxrpc_kernel_begin_call(struct socket *sock,
+ 					   gfp_t gfp,
+ 					   rxrpc_notify_rx_t notify_rx,
+ 					   bool upgrade,
++					   bool intr,
+ 					   unsigned int debug_id)
  {
- 	struct afs_cell *cell, *candidate, *cursor;
- 	struct rb_node *parent, **pp;
-+	enum afs_cell_state state;
- 	int ret, n;
+ 	struct rxrpc_conn_parameters cp;
+@@ -311,6 +313,7 @@ struct rxrpc_call *rxrpc_kernel_begin_call(struct socket *sock,
+ 	memset(&p, 0, sizeof(p));
+ 	p.user_call_ID = user_call_ID;
+ 	p.tx_total_len = tx_total_len;
++	p.intr = intr;
  
- 	_enter("%s,%s", name, vllist);
-@@ -271,18 +278,16 @@ struct afs_cell *afs_lookup_cell(struct afs_net *net,
- 
- wait_for_cell:
- 	_debug("wait_for_cell");
--	ret = wait_on_bit(&cell->flags, AFS_CELL_FL_NOT_READY, TASK_INTERRUPTIBLE);
--	smp_rmb();
--
--	switch (READ_ONCE(cell->state)) {
--	case AFS_CELL_FAILED:
-+	wait_var_event(&cell->state,
-+		       ({
-+			       state = smp_load_acquire(&cell->state); /* vs error */
-+			       state == AFS_CELL_ACTIVE || state == AFS_CELL_FAILED;
-+		       }));
-+
-+	/* Check the state obtained from the wait check. */
-+	if (state == AFS_CELL_FAILED) {
- 		ret = cell->error;
- 		goto error;
--	default:
--		_debug("weird %u %d", cell->state, cell->error);
--		goto error;
--	case AFS_CELL_ACTIVE:
--		break;
- 	}
- 
- 	_leave(" = %p [cell]", cell);
-@@ -364,16 +369,46 @@ int afs_cell_init(struct afs_net *net, const char *rootcell)
- /*
-  * Update a cell's VL server address list from the DNS.
-  */
--static void afs_update_cell(struct afs_cell *cell)
-+static int afs_update_cell(struct afs_cell *cell)
- {
--	struct afs_vlserver_list *vllist, *old;
-+	struct afs_vlserver_list *vllist, *old = NULL, *p;
- 	unsigned int min_ttl = READ_ONCE(afs_cell_min_ttl);
- 	unsigned int max_ttl = READ_ONCE(afs_cell_max_ttl);
- 	time64_t now, expiry = 0;
-+	int ret = 0;
- 
- 	_enter("%s", cell->name);
- 
- 	vllist = afs_dns_query(cell, &expiry);
-+	if (IS_ERR(vllist)) {
-+		ret = PTR_ERR(vllist);
-+
-+		_debug("%s: fail %d", cell->name, ret);
-+		if (ret == -ENOMEM)
-+			goto out_wake;
-+
-+		ret = -ENOMEM;
-+		vllist = afs_alloc_vlserver_list(0);
-+		if (!vllist)
-+			goto out_wake;
-+
-+		switch (ret) {
-+		case -ENODATA:
-+		case -EDESTADDRREQ:
-+			vllist->status = DNS_LOOKUP_GOT_NOT_FOUND;
-+			break;
-+		case -EAGAIN:
-+		case -ECONNREFUSED:
-+			vllist->status = DNS_LOOKUP_GOT_TEMP_FAILURE;
-+			break;
-+		default:
-+			vllist->status = DNS_LOOKUP_GOT_LOCAL_FAILURE;
-+			break;
-+		}
-+	}
-+
-+	_debug("%s: got list %d %d", cell->name, vllist->source, vllist->status);
-+	cell->dns_status = vllist->status;
- 
- 	now = ktime_get_real_seconds();
- 	if (min_ttl > max_ttl)
-@@ -383,46 +418,47 @@ static void afs_update_cell(struct afs_cell *cell)
- 	else if (expiry > now + max_ttl)
- 		expiry = now + max_ttl;
- 
--	if (IS_ERR(vllist)) {
--		switch (PTR_ERR(vllist)) {
--		case -ENODATA:
--		case -EDESTADDRREQ:
-+	_debug("%s: status %d", cell->name, vllist->status);
-+	if (vllist->source == DNS_RECORD_UNAVAILABLE) {
-+		switch (vllist->status) {
-+		case DNS_LOOKUP_GOT_NOT_FOUND:
- 			/* The DNS said that the cell does not exist or there
- 			 * weren't any addresses to be had.
- 			 */
--			set_bit(AFS_CELL_FL_NOT_FOUND, &cell->flags);
--			clear_bit(AFS_CELL_FL_DNS_FAIL, &cell->flags);
- 			cell->dns_expiry = expiry;
- 			break;
- 
--		case -EAGAIN:
--		case -ECONNREFUSED:
-+		case DNS_LOOKUP_BAD:
-+		case DNS_LOOKUP_GOT_LOCAL_FAILURE:
-+		case DNS_LOOKUP_GOT_TEMP_FAILURE:
-+		case DNS_LOOKUP_GOT_NS_FAILURE:
- 		default:
--			set_bit(AFS_CELL_FL_DNS_FAIL, &cell->flags);
- 			cell->dns_expiry = now + 10;
- 			break;
- 		}
--
--		cell->error = -EDESTADDRREQ;
- 	} else {
--		clear_bit(AFS_CELL_FL_DNS_FAIL, &cell->flags);
--		clear_bit(AFS_CELL_FL_NOT_FOUND, &cell->flags);
--
--		write_lock(&cell->vl_servers_lock);
--		old = rcu_dereference_protected(cell->vl_servers, true);
--		rcu_assign_pointer(cell->vl_servers, vllist);
- 		cell->dns_expiry = expiry;
--		write_unlock(&cell->vl_servers_lock);
--
--		afs_put_vlserverlist(cell->net, old);
- 	}
- 
--	if (test_and_clear_bit(AFS_CELL_FL_NO_LOOKUP_YET, &cell->flags))
--		wake_up_bit(&cell->flags, AFS_CELL_FL_NO_LOOKUP_YET);
-+	/* Replace the VL server list if the new record has servers or the old
-+	 * record doesn't.
-+	 */
-+	write_lock(&cell->vl_servers_lock);
-+	p = rcu_dereference_protected(cell->vl_servers, true);
-+	if (vllist->nr_servers > 0 || p->nr_servers == 0) {
-+		rcu_assign_pointer(cell->vl_servers, vllist);
-+		cell->dns_source = vllist->source;
-+		old = p;
-+	}
-+	write_unlock(&cell->vl_servers_lock);
-+	afs_put_vlserverlist(cell->net, old);
- 
--	now = ktime_get_real_seconds();
--	afs_set_cell_timer(cell->net, cell->dns_expiry - now);
--	_leave("");
-+out_wake:
-+	smp_store_release(&cell->dns_lookup_count,
-+			  cell->dns_lookup_count + 1); /* vs source/status */
-+	wake_up_var(&cell->dns_lookup_count);
-+	_leave(" = %d", ret);
-+	return ret;
- }
+ 	memset(&cp, 0, sizeof(cp));
+ 	cp.local		= rx->local;
+diff --git a/net/rxrpc/ar-internal.h b/net/rxrpc/ar-internal.h
+index 062ca9dc29b8..07fc1dfa4878 100644
+--- a/net/rxrpc/ar-internal.h
++++ b/net/rxrpc/ar-internal.h
+@@ -482,6 +482,7 @@ enum rxrpc_call_flag {
+ 	RXRPC_CALL_BEGAN_RX_TIMER,	/* We began the expect_rx_by timer */
+ 	RXRPC_CALL_RX_HEARD,		/* The peer responded at least once to this call */
+ 	RXRPC_CALL_RX_UNDERRUN,		/* Got data underrun */
++	RXRPC_CALL_IS_INTR,		/* The call is interruptible */
+ };
  
  /*
-@@ -493,8 +529,7 @@ void afs_put_cell(struct afs_net *net, struct afs_cell *cell)
- 	now = ktime_get_real_seconds();
- 	cell->last_inactive = now;
- 	expire_delay = 0;
--	if (!test_bit(AFS_CELL_FL_DNS_FAIL, &cell->flags) &&
--	    !test_bit(AFS_CELL_FL_NOT_FOUND, &cell->flags))
-+	if (cell->vl_servers->nr_servers)
- 		expire_delay = afs_cell_gc_delay;
+@@ -711,6 +712,7 @@ struct rxrpc_call_params {
+ 		u32		normal;		/* Max time since last call packet (msec) */
+ 	} timeouts;
+ 	u8			nr_timeouts;	/* Number of timeouts specified */
++	bool			intr;		/* The call is interruptible */
+ };
  
- 	if (atomic_dec_return(&cell->usage) > 1)
-@@ -625,11 +660,13 @@ static void afs_manage_cell(struct work_struct *work)
- 			goto final_destruction;
- 		if (cell->state == AFS_CELL_FAILED)
- 			goto done;
--		cell->state = AFS_CELL_UNSET;
-+		smp_store_release(&cell->state, AFS_CELL_UNSET);
-+		wake_up_var(&cell->state);
- 		goto again;
- 
- 	case AFS_CELL_UNSET:
--		cell->state = AFS_CELL_ACTIVATING;
-+		smp_store_release(&cell->state, AFS_CELL_ACTIVATING);
-+		wake_up_var(&cell->state);
- 		goto again;
- 
- 	case AFS_CELL_ACTIVATING:
-@@ -637,28 +674,29 @@ static void afs_manage_cell(struct work_struct *work)
- 		if (ret < 0)
- 			goto activation_failed;
- 
--		cell->state = AFS_CELL_ACTIVE;
--		smp_wmb();
--		clear_bit(AFS_CELL_FL_NOT_READY, &cell->flags);
--		wake_up_bit(&cell->flags, AFS_CELL_FL_NOT_READY);
-+		smp_store_release(&cell->state, AFS_CELL_ACTIVE);
-+		wake_up_var(&cell->state);
- 		goto again;
- 
- 	case AFS_CELL_ACTIVE:
- 		if (atomic_read(&cell->usage) > 1) {
--			time64_t now = ktime_get_real_seconds();
--			if (cell->dns_expiry <= now && net->live)
--				afs_update_cell(cell);
-+			if (test_and_clear_bit(AFS_CELL_FL_DO_LOOKUP, &cell->flags)) {
-+				ret = afs_update_cell(cell);
-+				if (ret < 0)
-+					cell->error = ret;
-+			}
- 			goto done;
- 		}
--		cell->state = AFS_CELL_DEACTIVATING;
-+		smp_store_release(&cell->state, AFS_CELL_DEACTIVATING);
-+		wake_up_var(&cell->state);
- 		goto again;
- 
- 	case AFS_CELL_DEACTIVATING:
--		set_bit(AFS_CELL_FL_NOT_READY, &cell->flags);
- 		if (atomic_read(&cell->usage) > 1)
- 			goto reverse_deactivation;
- 		afs_deactivate_cell(net, cell);
--		cell->state = AFS_CELL_INACTIVE;
-+		smp_store_release(&cell->state, AFS_CELL_INACTIVE);
-+		wake_up_var(&cell->state);
- 		goto again;
- 
- 	default:
-@@ -671,17 +709,13 @@ static void afs_manage_cell(struct work_struct *work)
- 	cell->error = ret;
- 	afs_deactivate_cell(net, cell);
- 
--	cell->state = AFS_CELL_FAILED;
--	smp_wmb();
--	if (test_and_clear_bit(AFS_CELL_FL_NOT_READY, &cell->flags))
--		wake_up_bit(&cell->flags, AFS_CELL_FL_NOT_READY);
-+	smp_store_release(&cell->state, AFS_CELL_FAILED); /* vs error */
-+	wake_up_var(&cell->state);
- 	goto again;
- 
- reverse_deactivation:
--	cell->state = AFS_CELL_ACTIVE;
--	smp_wmb();
--	clear_bit(AFS_CELL_FL_NOT_READY, &cell->flags);
--	wake_up_bit(&cell->flags, AFS_CELL_FL_NOT_READY);
-+	smp_store_release(&cell->state, AFS_CELL_ACTIVE);
-+	wake_up_var(&cell->state);
- 	_leave(" [deact->act]");
- 	return;
- 
-@@ -741,11 +775,16 @@ void afs_manage_cells(struct work_struct *work)
- 		}
- 
- 		if (usage == 1) {
-+			struct afs_vlserver_list *vllist;
- 			time64_t expire_at = cell->last_inactive;
- 
--			if (!test_bit(AFS_CELL_FL_DNS_FAIL, &cell->flags) &&
--			    !test_bit(AFS_CELL_FL_NOT_FOUND, &cell->flags))
-+			read_lock(&cell->vl_servers_lock);
-+			vllist = rcu_dereference_protected(
-+				cell->vl_servers,
-+				lockdep_is_held(&cell->vl_servers_lock));
-+			if (vllist->nr_servers > 0)
- 				expire_at += afs_cell_gc_delay;
-+			read_unlock(&cell->vl_servers_lock);
- 			if (purging || expire_at <= now)
- 				sched_cell = true;
- 			else if (expire_at < next_manage)
-@@ -753,10 +792,8 @@ void afs_manage_cells(struct work_struct *work)
- 		}
- 
- 		if (!purging) {
--			if (cell->dns_expiry <= now)
-+			if (test_bit(AFS_CELL_FL_DO_LOOKUP, &cell->flags))
- 				sched_cell = true;
--			else if (cell->dns_expiry <= next_manage)
--				next_manage = cell->dns_expiry;
- 		}
- 
- 		if (sched_cell)
-diff --git a/fs/afs/internal.h b/fs/afs/internal.h
-index 74ee0f8ef8dd..50d925f0a556 100644
---- a/fs/afs/internal.h
-+++ b/fs/afs/internal.h
-@@ -367,13 +367,13 @@ struct afs_cell {
- 	time64_t		last_inactive;	/* Time of last drop of usage count */
- 	atomic_t		usage;
- 	unsigned long		flags;
--#define AFS_CELL_FL_NOT_READY	0		/* The cell record is not ready for use */
--#define AFS_CELL_FL_NO_GC	1		/* The cell was added manually, don't auto-gc */
--#define AFS_CELL_FL_NOT_FOUND	2		/* Permanent DNS error */
--#define AFS_CELL_FL_DNS_FAIL	3		/* Failed to access DNS */
--#define AFS_CELL_FL_NO_LOOKUP_YET 4		/* Not completed first DNS lookup yet */
-+#define AFS_CELL_FL_NO_GC	0		/* The cell was added manually, don't auto-gc */
-+#define AFS_CELL_FL_DO_LOOKUP	1		/* DNS lookup requested */
- 	enum afs_cell_state	state;
- 	short			error;
-+	enum dns_record_source	dns_source:8;	/* Latest source of data from lookup */
-+	enum dns_lookup_status	dns_status:8;	/* Latest status of data from lookup */
-+	unsigned int		dns_lookup_count; /* Counter of DNS lookups */
- 
- 	/* Active fileserver interaction state. */
- 	struct list_head	proc_volumes;	/* procfs volume list */
-diff --git a/fs/afs/vl_rotate.c b/fs/afs/vl_rotate.c
-index 65629d73ad9d..3f845489a9f0 100644
---- a/fs/afs/vl_rotate.c
-+++ b/fs/afs/vl_rotate.c
-@@ -43,11 +43,29 @@ bool afs_begin_vlserver_operation(struct afs_vl_cursor *vc, struct afs_cell *cel
- static bool afs_start_vl_iteration(struct afs_vl_cursor *vc)
- {
- 	struct afs_cell *cell = vc->cell;
-+	unsigned int dns_lookup_count;
-+
-+	if (cell->dns_source == DNS_RECORD_UNAVAILABLE ||
-+	    cell->dns_expiry <= ktime_get_real_seconds()) {
-+		dns_lookup_count = smp_load_acquire(&cell->dns_lookup_count);
-+		set_bit(AFS_CELL_FL_DO_LOOKUP, &cell->flags);
-+		queue_work(afs_wq, &cell->manager);
-+
-+		if (cell->dns_source == DNS_RECORD_UNAVAILABLE) {
-+			if (wait_var_event_interruptible(
-+				    &cell->dns_lookup_count,
-+				    smp_load_acquire(&cell->dns_lookup_count)
-+				    != dns_lookup_count) < 0) {
-+				vc->error = -ERESTARTSYS;
-+				return false;
-+			}
-+		}
- 
--	if (wait_on_bit(&cell->flags, AFS_CELL_FL_NO_LOOKUP_YET,
--			TASK_INTERRUPTIBLE)) {
--		vc->error = -ERESTARTSYS;
--		return false;
-+		/* Status load is ordered after lookup counter load */
-+		if (cell->dns_source == DNS_RECORD_UNAVAILABLE) {
-+			vc->error = -EDESTADDRREQ;
-+			return false;
-+		}
+ struct rxrpc_send_params {
+diff --git a/net/rxrpc/call_object.c b/net/rxrpc/call_object.c
+index fe96881a334d..d0ca98d7aef5 100644
+--- a/net/rxrpc/call_object.c
++++ b/net/rxrpc/call_object.c
+@@ -241,6 +241,8 @@ struct rxrpc_call *rxrpc_new_client_call(struct rxrpc_sock *rx,
+ 		return call;
  	}
  
- 	read_lock(&cell->vl_servers_lock);
++	if (p->intr)
++		__set_bit(RXRPC_CALL_IS_INTR, &call->flags);
+ 	call->tx_total_len = p->tx_total_len;
+ 	trace_rxrpc_call(call, rxrpc_call_new_client, atomic_read(&call->usage),
+ 			 here, (const void *)p->user_call_ID);
+diff --git a/net/rxrpc/conn_client.c b/net/rxrpc/conn_client.c
+index 83797b3949e2..5cf5595a14d8 100644
+--- a/net/rxrpc/conn_client.c
++++ b/net/rxrpc/conn_client.c
+@@ -656,10 +656,14 @@ static int rxrpc_wait_for_channel(struct rxrpc_call *call, gfp_t gfp)
+ 
+ 		add_wait_queue_exclusive(&call->waitq, &myself);
+ 		for (;;) {
+-			set_current_state(TASK_INTERRUPTIBLE);
++			if (test_bit(RXRPC_CALL_IS_INTR, &call->flags))
++				set_current_state(TASK_INTERRUPTIBLE);
++			else
++				set_current_state(TASK_UNINTERRUPTIBLE);
+ 			if (call->call_id)
+ 				break;
+-			if (signal_pending(current)) {
++			if (test_bit(RXRPC_CALL_IS_INTR, &call->flags) &&
++			    signal_pending(current)) {
+ 				ret = -ERESTARTSYS;
+ 				break;
+ 			}
+diff --git a/net/rxrpc/sendmsg.c b/net/rxrpc/sendmsg.c
+index bec64deb7b0a..45a05d9a27fa 100644
+--- a/net/rxrpc/sendmsg.c
++++ b/net/rxrpc/sendmsg.c
+@@ -80,7 +80,8 @@ static int rxrpc_wait_for_tx_window_nonintr(struct rxrpc_sock *rx,
+ 		if (call->state >= RXRPC_CALL_COMPLETE)
+ 			return call->error;
+ 
+-		if (timeout == 0 &&
++		if (test_bit(RXRPC_CALL_IS_INTR, &call->flags) &&
++		    timeout == 0 &&
+ 		    tx_win == tx_start && signal_pending(current))
+ 			return -EINTR;
+ 
+@@ -620,6 +621,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
+ 		.call.tx_total_len	= -1,
+ 		.call.user_call_ID	= 0,
+ 		.call.nr_timeouts	= 0,
++		.call.intr		= true,
+ 		.abort_code		= 0,
+ 		.command		= RXRPC_CMD_SEND_DATA,
+ 		.exclusive		= false,
 
 
 _______________________________________________
