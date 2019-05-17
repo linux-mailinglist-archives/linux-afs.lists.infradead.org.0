@@ -2,63 +2,92 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21166210E2
-	for <lists+linux-afs@lfdr.de>; Fri, 17 May 2019 01:02:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6202121128
+	for <lists+linux-afs@lfdr.de>; Fri, 17 May 2019 02:08:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OcA0YVtUMM/A8IGgA1Av8iOE46Z2yOvkmI34LDlByjM=; b=edeRBojw7AEkwV
-	1CEFGNO8qWpSK8V6S+DRLqZYt1ou6B404vIl2LHUauD4FVbAwJoOTw222+bHdx6zR4OId8mnZXNuE
-	uNlN/KH/OgJt5UsF31N+zz/kPtY1z9DCmIAYj1f3UGKNqhoghUrTlj0XKSMLOGRwSJ0rvCbz3OVu2
-	FH49Fj6o769h+stuXK+02QBtlJAD2GsiiTGYD4vBYXjxpUncEjYeM2ykNQ5LSpJJICZRPivV/uOJm
-	GVuWMXr75dRz0hfz/9iXA/kwwe2b4A1XsP/uyXzM6wzpVwgakGfsvzov58mdypwZQrE/6UuqjSSfy
-	JJVoRwRHGNjyuoSbL83w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a7qi5Q7ZirWSNrxeWcAmMWFm1rW6mU3Jmq313R6fde8=; b=dNKaK3JhX06lEx
+	gYDEgckxCdkrAJBd+u4WF9EfwYUS2E0SQCU8Rni+Z64OpK8nefdMGi4NV1GhIYlQ29NS2TlbMic5p
+	NemGDqk6HjvMp7KAiPmEVxtgR7HZx4OwWOvHPzCLxKm5Q+MLbXBXhwImrOrpoVMZMR6kyP/shBcxG
+	A/4Hi1AwwEv4yNWK/JY7Qxw79abWQO1JMWFB2Pw+A1RULrv0z5XENzNG6SoW6jZ9RJotDASJ9BpVq
+	VTvgjjtW+y15J+MlUahFJGvnma4LQKToQzbxROD7LJHi3yMaXVKFQhYqJYsaWFP3XLYCadyACGg95
+	NemT0IIRdtg6VKyNgg8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRPOB-0004Q7-US; Thu, 16 May 2019 23:02:15 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hRQQN-0000eu-33; Fri, 17 May 2019 00:08:35 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRPO8-0004Pa-H0
- for linux-afs@lists.infradead.org; Thu, 16 May 2019 23:02:14 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 45C62305B16F;
- Thu, 16 May 2019 23:02:07 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-61.rdu2.redhat.com
- [10.10.120.61])
- by smtp.corp.redhat.com (Postfix) with ESMTP id EB9C45D6A9;
- Thu, 16 May 2019 23:02:04 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] afs: Fix callback promise handling
+ id 1hRQQK-0000eE-5C
+ for linux-afs@lists.infradead.org; Fri, 17 May 2019 00:08:33 +0000
+Received: by mail-lf1-x132.google.com with SMTP id y19so3984913lfy.5
+ for <linux-afs@lists.infradead.org>; Thu, 16 May 2019 17:08:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H7aNvYWUCO6YrxXiAC0ARPuk5T1hcRQ+1DS9WOU1hfg=;
+ b=L+HJmgVBbIb6HJRTyLyYpws/txBoU0FBSG9zeyKXtuG/hUE9jdY1TeO+FiL+A1wSj3
+ vVWuQ8qozQfdl6pN0XGWMmHFff/XGAZSHYZ6wU70ceF7MJDY58xFx1Zc4rI8VblqsmuV
+ npNGzb9f2oQHMqj9dowNldBJlTpS/Ba0XyiD0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H7aNvYWUCO6YrxXiAC0ARPuk5T1hcRQ+1DS9WOU1hfg=;
+ b=Hv0MSETsWkkz7Jyr5zB9EDYR2+xHfaZzC3Of/jotmKQ8jBibDK9wh5jKzgb5Z69K06
+ qAcq7lwEqKIVgL3c3so63t2pN1p8LdRH1ueHsnfyeAWDEOYL0cLFJrzRqGwzH5BcGB0h
+ o8+oXZq1XqlP1jpNKzsPyiXHQMujlc/9aTwwqRK2CAyEbawuUoPoFwUVhT8NNIOHBaPq
+ CuXR4kIT8HjnFx1PwAEZFrGE7fS5GgDxA/YnMwBK7+F1ImCyrkSOIXmSUPchzXiO7KAQ
+ fIhh5iVltJp/aFtyjXv0wH5dLb/Wfktz2Dv9u1o8+TpkVYG3Swog2vxiwsCWuJcxendm
+ NVyg==
+X-Gm-Message-State: APjAAAUxqmqRxGv5IJfloc/iSGarhkVfaTW1I2Q5Q7AlyDWUnx0kPJ0A
+ LE1F1ogU/2FuDcH/U3F3VG+Jhjg1cNg=
+X-Google-Smtp-Source: APXvYqyW377OcHAwPVNL7+IoolAGFrZWS5oT8slYcP4ikRDTQti0CztStPLV5xapdfjkIsYlvLuHvA==
+X-Received: by 2002:ac2:5606:: with SMTP id v6mr23310011lfd.129.1558051709022; 
+ Thu, 16 May 2019 17:08:29 -0700 (PDT)
+Received: from mail-lj1-f174.google.com (mail-lj1-f174.google.com.
+ [209.85.208.174])
+ by smtp.gmail.com with ESMTPSA id h10sm1290617ljm.9.2019.05.16.17.08.27
+ for <linux-afs@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 16 May 2019 17:08:27 -0700 (PDT)
+Received: by mail-lj1-f174.google.com with SMTP id a10so4677829ljf.6
+ for <linux-afs@lists.infradead.org>; Thu, 16 May 2019 17:08:27 -0700 (PDT)
+X-Received: by 2002:a2e:9b0c:: with SMTP id u12mr3895210lji.189.1558051707294; 
+ Thu, 16 May 2019 17:08:27 -0700 (PDT)
 MIME-Version: 1.0
-Content-ID: <14597.1558047724.1@warthog.procyon.org.uk>
-Date: Fri, 17 May 2019 00:02:04 +0100
-Message-ID: <14598.1558047724@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.49]); Thu, 16 May 2019 23:02:12 +0000 (UTC)
+References: <14411.1558047621@warthog.procyon.org.uk>
+In-Reply-To: <14411.1558047621@warthog.procyon.org.uk>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 16 May 2019 17:08:11 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wgJeAYaW+CA6cC8jEyJT5Z38z1suOwib43F-vFihD8bmQ@mail.gmail.com>
+Message-ID: <CAHk-=wgJeAYaW+CA6cC8jEyJT5Z38z1suOwib43F-vFihD8bmQ@mail.gmail.com>
+Subject: Re: [GIT PULL] afs: Miscellaneous fixes
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_160212_601189_BA1C99C4 
-X-CRM114-Status: GOOD (  21.30  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190516_170832_210226_0FFC4FCD 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:132 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,163 +99,33 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dionne <marc.dionne@auristor.com>, dhowells@redhat.com,
- linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org,
- Jonathan Billings <jsbillings@jsbillings.org>
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
+ Joe Perches <joe@perches.com>, Jonathan Billings <jsbillings@jsbillings.org>,
+ Marc Dionne <marc.dionne@auristor.com>,
+ Colin Ian King <colin.king@canonical.com>, linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Thu, May 16, 2019 at 4:00 PM David Howells <dhowells@redhat.com> wrote:
+>
+> Could you pull this series please?
 
-Could you pull this series on top of the "afs: Miscellaneous fixes" series
-please?  The two are consecutive on the same branch.
+I've pulled this, but I'm seriously considering just stopping pulling
+from you entirely.
 
-This series fixes a bunch of problems in callback promise handling, where a
-callback promise indicates a promise on the part of the server to notify
-the client in the event of some sort of change to a file or volume.  In the
-event of a break, the client has to go and refetch the client status from
-the server and discard any cached permission information as the ACL might
-have changed.
+Not only is this late in the merge window, EVERY SINGLE commit I
+pulled from you is from within a day or two.
 
-The problem in the current code is that changes made by other clients
-aren't always noticed, primarily because the file status information and
-the callback information aren't updated in the same critical section, even
-if these are carried in the same reply from an RPC operation, and so the
-AFS_VNODE_CB_PROMISED flag is unreliable.
+And this is not a new thing. I literally dread stuff from you. Because
+it's happened before, and it keeps happening. Out-of-window changes to
+the keys layer etc etc.
 
-Arranging for them to be done in the same critical section during reply
-decoding is tricky because of the FS.InlineBulkStatus op - which has all
-the statuses in the reply arriving and then all the callbacks, so they have
-to be buffered.  It simplifies things a lot to move the critical section
-out of the decode phase and do it after the RPC function returns.
+Why does this keep happening?
 
-Also new inodes (either newly fetched or newly created) aren't properly
-managed against a callback break happening before we get the local inode up
-and running.
-
-Fix this by:
-
- (1) There's now a combined file status and callback record (struct
-     afs_status_cb) to carry both plus some flags.
-
- (2) Each operation wrapper function allocates sufficient afs_status_cb
-     records for all the vnodes it is interested in and passes them into
-     RPC operations to be filled in from the reply.
-
- (3) The FileStatus and CallBack record decoders no longer apply the
-     new/revised status and callback information to the inode/vnode at the
-     point of decoding and instead store the information into the record
-     from (2).
-
- (4) afs_vnode_commit_status() then revises the file status, detects
-     deletion and notes callback information inside of a single critical
-     section.  It also checks the callback break counters and cancels the
-     callback promise if they changed during the operation.
-
-     [*] Note that "callback break counters" are counters of server events
-     that cancel one or more callback promises that the client thinks it
-     has.  The client counts the events and compares the counters before
-     and after an operation to see if the callback promise it thinks it
-     just got evaporated before it got recorded under lock.
-
- (5) Volume and server callback break counters are passed into afs_iget()
-     allowing callback breaks concurrent with inode set up to be detected
-     and the callback promise thence to be cancelled.
-
- (6) AFS validation checks are now done under RCU conditions using a read
-     lock on cb_lock.  This requires vnode->cb_interest to be made RCU
-     safe.
-
- (7) If the checks in (6) fail, the callback breaker is then called under
-     write lock on the cb_lock - but only if the callback break counter
-     didn't change from the value read before the checks were made.
-
- (8) Results from FS.InlineBulkStatus that correspond to inodes we
-     currently have in memory are now used to update those inodes' status
-     and callback information rather than being discarded.  This requires
-     those inodes to be looked up before the RPC op is made and all their
-     callback break values saved.
-
-To aid in this, the following changes have also been made:
-
- (A) Don't pass the vnode into the reply delivery functions or the
-     decoders.  The vnode shouldn't be altered anywhere in those paths.
-     The only exception, for the moment, is for the call done hook for file
-     lock ops that wants access to both the vnode and the call - this can
-     be fixed at a later time.
-
- (B) Get rid of the call->reply[] void* array and replace it with named and
-     typed members.  This avoids confusion since different ops were mapping
-     different reply[] members to different things.
-
- (C) Fix an order-1 kmalloc allocation in afs_do_lookup() and replace it
-     with kvcalloc().
-
- (D) Always get the reply time.  Since callback, lock and fileserver record
-     expiry times are calculated for several RPCs, make this mandatory.
-
- (E) Call afs_pages_written_back() from the operation wrapper rather than
-     from the delivery function.
-
- (F) Don't store the version and type from a callback promise in a reply as
-     the information in them is of very limited use.
-
-Signed-off-by: David Howells <dhowells@redhat.com>
-Tested-by: Marc Dionne <marc.dionne@auristor.com>
----
-The following changes since commit fd711586bb7d63f257da5eff234e68c446ac35ea:
-
-  afs: Fix double inc of vnode->cb_break (2019-05-16 16:25:21 +0100)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-fixes-b-20190516
-
-for you to fetch changes up to 39db9815da489b47b50b8e6e4fc7566a77bd18bf:
-
-  afs: Fix application of the results of a inline bulk status fetch (2019-05-16 22:23:21 +0100)
-
-----------------------------------------------------------------
-AFS fixes
-
-----------------------------------------------------------------
-David Howells (12):
-      afs: Don't pass the vnode pointer through into the inline bulk status op
-      afs: Get rid of afs_call::reply[]
-      afs: Fix order-1 allocation in afs_do_lookup()
-      afs: Always get the reply time
-      afs: Fix application of status and callback to be under same lock
-      afs: Don't save callback version and type fields
-      afs: Split afs_validate() so first part can be used under LOOKUP_RCU
-      afs: Make vnode->cb_interest RCU safe
-      afs: Clear AFS_VNODE_CB_PROMISED if we detect callback expiry
-      afs: Fix unlink to handle YFS.RemoveFile2 better
-      afs: Pass pre-fetch server and volume break counts into afs_iget5_set()
-      afs: Fix application of the results of a inline bulk status fetch
-
- fs/afs/afs.h       |  13 +-
- fs/afs/callback.c  |  21 +-
- fs/afs/cmservice.c |  14 +-
- fs/afs/dir.c       | 357 ++++++++++++++++++----------
- fs/afs/dir_silly.c |  31 ++-
- fs/afs/file.c      |  20 +-
- fs/afs/flock.c     |  40 +++-
- fs/afs/fs_probe.c  |   4 +-
- fs/afs/fsclient.c  | 673 ++++++++++++++++++-----------------------------------
- fs/afs/inode.c     | 445 ++++++++++++++++++++++++++---------
- fs/afs/internal.h  | 179 +++++++-------
- fs/afs/rotate.c    |  18 +-
- fs/afs/rxrpc.c     |  13 +-
- fs/afs/security.c  |  15 +-
- fs/afs/super.c     |  20 +-
- fs/afs/vl_probe.c  |   4 +-
- fs/afs/vlclient.c  |  34 ++-
- fs/afs/write.c     |  98 ++++----
- fs/afs/xattr.c     | 103 +++++---
- fs/afs/yfsclient.c | 662 ++++++++++++++++------------------------------------
- 20 files changed, 1383 insertions(+), 1381 deletions(-)
+                Linus
 
 _______________________________________________
 linux-afs mailing list
