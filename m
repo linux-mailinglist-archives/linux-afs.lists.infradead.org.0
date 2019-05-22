@@ -2,72 +2,59 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5991026B11
-	for <lists+linux-afs@lfdr.de>; Wed, 22 May 2019 21:23:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9562327288
+	for <lists+linux-afs@lfdr.de>; Thu, 23 May 2019 00:46:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QK3d1Mv5baigzuI/iA4LCoq8Mbwc9MDxg22vGZ+rjgA=; b=Kt+gDLqaqjOZl7
-	jEUJPSeaEWQ/h+PpRjU/inMgm3b6T6ri1pXt7ecF5wnWN9t6QVBHyLij27FAmnn7Pq0khhP/wDnS4
-	UJgJAhrA1zqyAX1RUVZ5VlpRDBI8ciR+VftM1gtHZo2vYT/3oeotlNZh/beV3B+XtTBMuM3C14MNb
-	eFpRGGzEEwAbdyCz3QWsNSRiy0vqTSUK19rGgJHlhslw1wzRxuP/yvzgMb0FEfnTk/Rbem1J6zrKG
-	IrzQX5WOJk3MVjhPwrAmUIc08lOfc/ZE2fYmvsCuCA5MCJH5QjS22Cb9mKg194je26MqpOEdJXp5+
-	tGmpaVcb640v3GTGvWFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Xk0Od5ZqjNAEwIajsnSt/vEMWF5w3I4/PgzKo0vofao=; b=JpXCGXDDrXpd6a
+	2xuAnAybX9P/sOxl3entNoxBGDD5O94b7eWsT8WV3Oct1HLJm4J5AY6yD9/42QpNaCbPCW3EV/q+n
+	wWDAbdGf1cgV1G0ed2Y1Pu00Hc0LUMVCXcuHRPSl8M2F8M9VZdrNWyDgG1jebp0CZnpNJworKwgkM
+	R0LXEKecG0B4qIayScmdVQoFQLGMvNdD+T4g2k7K1XEpTs7lUIc0pReSEcRqkzxYv06Ce8AJZs78c
+	+YQDI0U8dW4cbyCZwHm9/80j1sY6VyeuxXB6sJAPbx0jrsB/ws6YFaImDxsXtw16NQeDHM9SSkfbg
+	D6NBrFec2HgAMloGoDKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTWq0-0001qe-Vv; Wed, 22 May 2019 19:23:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hTZzu-00028j-4Q; Wed, 22 May 2019 22:46:10 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTWpy-0001pv-Eo
- for linux-afs@lists.infradead.org; Wed, 22 May 2019 19:23:43 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1hTZzq-000283-Sz
+ for linux-afs@lists.infradead.org; Wed, 22 May 2019 22:46:08 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98F792184E;
- Wed, 22 May 2019 19:23:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558553022;
- bh=lOAMxzkToxe3qagEy8KPYQKMxFkKtyRzcd+10Z2xQgw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=b3IahR/yeCE9IL2D+0OU/CTJjEg7aLswhJvbFeRsagErzDwZ7jpcwhQwVdnvXv02b
- RtqAhTxy65j2ZRbWLVHyJlZncv3+qHOBUImlzbjKr6NCAsBvByBwr4FLKXFpFoQwsJ
- i/hJO89EUTyQ+oCOCSCDuZgZKetEx6DNthu74fyw=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.0 003/317] afs: Fix getting the afs.fid xattr
-Date: Wed, 22 May 2019 15:18:24 -0400
-Message-Id: <20190522192338.23715-3-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190522192338.23715-1-sashal@kernel.org>
-References: <20190522192338.23715-1-sashal@kernel.org>
+ by mx1.redhat.com (Postfix) with ESMTPS id 0E4E03058838;
+ Wed, 22 May 2019 22:46:05 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-121-142.rdu2.redhat.com
+ [10.10.121.142])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B8516604CD;
+ Wed, 22 May 2019 22:46:03 +0000 (UTC)
+Subject: [PATCH 0/6] keys: request_key() improvements(vspace)s
+From: David Howells <dhowells@redhat.com>
+To: keyrings@vger.kernel.org
+Date: Wed, 22 May 2019 23:46:02 +0100
+Message-ID: <155856516286.11737.11196637682919902718.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.41]); Wed, 22 May 2019 22:46:05 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_122342_513121_E346F903 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190522_154606_975370_D37FA26F 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,67 +66,82 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- linux-afs@lists.infradead.org
+Cc: dhowells@redhat.com, linux-security-module@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
 
-[ Upstream commit a2f611a3dc317d8ea1c98ad6c54b911cf7f93193 ]
+Here's a fix and some improvements for request_key() intended for the next
+merge window:
 
-The AFS3 FID is three 32-bit unsigned numbers and is represented as three
-up-to-8-hex-digit numbers separated by colons to the afs.fid xattr.
-However, with the advent of support for YFS, the FID is now a 64-bit volume
-number, a 96-bit vnode/inode number and a 32-bit uniquifier (as before).
-Whilst the sprintf in afs_xattr_get_fid() has been partially updated (it
-currently ignores the upper 32 bits of the 96-bit vnode number), the size
-of the stack-based buffer has not been increased to match, thereby allowing
-stack corruption to occur.
+ (1) Fix the lack of a Link permission check on a key found by request_key(),
+     thereby enabling request_key() to link keys that don't grant this
+     permission to the target keyring (which must still grant Write
+     permission).
 
-Fix this by increasing the buffer size appropriately and conditionally
-including the upper part of the vnode number if it is non-zero.  The latter
-requires the lower part to be zero-padded if the upper part is non-zero.
+     Note that the key must be in the caller's keyrings already to be found.
 
-Fixes: 3b6492df4153 ("afs: Increase to 64-bit volume ID and 96-bit vnode ID for YFS")
-Signed-off-by: David Howells <dhowells@redhat.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+ (2) Invalidate used request_key authentication keys rather than revoking
+     them, so that they get cleaned up immediately rather than hanging around
+     till the expiry time is passed.
+
+ (3) Move the RCU locks outwards from the keyring search functions so that a
+     request_key_rcu() can be provided.  This can be called in RCU mode, so it
+     can't sleep and can't upcall - but it can be called from LOOKUP_RCU
+     pathwalk mode.
+
+ (4) Cache the latest positive result of request_key*() temporarily in
+     task_struct so that filesystems that make a lot of request_key() calls
+     during pathwalk can take advantage of it to avoid having to redo the
+     searching.
+
+     It is assumed that the key just found is unlikely to be superseded
+     between steps in an RCU pathwalk.
+
+     Note that the cleanup of the cache is done on TIF_NOTIFY_RESUME, just
+     before userspace resumes, and on exit.
+
+I've included, for illustration, two patches to the in-kernel AFS filesystem
+to make them use this.
+
+The patches can be found on the following branch:
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/log/?h=keys-request
+
+and this depends on keys-misc.  Note that the AFS patches aren't on this branch.
+
+David
 ---
- fs/afs/xattr.c | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+David Howells (6):
+      keys: Fix request_key() lack of Link perm check on found key
+      keys: Invalidate used request_key authentication keys
+      keys: Move the RCU locks outwards from the keyring search functions
+      keys: Cache result of request_key*() temporarily in task_struct
+      afs: Provide an RCU-capable key lookup
+      afs: Support RCU pathwalk
 
-diff --git a/fs/afs/xattr.c b/fs/afs/xattr.c
-index a2cdf25573e24..706801c6c4c4c 100644
---- a/fs/afs/xattr.c
-+++ b/fs/afs/xattr.c
-@@ -69,11 +69,20 @@ static int afs_xattr_get_fid(const struct xattr_handler *handler,
- 			     void *buffer, size_t size)
- {
- 	struct afs_vnode *vnode = AFS_FS_I(inode);
--	char text[8 + 1 + 8 + 1 + 8 + 1];
-+	char text[16 + 1 + 24 + 1 + 8 + 1];
- 	size_t len;
- 
--	len = sprintf(text, "%llx:%llx:%x",
--		      vnode->fid.vid, vnode->fid.vnode, vnode->fid.unique);
-+	/* The volume ID is 64-bit, the vnode ID is 96-bit and the
-+	 * uniquifier is 32-bit.
-+	 */
-+	len = sprintf(text, "%llx:", vnode->fid.vid);
-+	if (vnode->fid.vnode_hi)
-+		len += sprintf(text + len, "%x%016llx",
-+			       vnode->fid.vnode_hi, vnode->fid.vnode);
-+	else
-+		len += sprintf(text + len, "%llx", vnode->fid.vnode);
-+	len += sprintf(text + len, ":%x", vnode->fid.unique);
-+
- 	if (size == 0)
- 		return len;
- 	if (len > size)
--- 
-2.20.1
+
+ Documentation/security/keys/core.rst        |    8 ++
+ Documentation/security/keys/request-key.rst |   11 +++
+ fs/afs/dir.c                                |   54 ++++++++++++++
+ fs/afs/internal.h                           |    1 
+ fs/afs/security.c                           |  102 +++++++++++++++++++++++----
+ include/keys/request_key_auth-type.h        |    1 
+ include/linux/key.h                         |    3 +
+ include/linux/sched.h                       |    5 +
+ include/linux/tracehook.h                   |    5 +
+ kernel/cred.c                               |    9 ++
+ security/keys/internal.h                    |    6 +-
+ security/keys/key.c                         |    4 +
+ security/keys/keyring.c                     |   16 ++--
+ security/keys/proc.c                        |    4 +
+ security/keys/process_keys.c                |   41 +++++------
+ security/keys/request_key.c                 |   97 +++++++++++++++++++++++++-
+ security/keys/request_key_auth.c            |   60 ++++++++++------
+ 17 files changed, 346 insertions(+), 81 deletions(-)
 
 
 _______________________________________________
