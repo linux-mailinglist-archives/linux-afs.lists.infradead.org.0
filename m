@@ -2,114 +2,77 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 618632CB1C
-	for <lists+linux-afs@lfdr.de>; Tue, 28 May 2019 18:08:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9C652CA81
+	for <lists+linux-afs@lfdr.de>; Tue, 28 May 2019 17:43:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yR1vrWtxTF+b6Z9mxASRtYCqjJtXH5NwY5HnUUUmbdA=; b=UEvYKeNg6YpDqI
-	a66tKNkOOnZY8W7+rUNeWDrxv8UtjkuCuBEN6Jsyg06Wow7nt6hKhRt+RfEx1hLxNHrY/yCoQQmgl
-	vc+wJVK3QVVmBB6KuuHqlY35tKF/yuLFzScxjer2HzvrlSuYUTqh2j8SSxavFrHZrGgH66E+nVRQU
-	gb4Mg0ITljZkxPzSUsdHVd35QYmsAu/h8hxXkgbRFl5vGFwKIxe297hm7hQb//9w6yQvP3HgRAWCf
-	2+ZxeR679DOOQ4Z45qVz/zguNDvaZtZ0SBgYRMiFHPksRAMBEY2A2RLexYxhjl/Pdf9bBU7sLYuzA
-	fXy8fZPeyPj1JliVeXmA==;
+	List-Owner; bh=OgW8ryKt3J4/aItA0WTw6MvRVy3duCANHR1xnRyPrxE=; b=XctNxKYdXMJ8hU
+	8t5VcEb7GEhPYox/wGs44Ht+KiGq0tARf53LWt6Bg2cRy5bgD2tT21Ui4uQMMqu2w1sZCWtNTWis7
+	JiaAXAozP2sarAzX3rA9rkST8vaC04/MOXyPosu5Uhf6xEyo50YxIMRCuxHJs82Ceh87IvGbHjCbg
+	djqi05niJtSozjJ7Kg8l4Mz3DJXttb2mS65izXJ3Qo6Mx5CBbjekWYAtKIEYBOg4oF/UR+oaVuAhU
+	WhC0+HW/22ekf/7pBwX4lAPTCsiAOlNPQoOAtT7qaJQz0xUqhanbTObSaUQqEQQw4NRqcOGCSro2U
+	djk8ytJMAqAihQ5oT3tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeeb-0002Co-QB; Tue, 28 May 2019 16:08:45 +0000
-Received: from mail-db5eur03on0624.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::624]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1hVeFW-0004Yf-6S; Tue, 28 May 2019 15:42:50 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVdGw-0001LE-2i
- for linux-afs@lists.infradead.org; Tue, 28 May 2019 14:40:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Mellanox.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qGDwWypZZ4eJ/C1s8L1Asfv3QGVTeLnW226BrN1Qhsc=;
- b=YQGVulZ5z7NJ6Y+7Ncw81kQTJTMvi/yaAkx9J6Lfh3Cln1v8qpTAA7t6WmcKRuWBsr9Xhd8Ve0zHECa6KNfSRl+nNrnKw/YH+LeyjG+lv4ts/dGuNSbQ9MYT54CdkgCWeoVne2I9il9y6KlEJcaZgUtI7sgSK8WbCPXEhY+rBEA=
-Received: from AM0PR0502MB4068.eurprd05.prod.outlook.com (52.133.38.142) by
- AM0PR0502MB3892.eurprd05.prod.outlook.com (52.133.50.151) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.16; Tue, 28 May 2019 14:40:08 +0000
-Received: from AM0PR0502MB4068.eurprd05.prod.outlook.com
- ([fe80::6073:86f:d8a5:e427]) by AM0PR0502MB4068.eurprd05.prod.outlook.com
- ([fe80::6073:86f:d8a5:e427%6]) with mapi id 15.20.1922.021; Tue, 28 May 2019
- 14:40:08 +0000
-From: Eran Ben Elisha <eranbe@mellanox.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>, Igor Konopko
- <igor.j.konopko@intel.com>, David Howells <dhowells@redhat.com>, "Mohit P .
- Tahiliani" <tahiliani@nitk.edu.in>, Takashi Sakamoto
- <o-takashi@sakamocchi.jp>, Matias Bjorling <mb@lightnvm.io>, Jiri Pirko
- <jiri@mellanox.com>, "David S . Miller" <davem@davemloft.net>, Jamal Hadi
- Salim <jhs@mojatatu.com>, Cong Wang <xiyou.wangcong@gmail.com>, Clemens
- Ladisch <clemens@ladisch.de>, Jaroslav Kysela <perex@perex.cz>, Takashi Iwai
- <tiwai@suse.com>, Joe Perches <joe@perches.com>, Arnd Bergmann
- <arnd@arndb.de>, Dan Carpenter <dan.carpenter@oracle.com>
-Subject: Re: [PATCH 5/5] [RFC] devlink: Fix uninitialized error code in
- devlink_fmsg_prepare_skb()
-Thread-Topic: [PATCH 5/5] [RFC] devlink: Fix uninitialized error code in
- devlink_fmsg_prepare_skb()
-Thread-Index: AQHVFWEYr6PWoO5LskiotnwgE/6kraaAm7cA
-Date: Tue, 28 May 2019 14:40:08 +0000
-Message-ID: <0f92eb11-20b5-c50b-1577-d3896f28c73b@mellanox.com>
-References: <20190528142424.19626-1-geert@linux-m68k.org>
- <20190528142424.19626-6-geert@linux-m68k.org>
-In-Reply-To: <20190528142424.19626-6-geert@linux-m68k.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM6P192CA0056.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:209:82::33) To AM0PR0502MB4068.eurprd05.prod.outlook.com
- (2603:10a6:208:d::14)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=eranbe@mellanox.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [193.47.165.251]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4a896751-60d3-4369-5f3e-08d6e37a616d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR0502MB3892; 
-x-ms-traffictypediagnostic: AM0PR0502MB3892:
-x-microsoft-antispam-prvs: <AM0PR0502MB38928ECA25430C114C430CC3BA1E0@AM0PR0502MB3892.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 00514A2FE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(366004)(39860400002)(346002)(376002)(189003)(199004)(305945005)(4326008)(6512007)(66946007)(66446008)(64756008)(66556008)(66476007)(7736002)(73956011)(7416002)(6436002)(6246003)(229853002)(2171002)(6486002)(25786009)(14454004)(53936002)(31686004)(316002)(54906003)(110136005)(6116002)(3846002)(6506007)(386003)(52116002)(99286004)(66066001)(2906002)(8936002)(5660300002)(8676002)(53546011)(81166006)(2616005)(81156014)(476003)(71200400001)(71190400001)(186003)(102836004)(256004)(446003)(478600001)(14444005)(68736007)(36756003)(86362001)(26005)(11346002)(486006)(76176011)(31696002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR0502MB3892;
- H:AM0PR0502MB4068.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: mellanox.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: lE27RtcEefp9ltSt6Kv+xlAnNQ3LF7Dytl0hgc7GSB/ClPcCgdkne7kqy1z3lQ59g1O0T7jLwbt47LXR0y4P2uvx7jIyFnHNXeibMbMxVtrBJ6cJus8d/fb11Po7iHU8DDSOQMTK0iWyvQcDkjvMwkrGwY1aFe+sD/K6npafjBu/fovDJVP0GroIG83LBn1tXbshl19+i69yntq9bMc6D9pWH/YRNdwVLi4bwXt1JFLvarMwqImNAQx9QyJP9/IPiAEkm7pk4kzscHEuml1xqZMKamVoUv9zE52z8ZwdBmZgf9Yc/Bar7MLYat3KUJpcMy2lEplcyBQZvPG4BkT+kz6B/JpjoD8kZMj9nTnPx/DzewsjApugXV3tjMEiyppOXeF18i4fKDjQAHjf+kvluhiZMiTTO9yjKdKjEFjg6xE=
-Content-ID: <CEDEDE15ABD92A47A1D0AAA6F6441A4F@eurprd05.prod.outlook.com>
+ id 1hVeFO-0004X7-Vw
+ for linux-afs@lists.infradead.org; Tue, 28 May 2019 15:42:48 +0000
+Received: by mail-ed1-x541.google.com with SMTP id s19so4291506edq.7
+ for <linux-afs@lists.infradead.org>; Tue, 28 May 2019 08:42:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qeekGI+uXQy3jlEv+N7GO97qVs9m18isKX3ghrVsYNg=;
+ b=BTxm2JN4TnZY5oEIAoAuBlUzwOpA0fyAfDXZy5d0jtPqAmRgGbeuWhtxJZr0h9LN1E
+ s1P2f3XKDDvGy1o+LQWaU65kn5WNVoQqA/I3y1Ca/1152RmednbWHuttXBYLUFkYByvg
+ sOFq9xhZCzsG/md6F2JpwpIi4g1panvaJ3JMNnde48voptkpmy4Z8mmwvEUEd+rkPpiH
+ 1eHhqEWZO9Ah3PY+/Nxjn1SM3XOFdvQCIXS7WZN5EVgk5rq2GKCaberchbEmQzZSDT2i
+ ixIqEDqbdeSpo+6lLo+j6SxZUCV42jjvCmzEbOAzc42x1G35yMwVPpE2b6pNAnYfg5qw
+ OL/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qeekGI+uXQy3jlEv+N7GO97qVs9m18isKX3ghrVsYNg=;
+ b=HIn54i0WohlMrIY9f3y/FHkoSFagIwhIE7hNdCGt6INfvAbtrbg18FP/rpM1PGzhor
+ hpPxoPzoAzR/KTeeLOn/6Aj1WCENv/j9x3NxGDsQ3vzYhcG4CJ/615PW/PVizbOG6dpi
+ 7ulCOLKF77lhri7k2bGZdSvGsz4vtsVOjmJJ/D7A3gB6s2xtYu6hUJIuS0ghtUD/7uhS
+ rCjSFeJJ53CnmmnM6KHIdyaEAIzCew95ZotR65azqnsV/784AmFbwryyRT56b0BqdAva
+ PzLmxOaMdKyrzsTahVmMIDmEx7M33Uvy9iDmJfYe7YrUMVwJzQb50NCvaOM3V0KyXgpr
+ SrfQ==
+X-Gm-Message-State: APjAAAUgs/1q1D2f0k+HQXZ8wKAsichfzsc3IpnjHo/cZQQFQJHN0r3U
+ 5I92eeAmtkU2XSntiY67gPTU36jY+GQqVoZQWvE=
+X-Google-Smtp-Source: APXvYqzK5ecXGBnnhHqTBpPNezM4AvVoE3btCq3oudOjiiLkpzhZIdIWfnUH5yuztayDSkpXA7Sl31CoDbjf0TWHoA4=
+X-Received: by 2002:a17:906:f48:: with SMTP id
+ h8mr58704847ejj.142.1559058153169; 
+ Tue, 28 May 2019 08:42:33 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: Mellanox.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4a896751-60d3-4369-5f3e-08d6e37a616d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 14:40:08.5523 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a652971c-7d2e-4d9b-a6a4-d149256f461b
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eranbe@mellanox.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0502MB3892
+References: <20190527165413.GA26714@embeddedor>
+In-Reply-To: <20190527165413.GA26714@embeddedor>
+From: Marc Dionne <marc.c.dionne@gmail.com>
+Date: Tue, 28 May 2019 12:42:21 -0300
+Message-ID: <CAB9dFdtT0p+Sg5=qt=Te9FEkASXcH=ZQZRHyN1UQ3nYkDLHMpQ@mail.gmail.com>
+Subject: Re: [PATCH] afs: Fix logically dead code in afs_update_cell
+To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_074014_174244_F34CA7D7 
-X-CRM114-Status: GOOD (  18.02  )
+X-CRM114-CacheID: sfid-20190528_084243_027502_C9F83556 
+X-CRM114-Status: GOOD (  17.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:624 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.c.dionne[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -118,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Mailman-Approved-At: Tue, 28 May 2019 09:08:42 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -130,41 +92,72 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-block@vger.kernel.org" <linux-block@vger.kernel.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "linux-afs@lists.infradead.org" <linux-afs@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: David Howells <dhowells@redhat.com>, linux-afs@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-DQoNCk9uIDUvMjgvMjAxOSA1OjI0IFBNLCBHZWVydCBVeXR0ZXJob2V2ZW4gd3JvdGU6DQo+IFdp
-dGggZ2NjIDQuMToNCj4gDQo+ICAgICAgbmV0L2NvcmUvZGV2bGluay5jOiBJbiBmdW5jdGlvbiDi
-gJhkZXZsaW5rX2Ztc2dfcHJlcGFyZV9za2LigJk6DQo+ICAgICAgbmV0L2NvcmUvZGV2bGluay5j
-OjQzMjU6IHdhcm5pbmc6IOKAmGVycuKAmSBtYXkgYmUgdXNlZCB1bmluaXRpYWxpemVkIGluIHRo
-aXMgZnVuY3Rpb24NCj4gDQo+IEluZGVlZCwgaWYgdGhlIGxpc3QgaGFzIGxlc3MgdGhhbiAqc3Rh
-cnQgZW50cmllcywgYW4gdW5pbml0aWFsaXplZCBlcnJvcg0KPiBjb2RlIHdpbGwgYmUgcmV0dXJu
-ZWQuDQoNClRoZSBsb2dpYyBndWFyYW50ZWVzIHRoYXQgc3RhcnQgaXMgc21hbGxlciB0aGFuIHRo
-ZSBsZW5ndGggb2YgdGhlIGxpc3QuDQpidXQgSSBndWVzcyB0aGF0IHRoZSBjb21waWxlciBjYW4n
-dCBkZXRlY3QgdGhhdC4NCg0KUmV2aWV3ZWQtYnk6IEVyYW4gQmVuIEVsaXNoYSA8ZXJhbmJlQG1l
-bGxhbm94LmNvbT4NCg0KPiANCj4gRml4IHRoaXMgYnkgcHJlaW5pdGlhbGl6aW5nIGVyciB0byB6
-ZXJvLg0KPiANCj4gRml4ZXM6IDFkYjY0ZTg3MzNmNjUzODEgKCJkZXZsaW5rOiBBZGQgZGV2bGlu
-ayBmb3JtYXR0ZWQgbWVzc2FnZSAoZm1zZykgQVBJIikNCj4gU2lnbmVkLW9mZi1ieTogR2VlcnQg
-VXl0dGVyaG9ldmVuIDxnZWVydEBsaW51eC1tNjhrLm9yZz4NCj4gLS0tDQo+IEkgZG9uJ3Qga25v
-dyBpZiB0aGlzIGNhbiByZWFsbHkgaGFwcGVuLCBhbmQgaWYgdGhpcyBpcyB0aGUgcmlnaHQgZml4
-Lg0KPiBQZXJoYXBzIGVyciBzaG91bGQgYmUgaW5pdGlhbGl6ZWQgdG8gc29tZSB2YWxpZCBlcnJv
-ciBjb2RlIGluc3RlYWQ/DQo+IC0tLQ0KPiAgIG5ldC9jb3JlL2RldmxpbmsuYyB8IDIgKy0NCj4g
-ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkNCj4gDQo+IGRp
-ZmYgLS1naXQgYS9uZXQvY29yZS9kZXZsaW5rLmMgYi9uZXQvY29yZS9kZXZsaW5rLmMNCj4gaW5k
-ZXggZDQzYmM1MmI4ODQwZDc2Yi4uOTEzNzdlNGVhZTlhNDNjMSAxMDA2NDQNCj4gLS0tIGEvbmV0
-L2NvcmUvZGV2bGluay5jDQo+ICsrKyBiL25ldC9jb3JlL2RldmxpbmsuYw0KPiBAQCAtNDMyMSw4
-ICs0MzIxLDggQEAgZGV2bGlua19mbXNnX3ByZXBhcmVfc2tiKHN0cnVjdCBkZXZsaW5rX2Ztc2cg
-KmZtc2csIHN0cnVjdCBza19idWZmICpza2IsDQo+ICAgew0KPiAgIAlzdHJ1Y3QgZGV2bGlua19m
-bXNnX2l0ZW0gKml0ZW07DQo+ICAgCXN0cnVjdCBubGF0dHIgKmZtc2dfbmxhdHRyOw0KPiArCWlu
-dCBlcnIgPSAwOw0KPiAgIAlpbnQgaSA9IDA7DQo+IC0JaW50IGVycjsNCj4gICANCj4gICAJZm1z
-Z19ubGF0dHIgPSBubGFfbmVzdF9zdGFydF9ub2ZsYWcoc2tiLCBERVZMSU5LX0FUVFJfRk1TRyk7
-DQo+ICAgCWlmICghZm1zZ19ubGF0dHIpDQo+IA0KX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYWZzIG1haWxpbmcgbGlzdApodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFmcwo=
+On Mon, May 27, 2019 at 1:54 PM Gustavo A. R. Silva
+<gustavo@embeddedor.com> wrote:
+>
+> Fix logically dead code in switch statement.
+>
+> Notice that *ret* is updated with -ENOMEM before the switch statement
+> at 395:
+>
+> 395                 switch (ret) {
+> 396                 case -ENODATA:
+> 397                 case -EDESTADDRREQ:
+> 398                         vllist->status = DNS_LOOKUP_GOT_NOT_FOUND;
+> 399                         break;
+> 400                 case -EAGAIN:
+> 401                 case -ECONNREFUSED:
+> 402                         vllist->status = DNS_LOOKUP_GOT_TEMP_FAILURE;
+> 403                         break;
+> 404                 default:
+> 405                         vllist->status = DNS_LOOKUP_GOT_LOCAL_FAILURE;
+> 406                         break;
+> 407                 }
+>
+> hence, the code in the switch (except for the default case) makes
+> no sense and is logically dead.
+>
+> Fix this by removing the *ret* assignment at 390:
+>
+> 390     ret = -ENOMEM;
+>
+> which is apparently wrong.
+>
+> Addresses-Coverity-ID: 1445439 ("Logically dead code")
+> Fixes: d5c32c89b208 ("afs: Fix cell DNS lookup")
+> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+> ---
+>  fs/afs/cell.c | 1 -
+>  1 file changed, 1 deletion(-)
+>
+> diff --git a/fs/afs/cell.c b/fs/afs/cell.c
+> index 9c3b07ba2222..980de60bf060 100644
+> --- a/fs/afs/cell.c
+> +++ b/fs/afs/cell.c
+> @@ -387,7 +387,6 @@ static int afs_update_cell(struct afs_cell *cell)
+>                 if (ret == -ENOMEM)
+>                         goto out_wake;
+>
+> -               ret = -ENOMEM;
+>                 vllist = afs_alloc_vlserver_list(0);
+>                 if (!vllist)
+>                         goto out_wake;
+
+Looks like the intention here was to return -ENOMEM when
+afs_alloc_vlserver_list fails, which would mean that the fix should
+move the assignment within if (!vllist), rather than just removing it.
+Although it might be fine to just return the error that came from
+afs_dns_query instead, as you do in this patch.
+
+Marc
+
+_______________________________________________
+linux-afs mailing list
+http://lists.infradead.org/mailman/listinfo/linux-afs
