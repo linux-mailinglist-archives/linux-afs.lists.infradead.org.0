@@ -2,56 +2,60 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 013A03125B
-	for <lists+linux-afs@lfdr.de>; Fri, 31 May 2019 18:28:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0002F34025
+	for <lists+linux-afs@lfdr.de>; Tue,  4 Jun 2019 09:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Flo32D2bGOnYSgJaipvFR4Gp698A4H2u46AUZT5+fuU=; b=GTrE7Fr58Vyry7
-	PvB1nzxpPmWs8egE64JPz8xTCsl06XxiVafg8RLVCeyWu6wleXouCzsuKF8BM+xpjIFJBhycc/TnQ
-	hx71PtXnic4tNh5SUryck8t0t74PIUq5dvYMp9fx6vJRx7R+O+i0Z3vAvYl+UO6eoFFxEWMpfqYAd
-	MBuRYgKiEgpmpqk0A0Be2b0GY9yO4Ag772NvNL1/+893v84IrcbM595pAG+wqYvHtMyURhx5+1xuc
-	g5hjDS+n5u1zxnq1w/Z//+2HNNBUwD1XZxKj6LrdXqh/0LDxeyqm2d1xMCJrJgUGj6E7v9j3H08VD
-	7+Rm4jDTervqzuOSjozA==;
+	List-Owner; bh=2jPZI/JsChjzCQvWKiatGxHbYNQyrS5fLINYB4LIG3c=; b=RHDXejJH7OeGUo
+	t5XlQ1gSvGTl9sNQpGCJzULzndFlcIh23sOz7T6CTpoNwns/Dj8d0W9gYYwD6H8KSgvXide5blqmj
+	hVH2OjozX27+kBowhP4fdm6G6cSRrh/1wDcUt7EI1703Z2NrU+1xR3EijE3ZPwaLOaMOT/F8cLhe/
+	Qa/+meGp5rdvR1lZIx+tdoJ9tm0z0DYrVRIMyHczYOXltryNJ9OP1/a2nE7cb1uWzHna8X+wfF/zl
+	O6A8fwAK0BRvf1p0asAupThUA79WE4vX0ztBuGNljbFk3gVEi/NXZzXzohK6EJhUZb5heWDOdoevR
+	r4Nc9q2MnisDW+0Wy6CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWkOG-0002CD-5y; Fri, 31 May 2019 16:28:24 +0000
-Received: from chamillionaire.breakpoint.cc ([2a01:7a0:2:106d:670::1])
+	id 1hY3uv-0002MA-CV; Tue, 04 Jun 2019 07:31:33 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWkOD-0002Bq-8P
- for linux-afs@lists.infradead.org; Fri, 31 May 2019 16:28:22 +0000
-Received: from fw by Chamillionaire.breakpoint.cc with local (Exim 4.89)
- (envelope-from <fw@strlen.de>)
- id 1hWkO8-0005hn-4N; Fri, 31 May 2019 18:28:16 +0200
-Date: Fri, 31 May 2019 18:28:16 +0200
-From: Florian Westphal <fw@strlen.de>
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH net-next v2 1/7] afs: do not send list of client addresses
-Message-ID: <20190531162816.7u7qslht5v7tkntm@breakpoint.cc>
-References: <20190531122214.18616-2-fw@strlen.de>
- <20190531122214.18616-1-fw@strlen.de>
- <10847.1559317119@warthog.procyon.org.uk>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <10847.1559317119@warthog.procyon.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1hXuXm-0000a7-Jt
+ for linux-afs@lists.infradead.org; Mon, 03 Jun 2019 21:31:03 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 5FACC14D41E0F;
+ Mon,  3 Jun 2019 14:30:57 -0700 (PDT)
+Date: Mon, 03 Jun 2019 14:30:54 -0700 (PDT)
+Message-Id: <20190603.143054.1734848612616501920.davem@davemloft.net>
+To: dhowells@redhat.com
+Subject: Re: [PATCH] rxrpc: Fix uninitialized error code in
+ rxrpc_send_data_packet()
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <15499.1559298884@warthog.procyon.org.uk>
+References: <20190528142424.19626-3-geert@linux-m68k.org>
+ <20190528142424.19626-1-geert@linux-m68k.org>
+ <15499.1559298884@warthog.procyon.org.uk>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Mon, 03 Jun 2019 14:30:58 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_092821_437282_CDA76108 
-X-CRM114-Status: UNSURE (   6.11  )
+X-CRM114-CacheID: sfid-20190603_143102_657763_6DC3FD62 
+X-CRM114-Status: UNSURE (   5.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:7a0:2:106d:670:0:0:1 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Mailman-Approved-At: Tue, 04 Jun 2019 00:31:32 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,27 +67,24 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Florian Westphal <fw@strlen.de>,
- linux-afs@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org, arnd@arndb.de, netdev@vger.kernel.org,
+ tiwai@suse.com, clemens@ladisch.de, jhs@mojatatu.com, o-takashi@sakamocchi.jp,
+ linux-block@vger.kernel.org, jiri@mellanox.com, geert@linux-m68k.org,
+ xiyou.wangcong@gmail.com, joe@perches.com, tahiliani@nitk.edu.in,
+ mb@lightnvm.io, perex@perex.cz, eranbe@mellanox.com, dan.carpenter@oracle.com,
+ igor.j.konopko@intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-David Howells <dhowells@redhat.com> wrote:
-> Florian Westphal <fw@strlen.de> wrote:
-> 
-> > David Howell says:
-> 
-> "Howells"
+From: David Howells <dhowells@redhat.com>
+Date: Fri, 31 May 2019 11:34:44 +0100
 
-My bad.
+> Here's my take on the patch.
 
-> Apart from that:
-> 
-> Tested-by: David Howells <dhowells@redhat.com>
-
-Thanks, a lot, I've re-submitted this as v3 retaining your tested-by.
+I assume I'll see a final version of this under separate cover.
 
 _______________________________________________
 linux-afs mailing list
