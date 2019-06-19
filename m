@@ -2,75 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5B9C41C18
-	for <lists+linux-afs@lfdr.de>; Wed, 12 Jun 2019 08:18:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B0E94BCF8
+	for <lists+linux-afs@lfdr.de>; Wed, 19 Jun 2019 17:36:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=POPoBbVcH4gxHdRE1Mb5zZmP3QCd7lxtMfzzDdJDEUM=; b=DCQ
-	RM1mKwu/cCyGu8I3vQ8N229O+rbbJwbwKkVgaEhH1F1cJUxFAv8coC/U+XSpPoIuswKGlTRvKx9Qg
-	EWK0DfreRQZjo6PxOSxt5C9H6niQ5gJSv3Q0zHfvybE6uFgeUpA7pPmd3ztoOghk3gg14uWJEGxbs
-	gTl+Q9rTnDibpoWCMmXB5V8UAojnGoyByegxafTBHCDYdtF0GHALHoWt/888UlSjCLD1iplG9A4IL
-	+WsWgwXh8beP2ozGys+GzRwVESuEQ8O7vFWDtj9ExMKWQgPHNRve1wPY0NfK1c/XCAun1mrNC88gt
-	Uotad+D9CoBGxkXH0D+uVrIVRYJzo3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kwvoUzWf4vYdFLzizgTuj3t73w6gPexxdJPHdO0zatE=; b=jJ3hNUlUW/hZ7x
+	ui6rA3beV+3+2LM4mfaGy9LebGtQDU3bDEEqGK0dlpFkMxXSxzQJCikjnxJcxQw/tRxM3lfdKlSei
+	D/2y/3WwFWdCTF473Tc57yewZmLWSmza3aJUegRwgmvu2bVyYwYDZbbQVgItZV+q65LND6oyH4bJo
+	flz2ATL2Bzn7zFnFA2xl5/oSsNE8zwa08OZ/yqhkJhYkDqWiHtt574KkcglurpHZ37AWNuvvsknBr
+	eFHPGb5DZe3rwED5Yh8Tnp0SP2JYPZ7XPMrc83G2i1EXGkYa1QWSBDk+08jUfN+adfLo+B90CHjyH
+	1q3B9IH4leYXrifRbq7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hawaG-0004hS-Bg; Wed, 12 Jun 2019 06:18:08 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hdcd6-0000SC-UL; Wed, 19 Jun 2019 15:36:08 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hawaE-0004hM-Sh
- for linux-afs@bombadil.infradead.org; Wed, 12 Jun 2019 06:18:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uzSW3C4nrlpVdn47FQcMuKOP27ogwmRJXeEXw0eAJDM=; b=KraNIHRSVNdbpsUhoYU3eQ6pF
- SDsgtXht4llLnYNc7xCu7Fc4yMy2s33NTLC93uqUI51AGOTA0bhQhTw+/WiwhRKtEFwW1sXK5FGDk
- mRQi/qrIx47LK4jyoM9IrbWoLl6LKPRU08uJQ+7+ZsiqMnTfGI6Kt/3kCbZdJb+ed1Sde/3z677IE
- bepbjKTsQgGHGC9Yhaq12IkZr3DDpW6hYbV0YE2YmAzXi63HJms7+o15llxWjAyaayv2joLSMuIuP
- UVu+E97CXbqlbZDb9Tv589bPBPEqTeeQtExcjv5z38TsIxZwmwp91tyaEPyJa6hSf3MkjSlvUDrmv
- B0jgx0dhg==;
-Received: from smtpbg297.qq.com ([184.105.67.100] helo=smtpproxy21.qq.com)
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hawa9-0006MM-1k
- for linux-afs@lists.infradead.org; Wed, 12 Jun 2019 06:18:04 +0000
-X-QQ-mid: bizesmtp19t1560320243t5gkepwg
-Received: from lzy-H3050.localdomain (unknown [218.76.23.26])
- by esmtp10.qq.com (ESMTP) with 
- id ; Wed, 12 Jun 2019 14:17:18 +0800 (CST)
-X-QQ-SSF: 01400000000000H0ZG31000A0000000
-X-QQ-FEAT: lm51M56XDGzBZCu1IDtEKDDpBxp6+lfqQbuv2BRQIrPth9zTcL3lpp6IY4DTY
- 0QlMNubuWVl0wBMpK5KmMndNQYw9kJussD4bLhOD9ueUC0mJfR4e2QVZaf6UgUOlPG/rF9n
- CLV2lwN35inlqGYiKmSPyiSM48ZmLPJmKjHef+l5pb1xQQuEYNjSRQa7LlocE346hn0/A8j
- Yraj5J1LrqNqdSpXQ7hGo6vmiXG6DBdFc0DV2UtUMKMlwAeI2KtaO6ztqJmxn8cS6GM1j8u
- TCs9sUtpLeK/nC0vrqgQYg13WXo1Te6N9rCGbmBIMfAWQj6wEx9uN110wFpxwydgoKhbWM3
- Dmygoqnt+HqU/Wyjww=
-X-QQ-GoodBg: 2
-From: Zhengyuan Liu <liuzhengyuan@kylinos.cn>
-To: dhowells@redhat.com
-Subject: [PATCH 1/2] fs/afs: use struct_size() in kzalloc()
-Date: Wed, 12 Jun 2019 14:17:17 +0800
-Message-Id: <1560320237-14367-1-git-send-email-liuzhengyuan@kylinos.cn>
-X-Mailer: git-send-email 2.7.4
-X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtp:kylinos.cn:qybgforeign:qybgforeign2
-X-QQ-Bgrelay: 1
+ id 1hdcd2-0000Qw-Q8
+ for linux-afs@lists.infradead.org; Wed, 19 Jun 2019 15:36:06 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 38A3A31628E3;
+ Wed, 19 Jun 2019 15:35:58 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
+ [10.10.120.57])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0C11F1001E81;
+ Wed, 19 Jun 2019 15:35:56 +0000 (UTC)
+Subject: [PATCH 0/6] keys: request_key() improvements [ver #2]
+From: David Howells <dhowells@redhat.com>
+To: keyrings@vger.kernel.org
+Date: Wed, 19 Jun 2019 16:35:56 +0100
+Message-ID: <156095855610.25264.16666970456822465537.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/unknown-version
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.41]); Wed, 19 Jun 2019 15:35:58 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_071801_370995_2697B474 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190619_083604_890356_F437EB0F 
+X-CRM114-Status: GOOD (  13.36  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [184.105.67.100 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
@@ -84,80 +66,80 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-afs@lists.infradead.org, Zhengyuan Liu <liuzhengyuan@kylinos.cn>
-MIME-Version: 1.0
+Cc: dhowells@redhat.com, linux-fsdevel@vger.kernel.org,
+ linux-security-module@vger.kernel.org, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-As Gustavo said in other patches doing the same replace, we can now
-use the new struct_size() helper to avoid leaving these open-coded and
-prone to type mistake.
 
-Signed-off-by: Zhengyuan Liu <liuzhengyuan@kylinos.cn>
+Here's a fix and some improvements for request_key() intended for the next
+merge window:
+
+ (1) Fix the lack of a Link permission check on a key found by
+     request_key(), thereby enabling request_key() to link keys that don't
+     grant this permission to the target keyring (which must still grant
+     Write permission).
+
+     Note that the key must be in the caller's keyrings already to be
+     found.
+
+ (2) Invalidate used request_key authentication keys rather than revoking
+     them, so that they get cleaned up immediately rather than hanging
+     around till the expiry time is passed.
+
+ (3) Move the RCU locks outwards from the keyring search functions so that
+     a request_key_rcu() can be provided.  This can be called in RCU mode,
+     so it can't sleep and can't upcall - but it can be called from
+     LOOKUP_RCU pathwalk mode.
+
+ (4) Cache the latest positive result of request_key*() temporarily in
+     task_struct so that filesystems that make a lot of request_key() calls
+     during pathwalk can take advantage of it to avoid having to redo the
+     searching.
+
+     It is assumed that the key just found is likely to be used multiple
+     times in each step in an RCU pathwalk, and is likely to be reused for
+     the next step too.
+
+     Note that the cleanup of the cache is done on TIF_NOTIFY_RESUME, just
+     before userspace resumes, and on exit.
+
+The patches can be found on the following branch:
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/log/?h=keys-request
+
+and this depends on keys-misc.
+
+David
 ---
- fs/afs/dir.c   | 3 +--
- fs/afs/file.c  | 6 ++----
- fs/afs/write.c | 3 +--
- 3 files changed, 4 insertions(+), 8 deletions(-)
-
-diff --git a/fs/afs/dir.c b/fs/afs/dir.c
-index da9563d..85c2420 100644
---- a/fs/afs/dir.c
-+++ b/fs/afs/dir.c
-@@ -238,8 +238,7 @@ static struct afs_read *afs_read_dir(struct afs_vnode *dvnode, struct key *key)
- 	if (nr_inline > (PAGE_SIZE - sizeof(*req)) / sizeof(struct page *))
- 		nr_inline = 0;
- 
--	req = kzalloc(sizeof(*req) + sizeof(struct page *) * nr_inline,
--		      GFP_KERNEL);
-+	req = kzalloc(struct_size(req, array, nr_inline), GFP_KERNEL);
- 	if (!req)
- 		return ERR_PTR(-ENOMEM);
- 
-diff --git a/fs/afs/file.c b/fs/afs/file.c
-index 8fd7d3b..56b6957 100644
---- a/fs/afs/file.c
-+++ b/fs/afs/file.c
-@@ -310,8 +310,7 @@ int afs_page_filler(void *data, struct page *page)
- 		/* fall through */
- 	default:
- 	go_on:
--		req = kzalloc(sizeof(struct afs_read) + sizeof(struct page *),
--			      GFP_KERNEL);
-+		req = kzalloc(struct_size(req, array, 1), GFP_KERNEL);
- 		if (!req)
- 			goto enomem;
- 
-@@ -461,8 +460,7 @@ static int afs_readpages_one(struct file *file, struct address_space *mapping,
- 		n++;
- 	}
- 
--	req = kzalloc(sizeof(struct afs_read) + sizeof(struct page *) * n,
--		      GFP_NOFS);
-+	req = kzalloc(struct_size(req, array, n), GFP_NOFS);
- 	if (!req)
- 		return -ENOMEM;
- 
-diff --git a/fs/afs/write.c b/fs/afs/write.c
-index 98eb7ad..cb76566 100644
---- a/fs/afs/write.c
-+++ b/fs/afs/write.c
-@@ -44,8 +44,7 @@ static int afs_fill_page(struct afs_vnode *vnode, struct key *key,
- 		return 0;
- 	}
- 
--	req = kzalloc(sizeof(struct afs_read) + sizeof(struct page *),
--		      GFP_KERNEL);
-+	req = kzalloc(struct_size(req, array, 1), GFP_KERNEL);
- 	if (!req)
- 		return -ENOMEM;
- 
--- 
-2.7.4
+David Howells (6):
+      keys: Fix request_key() lack of Link perm check on found key
+      keys: Invalidate used request_key authentication keys
+      keys: Move the RCU locks outwards from the keyring search functions
+      keys: Provide request_key_rcu()
+      keys: Cache result of request_key*() temporarily in task_struct
+      keys: Kill off request_key_async{,_with_auxdata}
 
 
+ Documentation/security/keys/core.rst        |   38 ++-----
+ Documentation/security/keys/request-key.rst |   33 +++----
+ include/keys/request_key_auth-type.h        |    1 
+ include/linux/key.h                         |   14 +--
+ include/linux/sched.h                       |    5 +
+ include/linux/tracehook.h                   |    7 +
+ kernel/cred.c                               |    9 ++
+ security/keys/Kconfig                       |   17 +++
+ security/keys/internal.h                    |    6 +
+ security/keys/key.c                         |    4 -
+ security/keys/keyring.c                     |   16 ++-
+ security/keys/proc.c                        |    4 +
+ security/keys/process_keys.c                |   41 ++++----
+ security/keys/request_key.c                 |  137 ++++++++++++++++++---------
+ security/keys/request_key_auth.c            |   60 +++++++-----
+ 15 files changed, 228 insertions(+), 164 deletions(-)
 
 
 _______________________________________________
