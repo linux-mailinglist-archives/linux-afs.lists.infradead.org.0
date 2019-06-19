@@ -2,50 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B0E94BCF8
+	by mail.lfdr.de (Postfix) with ESMTPS id 35B2C4BCF7
 	for <lists+linux-afs@lfdr.de>; Wed, 19 Jun 2019 17:36:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kwvoUzWf4vYdFLzizgTuj3t73w6gPexxdJPHdO0zatE=; b=jJ3hNUlUW/hZ7x
-	ui6rA3beV+3+2LM4mfaGy9LebGtQDU3bDEEqGK0dlpFkMxXSxzQJCikjnxJcxQw/tRxM3lfdKlSei
-	D/2y/3WwFWdCTF473Tc57yewZmLWSmza3aJUegRwgmvu2bVyYwYDZbbQVgItZV+q65LND6oyH4bJo
-	flz2ATL2Bzn7zFnFA2xl5/oSsNE8zwa08OZ/yqhkJhYkDqWiHtt574KkcglurpHZ37AWNuvvsknBr
-	eFHPGb5DZe3rwED5Yh8Tnp0SP2JYPZ7XPMrc83G2i1EXGkYa1QWSBDk+08jUfN+adfLo+B90CHjyH
-	1q3B9IH4leYXrifRbq7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AyOLzW4ns0LLA8qvsRrGSv5US35EvBbGYowlEt2CkeI=; b=agYKtFkk0fWtHZ
+	ThvXZxE3IlRdYj9eTJ7PREYGcwkl0iGMbAblxbkxWff5zCqxQnbNO7kkSLTuu/82/eN4b2uUV56zR
+	vumJKX6hx9k+yWIfxpvrW+KvdA/ex//fSmPPvG8ja4WS69n7LYiDWaiYYZq/mHIaUjB9FRjOO9LSb
+	aqP49qkToqWJPfriRYxY0sX+XjE7/iL0loJw+q0caaJq9FWwxTiT1KF1K9j0VUnf1bog8ugOQ7h4/
+	gvmcATXnXWs26ZQ8T3k6NYzDYx7lx9MHTKDKEUf6xSU3p1EUYRj0vhW4IsUzGu/QjeSfd56Ht6SAB
+	9A5y0h6ilsRP1/nFMDfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdcd6-0000SC-UL; Wed, 19 Jun 2019 15:36:08 +0000
+	id 1hdcd9-0000TA-4d; Wed, 19 Jun 2019 15:36:11 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdcd2-0000Qw-Q8
- for linux-afs@lists.infradead.org; Wed, 19 Jun 2019 15:36:06 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ id 1hdcd6-0000Ry-Gv
+ for linux-afs@lists.infradead.org; Wed, 19 Jun 2019 15:36:09 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 38A3A31628E3;
- Wed, 19 Jun 2019 15:35:58 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3AD2B308339E;
+ Wed, 19 Jun 2019 15:36:05 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
  [10.10.120.57])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0C11F1001E81;
- Wed, 19 Jun 2019 15:35:56 +0000 (UTC)
-Subject: [PATCH 0/6] keys: request_key() improvements [ver #2]
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 2137C19C6F;
+ Wed, 19 Jun 2019 15:36:03 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+Subject: [PATCH 1/6] keys: Fix request_key() lack of Link perm check on
+ found key [ver #2]
 From: David Howells <dhowells@redhat.com>
 To: keyrings@vger.kernel.org
-Date: Wed, 19 Jun 2019 16:35:56 +0100
-Message-ID: <156095855610.25264.16666970456822465537.stgit@warthog.procyon.org.uk>
+Date: Wed, 19 Jun 2019 16:36:03 +0100
+Message-ID: <156095856342.25264.11029423243013014147.stgit@warthog.procyon.org.uk>
+In-Reply-To: <156095855610.25264.16666970456822465537.stgit@warthog.procyon.org.uk>
+References: <156095855610.25264.16666970456822465537.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.41]); Wed, 19 Jun 2019 15:35:58 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.44]); Wed, 19 Jun 2019 15:36:05 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_083604_890356_F437EB0F 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20190619_083608_578199_02E81E79 
+X-CRM114-Status: GOOD (  15.34  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,72 +81,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
+The request_key() syscall allows a process to gain access to the 'possessor'
+permits of any key that grants it Search permission by virtue of request_key()
+not checking whether a key it finds grants Link permission to the caller.
 
-Here's a fix and some improvements for request_key() intended for the next
-merge window:
-
- (1) Fix the lack of a Link permission check on a key found by
-     request_key(), thereby enabling request_key() to link keys that don't
-     grant this permission to the target keyring (which must still grant
-     Write permission).
-
-     Note that the key must be in the caller's keyrings already to be
-     found.
-
- (2) Invalidate used request_key authentication keys rather than revoking
-     them, so that they get cleaned up immediately rather than hanging
-     around till the expiry time is passed.
-
- (3) Move the RCU locks outwards from the keyring search functions so that
-     a request_key_rcu() can be provided.  This can be called in RCU mode,
-     so it can't sleep and can't upcall - but it can be called from
-     LOOKUP_RCU pathwalk mode.
-
- (4) Cache the latest positive result of request_key*() temporarily in
-     task_struct so that filesystems that make a lot of request_key() calls
-     during pathwalk can take advantage of it to avoid having to redo the
-     searching.
-
-     It is assumed that the key just found is likely to be used multiple
-     times in each step in an RCU pathwalk, and is likely to be reused for
-     the next step too.
-
-     Note that the cleanup of the cache is done on TIF_NOTIFY_RESUME, just
-     before userspace resumes, and on exit.
-
-The patches can be found on the following branch:
-
-	https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/log/?h=keys-request
-
-and this depends on keys-misc.
-
-David
+Signed-off-by: David Howells <dhowells@redhat.com>
 ---
-David Howells (6):
-      keys: Fix request_key() lack of Link perm check on found key
-      keys: Invalidate used request_key authentication keys
-      keys: Move the RCU locks outwards from the keyring search functions
-      keys: Provide request_key_rcu()
-      keys: Cache result of request_key*() temporarily in task_struct
-      keys: Kill off request_key_async{,_with_auxdata}
 
+ Documentation/security/keys/core.rst |    4 ++++
+ security/keys/request_key.c          |   10 ++++++++++
+ 2 files changed, 14 insertions(+)
 
- Documentation/security/keys/core.rst        |   38 ++-----
- Documentation/security/keys/request-key.rst |   33 +++----
- include/keys/request_key_auth-type.h        |    1 
- include/linux/key.h                         |   14 +--
- include/linux/sched.h                       |    5 +
- include/linux/tracehook.h                   |    7 +
- kernel/cred.c                               |    9 ++
- security/keys/Kconfig                       |   17 +++
- security/keys/internal.h                    |    6 +
- security/keys/key.c                         |    4 -
- security/keys/keyring.c                     |   16 ++-
- security/keys/proc.c                        |    4 +
- security/keys/process_keys.c                |   41 ++++----
- security/keys/request_key.c                 |  137 ++++++++++++++++++---------
- security/keys/request_key_auth.c            |   60 +++++++-----
- 15 files changed, 228 insertions(+), 164 deletions(-)
+diff --git a/Documentation/security/keys/core.rst b/Documentation/security/keys/core.rst
+index 823d29bf44f7..82dd457ff78d 100644
+--- a/Documentation/security/keys/core.rst
++++ b/Documentation/security/keys/core.rst
+@@ -433,6 +433,10 @@ The main syscalls are:
+      /sbin/request-key will be invoked in an attempt to obtain a key. The
+      callout_info string will be passed as an argument to the program.
+ 
++     To link a key into the destination keyring the key must grant link
++     permission on the key to the caller and the keyring must grant write
++     permission.
++
+      See also Documentation/security/keys/request-key.rst.
+ 
+ 
+diff --git a/security/keys/request_key.c b/security/keys/request_key.c
+index 857da65e1940..a6543ed98b1f 100644
+--- a/security/keys/request_key.c
++++ b/security/keys/request_key.c
+@@ -564,6 +564,16 @@ struct key *request_key_and_link(struct key_type *type,
+ 	key_ref = search_process_keyrings(&ctx);
+ 
+ 	if (!IS_ERR(key_ref)) {
++		if (dest_keyring) {
++			ret = key_task_permission(key_ref, current_cred(),
++						  KEY_NEED_LINK);
++			if (ret < 0) {
++				key_ref_put(key_ref);
++				key = ERR_PTR(ret);
++				goto error_free;
++			}
++		}
++
+ 		key = key_ref_to_ptr(key_ref);
+ 		if (dest_keyring) {
+ 			ret = key_link(dest_keyring, key);
 
 
 _______________________________________________
