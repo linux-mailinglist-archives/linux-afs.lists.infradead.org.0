@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 436B74C25C
+	by mail.lfdr.de (Postfix) with ESMTPS id 25AA54C25A
 	for <lists+linux-afs@lfdr.de>; Wed, 19 Jun 2019 22:26:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,49 +10,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tZsj5cHBSkEmktsCLm9iGKQv/jvmY8EATeYL6J8/tu8=; b=KkNwXS8zo2bzYP
-	TLH6lbqWiXvBunKwHFjvc7A3N9ouDpG3im37JCw6+KdBFUbyLQ1ZXHabt+Ge4JOVNS0TBTqHH6KNO
-	GBfBr2Dr/meG6qDGNsJAku0LaJkIRq/jw7k5wCfFWn3g8tyafE7zx6dF+aPxOA8eyP00ocgff0tDn
-	cge+esrNM0VKwMffaULzYOVmUCLM+qqHl8ox/XHrHF4J0PhGZPIgk2ne4sdUdERxvBBDzv64zAckY
-	Smb5R9L8a4kBodHzyxKJVhhHE8buz8zXSIf/YzpKBjRN6N9/7HVHZfXegXJKRi9vtHNi8Gu1I42FE
-	FQZ3mAa5DYy2yCEdr50A==;
+	List-Owner; bh=a/985f/CEneWtdDVCacFXW8mg1614RIM6WSdorjI9dk=; b=FBuq1G5RlaFYQR
+	eeurbP/vMcUojsIdr34ALgoJ3aFu3Tp2qLzWehJenRwF507uzevALOfSe/G+KZ+sppALxMV/YFZcS
+	lWpWN43vG+pU75vgYdGQPha0Gkw2Ml8DmMiWligEU+P/CxGY/GuJJTEdcyvbhpIwy73H3puDb0bdj
+	HhsOlmhFjGKpmem1UpN7CLjYr4jFYAYiljb6Sn+xf+gz6RsAVlAGqscrK61PIxfCiXBoBtITW4SgX
+	dObpo0MrqVb/uGFl2ofBMtXUofU167XK/G3OmDQmzfnmXRpaYwe64fqv+bkzQTQKwF4aZotoC3UYB
+	YCutYsv7B/cds2Ikvxlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdh9b-0005vU-Qd; Wed, 19 Jun 2019 20:25:59 +0000
+	id 1hdh9c-0005w3-3M; Wed, 19 Jun 2019 20:26:00 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hddkQ-0006mN-W4
- for linux-afs@lists.infradead.org; Wed, 19 Jun 2019 16:47:48 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ id 1hddkZ-0006op-Eh
+ for linux-afs@lists.infradead.org; Wed, 19 Jun 2019 16:47:56 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id A2430A3B6F;
- Wed, 19 Jun 2019 16:47:46 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 1F3B43D955;
+ Wed, 19 Jun 2019 16:47:55 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
  [10.10.120.57])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 7C5795D9C6;
- Wed, 19 Jun 2019 16:47:44 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A761819C71;
+ Wed, 19 Jun 2019 16:47:52 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 7/9] keys: Garbage collect keys for which the domain has
- been removed [ver #4]
+Subject: [PATCH 8/9] keys: Network namespace domain tag [ver #4]
 From: David Howells <dhowells@redhat.com>
 To: ebiederm@xmission.com, keyrings@vger.kernel.org
-Date: Wed, 19 Jun 2019 17:47:43 +0100
-Message-ID: <156096286376.28733.13843099343286423128.stgit@warthog.procyon.org.uk>
+Date: Wed, 19 Jun 2019 17:47:51 +0100
+Message-ID: <156096287188.28733.15342608110117616221.stgit@warthog.procyon.org.uk>
 In-Reply-To: <156096279115.28733.8761881995303698232.stgit@warthog.procyon.org.uk>
 References: <156096279115.28733.8761881995303698232.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.30]); Wed, 19 Jun 2019 16:47:46 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.30]); Wed, 19 Jun 2019 16:47:55 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_094747_067008_E9034C85 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20190619_094755_529135_2F095F40 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -84,77 +83,168 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-If a key operation domain (such as a network namespace) has been removed
-then attempt to garbage collect all the keys that use it.
+Create key domain tags for network namespaces and make it possible to
+automatically tag keys that are used by networked services (e.g. AF_RXRPC,
+AFS, DNS) with the default network namespace if not set by the caller.
+
+This allows keys with the same description but in different namespaces to
+coexist within a keyring.
 
 Signed-off-by: David Howells <dhowells@redhat.com>
+cc: netdev@vger.kernel.org
+cc: linux-nfs@vger.kernel.org
+cc: linux-cifs@vger.kernel.org
+cc: linux-afs@lists.infradead.org
 ---
 
- include/linux/key.h      |    2 ++
- security/keys/internal.h |    3 ++-
- security/keys/keyring.c  |   15 +++++++++++++++
- 3 files changed, 19 insertions(+), 1 deletion(-)
+ include/linux/key-type.h    |    3 +++
+ include/net/net_namespace.h |    3 +++
+ net/core/net_namespace.c    |   19 +++++++++++++++++++
+ net/dns_resolver/dns_key.c  |    1 +
+ net/rxrpc/key.c             |    2 ++
+ security/keys/keyring.c     |    7 ++++++-
+ 6 files changed, 34 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/key.h b/include/linux/key.h
-index abc68555bac3..60c076c6e47f 100644
---- a/include/linux/key.h
-+++ b/include/linux/key.h
-@@ -278,6 +278,7 @@ extern void key_revoke(struct key *key);
- extern void key_invalidate(struct key *key);
- extern void key_put(struct key *key);
- extern bool key_put_tag(struct key_tag *tag);
-+extern void key_remove_domain(struct key_tag *domain_tag);
+diff --git a/include/linux/key-type.h b/include/linux/key-type.h
+index e49d1de0614e..2148a6bf58f1 100644
+--- a/include/linux/key-type.h
++++ b/include/linux/key-type.h
+@@ -74,6 +74,9 @@ struct key_type {
+ 	 */
+ 	size_t def_datalen;
  
- static inline struct key *__key_get(struct key *key)
- {
-@@ -446,6 +447,7 @@ extern void key_init(void);
- #define key_fsgid_changed(c)		do { } while(0)
- #define key_init()			do { } while(0)
- #define key_free_user_ns(ns)		do { } while(0)
-+#define key_remove_domain(d)		do { } while(0)
++	unsigned int flags;
++#define KEY_TYPE_NET_DOMAIN	0x00000001 /* Keys of this type have a net namespace domain */
++
+ 	/* vet a description */
+ 	int (*vet_description)(const char *description);
  
- #endif /* CONFIG_KEYS */
- #endif /* __KERNEL__ */
-diff --git a/security/keys/internal.h b/security/keys/internal.h
-index d3a9439e2386..5a561f5f199e 100644
---- a/security/keys/internal.h
-+++ b/security/keys/internal.h
-@@ -209,7 +209,8 @@ static inline bool key_is_dead(const struct key *key, time64_t limit)
- 	return
- 		key->flags & ((1 << KEY_FLAG_DEAD) |
- 			      (1 << KEY_FLAG_INVALIDATED)) ||
--		(key->expiry > 0 && key->expiry <= limit);
-+		(key->expiry > 0 && key->expiry <= limit) ||
-+		key->domain_tag->removed;
- }
+diff --git a/include/net/net_namespace.h b/include/net/net_namespace.h
+index 12689ddfc24c..a56bf7fc7c2b 100644
+--- a/include/net/net_namespace.h
++++ b/include/net/net_namespace.h
+@@ -71,6 +71,9 @@ struct net {
+ 						 */
+ 	struct llist_node	cleanup_list;	/* namespaces on death row */
  
- /*
++#ifdef CONFIG_KEYS
++	struct key_tag		*key_domain;	/* Key domain of operation tag */
++#endif
+ 	struct user_namespace   *user_ns;	/* Owning user namespace */
+ 	struct ucounts		*ucounts;
+ 	spinlock_t		nsid_lock;
+diff --git a/net/core/net_namespace.c b/net/core/net_namespace.c
+index 711b161505ac..076a75c73c9e 100644
+--- a/net/core/net_namespace.c
++++ b/net/core/net_namespace.c
+@@ -38,9 +38,16 @@ EXPORT_SYMBOL_GPL(net_namespace_list);
+ DECLARE_RWSEM(net_rwsem);
+ EXPORT_SYMBOL_GPL(net_rwsem);
+ 
++#ifdef CONFIG_KEYS
++static struct key_tag init_net_key_domain = { .usage = REFCOUNT_INIT(1) };
++#endif
++
+ struct net init_net = {
+ 	.count		= REFCOUNT_INIT(1),
+ 	.dev_base_head	= LIST_HEAD_INIT(init_net.dev_base_head),
++#ifdef CONFIG_KEYS
++	.key_domain	= &init_net_key_domain,
++#endif
+ };
+ EXPORT_SYMBOL(init_net);
+ 
+@@ -386,10 +393,21 @@ static struct net *net_alloc(void)
+ 	if (!net)
+ 		goto out_free;
+ 
++#ifdef CONFIG_KEYS
++	net->key_domain = kzalloc(sizeof(struct key_tag), GFP_KERNEL);
++	if (!net->key_domain)
++		goto out_free_2;
++	refcount_set(&net->key_domain->usage, 1);
++#endif
++
+ 	rcu_assign_pointer(net->gen, ng);
+ out:
+ 	return net;
+ 
++#ifdef CONFIG_KEYS
++out_free_2:
++	kmem_cache_free(net_cachep, net);
++#endif
+ out_free:
+ 	kfree(ng);
+ 	goto out;
+@@ -566,6 +584,7 @@ static void cleanup_net(struct work_struct *work)
+ 	list_for_each_entry_safe(net, tmp, &net_exit_list, exit_list) {
+ 		list_del_init(&net->exit_list);
+ 		dec_net_namespaces(net->ucounts);
++		key_remove_domain(net->key_domain);
+ 		put_user_ns(net->user_ns);
+ 		net_drop_ns(net);
+ 	}
+diff --git a/net/dns_resolver/dns_key.c b/net/dns_resolver/dns_key.c
+index a65d553e730d..3e1a90669006 100644
+--- a/net/dns_resolver/dns_key.c
++++ b/net/dns_resolver/dns_key.c
+@@ -314,6 +314,7 @@ static long dns_resolver_read(const struct key *key,
+ 
+ struct key_type key_type_dns_resolver = {
+ 	.name		= "dns_resolver",
++	.flags		= KEY_TYPE_NET_DOMAIN,
+ 	.preparse	= dns_resolver_preparse,
+ 	.free_preparse	= dns_resolver_free_preparse,
+ 	.instantiate	= generic_key_instantiate,
+diff --git a/net/rxrpc/key.c b/net/rxrpc/key.c
+index e7f6b8823eb6..2722189ec273 100644
+--- a/net/rxrpc/key.c
++++ b/net/rxrpc/key.c
+@@ -43,6 +43,7 @@ static long rxrpc_read(const struct key *, char __user *, size_t);
+  */
+ struct key_type key_type_rxrpc = {
+ 	.name		= "rxrpc",
++	.flags		= KEY_TYPE_NET_DOMAIN,
+ 	.preparse	= rxrpc_preparse,
+ 	.free_preparse	= rxrpc_free_preparse,
+ 	.instantiate	= generic_key_instantiate,
+@@ -58,6 +59,7 @@ EXPORT_SYMBOL(key_type_rxrpc);
+  */
+ struct key_type key_type_rxrpc_s = {
+ 	.name		= "rxrpc_s",
++	.flags		= KEY_TYPE_NET_DOMAIN,
+ 	.vet_description = rxrpc_vet_description_s,
+ 	.preparse	= rxrpc_preparse_s,
+ 	.free_preparse	= rxrpc_free_preparse_s,
 diff --git a/security/keys/keyring.c b/security/keys/keyring.c
-index 0da8fa282d56..d3c86fda1510 100644
+index d3c86fda1510..bca070f6ab46 100644
 --- a/security/keys/keyring.c
 +++ b/security/keys/keyring.c
-@@ -241,6 +241,21 @@ bool key_put_tag(struct key_tag *tag)
- 	return false;
+@@ -17,10 +17,12 @@
+ #include <linux/seq_file.h>
+ #include <linux/err.h>
+ #include <linux/user_namespace.h>
++#include <linux/nsproxy.h>
+ #include <keys/keyring-type.h>
+ #include <keys/user-type.h>
+ #include <linux/assoc_array_priv.h>
+ #include <linux/uaccess.h>
++#include <net/net_namespace.h>
+ #include "internal.h"
+ 
+ /*
+@@ -220,7 +222,10 @@ void key_set_index_key(struct keyring_index_key *index_key)
+ 
+ 	memcpy(index_key->desc, index_key->description, n);
+ 
+-	index_key->domain_tag = &default_domain_tag;
++	if (index_key->type->flags & KEY_TYPE_NET_DOMAIN)
++		index_key->domain_tag = current->nsproxy->net_ns->key_domain;
++	else
++		index_key->domain_tag = &default_domain_tag;
+ 	hash_key_type_and_desc(index_key);
  }
  
-+/**
-+ * key_remove_domain - Kill off a key domain and gc its keys
-+ * @domain_tag: The domain tag to release.
-+ *
-+ * This marks a domain tag as being dead and releases a ref on it.  If that
-+ * wasn't the last reference, the garbage collector is poked to try and delete
-+ * all keys that were in the domain.
-+ */
-+void key_remove_domain(struct key_tag *domain_tag)
-+{
-+	domain_tag->removed = true;
-+	if (!key_put_tag(domain_tag))
-+		key_schedule_gc_links();
-+}
-+
- /*
-  * Build the next index key chunk.
-  *
 
 
 _______________________________________________
