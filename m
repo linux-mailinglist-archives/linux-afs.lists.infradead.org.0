@@ -2,65 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4AC152570
-	for <lists+linux-afs@lfdr.de>; Tue, 25 Jun 2019 09:54:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AFA752700
+	for <lists+linux-afs@lfdr.de>; Tue, 25 Jun 2019 10:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c2bn+BSjPLdUKybysYWUP5WUYB9tRFGqA+EnFXvplqA=; b=k5wIH9TMWorpM8
-	aLgdzz6s6y7nDT1D3Kz0kMv8UE53wrPgluWrae6kGjmqtlabzJ3vAjpxaJWSZNp33UILdCLU+mGfm
-	CuKB2V+iYtvBhrFfac9x4MJodDpheZUShhF3lUgrC8cHoh48cbfpShecfKFrYxVx+UFaFgved4pep
-	Lt6OBnAd3cmQPhNqISJQ9uEwU36GYCvcceKoq1OxYGJ8hgJoktjN3RHd8Nf8sK1CDKlGeYOvkgca7
-	91zzmc54p1wiz9ycUGAXwKPszIUH6lq77HvXsmr+f8XPn09L65SpSxcoNjdrduYFCsXWTTlWsqSRi
-	S5bdJ8mJJCf3AgX2xRgg==;
+	List-Owner; bh=+cTRWDfVQQgupPSIwberVE+pOnBshoXmHSa2p6jG2fM=; b=Z1XmoYXRVmthkD
+	mM/bZpql1PiyrY7rM5rgJ7beVywenXdmDC9HnWiXkcQMyV3LMljIRRg71Szr4JWnLssSRBld536zi
+	ysvVbUpfEKtCyiDXAlYN9HCIHbg30rIotNItXRLcVjuIdosCoyYIFn3jh97qUygxLt359NDAdhDjy
+	MWWo7aEDX/BJEl5cM+XJQfVA8kMRwtmotBJ9aSVydqE7q0ERIsgh2dIIMQgKzkwtugdG0cYqh6S49
+	xi5DwtH2dyHnfGby1tj60muTmAXJ2TeC9L1kNPdxLfA5/s+xK9w6Gwrr4Wi8/edGLJ90S/8xBKMOr
+	Joch8bpUUFZxHWsoIRlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfgHK-0007VD-WC; Tue, 25 Jun 2019 07:54:11 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hfh6m-0005BG-Dl; Tue, 25 Jun 2019 08:47:20 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfgEs-0006Zg-9q; Tue, 25 Jun 2019 07:51:39 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id D5019307D932;
- Tue, 25 Jun 2019 07:51:26 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
- [10.10.120.57])
- by smtp.corp.redhat.com (Postfix) with ESMTP id AC7AF6085B;
- Tue, 25 Jun 2019 07:51:02 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20190624165012.GH3436@hirez.programming.kicks-ass.net>
-References: <20190624165012.GH3436@hirez.programming.kicks-ass.net>
-To: Peter Zijlstra <peterz@infradead.org>
+ id 1hfgXz-0005St-Uu; Tue, 25 Jun 2019 08:11:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=FeL4YGXndhcHsWSAlte0b7Wx3ZKgDBGUgp4zwa60pPc=; b=tuUzdHIExne/eeS1c00vc7gjS
+ AB3LJq0ZQ++Fg6J9CyRBrX4gTrDnwlDJ/Tlg4VwE9EZRX0L7mpJs2iWaNLbecP/UkjiJXVhaFuinv
+ efEBhY3azsP53SGPaXLJ7K4+xH3UrVJBVbab7TYd/NhRi4NM6b2joLRQHY3MMZZkKc+ZdLVuLI7OE
+ dre6EZ2IAwApDLiwNd+y6XYWNYjwUZwMMPYQNsdKeZs0D9c7jfiuKmdqNZ4YkOKC/SzkotBgMJg+i
+ 24yIjZQ5KzGpb++2nZrAY8EI3/jnnNxtQW1CqqPB5Krupk3Igd6R4aRfeq60YT3cfWKiHmI6GoOIp
+ WwO2NS7gw==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfgXg-0003Dx-KG; Tue, 25 Jun 2019 08:11:04 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 56053209FFF54; Tue, 25 Jun 2019 10:11:03 +0200 (CEST)
+Date: Tue, 25 Jun 2019 10:11:03 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: David Howells <dhowells@redhat.com>
 Subject: Re: [RFC][PATCH] wake_up_var() memory ordering
+Message-ID: <20190625081103.GU3436@hirez.programming.kicks-ass.net>
+References: <20190624165012.GH3436@hirez.programming.kicks-ass.net>
+ <32379.1561449061@warthog.procyon.org.uk>
 MIME-Version: 1.0
-Content-ID: <32378.1561449061.1@warthog.procyon.org.uk>
-Date: Tue, 25 Jun 2019 08:51:01 +0100
-Message-ID: <32379.1561449061@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.48]); Tue, 25 Jun 2019 07:51:37 +0000 (UTC)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_005138_469131_955D16DB 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-X-Mailman-Approved-At: Tue, 25 Jun 2019 00:53:45 -0700
+Content-Disposition: inline
+In-Reply-To: <32379.1561449061@warthog.procyon.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Mailman-Approved-At: Tue, 25 Jun 2019 01:47:18 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,13 +63,13 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Brandenburg <martin@omnibond.com>, linux-cachefs@redhat.com,
- Mike Snitzer <snitzer@redhat.com>, linux-aio@kvack.org,
- David Airlie <airlied@linux.ie>, samba-technical@lists.samba.org,
+Cc: Martin Brandenburg <martin@omnibond.com>, Mike Snitzer <snitzer@redhat.com>,
+ linux-aio@kvack.org, David Airlie <airlied@linux.ie>,
+ samba-technical@lists.samba.org,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
  Will Deacon <will.deacon@arm.com>, dri-devel@lists.freedesktop.org,
- dhowells@redhat.com, Chris Mason <clm@fb.com>, dm-devel@redhat.com,
- keyrings@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ "J. Bruce Fields" <bfields@fieldses.org>, Chris Mason <clm@fb.com>,
+ dm-devel@redhat.com, keyrings@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
  linux-afs@lists.infradead.org, Alasdair Kergon <agk@redhat.com>,
  Mike Marshall <hubcap@omnibond.com>, linux-cifs@vger.kernel.org,
  rds-devel@oss.oracle.com, Andreas Gruenbacher <agruenba@redhat.com>,
@@ -95,7 +86,7 @@ Cc: Martin Brandenburg <martin@omnibond.com>, linux-cachefs@redhat.com,
  Rodrigo Vivi <rodrigo.vivi@intel.com>, David Sterba <dsterba@suse.com>,
  MauroCarvalho Chehab <mchehab@kernel.org>,
  Trond Myklebust <trond.myklebust@hammerspace.com>,
- linux-arm-kernel@lists.infradead.org, "J. Bruce Fields" <bfields@fieldses.org>,
+ linux-arm-kernel@lists.infradead.org, linux-cachefs@redhat.com,
  linux-nfs@vger.kernel.org, netdev@vger.kernel.org,
  Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
  "David S. Miller" <davem@davemloft.net>, Steve French <sfrench@samba.org>,
@@ -108,56 +99,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Peter Zijlstra <peterz@infradead.org> wrote:
 
-> I tried using wake_up_var() today and accidentally noticed that it
-> didn't imply an smp_mb() and specifically requires it through
-> wake_up_bit() / waitqueue_active().
+(sorry for cross-posting to moderated lists btw, I've since
+ acquired a patch to get_maintainers.pl that wil exclude them
+ in the future)
 
-Thinking about it again, I'm not sure why you need to add the barrier when
-wake_up() (which this is a wrapper around) is required to impose a barrier at
-the front if there's anything to wake up (ie. the wait queue isn't empty).
+On Tue, Jun 25, 2019 at 08:51:01AM +0100, David Howells wrote:
+> Peter Zijlstra <peterz@infradead.org> wrote:
+> 
+> > I tried using wake_up_var() today and accidentally noticed that it
+> > didn't imply an smp_mb() and specifically requires it through
+> > wake_up_bit() / waitqueue_active().
+> 
+> Thinking about it again, I'm not sure why you need to add the barrier when
+> wake_up() (which this is a wrapper around) is required to impose a barrier at
+> the front if there's anything to wake up (ie. the wait queue isn't empty).
+> 
+> If this is insufficient, does it make sense just to have wake_up*() functions
+> do an unconditional release or full barrier right at the front, rather than it
+> being conditional on something being woken up?
 
-If this is insufficient, does it make sense just to have wake_up*() functions
-do an unconditional release or full barrier right at the front, rather than it
-being conditional on something being woken up?
+The curprit is __wake_up_bit()'s usage of waitqueue_active(); it is this
+latter (see its comment) that requires the smp_mb().
 
-> @@ -619,9 +614,7 @@ static int dvb_usb_fe_sleep(struct dvb_frontend *fe)
->  err:
->  	if (!adap->suspend_resume_active) {
->  		adap->active_fe = -1;
+wake_up_bit() and wake_up_var() are wrappers around __wake_up_bit().
 
-I'm wondering if there's a missing barrier here.  Should the clear_bit() on
-the next line be clear_bit_unlock() or clear_bit_release()?
+Without this barrier it is possible for the waitqueue_active() load to
+be hoisted over the cond=true store and the remote end can miss the
+store and we can miss its enqueue and we'll all miss a wakeup and get
+stuck.
 
-> -		clear_bit(ADAP_SLEEP, &adap->state_bits);
-> -		smp_mb__after_atomic();
-> -		wake_up_bit(&adap->state_bits, ADAP_SLEEP);
-> +		clear_and_wake_up_bit(ADAP_SLEEP, &adap->state_bits);
->  	}
->  
->  	dev_dbg(&d->udev->dev, "%s: ret=%d\n", __func__, ret);
-> diff --git a/fs/afs/fs_probe.c b/fs/afs/fs_probe.c
-> index cfe62b154f68..377ee07d5f76 100644
-> --- a/fs/afs/fs_probe.c
-> +++ b/fs/afs/fs_probe.c
-> @@ -18,6 +18,7 @@ static bool afs_fs_probe_done(struct afs_server *server)
->  
->  	wake_up_var(&server->probe_outstanding);
->  	clear_bit_unlock(AFS_SERVER_FL_PROBING, &server->flags);
-> +	smp_mb__after_atomic();
->  	wake_up_bit(&server->flags, AFS_SERVER_FL_PROBING);
->  	return true;
->  }
+Adding an smp_mb() (or use wq_has_sleeper()) in __wake_up_bit() would be
+nice, but I fear some people will complain about overhead, esp. since
+about half the sites don't need the barrier due to being behind
+test_and_clear_bit() and the other half using smp_mb__after_atomic()
+after some clear_bit*() variant.
 
-Looking at this and the dvb one, does it make sense to stick the release
-semantics of clear_bit_unlock() into clear_and_wake_up_bit()?
+There's a few sites that seem to open-code
+wait_var_event()/wake_up_var() and those actually need the full
+smp_mb(), but then maybe they should be converted to var instread of bit
+anyway.
 
-Also, should clear_bit_unlock() be renamed to clear_bit_release() (and
-similarly test_and_set_bit_lock() -> test_and_set_bit_acquire()) if we seem to
-be trying to standardise on that terminology.
+> > @@ -619,9 +614,7 @@ static int dvb_usb_fe_sleep(struct dvb_frontend *fe)
+> >  err:
+> >  	if (!adap->suspend_resume_active) {
+> >  		adap->active_fe = -1;
+> 
+> I'm wondering if there's a missing barrier here.  Should the clear_bit() on
+> the next line be clear_bit_unlock() or clear_bit_release()?
 
-David
+That looks reasonable, but I'd like to hear from the DVB folks on that.
+
+> > -		clear_bit(ADAP_SLEEP, &adap->state_bits);
+> > -		smp_mb__after_atomic();
+> > -		wake_up_bit(&adap->state_bits, ADAP_SLEEP);
+> > +		clear_and_wake_up_bit(ADAP_SLEEP, &adap->state_bits);
+> >  	}
+> >  
+> >  	dev_dbg(&d->udev->dev, "%s: ret=%d\n", __func__, ret);
+> > diff --git a/fs/afs/fs_probe.c b/fs/afs/fs_probe.c
+> > index cfe62b154f68..377ee07d5f76 100644
+> > --- a/fs/afs/fs_probe.c
+> > +++ b/fs/afs/fs_probe.c
+> > @@ -18,6 +18,7 @@ static bool afs_fs_probe_done(struct afs_server *server)
+> >  
+> >  	wake_up_var(&server->probe_outstanding);
+> >  	clear_bit_unlock(AFS_SERVER_FL_PROBING, &server->flags);
+> > +	smp_mb__after_atomic();
+> >  	wake_up_bit(&server->flags, AFS_SERVER_FL_PROBING);
+> >  	return true;
+> >  }
+> 
+> Looking at this and the dvb one, does it make sense to stick the release
+> semantics of clear_bit_unlock() into clear_and_wake_up_bit()?
+
+I was thinking of adding another helper, maybe unlock_and_wake_up_bit()
+that included that extra barrier, but maybe making it unconditional
+isn't the worst idea.
+
+> Also, should clear_bit_unlock() be renamed to clear_bit_release() (and
+> similarly test_and_set_bit_lock() -> test_and_set_bit_acquire()) if we seem to
+> be trying to standardise on that terminology.
+
+That definitely makes sense to me, there's only 157 clear_bit_unlock()
+and 76 test_and_set_bit_lock() users (note the asymetry of that).
+
 
 _______________________________________________
 linux-afs mailing list
