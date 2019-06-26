@@ -2,54 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76D39564E9
-	for <lists+linux-afs@lfdr.de>; Wed, 26 Jun 2019 10:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37F2856AD1
+	for <lists+linux-afs@lfdr.de>; Wed, 26 Jun 2019 15:39:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7FCA/kCETKupuAjKRfh476uGdZQmpKCJzwRy5MMDlJA=; b=ELJg3xdMPxN2UY
-	KOxxyaReu+3ZhHilVB3UzM9hKmbA2kmSg3fB+EL6aebCZpjKrn3nwj227TldjxNImwMROE9RQj+iT
-	L01Y3YYrheD1dVSTigegXytyEi2O05i7fsyKf+EyfVhJy69rx2eZm18pKrtMAjJwOOqrHqgVfQvrn
-	tYDSReerb3ISt/wN58glD7oWur1w4knz8q+vi6oK/g9Ms8tdlPCQ2Lq9uIVKIJJbXYNxGgQGMMj1X
-	u+ffD4hyWvaE3DzNZmZdobAkG/MK37s7VAtimY1BUki9+o+Lk6LF8BmOj+FJqfn2EGfI12g/+lb3q
-	2fzV+Wq61U3F1nKUfoDg==;
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+E7LKp+9g+8NPODMnhDsLPW1bE4Qyc/uGb32V+LjLKI=; b=Jvo+Zn+gdOuKKB
+	KPULUtxJqbXVIxL6UBG7zHiI5GJB/YjLc+V+uYuRcZIdt0cP8yPTh34aygvbPbIKRfCHNgiBMvKqx
+	GVomq51UltqDmqg0hB0JoEJCJcD1afDCqvzsIqcHZxnjKBiEJqC59vQeJLuA+mlO9NJFF4xma4HiA
+	WSmxrL+uS+q4TF8l25L0vMe/LrUOsbUADD1/Mfwo9Vj8SAL0yNR4noRogRFN8fGnoc4vo48bgjGcD
+	dB5E/rQ1hXLa0NWOHYHio/3eAsQmawhNYDk79BVrR6LqjN2LnWtr69xwxjRLHgE6LrGFBNEwl+lhO
+	Bsu0prsT/nR/f90Ke+rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg3dJ-00058a-9S; Wed, 26 Jun 2019 08:50:25 +0000
+	id 1hg88T-000675-Um; Wed, 26 Jun 2019 13:38:53 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg3dF-00057l-Rq
- for linux-afs@lists.infradead.org; Wed, 26 Jun 2019 08:50:23 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ id 1hg88Q-00066P-IK
+ for linux-afs@lists.infradead.org; Wed, 26 Jun 2019 13:38:51 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 90A2D30BB54B;
- Wed, 26 Jun 2019 08:50:11 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id D4E6C3084039;
+ Wed, 26 Jun 2019 13:38:44 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
  [10.10.120.57])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 5BF6B1001B10;
- Wed, 26 Jun 2019 08:50:08 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 987795C1A1;
+ Wed, 26 Jun 2019 13:38:43 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
 From: David Howells <dhowells@redhat.com>
+In-Reply-To: <835.1561539007@warthog.procyon.org.uk>
+References: <835.1561539007@warthog.procyon.org.uk>
 To: torvalds@linux-foundation.org
-Subject: [GIT PULL] AFS fixes
+Subject: Re: [GIT PULL] AFS fixes
 MIME-Version: 1.0
-Content-ID: <834.1561539007.1@warthog.procyon.org.uk>
-Date: Wed, 26 Jun 2019 09:50:07 +0100
-Message-ID: <835.1561539007@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+Content-ID: <11509.1561556322.1@warthog.procyon.org.uk>
+Date: Wed, 26 Jun 2019 14:38:42 +0100
+Message-ID: <11510.1561556322@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.49]); Wed, 26 Jun 2019 08:50:11 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.40]); Wed, 26 Jun 2019 13:38:44 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_015021_920648_21D5B998 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20190626_063850_631409_2E175517 
+X-CRM114-Status: UNSURE (   7.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -78,54 +81,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Oops... I forgot to include the pull request bit.  Will resend.
 
-Could you pull this please?
-
-There are four patches:
-
- (1) Fix the printing of the "vnode modified" warning to exclude checks on
-     files for which we don't have a callback promise from the server (and
-     so don't expect the server to tell us when it changes).
-
-     Without this, for every file or directory for which we still have an
-     in-core inode that gets changed on the server, we may get a message
-     logged when we next look at it.  This can happen in bulk if, for
-     instance, someone does "vos release" to update a R/O volume from a R/W
-     volume and a whole set of files are all changed together.
-
-     We only really want to log a message if the file changed and the
-     server didn't tell us about it or we failed to track the state
-     internally.
-
- (2) Fix accidental corruption of either afs_vlserver struct objects or the
-     the following memory locations (which could hold anything).  The issue
-     is caused by a union that points to two different structs in struct
-     afs_call (to save space in the struct).  The call cleanup code assumes
-     that it can simply call the cleanup for one of those structs if not
-     NULL - when it might be actually pointing to the other struct.
-
-     This means that every Volume Location RPC op is going to corrupt
-     something.
-
- (3) Fix an uninitialised spinlock.  This isn't too bad, it just causes a
-     one-off warning if lockdep is enabled when "vos release" is called,
-     but the spinlock still behaves correctly.
-
- (4) Fix the setting of i_block in the inode.  This causes du, for example,
-     to produce incorrect results, but otherwise should not be dangerous to
-     the kernel.
-
-The in-kernel AFS client has been undergoing testing on opendev.org on one
-of their mirror machines.  They are using AFS to hold data that is then
-served via apache, and Ian Wienand had reported seeing oopses, spontaneous
-machine reboots and updates to volumes going missing.  This patch series
-appears to have fixed the problem, very probably due to patch (2), but it's
-not 100% certain.
-
-Reviewed-by: Jeffrey Altman <jaltman@auristor.com>
-Tested-by: Marc Dionne <marc.dionne@auristor.com>
-Tested-by: Ian Wienand <iwienand@redhat.com>
+David
 
 _______________________________________________
 linux-afs mailing list
