@@ -2,43 +2,63 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A582355173
-	for <lists+linux-afs@lfdr.de>; Tue, 25 Jun 2019 16:20:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76D39564E9
+	for <lists+linux-afs@lfdr.de>; Wed, 26 Jun 2019 10:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fpHVlwWUQS05/jcA9tbgDH5Qx8FoqJgqCpSnU8j1nHo=; b=oiqI0mKib486cS
-	0a5+6ig0L1IOTmFMheXfYnXZCYGgHgCnExeZXl1+XzIlexKbUAo+dYFlUHY4BkoqnhzssYXyzlZEz
-	FjPB68DlCD5bewq4zlvf1QUKiPr+CTnkWFhwG+N9Gf1sbsY9UVtxqpDA3rKfZjyoD5imwoyCHlfHi
-	RRSZz9Dsxp4Is8isDZLmZS4GiB79kMtMWLdOSCuTpI8B7imdqTLZacoPxLExM5dso+EHZO0Pieqos
-	85Vl8XPOiB/uzpLWQ9M4aIUYiMd2fmZY/Elopc3fdo5VQlV/NHyTc1M38EsBLy/uMyk/fuKLaYFjh
-	fPVV8Rewv1VCLsrN3YRw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7FCA/kCETKupuAjKRfh476uGdZQmpKCJzwRy5MMDlJA=; b=ELJg3xdMPxN2UY
+	KOxxyaReu+3ZhHilVB3UzM9hKmbA2kmSg3fB+EL6aebCZpjKrn3nwj227TldjxNImwMROE9RQj+iT
+	L01Y3YYrheD1dVSTigegXytyEi2O05i7fsyKf+EyfVhJy69rx2eZm18pKrtMAjJwOOqrHqgVfQvrn
+	tYDSReerb3ISt/wN58glD7oWur1w4knz8q+vi6oK/g9Ms8tdlPCQ2Lq9uIVKIJJbXYNxGgQGMMj1X
+	u+ffD4hyWvaE3DzNZmZdobAkG/MK37s7VAtimY1BUki9+o+Lk6LF8BmOj+FJqfn2EGfI12g/+lb3q
+	2fzV+Wq61U3F1nKUfoDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfmJW-0008Ji-SR; Tue, 25 Jun 2019 14:20:50 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hflU2-0000AO-GD; Tue, 25 Jun 2019 13:27:38 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id ED4AC209FCA10; Tue, 25 Jun 2019 15:27:36 +0200 (CEST)
-Date: Tue, 25 Jun 2019 15:27:36 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Andreas Gruenbacher <agruenba@redhat.com>
-Subject: Re: [RFC][PATCH] wake_up_var() memory ordering
-Message-ID: <20190625132736.GZ3419@hirez.programming.kicks-ass.net>
-References: <20190624165012.GH3436@hirez.programming.kicks-ass.net>
- <CAHc6FU7j5iW7WQoxN_OSfvK4zxv_MxTWJpiNsqFW8TEDMX1rjw@mail.gmail.com>
- <20190625103430.GW3402@hirez.programming.kicks-ass.net>
- <CAHc6FU6zUCdQZ1AfN2KYcPYVKc5bwvc0bD7=-KZpFXws+F9QZQ@mail.gmail.com>
+	id 1hg3dJ-00058a-9S; Wed, 26 Jun 2019 08:50:25 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hg3dF-00057l-Rq
+ for linux-afs@lists.infradead.org; Wed, 26 Jun 2019 08:50:23 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 90A2D30BB54B;
+ Wed, 26 Jun 2019 08:50:11 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-120-57.rdu2.redhat.com
+ [10.10.120.57])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 5BF6B1001B10;
+ Wed, 26 Jun 2019 08:50:08 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] AFS fixes
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHc6FU6zUCdQZ1AfN2KYcPYVKc5bwvc0bD7=-KZpFXws+F9QZQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Mailman-Approved-At: Tue, 25 Jun 2019 07:20:46 -0700
+Content-ID: <834.1561539007.1@warthog.procyon.org.uk>
+Date: Wed, 26 Jun 2019 09:50:07 +0100
+Message-ID: <835.1561539007@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.49]); Wed, 26 Jun 2019 08:50:11 +0000 (UTC)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190626_015021_920648_21D5B998 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -50,63 +70,62 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Brandenburg <martin@omnibond.com>, linux-cachefs@redhat.com,
- Mike Snitzer <snitzer@redhat.com>, linux-aio@kvack.org,
- David Airlie <airlied@linux.ie>,
- samba-technical <samba-technical@lists.samba.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Will Deacon <will.deacon@arm.com>, dri-devel@lists.freedesktop.org,
- David Howells <dhowells@redhat.com>, Chris Mason <clm@fb.com>,
- dm-devel@redhat.com, keyrings@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- linux-afs@lists.infradead.org, Alasdair Kergon <agk@redhat.com>,
- Mike Marshall <hubcap@omnibond.com>, linux-cifs@vger.kernel.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org,
- James Morris <jmorris@namei.org>, cluster-devel <cluster-devel@redhat.com>,
- Antti Palosaari <crope@iki.fi>, Matthias Brugger <matthias.bgg@gmail.com>,
- Paul McKenney <paulmck@linux.vnet.ibm.com>, intel-gfx@lists.freedesktop.org,
- devel@lists.orangefs.org, "Serge E. Hallyn" <serge@hallyn.com>,
- Santosh Shilimkar <santosh.shilimkar@oracle.com>,
- Johan Hedberg <johan.hedberg@gmail.com>, Marcel Holtmann <marcel@holtmann.org>,
- Sean Wang <sean.wang@mediatek.com>, Josef Bacik <josef@toxicpanda.com>,
- Jani Nikula <jani.nikula@linux.intel.com>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, David Sterba <dsterba@suse.com>,
- MauroCarvalho Chehab <mchehab@kernel.org>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- linux-arm-kernel@lists.infradead.org, "J. Bruce Fields" <bfields@fieldses.org>,
- Linux NFS Mailing List <linux-nfs@vger.kernel.org>, netdev@vger.kernel.org,
- Jeff Layton <jlayton@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, Steve French <sfrench@samba.org>,
- linux-bluetooth@vger.kernel.org, LSM <linux-security-module@vger.kernel.org>,
- Benjamin LaHaise <bcrl@kvack.org>, Daniel Vetter <daniel@ffwll.ch>,
- Bob Peterson <rpeterso@redhat.com>, linux-media@vger.kernel.org,
- Anna Schumaker <anna.schumaker@netapp.com>, linux-btrfs@vger.kernel.org
+Cc: dhowells@redhat.com, linux-fsdevel@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org,
+ iwienand@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 02:12:22PM +0200, Andreas Gruenbacher wrote:
+Hi Linus,
 
-> > Only if we do as David suggested and make clean_and_wake_up_bit()
-> > provide the RELEASE barrier.
-> 
-> (It's clear_and_wake_up_bit, not clean_and_wake_up_bit.)
+Could you pull this please?
 
-Yes, typing hard.
+There are four patches:
 
-> > That is, currently clear_and_wake_up_bit() is
-> >
-> >         clear_bit()
-> >         smp_mb__after_atomic();
-> >         wake_up_bit();
-> >
+ (1) Fix the printing of the "vnode modified" warning to exclude checks on
+     files for which we don't have a callback promise from the server (and
+     so don't expect the server to tell us when it changes).
 
-> Now I'm confused because clear_and_wake_up_bit() in mainline does use
-> clear_bit_unlock(), so it's the exact opposite of what you just said.
+     Without this, for every file or directory for which we still have an
+     in-core inode that gets changed on the server, we may get a message
+     logged when we next look at it.  This can happen in bulk if, for
+     instance, someone does "vos release" to update a R/O volume from a R/W
+     volume and a whole set of files are all changed together.
 
-Argh; clearly I couldn't read. And then yes, you're right.
+     We only really want to log a message if the file changed and the
+     server didn't tell us about it or we failed to track the state
+     internally.
+
+ (2) Fix accidental corruption of either afs_vlserver struct objects or the
+     the following memory locations (which could hold anything).  The issue
+     is caused by a union that points to two different structs in struct
+     afs_call (to save space in the struct).  The call cleanup code assumes
+     that it can simply call the cleanup for one of those structs if not
+     NULL - when it might be actually pointing to the other struct.
+
+     This means that every Volume Location RPC op is going to corrupt
+     something.
+
+ (3) Fix an uninitialised spinlock.  This isn't too bad, it just causes a
+     one-off warning if lockdep is enabled when "vos release" is called,
+     but the spinlock still behaves correctly.
+
+ (4) Fix the setting of i_block in the inode.  This causes du, for example,
+     to produce incorrect results, but otherwise should not be dangerous to
+     the kernel.
+
+The in-kernel AFS client has been undergoing testing on opendev.org on one
+of their mirror machines.  They are using AFS to hold data that is then
+served via apache, and Ian Wienand had reported seeing oopses, spontaneous
+machine reboots and updates to volumes going missing.  This patch series
+appears to have fixed the problem, very probably due to patch (2), but it's
+not 100% certain.
+
+Reviewed-by: Jeffrey Altman <jaltman@auristor.com>
+Tested-by: Marc Dionne <marc.dionne@auristor.com>
+Tested-by: Ian Wienand <iwienand@redhat.com>
 
 _______________________________________________
 linux-afs mailing list
