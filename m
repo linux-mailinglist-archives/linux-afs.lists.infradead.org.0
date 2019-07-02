@@ -2,71 +2,66 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 803B45C93B
-	for <lists+linux-afs@lfdr.de>; Tue,  2 Jul 2019 08:21:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76E995D0C3
+	for <lists+linux-afs@lfdr.de>; Tue,  2 Jul 2019 15:37:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VEAXyFLoAxc34rsnBZdCs2AkYMcbl4zOdocb/9P8lcg=; b=bjfDRtzqkXPxwc
-	QdBq+SaEFymcHPlmTxk/2xr2V3ECJloSd/ZUBm0gAunW5oeDFZDlC8fwbm4B28R3gwSzJOaZcf02J
-	KYyXHR1dNuYGVvUMpb4iSrsV9LWzGzQY9j8kvOSVDfaHRHkMZiQCbp5DdIjXAA/DiO7Rk8oA8cT17
-	ZTDjC/1YRjy/TGGNbac2hjipSJXsJ8MxL+71X+FtB4pCuIh0/3I28+Ku3UxCBpBM+OaxWKngmj44i
-	vwOq9+MgWsxsYUfx8ccaQHq1PNbWxn3l6xL6YYzhNM0sk6KDoZrUCzF3OCNliIiDrTRg92O856Nk6
-	wCwY7d2rq14pal6VLUuQ==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FeHMYQzf8i8vQOAS/FweLY4lOUrzeeDl9uyNnqxHWtY=; b=ir/b7H0D6iP+gO
+	bS0LbQEEjgcvQr3XToLsQ8uww5gXiThJ/l5hEkeWAV9eMx43mfW+qg0LCyGhoxLzacUKmn2bkCCNS
+	X3a5mls+p3RaOsfBFMJwO2g259uaI8QYeVZ7sj3MQK1r2sU98QJBr610nI9ZKLeRGGICvFFT6wNli
+	60enxEHcag7GYERMjclrJQZeJyXHPWfe18i/lK6Sy8Y1eFDwxpTavf6zpn2DQBqiFzBXoGaxbDnKT
+	2337NaehMd6XeJG202IWqbOXd4tYSjJte3nHx/6PIZB7AEsulcBBLZOfL/e5evoMFdfiyTmt4QdWV
+	51dg9jpG/SKz41sOxILw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiCAW-0005C3-KF; Tue, 02 Jul 2019 06:21:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hiIye-0003en-Bq; Tue, 02 Jul 2019 13:37:44 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiCAS-0005BX-Sq
- for linux-afs@lists.infradead.org; Tue, 02 Jul 2019 06:21:30 +0000
-Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
- [24.5.143.220])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hiIya-0003do-KK
+ for linux-afs@lists.infradead.org; Tue, 02 Jul 2019 13:37:41 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 99A762146F;
- Tue,  2 Jul 2019 06:21:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562048487;
- bh=rkaeMO7B0wY1OLfb6TGU1K2ucCtlHNBMOex23ANgLRc=;
- h=Date:From:To:Cc:Subject:From;
- b=YSrBnh1riIW5hPtDGUL+7HUMqebVjK4tFkAT+sgFcyLlRKHsQZKH0R8x6fBnstCNN
- t25fZBHxJWiyUgnmLoS0j5gvQjOOCKH0e4c27c8HjoVW4Xshzzbbb2nCCzaTrM19uy
- kCL9tC1kZ+ZYaFX+sN9UbeXMmTuUlvKzTdhNfAKg=
-Date: Mon, 1 Jul 2019 23:21:26 -0700
-From: Eric Biggers <ebiggers@kernel.org>
-To: linux-afs@lists.infradead.org, netdev@vger.kernel.org,
- David Howells <dhowells@redhat.com>,
- "David S. Miller" <davem@davemloft.net>
-Subject: Reminder: 3 open syzbot bugs in "net/rxrpc" subsystem
-Message-ID: <20190702062126.GA3054@sol.localdomain>
+ by mx1.redhat.com (Postfix) with ESMTPS id 049C1A96F1;
+ Tue,  2 Jul 2019 13:37:28 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-120-219.rdu2.redhat.com
+ [10.10.120.219])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6ACB417966;
+ Tue,  2 Jul 2019 13:37:25 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <0000000000004c2416058c594b30@google.com>
+References: <0000000000004c2416058c594b30@google.com>
+To: syzbot <syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com>,
+ ebiggers@kernel.org
+Subject: Re: kernel BUG at net/rxrpc/local_object.c:LINE!
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-ID: <24281.1562074644.1@warthog.procyon.org.uk>
+Date: Tue, 02 Jul 2019 14:37:24 +0100
+Message-ID: <24282.1562074644@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.38]); Tue, 02 Jul 2019 13:37:38 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_232128_965559_9A1E96B5 
-X-CRM114-Status: GOOD (  10.62  )
-X-Spam-Score: -3.7 (---)
+X-CRM114-CacheID: sfid-20190702_063740_689725_E4BE6153 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 1.5 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,128 +73,79 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-afs@lists.infradead.org,
+ dhowells@redhat.com, davem@davemloft.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-[This email was generated by a script.  Let me know if you have any suggest=
-ions
-to make it better, or if you want it re-generated with the latest status.]
+syzbot <syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com> wrote:
 
-Of the currently open syzbot reports against the upstream kernel, I've manu=
-ally
-marked 3 of them as possibly being bugs in the "net/rxrpc" subsystem.  I've
-listed these reports below, sorted by an algorithm that tries to list first=
- the
-reports most likely to be still valid, important, and actionable.
+I *think* the reproducer boils down to the attached, but I can't get syzkaller
+to work and the attached sample does not cause the oops to occur.  Can you try
+it in your environment?
 
-Of these 3 bugs, 1 was seen in mainline in the last week.
+> The bug was bisected to:
+> 
+> commit 46894a13599a977ac35411b536fb3e0b2feefa95
+> Author: David Howells <dhowells@redhat.com>
+> Date:   Thu Oct 4 08:32:28 2018 +0000
+> 
+>     rxrpc: Use IPv4 addresses throught the IPv6
 
-Of these 3 bugs, 2 were bisected to commits from the following person:
+This might not be the correct bisection point.  If you look at the attached
+sample, you're mixing AF_INET and AF_INET6.  If you try AF_INET throughout,
+that might get a different point.  On the other hand, since you've bound the
+socket, the AF_INET6 passed to socket() should be ignored.
 
-	David Howells <dhowells@redhat.com>
+David
+---
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <linux/rxrpc.h>
 
-If you believe a bug is no longer valid, please close the syzbot report by
-sending a '#syz fix', '#syz dup', or '#syz invalid' command in reply to the
-original thread, as explained at https://goo.gl/tpsmEJ#status
+static const unsigned char inet4_addr[4] = {
+	0xe0, 0x00, 0x00, 0x01
+};
 
-If you believe I misattributed a bug to the "net/rxrpc" subsystem, please l=
-et me
-know, and if possible forward the report to the correct people or mailing l=
-ist.
+int main(void)
+{
+	struct sockaddr_rxrpc srx;
+	int fd;
 
-Here are the bugs:
+	memset(&srx, 0, sizeof(srx));
+	srx.srx_family			= AF_RXRPC;
+	srx.srx_service			= 0;
+	srx.transport_type		= AF_INET;
+	srx.transport_len		= sizeof(srx.transport.sin);
+	srx.transport.sin.sin_family	= AF_INET;
+	srx.transport.sin.sin_port	= htons(0x4e21);
+	memcpy(&srx.transport.sin.sin_addr, inet4_addr, 4);
 
----------------------------------------------------------------------------=
------
-Title:              general protection fault in rxrpc_connect_call
-Last occurred:      14 days ago
-Reported:           159 days ago
-Branches:           Mainline and others
-Dashboard link:     https://syzkaller.appspot.com/bug?id=3D41872265f1e3e048=
-9eb0cc8762f8d48b3667afdb
-Original thread:    https://lkml.kernel.org/lkml/00000000000033d5e205801b05=
-d3@google.com/T/#u
+	fd = socket(AF_RXRPC, SOCK_DGRAM, AF_INET6);
+	if (fd == -1) {
+		perror("socket");
+		exit(1);
+	}
 
-This bug has a C reproducer.
+	if (bind(fd, (struct sockaddr *)&srx, sizeof(srx)) == -1) {
+		perror("bind");
+		exit(1);
+	}
 
-This bug was bisected to:
+	sleep(20);
 
-	commit 46894a13599a977ac35411b536fb3e0b2feefa95
-	Author: David Howells <dhowells@redhat.com>
-	Date:   Thu Oct 4 08:32:28 2018 +0000
-
-	=A0=A0rxrpc: Use IPv4 addresses throught the IPv6
-
-No one replied to the original thread for this bug.
-
-If you fix this bug, please add the following tag to the commit:
-    Reported-by: syzbot+7966f2a0b2c7da8939b4@syzkaller.appspotmail.com
-
-If you send any email or patch for this bug, please consider replying to the
-original thread.  For the git send-email command to use, or tips on how to =
-reply
-if the thread isn't in your mailbox, see the "Reply instructions" at
-https://lkml.kernel.org/r/00000000000033d5e205801b05d3@google.com
-
----------------------------------------------------------------------------=
------
-Title:              kernel BUG at net/rxrpc/local_object.c:LINE!
-Last occurred:      4 days ago
-Reported:           4 days ago
-Branches:           Mainline and others
-Dashboard link:     https://syzkaller.appspot.com/bug?id=3D53b6555b27af2cae=
-74e2fbdac6cadc73f9cb18aa
-Original thread:    https://lkml.kernel.org/lkml/0000000000004c2416058c594b=
-30@google.com/T/#u
-
-This bug has a syzkaller reproducer only.
-
-This bug was bisected to:
-
-	commit 46894a13599a977ac35411b536fb3e0b2feefa95
-	Author: David Howells <dhowells@redhat.com>
-	Date:   Thu Oct 4 08:32:28 2018 +0000
-
-	=A0=A0rxrpc: Use IPv4 addresses throught the IPv6
-
-No one has replied to the original thread for this bug yet.
-
-If you fix this bug, please add the following tag to the commit:
-    Reported-by: syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com
-
-If you send any email or patch for this bug, please reply to the original
-thread.  For the git send-email command to use, or tips on how to reply if =
-the
-thread isn't in your mailbox, see the "Reply instructions" at
-https://lkml.kernel.org/r/0000000000004c2416058c594b30@google.com
-
----------------------------------------------------------------------------=
------
-Title:              WARNING: locking bug in flush_workqueue_prep_pwqs
-Last occurred:      9 days ago
-Reported:           136 days ago
-Branches:           Mainline and others
-Dashboard link:     https://syzkaller.appspot.com/bug?id=3D4ae48f9c43f87ccf=
-9f2f270b14d5b9284dadd05c
-Original thread:    https://lkml.kernel.org/lkml/0000000000005c7e6f0581f1b8=
-6a@google.com/T/#u
-
-Unfortunately, this bug does not have a reproducer.
-
-No one replied to the original thread for this bug.
-
-If you fix this bug, please add the following tag to the commit:
-    Reported-by: syzbot+0c4264acb66ea0484d11@syzkaller.appspotmail.com
-
-If you send any email or patch for this bug, please consider replying to the
-original thread.  For the git send-email command to use, or tips on how to =
-reply
-if the thread isn't in your mailbox, see the "Reply instructions" at
-https://lkml.kernel.org/r/0000000000005c7e6f0581f1b86a@google.com
-
+	// Whilst sleeping, hit with:
+	// echo -e '\0\0\0\0\0\0\0\0' | ncat -4u --send-only 224.0.0.1 20001
+	
+	return 0;
+}
 
 _______________________________________________
 linux-afs mailing list
