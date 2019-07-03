@@ -2,55 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60A285DB78
-	for <lists+linux-afs@lfdr.de>; Wed,  3 Jul 2019 04:15:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE6195DB83
+	for <lists+linux-afs@lfdr.de>; Wed,  3 Jul 2019 04:16:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1pQv9PGyR4xDESqY/BPw2xyuW75B4KxqmK3dFKrxOV4=; b=uTrKRkWy8dSqgX
-	JflNuu3CLfixiJ5XYClH4Z1AG+yWfT5mSOp+2WnigavurxlJfBh+KA4Kkpfh7XeYhCX8T726Vu9E8
-	GwjMUY+HdvFYn1t5ppzny0S92DpQsS0W5fJnp9VSjiRKrdQ29GGRz8rMllc8k7IRGMD22K53pWaZn
-	MyO/REsaP8gelY/sT36xsmig3DuDWa7SmLFyW5WAnfkvUgVSfTUPj+mt3+dkBeFAdpWtfim3xNuys
-	sY/gPivPXQ8KN1nvrUX1fiNxeBta+iFND/xyvzk2BADfBtFX9ulOBFFVvrHfKq49yHyK6WnRTm7SJ
-	KR/54jMmj44RHPw2438Q==;
+	List-Owner; bh=mVXvFTmpzRJwStwVlRx/x4S5U796WjLgRrvyGAFHu4s=; b=A+jcypfKsKWjLl
+	BUZRdE2G6JVzRrqgqoLPZ1INkwCXrutiePoEtWJsrMpZiNs9z/oQh8jaimbrTKK6fzRILhqUYwNnn
+	xjAEpem/yv8g3ZM/BfBzA2UVeruCQV0ARKA/EDWGkpd1QiWG6vm1zcK/XFgJQe8HvC93WuZ55/1dK
+	I3RYcj1TN9CMDmF/GETboLfhpdqlFbLXnUZ1X7EMaQImAjH3zxVsG0ytxWHUK5KZNAW2HXq+Y39JX
+	rfzDGAL/WgOS3uXyfsvK8vg3whHrYK8rKIlRl2dnM89hy7V3hQ0iXPFIJZdnwMhyBW97af/sySVSC
+	D7tMbhMRUDUYiDMjjMcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiUo7-0003WA-FX; Wed, 03 Jul 2019 02:15:39 +0000
+	id 1hiUp3-0003sJ-Ub; Wed, 03 Jul 2019 02:16:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiUo4-0003VM-AC
- for linux-afs@lists.infradead.org; Wed, 03 Jul 2019 02:15:37 +0000
+ id 1hiUp1-0003rr-4N
+ for linux-afs@lists.infradead.org; Wed, 03 Jul 2019 02:16:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6DD6221873;
- Wed,  3 Jul 2019 02:15:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4CEBC2187F;
+ Wed,  3 Jul 2019 02:16:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1562120136;
- bh=m+R1xwEJppbiE3wvoUXAJkKObqcuGeLx/Si7OCzOa2I=;
+ s=default; t=1562120194;
+ bh=drenSdsKyxAIvnKOg5xScIJnMrQsqcR3YFGVyHrRqQg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=MevqsPRWXIuyLFX9gqZs7UluRFtdj2SfLVw7MIOXiXyjuFdfqSiMM87kGE62ouYf8
- MoiJFW6QlHQ/KHss40SMVLtkqC1+ILMk1U1LpzpT/OxddP36CWmWQRRJqu9tajDmR7
- tn/mOOfakHzgh2YF2u3PgeEDkivSbApGKrEcFE2U=
+ b=mFbtjZPUIS0zXKPlDz6yoE75a7/DFKroy4FZ5EfuImpRXLfuhHWOohN7KHZ+Ansr+
+ FREOWPSjrvkiJXGuooLJ5KBbfiXJ4Gjq2AUggu0kbREikrc948EJNHfu7/KM9SNS9U
+ QKGB4Eh670SFwilH8ZpAzrKZXezbdEgSvQQWKH1U=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.1 13/39] afs: Fix uninitialised spinlock
+Subject: [PATCH AUTOSEL 4.19 07/26] afs: Fix uninitialised spinlock
  afs_volume::cb_break_lock
-Date: Tue,  2 Jul 2019 22:14:48 -0400
-Message-Id: <20190703021514.17727-13-sashal@kernel.org>
+Date: Tue,  2 Jul 2019 22:16:06 -0400
+Message-Id: <20190703021625.18116-7-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190703021514.17727-1-sashal@kernel.org>
-References: <20190703021514.17727-1-sashal@kernel.org>
+In-Reply-To: <20190703021625.18116-1-sashal@kernel.org>
+References: <20190703021625.18116-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_191536_388429_251D5D00 
+X-CRM114-CacheID: sfid-20190702_191635_210362_225980BB 
 X-CRM114-Status: GOOD (  12.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -136,10 +136,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  3 files changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/fs/afs/callback.c b/fs/afs/callback.c
-index 128f2dbe256a..fee6fde79e6b 100644
+index 5f261fbf2182..4ad701250299 100644
 --- a/fs/afs/callback.c
 +++ b/fs/afs/callback.c
-@@ -278,9 +278,9 @@ static void afs_break_one_callback(struct afs_server *server,
+@@ -276,9 +276,9 @@ static void afs_break_one_callback(struct afs_server *server,
  			struct afs_super_info *as = AFS_FS_S(cbi->sb);
  			struct afs_volume *volume = as->volume;
  
@@ -152,10 +152,10 @@ index 128f2dbe256a..fee6fde79e6b 100644
  			data.volume = NULL;
  			data.fid = *fid;
 diff --git a/fs/afs/internal.h b/fs/afs/internal.h
-index 3904ab0b9563..fd0750fb96a5 100644
+index 34c02fdcc25f..aea19614c082 100644
 --- a/fs/afs/internal.h
 +++ b/fs/afs/internal.h
-@@ -582,7 +582,7 @@ struct afs_volume {
+@@ -477,7 +477,7 @@ struct afs_volume {
  	unsigned int		servers_seq;	/* Incremented each time ->servers changes */
  
  	unsigned		cb_v_break;	/* Break-everything counter. */
@@ -165,10 +165,10 @@ index 3904ab0b9563..fd0750fb96a5 100644
  	afs_voltype_t		type;		/* type of volume */
  	short			error;
 diff --git a/fs/afs/volume.c b/fs/afs/volume.c
-index f6eba2def0a1..3e8dbee09f87 100644
+index 3037bd01f617..5ec186ec5651 100644
 --- a/fs/afs/volume.c
 +++ b/fs/afs/volume.c
-@@ -47,6 +47,7 @@ static struct afs_volume *afs_alloc_volume(struct afs_fs_context *params,
+@@ -47,6 +47,7 @@ static struct afs_volume *afs_alloc_volume(struct afs_mount_params *params,
  	atomic_set(&volume->usage, 1);
  	INIT_LIST_HEAD(&volume->proc_link);
  	rwlock_init(&volume->servers_lock);
