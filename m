@@ -2,103 +2,103 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BC1071237
-	for <lists+linux-afs@lfdr.de>; Tue, 23 Jul 2019 08:58:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF45171239
+	for <lists+linux-afs@lfdr.de>; Tue, 23 Jul 2019 08:58:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BnG1jqLCnB/g+YHni3jUiq5coZ8cRqFmle/jpBGaykg=; b=ixLM/GfffFUlkt1N49wLJJYhqc
-	rDpsJk1eQvXXfwYQntIvQWPx254FMwlA7+OrgNVFdBkdulmv+fmHiux300pjS491A/FdFGm3Cuiq+
-	I0wu9qLi+YIJIT/1wjbEyB8Bl2RExPYj6vUss6EJA26ta27+6BIJcEDMUtYrgvGc0sAQ9WZzY1GNr
-	wRrYDAsrSPjenLh0uxbzYZFtRkhR9Bp+3Q5zO5BEeB5UgLsGPDJtG7asjIOiKHG0Bsjwaa1IJeyDT
-	GBmJ9IQnB9MfPsm6PPTjClVzQxY2SEtUAHQBC6fyDRVvse24wn/VgV05K6ZMylvRL0rsPuxT7qfLt
-	ZEDbsuXA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Mime-Version:References:
+	In-Reply-To:Date:To:From:Subject:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jMSdZZ79VCTOXRcBnHq1Lb1OS+0V+MBcxp0IX8+JnEc=; b=knX5VnjofRzw7F
+	S0hJa9iFwyiG92/Tnf4tDogHXqZ5T00OfXk7Wcc95OGYi/qHhjcJvA1ZR67A9ivHTz8qQ7Faq1Y34
+	MqPVRrqPqc6yX4XjfDc0w/yxiYZm88T5mhKrayQJ5jnxOcvyynEXgQv05BCZgP99Wc118Hc/386ni
+	+rFdk/IV6e6KAEsM5CwhDX6V8KDt6ZGkjLa/2zlqiQq8OrgDbxFChRCnFIZjef2wbub/mbcW9Q05O
+	xO6J07w/uc0GEUiWqQio/5UAyZFvBxRVbMrONIwzFtGqiiLMPyets2pUexEXN7fOYJ++X+SKW2IZm
+	Q2a0FAMFVoddEJpfS+6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpol6-00089V-II; Tue, 23 Jul 2019 06:58:48 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hpol7-0008A9-B1; Tue, 23 Jul 2019 06:58:49 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlOMq-0002rW-Ho
- for linux-afs@lists.infradead.org; Thu, 11 Jul 2019 01:59:29 +0000
-Received: by mail-lf1-x141.google.com with SMTP id s19so2892118lfb.9
- for <linux-afs@lists.infradead.org>; Wed, 10 Jul 2019 18:59:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=NiaFfYJ216nYjgBrBY5JKQAHNiRjdATog8sl2JxZW+g=;
- b=MQOzZI79mvoiVs1sgBWHfqE+YJM9b7M05jQpHMpAAyRFe0Cs7GZ1SKjYmbrPj6ztHM
- B7Jmo2E1tOKxmtYLHAeJfiv0Yw5iWNpJ6su3Aywbxq++FWe46hRTt1FaTYFdrs51gDai
- Fc+1NUhQh/izklmNT0WE5mkHqoWlVg+hybjs0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=NiaFfYJ216nYjgBrBY5JKQAHNiRjdATog8sl2JxZW+g=;
- b=UmG65rAtqesQcyoX11yG0Nz0iXPE5Lks7wk/lGfoJ9NbaFD1zfTCSORn4ImYmvf0Fb
- OwGHtiqWn8iod7HX5w16AMqTAn3PiODr0BONYhowIQ4tuJSPBY3pUw/ZmewrzrSkxTUo
- 3j0gVS0AjE2sVftU1fo8Ref5AzvAcxowpAxhHgIP3CJ/Ckwr84tslptRf8UVsrnJEbqe
- Cuwhf6dxPqrDWg1CNS+jUQV94TOFZPhtpj9lyJSX2BMqFvZUKpOEGqdTLZcg9haGRkwi
- IbjMA/1eLx8j8RH8CsHW/+HsZSgORwuf1DCrM3p2rw6ux+V/wosyNF34EmXWy854rtSu
- WCbQ==
-X-Gm-Message-State: APjAAAUm6N4ZT4T7xWXCm+GrehHDvkBrOFcYSCsA8ZxLTwiZ6Ou+ees6
- rvLOU9oprN7gwV5r+VR0Sued3OUOep0=
-X-Google-Smtp-Source: APXvYqxUrsrkKUniJlkI0/YMeMBZL+3ZD/9KtrbyFOzkkMO7tjB9U5CHvamEKHO77nxaR55a0hkhBg==
-X-Received: by 2002:ac2:52b7:: with SMTP id r23mr372950lfm.120.1562810363535; 
- Wed, 10 Jul 2019 18:59:23 -0700 (PDT)
-Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com.
- [209.85.167.47])
- by smtp.gmail.com with ESMTPSA id p12sm734173lja.23.2019.07.10.18.59.21
- for <linux-afs@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jul 2019 18:59:22 -0700 (PDT)
-Received: by mail-lf1-f47.google.com with SMTP id 62so2908796lfa.8
- for <linux-afs@lists.infradead.org>; Wed, 10 Jul 2019 18:59:21 -0700 (PDT)
-X-Received: by 2002:ac2:4839:: with SMTP id 25mr355474lft.79.1562810361547;
- Wed, 10 Jul 2019 18:59:21 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hlPR0-00089d-4k
+ for linux-afs@lists.infradead.org; Thu, 11 Jul 2019 03:07:51 +0000
+Received: from pps.filterd (m0098409.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x6B37erw018109
+ for <linux-afs@lists.infradead.org>; Wed, 10 Jul 2019 23:07:45 -0400
+Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2tnqdyag2f-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-afs@lists.infradead.org>; Wed, 10 Jul 2019 23:07:43 -0400
+Received: from localhost
+ by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-afs@lists.infradead.org> from <zohar@linux.ibm.com>;
+ Thu, 11 Jul 2019 04:07:31 +0100
+Received: from b06avi18626390.portsmouth.uk.ibm.com (9.149.26.192)
+ by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 11 Jul 2019 04:07:28 +0100
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com
+ (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
+ by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
+ id x6B37F0p35652076
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 11 Jul 2019 03:07:15 GMT
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E5429A405B;
+ Thu, 11 Jul 2019 03:07:27 +0000 (GMT)
+Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 735A7A4054;
+ Thu, 11 Jul 2019 03:07:26 +0000 (GMT)
+Received: from localhost.localdomain (unknown [9.80.110.74])
+ by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Thu, 11 Jul 2019 03:07:26 +0000 (GMT)
+Subject: Re: [GIT PULL] Keys: Set 4 - Key ACLs for 5.3
+From: Mimi Zohar <zohar@linux.ibm.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>, David Howells
+ <dhowells@redhat.com>, James Morris <jmorris@namei.org>,
+ keyrings@vger.kernel.org, Netdev <netdev@vger.kernel.org>,
+ linux-nfs@vger.kernel.org, CIFS <linux-cifs@vger.kernel.org>,
+ linux-afs@lists.infradead.org, linux-fsdevel
+ <linux-fsdevel@vger.kernel.org>, linux-integrity@vger.kernel.org, LSM List
+ <linux-security-module@vger.kernel.org>, Linux List Kernel Mailing
+ <linux-kernel@vger.kernel.org>
+Date: Wed, 10 Jul 2019 23:07:15 -0400
+In-Reply-To: <CAHk-=wiFti6=K2fyAYhx-PSX9ovQPJUNp0FMdV0pDaO_pSx9MQ@mail.gmail.com>
 References: <28477.1562362239@warthog.procyon.org.uk>
  <CAHk-=wjxoeMJfeBahnWH=9zShKp2bsVy527vo3_y8HfOdhwAAw@mail.gmail.com>
  <20190710194620.GA83443@gmail.com> <20190710201552.GB83443@gmail.com>
-In-Reply-To: <20190710201552.GB83443@gmail.com>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 10 Jul 2019 18:59:05 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wiFti6=K2fyAYhx-PSX9ovQPJUNp0FMdV0pDaO_pSx9MQ@mail.gmail.com>
-Message-ID: <CAHk-=wiFti6=K2fyAYhx-PSX9ovQPJUNp0FMdV0pDaO_pSx9MQ@mail.gmail.com>
-Subject: Re: [GIT PULL] Keys: Set 4 - Key ACLs for 5.3
-To: Linus Torvalds <torvalds@linux-foundation.org>,
- David Howells <dhowells@redhat.com>, 
- James Morris <jmorris@namei.org>, keyrings@vger.kernel.org, 
- Netdev <netdev@vger.kernel.org>, linux-nfs@vger.kernel.org, 
- CIFS <linux-cifs@vger.kernel.org>, linux-afs@lists.infradead.org, 
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, linux-integrity@vger.kernel.org,
- LSM List <linux-security-module@vger.kernel.org>, 
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>
+ <CAHk-=wiFti6=K2fyAYhx-PSX9ovQPJUNp0FMdV0pDaO_pSx9MQ@mail.gmail.com>
+X-Mailer: Evolution 3.20.5 (3.20.5-1.fc24) 
+Mime-Version: 1.0
+X-TM-AS-GCONF: 00
+x-cbid: 19071103-4275-0000-0000-0000034BBC6E
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19071103-4276-0000-0000-0000385BC1F1
+Message-Id: <1562814435.4014.11.camel@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-07-10_08:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1907110035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_185928_602457_BF4A265D 
-X-CRM114-Status: UNSURE (   6.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20190710_200750_297616_BC9195D8 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
 X-Mailman-Approved-At: Mon, 22 Jul 2019 23:58:43 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -111,34 +111,30 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 1:15 PM Eric Biggers <ebiggers@kernel.org> wrote:
->
-> Also worth noting that the key ACL patches were only in linux-next for 9 days
-> before the pull request was sent.
-
-Yes. I was not entirely happy with the whole key subsystem situation.
-See my concerns in
-
-  https://lore.kernel.org/lkml/CAHk-=wjEowdfG7v_4ttu3xhf9gqopj1+q1nGG86+mGfGDTEBBg@mail.gmail.com/
-
-for more. That was before I realized it was buggy.
-
-So it really would be good to have more people involved, and more
-structure to the keys development (and, I suspect, much else under
-security/)
-
-Anyway, since it does seem like David is offline, I've just reverted
-this from my tree, and will be continuing my normal merge window pull
-requests (the other issues I have seen have fixes in their respective
-trees).
-
-                 Linus
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+SGkgTGludXMsCgpPbiBXZWQsIDIwMTktMDctMTAgYXQgMTg6NTkgLTA3MDAsIExpbnVzIFRvcnZh
+bGRzIHdyb3RlOgo+IEFueXdheSwgc2luY2UgaXQgZG9lcyBzZWVtIGxpa2UgRGF2aWQgaXMgb2Zm
+bGluZSwgSSd2ZSBqdXN0IHJldmVydGVkCj4gdGhpcyBmcm9tIG15IHRyZWUsIGFuZCB3aWxsIGJl
+IGNvbnRpbnVpbmcgbXkgbm9ybWFsIG1lcmdlIHdpbmRvdyBwdWxsCj4gcmVxdWVzdHMgKHRoZSBv
+dGhlciBpc3N1ZXMgSSBoYXZlIHNlZW4gaGF2ZSBmaXhlcyBpbiB0aGVpciByZXNwZWN0aXZlCj4g
+dHJlZXMpLgoKU29ycnkgZm9yIHRoZSBkZWxheS4gwqBBbiBleGNlcHRpb24gaXMgbmVlZGVkIGZv
+ciBsb2FkaW5nIGJ1aWx0aW4ga2V5cwoiS0VZX0FMTE9DX0JVSUxUX0lOIiBvbnRvIGEga2V5cmlu
+ZyB0aGF0IGlzIG5vdCB3cml0YWJsZSBieSB1c2Vyc3BhY2UuCsKgVGhlIGZvbGxvd2luZyB3b3Jr
+cywgYnV0IHByb2JhYmx5IGlzIG5vdCBob3cgRGF2aWQgd291bGQgaGFuZGxlIHRoZQpleGNlcHRp
+b24uCgpkaWZmIC0tZ2l0IGEvc2VjdXJpdHkva2V5cy9rZXkuYyBiL3NlY3VyaXR5L2tleXMva2V5
+LmMKaW5kZXggNTE5MjExYTk5NmU3Li5hOTkzMzJjMWUwMTQgMTAwNjQ0Ci0tLSBhL3NlY3VyaXR5
+L2tleXMva2V5LmMKKysrIGIvc2VjdXJpdHkva2V5cy9rZXkuYwpAQCAtODk2LDcgKzg5Niw3IEBA
+IGtleV9yZWZfdCBrZXlfY3JlYXRlX29yX3VwZGF0ZShrZXlfcmVmX3Qga2V5cmluZ19yZWYsCiAg
+ICAgICAgLyogaWYgd2UncmUgZ29pbmcgdG8gYWxsb2NhdGUgYSBuZXcga2V5LCB3ZSdyZSBnb2lu
+ZyB0byBoYXZlCiAgICAgICAgICogdG8gbW9kaWZ5IHRoZSBrZXlyaW5nICovCiAgICAgICAgcmV0
+ID0ga2V5X3Blcm1pc3Npb24oa2V5cmluZ19yZWYsIEtFWV9ORUVEX1dSSVRFKTsKLSAgICAgICBp
+ZiAocmV0IDwgMCkgeworICAgICAgIGlmIChyZXQgPCAwICYmICEoZmxhZ3MgJiBLRVlfQUxMT0Nf
+QlVJTFRfSU4pKSB7CiAgICAgICAgICAgICAgICBrZXlfcmVmID0gRVJSX1BUUihyZXQpOwogICAg
+ICAgICAgICAgICAgZ290byBlcnJvcl9saW5rX2VuZDsKICAgICAgICB9CgpNaW1pCgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYWZzIG1haWxp
+bmcgbGlzdApodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFmcwo=
