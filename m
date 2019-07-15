@@ -2,53 +2,53 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F410C68DC5
-	for <lists+linux-afs@lfdr.de>; Mon, 15 Jul 2019 16:01:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6B468F99
+	for <lists+linux-afs@lfdr.de>; Mon, 15 Jul 2019 16:16:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qnp6kkYXfQJFxDC1wZkGerLU79WbR2M3Dal//+n9/n8=; b=Sel4u/l+5kPpWe
-	nLVpVT3eIZX0Sg199kUZX9R26+4dbZ8yK7jiO6YYxMYMjE2Hbvbu1o3iaGHPMyA+ZQ0m72Ze1obB2
-	sYlDTfSQJ8fuPqB5WalGTIpLzaQB1v3L2e0pvLVJ9MRR6WAjt0yad2Dxhf5J0LZOPTu9zBAuge4HA
-	ToYX0h7X7+OWNyEvq70eu+XmAHpitiTZzQhMUaXDIw8isb2//9SYO9VmFPOikBP3gecQAq0KO5mKr
-	Rh/rz2VZuyg8Q+2/JMLfPELtG+Z1MR2DIrZnrN+k2tFNwH3FCNRNNVSdNtMuuQ+W8w/P+/+0gfNpw
-	e8viiuJwHoDYAgIgY2Sw==;
+	List-Owner; bh=wnD4oBTDZSN/MoDEsE7+R92/pKC82u8AQ6YP/vo2iyc=; b=ELnYU/D4o/K1wB
+	tad7ssjxuzWuK7F7uAGEXP4AFqM17kBoFxrLF85yLKswv8HHA/tjQAGn2+2BL4LZUY4TPnQgmT0DV
+	0m6nHjSZWnWFgCeNMJ0lbNASjRaAraRM9pKeT89AHfb3jdJK5l8pWUo67exbZ8HuRhD+EsnKSepSQ
+	W1qeeBENJ+QX5rmYIc3l3GS+ECioKLTni6uSzETJ3TN6iMtf09L2fbgj952d7hfVLx9eSafoyaa0N
+	NVzoqOCnilpK6glEUOFyvfNTaPpsbCtcxybUZ4opc7+TrC43P+gdSe9ux9KLpQj4HBWjC1JSn+hIp
+	E1SNfnlkkuGr8LdLtSYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn1XU-00022Z-Ry; Mon, 15 Jul 2019 14:01:12 +0000
+	id 1hn1lu-0002Nb-Nk; Mon, 15 Jul 2019 14:16:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn1XR-00021i-Or
- for linux-afs@lists.infradead.org; Mon, 15 Jul 2019 14:01:11 +0000
+ id 1hn1le-00029Z-SM
+ for linux-afs@lists.infradead.org; Mon, 15 Jul 2019 14:15:52 +0000
 Received: from sasha-vm.mshome.net (unknown [73.61.17.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 14611212F5;
- Mon, 15 Jul 2019 14:01:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A7259206B8;
+ Mon, 15 Jul 2019 14:15:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563199269;
- bh=YU9Ov+IvcB3FjIh32fC4t4bC4jBwOGJL+Nj4udUiX0Q=;
+ s=default; t=1563200150;
+ bh=cNM9/i0pgRxA8O1qsq5K6aKr0LcNVAZe1kPUPYoQzqs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kRuaz6cgg5v6LD9j3K8Xovtsy5Tbe8uSUqRDlRRtVaSrt+ERHiSdlaifiZs+soI2F
- jhVIKgXPZednwF1qYv8siKcFC9S8K/QVrDWtvkBQ35CVDXDvVt4TbHzuRq/OPL16A+
- KN2MOPYbZtDU9Z4q+SL4fQiuWm1qJbj6Y4bgaE+Q=
+ b=IZjgf5691esy4uiA8DhOO7IFe5r6WbpMWXpuSb+3IwfxnWE3q4pStbTdh/jK8fQtr
+ VN6LfJ6MHHAFAnR44LEweC3pzPoE3aSDS0OWGAHijnZibEEZ1TWLVMNm0R4qHe7lE0
+ /hi5sUTWlYVvHDCIIXM2KmPZTFnGeTaR7CVEZljw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 223/249] rxrpc: Fix oops in tracepoint
-Date: Mon, 15 Jul 2019 09:46:28 -0400
-Message-Id: <20190715134655.4076-223-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.1 195/219] rxrpc: Fix oops in tracepoint
+Date: Mon, 15 Jul 2019 10:03:16 -0400
+Message-Id: <20190715140341.6443-195-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190715134655.4076-1-sashal@kernel.org>
-References: <20190715134655.4076-1-sashal@kernel.org>
+In-Reply-To: <20190715140341.6443-1-sashal@kernel.org>
+References: <20190715140341.6443-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_070109_842570_596026EC 
+X-CRM114-CacheID: sfid-20190715_071550_943062_587BBBF0 
 X-CRM114-Status: GOOD (  14.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -174,10 +174,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/include/trace/events/rxrpc.h b/include/trace/events/rxrpc.h
-index d85816878a52..cc1d060cbf13 100644
+index 7b60fd186cfe..77bc53ce419f 100644
 --- a/include/trace/events/rxrpc.h
 +++ b/include/trace/events/rxrpc.h
-@@ -1379,7 +1379,7 @@ TRACE_EVENT(rxrpc_rx_eproto,
+@@ -1383,7 +1383,7 @@ TRACE_EVENT(rxrpc_rx_eproto,
  			     ),
  
  	    TP_fast_assign(
