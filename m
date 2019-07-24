@@ -2,81 +2,65 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7293C71836
-	for <lists+linux-afs@lfdr.de>; Tue, 23 Jul 2019 14:26:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55A6E724DD
+	for <lists+linux-afs@lfdr.de>; Wed, 24 Jul 2019 04:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0dserO2W4ROGXJxMvV/AOEX1g8iW+C+xQ1+Uz8gRZks=; b=Fd+
-	5uT7qw1OkFgkMiOdbCBLf7z6qastVwYDwXUv0rnyemvbuN7Ukr0fGo3IwnAimnUa6wRhEHkcpwj7G
-	xQ1sZUNDslTEX/Hqa3jh7Mhhz+jNOzY6QMfYKhP5nQE+E0S3vlotulsMQotnWdE+5IX82aBYQHnNf
-	8fGrJhzzYF+hTW0cgMiouEumAEconlGgGJpk1ReCKd2X+LNTjhZ+WlUk5DAsbZI7VHaKSu1TU4v7h
-	A0znZI1p6fU9ml7HBRFqQ+iwBsJ1uzTLC214icIQt3KSJKhfYbUgidDvy39L8gzSFHav6l8Ej5Vj0
-	S17Gl8v9oER25/Mhv4VB0+5dA8H0o7w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J27j4XMqsN7y/NpeVkZtHfQX9MHlVKYhvM3NDTBQNSs=; b=Mlw4JX6zU4VyFn
+	xGT6Cy9Ujkrwby05BEbFH2AbYNwNiDn3cusD62iFwYCCFdGkgqaGtjZG0UoHH3edBmPFG+0QgtsHL
+	8B8xdQZWDkEVxOntxc2P6Smj+f85MqH6fYJo/KokGKr4a2f0P9uig0T/ovw9dvW2ZUgHRepmuMzF3
+	MmPfQyGunVKA4PX0aywfDKgQfjLtYYJeA7euNwXM1GxCGH6n0IK8xMioqCoSuL/a7p92JhfOU+bPw
+	HSGa92PHon7WEpsizrn1SI0p1L7f0cx5NzdVs1f98LAffMHO/Q8+IWJU3W1jZiNT42VDL751aC0ok
+	Cl/v+R9LBsz76xONHfgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hptsO-0006jx-0u; Tue, 23 Jul 2019 12:26:40 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hq7Gg-0003uT-SZ; Wed, 24 Jul 2019 02:44:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hptrm-0006Kd-61
- for linux-afs@lists.infradead.org; Tue, 23 Jul 2019 12:26:03 +0000
-Received: by mail-pg1-x543.google.com with SMTP id o13so19347012pgp.12
- for <linux-afs@lists.infradead.org>; Tue, 23 Jul 2019 05:26:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=d+pnG65HXsnRmlzhaNNzk6y1yw6MWg2lSfilUvi/rLw=;
- b=V9weTodOYCYaFd7X60mM2I0iNT2dJQddnTuM96ykARlIZO67gGvp+UQa2YlwCxGAaF
- Uk+SHoks11jMp8cTcExW76F8m+UwjFNGkT639eWlWP0AmGb5c13LsC8p9rx+1LMac0JX
- cj/teAaKGGjSunYWoqBM4aD8BpXrJ4vZVkErEJAVlzZi7E2+ieYK6hIwC6GSDfniTuu+
- /yyf1+SDD2Yj5F8v/ZdaFgdMFyFHBE9DHRHPe3VGLxh1FQCyhdgANw8O7wFYNF+z9hyU
- ZdisoYQHQu/NPOt4wd346std2iUJ2Qzph4fOv1kiEiTfWTAdCHUmtdS4lxDfyBYjQeCb
- vzxw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=d+pnG65HXsnRmlzhaNNzk6y1yw6MWg2lSfilUvi/rLw=;
- b=DfiGBgetsP/N+0DY3pexy9ln7AhZRzIKsy3iBgiIFlpxbJUA9HE2u+nkrVdAZHnZPe
- 65t/SVsKAWDc5J97j5UsqtwWoFysQcYIf/v3WRk/BGhCBcj4T5dt9LmwO8RbKGChnRv2
- 6edNLQMwpFS84UI25MlRWov0sKoOzFDdKZzrQgIeCL3F37nbiwrbUaENAtQaKFFV6Erx
- IA6FK2IBvK1KedB6lFZ9h2k2KBV3rafmOsw+PCUqDgFAYscG0M3nt1rv85oJFyv+ZjN1
- Lxnxh4z0p60y4aaPOShtOczJBgpeOeagJBXjxdLgliOBHRR53qRKPFjxJlx3af93wfRI
- BKqw==
-X-Gm-Message-State: APjAAAVzUEqafgm74pPZ+lMFsCKJDA7b5Ttbj2Zse7idQwC6ddcOAxul
- F7ZH8xOJc4aVaznS2fuvqdI=
-X-Google-Smtp-Source: APXvYqwsAvz00r+/iJSmZPzm8Ll2VIOWh2HmWmohM5cYcM4y9UywSWl2Dd7u7Nbtl+V7bw2okgG3TA==
-X-Received: by 2002:a17:90a:b387:: with SMTP id
- e7mr84704034pjr.113.1563884760953; 
- Tue, 23 Jul 2019 05:26:00 -0700 (PDT)
-Received: from oslab.tsinghua.edu.cn ([2402:f000:4:72:808::3ca])
- by smtp.gmail.com with ESMTPSA id g18sm75138115pgm.9.2019.07.23.05.25.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 23 Jul 2019 05:26:00 -0700 (PDT)
-From: Jia-Ju Bai <baijiaju1990@gmail.com>
-To: dhowells@redhat.com
-Subject: [PATCH] fs: afs: Fix a possible null-pointer dereference in
- afs_put_read()
-Date: Tue, 23 Jul 2019 20:25:53 +0800
-Message-Id: <20190723122553.14565-1-baijiaju1990@gmail.com>
-X-Mailer: git-send-email 2.17.0
+ id 1hq7Gb-0003sv-5Y
+ for linux-afs@lists.infradead.org; Wed, 24 Jul 2019 02:44:34 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 542DA20828;
+ Wed, 24 Jul 2019 02:44:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563936269;
+ bh=otF0m5YFhRfZ2LQNcGhr+Exepj6iQf16VoZOqyMzPag=;
+ h=Date:From:To:Cc:Subject:From;
+ b=QQaWMfeU0RI3fiEQHD9mKME89ksu8wtqJmUEUgKJ4FCxgoXRsJKk/RYeZaDvgJW7t
+ g474b/DMKq7oRamYy+EUG17PoZujElylMNtw+vEsg/hMk68WEfvIFbqLW9X6qb9xn2
+ penUoO6quE8bFHFbiE6Xp4ESBiZEuIAfiRFGi1ng=
+Date: Tue, 23 Jul 2019 19:44:27 -0700
+From: Eric Biggers <ebiggers@kernel.org>
+To: linux-afs@lists.infradead.org, netdev@vger.kernel.org,
+ David Howells <dhowells@redhat.com>,
+ "David S. Miller" <davem@davemloft.net>
+Subject: Reminder: 2 open syzbot bugs in "net/rxrpc" subsystem
+Message-ID: <20190724024427.GG643@sol.localdomain>
+Mail-Followup-To: linux-afs@lists.infradead.org, netdev@vger.kernel.org,
+ David Howells <dhowells@redhat.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ linux-kernel@vger.kernel.org, syzkaller-bugs@googlegroups.com
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_052602_306729_6A57FCFF 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190723_194433_246757_D3AAECD6 
+X-CRM114-Status: GOOD (  12.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (baijiaju1990[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (baijiaju1990[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,6 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,58 +81,97 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Jia-Ju Bai <baijiaju1990@gmail.com>, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-In afs_read_dir(), there is an if statement on line 255 to check whether
-req->pages is NULL:
-	if (!req->pages)
-		goto error;
+[This email was generated by a script.  Let me know if you have any suggest=
+ions
+to make it better, or if you want it re-generated with the latest status.]
 
-If req->pages is NULL, afs_put_read() on line 337 is executed.
-In afs_put_read(), req->pages[i] is used on line 195.
-Thus, a possible null-pointer dereference may occur in this case.
+Of the currently open syzbot reports against the upstream kernel, I've manu=
+ally
+marked 2 of them as possibly being bugs in the "net/rxrpc" subsystem.  I've
+listed these reports below, sorted by an algorithm that tries to list first=
+ the
+reports most likely to be still valid, important, and actionable.
 
-To fix this possible bug, an if statement is added in afs_put_read() to
-check req->pages.
+Of these 2 bugs, 1 was seen in mainline in the last week.
 
-This bug is found by a static analysis tool STCheck written by us.
+Of these 2 bugs, 1 was bisected to a commit from the following person:
 
-Signed-off-by: Jia-Ju Bai <baijiaju1990@gmail.com>
----
- fs/afs/file.c | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
+	David Howells <dhowells@redhat.com>
 
-diff --git a/fs/afs/file.c b/fs/afs/file.c
-index 56b69576274d..dd3c55c9101c 100644
---- a/fs/afs/file.c
-+++ b/fs/afs/file.c
-@@ -191,11 +191,13 @@ void afs_put_read(struct afs_read *req)
- 	int i;
- 
- 	if (refcount_dec_and_test(&req->usage)) {
--		for (i = 0; i < req->nr_pages; i++)
--			if (req->pages[i])
--				put_page(req->pages[i]);
--		if (req->pages != req->array)
--			kfree(req->pages);
-+		if (req->pages) {
-+			for (i = 0; i < req->nr_pages; i++)
-+				if (req->pages[i])
-+					put_page(req->pages[i]);
-+			if (req->pages != req->array)
-+				kfree(req->pages);
-+		}
- 		kfree(req);
- 	}
- }
--- 
-2.17.0
+If you believe a bug is no longer valid, please close the syzbot report by
+sending a '#syz fix', '#syz dup', or '#syz invalid' command in reply to the
+original thread, as explained at https://goo.gl/tpsmEJ#status
+
+If you believe I misattributed a bug to the "net/rxrpc" subsystem, please l=
+et me
+know, and if possible forward the report to the correct people or mailing l=
+ist.
+
+Here are the bugs:
+
+---------------------------------------------------------------------------=
+-----
+Title:              kernel BUG at net/rxrpc/local_object.c:LINE!
+Last occurred:      2 days ago
+Reported:           25 days ago
+Branches:           Mainline and others
+Dashboard link:     https://syzkaller.appspot.com/bug?id=3D53b6555b27af2cae=
+74e2fbdac6cadc73f9cb18aa
+Original thread:    https://lkml.kernel.org/lkml/0000000000004c2416058c594b=
+30@google.com/T/#u
+
+This bug has a syzkaller reproducer only.
+
+This bug was bisected to:
+
+	commit 46894a13599a977ac35411b536fb3e0b2feefa95
+	Author: David Howells <dhowells@redhat.com>
+	Date:   Thu Oct 4 08:32:28 2018 +0000
+
+	=A0=A0rxrpc: Use IPv4 addresses throught the IPv6
+
+The original thread for this bug has received 3 replies; the last was 18 da=
+ys
+ago.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to =
+reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lkml.kernel.org/r/0000000000004c2416058c594b30@google.com
+
+---------------------------------------------------------------------------=
+-----
+Title:              WARNING: locking bug in flush_workqueue_prep_pwqs
+Last occurred:      30 days ago
+Reported:           158 days ago
+Branches:           Mainline and others
+Dashboard link:     https://syzkaller.appspot.com/bug?id=3D4ae48f9c43f87ccf=
+9f2f270b14d5b9284dadd05c
+Original thread:    https://lkml.kernel.org/lkml/0000000000005c7e6f0581f1b8=
+6a@google.com/T/#u
+
+Unfortunately, this bug does not have a reproducer.
+
+No one replied to the original thread for this bug.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+0c4264acb66ea0484d11@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to =
+reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lkml.kernel.org/r/0000000000005c7e6f0581f1b86a@google.com
 
 
 _______________________________________________
