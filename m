@@ -2,77 +2,90 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C64D975C70
-	for <lists+linux-afs@lfdr.de>; Fri, 26 Jul 2019 03:17:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5A6E763FB
+	for <lists+linux-afs@lfdr.de>; Fri, 26 Jul 2019 13:00:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bcBmd1gc9J1CUjXzs/M18b0YrJxVfR9Ef1fo+Y949bc=; b=ilmAM9MX2kUuhB
-	mY1ss4gvOnOcoLS2ToQuocYPXlmOy3tl9pIhbbsm+eLlaivmxkX1fqBKw+qGl0Pblz7B86ssc907g
-	zDX8xrTuJkNV1q1qa6DOeuJXC8M7ta8tSfT90EDBdaWKRjtEb0YhDJNDwq11CVL2KvgReMasj9bNl
-	5UV8zlKLWtQcxTcu1RRw3n5Ewepp8/XNA6NCLlI6V/onk5hY+YM1tJqy0gqV7zmKd+/HdBWoITTkY
-	Lyll/72meCcnaQjaO+ZMpOnFPbTkafUBW2f7qJH2b4C8qEAXrgosbEDJPbf3qWKMrybb8YG9XrEj2
-	m7DiOyiiWd1qFaxNdSZQ==;
+	List-Owner; bh=sPz34ZdfGD+1+g9PWYk2rQMEjurzSDleQu7UeCnDDFg=; b=CIjkA7AoZ/2U9x
+	cTADHnATABx9Xf5GO5wsFZQloiUGIpjd2uNsCHd5crgoCjUlrpxoe+q8vvObF/sompqtDPRfV/NZD
+	QPqJmtzyiKX/TPJ7lZNZ5a8WSn1YREYNVjDmf+Kgv7RaN8YJE2pqaACtp7ESDqZMux/W9OSVdmDfG
+	cHsBHj1xsFlKV/1pO+vPqExaFmcdkbQDasO6BUDMFkcpFc3nICND6kQF1rm6OIZzQCNuB6xNSQ/Cg
+	ATQpjSYsu9XJFS9KTHM8rPOOfAUFjVPIcCv2XZfUOTOh2rbFDHa4EjTKLjVe5UqikQVIOpH4Hxk47
+	hRY0UrVfOvAoM2w7FJUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqorf-0008F1-ID; Fri, 26 Jul 2019 01:17:43 +0000
-Received: from mail-pf1-f182.google.com ([209.85.210.182])
+	id 1hqxx8-0006zs-JO; Fri, 26 Jul 2019 10:59:58 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqorc-0008Eb-Od
- for linux-afs@lists.infradead.org; Fri, 26 Jul 2019 01:17:42 +0000
-Received: by mail-pf1-f182.google.com with SMTP id g2so23632719pfq.0
- for <linux-afs@lists.infradead.org>; Thu, 25 Jul 2019 18:17:40 -0700 (PDT)
+ id 1hqxx5-0006z8-TO
+ for linux-afs@lists.infradead.org; Fri, 26 Jul 2019 10:59:57 +0000
+Received: by mail-io1-xd41.google.com with SMTP id j6so28737493ioa.5
+ for <linux-afs@lists.infradead.org>; Fri, 26 Jul 2019 03:59:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/2Qkyg89gM8E4GiN52BSgJrYKhgOHFEX8MPsTOQQb/8=;
+ b=pvKKUb3xOgOs5idwxVhzJYYdgRH/f/hAG+mKTXBqLzmghnIB+xujpY1bBX9Y7LdVMd
+ aa+9Jt3AuO0Z+wHmXBs10VaaQaWws08Jo7yKOGYxFZaomRSCzixATWN007WGKlzn48EA
+ MfTec8I68rvjBmvtB214HMPqY9bMtNJPjysQehKPbyefTroUBtvIkPufc//tKBw+3Q3W
+ GhxC8/QO4NqmtXKDkFTfzoSVaEKnICoXOwH0JuyFLRh7ZV/6ndmdlqe1FttJgKV/DPAQ
+ 4zOxvgJqZo2nlpiVPA7khQNbyK3zr3GiFarRbnSzEbNe8EtRuu6bdZIPpCGdVa+nJwyf
+ P6Mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rzMYJMIbPfgFtA8biy437EjY3VzVwiq8mXePtq0nu1g=;
- b=dk7Gng7ZbuOdqWHfMLiJVocdZqR8P9UOBRp2iQpveh9frvuVoeabCs9tiEEwbhCqde
- E7WqVV4pk5Y9O5FA2dEBk1wfWYt/Z9iZSIxCZTv+4qxEhHWiAeqmQRCMKUH7+7XrWyAq
- AkFVgalJ4JXpTWwXB3TN30cHaTtCpVuSTpmLzqvcqjTC8tQ9sQxpvKlk7FymHH3aVneT
- yY91re6p7yPPfmcFu50WAiFCb8ZaN7FcneZhHWo02O8TRpuBGj4wpvVlzMZUsJjtZjh5
- QWbfN7bGRb8VvG9IKpmRmho1I0eEjdHNAM554ZdlkfUWMBfAwANYhWOTz8kK3d3kMhqX
- WFMQ==
-X-Gm-Message-State: APjAAAVKLn05t6slWsrdgLwGMGMokmjTGnufSLu+Rl4YXI14Jmre7UI2
- XdvGbg3WjOl8AZPBOIPkTUhOwB1lVQ4=
-X-Google-Smtp-Source: APXvYqy/OysJ3NLHWMnTijMvJocwVmSVnWrUi3j0JnKZ6J06nmFcvNScCTamjtQ2fOBmqC1szrqoEA==
-X-Received: by 2002:a62:874d:: with SMTP id i74mr19059691pfe.94.1564103859833; 
- Thu, 25 Jul 2019 18:17:39 -0700 (PDT)
-Received: from fedora19.localdomain
- (2001-44b8-3177-ac00-b321-eb44-0783-2320.static.ipv6.internode.on.net.
- [2001:44b8:3177:ac00:b321:eb44:783:2320])
- by smtp.gmail.com with ESMTPSA id h6sm48300026pfb.20.2019.07.25.18.17.37
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 25 Jul 2019 18:17:38 -0700 (PDT)
-Date: Fri, 26 Jul 2019 11:17:34 +1000
-From: Ian Wienand <iwienand@redhat.com>
-To: Jeffrey E Altman <jaltman@auristor.com>
-Subject: Re: 5.3.0-rc1-afs-next-48c7a244 : volume is offline messages during
- release
-Message-ID: <20190726011734.GA9973@fedora19.localdomain>
-References: <20190628003332.GA23470@fedora19.localdomain>
- <20190725061745.GA9802@fedora19.localdomain>
- <74b79ff5-6638-3a2b-424b-f3030b498e07@auristor.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/2Qkyg89gM8E4GiN52BSgJrYKhgOHFEX8MPsTOQQb/8=;
+ b=Ujk05dxVaLAxVVtnf/c990Wvn4ewnpwIO7oE8AG7JvfD6+Nb02JEOMXp2mXRdnI6PB
+ DND7dda7WF0nLa4JcV3InxASH0nqrF2wilZud73nfi8soscaOv1UYtqVNt+GaBBWuf0w
+ 7UpUeFHp1w/wc8Rj3lr2e88nRLFO0d+jIDItzuUUeIagMIRsC0J9Z9tVE4r/+VNgNBQ2
+ AgaWkWPF9S7eQMW6WTnXkgaj1hm83gPOp0Eux6JWZBI7nzHpcyoEY25yV0H/2jSnVTGf
+ J6qx5NUHZ4I5EN850YxH5F760VJxZ0+fXoYsjR8ZZjWH+i+m3vuUQebL/jxzmwiu7B8e
+ +J4w==
+X-Gm-Message-State: APjAAAWMbPoj/7XXmnFEKeBM8gEav5BYFICBm2XbepbLpIdUQDQpSklv
+ PnhdNaFqJgjTuKiGrmhaHeHYyiF6JLwylGepoBsoOA==
+X-Google-Smtp-Source: APXvYqwy0DspGrxpJRfm+kJx/feLb96cqxdHBXTbxWdZC6ECQstx1/+jNOE+Dzwx0A8fEiu4b7xFBoluWw/tmZ/Q6DY=
+X-Received: by 2002:a02:c7c9:: with SMTP id s9mr38357516jao.82.1564138791753; 
+ Fri, 26 Jul 2019 03:59:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <74b79ff5-6638-3a2b-424b-f3030b498e07@auristor.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <000000000000b7abcc058e924c12@google.com>
+In-Reply-To: <000000000000b7abcc058e924c12@google.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Fri, 26 Jul 2019 12:59:40 +0200
+Message-ID: <CACT4Y+aigCawAqjh=W83uAvbC+n3FXfsiYSA0sbMSn8kkPMSNA@mail.gmail.com>
+Subject: Re: possible deadlock in rxrpc_put_peer
+To: syzbot <syzbot+72af434e4b3417318f84@syzkaller.appspotmail.com>, 
+ David Howells <dhowells@redhat.com>, David Miller <davem@davemloft.net>,
+ linux-afs@lists.infradead.org, netdev <netdev@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_181740_863437_E8FA9FD2 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190726_035955_977759_7BB55332 
+X-CRM114-Status: GOOD (  18.38  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.182 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,62 +97,129 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-afs@lists.infradead.org
+Cc: syzkaller-bugs <syzkaller-bugs@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Thu, Jul 25, 2019 at 11:10:47AM -0400, Jeffrey E Altman wrote:
-> The important question to answer is whether or not the applications
-> reported a failure with the 579cb95f6d3a8f7db0ee361d6e8ed0c448c7a244 kernel.
+On Fri, Jul 26, 2019 at 11:38 AM syzbot
+<syzbot+72af434e4b3417318f84@syzkaller.appspotmail.com> wrote:
+>
+> Hello,
+>
+> syzbot found the following crash on:
+>
+> HEAD commit:    6d21a41b Add linux-next specific files for 20190718
+> git tree:       linux-next
+> console output: https://syzkaller.appspot.com/x/log.txt?x=174e3af0600000
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=3430a151e1452331
+> dashboard link: https://syzkaller.appspot.com/bug?extid=72af434e4b3417318f84
+> compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+>
+> Unfortunately, I don't have any reproducer for this crash yet.
+>
+> IMPORTANT: if you fix the bug, please add the following tag to the commit:
+> Reported-by: syzbot+72af434e4b3417318f84@syzkaller.appspotmail.com
 
-So we had a reported failure case @ 07-25 16:39 of a 404 from the
-centos EPEL mirror during a CI run [1]
++net/rxrpc/peer_object.c maintainers
 
- 2019-07-25 16:39:23.606826 | primary | INFO:kolla.common.utils.openstack-base:[91m http://mirror.iad.rax.opendev.org/epel/7/x86_64/Packages/p/python-elasticsearch-1.9.0-1.el7.noarch.rpm: [Errno 14] HTTP Error 404 - Not Found
-
-Webserver logs confirm that the mirror node (running 48c7a244)
-returned that:
-
- 162.242.218.105 - - [2019-07-25 16:39:22.881] "GET /epel/7/x86_64/Packages/p/python-elasticsearch-1.9.0-1.el7.noarch.rpm HTTP/1.1" 404 266 - "-" "urlgrabber/3.10 yum/3.4.3"
-
-There were no other related Apache errors or anything else I could
-see, other than returning this 404.
-
-Per [2], the vos release kicked off at 16:39:12 and finished at
-17:00:46 on our update server:
-
-...
- 2019-07-25T16:39:12,801099873+00:00
- Kerberos initialization for service/epel-mirror@OPENSTACK.ORG
- rsync completed successfully, running vos release.
- + k5start -t -f /etc/afsadmin.keytab service/afsadmin -- vos release -v mirror.epel
- ...
- 2019-07-25T17:00:46,977989838+00:00
-
-This correlates with the following in the mirror server logs:
-
- [Thu Jul 25 16:39:18 2019] kAFS: Volume 536870968 'mirror.epel' is offline
-
-The dashboard @ [3], if restricted to 07-25 16:38 -> ~17:00 shows ~16
-other similar hits.  I haven't been through them all, some may be
-referring to the same thing.  Other searches might reveal slightly
-differently worded things too.  However, several other files in the
-EPEL repo are mentioned.  We can see that none of the files there
-having issues were updated in the prior rsync, so they are not fresh
-data as it were.
-
-So, tl;dr ... yes it appears that Apache can think files are missing
-on volumes during releases with 48c7a244.
-
--i
-
-
-[1] http://logs.openstack.org/86/668286/4/check/kolla-build-oraclelinux-binary/0d3fc67/job-output.txt.gz#_2019-07-25_16_39_23_606826
-[2] http://paste.openstack.org/show/754873/
-[3] http://logstash.openstack.org/#dashboard/file/logstash.json?query=message%3A%5C%22HTTP%20Error%20404%5C%22%20AND%20node_provider%3A%20rax-iad
-
+> ============================================
+> WARNING: possible recursive locking detected
+> 5.2.0-next-20190718 #41 Not tainted
+> --------------------------------------------
+> kworker/0:3/21678 is trying to acquire lock:
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at: spin_lock_bh
+> /./include/linux/spinlock.h:343 [inline]
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> __rxrpc_put_peer /net/rxrpc/peer_object.c:415 [inline]
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> rxrpc_put_peer+0x2d3/0x6a0 /net/rxrpc/peer_object.c:435
+>
+> but task is already holding lock:
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at: spin_lock_bh
+> /./include/linux/spinlock.h:343 [inline]
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> rxrpc_peer_keepalive_dispatch /net/rxrpc/peer_event.c:378 [inline]
+> 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> rxrpc_peer_keepalive_worker+0x6b3/0xd02 /net/rxrpc/peer_event.c:430
+>
+> other info that might help us debug this:
+>   Possible unsafe locking scenario:
+>
+>         CPU0
+>         ----
+>    lock(&(&rxnet->peer_hash_lock)->rlock);
+>    lock(&(&rxnet->peer_hash_lock)->rlock);
+>
+>   *** DEADLOCK ***
+>
+>   May be due to missing lock nesting notation
+>
+> 3 locks held by kworker/0:3/21678:
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at: __write_once_size
+> /./include/linux/compiler.h:226 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at: arch_atomic64_set
+> /./arch/x86/include/asm/atomic64_64.h:34 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at: atomic64_set
+> /./include/asm-generic/atomic-instrumented.h:855 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at: atomic_long_set
+> /./include/asm-generic/atomic-long.h:40 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at: set_work_data
+> /kernel/workqueue.c:620 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at:
+> set_work_pool_and_clear_pending /kernel/workqueue.c:647 [inline]
+>   #0: 000000007c4c2bc3 ((wq_completion)krxrpcd){+.+.}, at:
+> process_one_work+0x88b/0x1740 /kernel/workqueue.c:2240
+>   #1: 000000006782bc7f
+> ((work_completion)(&rxnet->peer_keepalive_work)){+.+.}, at:
+> process_one_work+0x8c1/0x1740 /kernel/workqueue.c:2244
+>   #2: 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> spin_lock_bh /./include/linux/spinlock.h:343 [inline]
+>   #2: 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> rxrpc_peer_keepalive_dispatch /net/rxrpc/peer_event.c:378 [inline]
+>   #2: 00000000aa5eecdf (&(&rxnet->peer_hash_lock)->rlock){+.-.}, at:
+> rxrpc_peer_keepalive_worker+0x6b3/0xd02 /net/rxrpc/peer_event.c:430
+>
+> stack backtrace:
+> CPU: 0 PID: 21678 Comm: kworker/0:3 Not tainted 5.2.0-next-20190718 #41
+> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS
+> Google 01/01/2011
+> Workqueue: krxrpcd rxrpc_peer_keepalive_worker
+> Call Trace:
+>   __dump_stack /lib/dump_stack.c:77 [inline]
+>   dump_stack+0x172/0x1f0 /lib/dump_stack.c:113
+>   print_deadlock_bug /kernel/locking/lockdep.c:2301 [inline]
+>   check_deadlock /kernel/locking/lockdep.c:2342 [inline]
+>   validate_chain /kernel/locking/lockdep.c:2881 [inline]
+>   __lock_acquire.cold+0x194/0x398 /kernel/locking/lockdep.c:3880
+>   lock_acquire+0x190/0x410 /kernel/locking/lockdep.c:4413
+>   __raw_spin_lock_bh /./include/linux/spinlock_api_smp.h:135 [inline]
+>   _raw_spin_lock_bh+0x33/0x50 /kernel/locking/spinlock.c:175
+>   spin_lock_bh /./include/linux/spinlock.h:343 [inline]
+>   __rxrpc_put_peer /net/rxrpc/peer_object.c:415 [inline]
+>   rxrpc_put_peer+0x2d3/0x6a0 /net/rxrpc/peer_object.c:435
+>   rxrpc_peer_keepalive_dispatch /net/rxrpc/peer_event.c:381 [inline]
+>   rxrpc_peer_keepalive_worker+0x7a6/0xd02 /net/rxrpc/peer_event.c:430
+>   process_one_work+0x9af/0x1740 /kernel/workqueue.c:2269
+>   worker_thread+0x98/0xe40 /kernel/workqueue.c:2415
+>   kthread+0x361/0x430 /kernel/kthread.c:255
+>   ret_from_fork+0x24/0x30 /arch/x86/entry/entry_64.S:352
+>
+>
+> ---
+> This bug is generated by a bot. It may contain errors.
+> See https://goo.gl/tpsmEJ for more information about syzbot.
+> syzbot engineers can be reached at syzkaller@googlegroups.com.
+>
+> syzbot will keep track of this bug report. See:
+> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+>
+> --
+> You received this message because you are subscribed to the Google Groups "syzkaller-bugs" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to syzkaller-bugs+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/syzkaller-bugs/000000000000b7abcc058e924c12%40google.com.
 
 _______________________________________________
 linux-afs mailing list
