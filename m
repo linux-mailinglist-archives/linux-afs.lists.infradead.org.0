@@ -2,67 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9A0B7AC8A
-	for <lists+linux-afs@lfdr.de>; Tue, 30 Jul 2019 17:40:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 261217B007
+	for <lists+linux-afs@lfdr.de>; Tue, 30 Jul 2019 19:32:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GvHRGyVrAvSTNBsWHidn9MrkSAsixfX6EuMJQGYKHEo=; b=JJ1DtS4EcA9D52
-	fZSYF+iZejn/fqSITIoNNbyxoLr2cirgLDY+sTNucsxq44NyYxq6i5RbSdegwek8JhIuIowuar8xj
-	Xi55wGCmbeu1hjjemURvVM2upGwpQfm5z/DRyrqDtpDYrHRQERxMUyCq/QCfgmmH3a6p10H0uBXva
-	piDYfSXgQjaC+/GOA6yq4P5F659T3UQDpGgdvqfk+voTYFi0DzD6pQpgo/iU5+Ml7k4fJ/H2g4du3
-	XAbK7gEEjWM2sQ/rJ66yXm9YnEQ6+z/rSO6Z2X1/eWc+EGVhuZ5lps3WVUqW9rnyMAVuv45VWcxbM
-	1T4Lc3kGyNMyKENicOfQ==;
+	List-Owner; bh=pxe1l/UTBVkX/rHOKJdknZRxyQyNyTHkmurPAFY9J1s=; b=ZJCXr0HmMBO/yz
+	lN29HjkBc2CJPXHplD4hoO+lVi4ksSugmDacwR0wlxeeLEwansuSDPXJzSa1/9E8o+3x3Wkt2rd68
+	tf9t9y0bwLQWrtJ/FqEwztJ2AX/nuoucC5fznB8KAAT6CFFNVWpS53vFuxbN78Xp+fO6Y5B1Il2Zh
+	2KzfLhLXWEbKvFVbU3iaFJhmAM5dje+TGZQvtsu6mX5o73JK1eYrEptb8YhdUYqcw69XGOl2nBjpF
+	JTvFq0tgr9X19LhjuwkITd4/2ITyl6ioMl/e3qLshUA5FsF0nE+pIprU9TYXbb1efG24T+jFj8ZUu
+	AfnIeDzZtIxasvuI8FBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsUF5-0006td-0b; Tue, 30 Jul 2019 15:40:47 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hsVyl-0006q1-Ak; Tue, 30 Jul 2019 17:32:03 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsUF2-0006tM-Kt
- for linux-afs@lists.infradead.org; Tue, 30 Jul 2019 15:40:45 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id F1A5BC04D293;
- Tue, 30 Jul 2019 15:40:43 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
- [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 3131660BE5;
- Tue, 30 Jul 2019 15:40:43 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20190723122553.14565-1-baijiaju1990@gmail.com>
-References: <20190723122553.14565-1-baijiaju1990@gmail.com>
-To: Jia-Ju Bai <baijiaju1990@gmail.com>
-Subject: Re: [PATCH] fs: afs: Fix a possible null-pointer dereference in
- afs_put_read()
-MIME-Version: 1.0
-Content-ID: <14159.1564501242.1@warthog.procyon.org.uk>
-Date: Tue, 30 Jul 2019 16:40:42 +0100
-Message-ID: <14160.1564501242@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.31]); Tue, 30 Jul 2019 15:40:44 +0000 (UTC)
+ id 1hsVyi-0006pN-PA
+ for linux-afs@lists.infradead.org; Tue, 30 Jul 2019 17:32:01 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 6F2AD126598EB;
+ Tue, 30 Jul 2019 10:32:00 -0700 (PDT)
+Date: Tue, 30 Jul 2019 10:31:59 -0700 (PDT)
+Message-Id: <20190730.103159.316720747259208571.davem@davemloft.net>
+To: dhowells@redhat.com
+Subject: Re: [PATCH net 0/2] rxrpc: Fixes
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <156449821120.9558.2821927090314866621.stgit@warthog.procyon.org.uk>
+References: <156449821120.9558.2821927090314866621.stgit@warthog.procyon.org.uk>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Tue, 30 Jul 2019 10:32:00 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_084044_704152_4AE50797 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20190730_103200_821616_F8DE1D62 
+X-CRM114-Status: UNSURE (   7.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,16 +63,30 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
+Cc: netdev@vger.kernel.org, linux-afs@lists.infradead.org,
  linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-This is in my afs-fixes branch.
+From: David Howells <dhowells@redhat.com>
+Date: Tue, 30 Jul 2019 15:50:11 +0100
 
-David
+> 
+> Here are a couple of fixes for rxrpc:
+> 
+>  (1) Fix a potential deadlock in the peer keepalive dispatcher.
+> 
+>  (2) Fix a missing notification when a UDP sendmsg error occurs in rxrpc.
+> 
+> 
+> The patches are tagged here:
+> 
+> 	git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
+> 	rxrpc-fixes-20190730
+
+Pulled, thanks David.
 
 _______________________________________________
 linux-afs mailing list
