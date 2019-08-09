@@ -2,55 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 420818815E
-	for <lists+linux-afs@lfdr.de>; Fri,  9 Aug 2019 19:36:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C3B688177
+	for <lists+linux-afs@lfdr.de>; Fri,  9 Aug 2019 19:41:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PgSSKRv29y9pnrb3ITPO+Po6od9XUgUTJIeFHTKJ3qk=; b=mwwb62Qgr//VqaeWkoaa7gY8A
-	i4PhXoWSRZk3ZgdWB8AlL6fYy4rLxcbuaLdN22NyTofIZSuSkDsG6yfbB+83LX4WJ39PG+VcmkW65
-	6sau+f2KjyCiP9zNDJFyhNjZMN2rRtL7NZhh/NeFD54flyNrh5WcgUdnE8ooUXrjFtLvxkbLQNmBq
-	LBj8H+ZVMw/afW/EPNPG1aRyjrJqq9MoE4+WQzkNmUbRmj/iMbDTtS2SK6oovRVHtOtRcMRmfBi7H
-	+5RXU+as10dfocIl3ETu5aV9dZ1J2ojyjrWMievctqtsmc49VeMzLKRvlHUabICdfg2mNnAOZ4sh1
-	/1obzX6WA==;
+	 bh=y2t1xJeWW+tvwNK4ZFI41ZP3dmDB3kdLCuXt8U+dyu8=; b=j2ru8DM42KMhH+f2KtGqHcFki
+	IN8GU/4AOnALDl8cNSQHjXsH5KLz/Q7BEZKcrSP13dYsPStguZ/7ERZBkGCvylK3nsPXFrm5mxOuF
+	1/XI4nniaJtjOlKd05AMKZdsxNhH+mhwAzpL7omaHWFiVeThp2uSP6GjAugf4qvHanhJD1tfCtQoP
+	NsZgXHeuif2BRj1vioquH6nVmoFydRQxBn8cNbnU8q2HmtxbRL7/vgfLZ6r6KS2OXbMD8cEU0ReCr
+	tm7FM4lkfkA/qN324GQM7SJ0h31yvE4FG3JSwskSKFOdq429pmjUhX68lH16BAHT8zOEvC3gLpBrs
+	OG2IMeTIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw8oT-0006DV-6z; Fri, 09 Aug 2019 17:36:25 +0000
+	id 1hw8t0-0008JO-MS; Fri, 09 Aug 2019 17:41:06 +0000
 Received: from sequoia-grove.ad.secure-endpoints.com ([208.125.0.235]
  helo=smtp.secure-endpoints.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw8oQ-0006D7-8F
- for linux-afs@lists.infradead.org; Fri, 09 Aug 2019 17:36:23 +0000
+ id 1hw8sx-0008HD-J4
+ for linux-afs@lists.infradead.org; Fri, 09 Aug 2019 17:41:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/relaxed;
- d=auristor.com; s=MDaemon; t=1565372181; x=1565976981;
+ d=auristor.com; s=MDaemon; t=1565372462; x=1565977262;
  i=jaltman@auristor.com; q=dns/txt; h=VBR-Info:Subject:To:Cc:
  References:From:Openpgp:Autocrypt:Organization:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:Content-Type; bh=cRpaUxcJ/2y
- LIVSAnV2WMQLyX+OBtF3TrLDuDjpgfqA=; b=P4X9qUTn9fq0NA1sBiUF4xtsuoh
- zaIpkUqV+Rt9sYHbph5jBmMkj+PHptoJh/VSVTiRraigyr6xZBoN2QYRbPRnbbhg
- l7R0xuQIW8krVLjtu1LN0LRX+dM7FbsrlfQ4WT+MweSQ3kpWV8mGBheFbwFzI1Ey
- 052bLv80V95CjNG8=
+ User-Agent:MIME-Version:In-Reply-To:Content-Type; bh=Bctr4SH7S3z
+ JAU0HCHSAGY3+iu7hHnqfOZSXx5KfC1o=; b=hll3EhEW+k2zDVCzkSeH8H1x8w0
+ jqp0bKK06VeCYTkbgf9IKYKDa3Nr5xThkfX4OZHSCzbiJPn/osYrWBfm4Yck34qW
+ iKnvax93GJLYZGcqj2IUTx+Nt2+Xa8wrH8QqeB1/GXMPiBp0za3BwJVx36GgtRmt
+ lQNM9GUM3tEASDgM=
 X-MDAV-Result: clean
-X-MDAV-Processed: smtp.secure-endpoints.com, Fri, 09 Aug 2019 13:36:21 -0400
+X-MDAV-Processed: smtp.secure-endpoints.com, Fri, 09 Aug 2019 13:41:02 -0400
 Received: from [IPv6:2001:470:1f07:f77:c0fd:eae8:d216:e0ed] by auristor.com
  (IPv6:2001:470:1f07:f77:28d9:68fb:855d:c2a5) (MDaemon PRO v19.0.3) 
- with ESMTPSA id md50002191198.msg; Fri, 09 Aug 2019 13:36:21 -0400
+ with ESMTPSA id md50002191208.msg; Fri, 09 Aug 2019 13:41:01 -0400
 VBR-Info: md=auristor.com; mc=all; mv=vbr.emailcertification.org;
-X-Spam-Processed: smtp.secure-endpoints.com, Fri, 09 Aug 2019 13:36:21 -0400
+X-Spam-Processed: smtp.secure-endpoints.com, Fri, 09 Aug 2019 13:41:01 -0400
  (not processed: message from trusted or authenticated source)
 X-MDRemoteIP: 2001:470:1f07:f77:c0fd:eae8:d216:e0ed
 X-MDHelo: [IPv6:2001:470:1f07:f77:c0fd:eae8:d216:e0ed]
-X-MDArrival-Date: Fri, 09 Aug 2019 13:36:21 -0400
+X-MDArrival-Date: Fri, 09 Aug 2019 13:41:01 -0400
 X-Authenticated-Sender: jaltman@auristor.com
 X-Return-Path: prvs=1124d98d78=jaltman@auristor.com
 X-Envelope-From: jaltman@auristor.com
 X-MDaemon-Deliver-To: linux-afs@lists.infradead.org
-Subject: Re: [PATCH -next] afs: remove unused variable 'afs_zero_fid'
+Subject: Re: [PATCH -next] afs: remove unused variable 'afs_voltypes'
 To: YueHaibing <yuehaibing@huawei.com>, dhowells@redhat.com
-References: <20190809084231.62132-1-yuehaibing@huawei.com>
+References: <20190809084037.68784-1-yuehaibing@huawei.com>
 From: Jeffrey E Altman <jaltman@auristor.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jaltman@auristor.com; keydata=
@@ -97,15 +97,15 @@ Autocrypt: addr=jaltman@auristor.com; keydata=
  4kG/E7pI/4lke5X5X9vroXRHB7tkpAgT46SqSM/XTwCaseXG9orDgz3duRTUp6K0++S/qsqT
  akGVmjD5917A1HqWfMmiKA==
 Organization: AuriStor, Inc.
-Message-ID: <aac9a7c0-ff88-b43a-64cf-53abe65298e7@auristor.com>
-Date: Fri, 9 Aug 2019 13:36:11 -0400
+Message-ID: <f410b332-8df5-927e-6e68-2b2c7a32f92c@auristor.com>
+Date: Fri, 9 Aug 2019 13:40:53 -0400
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190809084231.62132-1-yuehaibing@huawei.com>
+In-Reply-To: <20190809084037.68784-1-yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_103622_555192_99CCF61D 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20190809_104103_909189_31597820 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -131,59 +131,63 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: linux-kernel@vger.kernel.org, linux-afs@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7015589922177982847=="
+Content-Type: multipart/mixed; boundary="===============1183495860286923233=="
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 This is a cryptographically signed message in MIME format.
 
---===============7015589922177982847==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms030305040706020602080209"
+--===============1183495860286923233==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms060408000801010805070706"
 
 This is a cryptographically signed message in MIME format.
 
---------------ms030305040706020602080209
+--------------ms060408000801010805070706
 Content-Type: multipart/mixed;
- boundary="------------695636827308FACAB97F260C"
+ boundary="------------309D5125B0322F37E77C9573"
 Content-Language: en-US
 
 This is a multi-part message in MIME format.
---------------695636827308FACAB97F260C
+--------------309D5125B0322F37E77C9573
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-Confirmed.
+This is true but I believe afs_voltypes should be used in the
+afs_put_volume() and afs_deactivate_volume() enter() tracing.
 
-On 8/9/2019 4:42 AM, YueHaibing wrote:
-> fs/afs/fsclient.c:18:29: warning:
->  afs_zero_fid defined but not used [-Wunused-const-variable=3D]
+If it will not be used for those calls then removal is correct.
+
+Jeffrey Altman
+
+On 8/9/2019 4:40 AM, YueHaibing wrote:
+> fs/afs/volume.c:15:26: warning:
+>  afs_voltypes defined but not used [-Wunused-const-variable=3D]
 >=20
-> It is never used since commit 025db80c9e42 ("afs: Trace
-> the initiation and completion of client calls")
+> It is not used since commit d2ddc776a458 ("afs: Overhaul
+> volume and server record caching and fileserver rotation")
 >=20
 > Reported-by: Hulk Robot <hulkci@huawei.com>
 > Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 > ---
->  fs/afs/fsclient.c | 2 --
+>  fs/afs/volume.c | 2 --
 >  1 file changed, 2 deletions(-)
 >=20
-> diff --git a/fs/afs/fsclient.c b/fs/afs/fsclient.c
-> index 114f281..67af068 100644
-> --- a/fs/afs/fsclient.c
-> +++ b/fs/afs/fsclient.c
-> @@ -15,8 +15,6 @@
->  #include "xdr_fs.h"
->  #include "protocol_yfs.h"
+> diff --git a/fs/afs/volume.c b/fs/afs/volume.c
+> index 1a41430..92ca5e2 100644
+> --- a/fs/afs/volume.c
+> +++ b/fs/afs/volume.c
+> @@ -12,8 +12,6 @@
+>  unsigned __read_mostly afs_volume_gc_delay =3D 10;
+>  unsigned __read_mostly afs_volume_record_life =3D 60 * 60;
 > =20
-> -static const struct afs_fid afs_zero_fid;
+> -static const char *const afs_voltypes[] =3D { "R/W", "R/O", "BAK" };
 > -
->  static inline void afs_use_fs_server(struct afs_call *call, struct afs=
-_cb_interest *cbi)
->  {
->  	call->cbi =3D afs_get_cb_interest(cbi);
+>  /*
+>   * Allocate a volume record and load it up from a vldb record.
+>   */
 >=20
 
---------------695636827308FACAB97F260C
+--------------309D5125B0322F37E77C9573
 Content-Type: text/x-vcard; charset=utf-8;
  name="jaltman.vcf"
 Content-Transfer-Encoding: quoted-printable
@@ -203,9 +207,9 @@ version:2.1
 end:vcard
 
 
---------------695636827308FACAB97F260C--
+--------------309D5125B0322F37E77C9573--
 
---------------ms030305040706020602080209
+--------------ms060408000801010805070706
 Content-Type: application/pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -273,24 +277,24 @@ TfqF2eAgprpyzLWmdr0mou3bv1Sq4OuBhmTQCnqxAXr4yVTRYHkp5lCvRgeJAme1OTVpVPth
 /O7HJ7VuEP9GOr6kCXCXmjB4P3UJ2oU0NqfoQdcSSSt9hliALnExTEjii20B2nSDojGCAxQw
 ggMQAgEBME4wOjELMAkGA1UEBhMCVVMxEjAQBgNVBAoTCUlkZW5UcnVzdDEXMBUGA1UEAxMO
 VHJ1c3RJRCBDQSBBMTICEEABZtMZ6Gd9S673WFjAzkMwDQYJYIZIAWUDBAIBBQCgggGXMBgG
-CSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE5MDgwOTE3MzYxNlow
-LwYJKoZIhvcNAQkEMSIEIO5M0siQltvIQE7Ab7WCx4naH2uyax/I7uZeIgX+c3YQMF0GCSsG
+CSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE5MDgwOTE3NDA1NVow
+LwYJKoZIhvcNAQkEMSIEICDdasDnQDaiOXWuVkJTbG3WTgJhCUjd+kWX+yBj/uRMMF0GCSsG
 AQQBgjcQBDFQME4wOjELMAkGA1UEBhMCVVMxEjAQBgNVBAoTCUlkZW5UcnVzdDEXMBUGA1UE
 AxMOVHJ1c3RJRCBDQSBBMTICEEABZtMZ6Gd9S673WFjAzkMwXwYLKoZIhvcNAQkQAgsxUKBO
 MDoxCzAJBgNVBAYTAlVTMRIwEAYDVQQKEwlJZGVuVHJ1c3QxFzAVBgNVBAMTDlRydXN0SUQg
 Q0EgQTEyAhBAAWbTGehnfUuu91hYwM5DMGwGCSqGSIb3DQEJDzFfMF0wCwYJYIZIAWUDBAEq
 MAsGCWCGSAFlAwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwIC
-AUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAa3NC9LNhsDar
-DIdWILGrNrmNq1c37rp+pR02AmXLUHPAhZ53TdItMZlejYuAYZNUqIDQICMphZsb5a0xRNYY
-uolFYQgVONE4lovqYHHTlD6c3MY8mwppaQMlrmkhVoBJYlkbDz6xtqf96lb0dFgVPAJdvjxB
-yPzxuwJuQG8I/iYlbXZpwPnfZC+Rccr5fc079KgYK184OaRNbjG406VGXgKjb4sKXIQSq65h
-tVBy5bToaHFDAKN3NIpcOYr+Jwu9J8RIeMzXr2oSyPooesQilhRALL1ptVvxM2aOkDNNVncx
-pNjvTG4n14vpbprgQKiNtL23LYQE/KYHVnoCQKGmTwAAAAAAAA==
---------------ms030305040706020602080209--
+AUAwBwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEArlK16CZqXjWz
+KQdvr7jQAyc/mJqza34ayPMywie1zvVx8eyxEpFsE3KuhcIZVxsxxpGR5DN9qBLIUllPYF4k
+Y33xhbce6ulJlsF48RAgAbzICqyZvBVyPvx00lQiRKMuUTqTlPNwPe0Z9Un3/Ysw6INj8mDF
+NrH3Q7dEJPis8wyMMK+YmgI1Ci+M+P4Co2Z0ri1qUFwUZ8eZZqSxO8FxqY99sH0gUPdTXOWC
+5Xi8FFZgE01CGG1osTJLO9Kvo0btTGOEjyvSY3XN/cQwXLXyrvVYeOrRrza+X8WS/0xvTxtv
+ePuMtnyalDfyhEwbQ6lqLYsag/CZpTjrcC6wy0f2sAAAAAAAAA==
+--------------ms060408000801010805070706--
 
 
 
---===============7015589922177982847==
+--===============1183495860286923233==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -300,6 +304,6 @@ _______________________________________________
 linux-afs mailing list
 http://lists.infradead.org/mailman/listinfo/linux-afs
 
---===============7015589922177982847==--
+--===============1183495860286923233==--
 
 
