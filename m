@@ -2,67 +2,71 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EE2F8BA1D
-	for <lists+linux-afs@lfdr.de>; Tue, 13 Aug 2019 15:26:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D8378BB64
+	for <lists+linux-afs@lfdr.de>; Tue, 13 Aug 2019 16:23:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=inyeKLaZlL7nyH2biTPcy5jtfBqsJoBNzfYzOJFEw1U=; b=WZbfFNtmzPH/HG
-	by4OMXT3N/7Ha3rjgGTedk9Gcl8lKS5UOcNmdVxzdHtwA5qZ+Y/jfjlkV06LwrwwUBpE6Qbes4VxH
-	ZcLBWqgykmQNN+2TRDKlhuEFLlT1/31jLQCJP+5Tt8jWDraEGPSA4YQvvFVlyyy7drz2UusDkIs0u
-	rTJ1hTeNYcqt6dRClp0LI5Ku7+mxmp4IAkseGb7f0xRvqOubJVPG/oqPh3wZrVdTLIWMUJHZTIPBA
-	OsThVeW7QggZduoK9yxdKj1aJznQxcxe6O1Qg6F9kmOoSGtjFDbUlf4pMNwxRaCMq46FpANG2WKie
-	0wV+Zrf/3P5ZOdG6ZPEA==;
+	List-Owner; bh=bDeL3rxsmx2RdUcWyOjdnR56zVPSpA2VUNBxYeiL7Qw=; b=ZYasDR6+8Th1YG
+	VW4D6jXVK02GbCzOU4jl9mmASKAbtiTvSnjkY1FFfR0Z31YPKpK8zum2bj17OMf9NqwLOK1ejIesy
+	wBO+h2JJWPoy6yiiriife30XMUA7fjpiQToMpMyixPGmkZaOgLnO1xwYYFH4GfVlSRMe8O/yyo+dL
+	I3CFw1nJGp8wiax/N3RuIk3r196fUH4WAsqz2sym2ACOdj7z7sMrMXIzXNub+2XNJz96nAFk80oB3
+	h7uJlcjWlUecztAuU3YMwIMmBxOdRMuBJxnJSe4Tr5Dzy6Oaiv6aJLcg2NTpCuBWnxPQKdqMrsC9h
+	RcwBZnKYAj5ByfGEu3SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxWop-0002Gz-W6; Tue, 13 Aug 2019 13:26:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hxXhb-0008Dg-EO; Tue, 13 Aug 2019 14:23:07 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxSTN-0001bg-DK; Tue, 13 Aug 2019 08:48:08 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hxXhX-0008Cc-Tz
+ for linux-afs@lists.infradead.org; Tue, 13 Aug 2019 14:23:05 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4E6C720679;
- Tue, 13 Aug 2019 08:48:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565686084;
- bh=dgkNfsoGvEEUqkSMoKhZo00QGi0KOqUYD1qh2seiDX0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YExtdyLDmV5g6i2jgGccJIQ9lpJD2qunpsOWx/skQdmvZBvdutmEsdbbDFgUnYiW9
- lXvB0C/oMwnRrAFZnyypCC3r55bOvbM5/MOv8GxdUmBrJYIbb3l/0Xsrf+14ZRwh2E
- PJJHiAbOF9zt2xlZLKfEtULVL5ySMo91nAG/3xII=
-Date: Tue, 13 Aug 2019 10:48:01 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Mark Salyzyn <salyzyn@android.com>
-Subject: Re: [PATCH] Add flags option to get xattr method paired to
- __vfs_getxattr
-Message-ID: <20190813084801.GA972@kroah.com>
-References: <20190812193320.200472-1-salyzyn@android.com>
+ by mx1.redhat.com (Postfix) with ESMTPS id 1133C3064FD4;
+ Tue, 13 Aug 2019 14:23:03 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
+ [10.10.120.255])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4365360852;
+ Tue, 13 Aug 2019 14:23:01 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <CACT4Y+bjLBwVK_6fz2H8fXm0baAVX+vRJ4UbVWG_7yNUO-SOUg@mail.gmail.com>
+References: <CACT4Y+bjLBwVK_6fz2H8fXm0baAVX+vRJ4UbVWG_7yNUO-SOUg@mail.gmail.com>
+ <0000000000004c2416058c594b30@google.com>
+ <24282.1562074644@warthog.procyon.org.uk>
+ <CACT4Y+YjdV8CqX5=PzKsHnLsJOzsydqiq3igYDm_=nSdmFo2YQ@mail.gmail.com>
+ <20330.1564583454@warthog.procyon.org.uk>
+ <CACT4Y+Y4cRgaRPJ_gz_53k85inDKq+X+bWmOTv1gPLo=Yod1=A@mail.gmail.com>
+ <22318.1564586386@warthog.procyon.org.uk>
+To: Dmitry Vyukov <dvyukov@google.com>
+Subject: Re: kernel BUG at net/rxrpc/local_object.c:LINE!
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190812193320.200472-1-salyzyn@android.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-ID: <3134.1565706180.1@warthog.procyon.org.uk>
+Date: Tue, 13 Aug 2019 15:23:00 +0100
+Message-ID: <3135.1565706180@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Tue, 13 Aug 2019 14:23:03 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_014805_492641_0E05399D 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20190813_072303_991584_1BAF0155 
+X-CRM114-Status: GOOD (  14.12  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Mailman-Approved-At: Tue, 13 Aug 2019 06:26:26 -0700
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,82 +78,34 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
- jfs-discussion@lists.sourceforge.net, linux-integrity@vger.kernel.org,
- Martin Brandenburg <martin@omnibond.com>, samba-technical@lists.samba.org,
- Dominique Martinet <asmadeus@codewreck.org>, Chao Yu <yuchao0@huawei.com>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-unionfs@vger.kernel.org,
- David Howells <dhowells@redhat.com>, Chris Mason <clm@fb.com>,
- "David S. Miller" <davem@davemloft.net>,
- Andreas Dilger <adilger.kernel@dilger.ca>, Eric Paris <eparis@parisplace.org>,
- netdev@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-afs@lists.infradead.org, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, Andreas Gruenbacher <agruenba@redhat.com>,
- Sage Weil <sage@redhat.com>, Miklos Szeredi <miklos@szeredi.hu>,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
- Hugh Dickins <hughd@google.com>, James Morris <jmorris@namei.org>,
- cluster-devel@redhat.com, selinux@vger.kernel.org,
- Vyacheslav Dubeyko <slava@dubeyko.com>,
- Casey Schaufler <casey@schaufler-ca.com>, v9fs-developer@lists.sourceforge.net,
- Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
- kernel-team@android.com, linux-mm@kvack.org, devel@lists.orangefs.org,
- Serge Hallyn <serge@hallyn.com>,
- Ernesto =?iso-8859-1?Q?A=2E_Fern=E1ndez?= <ernesto.mnd.fernandez@gmail.com>,
- linux-cifs@vger.kernel.org, Eric Van Hensbergen <ericvh@gmail.com>,
- ecryptfs@vger.kernel.org, Josef Bacik <josef@toxicpanda.com>,
- reiserfs-devel@vger.kernel.org, Tejun Heo <tj@kernel.org>,
- Joel Becker <jlbec@evilplan.org>, linux-mtd@lists.infradead.org,
- David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- ceph-devel@vger.kernel.org, Trond Myklebust <trond.myklebust@hammerspace.com>,
- Paul Moore <paul@paul-moore.com>, linux-nfs@vger.kernel.org,
- Theodore Ts'o <tytso@mit.edu>, linux-fsdevel@vger.kernel.org,
- Joseph Qi <joseph.qi@linux.alibaba.com>, Mathieu Malaterre <malat@debian.org>,
- Stephen Smalley <sds@tycho.nsa.gov>,
- "Darrick J. Wong" <darrick.wong@oracle.com>, Jeff Layton <jlayton@kernel.org>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Tyler Hicks <tyhicks@canonical.com>, Steve French <sfrench@samba.org>,
- linux-security-module@vger.kernel.org, ocfs2-devel@oss.oracle.com,
- Jan Kara <jack@suse.com>, Bob Peterson <rpeterso@redhat.com>,
- Phillip Lougher <phillip@squashfs.org.uk>,
- Andrew Morton <akpm@linux-foundation.org>,
- David Woodhouse <dwmw2@infradead.org>,
- Anna Schumaker <anna.schumaker@netapp.com>, linux-btrfs@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>
+Cc: Eric Biggers <ebiggers@kernel.org>, netdev <netdev@vger.kernel.org>,
+ syzkaller-bugs <syzkaller-bugs@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>, linux-afs@lists.infradead.org,
+ dhowells@redhat.com,
+ syzbot <syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com>,
+ David Miller <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 12:32:49PM -0700, Mark Salyzyn wrote:
-> --- a/include/linux/xattr.h
-> +++ b/include/linux/xattr.h
-> @@ -30,10 +30,10 @@ struct xattr_handler {
->  	const char *prefix;
->  	int flags;      /* fs private flags */
->  	bool (*list)(struct dentry *dentry);
-> -	int (*get)(const struct xattr_handler *, struct dentry *dentry,
-> +	int (*get)(const struct xattr_handler *handler, struct dentry *dentry,
->  		   struct inode *inode, const char *name, void *buffer,
-> -		   size_t size);
-> -	int (*set)(const struct xattr_handler *, struct dentry *dentry,
-> +		   size_t size, int flags);
-> +	int (*set)(const struct xattr_handler *handler, struct dentry *dentry,
->  		   struct inode *inode, const char *name, const void *buffer,
->  		   size_t size, int flags);
+Dmitry Vyukov <dvyukov@google.com> wrote:
 
-Wow, 7 arguments.  Isn't there some nice rule of thumb that says once
-you get more then 5, a function becomes impossible to understand?
+> > > Please send a patch for testing that enables this tracing
+> > > unconditionally. This should have the same effect. There is no way to
+> > > hook into a middle of the automated process and arbitrary tune things.
+> >
+> > I don't know how to do that off hand.  Do you have an example?
+> 
+> Few messages above I asked it to test:
+> https://groups.google.com/d/msg/syzkaller-bugs/gEnZkmEWf1s/r2_X_KVQAQAJ
+> 
+> Basically, git repo + branch + patch. Here are the docs:
+> https://github.com/google/syzkaller/blob/master/docs/syzbot.md#testing-patches
 
-Surely this could be a structure passed in here somehow, that way when
-you add the 8th argument in the future, you don't have to change
-everything yet again?  :)
+I meant that I don't know how to turn a tracepoint on from inside the kernel.
 
-I don't have anything concrete to offer as a replacement fix for this,
-but to me this just feels really wrong...
-
-thanks,
-
-greg k-h
+David
 
 _______________________________________________
 linux-afs mailing list
