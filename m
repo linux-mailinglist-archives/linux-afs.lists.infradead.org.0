@@ -2,63 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A13C8D5CB
-	for <lists+linux-afs@lfdr.de>; Wed, 14 Aug 2019 16:18:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2F118D5DE
+	for <lists+linux-afs@lfdr.de>; Wed, 14 Aug 2019 16:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VNg1Wbmz+W3Kx87qL/HkK+6kZmCOrEo8raC1q+957v8=; b=XneWyYdJQHSvbn
-	ibuta3fEDzUhftqEOGhzoLV5Ux5fh+2ha3HWF+8JkIXjWariUi6T6tqAdetGEjGPVdpC5fYLIfrX/
-	6zwDq8tmtEZY1Ts636lg2+L/XzaUdIiglUvRz/PmDoISPkxJbCPJZsfgYIu66/FIzjjZ9qffsT3fK
-	ersqwKpdh0LPpLHOsyumQzJ1MnxpFPaOlWMxkjUshpJUbvmUCQLr94IecH8V5I2mPAVX/hK/UvhjF
-	I1Twg0Dg1NVKLowALfI6oYFK81J09dhY+Pc2JNqlaz8WHkG6Lnq518MFCcu2yMpZefZUyp5qiKXWE
-	T4rp7fZeJHr09kXahL8w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yq1A2nAelwUwdgEBWtuoGJtBaUFeBJ3zTw3TTVxzVck=; b=WbZDsc0/N56mO5
+	OM3GEBolz7ZQNFwu0q0hvW09HzW6Jv52n4HNADQF0l5zYUPqQnAkrXtBaFoMymtMzvgqDYGTl/MAp
+	uIAfqIhLGy0Kf4uKYTOa0iXo7uurUGyqc7QejuYCGJCQ33zczVfmfbwCUHq3g0u+ce18HYkLFRvBQ
+	+/LPkJMlmwiH32TA/B155ryFweYv+mB+oxS/QD4M3xfAn0Cc8L23sjvzWXH+bkueKro4yjAKGIyeR
+	d0EMs30gXMmqCXBIn5NZtyiSL4lVlBfC9WXzkWDXTxfj3iqOn5oO1oe/fA6hrVSBiR3i7kdMuG+HG
+	60KFiY5JeDQIHLXQ6UOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxu6v-0006Gl-5O; Wed, 14 Aug 2019 14:18:45 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hxuBY-0008CR-Ep; Wed, 14 Aug 2019 14:23:32 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxu6s-0006G5-9X
- for linux-afs@lists.infradead.org; Wed, 14 Aug 2019 14:18:43 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id ED1A6309BF21;
- Wed, 14 Aug 2019 14:18:41 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
- [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id A71625C1D4;
- Wed, 14 Aug 2019 14:18:40 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] afs: Fixes
+ id 1hxr17-0004GU-H5; Wed, 14 Aug 2019 11:00:35 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 3537FADEF;
+ Wed, 14 Aug 2019 11:00:26 +0000 (UTC)
+Received: by quack2.suse.cz (Postfix, from userid 1000)
+ id 81D741E4200; Wed, 14 Aug 2019 13:00:22 +0200 (CEST)
+Date: Wed, 14 Aug 2019 13:00:22 +0200
+From: Jan Kara <jack@suse.cz>
+To: Mark Salyzyn <salyzyn@android.com>
+Subject: Re: [PATCH v2] Add flags option to get xattr method paired to
+ __vfs_getxattr
+Message-ID: <20190814110022.GB26273@quack2.suse.cz>
+References: <20190813145527.26289-1-salyzyn@android.com>
 MIME-Version: 1.0
-Content-ID: <13850.1565792319.1@warthog.procyon.org.uk>
-Date: Wed, 14 Aug 2019 15:18:40 +0100
-Message-ID: <13851.1565792320@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.45]); Wed, 14 Aug 2019 14:18:42 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <20190813145527.26289-1-salyzyn@android.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_071842_352352_E2772999 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190814_040033_860215_2CFC18C1 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+X-Mailman-Approved-At: Wed, 14 Aug 2019 07:23:32 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,76 +63,118 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, dhowells@redhat.com,
- linux-fsdevel@vger.kernel.org, baijiaju1990@gmail.com,
- marc.dionne@auristor.com, linux-afs@lists.infradead.org
+Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
+ jfs-discussion@lists.sourceforge.net,
+ Phillip Lougher <phillip@squashfs.org.uk>, linux-integrity@vger.kernel.org,
+ Martin Brandenburg <martin@omnibond.com>, samba-technical@lists.samba.org,
+ Dominique Martinet <asmadeus@codewreck.org>, Chao Yu <yuchao0@huawei.com>,
+ Mimi Zohar <zohar@linux.ibm.com>, Adrian Hunter <adrian.hunter@intel.com>,
+ linux-mm@kvack.org, Chris Mason <clm@fb.com>, netdev@vger.kernel.org,
+ Andreas Dilger <adilger.kernel@dilger.ca>, linux-xfs@vger.kernel.org,
+ Eric Paris <eparis@parisplace.org>, linux-f2fs-devel@lists.sourceforge.net,
+ linux-afs@lists.infradead.org, Stephen Smalley <sds@tycho.nsa.gov>,
+ Mike Marshall <hubcap@omnibond.com>, devel@driverdev.osuosl.org,
+ linux-cifs@vger.kernel.org, Paul Moore <paul@paul-moore.com>,
+ Sage Weil <sage@redhat.com>, "Darrick J. Wong" <darrick.wong@oracle.com>,
+ Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
+ linux-unionfs@vger.kernel.org, Hugh Dickins <hughd@google.com>,
+ James Morris <jmorris@namei.org>, cluster-devel@redhat.com,
+ Joseph Qi <joseph.qi@linux.alibaba.com>,
+ Vyacheslav Dubeyko <slava@dubeyko.com>,
+ Casey Schaufler <casey@schaufler-ca.com>, v9fs-developer@lists.sourceforge.net,
+ Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ kernel-team@android.com, devel@lists.orangefs.org,
+ Serge Hallyn <serge@hallyn.com>, Gao Xiang <gaoxiang25@huawei.com>,
+ Eric Van Hensbergen <ericvh@gmail.com>, ecryptfs@vger.kernel.org,
+ linux-erofs@lists.ozlabs.org, Josef Bacik <josef@toxicpanda.com>,
+ reiserfs-devel@vger.kernel.org, Bob Peterson <rpeterso@redhat.com>,
+ Joel Becker <jlbec@evilplan.org>, Anna Schumaker <anna.schumaker@netapp.com>,
+ David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
+ ceph-devel@vger.kernel.org, selinux@vger.kernel.org,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Andreas Gruenbacher <agruenba@redhat.com>, David Howells <dhowells@redhat.com>,
+ linux-nfs@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
+ linux-fsdevel@vger.kernel.org, Artem Bityutskiy <dedekind1@gmail.com>,
+ Mathieu Malaterre <malat@debian.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Miklos Szeredi <miklos@szeredi.hu>, Jeff Layton <jlayton@kernel.org>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Tyler Hicks <tyhicks@canonical.com>, Steve French <sfrench@samba.org>,
+ Ernesto =?iso-8859-1?Q?A=2E_Fern=E1ndez?= <ernesto.mnd.fernandez@gmail.com>,
+ linux-btrfs@vger.kernel.org, linux-security-module@vger.kernel.org,
+ Jan Kara <jack@suse.com>, Tejun Heo <tj@kernel.org>,
+ linux-mtd@lists.infradead.org, Andrew Morton <akpm@linux-foundation.org>,
+ David Woodhouse <dwmw2@infradead.org>, "David S. Miller" <davem@davemloft.net>,
+ ocfs2-devel@oss.oracle.com, Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Tue 13-08-19 07:55:06, Mark Salyzyn wrote:
+...
+> diff --git a/fs/xattr.c b/fs/xattr.c
+> index 90dd78f0eb27..71f887518d6f 100644
+> --- a/fs/xattr.c
+> +++ b/fs/xattr.c
+...
+>  ssize_t
+>  __vfs_getxattr(struct dentry *dentry, struct inode *inode, const char *name,
+> -	       void *value, size_t size)
+> +	       void *value, size_t size, int flags)
+>  {
+>  	const struct xattr_handler *handler;
+> -
+> -	handler = xattr_resolve_name(inode, &name);
+> -	if (IS_ERR(handler))
+> -		return PTR_ERR(handler);
+> -	if (!handler->get)
+> -		return -EOPNOTSUPP;
+> -	return handler->get(handler, dentry, inode, name, value, size);
+> -}
+> -EXPORT_SYMBOL(__vfs_getxattr);
+> -
+> -ssize_t
+> -vfs_getxattr(struct dentry *dentry, const char *name, void *value, size_t size)
+> -{
+> -	struct inode *inode = dentry->d_inode;
+>  	int error;
+>  
+> +	if (flags & XATTR_NOSECURITY)
+> +		goto nolsm;
 
-Can you pull these afs fixes please?
+Hum, is it OK for XATTR_NOSECURITY to skip even the xattr_permission()
+check? I understand that for reads of security xattrs it actually does not
+matter in practice but conceptually that seems wrong to me as
+XATTR_NOSECURITY is supposed to skip just security-module checks to avoid
+recursion AFAIU.
 
- (1) Fix the CB.ProbeUuid handler to generate its reply correctly.
+> diff --git a/include/uapi/linux/xattr.h b/include/uapi/linux/xattr.h
+> index c1395b5bd432..1216d777d210 100644
+> --- a/include/uapi/linux/xattr.h
+> +++ b/include/uapi/linux/xattr.h
+> @@ -17,8 +17,9 @@
+>  #if __UAPI_DEF_XATTR
+>  #define __USE_KERNEL_XATTR_DEFS
+>  
+> -#define XATTR_CREATE	0x1	/* set value, fail if attr already exists */
+> -#define XATTR_REPLACE	0x2	/* set value, fail if attr does not exist */
+> +#define XATTR_CREATE	 0x1	/* set value, fail if attr already exists */
+> +#define XATTR_REPLACE	 0x2	/* set value, fail if attr does not exist */
+> +#define XATTR_NOSECURITY 0x4	/* get value, do not involve security check */
+>  #endif
 
- (2) Fix a mix up in indices when parsing a Volume Location entry record.
+It seems confusing to export XATTR_NOSECURITY definition to userspace when
+that is kernel-internal flag. I'd just define it in include/linux/xattr.h
+somewhere from the top of flags space (like 0x40000000).
 
- (3) Fix a potential NULL-pointer deref when cleaning up a read request.
+Otherwise the patch looks OK to me (cannot really comment on the security
+module aspect of this whole thing though).
 
- (4) Fix the expected data version of the destination directory in
-     afs_rename().
-
- (5) Fix afs_d_revalidate() to only update d_fsdata if it's not the same as
-     the directory data version to reduce the likelihood of overwriting the
-     result of a competing operation.  (d_fsdata carries the directory DV
-     or the least-significant word thereof).
-
- (6) Fix the tracking of the data-version on a directory and make sure that
-     dentry objects get properly initialised, updated and revalidated.
-
-     Also fix rename to update d_fsdata to match the new directory's DV if
-     the dentry gets moved over and unhash the dentry to stop
-     afs_d_revalidate() from interfering.
-
-David
----
-The following changes since commit 2a11c76e5301dddefcb618dac04f74e6314df6bc:
-
-  Merge tag 'for_linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mst/vhost (2019-07-29 11:34:12 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-fixes-20190814
-
-for you to fetch changes up to 9dd0b82ef530cdfe805c9f7079c99e104be59a14:
-
-  afs: Fix missing dentry data version updating (2019-07-30 14:38:52 +0100)
-
-----------------------------------------------------------------
-AFS Fixes
-
-Reviewed-by: Marc Dionne <marc.dionne@auristor.com>
-
-----------------------------------------------------------------
-David Howells (4):
-      afs: Fix the CB.ProbeUuid service handler to reply correctly
-      afs: Fix off-by-one in afs_rename() expected data version calculation
-      afs: Only update d_fsdata if different in afs_d_revalidate()
-      afs: Fix missing dentry data version updating
-
-Jia-Ju Bai (1):
-      fs: afs: Fix a possible null-pointer dereference in afs_put_read()
-
-Marc Dionne (1):
-      afs: Fix loop index mixup in afs_deliver_vl_get_entry_by_name_u()
-
- fs/afs/cmservice.c | 10 ++----
- fs/afs/dir.c       | 89 ++++++++++++++++++++++++++++++++++++++++++++----------
- fs/afs/file.c      | 12 +++++---
- fs/afs/vlclient.c  | 11 ++++---
- 4 files changed, 89 insertions(+), 33 deletions(-)
+								Honza
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 _______________________________________________
 linux-afs mailing list
