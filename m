@@ -2,70 +2,76 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 130AB9007F
-	for <lists+linux-afs@lfdr.de>; Fri, 16 Aug 2019 13:08:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D0A091909
+	for <lists+linux-afs@lfdr.de>; Sun, 18 Aug 2019 20:47:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/sBNHUTAOB/rLm+GG2mPrbzfrDfLKu+5a+ppSt5Id1k=; b=KDPZnLTXL+l5Ew
-	Z75OChRByD6CpHBqO2AO5m7q0tX2fapKB2l9f1sNUONx++6L4TMAI2pF80wQhTClbuc2352UZA7ui
-	Ag8c6qXzOWFc5SFS82uZS1O6iyC465PuvraahfE1XPIMFAU6SKpPrF6r3DISH0zrAt+PXY2q8kyRc
-	+Q2IE/IANXSiZzQ6QtfrrSFtyypbE+brcr7gtONlEHqOG5hKnKmx9ZjOh0LvX4r+5NblCApVzpEFw
-	w4umsXaP33O3q7WgfrkZy6UJ0dBkSE7icXE2NO3QxRJfdVgYhqSNn52Lma8zr79LoPD7U/6wB1BDP
-	xAFafONQYZaprrOX6Kig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:To:From:Subject:Message-ID:In-Reply-To:Date:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=VcjzZ8ZZRBj+J9peciNLQ8oG/d/3OhhUiKyVHnCaUvQ=; b=HzqAGWnU1j5IjS
+	nVEP+Qd0k4o90Fs/coDbxQiHc4wW9vfcNBg5Mk7wcpM778N+skKdMaef8rzQoDYMZX/Q+vbdyHyjd
+	+LhZPCUaK3XwLkan725mqyTlqtjD8fVNNhc6EpR59ZVkRGQKDQ33Ki5Xgn24A7clGyUjB18LU9zPW
+	jT07JEKuMUkzwQlOy6pu8hQ3S3QuVHH+Qq+fRjTY9oR+uAwgeR6/ZPd2ZgGIQIX4585dEMGc3PJ1S
+	jU0raJhkI4M5jodLjAzIG/XpC88HqjgsK3dqbxS6duo6NX1RN5eeI3xdv/G/3g7tbpXQBhScWW/zK
+	QaERE6UwTTvclCVX/Crg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hya5c-00028l-TR; Fri, 16 Aug 2019 11:08:12 +0000
-Received: from smtprelay0187.hostedemail.com ([216.40.44.187]
- helo=smtprelay.hostedemail.com)
+	id 1hzQCt-0007Xd-B8; Sun, 18 Aug 2019 18:47:11 +0000
+Received: from mail-io1-f70.google.com ([209.85.166.70])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hya5a-00027X-1k
- for linux-afs@lists.infradead.org; Fri, 16 Aug 2019 11:08:11 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay08.hostedemail.com (Postfix) with ESMTP id A40B5182CED28;
- Fri, 16 Aug 2019 11:08:00 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::,
- RULES_HIT:41:355:379:599:800:960:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:1801:2196:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3352:3622:3865:3866:3867:3868:3870:3871:3872:3873:4250:4321:4605:5007:8660:9592:10004:10400:10450:10455:10848:11026:11232:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13148:13161:13229:13230:13311:13357:13439:14096:14097:14181:14659:14721:19904:19999:21080:21433:21451:21627:21939:30012:30054:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:30,
- LUA_SUMMARY:none
-X-HE-Tag: scale69_62e0db138c018
-X-Filterd-Recvd-Size: 2783
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf09.hostedemail.com (Postfix) with ESMTPA;
- Fri, 16 Aug 2019 11:07:59 +0000 (UTC)
-Message-ID: <af4cbaaeb54589a5255bd39baf6bacc2b07bf7b5.camel@perches.com>
-Subject: Re: [PATCH] afs: Move comments after /* fallthrough */
-From: Joe Perches <joe@perches.com>
-To: David Howells <dhowells@redhat.com>
-Date: Fri, 16 Aug 2019 04:07:58 -0700
-In-Reply-To: <13106.1565951791@warthog.procyon.org.uk>
-References: <d98d1f0150bec8b69a886f77fc375b8ca9d24262.camel@perches.com>
- <e77b0f32a2ce97c872eede52c88b84aa78094ae5.1565836130.git.joe@perches.com>
- <12308.1565876416@warthog.procyon.org.uk>
- <13106.1565951791@warthog.procyon.org.uk>
-User-Agent: Evolution 3.32.1-2 
+ id 1hzQCp-0007Wu-NJ
+ for linux-afs@lists.infradead.org; Sun, 18 Aug 2019 18:47:09 +0000
+Received: by mail-io1-f70.google.com with SMTP id q26so1674149ioi.10
+ for <linux-afs@lists.infradead.org>; Sun, 18 Aug 2019 11:47:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:date:in-reply-to:message-id:subject
+ :from:to;
+ bh=zDgZNUFDgGstctQhA5e9B3Yy/pHKkUvS8U2iUc3RWJc=;
+ b=JTK2ms3odSbavuYHy/+PO3ROzclwmM5rXohY8nrQcy91xPBaKbBwQp3BrhmAtk+6vh
+ OUpWQkVUL1/uaQ7xCvlxHgy/uEJgZd/S3sTVcuCiSIMG/paVu6mxrpj3ZtLNNeFMzeZi
+ uMIHFEI29EozAmUmIT431Ge2KY52nozIha7hyFZUY3Q2grAAKx951gNkdpgaHB1dRrtG
+ D/fQOJ8Q/BDALZuA2U/ua0XiEPCJPv9OcQfiJB7ehZjBShFgp7gDQWLrfZDGL81IySub
+ 2jfC/s+XJtbZ6/KzicZ5hWiMepXSXspTDMSUyHcoTZcK5DoEEH+37pabHOZGt5lWozQg
+ +qiw==
+X-Gm-Message-State: APjAAAXH1TUKFvN+OEqAIw4udkD5sdbcSQuDkjykzH3EEHlQUc90P+qI
+ DRo8FRMiTzXR+XTeNfEUhydHBkkD/hTGBD5+ouLUQnqDmdpU
+X-Google-Smtp-Source: APXvYqyCe0YYoEWtGbv/2uf8ztOrkSCn1II2bREdkWZ+sft0RqrJ3w9DoWKiuLFFm7detM37UBrYjkFOl1a27HlPGKQpn4X5qwyz
 MIME-Version: 1.0
+X-Received: by 2002:a6b:cd07:: with SMTP id d7mr20708646iog.150.1566154026241; 
+ Sun, 18 Aug 2019 11:47:06 -0700 (PDT)
+Date: Sun, 18 Aug 2019 11:47:06 -0700
+In-Reply-To: <0000000000004c2416058c594b30@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000065d943059068a632@google.com>
+Subject: Re: kernel BUG at net/rxrpc/local_object.c:LINE!
+From: syzbot <syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com>
+To: davem@davemloft.net, dhowells@redhat.com, dvyukov@google.com, 
+ ebiggers@kernel.org, linux-afs@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, netdev@vger.kernel.org, 
+ syzkaller-bugs@googlegroups.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_040810_164154_AB458292 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190818_114707_762151_2EB91A1D 
+X-CRM114-Status: UNSURE (   5.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (3.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.187 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.166.70 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.70 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,61 +83,85 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Nathan Chancellor <natechancellor@gmail.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-afs@lists.infradead.org,
- Nathan Huckleberry <nhuck@google.com>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Fri, 2019-08-16 at 11:36 +0100, David Howells wrote:
-> Joe Perches <joe@perches.com> wrote:
-> 
-> > Here the script would not convert the /* Fall through */
-> > because the next non-blank line does not start with
-> > case or default
-> 
-> Convert the "/* Fall through */" to what?
-> 
-> You said "for a script to appropriately convert case statement blocks with /*
-> fallthrough */ comments to a macro".  Can you give an example of what the code
-> would look like with this macro emplaced?
+syzbot has found a reproducer for the following crash on:
 
-Sure.
+HEAD commit:    0c3d3d64 Add linux-next specific files for 20190816
+git tree:       linux-next
+console output: https://syzkaller.appspot.com/x/log.txt?x=108b58f2600000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=dffdf1e146f941f4
+dashboard link: https://syzkaller.appspot.com/bug?extid=1e0edc4b8b7494c28450
+compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13feb73c600000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=127088f2600000
 
-The basic idea is to use a macro for __attribute__((__fallthrough__))
-like:
+The bug was bisected to:
 
-#define fallthrough __attribute__((__fallthrough__))
+commit 46894a13599a977ac35411b536fb3e0b2feefa95
+Author: David Howells <dhowells@redhat.com>
+Date:   Thu Oct 4 08:32:28 2018 +0000
 
-though some would prefer __fallthrough to be more similar to
-other attribute macros.  I prefer fallthrough; to be more
-similar to break;
+     rxrpc: Use IPv4 addresses throught the IPv6
 
-So it would end up like (just an example, won't apply)
+bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=152fabe3a00000
+final crash:    https://syzkaller.appspot.com/x/report.txt?x=172fabe3a00000
+console output: https://syzkaller.appspot.com/x/log.txt?x=132fabe3a00000
 
-diff --git a/fs/afs/cmservice.c b/fs/afs/cmservice.c
-index b86195e4dc6c..d962332008aa 100644
---- a/fs/afs/cmservice.c
-+++ b/fs/afs/cmservice.c
-@@ -284,7 +284,7 @@ static int afs_deliver_cb_callback(struct afs_call *call)
-                call->unmarshall++;
- 
-                /* extract the FID array and its count in two steps */
--               /* fall through */
-+               fallthrough;
-        case 1:
-                _debug("extract FID count");
-                ret = afs_extract_data(call, true);
-@@ -303,8 +303,7 @@ static int afs_deliver_cb_callback(struct afs_call *call)
-                        return -ENOMEM;
-                afs_extract_to_buf(call, call->count * 3 * 4);
-                call->unmarshall++;
--
--               /* Fall through */
-+               fallthrough;
-        case 2:
+IMPORTANT: if you fix the bug, please add the following tag to the commit:
+Reported-by: syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com
+Fixes: 46894a13599a ("rxrpc: Use IPv4 addresses throught the IPv6")
+
+rxrpc: Assertion failed
+------------[ cut here ]------------
+kernel BUG at net/rxrpc/local_object.c:433!
+invalid opcode: 0000 [#1] PREEMPT SMP KASAN
+CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.3.0-rc4-next-20190816 #67
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS  
+Google 01/01/2011
+Workqueue: krxrpcd rxrpc_local_processor
+RIP: 0010:rxrpc_local_destroyer net/rxrpc/local_object.c:433 [inline]
+RIP: 0010:rxrpc_local_processor.cold+0x24/0x29 net/rxrpc/local_object.c:466
+Code: df a1 bc fa 0f 0b e8 c4 2b d3 fa 48 c7 c7 e0 24 5b 88 e8 cc a1 bc fa  
+0f 0b e8 b1 2b d3 fa 48 c7 c7 e0 24 5b 88 e8 b9 a1 bc fa <0f> 0b 90 90 90  
+55 48 89 e5 41 57 49 89 ff 41 56 41 55 41 54 53 48
+RSP: 0018:ffff8880a98d7ce8 EFLAGS: 00010282
+RAX: 0000000000000017 RBX: ffff88808c90a978 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: ffffffff815bb906 RDI: ffffed101531af8f
+RBP: ffff8880a98d7d30 R08: 0000000000000017 R09: ffffed1015d060d9
+R10: ffffed1015d060d8 R11: ffff8880ae8306c7 R12: ffff88808c90a208
+R13: ffff88808dc48648 R14: ffff88808c90a940 R15: ffff8880929faa00
+FS:  0000000000000000(0000) GS:ffff8880ae800000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000000000049f2b0 CR3: 0000000008e6d000 CR4: 00000000001406f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+  process_one_work+0x9af/0x1740 kernel/workqueue.c:2269
+  worker_thread+0x98/0xe40 kernel/workqueue.c:2415
+  kthread+0x361/0x430 kernel/kthread.c:255
+  ret_from_fork+0x24/0x30 arch/x86/entry/entry_64.S:352
+Modules linked in:
+---[ end trace c65e44ef4b16c854 ]---
+RIP: 0010:rxrpc_local_destroyer net/rxrpc/local_object.c:433 [inline]
+RIP: 0010:rxrpc_local_processor.cold+0x24/0x29 net/rxrpc/local_object.c:466
+Code: df a1 bc fa 0f 0b e8 c4 2b d3 fa 48 c7 c7 e0 24 5b 88 e8 cc a1 bc fa  
+0f 0b e8 b1 2b d3 fa 48 c7 c7 e0 24 5b 88 e8 b9 a1 bc fa <0f> 0b 90 90 90  
+55 48 89 e5 41 57 49 89 ff 41 56 41 55 41 54 53 48
+RSP: 0018:ffff8880a98d7ce8 EFLAGS: 00010282
+RAX: 0000000000000017 RBX: ffff88808c90a978 RCX: 0000000000000000
+RDX: 0000000000000000 RSI: ffffffff815bb906 RDI: ffffed101531af8f
+RBP: ffff8880a98d7d30 R08: 0000000000000017 R09: ffffed1015d060d9
+R10: ffffed1015d060d8 R11: ffff8880ae8306c7 R12: ffff88808c90a208
+R13: ffff88808dc48648 R14: ffff88808c90a940 R15: ffff8880929faa00
+FS:  0000000000000000(0000) GS:ffff8880ae800000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffffffff600400 CR3: 000000009b982000 CR4: 00000000001406f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
 
 
 _______________________________________________
