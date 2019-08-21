@@ -2,64 +2,62 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 125AD9AA4E
-	for <lists+linux-afs@lfdr.de>; Fri, 23 Aug 2019 10:28:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66F699AA4F
+	for <lists+linux-afs@lfdr.de>; Fri, 23 Aug 2019 10:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Mime-Version:Date:References
-	:In-Reply-To:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Mime-Version:References:
+	In-Reply-To:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IynnwoWT50xpKLzTvKILrGWZhNZSNZvmEne9AqlskcQ=; b=bzLfVZf880gHEi
-	nD9ZY2RDBo47LHKSOB1d0hSAHdjc6N+Tz4UxmNfQh4994bNr5QkNnOxWX3BBsuOT5CsXxP99e8ZdU
-	JDOORXNtcjE1JdIRyjL6dlybCIPh04iYEIE0RvQURpCS/YKwitN2nQLmPMylOcpmAk0b8ENlzoNTS
-	k1ZvLgy4uW9w2hI+8lELX+2bQOyX6JlSibB3lpaDLfZeYcjjURqbWIkKx7HhSGAZdWRUIx1Jy+9Tt
-	qeuCN5XHF9E+6HkND6thwGUfsSogr5StPoAVoyyLeenDdQ45OFL7z0C1YlcloVUATi+KeQmBrS18W
-	GAAer3Bb7XP2WFs2mRGw==;
+	List-Owner; bh=IynnwoWT50xpKLzTvKILrGWZhNZSNZvmEne9AqlskcQ=; b=VipF1ac5Nmsrc7
+	Gd2wzS5gHZrrVC2SMNnudpJKz9fWqUbYv347PHx4Gfnk+Jy3yKE+w0gkuWVJvb5tSL5IN2K7BgP90
+	4NV7u6wwDymU4gW6ehbE3wIg8xeZ5J+25af8ZDoTWFmTS1SDjEJsuXHKgvXUvTEJHYOttBJYofyBH
+	yCb+tDUSsTe1EeQ7wyR3sFJzWVSBJsXv0LOt+ns/Vkku4OUp4bX45AtVdDMPTIy6cZgHrRiTJkYHa
+	cvOBnQaGgMQqEBJoVB5BPjZrcvDR4bXFOmwUBbg0LUXzVVwDfwpYuf2n8a0V/UhscTD0LnQspTO56
+	CaboeiJ/NOVfVl+LjJjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14vK-0000kD-N1; Fri, 23 Aug 2019 08:27:54 +0000
+	id 1i14vH-0000jn-FG; Fri, 23 Aug 2019 08:27:51 +0000
 Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
  helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VfY-0008EA-4a
- for linux-afs@lists.infradead.org; Wed, 21 Aug 2019 18:49:17 +0000
+ id 1i0Sls-0004um-Ie
+ for linux-afs@lists.infradead.org; Wed, 21 Aug 2019 15:43:37 +0000
 Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
  by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7LIbLfA070696
- for <linux-afs@lists.infradead.org>; Wed, 21 Aug 2019 14:49:14 -0400
-Received: from e06smtp02.uk.ibm.com (e06smtp02.uk.ibm.com [195.75.94.98])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uhb25s6fy-1
+ x7LFh45L140331
+ for <linux-afs@lists.infradead.org>; Wed, 21 Aug 2019 11:43:34 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2uh81xtun0-1
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-afs@lists.infradead.org>; Wed, 21 Aug 2019 14:49:14 -0400
+ for <linux-afs@lists.infradead.org>; Wed, 21 Aug 2019 11:43:34 -0400
 Received: from localhost
- by e06smtp02.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
  Violators will be prosecuted
  for <linux-afs@lists.infradead.org> from <zohar@linux.ibm.com>;
- Wed, 21 Aug 2019 19:49:13 +0100
-Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
- by e06smtp02.uk.ibm.com (192.168.101.132) with IBM ESMTP SMTP Gateway:
+ Wed, 21 Aug 2019 16:43:32 +0100
+Received: from b06cxnps4075.portsmouth.uk.ibm.com (9.149.109.197)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
  Authorized Use Only! Violators will be prosecuted; 
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 21 Aug 2019 19:49:08 +0100
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7LIn7ub33620120
+ Wed, 21 Aug 2019 16:43:29 +0100
+Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
+ [9.149.105.232])
+ by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x7LFhSk936306986
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 18:49:07 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 55C0AA4053;
- Wed, 21 Aug 2019 18:49:07 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EFD58A4040;
- Wed, 21 Aug 2019 18:49:04 +0000 (GMT)
-Received: from localhost.localdomain (unknown [9.85.135.147])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Wed, 21 Aug 2019 18:49:04 +0000 (GMT)
+ Wed, 21 Aug 2019 15:43:28 GMT
+Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 89B9752050;
+ Wed, 21 Aug 2019 15:43:28 +0000 (GMT)
+Received: from localhost.localdomain (unknown [9.80.219.114])
+ by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTP id 2390052054;
+ Wed, 21 Aug 2019 15:43:24 +0000 (GMT)
 Subject: Re: [GIT PULL] Keys: Set 4 - Key ACLs for 5.3
 From: Mimi Zohar <zohar@linux.ibm.com>
 To: David Howells <dhowells@redhat.com>
+Date: Wed, 21 Aug 2019 11:43:23 -0400
 In-Reply-To: <23498.1565962602@warthog.procyon.org.uk>
 References: <1562814435.4014.11.camel@linux.ibm.com>
  <28477.1562362239@warthog.procyon.org.uk>
@@ -67,33 +65,31 @@ References: <1562814435.4014.11.camel@linux.ibm.com>
  <20190710194620.GA83443@gmail.com> <20190710201552.GB83443@gmail.com>
  <CAHk-=wiFti6=K2fyAYhx-PSX9ovQPJUNp0FMdV0pDaO_pSx9MQ@mail.gmail.com>
  <23498.1565962602@warthog.procyon.org.uk>
-Date: Wed, 21 Aug 2019 10:20:44 -0400
-Mime-Version: 1.0
 X-Mailer: Evolution 3.20.5 (3.20.5-1.fc24) 
+Mime-Version: 1.0
 X-TM-AS-GCONF: 00
-x-cbid: 19082118-0008-0000-0000-0000030B8E41
+x-cbid: 19082115-0028-0000-0000-0000039227A6
 X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19082118-0009-0000-0000-00004A29BA4E
-Message-Id: <1566397244.5162.11.camel@linux.ibm.com>
+x-cbparentid: 19082115-0029-0000-0000-000024544FC7
+Message-Id: <1566402203.5162.12.camel@linux.ibm.com>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-21_06:, , signatures=0
+ definitions=2019-08-21_05:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  priorityscore=1501
  malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
  mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908210182
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1908210163
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_114916_306520_8AEFF4E5 
-X-CRM114-Status: GOOD (  30.17  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190821_084336_735277_18A43985 
+X-CRM114-Status: GOOD (  29.44  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [148.163.158.5 listed in list.dnswl.org]
- 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-Mailman-Approved-At: Fri, 23 Aug 2019 01:27:47 -0700
