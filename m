@@ -2,70 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 958C399EC1
-	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 20:30:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49DB499F8B
+	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 21:12:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GycC5n1TZCgo8b/teSgsTu9Z+GkBekbLu1h8fQLPDvc=; b=h9ytEZXTfB3tQ/
-	OwmeO+O+/978zyg+npr1Lxop3/7BWpsaa9DvVdpFapCjwdQk0vQrosCYTV04JrMydaN4+5ZJMOj2i
-	gL8Ej0PNtzzArzvmjl2ANUi6OI0tdhWB2fbQWFXMLz9UNpG7GSrsvXxrYL9F74dAm+uakKqnEcVsf
-	OsSVSj+JpHOFWa8uCVMfYHD4QoMQjDQMvj+GSwHVb3pjF4Yo/LvCl5flvVTQ94WpFH1qXzsiavv3F
-	+OiXzuIF5p4RrRCHksNSLbJjMOz+uUl03FneU3jGHE/NxvZSZinQGZ6haY943zW6S8/qg605ul40C
-	mOUEXt12/4cAdaJRMKeQ==;
+	List-Owner; bh=9Fl7QIJPULI/VRv8AXPqwklhO3PwE/crNUbTMoKustQ=; b=S8EVsh/00r+g6S
+	I54KEdZNi05tHa+FggJ25vnjTv44qHFoXzWu9sqVsAPrwZFyCm0w7u5PSVb7074ZLr8Q6pu+fCqgb
+	vxhX9RtJ8hRfyqqoURzTi425P6ACSEE61FxkL0vGHPuz8wAc8CRpVSMElgEa38U2Karhe3cM6XlMu
+	CEscjKH1vxFLwtfOPzJFnHqxEBw5unZJ1THMJxXnkdz50vS8cBUTR2uz1DKN0hNGz/Vohnbvez3F3
+	wJL/5RfgoD92KY9CmRq6y98ReD0Hzm9yGZQpuafryWbNXvp1bOjz210+uv3awNrCz1papzXVJvVA4
+	oGWkJWSTnj6shtWoSyKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0rqc-00038n-Oa; Thu, 22 Aug 2019 18:30:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i0sVJ-0000ri-Gl; Thu, 22 Aug 2019 19:12:13 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0rqZ-0002uJ-AX
- for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 18:30:08 +0000
-Subject: Re: [GIT PULL] afs: Fixes
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566498606;
- bh=Mg43IPyxQgY8DIuetTLTwM+nBK82U9tuabS8PmKxRtQ=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=e7cdRbmVb6MwR1bXWekSjXiwvVFS4+v+mFdLYQpj5TkC7CiRrl6EeqMDOg60k+cKf
- 3k2t2niQUVaPRhwzV6YUixUfNrOuvv8a9OjX/TFIN4a+iRbrrulKhAOPuBS72J1p0T
- 9Hr5tbyReAnTujcdmSabnQ3qs3Isb4WLRLHD52Vw=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <32268.1566479439@warthog.procyon.org.uk>
-References: <32268.1566479439@warthog.procyon.org.uk>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <32268.1566479439@warthog.procyon.org.uk>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
- tags/afs-fixes-20190822
-X-PR-Tracked-Commit-Id: 7533be858f5b9a036b9f91556a3ed70786abca8e
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: e8c3fa9f4d3b9c56ee9436c310318a8165d695c1
-Message-Id: <156649860661.11049.11048812113160004145.pr-tracker-bot@kernel.org>
-Date: Thu, 22 Aug 2019 18:30:06 +0000
-To: David Howells <dhowells@redhat.com>
+ id 1i0sVH-0000qP-EB
+ for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 19:12:12 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 66853153410DC;
+ Thu, 22 Aug 2019 12:12:08 -0700 (PDT)
+Date: Thu, 22 Aug 2019 12:12:07 -0700 (PDT)
+Message-Id: <20190822.121207.731320146177703787.davem@davemloft.net>
+To: dhowells@redhat.com
+Subject: Re: [PATCH net 0/9] rxrpc: Fix use of skb_cow_data()
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <156647655350.10908.12081183247715153431.stgit@warthog.procyon.org.uk>
+References: <156647655350.10908.12081183247715153431.stgit@warthog.procyon.org.uk>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 22 Aug 2019 12:12:08 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_113007_393886_DCF5CDD2 
-X-CRM114-Status: UNSURE (   1.62  )
+X-CRM114-CacheID: sfid-20190822_121211_481711_E405BF8D 
+X-CRM114-Status: UNSURE (   7.19  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,27 +63,26 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: yuehaibing@huawei.com, linux-kernel@vger.kernel.org, dhowells@redhat.com,
- marc.dionne@auristor.com, torvalds@linux-foundation.org,
- linux-afs@lists.infradead.org
-MIME-Version: 1.0
+Cc: netdev@vger.kernel.org, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-The pull request you sent on Thu, 22 Aug 2019 14:10:39 +0100:
+From: David Howells <dhowells@redhat.com>
+Date: Thu, 22 Aug 2019 13:22:33 +0100
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-fixes-20190822
+> Here's a series of patches that fixes the use of skb_cow_data() in rxrpc.
+> The problem is that skb_cow_data() indirectly requires that the maximum
+> usage count on an sk_buff be 1, and it may generate an assertion failure in
+> pskb_expand_head() if not.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/e8c3fa9f4d3b9c56ee9436c310318a8165d695c1
+It sounds like you are effectively doing a late unshare when you have to
+do in-place encryption.
 
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Why don't you just do an skb_unshare() at the beginning when you know that
+you'll need to do that?
 
 _______________________________________________
 linux-afs mailing list
