@@ -2,57 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16A5599358
-	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 14:26:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DE459935A
+	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 14:26:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+i0CQiDuysGIcdApmdtR/c90OOCX92lJFq44WPmm7as=; b=m0fLSq8c7fht/C
-	0Y3fSgveXZH/TS2Vx8x8ig+2BNsrEsdV9INr/c5oyTSuqBl6ojpS+73fIqzjUe6P56iCzJf+Tw7d1
-	NxrZKMby3XwaOIYtixfyJ1EHBt1h/sBUdXExRF5fLco6s7EQbXBiOpDI7fS1iHVHshTqsum6fMpnF
-	LIwv+/Eqy0Hdej+i7uIKLEqed64V8X1Ab/609S0jntMVOzOtvvsZxFIoOoCuygl3UF0Q/znUQd1yw
-	8wVa1sKhjbhJP4bgdC2c1/9+qzsIicgN3vF2tzvp0uOfPhddVGDrN5sR5FfQZVbpIgWpeOtgJnKRO
-	dDWsYbWEr+rfWDWJn/Tg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=27xSMywLGNElH/ngXLZJCOfv7tOOHZpgoT6xZmJIHgc=; b=XIkG5YBWIPk4V9
+	AoHtSrtaIxMqIP3G6LewDNT10HcdmRvN1sjImFh3kbBhavpkfSPN4mnK3phxorHbQcKSjvkTD/FaH
+	UL/rQ7LJkH4MZ8HxG/zRR/+E0+jR4qYwRJQCxkS1WLzCJ38589wFJ1j8kTenr/CpFPvuY0yyjGd+3
+	07YDK5qBKAz+AWn5SLxkU62JuisjceR72PTNQxeFFWtgaOel+nLMyvlDJTB30iVuEzqnxwCt9LMa/
+	K8d+jC/WOXTMd42MCAJwJW7JapkhWq9ct3YGelwmr8yqVrjYy2EVKct44E4VFZvPzW+Rjl1+62fvz
+	PxOpGKVS42VdzY6v1oEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0mAC-0008Cd-Ne; Thu, 22 Aug 2019 12:26:00 +0000
+	id 1i0mAy-0008Ed-2K; Thu, 22 Aug 2019 12:26:48 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0mAA-0008CJ-3n
- for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 12:25:59 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ id 1i0mAu-0008EF-Ve
+ for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 12:26:46 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id DBA3010576D3;
- Thu, 22 Aug 2019 12:25:57 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id B672C7FDCD;
+ Thu, 22 Aug 2019 12:26:44 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
  [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0F922100195F;
- Thu, 22 Aug 2019 12:25:56 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4D3B05DE5C;
+ Thu, 22 Aug 2019 12:26:38 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
+Subject: [PATCH net] rxrpc: Fix lack of conn cleanup when local endpoint is
+ cleaned up
 From: David Howells <dhowells@redhat.com>
-In-Reply-To: <156647655350.10908.12081183247715153431.stgit@warthog.procyon.org.uk>
-References: <156647655350.10908.12081183247715153431.stgit@warthog.procyon.org.uk>
 To: netdev@vger.kernel.org
-Subject: Re: [PATCH net 0/9] rxrpc: Fix use of skb_cow_data()
+Date: Thu, 22 Aug 2019 13:26:38 +0100
+Message-ID: <156647679816.11606.13713532963081370001.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-Content-ID: <11539.1566476756.1@warthog.procyon.org.uk>
-Date: Thu, 22 Aug 2019 13:25:56 +0100
-Message-ID: <11540.1566476756@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.64]); Thu, 22 Aug 2019 12:25:57 +0000 (UTC)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.27]); Thu, 22 Aug 2019 12:26:44 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_052558_177400_3820898E 
-X-CRM114-Status: UNSURE (   8.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190822_052645_065792_1DAB20D5 
+X-CRM114-Status: GOOD (  20.27  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,16 +71,184 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: dhowells@redhat.com, marc.dionne@auristor.com,
+ linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Sorry, I forgot to add a tested-by.  Will resend.
+When a local endpoint is ceases to be in use, such as when the kafs module
+is unloaded, the kernel will emit an assertion failure if there are any
+outstanding client connections:
 
-David
+	rxrpc: Assertion failed
+	------------[ cut here ]------------
+	kernel BUG at net/rxrpc/local_object.c:433!
+
+and even beyond that, will evince other oopses if there are service
+connections still present.
+
+Fix this by:
+
+ (1) Removing the triggering of connection reaping when an rxrpc socket is
+     released.  These don't actually clean up the connections anyway - and
+     further, the local endpoint may still be in use through another
+     socket.
+
+ (2) Mark the local endpoint as dead when we start the process of tearing
+     it down.
+
+ (3) When destroying a local endpoint, strip all of its client connections
+     from the idle list and discard the ref on each that the list was
+     holding.
+
+ (4) When destroying a local endpoint, call the service connection reaper
+     directly (rather than through a workqueue) to immediately kill off all
+     outstanding service connections.
+
+ (5) Make the service connection reaper reap connections for which the
+     local endpoint is marked dead.
+
+Only after destroying the connections can we close the socket lest we get
+an oops in a workqueue that's looking at a connection or a peer.
+
+Fixes: 3d18cbb7fd0c ("rxrpc: Fix conn expiry timers")
+Signed-off-by: David Howells <dhowells@redhat.com>
+Tested-by: Marc Dionne <marc.dionne@auristor.com>
+---
+
+ net/rxrpc/af_rxrpc.c     |    3 ---
+ net/rxrpc/ar-internal.h  |    1 +
+ net/rxrpc/conn_client.c  |   49 ++++++++++++++++++++++++++++++++++++++++++++++
+ net/rxrpc/conn_object.c  |    2 +-
+ net/rxrpc/local_object.c |    5 ++++-
+ 5 files changed, 55 insertions(+), 5 deletions(-)
+
+diff --git a/net/rxrpc/af_rxrpc.c b/net/rxrpc/af_rxrpc.c
+index 0dbbfd1b6487..d72ddb67bb74 100644
+--- a/net/rxrpc/af_rxrpc.c
++++ b/net/rxrpc/af_rxrpc.c
+@@ -862,7 +862,6 @@ static void rxrpc_sock_destructor(struct sock *sk)
+ static int rxrpc_release_sock(struct sock *sk)
+ {
+ 	struct rxrpc_sock *rx = rxrpc_sk(sk);
+-	struct rxrpc_net *rxnet = rxrpc_net(sock_net(&rx->sk));
+ 
+ 	_enter("%p{%d,%d}", sk, sk->sk_state, refcount_read(&sk->sk_refcnt));
+ 
+@@ -898,8 +897,6 @@ static int rxrpc_release_sock(struct sock *sk)
+ 	rxrpc_release_calls_on_socket(rx);
+ 	flush_workqueue(rxrpc_workqueue);
+ 	rxrpc_purge_queue(&sk->sk_receive_queue);
+-	rxrpc_queue_work(&rxnet->service_conn_reaper);
+-	rxrpc_queue_work(&rxnet->client_conn_reaper);
+ 
+ 	rxrpc_unuse_local(rx->local);
+ 	rx->local = NULL;
+diff --git a/net/rxrpc/ar-internal.h b/net/rxrpc/ar-internal.h
+index a42d6b833675..ef5aa28e679c 100644
+--- a/net/rxrpc/ar-internal.h
++++ b/net/rxrpc/ar-internal.h
+@@ -911,6 +911,7 @@ void rxrpc_disconnect_client_call(struct rxrpc_call *);
+ void rxrpc_put_client_conn(struct rxrpc_connection *);
+ void rxrpc_discard_expired_client_conns(struct work_struct *);
+ void rxrpc_destroy_all_client_connections(struct rxrpc_net *);
++void rxrpc_clean_up_local_conns(struct rxrpc_local *);
+ 
+ /*
+  * conn_event.c
+diff --git a/net/rxrpc/conn_client.c b/net/rxrpc/conn_client.c
+index aea82f909c60..2244fb7f53ec 100644
+--- a/net/rxrpc/conn_client.c
++++ b/net/rxrpc/conn_client.c
+@@ -1162,3 +1162,52 @@ void rxrpc_destroy_all_client_connections(struct rxrpc_net *rxnet)
+ 
+ 	_leave("");
+ }
++
++/*
++ * Clean up the client connections on a local endpoint.
++ */
++void rxrpc_clean_up_local_conns(struct rxrpc_local *local)
++{
++	struct rxrpc_connection *conn, *tmp;
++	struct rxrpc_net *rxnet = local->rxnet;
++	unsigned int nr_active;
++	LIST_HEAD(graveyard);
++
++	_enter("");
++
++	spin_lock(&rxnet->client_conn_cache_lock);
++	nr_active = rxnet->nr_active_client_conns;
++
++	list_for_each_entry_safe(conn, tmp, &rxnet->idle_client_conns,
++				 cache_link) {
++		if (conn->params.local == local) {
++			ASSERTCMP(conn->cache_state, ==, RXRPC_CONN_CLIENT_IDLE);
++
++			trace_rxrpc_client(conn, -1, rxrpc_client_discard);
++			if (!test_and_clear_bit(RXRPC_CONN_EXPOSED, &conn->flags))
++				BUG();
++			conn->cache_state = RXRPC_CONN_CLIENT_INACTIVE;
++			list_move(&conn->cache_link, &graveyard);
++			nr_active--;
++		}
++	}
++
++	rxnet->nr_active_client_conns = nr_active;
++	spin_unlock(&rxnet->client_conn_cache_lock);
++	ASSERTCMP(nr_active, >=, 0);
++
++	spin_lock(&rxnet->client_conn_cache_lock);
++	while (!list_empty(&graveyard)) {
++		conn = list_entry(graveyard.next,
++				  struct rxrpc_connection, cache_link);
++		list_del_init(&conn->cache_link);
++		spin_unlock(&rxnet->client_conn_cache_lock);
++
++		rxrpc_put_connection(conn);
++
++		spin_lock(&rxnet->client_conn_cache_lock);
++	}
++	spin_unlock(&rxnet->client_conn_cache_lock);
++
++	_leave(" [culled]");
++}
+diff --git a/net/rxrpc/conn_object.c b/net/rxrpc/conn_object.c
+index 434ef392212b..ed05b6922132 100644
+--- a/net/rxrpc/conn_object.c
++++ b/net/rxrpc/conn_object.c
+@@ -398,7 +398,7 @@ void rxrpc_service_connection_reaper(struct work_struct *work)
+ 		if (conn->state == RXRPC_CONN_SERVICE_PREALLOC)
+ 			continue;
+ 
+-		if (rxnet->live) {
++		if (rxnet->live && !conn->params.local->dead) {
+ 			idle_timestamp = READ_ONCE(conn->idle_timestamp);
+ 			expire_at = idle_timestamp + rxrpc_connection_expiry * HZ;
+ 			if (conn->params.local->service_closed)
+diff --git a/net/rxrpc/local_object.c b/net/rxrpc/local_object.c
+index 72a6e12a9304..36587260cabd 100644
+--- a/net/rxrpc/local_object.c
++++ b/net/rxrpc/local_object.c
+@@ -426,11 +426,14 @@ static void rxrpc_local_destroyer(struct rxrpc_local *local)
+ 
+ 	_enter("%d", local->debug_id);
+ 
++	local->dead = true;
++
+ 	mutex_lock(&rxnet->local_mutex);
+ 	list_del_init(&local->link);
+ 	mutex_unlock(&rxnet->local_mutex);
+ 
+-	ASSERT(RB_EMPTY_ROOT(&local->client_conns));
++	rxrpc_clean_up_local_conns(local);
++	rxrpc_service_connection_reaper(&rxnet->service_conn_reaper);
+ 	ASSERT(!local->service);
+ 
+ 	if (socket) {
+
 
 _______________________________________________
 linux-afs mailing list
