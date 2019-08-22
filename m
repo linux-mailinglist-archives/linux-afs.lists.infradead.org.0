@@ -2,56 +2,57 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC72599351
-	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 14:24:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 245C499352
+	for <lists+linux-afs@lfdr.de>; Thu, 22 Aug 2019 14:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mJ/QKG1FGABEDt5ujJgEqDkW/qTmAluO9c9faE56lhw=; b=GDoqimiofP1wdK
-	a3Fj8j/KktDrItH4dThytV4CcSqlqAXB2O0Eqigz0gq6DR+yO0sI55CisgMmPdGzuPylYmMcgf6XB
-	OH3Hp1g0hWWmhS4ukBKMmTRxZ1c0wMdl2lwX9OPzS2JSQjxppgYtQ32glj8VhfN+RiCtIccnUXaZV
-	OoBFS29Vb3hdHoCXyg/e01nDOamVyEde+EsvDxZhJ2GQpJaxHb32x8FXJQx8YRUm16HKSSIoHg/hK
-	EN+WrX4hMYGG9XkVvbQNXuW+q/hHj2GjNnZF42Y6LZaO6i2xbXqSiuEx9Y/cfbDJtQ6dIlUOSuDh9
-	5ABR88LZzTP2kLjHBVjw==;
+	List-Owner; bh=ypV1xJCtkipKOUsQgcIkPmS7FeVqkN4VHr2dUpoQ6hE=; b=beBwmiumiIBAWg
+	vPdsnskxvf1DzUD1t3yY/uGU2TvWpfmdMXwjt7F3WCukOj8uDHQ/9ELxs4tf44L7xfKkuBkOTs3Ug
+	JAqjN9m3WqjVP9CGY+olp92c9bOlPwTQOS5AipE2c3nYnt5kcqquOcOVsyQXHYTj7KBLoxfNLRshE
+	JLNltVGOMa1BtZTcoFwujoYWHv9YhjZCbErVb+LjduZy7T0+vCAEUSabbA/40zqQCBsvumTpQSlRg
+	zoY/K3eSz6QZtebtswU9hVzEEtd+tEZlepjRBLhMBl6J71fdIdo+HW0iBpvcY7r5Hsu5H0fQdpFjk
+	3f0A9/Ld/JfYqBDeYGww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0m8i-0006hg-8M; Thu, 22 Aug 2019 12:24:28 +0000
+	id 1i0m8j-0006j8-2i; Thu, 22 Aug 2019 12:24:29 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0m8Y-0006a7-Aa
- for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 12:24:20 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ id 1i0m8f-0006fl-7h
+ for linux-afs@lists.infradead.org; Thu, 22 Aug 2019 12:24:26 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0F5212E95AC;
- Thu, 22 Aug 2019 12:24:18 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 03B2A8980FD;
+ Thu, 22 Aug 2019 12:24:25 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
  [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 1C2AC60166;
- Thu, 22 Aug 2019 12:24:14 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 050A360BF3;
+ Thu, 22 Aug 2019 12:24:23 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH net 7/9] rxrpc: Add a shadow refcount in the skb private data
+Subject: [PATCH net 8/9] rxrpc: Use shadow refcount for packets in the RxTx
+ ring
 From: David Howells <dhowells@redhat.com>
 To: netdev@vger.kernel.org
-Date: Thu, 22 Aug 2019 13:24:14 +0100
-Message-ID: <156647665408.11061.4204790133695737164.stgit@warthog.procyon.org.uk>
+Date: Thu, 22 Aug 2019 13:24:23 +0100
+Message-ID: <156647666326.11061.14956300925060774849.stgit@warthog.procyon.org.uk>
 In-Reply-To: <156647659913.11061.13764606104739742865.stgit@warthog.procyon.org.uk>
 References: <156647659913.11061.13764606104739742865.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.29]); Thu, 22 Aug 2019 12:24:18 +0000 (UTC)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.67]); Thu, 22 Aug 2019 12:24:25 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_052418_515042_52403D9E 
-X-CRM114-Status: GOOD (  15.76  )
+X-CRM114-CacheID: sfid-20190822_052425_368157_9DC4DB7E 
+X-CRM114-Status: GOOD (  20.10  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -79,215 +80,183 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Add a shadow refcount to count pins from the Rx/Tx ring on an sk_buff so
-that we can hold multiple refs on it without causing skb_cow_data() to
-throw an assertion.
+Use the previously added shadow refcount for packets that are in the Rx/Tx
+ring so that the ring itself only ever holds a single ref on the skbuff.
 
-This is stored in the private part of the sk_buff as laid out in struct
-rxrpc_skb_priv.
+This allows skb_cow_data() to be used by the recvmsg code to make the data
+modifyable for in-place decryption without triggering the assertion in
+pskb_expand_head:
 
-Add two accessor functions for pinning (adding) or unpinning (discarding) a
-shadow ref.
+	BUG_ON(skb_shared(skb));
 
+This *should* be okay as:
+
+ (1) Once rxrpc_input_data() starts attaching the sk_buff to the ring, it
+     no longer looks inside the packet (all the parsing was done previously
+     and notes were taken in struct rxrpc_skb_priv).
+
+ (2) rxrpc_recvmsg_data() may not run in parallel for a particular call.
+
+ (3) rxrpc_recvmsg_data() cow's the sk_buff the first time it sees it and
+     then steps through each pointer from the buffer in order, unpinning as
+     it goes.
+
+     Each subpacket is individually and sequentially decrypted in place in
+     the sk_buff, hence the need for skb_cow_data().
+
+ (4) No one else can be looking in a packet in the Rx ring once it's there.
+
+The problem was occuring because the softirq handler may be holding a ref
+or the ring may be holding multiple refs when skb_cow_data() is called in
+rxkad_verify_packet(), and so skb_shared() returns true and
+__pskb_pull_tail() dislikes that.  If this occurs, something like the
+following report will be generated.
+
+	kernel BUG at net/core/skbuff.c:1463!
+	...
+	RIP: 0010:pskb_expand_head+0x253/0x2b0
+	...
+	Call Trace:
+	 __pskb_pull_tail+0x49/0x460
+	 skb_cow_data+0x6f/0x300
+	 rxkad_verify_packet+0x18b/0xb10 [rxrpc]
+	 rxrpc_recvmsg_data.isra.11+0x4a8/0xa10 [rxrpc]
+	 rxrpc_kernel_recv_data+0x126/0x240 [rxrpc]
+	 afs_extract_data+0x51/0x2d0 [kafs]
+	 afs_deliver_fs_fetch_data+0x188/0x400 [kafs]
+	 afs_deliver_to_call+0xac/0x430 [kafs]
+	 afs_wait_for_call_to_complete+0x22f/0x3d0 [kafs]
+	 afs_make_call+0x282/0x3f0 [kafs]
+	 afs_fs_fetch_data+0x164/0x300 [kafs]
+	 afs_fetch_data+0x54/0x130 [kafs]
+	 afs_readpages+0x20d/0x340 [kafs]
+	 read_pages+0x66/0x180
+	 __do_page_cache_readahead+0x188/0x1a0
+	 ondemand_readahead+0x17d/0x2e0
+	 generic_file_read_iter+0x740/0xc10
+	 __vfs_read+0x145/0x1a0
+	 vfs_read+0x8c/0x140
+	 ksys_read+0x4a/0xb0
+	 do_syscall_64+0x43/0xf0
+	 entry_SYSCALL_64_after_hwframe+0x44/0xa9
+
+Fixes: 248f219cb8bc ("rxrpc: Rewrite the data and ack handling code")
+Reported-by: Julian Wollrath <jwollrath@web.de>
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- include/trace/events/rxrpc.h |   15 ++++++++---
- net/rxrpc/ar-internal.h      |    2 +
- net/rxrpc/skbuff.c           |   57 ++++++++++++++++++++++++++++++++++++++----
- 3 files changed, 65 insertions(+), 9 deletions(-)
+ net/rxrpc/call_object.c |    2 +-
+ net/rxrpc/input.c       |   22 ++++++++++------------
+ net/rxrpc/recvmsg.c     |    2 +-
+ net/rxrpc/sendmsg.c     |    1 +
+ 4 files changed, 13 insertions(+), 14 deletions(-)
 
-diff --git a/include/trace/events/rxrpc.h b/include/trace/events/rxrpc.h
-index e2356c51883b..34237ea8ceb0 100644
---- a/include/trace/events/rxrpc.h
-+++ b/include/trace/events/rxrpc.h
-@@ -28,10 +28,12 @@ enum rxrpc_skb_trace {
- 	rxrpc_skb_got,
- 	rxrpc_skb_lost,
- 	rxrpc_skb_new,
-+	rxrpc_skb_pin,
- 	rxrpc_skb_purged,
- 	rxrpc_skb_received,
- 	rxrpc_skb_rotated,
- 	rxrpc_skb_seen,
-+	rxrpc_skb_unpin,
- };
+diff --git a/net/rxrpc/call_object.c b/net/rxrpc/call_object.c
+index 014548c259ce..830b6152dfa3 100644
+--- a/net/rxrpc/call_object.c
++++ b/net/rxrpc/call_object.c
+@@ -429,7 +429,7 @@ static void rxrpc_cleanup_ring(struct rxrpc_call *call)
+ 	int i;
  
- enum rxrpc_local_trace {
-@@ -228,10 +230,12 @@ enum rxrpc_tx_point {
- 	EM(rxrpc_skb_got,			"GOT") \
- 	EM(rxrpc_skb_lost,			"*L*") \
- 	EM(rxrpc_skb_new,			"NEW") \
-+	EM(rxrpc_skb_pin,			"PIN") \
- 	EM(rxrpc_skb_purged,			"PUR") \
- 	EM(rxrpc_skb_received,			"RCV") \
- 	EM(rxrpc_skb_rotated,			"ROT") \
--	E_(rxrpc_skb_seen,			"SEE")
-+	EM(rxrpc_skb_seen,			"SEE") \
-+	E_(rxrpc_skb_unpin,			"UPN")
+ 	for (i = 0; i < RXRPC_RXTX_BUFF_SIZE; i++) {
+-		rxrpc_free_skb(call->rxtx_buffer[i], rxrpc_skb_cleaned);
++		rxrpc_unpin_skb(call->rxtx_buffer[i], rxrpc_skb_cleaned);
+ 		call->rxtx_buffer[i] = NULL;
+ 	}
+ }
+diff --git a/net/rxrpc/input.c b/net/rxrpc/input.c
+index 31090bdf1fae..660b7eed39b7 100644
+--- a/net/rxrpc/input.c
++++ b/net/rxrpc/input.c
+@@ -258,7 +258,7 @@ static bool rxrpc_rotate_tx_window(struct rxrpc_call *call, rxrpc_seq_t to,
+ 		skb = list;
+ 		list = skb->next;
+ 		skb_mark_not_on_list(skb);
+-		rxrpc_free_skb(skb, rxrpc_skb_freed);
++		rxrpc_unpin_skb(skb, rxrpc_skb_unpin);
+ 	}
  
- #define rxrpc_local_traces \
- 	EM(rxrpc_local_got,			"GOT") \
-@@ -633,14 +637,15 @@ TRACE_EVENT(rxrpc_call,
+ 	return rot_last;
+@@ -447,6 +447,8 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 		return;
+ 	}
  
- TRACE_EVENT(rxrpc_skb,
- 	    TP_PROTO(struct sk_buff *skb, enum rxrpc_skb_trace op,
--		     int usage, int mod_count, const void *where),
-+		     int usage, int mod_count, int pins, const void *where),
- 
--	    TP_ARGS(skb, op, usage, mod_count, where),
-+	    TP_ARGS(skb, op, usage, mod_count, pins, where),
- 
- 	    TP_STRUCT__entry(
- 		    __field(struct sk_buff *,		skb		)
- 		    __field(enum rxrpc_skb_trace,	op		)
- 		    __field(u8,				flags		)
-+		    __field(u8,				pins		)
- 		    __field(int,			usage		)
- 		    __field(int,			mod_count	)
- 		    __field(const void *,		where		)
-@@ -651,16 +656,18 @@ TRACE_EVENT(rxrpc_skb,
- 		    __entry->flags = rxrpc_skb(skb)->rx_flags;
- 		    __entry->op = op;
- 		    __entry->usage = usage;
-+		    __entry->pins = pins;
- 		    __entry->mod_count = mod_count;
- 		    __entry->where = where;
- 			   ),
- 
--	    TP_printk("s=%p %cx %s u=%d m=%d p=%pSR",
-+	    TP_printk("s=%p %cx %s u=%d m=%d r=%u p=%pSR",
- 		      __entry->skb,
- 		      __entry->flags & RXRPC_SKB_TX_BUFFER ? 'T' : 'R',
- 		      __print_symbolic(__entry->op, rxrpc_skb_traces),
- 		      __entry->usage,
- 		      __entry->mod_count,
-+		      __entry->pins,
- 		      __entry->where)
- 	    );
- 
-diff --git a/net/rxrpc/ar-internal.h b/net/rxrpc/ar-internal.h
-index 2d5294f3e62f..d784d58e0a0d 100644
---- a/net/rxrpc/ar-internal.h
-+++ b/net/rxrpc/ar-internal.h
-@@ -1113,6 +1113,8 @@ void rxrpc_see_skb(struct sk_buff *, enum rxrpc_skb_trace);
- void rxrpc_get_skb(struct sk_buff *, enum rxrpc_skb_trace);
- void rxrpc_free_skb(struct sk_buff *, enum rxrpc_skb_trace);
- void rxrpc_purge_queue(struct sk_buff_head *);
-+void rxrpc_pin_skb(struct sk_buff *, enum rxrpc_skb_trace);
-+void rxrpc_unpin_skb(struct sk_buff *, enum rxrpc_skb_trace);
- 
- /*
-  * sysctl.c
-diff --git a/net/rxrpc/skbuff.c b/net/rxrpc/skbuff.c
-index 8e6f45f84b9b..f9986a1510d3 100644
---- a/net/rxrpc/skbuff.c
-+++ b/net/rxrpc/skbuff.c
-@@ -22,9 +22,12 @@
-  */
- void rxrpc_new_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- {
-+	struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
- 	const void *here = __builtin_return_address(0);
- 	int n = atomic_inc_return(select_skb_count(skb));
--	trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, here);
-+
 +	atomic_set(&sp->nr_ring_pins, 1);
-+	trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, 1, here);
++
+ 	if (call->state == RXRPC_CALL_SERVER_RECV_REQUEST) {
+ 		unsigned long timo = READ_ONCE(call->next_req_timo);
+ 		unsigned long now, expect_req_by;
+@@ -550,6 +552,12 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 			ack_serial = serial;
+ 		}
+ 
++		/* Each insertion into the rxtx_buffer holds a ring pin.  This
++		 * allows a single ref on the buffer to be shared, thereby
++		 * allowing skb_cow_data() to be used.
++		 */
++		rxrpc_pin_skb(skb, rxrpc_skb_pin);
++
+ 		/* Queue the packet.  We use a couple of memory barriers here as need
+ 		 * to make sure that rx_top is perceived to be set after the buffer
+ 		 * pointer and that the buffer pointer is set after the annotation and
+@@ -558,8 +566,6 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 		 * Barriers against rxrpc_recvmsg_data() and rxrpc_rotate_rx_window()
+ 		 * and also rxrpc_fill_out_ack().
+ 		 */
+-		if (!terminal)
+-			rxrpc_get_skb(skb, rxrpc_skb_got);
+ 		call->rxtx_annotations[ix] = annotation;
+ 		smp_wmb();
+ 		call->rxtx_buffer[ix] = skb;
+@@ -574,14 +580,6 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 			immediate_ack = true;
+ 		}
+ 
+-		if (terminal) {
+-			/* From this point on, we're not allowed to touch the
+-			 * packet any longer as its ref now belongs to the Rx
+-			 * ring.
+-			 */
+-			skb = NULL;
+-		}
+-
+ 		if (last) {
+ 			set_bit(RXRPC_CALL_RX_LAST, &call->flags);
+ 			if (!ack) {
+@@ -620,7 +618,7 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 
+ unlock:
+ 	spin_unlock(&call->input_lock);
+-	rxrpc_free_skb(skb, rxrpc_skb_freed);
++	rxrpc_unpin_skb(skb, rxrpc_skb_unpin);
+ 	_leave(" [queued]");
  }
  
- /*
-@@ -33,9 +36,12 @@ void rxrpc_new_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- void rxrpc_see_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- {
- 	const void *here = __builtin_return_address(0);
-+
- 	if (skb) {
-+		struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
- 		int n = atomic_read(select_skb_count(skb));
--		trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, here);
-+		trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n,
-+				atomic_read(&sp->nr_ring_pins), here);
- 	}
- }
+diff --git a/net/rxrpc/recvmsg.c b/net/rxrpc/recvmsg.c
+index 3b0becb12041..82bb48d96526 100644
+--- a/net/rxrpc/recvmsg.c
++++ b/net/rxrpc/recvmsg.c
+@@ -205,7 +205,7 @@ static void rxrpc_rotate_rx_window(struct rxrpc_call *call)
+ 	/* Barrier against rxrpc_input_data(). */
+ 	smp_store_release(&call->rx_hard_ack, hard_ack);
  
-@@ -44,9 +50,11 @@ void rxrpc_see_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
-  */
- void rxrpc_get_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- {
-+	struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
- 	const void *here = __builtin_return_address(0);
- 	int n = atomic_inc_return(select_skb_count(skb));
--	trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, here);
-+	trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n,
-+			atomic_read(&sp->nr_ring_pins), here);
- 	skb_get(skb);
- }
+-	rxrpc_free_skb(skb, rxrpc_skb_freed);
++	rxrpc_unpin_skb(skb, rxrpc_skb_unpin);
  
-@@ -56,11 +64,14 @@ void rxrpc_get_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- void rxrpc_free_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
- {
- 	const void *here = __builtin_return_address(0);
-+
- 	if (skb) {
-+		struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
- 		int n;
- 		CHECK_SLAB_OKAY(&skb->users);
- 		n = atomic_dec_return(select_skb_count(skb));
--		trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, here);
-+		trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n,
-+				atomic_read(&sp->nr_ring_pins), here);
- 		kfree_skb(skb);
- 	}
- }
-@@ -72,10 +83,46 @@ void rxrpc_purge_queue(struct sk_buff_head *list)
- {
- 	const void *here = __builtin_return_address(0);
- 	struct sk_buff *skb;
-+
- 	while ((skb = skb_dequeue((list))) != NULL) {
-+		struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
- 		int n = atomic_dec_return(select_skb_count(skb));
- 		trace_rxrpc_skb(skb, rxrpc_skb_purged,
--				refcount_read(&skb->users), n, here);
-+				refcount_read(&skb->users), n,
-+				atomic_read(&sp->nr_ring_pins), here);
- 		kfree_skb(skb);
- 	}
- }
-+
-+/*
-+ * Add a secondary ref on the socket buffer.
-+ */
-+void rxrpc_pin_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
-+{
-+	struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
-+	const void *here = __builtin_return_address(0);
-+	int n = atomic_read(select_skb_count(skb));
-+	int np;
-+
-+	np = atomic_inc_return(&sp->nr_ring_pins);
-+	trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, np, here);
-+}
-+
-+/*
-+ * Remove a secondary ref on the socket buffer.
-+ */
-+void rxrpc_unpin_skb(struct sk_buff *skb, enum rxrpc_skb_trace op)
-+{
-+	const void *here = __builtin_return_address(0);
-+
-+	if (skb) {
-+		struct rxrpc_skb_priv *sp = rxrpc_skb(skb);
-+		int n = atomic_read(select_skb_count(skb));
-+		int np;
-+
-+		np = atomic_dec_return(&sp->nr_ring_pins);
-+		trace_rxrpc_skb(skb, op, refcount_read(&skb->users), n, np, here);
-+		if (np == 0)
-+			rxrpc_free_skb(skb, op);
-+	}
-+}
+ 	trace_rxrpc_receive(call, rxrpc_receive_rotate, serial, hard_ack);
+ 	if (last) {
+diff --git a/net/rxrpc/sendmsg.c b/net/rxrpc/sendmsg.c
+index 6a1547b270fe..ba0e2aa268b1 100644
+--- a/net/rxrpc/sendmsg.c
++++ b/net/rxrpc/sendmsg.c
+@@ -175,6 +175,7 @@ static int rxrpc_queue_packet(struct rxrpc_sock *rx, struct rxrpc_call *call,
+ 	 */
+ 	skb->tstamp = ktime_get_real();
+ 
++	atomic_set(&sp->nr_ring_pins, 1);
+ 	ix = seq & RXRPC_RXTX_BUFF_MASK;
+ 	rxrpc_get_skb(skb, rxrpc_skb_got);
+ 	call->rxtx_annotations[ix] = annotation;
 
 
 _______________________________________________
