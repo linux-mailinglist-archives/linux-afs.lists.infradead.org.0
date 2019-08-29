@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4EBA2370
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D2A2A236F
 	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 20:15:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,38 +10,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sGT0fYdK2zZtmwWwnKqwNZfwxMelaBTESnufhEpgRkM=; b=P0DLMudwRhXl/A
-	oM3zJEicEOzUxHySDA43pPDGBkCGZVRVmSi21W5jsddq5JlL0g0SkHREn3Q2Ajm1KlBX5Hjcz3V1z
-	RL391Y+RKLXBAWiVAyENB3JX7iIgV7qHmuZmFrnxN/K9weGWXuL5UlHaZ33Oau7s26bZjKdX7uE1P
-	StWOq7PH4Y+dbHRh0CK15QED34jGsbG0QFbVsR602TANjp9M3kn2hEo1GBHQE/+vEwbLuytBFViS/
-	T/4gESVIspeQI5c3vXREh48DSLbFIUwXWLUmfOkOMRJnZM/g8hNDJsuEGUH0k6y7aI4SICcF0lXKz
-	FkuOJMSAcocwdQnpTqfg==;
+	List-Owner; bh=DEpV9/u79cy2R/VCjKVEcIT0aVQVmfg2nEvApf3x+h8=; b=Fam3hTCSffDBqB
+	GdNEZaf2SbPz4YsbAaYvNIdyjGuV+RUAgDajKrHfEcGApENfSWI8fC1Rfbwracx7sm4mpZ0WmYgyh
+	gIgEyOLSHZO0n2xhrOMh6DmvJzKL3jQrKzyX0dh+Gd+YzpzQJq56qBs/PP48mDqhV3Yu+Qvr60mGd
+	ueh4EUWUIurVShdlEMQHeehmCY4UIDwPSN25qjrIZGI50TPwUxQcZnKkp4vjNLXTXeMNwe8QXcX9Y
+	3T6xNRxrIK1XyksPXXjjjUiLERBwt3yJYkw3oYFApLKtqPe5omT5vIFCHoQAL2bXes4aqO485+02B
+	5JVo4aCU+U7pqVebzxzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3OxO-00075g-Qi; Thu, 29 Aug 2019 18:15:38 +0000
+	id 1i3OxQ-00076l-Bu; Thu, 29 Aug 2019 18:15:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3OxL-00073k-Rd
- for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:15:37 +0000
+ id 1i3OxM-00074Q-SI
+ for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:15:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EB83423404;
- Thu, 29 Aug 2019 18:15:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E59A72342B;
+ Thu, 29 Aug 2019 18:15:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567102535;
- bh=JvqJEB55stf2gf4IFOdP9UEaXddRwXadDHyrHsyqYa8=;
+ s=default; t=1567102536;
+ bh=dVA703rK6IxI1rxx+YY4+dmvvsctabIC5SH1lxPtYk8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=A+JsQlVX8kGVgjvXj19Xp1yVSF9sC7SKtrGXa74UtY5tRc68KZY1V4bJ5zld6HgGi
- 7Izc/4+Niv9rk52BDjKDqOFTmdpxzzpwmywVQYcoV0PvF9E6gJC1uq7StXxUFXkXVv
- BM+x1WWAHTvyDpA5JM6EUmDaXpsfoYm3dOOr8SDY=
+ b=c01ddU3jx7RgTp3wkQ15q0qg8czrN6kjezGq1bLpOcUGoOpjQ5JcnXaXzf4JxADKH
+ 3dW6PSIwSx5rHN/V8aPfIBl/BJYXlTbOCpmkk6v3Nb5AFWIc0vdCUvDpRfqP8l95GU
+ 4OIBm7YsNd67yyvEeyEbsF2bMmCpvXFSgSiSoVNk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 70/76] afs: Fix leak in afs_lookup_cell_rcu()
-Date: Thu, 29 Aug 2019 14:13:05 -0400
-Message-Id: <20190829181311.7562-70-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 71/76] afs: Fix possible oops in afs_lookup trace
+ event
+Date: Thu, 29 Aug 2019 14:13:06 -0400
+Message-Id: <20190829181311.7562-71-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190829181311.7562-1-sashal@kernel.org>
 References: <20190829181311.7562-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_111535_930470_5BF80274 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20190829_111536_934430_B5AA9338 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,73 +80,56 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- linux-afs@lists.infradead.org
+Cc: Marc Dionne <marc.dionne@auristor.com>, David Howells <dhowells@redhat.com>,
+ linux-afs@lists.infradead.org, Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
+From: Marc Dionne <marc.dionne@auristor.com>
 
-[ Upstream commit a5fb8e6c02d6a518fb2b1a2b8c2471fa77b69436 ]
+[ Upstream commit c4c613ff08d92e72bf64a65ec35a2c3aa1cfcd06 ]
 
-Fix a leak on the cell refcount in afs_lookup_cell_rcu() due to
-non-clearance of the default error in the case a NULL cell name is passed
-and the workstation default cell is used.
+The afs_lookup trace event can cause the following:
 
-Also put a bit at the end to make sure we don't leak a cell ref if we're
-going to be returning an error.
+[  216.576777] BUG: kernel NULL pointer dereference, address: 000000000000023b
+[  216.576803] #PF: supervisor read access in kernel mode
+[  216.576813] #PF: error_code(0x0000) - not-present page
+...
+[  216.576913] RIP: 0010:trace_event_raw_event_afs_lookup+0x9e/0x1c0 [kafs]
 
-This leak results in an assertion like the following when the kafs module is
-unloaded:
+If the inode from afs_do_lookup() is an error other than ENOENT, or if it
+is ENOENT and afs_try_auto_mntpt() returns an error, the trace event will
+try to dereference the error pointer as a valid pointer.
 
-	AFS: Assertion failed
-	2 == 1 is false
-	0x2 == 0x1 is false
-	------------[ cut here ]------------
-	kernel BUG at fs/afs/cell.c:770!
-	...
-	RIP: 0010:afs_manage_cells+0x220/0x42f [kafs]
-	...
-	 process_one_work+0x4c2/0x82c
-	 ? pool_mayday_timeout+0x1e1/0x1e1
-	 ? do_raw_spin_lock+0x134/0x175
-	 worker_thread+0x336/0x4a6
-	 ? rescuer_thread+0x4af/0x4af
-	 kthread+0x1de/0x1ee
-	 ? kthread_park+0xd4/0xd4
-	 ret_from_fork+0x24/0x30
+Use IS_ERR_OR_NULL to only pass a valid pointer for the trace, or NULL.
 
-Fixes: 989782dcdc91 ("afs: Overhaul cell database management")
+Ideally the trace would include the error value, but for now just avoid
+the oops.
+
+Fixes: 80548b03991f ("afs: Add more tracepoints")
+Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/cell.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ fs/afs/dir.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/fs/afs/cell.c b/fs/afs/cell.c
-index a2a87117d2626..fd5133e26a38b 100644
---- a/fs/afs/cell.c
-+++ b/fs/afs/cell.c
-@@ -74,6 +74,7 @@ struct afs_cell *afs_lookup_cell_rcu(struct afs_net *net,
- 			cell = rcu_dereference_raw(net->ws_cell);
- 			if (cell) {
- 				afs_get_cell(cell);
-+				ret = 0;
- 				break;
- 			}
- 			ret = -EDESTADDRREQ;
-@@ -108,6 +109,9 @@ struct afs_cell *afs_lookup_cell_rcu(struct afs_net *net,
- 
- 	done_seqretry(&net->cells_lock, seq);
- 
-+	if (ret != 0 && cell)
-+		afs_put_cell(net, cell);
-+
- 	return ret == 0 ? cell : ERR_PTR(ret);
+diff --git a/fs/afs/dir.c b/fs/afs/dir.c
+index da9563d62b327..c50cc3f6f4553 100644
+--- a/fs/afs/dir.c
++++ b/fs/afs/dir.c
+@@ -952,7 +952,8 @@ static struct dentry *afs_lookup(struct inode *dir, struct dentry *dentry,
+ 				 inode ? AFS_FS_I(inode) : NULL);
+ 	} else {
+ 		trace_afs_lookup(dvnode, &dentry->d_name,
+-				 inode ? AFS_FS_I(inode) : NULL);
++				 IS_ERR_OR_NULL(inode) ? NULL
++				 : AFS_FS_I(inode));
+ 	}
+ 	return d;
  }
- 
 -- 
 2.20.1
 
