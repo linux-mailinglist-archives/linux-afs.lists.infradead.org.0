@@ -2,98 +2,72 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16B77A1E69
-	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 17:08:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C251BA232E
+	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 20:13:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9FuFCUC278dpoqu9gda+6BC+O4PCKAml8B1cux55trA=; b=HSEHROJnAhdYP7SrQQFis+eYp
-	oZ/gs4TrNYt5si2fuMiMAWgdVE79dYJYdUYVI2dxYhXHpIp+p3eLMkxUiZLyabItV3VIlHNXZsEw2
-	8C8SqxF9qPnJ5oTuHKd94PjqbtfWLPv/REimEdRiqIQaJyDTAuAj+zCGno16HN9ltYDabZ6qE7MoF
-	B8s/SvvQt32pBymDa7T+KRVeL+QmwZMl9FDh2fg7uv2f38WHcC8aPZheL4DKcItLGA5tp7az1eccl
-	FjR2t3eA5XemHzFRZ93g5rd/6DIrvaK5mNEW8YhBGQlLCV2FavZMkiscMjnmN7HPprGtr1q/Z3moJ
-	jtQYP/Mzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hM+AoWwdIYH6zRVx+VrGVED469zwcenR7Z93e+nMKSM=; b=CCajaBhpsCsDbR
+	X0HFBoBuAP9JfdSlhjeZV12vOvSlfmHkECZgSAVq4NtXfRbAwA2TWh4JX2iG4A0A5Vqsi7DFHU2Gq
+	Qq1vUJmtCkhB710Z61pTYlr+w4JiuFD3MzSmMWOGUCBJGb4zx6IdNUj1wZkKrNZlcyjnFWBOR8TIr
+	HqpgCNfCxotPG84N83Z5Q9cSymURBG8akeIOwJJ02Qyr0lMjrRIfm0CcC1WkQH2Kq3vVbfqr5LFvS
+	t9UpeugE6lqgvtV+wX0xs/mIbmUfNkWaShB8xtBOiSo6KhNyNWw6bDWlJ3SuwECH7t7CumlMY9LzJ
+	LgyCG/Hul9HwoSi3DvLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3M22-00083m-HX; Thu, 29 Aug 2019 15:08:14 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i3OvY-0005F8-JR; Thu, 29 Aug 2019 18:13:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2z7U-0003rK-6B
- for linux-afs@lists.infradead.org; Wed, 28 Aug 2019 14:40:21 +0000
-Received: by mail-pf1-x444.google.com with SMTP id d85so1876637pfd.2
- for <linux-afs@lists.infradead.org>; Wed, 28 Aug 2019 07:40:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=android.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=otBOnvzgcCfij7khznQb839FNBhUwDL3v2TXcjGpOzs=;
- b=OlcPfkFh4eVXaPXXhh3cHvgBURsJe3iAt4+TEVeWmIUa8zc09e0oQ5MaZNlepG2vze
- B3r7RgJuWq9O6TIbswaNUIKe8aYWW+KNRgEXeCMfCvmELHUyftJPl7HAVt/DUWoqH+mt
- 7FiMUsP13ILyRxskXvgoEKTt4mcyDqpG+bZTW39pIt/5h+k8/JBgcB7qNM0XACYD7ale
- oWFmT2jC5R2Rv9fP9CO4NSXlbVjGTO4SWvbIfLdPsT4850CBsX7b6iyMaVYsWWgBm0EJ
- ydfkWGX0BboAbCSeR2RRikvC2V1c34KnlnNThn4oWcDh6RwGfO3sPku0/xiss22u0zC8
- qA2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=otBOnvzgcCfij7khznQb839FNBhUwDL3v2TXcjGpOzs=;
- b=C4ovW/zxZskJ8X3eb8dJD9vYqzEwAVhVRvJI+FYIgELPOKLJDtBt4EwdvgvCy7hDtA
- +mMyLbcYlV6ysREfwtrg6WxH3gT+XjcBaypU4AP5gCv+Jq6VjikoDFO6/Wjddvj+MJfx
- 4BMwZAGNhH/0N1wwIZ13CZV2jCHpIZAK9pB6fDDxSPs4zIenXbjRwlnfnio7fKUQHTVp
- TJR7EHuYaEGdJF9gzuJRYihymxgSJ9KNfXXmLUx9h7H5+Tjy1CiSgsLU8qDJ+0r6YTln
- dZsU4cbra7apCxU17OkeeOj9xTADlV5RjQG2E66z3rzSdHJjF9a9Qqmi3ldRXmCOCj7A
- t1kg==
-X-Gm-Message-State: APjAAAX2tcMDaomVu51m9Aakvf3bnBhbBK33IQjLUEJZMguVRRbo7Dv3
- uN/1Ps0m8FbuE8hQ54uw6wkU3A==
-X-Google-Smtp-Source: APXvYqxMi0WkPdC/TIWQ/rEP0W+6WEwgY/rp8ZhYjwRr9PMekyUrfkMqryPcx5ziGSRNx/jQnRs5oA==
-X-Received: by 2002:a17:90b:8ca:: with SMTP id
- ds10mr4474530pjb.139.1567003218534; 
- Wed, 28 Aug 2019 07:40:18 -0700 (PDT)
-Received: from nebulus.mtv.corp.google.com
- ([2620:15c:211:200:5404:91ba:59dc:9400])
- by smtp.googlemail.com with ESMTPSA id t9sm7295641pgj.89.2019.08.28.07.40.15
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 28 Aug 2019 07:40:17 -0700 (PDT)
-Subject: Re: [PATCH v8] Add flags option to get xattr method paired to
- __vfs_getxattr
-To: Christoph Hellwig <hch@infradead.org>
-References: <20190827150544.151031-1-salyzyn@android.com>
- <20190828142423.GA1955@infradead.org>
-From: Mark Salyzyn <salyzyn@android.com>
-Message-ID: <5dd09a38-fffb-36f2-505b-be2ddf6bb750@android.com>
-Date: Wed, 28 Aug 2019 07:40:15 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i3OvU-0005Ej-EF
+ for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:13:42 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 542B32189D;
+ Thu, 29 Aug 2019 18:13:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567102419;
+ bh=dkhchyWdtMxa8jcjPXHapPWPE4rhmniDAp/Qs15YCTE=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ei3R/AIepm5x8fmRuA7bGr2p4oXeNNyCCRXCbe5XV99Pi/bf4UdQJxyvZPUGybT0s
+ h22DiHW+5ZFDDN6oG0ddRWpMkMNUtWcRsi9jd+udMgqQrx68zR5/0NOkuU7T+RmbNT
+ 7oFAATNfsnZcVt4TRHj72OjNkkfouOKjITaDWwLI=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.2 13/76] rxrpc: Fix local endpoint refcounting
+Date: Thu, 29 Aug 2019 14:12:08 -0400
+Message-Id: <20190829181311.7562-13-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190829181311.7562-1-sashal@kernel.org>
+References: <20190829181311.7562-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20190828142423.GA1955@infradead.org>
-Content-Language: en-GB
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_074020_260680_95862D34 
-X-CRM114-Status: GOOD (  15.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_111340_524453_C628C27D 
+X-CRM114-Status: GOOD (  20.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Mailman-Approved-At: Thu, 29 Aug 2019 07:57:28 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,76 +79,300 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Latchesar Ionkov <lucho@ionkov.net>, Hugh Dickins <hughd@google.com>,
- Mike Marshall <hubcap@omnibond.com>, James Morris <jmorris@namei.org>,
- devel@lists.orangefs.org, Eric Van Hensbergen <ericvh@gmail.com>,
- Joel Becker <jlbec@evilplan.org>, Anna Schumaker <anna.schumaker@netapp.com>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- Mathieu Malaterre <malat@debian.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jan Kara <jack@suse.com>, Casey Schaufler <casey@schaufler-ca.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dave Kleikamp <shaggy@kernel.org>,
- linux-doc@vger.kernel.org, Jeff Layton <jlayton@kernel.org>,
- Chao Yu <yuchao0@huawei.com>, Mimi Zohar <zohar@linux.ibm.com>,
- linux-cifs@vger.kernel.org, Paul Moore <paul@paul-moore.com>,
- "Darrick J. Wong" <darrick.wong@oracle.com>,
- Eric Sandeen <sandeen@sandeen.net>, kernel-team@android.com,
- selinux@vger.kernel.org, Brian Foster <bfoster@redhat.com>,
- reiserfs-devel@vger.kernel.org, Tejun Heo <tj@kernel.org>,
- Jaegeuk Kim <jaegeuk@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
- Miklos Szeredi <miklos@szeredi.hu>, linux-f2fs-devel@lists.sourceforge.net,
- Benjamin Coddington <bcodding@redhat.com>, linux-integrity@vger.kernel.org,
- Martin Brandenburg <martin@omnibond.com>, Chris Mason <clm@fb.com>,
- linux-mtd@lists.infradead.org, linux-afs@lists.infradead.org,
- Jonathan Corbet <corbet@lwn.net>, Vyacheslav Dubeyko <slava@dubeyko.com>,
- Allison Henderson <allison.henderson@oracle.com>,
- Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
- Stephen Smalley <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
- Gao Xiang <gaoxiang25@huawei.com>, Eric Paris <eparis@parisplace.org>,
- ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org, linux-mm@kvack.org,
- samba-technical@lists.samba.org, linux-xfs@vger.kernel.org,
- Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
- linux-erofs@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
- ocfs2-devel@oss.oracle.com, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Eric Biggers <ebiggers@google.com>,
- Dominique Martinet <asmadeus@codewreck.org>,
- Adrian Hunter <adrian.hunter@intel.com>, David Howells <dhowells@redhat.com>,
- Joseph Qi <joseph.qi@linux.alibaba.com>,
- Andreas Dilger <adilger.kernel@dilger.ca>, devel@driverdev.osuosl.org,
- "J. Bruce Fields" <bfields@redhat.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Sage Weil <sage@redhat.com>,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
- cluster-devel@redhat.com, Steve French <sfrench@samba.org>,
- v9fs-developer@lists.sourceforge.net, Bharath Vedartham <linux.bhar@gmail.com>,
- Jann Horn <jannh@google.com>, ecryptfs@vger.kernel.org,
- Josef Bacik <josef@toxicpanda.com>, Dave Chinner <dchinner@redhat.com>,
- David Sterba <dsterba@suse.com>, Artem Bityutskiy <dedekind1@gmail.com>,
- netdev@vger.kernel.org, linux-unionfs@vger.kernel.org, stable@vger.kernel.org,
- Tyler Hicks <tyhicks@canonical.com>, linux-security-module@vger.kernel.org,
- Phillip Lougher <phillip@squashfs.org.uk>,
- David Woodhouse <dwmw2@infradead.org>, linux-btrfs@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
+ syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com,
+ linux-afs@lists.infradead.org, netdev@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-T24gOC8yOC8xOSA3OjI0IEFNLCBDaHJpc3RvcGggSGVsbHdpZyB3cm90ZToKPiBPbiBUdWUsIEF1
-ZyAyNywgMjAxOSBhdCAwODowNToxNUFNIC0wNzAwLCBNYXJrIFNhbHl6eW4gd3JvdGU6Cj4+IFJl
-cGxhY2UgYXJndW1lbnRzIGZvciBnZXQgYW5kIHNldCB4YXR0ciBtZXRob2RzLCBhbmQgX192ZnNf
-Z2V0eGF0dHIKPj4gYW5kIF9fdmZzX3NldGF4dHIgZnVuY3Rpb25zIHdpdGggYSByZWZlcmVuY2Ug
-dG8gdGhlIGZvbGxvd2luZyBub3cKPj4gY29tbW9uIGFyZ3VtZW50IHN0cnVjdHVyZToKPiBZaWtl
-cy4gIFRoYXQgbG9va3MgbGlrZSBhIG1lc3MuICBXaHkgY2FuJ3Qgd2UgcGFzcyBhIGtlcm5lbC1v
-bmx5Cj4gZmxhZyBpbiB0aGUgZXhpc3RpbmcgZmxhZ3MgZmllbGQgZm9yIOKCiz5zZXQgYW5kIGFk
-ZCBhIGZsYWdzIGZpZWxkCj4gdG8gLT5nZXQ/ICBQYXNzaW5nIG1ldGhvZHMgYnkgc3RydWN0dXJl
-IGFsd2F5cyB0ZW5kcyB0byBiZSBhIG1lc3MuCgpUaGlzIHdhcyBhIHJlc3BvbnNlIHRvIEdyZWdL
-SEAgY3JpdGljaXNtLCBhbiBlYXJsaWVyIHBhdGNoIHNldCBqdXN0IAphZGRlZCBhIGZsYWcgYXMg
-eW91IHN0YXRlZCB0byBnZXQgbWV0aG9kLCB1bnRpbCBjb21wbGFpbnRzIG9mIGFuIApleGNlc3Np
-dmVseSBsb25nIGFyZ3VtZW50IGxpc3QgYW5kIGZyYWdpbGl0eSB0byBhZGQgb3IgY2hhbmdlIG1v
-cmUgCmFyZ3VtZW50cy4KClNvIG1hbnkgd2F5cyBoYXZlIGJlZW4gdHJpZWQgdG8gc2tpbiB0aGlz
-IGNhdCAuLi4gdGhlIHJpc2sgd2FzIHRha2VuIHRvIApwbGVhc2Ugc29tZSwgYW5kIHdlIG5vdyBo
-YXZlIGh1bmRyZWRzIG9mIHN0YWtlaG9sZGVycywgd2hlbiB0aGUgZmlyc3QgCnBhdGNoIHNldCB3
-YXMgbGVzcyB0aGFuIGEgZG96ZW4uIEEgcmVjaXBlIGZvciBmYWlsdXJlPwoKLS0gTWFyawoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFmcyBt
-YWlsaW5nIGxpc3QKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hZnMK
+From: David Howells <dhowells@redhat.com>
+
+[ Upstream commit 730c5fd42c1e3652a065448fd235cb9fafb2bd10 ]
+
+The object lifetime management on the rxrpc_local struct is broken in that
+the rxrpc_local_processor() function is expected to clean up and remove an
+object - but it may get requeued by packets coming in on the backing UDP
+socket once it starts running.
+
+This may result in the assertion in rxrpc_local_rcu() firing because the
+memory has been scheduled for RCU destruction whilst still queued:
+
+	rxrpc: Assertion failed
+	------------[ cut here ]------------
+	kernel BUG at net/rxrpc/local_object.c:468!
+
+Note that if the processor comes around before the RCU free function, it
+will just do nothing because ->dead is true.
+
+Fix this by adding a separate refcount to count active users of the
+endpoint that causes the endpoint to be destroyed when it reaches 0.
+
+The original refcount can then be used to refcount objects through the work
+processor and cause the memory to be rcu freed when that reaches 0.
+
+Fixes: 4f95dd78a77e ("rxrpc: Rework local endpoint management")
+Reported-by: syzbot+1e0edc4b8b7494c28450@syzkaller.appspotmail.com
+Signed-off-by: David Howells <dhowells@redhat.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ net/rxrpc/af_rxrpc.c     |  4 +-
+ net/rxrpc/ar-internal.h  |  5 ++-
+ net/rxrpc/input.c        | 16 ++++++--
+ net/rxrpc/local_object.c | 86 +++++++++++++++++++++++++---------------
+ 4 files changed, 72 insertions(+), 39 deletions(-)
+
+diff --git a/net/rxrpc/af_rxrpc.c b/net/rxrpc/af_rxrpc.c
+index d09eaf1535441..8c9bd3ae9edf7 100644
+--- a/net/rxrpc/af_rxrpc.c
++++ b/net/rxrpc/af_rxrpc.c
+@@ -193,7 +193,7 @@ static int rxrpc_bind(struct socket *sock, struct sockaddr *saddr, int len)
+ 
+ service_in_use:
+ 	write_unlock(&local->services_lock);
+-	rxrpc_put_local(local);
++	rxrpc_unuse_local(local);
+ 	ret = -EADDRINUSE;
+ error_unlock:
+ 	release_sock(&rx->sk);
+@@ -901,7 +901,7 @@ static int rxrpc_release_sock(struct sock *sk)
+ 	rxrpc_queue_work(&rxnet->service_conn_reaper);
+ 	rxrpc_queue_work(&rxnet->client_conn_reaper);
+ 
+-	rxrpc_put_local(rx->local);
++	rxrpc_unuse_local(rx->local);
+ 	rx->local = NULL;
+ 	key_put(rx->key);
+ 	rx->key = NULL;
+diff --git a/net/rxrpc/ar-internal.h b/net/rxrpc/ar-internal.h
+index 80335b4ee4fd6..6a231c8f43066 100644
+--- a/net/rxrpc/ar-internal.h
++++ b/net/rxrpc/ar-internal.h
+@@ -254,7 +254,8 @@ struct rxrpc_security {
+  */
+ struct rxrpc_local {
+ 	struct rcu_head		rcu;
+-	atomic_t		usage;
++	atomic_t		active_users;	/* Number of users of the local endpoint */
++	atomic_t		usage;		/* Number of references to the structure */
+ 	struct rxrpc_net	*rxnet;		/* The network ns in which this resides */
+ 	struct list_head	link;
+ 	struct socket		*socket;	/* my UDP socket */
+@@ -1002,6 +1003,8 @@ struct rxrpc_local *rxrpc_lookup_local(struct net *, const struct sockaddr_rxrpc
+ struct rxrpc_local *rxrpc_get_local(struct rxrpc_local *);
+ struct rxrpc_local *rxrpc_get_local_maybe(struct rxrpc_local *);
+ void rxrpc_put_local(struct rxrpc_local *);
++struct rxrpc_local *rxrpc_use_local(struct rxrpc_local *);
++void rxrpc_unuse_local(struct rxrpc_local *);
+ void rxrpc_queue_local(struct rxrpc_local *);
+ void rxrpc_destroy_all_locals(struct rxrpc_net *);
+ 
+diff --git a/net/rxrpc/input.c b/net/rxrpc/input.c
+index 5bd6f1546e5c6..ee95d1cd1cdf2 100644
+--- a/net/rxrpc/input.c
++++ b/net/rxrpc/input.c
+@@ -1108,8 +1108,12 @@ static void rxrpc_post_packet_to_local(struct rxrpc_local *local,
+ {
+ 	_enter("%p,%p", local, skb);
+ 
+-	skb_queue_tail(&local->event_queue, skb);
+-	rxrpc_queue_local(local);
++	if (rxrpc_get_local_maybe(local)) {
++		skb_queue_tail(&local->event_queue, skb);
++		rxrpc_queue_local(local);
++	} else {
++		rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
++	}
+ }
+ 
+ /*
+@@ -1119,8 +1123,12 @@ static void rxrpc_reject_packet(struct rxrpc_local *local, struct sk_buff *skb)
+ {
+ 	CHECK_SLAB_OKAY(&local->usage);
+ 
+-	skb_queue_tail(&local->reject_queue, skb);
+-	rxrpc_queue_local(local);
++	if (rxrpc_get_local_maybe(local)) {
++		skb_queue_tail(&local->reject_queue, skb);
++		rxrpc_queue_local(local);
++	} else {
++		rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
++	}
+ }
+ 
+ /*
+diff --git a/net/rxrpc/local_object.c b/net/rxrpc/local_object.c
+index b1c71bad510b7..9798159ee65fa 100644
+--- a/net/rxrpc/local_object.c
++++ b/net/rxrpc/local_object.c
+@@ -79,6 +79,7 @@ static struct rxrpc_local *rxrpc_alloc_local(struct rxrpc_net *rxnet,
+ 	local = kzalloc(sizeof(struct rxrpc_local), GFP_KERNEL);
+ 	if (local) {
+ 		atomic_set(&local->usage, 1);
++		atomic_set(&local->active_users, 1);
+ 		local->rxnet = rxnet;
+ 		INIT_LIST_HEAD(&local->link);
+ 		INIT_WORK(&local->processor, rxrpc_local_processor);
+@@ -266,11 +267,8 @@ struct rxrpc_local *rxrpc_lookup_local(struct net *net,
+ 		 * bind the transport socket may still fail if we're attempting
+ 		 * to use a local address that the dying object is still using.
+ 		 */
+-		if (!rxrpc_get_local_maybe(local)) {
+-			cursor = cursor->next;
+-			list_del_init(&local->link);
++		if (!rxrpc_use_local(local))
+ 			break;
+-		}
+ 
+ 		age = "old";
+ 		goto found;
+@@ -284,7 +282,10 @@ struct rxrpc_local *rxrpc_lookup_local(struct net *net,
+ 	if (ret < 0)
+ 		goto sock_error;
+ 
+-	list_add_tail(&local->link, cursor);
++	if (cursor != &rxnet->local_endpoints)
++		list_replace(cursor, &local->link);
++	else
++		list_add_tail(&local->link, cursor);
+ 	age = "new";
+ 
+ found:
+@@ -342,7 +343,8 @@ struct rxrpc_local *rxrpc_get_local_maybe(struct rxrpc_local *local)
+ }
+ 
+ /*
+- * Queue a local endpoint.
++ * Queue a local endpoint unless it has become unreferenced and pass the
++ * caller's reference to the work item.
+  */
+ void rxrpc_queue_local(struct rxrpc_local *local)
+ {
+@@ -351,15 +353,8 @@ void rxrpc_queue_local(struct rxrpc_local *local)
+ 	if (rxrpc_queue_work(&local->processor))
+ 		trace_rxrpc_local(local, rxrpc_local_queued,
+ 				  atomic_read(&local->usage), here);
+-}
+-
+-/*
+- * A local endpoint reached its end of life.
+- */
+-static void __rxrpc_put_local(struct rxrpc_local *local)
+-{
+-	_enter("%d", local->debug_id);
+-	rxrpc_queue_work(&local->processor);
++	else
++		rxrpc_put_local(local);
+ }
+ 
+ /*
+@@ -375,10 +370,45 @@ void rxrpc_put_local(struct rxrpc_local *local)
+ 		trace_rxrpc_local(local, rxrpc_local_put, n, here);
+ 
+ 		if (n == 0)
+-			__rxrpc_put_local(local);
++			call_rcu(&local->rcu, rxrpc_local_rcu);
+ 	}
+ }
+ 
++/*
++ * Start using a local endpoint.
++ */
++struct rxrpc_local *rxrpc_use_local(struct rxrpc_local *local)
++{
++	unsigned int au;
++
++	local = rxrpc_get_local_maybe(local);
++	if (!local)
++		return NULL;
++
++	au = atomic_fetch_add_unless(&local->active_users, 1, 0);
++	if (au == 0) {
++		rxrpc_put_local(local);
++		return NULL;
++	}
++
++	return local;
++}
++
++/*
++ * Cease using a local endpoint.  Once the number of active users reaches 0, we
++ * start the closure of the transport in the work processor.
++ */
++void rxrpc_unuse_local(struct rxrpc_local *local)
++{
++	unsigned int au;
++
++	au = atomic_dec_return(&local->active_users);
++	if (au == 0)
++		rxrpc_queue_local(local);
++	else
++		rxrpc_put_local(local);
++}
++
+ /*
+  * Destroy a local endpoint's socket and then hand the record to RCU to dispose
+  * of.
+@@ -393,16 +423,6 @@ static void rxrpc_local_destroyer(struct rxrpc_local *local)
+ 
+ 	_enter("%d", local->debug_id);
+ 
+-	/* We can get a race between an incoming call packet queueing the
+-	 * processor again and the work processor starting the destruction
+-	 * process which will shut down the UDP socket.
+-	 */
+-	if (local->dead) {
+-		_leave(" [already dead]");
+-		return;
+-	}
+-	local->dead = true;
+-
+ 	mutex_lock(&rxnet->local_mutex);
+ 	list_del_init(&local->link);
+ 	mutex_unlock(&rxnet->local_mutex);
+@@ -422,13 +442,11 @@ static void rxrpc_local_destroyer(struct rxrpc_local *local)
+ 	 */
+ 	rxrpc_purge_queue(&local->reject_queue);
+ 	rxrpc_purge_queue(&local->event_queue);
+-
+-	_debug("rcu local %d", local->debug_id);
+-	call_rcu(&local->rcu, rxrpc_local_rcu);
+ }
+ 
+ /*
+- * Process events on an endpoint
++ * Process events on an endpoint.  The work item carries a ref which
++ * we must release.
+  */
+ static void rxrpc_local_processor(struct work_struct *work)
+ {
+@@ -441,8 +459,10 @@ static void rxrpc_local_processor(struct work_struct *work)
+ 
+ 	do {
+ 		again = false;
+-		if (atomic_read(&local->usage) == 0)
+-			return rxrpc_local_destroyer(local);
++		if (atomic_read(&local->active_users) == 0) {
++			rxrpc_local_destroyer(local);
++			break;
++		}
+ 
+ 		if (!skb_queue_empty(&local->reject_queue)) {
+ 			rxrpc_reject_packets(local);
+@@ -454,6 +474,8 @@ static void rxrpc_local_processor(struct work_struct *work)
+ 			again = true;
+ 		}
+ 	} while (again);
++
++	rxrpc_put_local(local);
+ }
+ 
+ /*
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-afs mailing list
+http://lists.infradead.org/mailman/listinfo/linux-afs
