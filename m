@@ -2,57 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D635A1ACC
-	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 15:06:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DF06A1ACF
+	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 15:06:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bIyXPOawNf39TEkmeYspT1qR1smicqAoeTkGsTZ3GP4=; b=baD+ZL/PUnPTCG
-	fjSQ6yPnNtgRG66FkJA2U0bFAmPa4JKO16LvvCyeFbGAFzuaF+3n7YlpaJKtuvnQiQwkB7uXkQbR+
-	BqJ0hkbfqYfR1PxIbGo+4pq7pIVvGEcuojCkayjExZQqbec7ob1sE2JfAj26xjzoKu5kcaYuNAok+
-	+bLhdB4D+tZQfRb6QPcDI38gPkgH/kfqXWyHNMGQ6OCitBX0olXc+VOW/iDdSClEbvs0P5WGoH1UC
-	wZOss+8W1P18Kxwbq15i6sPLXM67IoypkDDHAEQXvVD6TiyTSVz+L4fGaw2xr/c0HAHPZ0t/DRNVZ
-	1Aea/mwLNzlTWi7eo4sg==;
+	List-Owner; bh=Iw5lGbKZR+89c7iJaZRXcEe1yiUWBDNVFojRlYRqcho=; b=HqjFon6lqKPZln
+	myLlSzklZxR4tdKjCyRd4Xdb6kqLjpYBfHFqR4H60dOM9BcnZMDC6eGsp1mIa1rOjbpvfeCLNV8Ts
+	Dve5j+dGVUBDCVkf//RkcYosMCa6JbA4tpTSP+3yDfSWx+q+W/9M0yZfJp5oIpWFcZHHrQhQJfeVb
+	JZ/2o/fDY5nx96LIE1W0kL4fXtR84TGOq1mccbycFwA0YM5FPg/yElhaLOd1FTiHzPpccVHJoPP4l
+	5a6IK2hOHV4lzgpLcDf6xx86zzpVaxUUHwcKLLeQ9olxoyoXxv+0eOwudY2ME2ckRKLqqyz0FGqAU
+	PSNHE56WKQKmNSSBWleg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3K88-0000rj-3L; Thu, 29 Aug 2019 13:06:24 +0000
+	id 1i3K8F-0000vs-8c; Thu, 29 Aug 2019 13:06:31 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3K85-0000r9-LR
- for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 13:06:23 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ id 1i3K8C-0000uw-LH
+ for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 13:06:29 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 6500E308219E;
- Thu, 29 Aug 2019 13:06:21 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3E52430821B2;
+ Thu, 29 Aug 2019 13:06:28 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
  [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 80C555C1D6;
- Thu, 29 Aug 2019 13:06:20 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 655FB60872;
+ Thu, 29 Aug 2019 13:06:27 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH net 1/5] rxrpc: Pass the input handler's data skb reference
- to the Rx ring
+Subject: [PATCH net 2/5] rxrpc: Abstract out rxtx ring cleanup
 From: David Howells <dhowells@redhat.com>
 To: netdev@vger.kernel.org
-Date: Thu, 29 Aug 2019 14:06:19 +0100
-Message-ID: <156708397971.25861.1471138213727662062.stgit@warthog.procyon.org.uk>
+Date: Thu, 29 Aug 2019 14:06:26 +0100
+Message-ID: <156708398665.25861.13094054687495909433.stgit@warthog.procyon.org.uk>
 In-Reply-To: <156708397261.25861.2158085372781699276.stgit@warthog.procyon.org.uk>
 References: <156708397261.25861.2158085372781699276.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.47]); Thu, 29 Aug 2019 13:06:21 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.47]); Thu, 29 Aug 2019 13:06:28 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_060621_740724_659FB5C5 
-X-CRM114-Status: GOOD (  16.59  )
+X-CRM114-CacheID: sfid-20190829_060628_716448_01A0DBC4 
+X-CRM114-Status: GOOD (  15.48  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -80,91 +79,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Pass the reference held on a DATA skb in the rxrpc input handler into the
-Rx ring rather than getting an additional ref for this and then dropping
-the original ref at the end.
+Abstract out rxtx ring cleanup into its own function from its two callers.
+This makes it easier to apply the same changes to both.
 
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- net/rxrpc/input.c |   20 +++++++++++++++-----
- 1 file changed, 15 insertions(+), 5 deletions(-)
+ net/rxrpc/call_object.c |   33 +++++++++++++++++----------------
+ 1 file changed, 17 insertions(+), 16 deletions(-)
 
-diff --git a/net/rxrpc/input.c b/net/rxrpc/input.c
-index 35b1a9368d80..140cede77655 100644
---- a/net/rxrpc/input.c
-+++ b/net/rxrpc/input.c
-@@ -422,7 +422,8 @@ static void rxrpc_input_dup_data(struct rxrpc_call *call, rxrpc_seq_t seq,
+diff --git a/net/rxrpc/call_object.c b/net/rxrpc/call_object.c
+index 217b12be9e08..c9ab2da957fe 100644
+--- a/net/rxrpc/call_object.c
++++ b/net/rxrpc/call_object.c
+@@ -421,6 +421,21 @@ void rxrpc_get_call(struct rxrpc_call *call, enum rxrpc_call_trace op)
+ 	trace_rxrpc_call(call, op, n, here, NULL);
  }
  
- /*
-- * Process a DATA packet, adding the packet to the Rx ring.
-+ * Process a DATA packet, adding the packet to the Rx ring.  The caller's
-+ * packet ref must be passed on or discarded.
-  */
- static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
- {
-@@ -441,8 +442,10 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
- 	       sp->hdr.serial, seq0, sp->hdr.flags, sp->nr_subpackets);
- 
- 	state = READ_ONCE(call->state);
--	if (state >= RXRPC_CALL_COMPLETE)
-+	if (state >= RXRPC_CALL_COMPLETE) {
-+		rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
- 		return;
++/*
++ * Clean up the RxTx skb ring.
++ */
++static void rxrpc_cleanup_ring(struct rxrpc_call *call)
++{
++	int i;
++
++	for (i = 0; i < RXRPC_RXTX_BUFF_SIZE; i++) {
++		rxrpc_free_skb(call->rxtx_buffer[i],
++			       (call->tx_phase ? rxrpc_skb_tx_cleaned :
++				rxrpc_skb_rx_cleaned));
++		call->rxtx_buffer[i] = NULL;
 +	}
++}
++
+ /*
+  * Detach a call from its owning socket.
+  */
+@@ -429,7 +444,6 @@ void rxrpc_release_call(struct rxrpc_sock *rx, struct rxrpc_call *call)
+ 	const void *here = __builtin_return_address(0);
+ 	struct rxrpc_connection *conn = call->conn;
+ 	bool put = false;
+-	int i;
  
- 	if (call->state == RXRPC_CALL_SERVER_RECV_REQUEST) {
- 		unsigned long timo = READ_ONCE(call->next_req_timo);
-@@ -555,7 +558,8 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
- 		 * Barriers against rxrpc_recvmsg_data() and rxrpc_rotate_rx_window()
- 		 * and also rxrpc_fill_out_ack().
- 		 */
--		rxrpc_get_skb(skb, rxrpc_skb_rx_got);
-+		if (!terminal)
-+			rxrpc_get_skb(skb, rxrpc_skb_rx_got);
- 		call->rxtx_annotations[ix] = annotation;
- 		smp_wmb();
- 		call->rxtx_buffer[ix] = skb;
-@@ -616,6 +620,7 @@ static void rxrpc_input_data(struct rxrpc_call *call, struct sk_buff *skb)
+ 	_enter("{%d,%d}", call->debug_id, atomic_read(&call->usage));
  
- unlock:
- 	spin_unlock(&call->input_lock);
-+	rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
- 	_leave(" [queued]");
- }
+@@ -479,13 +493,7 @@ void rxrpc_release_call(struct rxrpc_sock *rx, struct rxrpc_call *call)
+ 	if (conn)
+ 		rxrpc_disconnect_call(call);
  
-@@ -1024,7 +1029,7 @@ static void rxrpc_input_call_packet(struct rxrpc_call *call,
- 	switch (sp->hdr.type) {
- 	case RXRPC_PACKET_TYPE_DATA:
- 		rxrpc_input_data(call, skb);
--		break;
-+		goto no_free;
- 
- 	case RXRPC_PACKET_TYPE_ACK:
- 		rxrpc_input_ack(call, skb);
-@@ -1051,6 +1056,8 @@ static void rxrpc_input_call_packet(struct rxrpc_call *call,
- 		break;
- 	}
- 
-+	rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
-+no_free:
+-	for (i = 0; i < RXRPC_RXTX_BUFF_SIZE; i++) {
+-		rxrpc_free_skb(call->rxtx_buffer[i],
+-			       (call->tx_phase ? rxrpc_skb_tx_cleaned :
+-				rxrpc_skb_rx_cleaned));
+-		call->rxtx_buffer[i] = NULL;
+-	}
+-
++	rxrpc_cleanup_ring(call);
  	_leave("");
  }
  
-@@ -1375,8 +1382,11 @@ int rxrpc_input_packet(struct sock *udp_sk, struct sk_buff *skb)
- 		mutex_unlock(&call->user_mutex);
- 	}
+@@ -568,8 +576,6 @@ static void rxrpc_rcu_destroy_call(struct rcu_head *rcu)
+  */
+ void rxrpc_cleanup_call(struct rxrpc_call *call)
+ {
+-	int i;
+-
+ 	_net("DESTROY CALL %d", call->debug_id);
  
-+	/* Process a call packet; this either discards or passes on the ref
-+	 * elsewhere.
-+	 */
- 	rxrpc_input_call_packet(call, skb);
--	goto discard;
-+	goto out;
+ 	memset(&call->sock_node, 0xcd, sizeof(call->sock_node));
+@@ -580,12 +586,7 @@ void rxrpc_cleanup_call(struct rxrpc_call *call)
+ 	ASSERT(test_bit(RXRPC_CALL_RELEASED, &call->flags));
+ 	ASSERTCMP(call->conn, ==, NULL);
  
- discard:
- 	rxrpc_free_skb(skb, rxrpc_skb_rx_freed);
+-	/* Clean up the Rx/Tx buffer */
+-	for (i = 0; i < RXRPC_RXTX_BUFF_SIZE; i++)
+-		rxrpc_free_skb(call->rxtx_buffer[i],
+-			       (call->tx_phase ? rxrpc_skb_tx_cleaned :
+-				rxrpc_skb_rx_cleaned));
+-
++	rxrpc_cleanup_ring(call);
+ 	rxrpc_free_skb(call->tx_pending, rxrpc_skb_tx_cleaned);
+ 
+ 	call_rcu(&call->rcu, rxrpc_rcu_destroy_call);
 
 
 _______________________________________________
