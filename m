@@ -2,47 +2,47 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D2A2A236F
-	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 20:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A89E0A2371
+	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 20:15:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DEpV9/u79cy2R/VCjKVEcIT0aVQVmfg2nEvApf3x+h8=; b=Fam3hTCSffDBqB
-	GdNEZaf2SbPz4YsbAaYvNIdyjGuV+RUAgDajKrHfEcGApENfSWI8fC1Rfbwracx7sm4mpZ0WmYgyh
-	gIgEyOLSHZO0n2xhrOMh6DmvJzKL3jQrKzyX0dh+Gd+YzpzQJq56qBs/PP48mDqhV3Yu+Qvr60mGd
-	ueh4EUWUIurVShdlEMQHeehmCY4UIDwPSN25qjrIZGI50TPwUxQcZnKkp4vjNLXTXeMNwe8QXcX9Y
-	3T6xNRxrIK1XyksPXXjjjUiLERBwt3yJYkw3oYFApLKtqPe5omT5vIFCHoQAL2bXes4aqO485+02B
-	5JVo4aCU+U7pqVebzxzg==;
+	List-Owner; bh=77T3A0ko6svXRXLAFPi/d9o8AYpRBPEhg34weSIfWgw=; b=AGi+Y2/Gmn+unZ
+	8h4G8OUwKYWxNy3s8u889RwA6Ve8wrpFO0SVYiBIvpEmCrx36Wj0XztaOs8cbafDIn9xcsrAg50wv
+	WZsS91K4RzFc0qwhpEP3u9PJ+7XF//5Ij7P35GMAwCndKc2wEKxJ31jnF8cs8idPWpSKdmkV+CThw
+	KUbcOn89PJ5f2O2tbfMaeWS4mhRIUlJcgqCo47WpNLbTLz1Yz0pQerQLvMsM19Nm/P/Xm1VZqVNMF
+	ZYklSBT2T4lxZEzc9iyi6Cw7V0xRIQkSAvcV87Zm8aMB24NfvbqFmd0ewuIhmTaQm36JlYiMd7ZPp
+	kjJ8yVQM5LJ5Y9aLGDug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3OxQ-00076l-Bu; Thu, 29 Aug 2019 18:15:40 +0000
+	id 1i3OxR-00078J-RR; Thu, 29 Aug 2019 18:15:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3OxM-00074Q-SI
- for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:15:38 +0000
+ id 1i3OxN-00075F-VI
+ for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:15:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E59A72342B;
- Thu, 29 Aug 2019 18:15:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EDED023427;
+ Thu, 29 Aug 2019 18:15:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567102536;
- bh=dVA703rK6IxI1rxx+YY4+dmvvsctabIC5SH1lxPtYk8=;
+ s=default; t=1567102537;
+ bh=pbhhtTjqHGaVTb6b/qL8/sUcq+cEXuTLSfp3vcATJdY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=c01ddU3jx7RgTp3wkQ15q0qg8czrN6kjezGq1bLpOcUGoOpjQ5JcnXaXzf4JxADKH
- 3dW6PSIwSx5rHN/V8aPfIBl/BJYXlTbOCpmkk6v3Nb5AFWIc0vdCUvDpRfqP8l95GU
- 4OIBm7YsNd67yyvEeyEbsF2bMmCpvXFSgSiSoVNk=
+ b=dzsb+bDuGpQ76IWR2il2hw5XYHgeKCuTHhmUj4+ZW9+jEU8nLrHVq2M/nLOh5muM2
+ f6c9IYLMVVPzL1u1qIRVwrnjpN26ZuzYJK31KfEVRlt1i3OjAsteOi+1Xf8x+EbCFe
+ of3y+X9jUvS0eekvpVyvsycqqQblAF2O8WJbQsjs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.2 71/76] afs: Fix possible oops in afs_lookup trace
- event
-Date: Thu, 29 Aug 2019 14:13:06 -0400
-Message-Id: <20190829181311.7562-71-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.2 72/76] afs: use correct afs_call_type in
+ yfs_fs_store_opaque_acl2
+Date: Thu, 29 Aug 2019 14:13:07 -0400
+Message-Id: <20190829181311.7562-72-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190829181311.7562-1-sashal@kernel.org>
 References: <20190829181311.7562-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_111536_934430_B5AA9338 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20190829_111538_090355_6EC38EBB 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,56 +81,41 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dionne <marc.dionne@auristor.com>, David Howells <dhowells@redhat.com>,
- linux-afs@lists.infradead.org, Sasha Levin <sashal@kernel.org>
+Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
+ YueHaibing <yuehaibing@huawei.com>, linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Marc Dionne <marc.dionne@auristor.com>
+From: YueHaibing <yuehaibing@huawei.com>
 
-[ Upstream commit c4c613ff08d92e72bf64a65ec35a2c3aa1cfcd06 ]
+[ Upstream commit 7533be858f5b9a036b9f91556a3ed70786abca8e ]
 
-The afs_lookup trace event can cause the following:
+It seems that 'yfs_RXYFSStoreOpaqueACL2' should be use in
+yfs_fs_store_opaque_acl2().
 
-[  216.576777] BUG: kernel NULL pointer dereference, address: 000000000000023b
-[  216.576803] #PF: supervisor read access in kernel mode
-[  216.576813] #PF: error_code(0x0000) - not-present page
-...
-[  216.576913] RIP: 0010:trace_event_raw_event_afs_lookup+0x9e/0x1c0 [kafs]
-
-If the inode from afs_do_lookup() is an error other than ENOENT, or if it
-is ENOENT and afs_try_auto_mntpt() returns an error, the trace event will
-try to dereference the error pointer as a valid pointer.
-
-Use IS_ERR_OR_NULL to only pass a valid pointer for the trace, or NULL.
-
-Ideally the trace would include the error value, but for now just avoid
-the oops.
-
-Fixes: 80548b03991f ("afs: Add more tracepoints")
-Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
+Fixes: f5e4546347bc ("afs: Implement YFS ACL setting")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/dir.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ fs/afs/yfsclient.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/afs/dir.c b/fs/afs/dir.c
-index da9563d62b327..c50cc3f6f4553 100644
---- a/fs/afs/dir.c
-+++ b/fs/afs/dir.c
-@@ -952,7 +952,8 @@ static struct dentry *afs_lookup(struct inode *dir, struct dentry *dentry,
- 				 inode ? AFS_FS_I(inode) : NULL);
- 	} else {
- 		trace_afs_lookup(dvnode, &dentry->d_name,
--				 inode ? AFS_FS_I(inode) : NULL);
-+				 IS_ERR_OR_NULL(inode) ? NULL
-+				 : AFS_FS_I(inode));
- 	}
- 	return d;
- }
+diff --git a/fs/afs/yfsclient.c b/fs/afs/yfsclient.c
+index 18722aaeda33a..a1baf3f1f14d1 100644
+--- a/fs/afs/yfsclient.c
++++ b/fs/afs/yfsclient.c
+@@ -2155,7 +2155,7 @@ int yfs_fs_store_opaque_acl2(struct afs_fs_cursor *fc, const struct afs_acl *acl
+ 	       key_serial(fc->key), vnode->fid.vid, vnode->fid.vnode);
+ 
+ 	size = round_up(acl->size, 4);
+-	call = afs_alloc_flat_call(net, &yfs_RXYFSStoreStatus,
++	call = afs_alloc_flat_call(net, &yfs_RXYFSStoreOpaqueACL2,
+ 				   sizeof(__be32) * 2 +
+ 				   sizeof(struct yfs_xdr_YFSFid) +
+ 				   sizeof(__be32) + size,
 -- 
 2.20.1
 
