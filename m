@@ -2,72 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D80EA2396
-	for <lists+linux-afs@lfdr.de>; Thu, 29 Aug 2019 20:17:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D370A2C72
+	for <lists+linux-afs@lfdr.de>; Fri, 30 Aug 2019 03:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mu17LhV7LqOX0/UqR76zrRKCDlPgBO4vXsWBuCHvVTs=; b=iUC/ZhUiTKJPxV
-	Fpf+HjOcoifoNs4p4UFR65CEq3d7RU31EX8dBIwSlj1/5A+PIbCqUgJu9bv54Eqy3hGgWJJywWaU3
-	e3zJ5eObMsCM3AKCk5S1WtHkT4L7ggd/K+KNTA5jQuy9aDILZsWqyIGUAIcEOXXUM3pfRHccvyRwf
-	KmfXwuOfFIyjsycKflssIMp7k4gGx/B4jf4lA/8Dkmd93mMRYoCEu5NijcORK11bSW9n+KH5lkvfF
-	pRak0xvuAdSskYW5n8JExLz6jppwt0ONDBYc+cwqwm8gPKoemfF0qIgsYtju57GrszyI1fqgffr8x
-	VEtoqFxOkHR49jKgPzqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JqtcwiEU2i7upgMEfP62CM+Fc/0Vvlfez9GDB0gxGbo=; b=V/woEBzdHb3pBw
+	QYmGNMD7JTH8ogaXJNN0yBsv1WiofA6s945tw/zei87GrPcVHCyiOFuiI3qtHMqWdr2o9FT8K2mA1
+	EIUnf/V8cp4iqGtX9DLvqENs5ZLcZAwOqfOCQTcYYlx09ajMaRf9dYy0rhyZXc4E42SH7b+/Ys8lN
+	+OmcwHCg1bAOKz4JsxZtlhjjZmXAFhpDUSwjQxuWIUCVOpyFynA50mBxR6RYJyVql5ud5wtr7QgRe
+	Oxe6cwpiviBV4aDLJi2g28cz2UaIcT8oMo1TN1k9wckNXorJ9ysAGQK3lXurTZSXOCFaDojSQFhYG
+	oCUsb+CCx+NCINljArVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Oye-0007Zh-LT; Thu, 29 Aug 2019 18:16:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i3Vtq-0004NO-9O; Fri, 30 Aug 2019 01:40:26 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3OyZ-0007Xg-0I
- for linux-afs@lists.infradead.org; Thu, 29 Aug 2019 18:16:52 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0DCBA2189D;
- Thu, 29 Aug 2019 18:16:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567102610;
- bh=JfugwJoZrrcuXr7gxgP+D6FbKzm1spHA1BgCwXHQ4GA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Dp/Jur9Ya1Hz7dxqlXHVGBWranCQQbnva3yUu8GluHcDH821GnNO6o1lb83yH32aZ
- vJRKwoH4aCrhK2smDWsK+lKz5NX6KsQ9DWhHc/xn/zZ1HcXX1I4bqPqc4lE028IJBz
- aHEVUkzHmtYT70KHvgGiBZtLSeZ8JdHg/NVX4eQc=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 44/45] afs: Fix leak in afs_lookup_cell_rcu()
-Date: Thu, 29 Aug 2019 14:15:44 -0400
-Message-Id: <20190829181547.8280-44-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190829181547.8280-1-sashal@kernel.org>
-References: <20190829181547.8280-1-sashal@kernel.org>
+ id 1i3Vtm-0004MJ-Vy
+ for linux-afs@lists.infradead.org; Fri, 30 Aug 2019 01:40:24 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id CBDF7654A36B027F3BE9;
+ Fri, 30 Aug 2019 09:40:11 +0800 (CST)
+Received: from huawei.com (10.90.53.225) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Fri, 30 Aug 2019
+ 09:40:02 +0800
+From: zhengbin <zhengbin13@huawei.com>
+To: <dhowells@redhat.com>, <linux-afs@lists.infradead.org>
+Subject: [PATCH 0/2] afs: remove some unused variables
+Date: Fri, 30 Aug 2019 09:46:43 +0800
+Message-ID: <1567129605-142022-1-git-send-email-zhengbin13@huawei.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+X-Originating-IP: [10.90.53.225]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_111651_146420_3A28B79E 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190829_184023_205465_2A06ED9F 
+X-CRM114-Status: UNSURE (   5.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,75 +62,22 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- linux-afs@lists.infradead.org
+Cc: zhengbin13@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
+zhengbin (2):
+  afs: remove unused variable 'ret'
+  afs: remove unused variables 'before','after'
 
-[ Upstream commit a5fb8e6c02d6a518fb2b1a2b8c2471fa77b69436 ]
+ fs/afs/dir_edit.c | 12 ++----------
+ fs/afs/server.c   |  3 +--
+ 2 files changed, 3 insertions(+), 12 deletions(-)
 
-Fix a leak on the cell refcount in afs_lookup_cell_rcu() due to
-non-clearance of the default error in the case a NULL cell name is passed
-and the workstation default cell is used.
-
-Also put a bit at the end to make sure we don't leak a cell ref if we're
-going to be returning an error.
-
-This leak results in an assertion like the following when the kafs module is
-unloaded:
-
-	AFS: Assertion failed
-	2 == 1 is false
-	0x2 == 0x1 is false
-	------------[ cut here ]------------
-	kernel BUG at fs/afs/cell.c:770!
-	...
-	RIP: 0010:afs_manage_cells+0x220/0x42f [kafs]
-	...
-	 process_one_work+0x4c2/0x82c
-	 ? pool_mayday_timeout+0x1e1/0x1e1
-	 ? do_raw_spin_lock+0x134/0x175
-	 worker_thread+0x336/0x4a6
-	 ? rescuer_thread+0x4af/0x4af
-	 kthread+0x1de/0x1ee
-	 ? kthread_park+0xd4/0xd4
-	 ret_from_fork+0x24/0x30
-
-Fixes: 989782dcdc91 ("afs: Overhaul cell database management")
-Signed-off-by: David Howells <dhowells@redhat.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- fs/afs/cell.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/fs/afs/cell.c b/fs/afs/cell.c
-index 6127f0fcd62c4..ee07162d35c7a 100644
---- a/fs/afs/cell.c
-+++ b/fs/afs/cell.c
-@@ -76,6 +76,7 @@ struct afs_cell *afs_lookup_cell_rcu(struct afs_net *net,
- 			cell = rcu_dereference_raw(net->ws_cell);
- 			if (cell) {
- 				afs_get_cell(cell);
-+				ret = 0;
- 				break;
- 			}
- 			ret = -EDESTADDRREQ;
-@@ -110,6 +111,9 @@ struct afs_cell *afs_lookup_cell_rcu(struct afs_net *net,
- 
- 	done_seqretry(&net->cells_lock, seq);
- 
-+	if (ret != 0 && cell)
-+		afs_put_cell(net, cell);
-+
- 	return ret == 0 ? cell : ERR_PTR(ret);
- }
- 
--- 
-2.20.1
+--
+2.7.4
 
 
 _______________________________________________
