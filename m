@@ -2,81 +2,83 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF9C6B7007
-	for <lists+linux-afs@lfdr.de>; Thu, 19 Sep 2019 02:23:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D255B7019
+	for <lists+linux-afs@lfdr.de>; Thu, 19 Sep 2019 02:25:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P+D4FDf2jdfBGhD2fS+1m+xy7TFaVW7ngzlALndhij8=; b=YYJmfwYXRE/2RW
-	Hg4hCAmAuzCmII+Us6nsq/PwLuuW29a5hadom4zGTcjcko8YDL0gfdTk2W0ZKCrOC1d48yDM8bJZw
-	htZW/Wkb05mHOD9g0K+oIQUfvFXDhIMEq4VWQpGnx9lqdxfqdE/f9DDmYUmmIU0O9oPw7cV3ngQAY
-	dtG6VIfob1alhVA9uynzYrRp+x1T2JmnkeQ3nK+wr01E5EkPZbq2VKKR7tQbNXDMJEYMzIxz/Yd+G
-	0w5YGc5neWebO3OBq1M6Nz2OUFrGyayZFld4ewidaqyCqe7SE2iiTk2Y1yZqf8yJZo/aP57c2R2po
-	D5ZJfdTlS8S8dLJCYMBQ==;
+	List-Owner; bh=8+VAfQ6aLmefsHNVNH3YTSdO4FWQ1cwrFM2dgM+GlTQ=; b=CmwzMLsz8AZw4g
+	ea+qjdNgtXc4/8qkOEQN7Lig1ETutynswnQwxcbgrqrUUvlJZGqLLJiGL7uoRG71bfHjMt27rhQhL
+	h5fIFxUu2mOvgHybcxB53NQn0vjCVdTnVkYoFla8yXLI5EBVSogLPcerJh5WO5606yy297v0ChKX/
+	/P8brNEnqNXDOMqs/jT0xu8NrSXZTu/bM05QpTuo5h/tY2HBnbtG+mBpVXfHYoI9BtR1pbx1/cfuX
+	Vfybs99aEhChkP4I48+lm0oToov8nalKQZvMXVXzE+N9Fud33Ty+Ob3Ufqb/JdjMh4OOgRqtmUyaJ
+	e9Qgetr5lymmBViv9rIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAkE9-0001rz-MV; Thu, 19 Sep 2019 00:23:17 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iAkG2-0003zq-V4; Thu, 19 Sep 2019 00:25:14 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAkE6-0001ra-Bf
- for linux-afs@lists.infradead.org; Thu, 19 Sep 2019 00:23:15 +0000
-Received: by mail-lj1-x243.google.com with SMTP id v24so1741047ljj.3
- for <linux-afs@lists.infradead.org>; Wed, 18 Sep 2019 17:23:13 -0700 (PDT)
+ id 1iAkG0-0003zT-Nm
+ for linux-afs@lists.infradead.org; Thu, 19 Sep 2019 00:25:13 +0000
+Received: by mail-lj1-x244.google.com with SMTP id d5so1687904lja.10
+ for <linux-afs@lists.infradead.org>; Wed, 18 Sep 2019 17:25:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xCq/TbFsgyz/f5qDMbrPu7H+lk7tDCVio2gz6Xsr1jk=;
- b=MjWYHCf0lYOJu/QH9oUEwcZ4Xj+0pYEV8kGM+muk3l+vc2eBgT0GnILRm6E3K4upAv
- 5wJi52x8CcGq4MaaKRKZbiGJU7VX9PpS0ne8bpsgPDNKYXV2yG3+G+2sYqoKkGTFDQaT
- 0DBmxCjXSSuy8q0/7sfftCtDXqZMtkWb+bWtg=
+ :cc; bh=dBc/eYJTOLPPQiZ5t0llKwVn5FhzICC4mWTmMrXjDEU=;
+ b=WIbuDCmG9hzDesKroizOBqRXGwONhNP4QrBll03slXqZ8b1BB3vzPCdVc22psjVksw
+ jQmVL7xCO/XlhDKxOO0QWvn92j6bBHADgUhpwQrr60PpwgBbzneGC/apON1Wc9JDdf/B
+ qoPD6tb+dylFDQ1HADe1c0C8c5aPCYN+8e5og=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xCq/TbFsgyz/f5qDMbrPu7H+lk7tDCVio2gz6Xsr1jk=;
- b=tFHhluZCGPHDYJDb1GT4kQLF1neg5dkcHVbkAQES/RCtyFEu/DIi2BJX+3yfn+fjlS
- 3849VKUn3rge1sOz/TeCavCQyc0UdFLKJxrAn61abTLxesRM3bSOEX2VBiOcsCHq4ROF
- Kv3vpHmh5bZcbLwxOIUJDCaMnrllhZXUvEAu5+JJQ28Sy0GOwJoAQ/VWDobVVhohq83w
- 7GGTG7pPzJOEiB3/uWqzxNOBVQMtn1p6+7oyb+ShaPZXMYqiIyPIRpk+H29WtIpYurh/
- DlrC4bx7y9FJz9rKkQWj2veAoMU7q9RMP7QJfStXdCK+hlNvzSyVxAz1Z+5qg88t/lwN
- TgBA==
-X-Gm-Message-State: APjAAAXBrwbBlPKpiDgWu28pZvdofFmryLKDjwKWs+yf7312y5nQS+hG
- t6Uv4I5RAItUiJ+BgYYGRayfWpVm5+o=
-X-Google-Smtp-Source: APXvYqyrt5boyEJfopK8ESj9wFO26KyLE6dmoVFuOZ4fuW6EenkjotmuA5/j7Cv77JRn00H9jx1mUg==
-X-Received: by 2002:a2e:780a:: with SMTP id t10mr3795245ljc.119.1568852592097; 
- Wed, 18 Sep 2019 17:23:12 -0700 (PDT)
-Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com.
- [209.85.208.178])
- by smtp.gmail.com with ESMTPSA id 4sm1311953ljv.87.2019.09.18.17.23.10
+ bh=dBc/eYJTOLPPQiZ5t0llKwVn5FhzICC4mWTmMrXjDEU=;
+ b=M3ZSHiQebxakRwlGvKlYGibAjSe5HxqPmY4m4jMjpP8TBiaVca1jUd9t8ZA7XdWkED
+ TlXxQbEI6xitRsRczI8O/lixb6wXPYW25amS8o+921XynTZlvXoyc+9otZYRcqlv1DVd
+ P1JjYDEbeTtgSo0EU+S6K+rcVVZcwX7pB+3cUV7J2d6++zx2udVhaYdtocJAHeXd/CkA
+ kVahMX5LExZte88t0WbklQN2nN7N16vuLLlZ5hXdnxXgq5kAIDQ62wtBtp473rccYdMR
+ UrfroKhv+qjlFanRcqiK7votQrFR6cUps95U50tK5E7SVXibXhmV6gvJyWC2w3ECa636
+ 2FFw==
+X-Gm-Message-State: APjAAAX/I07IeIzL5/O9xctwoyjSzA6n2ozw+9Z5Qx4zRk7u90PuEKmD
+ w3hVbPQ1cbxWA6pOrHJ+cPwyxV624ak=
+X-Google-Smtp-Source: APXvYqxmgYn+9gs45/GgnY5bFSiyfy44NO6cS3Md9l1iA7ZulOXgrd5lEJ2/tf/0E56Wtwmiy9hHtg==
+X-Received: by 2002:a2e:2d5:: with SMTP id y82mr3837170lje.230.1568852709214; 
+ Wed, 18 Sep 2019 17:25:09 -0700 (PDT)
+Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com.
+ [209.85.208.175])
+ by smtp.gmail.com with ESMTPSA id w27sm1284355ljd.55.2019.09.18.17.25.08
  for <linux-afs@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 18 Sep 2019 17:23:11 -0700 (PDT)
-Received: by mail-lj1-f178.google.com with SMTP id y3so326521ljj.6
- for <linux-afs@lists.infradead.org>; Wed, 18 Sep 2019 17:23:10 -0700 (PDT)
-X-Received: by 2002:a2e:9854:: with SMTP id e20mr3795217ljj.72.1568852590551; 
- Wed, 18 Sep 2019 17:23:10 -0700 (PDT)
+ Wed, 18 Sep 2019 17:25:08 -0700 (PDT)
+Received: by mail-lj1-f175.google.com with SMTP id e17so1668540ljf.13
+ for <linux-afs@lists.infradead.org>; Wed, 18 Sep 2019 17:25:08 -0700 (PDT)
+X-Received: by 2002:a2e:2c02:: with SMTP id s2mr3846937ljs.156.1568852707845; 
+ Wed, 18 Sep 2019 17:25:07 -0700 (PDT)
 MIME-Version: 1.0
 References: <16147.1568632167@warthog.procyon.org.uk>
-In-Reply-To: <16147.1568632167@warthog.procyon.org.uk>
+ <CAHk-=wgJx0FKq5FUP85Os1HjTPds4B3aQwumnRJDp+XHEbVjfA@mail.gmail.com>
+In-Reply-To: <CAHk-=wgJx0FKq5FUP85Os1HjTPds4B3aQwumnRJDp+XHEbVjfA@mail.gmail.com>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 18 Sep 2019 17:22:54 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wgJx0FKq5FUP85Os1HjTPds4B3aQwumnRJDp+XHEbVjfA@mail.gmail.com>
-Message-ID: <CAHk-=wgJx0FKq5FUP85Os1HjTPds4B3aQwumnRJDp+XHEbVjfA@mail.gmail.com>
+Date: Wed, 18 Sep 2019 17:24:51 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wiOw-YDpctcdTwsObUuwSv4+SC+O68kitxzPX-4nW74Kg@mail.gmail.com>
+Message-ID: <CAHk-=wiOw-YDpctcdTwsObUuwSv4+SC+O68kitxzPX-4nW74Kg@mail.gmail.com>
 Subject: Re: [GIT PULL afs: Development for 5.4
 To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_172314_423917_BF7956AE 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20190918_172512_777870_CBDF62DB 
+X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -107,37 +109,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 4:09 AM David Howells <dhowells@redhat.com> wrote:
+On Wed, Sep 18, 2019 at 5:22 PM Linus Torvalds
+<torvalds@linux-foundation.org> wrote:
 >
-> Here's a set of patches for AFS.  The first three are trivial, deleting
-> unused symbols and rolling out a wrapper function.
+> Commit messages need to explain the commit. The same is even more true
+> of merges!
 
-Pulled.
+Side note: that wasn't actually the only problem with that merge.
 
-However, I was close to unpulling it again. It has a merge commit with
-this merge message:
+The other problem was that neither of the merge bases made any sense
+what-so-ever. Neither parent was any kind of "this is a good starting
+point" for anything. You literally merged two random trees.
 
-    Merge remote-tracking branch 'net/master' into afs-next
+So even an explanation isn't really sufficient. You need to start
+looking at what you're doing, not doing random crazy stuff.
 
-and that simply is not acceptable.
-
-Commit messages need to explain the commit. The same is even more true
-of merges!
-
-In a regular commit, you can at least look at the patch and say "ok,
-that  change is obvious and self-explanatory".
-
-In a merge commit, the _only_ explanation you have is basically the
-commit message, and when the commit message is garbage, the merge is
-garbage.
-
-If you can't explain why you are doing a merge, then you shouldn't do
-the merge. It's that simple.
-
-And if you can't be bothered to write the explanation down, I'm not
-sure I can be bothered to then pull the end result.
-
-             Linus
+                Linus
 
 _______________________________________________
 linux-afs mailing list
