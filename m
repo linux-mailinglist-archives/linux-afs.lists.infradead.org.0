@@ -2,71 +2,63 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35C9C99FE
-	for <lists+linux-afs@lfdr.de>; Thu,  3 Oct 2019 10:36:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4559CCA5A3
+	for <lists+linux-afs@lfdr.de>; Thu,  3 Oct 2019 18:44:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=K0VlV03vcOFJQ6f1RRR5lzXEt+wdd4/z3vojRGqabGM=; b=F3hkGz9HCwPufgoklSy3h21k3f
-	k134bMbtnBKEmX+T6gUBXB3kKiFAH7hdaObEaSNxlupnl4nvGefKkCJC+BmsVlJyr1E3rzaP+xsGe
-	Tb+5fuV+wyqoXTHFvsUXU+6ez9LbTQs79VIupkS6tqPQmAan9dDGLxg3ZFdshwGAAq1kYJmiaL9zo
-	F44s2iM/5jRjvq7kV94PMnEizHSCViTRzQM5AVTMXP3i4giyI0bgYU5UMI4GadeHfcVh4gOBS4PnA
-	7lzuZrgcORrwgvj9galyJDJNJlm+9Faf7OCKJ7VLdEX6z/qi658uOkljzQIRYakcAhTVSCy0rD629
-	7nhzDSLw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1tHffFCX8iTVGsZWyk4cPfmNN3APupojxOhiMvCrUhY=; b=YujYUjsPZxb0yE
+	ZNAbAbmLDm+FPwWs8bIoQnGEZH5uU+b5sbpJc94UgjVJ/+MBXVElk1aa8EhptQmm5vxmb3B/l40bh
+	EkbASoabAjryvVVIFNa7iHMZ3hfL8N2imtfwVK5voflLjh/JDUdEocTLyVzew15YmDl0BcO/GOVJX
+	zdSTdVwt+ZkL6wLArl7zMDWei8ahfwFX6wBdmfPWbGfrZFJElbDJjolsO8H8swW02V7UI5uKxD+WJ
+	DmUGHM1XlaYdmsJUGeVqr2bNKAyrEmdFgUVXpBCclT1w4TCVOi7ohWW113fIqIF17+aRYGz7eGW7D
+	WLCnX/s2KcN0eILyU9sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFwbH-0005WZ-1f; Thu, 03 Oct 2019 08:36:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iG4Dj-0008Fz-Nt; Thu, 03 Oct 2019 16:44:51 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFq9C-0003QD-Ow
- for linux-afs@lists.infradead.org; Thu, 03 Oct 2019 01:43:16 +0000
-Received: from paulmck-ThinkPad-P72.home (50-39-105-78.bvtn.or.frontiernet.net
- [50.39.105.78])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iG4Dg-0008EX-HI
+ for linux-afs@lists.infradead.org; Thu, 03 Oct 2019 16:44:50 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47DF7222C5;
- Thu,  3 Oct 2019 01:43:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570066993;
- bh=rotuVr8T+0nH2VJEluJRScYkA/ofar/x0CByUKr1zYg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i0cSwzfgP4CdMi/Y04TcV13gJxLnhpwf96lljXXzc+5CjBH7f9cAgNQT+k+ML4pHH
- aEWpcJpq4jIKKa+A23ysWzFqZQngIebEkAr4uoes9A0gR+mbHYPbwJzXvYiKl2hgkO
- WMRSf9mxzPQRWWUzzJMduqVSWhFFg4FqVf2+CdDU=
-From: paulmck@kernel.org
-To: rcu@vger.kernel.org
-Subject: [PATCH tip/core/rcu 5/9] fs/afs: Replace rcu_swap_protected() with
- rcu_replace()
-Date: Wed,  2 Oct 2019 18:43:06 -0700
-Message-Id: <20191003014310.13262-5-paulmck@kernel.org>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20191003014153.GA13156@paulmck-ThinkPad-P72>
-References: <20191003014153.GA13156@paulmck-ThinkPad-P72>
+ by mx1.redhat.com (Postfix) with ESMTPS id 7447E8830A;
+ Thu,  3 Oct 2019 16:44:47 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-125-72.rdu2.redhat.com
+ [10.10.125.72])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9D3AD5D9E1;
+ Thu,  3 Oct 2019 16:44:45 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+Subject: [PATCH net] rxrpc: Fix rxrpc_recvmsg tracepoint
+From: David Howells <dhowells@redhat.com>
+To: netdev@vger.kernel.org
+Date: Thu, 03 Oct 2019 17:44:44 +0100
+Message-ID: <157012108434.20904.8998254800982940866.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/unknown-version
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.28]); Thu, 03 Oct 2019 16:44:47 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_184314_830974_A6859889 
-X-CRM114-Status: GOOD (  10.52  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191003_094448_598766_B0A3BB82 
+X-CRM114-Status: GOOD (  13.64  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Mailman-Approved-At: Thu, 03 Oct 2019 01:36:37 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,51 +70,36 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: tglx@linutronix.de, "Paul E. McKenney" <paulmck@kernel.org>,
- peterz@infradead.org, fweisbec@gmail.com, jiangshanlai@gmail.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, josh@joshtriplett.org,
- dhowells@redhat.com, edumazet@google.com, mathieu.desnoyers@efficios.com,
- oleg@redhat.com, dipankar@in.ibm.com, joel@joelfernandes.org,
- akpm@linux-foundation.org, mingo@kernel.org, linux-afs@lists.infradead.org
-MIME-Version: 1.0
+Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: "Paul E. McKenney" <paulmck@kernel.org>
+Fix the rxrpc_recvmsg tracepoint to handle being called with a NULL call
+parameter.
 
-This commit replaces the use of rcu_swap_protected() with the more
-intuitively appealing rcu_replace() as a step towards removing
-rcu_swap_protected().
-
-Link: https://lore.kernel.org/lkml/CAHk-=wiAsJLw1egFEE=Z7-GGtM6wcvtyytXZA1+BHqta4gg6Hw@mail.gmail.com/
-Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
-Signed-off-by: Paul E. McKenney <paulmck@kernel.org>
-Cc: David Howells <dhowells@redhat.com>
-Cc: <linux-afs@lists.infradead.org>
-Cc: <linux-kernel@vger.kernel.org>
+Fixes: a25e21f0bcd2 ("rxrpc, afs: Use debug_ids rather than pointers in traces")
+Signed-off-by: David Howells <dhowells@redhat.com>
 ---
- fs/afs/vl_list.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/fs/afs/vl_list.c b/fs/afs/vl_list.c
-index 21eb0c0..e594598 100644
---- a/fs/afs/vl_list.c
-+++ b/fs/afs/vl_list.c
-@@ -279,8 +279,8 @@ struct afs_vlserver_list *afs_extract_vlserver_list(struct afs_cell *cell,
- 			struct afs_addr_list *old = addrs;
+ include/trace/events/rxrpc.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/trace/events/rxrpc.h b/include/trace/events/rxrpc.h
+index a13a62db3565..edc5c887a44c 100644
+--- a/include/trace/events/rxrpc.h
++++ b/include/trace/events/rxrpc.h
+@@ -1068,7 +1068,7 @@ TRACE_EVENT(rxrpc_recvmsg,
+ 			     ),
  
- 			write_lock(&server->lock);
--			rcu_swap_protected(server->addresses, old,
--					   lockdep_is_held(&server->lock));
-+			old = rcu_replace(server->addresses, old,
-+					  lockdep_is_held(&server->lock));
- 			write_unlock(&server->lock);
- 			afs_put_addrlist(old);
- 		}
--- 
-2.9.5
+ 	    TP_fast_assign(
+-		    __entry->call = call->debug_id;
++		    __entry->call = call ? call->debug_id : 0;
+ 		    __entry->why = why;
+ 		    __entry->seq = seq;
+ 		    __entry->offset = offset;
 
 
 _______________________________________________
