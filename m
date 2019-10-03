@@ -2,54 +2,68 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7F95CF091
-	for <lists+linux-afs@lfdr.de>; Tue,  8 Oct 2019 03:35:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 351B7CFCB6
+	for <lists+linux-afs@lfdr.de>; Tue,  8 Oct 2019 16:46:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lhqe6KKzy4YdXHYE0ES5JNZuZ8dX9sMhF0Knhpihv1Q=; b=lKCmx8+rQsyaLj
-	895qEdBt4xsxtIjbYyL3aae6utmB0SXenxEefFOMGeLtY0zRLGnpJFXzYYYXCq3I5r82KCwhj5M3M
-	HldwB9TIDsGsZZ2n4RNyb3iSYpIqGgGnSOyHJbfjU+pDewShXTfTSbkPE9oPqzwV7jgtv4SEU91ve
-	zGeDAniUflstF4S++T4SXwowFz/RRLk+iJ2QVl0bMvAJ38nYOfRLp7CFVmAtBdGI64t7DCHzLt7zo
-	tT62Sz+bO4kcH/hlzw1HBwNME3woCNhM8HFQ+/tutEjOhSu2rKjemAmoe9haRkvWmRTKZ2hiTbJW6
-	nGA+qlihJCKMd7cTf1YQ==;
+	List-Owner; bh=3yltljSILb0iKorTIPBysNXpDsQmv903UrOouZcbuzQ=; b=m+A9EzKJ7NvOLm
+	2UyZvoaVqwPXmbVghpewWVxXVT1ZPTMYctxWk4EaIb8DlgpSLYwyn8TU4sL7MsH3b8jaVj3N1A7PD
+	3r0X2feAqu3ur6veoYaUBPK3SvX0I9uFKib8/mE0cmQdyArvkZtN9C3p+hvQyKJcCYr2hsxykYUxw
+	k8Y3/WjO8TBC5up8n+VjHY2BjCki8dn8BFaqR0uz+C6Sugdv47Nbo1LMRSvUGKDIO0XddjU2FDaDR
+	3Hk61AVmRkaSlivwKdxQyVCIFhxVq8VhqRW9uA7XUWRKZY4z1QuHd6vtmoT53uB35JLeANeS5weZg
+	5blC1VYZ5pENTpxcU+uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHePV-0003ha-M2; Tue, 08 Oct 2019 01:35:33 +0000
-Received: from r3-21.sinamail.sina.com.cn ([202.108.3.21])
- by bombadil.infradead.org with smtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHePR-0003ge-Vs
- for linux-afs@lists.infradead.org; Tue, 08 Oct 2019 01:35:32 +0000
-Received: from unknown (HELO localhost.localdomain)([222.130.246.252])
- by sina.com with ESMTP
- id 5D9BE7D2000101A8; Tue, 8 Oct 2019 09:35:16 +0800 (CST)
-X-Sender: hdanton@sina.com
-X-Auth-ID: hdanton@sina.com
-X-SMAIL-MID: 120451628756
-From: Hillf Danton <hdanton@sina.com>
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH net 5/6] rxrpc: rxrpc_peer needs to hold a ref on the
- rxrpc_local record
-Date: Tue,  8 Oct 2019 09:35:05 +0800
-Message-Id: <20191008013505.10728-1-hdanton@sina.com>
-In-Reply-To: <157044333551.32635.10133219357337058780.stgit@warthog.procyon.org.uk>
-References: <157044333551.32635.10133219357337058780.stgit@warthog.procyon.org.uk>
+	id 1iHqkQ-0002bo-PX; Tue, 08 Oct 2019 14:45:58 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iFwcx-0006Pj-6L
+ for linux-afs@lists.infradead.org; Thu, 03 Oct 2019 08:38:24 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 2B3C43C93A;
+ Thu,  3 Oct 2019 08:38:21 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-125-72.rdu2.redhat.com
+ [10.10.125.72])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 732965D6A7;
+ Thu,  3 Oct 2019 08:38:15 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <20191003014310.13262-5-paulmck@kernel.org>
+References: <20191003014310.13262-5-paulmck@kernel.org>
+ <20191003014153.GA13156@paulmck-ThinkPad-P72>
+To: paulmck@kernel.org
+Subject: Re: [PATCH tip/core/rcu 5/9] fs/afs: Replace rcu_swap_protected()
+ with rcu_replace()
 MIME-Version: 1.0
+Content-ID: <25321.1570091894.1@warthog.procyon.org.uk>
+Date: Thu, 03 Oct 2019 09:38:14 +0100
+Message-ID: <25322.1570091894@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.39]); Thu, 03 Oct 2019 08:38:21 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_183530_224426_094E3979 
-X-CRM114-Status: GOOD (  14.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191003_013823_249705_AC8685E2 
+X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hdanton[at]sina.com)
+X-Mailman-Approved-At: Tue, 08 Oct 2019 07:45:57 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,82 +75,33 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: net <netdev@vger.kernel.org>, Hillf Danton <hdanton@sina.com>,
- afs <linux-afs@lists.infradead.org>, linux <linux-kernel@vger.kernel.org>
+Cc: rcu@vger.kernel.org, tglx@linutronix.de, peterz@infradead.org,
+ fweisbec@gmail.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, josh@joshtriplett.org, dhowells@redhat.com,
+ edumazet@google.com, mathieu.desnoyers@efficios.com, oleg@redhat.com,
+ dipankar@in.ibm.com, joel@joelfernandes.org, akpm@linux-foundation.org,
+ mingo@kernel.org, linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
+paulmck@kernel.org wrote:
 
-On Mon, 07 Oct 2019 11:16:12 +0100 David Howells wrote:
->
-> The rxrpc_peer record needs to hold a reference on the rxrpc_local record
-> it points as the peer is used as a base to access information in the
-> rxrpc_local record.
-> 
-> This can cause problems in __rxrpc_put_peer(), where we need the network
-> namespace pointer, and in rxrpc_send_keepalive(), where we need to access
-> the UDP socket, leading to symptoms like:
-> 
->     BUG: KASAN: use-after-free in __rxrpc_put_peer net/rxrpc/peer_object.c:411
->     [inline]
->     BUG: KASAN: use-after-free in rxrpc_put_peer+0x685/0x6a0
->     net/rxrpc/peer_object.c:435
->     Read of size 8 at addr ffff888097ec0058 by task syz-executor823/24216
-> 
-> Fix this by taking a ref on the local record for the peer record.
-> 
-> Fixes: ace45bec6d77 ("rxrpc: Fix firewall route keepalive")
-> Fixes: 2baec2c3f854 ("rxrpc: Support network namespacing")
-> Reported-by: syzbot+b9be979c55f2bea8ed30@syzkaller.appspotmail.com
-> Signed-off-by: David Howells <dhowells@redhat.com>
-> ---
+> This commit replaces the use of rcu_swap_protected() with the more
+> intuitively appealing rcu_replace() as a step towards removing
+> rcu_swap_protected().
 
-Acked-by: Hillf Danton <hdanton@sina.com>
+Yay!
 
-> 
->  net/rxrpc/peer_object.c |    5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/net/rxrpc/peer_object.c b/net/rxrpc/peer_object.c
-> index b700b7ecaa3d..64830d8c1fdb 100644
-> --- a/net/rxrpc/peer_object.c
-> +++ b/net/rxrpc/peer_object.c
-> @@ -216,7 +216,7 @@ struct rxrpc_peer *rxrpc_alloc_peer(struct rxrpc_local *local, gfp_t gfp)
->  	peer = kzalloc(sizeof(struct rxrpc_peer), gfp);
->  	if (peer) {
->  		atomic_set(&peer->usage, 1);
-> -		peer->local = local;
-> +		peer->local = rxrpc_get_local(local);
->  		INIT_HLIST_HEAD(&peer->error_targets);
->  		peer->service_conns = RB_ROOT;
->  		seqlock_init(&peer->service_conn_lock);
-> @@ -307,7 +307,6 @@ void rxrpc_new_incoming_peer(struct rxrpc_sock *rx, struct rxrpc_local *local,
->  	unsigned long hash_key;
->  
->  	hash_key = rxrpc_peer_hash_key(local, &peer->srx);
-> -	peer->local = local;
->  	rxrpc_init_peer(rx, peer, hash_key);
->  
->  	spin_lock(&rxnet->peer_hash_lock);
-> @@ -417,6 +416,7 @@ static void __rxrpc_put_peer(struct rxrpc_peer *peer)
->  	list_del_init(&peer->keepalive_link);
->  	spin_unlock_bh(&rxnet->peer_hash_lock);
->  
-> +	rxrpc_put_local(peer->local);
->  	kfree_rcu(peer, rcu);
->  }
->  
-> @@ -453,6 +453,7 @@ void rxrpc_put_peer_locked(struct rxrpc_peer *peer)
->  	if (n == 0) {
->  		hash_del_rcu(&peer->hash_link);
->  		list_del_init(&peer->keepalive_link);
-> +		rxrpc_put_local(peer->local);
->  		kfree_rcu(peer, rcu);
->  	}
->  }
+> Link: https://lore.kernel.org/lkml/CAHk-=wiAsJLw1egFEE=Z7-GGtM6wcvtyytXZA1+BHqta4gg6Hw@mail.gmail.com/
+> Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+> Signed-off-by: Paul E. McKenney <paulmck@kernel.org>
+> Cc: David Howells <dhowells@redhat.com>
+> Cc: <linux-afs@lists.infradead.org>
+> Cc: <linux-kernel@vger.kernel.org>
 
+Acked-by: David Howells <dhowells@redhat.com>
 
 _______________________________________________
 linux-afs mailing list
