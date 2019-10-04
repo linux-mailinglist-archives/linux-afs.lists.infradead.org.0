@@ -2,63 +2,72 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87736CA5A4
-	for <lists+linux-afs@lfdr.de>; Thu,  3 Oct 2019 18:46:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EF8FCB3AE
+	for <lists+linux-afs@lfdr.de>; Fri,  4 Oct 2019 06:14:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+qoMVGS4JiMqvZZdk6VcVZgrdgGsdjwePuO1TUtniNE=; b=E32XRJ0kUGHATG
-	JIgdXzwJpF2L2J5YOB3g0XKqwJS9oq4kOrHBl43ITU06Oh3vqztjs6C7U+VsIArQAo0NYgtCGDzDf
-	Lc8SkFyYy5fA/BOgfz38ro4Vx1MfOwM2gFWsrOTUygrFL7pG954jj6vsz99u7FycaqMgs/Ol1YCPG
-	668uXydDXCzH1BZ522KPspc06KyzsXljq5wyF24sOWA7yccs6gT6Qx5NkGjqPH2XuLQiomuDmeV9t
-	V7exw1dOZ2tcHu2JbdIc4W0zCgU9YT6H8NvFAheNg33sSF7RaoavNHbh4MLIr9oBEQzTPq1SegdZw
-	95olDK4HT5iAuuwMUiCA==;
+	List-Owner; bh=NXkqqEG2ma+ys6cMx0AOEa6y5Gwx5m0KAUBplWTEOZM=; b=li1a8OyHeVL1th
+	vaG4EpVOZJa3TNjjdvlCAvWJ7Okzrmgwsly4vjJcy74Z8FMnXNSZoqEOFqhQMXECOk0UOqMaZaiG0
+	ywPqdHqKhwIWovKQc7Xtm8D+nYZfrsuFdO+8ldhVATU2vpgqL4b8ohS1Za6KN5S971q55qLP4H6E7
+	743fwPxWvXmWpgvQPCAPznKEQOX7gL1lixJQ7/r5Q3t0h0KTCa4cpLclgYGslYuX0Z0SItu3PRtZs
+	/o4VBp3izKeUBTUPel7v/Dc974RRb9uk/y5XG/i2KmFNwXH0tW+Fep1zzaFj2Z6z5E45h3FLsGK1Y
+	CCIhw5qXuQlWXBA0Xq8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iG4Er-0001Gk-VL; Thu, 03 Oct 2019 16:46:01 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iGEyY-00057U-DM; Fri, 04 Oct 2019 04:13:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iG4Ep-0001FZ-0d
- for linux-afs@lists.infradead.org; Thu, 03 Oct 2019 16:46:00 +0000
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1iGEyV-00056X-4c
+ for linux-afs@lists.infradead.org; Fri, 04 Oct 2019 04:13:53 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id C648065998;
- Thu,  3 Oct 2019 16:45:58 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-125-72.rdu2.redhat.com
- [10.10.125.72])
- by smtp.corp.redhat.com (Postfix) with ESMTP id DD3CE46;
- Thu,  3 Oct 2019 16:45:57 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH net-next] rxrpc: Add missing "new peer" trace
-From: David Howells <dhowells@redhat.com>
-To: netdev@vger.kernel.org
-Date: Thu, 03 Oct 2019 17:45:57 +0100
-Message-ID: <157012115701.21124.13973726693523106899.stgit@warthog.procyon.org.uk>
-User-Agent: StGit/unknown-version
+ by mail.kernel.org (Postfix) with ESMTPSA id 388AB2086A;
+ Fri,  4 Oct 2019 04:13:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570162427;
+ bh=59zDWTMcKHMIwkIreLGDMkRDPInJeaYAYIr7EQTwY5c=;
+ h=Date:From:To:Cc:Subject:From;
+ b=BFTHlnNBeKiWr0aw4Y2tZrmzxi/29LUdQTZNYjMfoNxuJlCT7z1YO8gitFMA9FOLE
+ /f6h/twYM6kRG1p/wSuA1u7J+DGcccolyBvN8D6VIJuH9nsCo5hihEvnwLkrE4lgiU
+ ElM3r+2JpskfW6vgzFIgf4RgRfSfBpGH5IsU//WI=
+Date: Thu, 3 Oct 2019 21:13:45 -0700
+From: Eric Biggers <ebiggers@kernel.org>
+To: linux-afs@lists.infradead.org, David Howells <dhowells@redhat.com>
+Subject: Reminder: 3 open syzbot reports in "net/rxrpc" subsystem
+Message-ID: <20191004041345.GK667@sol.localdomain>
+Mail-Followup-To: linux-afs@lists.infradead.org,
+ David Howells <dhowells@redhat.com>,
+ syzkaller-bugs@googlegroups.com, netdev@vger.kernel.org
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Thu, 03 Oct 2019 16:45:58 +0000 (UTC)
+Content-Disposition: inline
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_094559_076744_3C102765 
-X-CRM114-Status: GOOD (  12.44  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191003_211351_223042_F4CDB0B5 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,42 +79,104 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-There was supposed to be a trace indicating that a new peer had been
-created.  Add it.
+[This email was generated by a script.  Let me know if you have any suggest=
+ions
+to make it better, or if you want it re-generated with the latest status.]
 
-Signed-off-by: David Howells <dhowells@redhat.com>
----
+Of the currently open syzbot reports against the upstream kernel, I've manu=
+ally
+marked 3 of them as possibly being bugs in the "net/rxrpc" subsystem.  I've
+listed these bug reports below.
 
- net/rxrpc/peer_object.c |    2 ++
- 1 file changed, 2 insertions(+)
+All these bugs were seen in the last week.
 
-diff --git a/net/rxrpc/peer_object.c b/net/rxrpc/peer_object.c
-index 9c3ac96f71cb..bf4dd6cf79a0 100644
---- a/net/rxrpc/peer_object.c
-+++ b/net/rxrpc/peer_object.c
-@@ -209,6 +209,7 @@ static void rxrpc_assess_MTU_size(struct rxrpc_sock *rx,
-  */
- struct rxrpc_peer *rxrpc_alloc_peer(struct rxrpc_local *local, gfp_t gfp)
- {
-+	const void *here = __builtin_return_address(0);
- 	struct rxrpc_peer *peer;
- 
- 	_enter("");
-@@ -230,6 +231,7 @@ struct rxrpc_peer *rxrpc_alloc_peer(struct rxrpc_local *local, gfp_t gfp)
- 			peer->cong_cwnd = 3;
- 		else
- 			peer->cong_cwnd = 4;
-+		trace_rxrpc_peer(peer, rxrpc_peer_new, 1, here);
- 	}
- 
- 	_leave(" = %p", peer);
+Here are the bug reports:
+
+---------------------------------------------------------------------------=
+-----
+Title:              KASAN: use-after-free Read in rxrpc_send_keepalive
+Last occurred:      0 days ago
+Reported:           55 days ago
+Branches:           Mainline and others
+Dashboard link:     https://syzkaller.appspot.com/bug?id=3D9b519f4f0bcaeb00=
+0ba93389eda00310a6020abe
+Original thread:    https://lore.kernel.org/lkml/000000000000e695c1058fb269=
+25@google.com/T/#u
+
+This bug has a C reproducer.
+
+No one has replied to the original thread for this bug yet.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+d850c266e3df14da1d31@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to =
+reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lore.kernel.org/r/000000000000e695c1058fb26925@google.com
+
+---------------------------------------------------------------------------=
+-----
+Title:              KASAN: use-after-free Read in rxrpc_release_call
+Last occurred:      6 days ago
+Reported:           41 days ago
+Branches:           Mainline and others
+Dashboard link:     https://syzkaller.appspot.com/bug?id=3Dd53e9523b662e55a=
+ae32105864f6973e5afb6730
+Original thread:    https://lore.kernel.org/lkml/000000000000727bd10590c9cf=
+6c@google.com/T/#u
+
+This bug has a syzkaller reproducer only.
+
+This bug was bisected to:
+
+		commit 2baec2c3f854d1f79c7bb28386484e144e864a14
+		Author: David Howells <dhowells@redhat.com>
+		Date:   Wed May 24 16:02:32 2017 +0000
+
+		=A0=A0rxrpc: Support network namespacing
+
+No one has replied to the original thread for this bug yet.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+eed305768ece6682bb7f@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to =
+reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lore.kernel.org/r/000000000000727bd10590c9cf6c@google.com
+
+---------------------------------------------------------------------------=
+-----
+Title:              KASAN: use-after-free Read in rxrpc_put_peer
+Last occurred:      1 day ago
+Reported:           36 days ago
+Branches:           Mainline and others
+Dashboard link:     https://syzkaller.appspot.com/bug?id=3D369d7776ffde266f=
+fe528cf8740346435362f37f
+Original thread:    https://lore.kernel.org/lkml/000000000000f6a13b059132aa=
+6c@google.com/T/#u
+
+This bug has a C reproducer.
+
+The original thread for this bug has received 1 reply, 35 days ago.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+b9be979c55f2bea8ed30@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to =
+reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lore.kernel.org/r/000000000000f6a13b059132aa6c@google.com
 
 
 _______________________________________________
