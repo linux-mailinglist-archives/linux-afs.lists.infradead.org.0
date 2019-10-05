@@ -2,67 +2,74 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 351B7CFCB6
-	for <lists+linux-afs@lfdr.de>; Tue,  8 Oct 2019 16:46:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FEBCCFCB5
+	for <lists+linux-afs@lfdr.de>; Tue,  8 Oct 2019 16:46:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3yltljSILb0iKorTIPBysNXpDsQmv903UrOouZcbuzQ=; b=m+A9EzKJ7NvOLm
-	2UyZvoaVqwPXmbVghpewWVxXVT1ZPTMYctxWk4EaIb8DlgpSLYwyn8TU4sL7MsH3b8jaVj3N1A7PD
-	3r0X2feAqu3ur6veoYaUBPK3SvX0I9uFKib8/mE0cmQdyArvkZtN9C3p+hvQyKJcCYr2hsxykYUxw
-	k8Y3/WjO8TBC5up8n+VjHY2BjCki8dn8BFaqR0uz+C6Sugdv47Nbo1LMRSvUGKDIO0XddjU2FDaDR
-	3Hk61AVmRkaSlivwKdxQyVCIFhxVq8VhqRW9uA7XUWRKZY4z1QuHd6vtmoT53uB35JLeANeS5weZg
-	5blC1VYZ5pENTpxcU+uw==;
+	List-Owner; bh=eaY8Gu8OnTSwOFl4Pd7Hh7s4EXDhlMaEfxG8eN3cVrU=; b=TmQ58L1l9BFowx
+	Rb6V3EPnMBO2cuJSGk6Rgsj98UaU4KIIMsWGkmKxOxBl+2vvactlD6wRKCaq7tjlF9X6gQttZjvA+
+	96IoWmOEpJ53Y+mD+At40DyKRwmFkgfpqHJPRdDl+8Gx9+uecP1H6znA5hDM6Fi60gxZ7CiQdz6Zo
+	Gh9nMEw+u/rzAcZNUs8fJ+uBEPbXjDcVZQ3USCw0Ey0LT29HyRkq472do/jlHOEQsURDaxbPlF7G9
+	85G0bR0xIny6AojSeM4IXnWm4338SfXokcjw8tqSf6JiOyEb1Wzeh2RmUs38dFRfj94SeR6olr1fY
+	lA4GUAYlA/WMF1IM9Zkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHqkQ-0002bo-PX; Tue, 08 Oct 2019 14:45:58 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iHqkQ-0002by-Vt; Tue, 08 Oct 2019 14:45:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFwcx-0006Pj-6L
- for linux-afs@lists.infradead.org; Thu, 03 Oct 2019 08:38:24 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1iGme4-0007s8-Qu
+ for linux-afs@lists.infradead.org; Sat, 05 Oct 2019 16:11:02 +0000
+Received: from paulmck-ThinkPad-P72 (50-39-105-78.bvtn.or.frontiernet.net
+ [50.39.105.78])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 2B3C43C93A;
- Thu,  3 Oct 2019 08:38:21 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-125-72.rdu2.redhat.com
- [10.10.125.72])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 732965D6A7;
- Thu,  3 Oct 2019 08:38:15 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20191003014310.13262-5-paulmck@kernel.org>
-References: <20191003014310.13262-5-paulmck@kernel.org>
- <20191003014153.GA13156@paulmck-ThinkPad-P72>
-To: paulmck@kernel.org
+ by mail.kernel.org (Postfix) with ESMTPSA id 545AF222C0;
+ Sat,  5 Oct 2019 16:10:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1570291856;
+ bh=WXNltNNWDTjVjLox2ShheQ4T2u/cba37UPIwcEQB5pA=;
+ h=Date:From:To:Cc:Subject:Reply-To:References:In-Reply-To:From;
+ b=reL/miNeY8vHXFnVf3Dyl/cPcyVVc1HFr56p6dVX2qXPTtjWaliyVdCeOS5GUX5em
+ U+ai/lY5hnHfEf2fNZT9iDRHFAtVinp4+Eh74c97WWMHtLvhUiuq1fcx6iDACwDOA0
+ 3RLFVrTmA2J6NO56yF10+TsyQb/XmHUzpYQS7mT8=
+Date: Sat, 5 Oct 2019 09:10:55 -0700
+From: "Paul E. McKenney" <paulmck@kernel.org>
+To: David Howells <dhowells@redhat.com>
 Subject: Re: [PATCH tip/core/rcu 5/9] fs/afs: Replace rcu_swap_protected()
  with rcu_replace()
+Message-ID: <20191005161055.GE2689@paulmck-ThinkPad-P72>
+References: <20191003014310.13262-5-paulmck@kernel.org>
+ <20191003014153.GA13156@paulmck-ThinkPad-P72>
+ <25322.1570091894@warthog.procyon.org.uk>
 MIME-Version: 1.0
-Content-ID: <25321.1570091894.1@warthog.procyon.org.uk>
-Date: Thu, 03 Oct 2019 09:38:14 +0100
-Message-ID: <25322.1570091894@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.39]); Thu, 03 Oct 2019 08:38:21 +0000 (UTC)
+Content-Disposition: inline
+In-Reply-To: <25322.1570091894@warthog.procyon.org.uk>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_013823_249705_AC8685E2 
-X-CRM114-Status: GOOD (  10.76  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191005_091100_892932_D4FC45FB 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-Mailman-Approved-At: Tue, 08 Oct 2019 07:45:57 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -75,33 +82,39 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: rcu@vger.kernel.org, tglx@linutronix.de, peterz@infradead.org,
- fweisbec@gmail.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
- rostedt@goodmis.org, josh@joshtriplett.org, dhowells@redhat.com,
- edumazet@google.com, mathieu.desnoyers@efficios.com, oleg@redhat.com,
- dipankar@in.ibm.com, joel@joelfernandes.org, akpm@linux-foundation.org,
- mingo@kernel.org, linux-afs@lists.infradead.org
+Reply-To: paulmck@kernel.org
+Cc: tglx@linutronix.de, peterz@infradead.org, fweisbec@gmail.com,
+ jiangshanlai@gmail.com, linux-kernel@vger.kernel.org, rostedt@goodmis.org,
+ josh@joshtriplett.org, rcu@vger.kernel.org, edumazet@google.com,
+ mathieu.desnoyers@efficios.com, oleg@redhat.com, dipankar@in.ibm.com,
+ joel@joelfernandes.org, akpm@linux-foundation.org, mingo@kernel.org,
+ linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-paulmck@kernel.org wrote:
+On Thu, Oct 03, 2019 at 09:38:14AM +0100, David Howells wrote:
+> paulmck@kernel.org wrote:
+> 
+> > This commit replaces the use of rcu_swap_protected() with the more
+> > intuitively appealing rcu_replace() as a step towards removing
+> > rcu_swap_protected().
+> 
+> Yay!
+> 
+> > Link: https://lore.kernel.org/lkml/CAHk-=wiAsJLw1egFEE=Z7-GGtM6wcvtyytXZA1+BHqta4gg6Hw@mail.gmail.com/
+> > Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+> > Signed-off-by: Paul E. McKenney <paulmck@kernel.org>
+> > Cc: David Howells <dhowells@redhat.com>
+> > Cc: <linux-afs@lists.infradead.org>
+> > Cc: <linux-kernel@vger.kernel.org>
+> 
+> Acked-by: David Howells <dhowells@redhat.com>
 
-> This commit replaces the use of rcu_swap_protected() with the more
-> intuitively appealing rcu_replace() as a step towards removing
-> rcu_swap_protected().
+Applied, thank you David!
 
-Yay!
-
-> Link: https://lore.kernel.org/lkml/CAHk-=wiAsJLw1egFEE=Z7-GGtM6wcvtyytXZA1+BHqta4gg6Hw@mail.gmail.com/
-> Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
-> Signed-off-by: Paul E. McKenney <paulmck@kernel.org>
-> Cc: David Howells <dhowells@redhat.com>
-> Cc: <linux-afs@lists.infradead.org>
-> Cc: <linux-kernel@vger.kernel.org>
-
-Acked-by: David Howells <dhowells@redhat.com>
+							Thanx, Paul
 
 _______________________________________________
 linux-afs mailing list
