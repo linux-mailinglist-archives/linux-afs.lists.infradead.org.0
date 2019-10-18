@@ -2,55 +2,54 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3927DC7C3
-	for <lists+linux-afs@lfdr.de>; Fri, 18 Oct 2019 16:52:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EAACDE818
+	for <lists+linux-afs@lfdr.de>; Mon, 21 Oct 2019 11:32:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h7A5zoSxWXSqHCNMDdjRId1+y+/K6FiBYX0uhjW9vg8=; b=iGbCMCw8F+E3uk
-	kj4EdbivUotv3Evse/26t7PmGE4QaIqctZlDjJuJKsIye+fpyVFK4eoWJGeUU4G3KMdiNTm/HTv9c
-	FYfKhU4TnIOfHdxOoEKgIzsuBbFFHZH7xOpDc/TeJUVGsLPP8MJBd6R+8J1Bd1rsH/8T9G3r7PNFK
-	ymcjWURm11JPHpvikpfEHgDo3c+oycoLd32XKACaCZXoXPq8qOQ94Chka9GbMFrp1Uw7ioWo2E9ek
-	Rcgp7NKC228q7v/6v1HAeARcF7dplRPaY3maO3Ecj1mAsJAKUqzKLlUM9C7UiQFs/b2tC9Bs4FJR3
-	VEJtI6W6jfQVXUu+xq9Q==;
+	List-Owner; bh=84M7QMXIH9D6GGZFS37YcpyiLI0xfG6sphrGIe8oih0=; b=W+vZ6K4l1bivv1
+	xX/fL9BBosHOL0eufPFa1HXD5gn4nW9aOkvqsedoP3pLS8T8D//f1j8HS7MfcviMrc5+qVQ2c0OrY
+	MoRDQ2sCXurX4OeWsAqBfl0IrSA7a0cmKoQP/IdEqCrwOY4IKj+VTMbfeB52Tw0pBMi2QsISaSWtE
+	rf1IAWNAnsimbADO2zawyEbEZIZXmwCd3EBh2yBr4qEEqRd33Mtkt9R3KtEDyeTKbs5iZb+MaGylt
+	XpANOWON6LxahmKMdW/uMGK7kfIWmKqJc2VxxMvIHjAPdUm1Z71F7uEIOXx05ry8ZwBfJfjmGel87
+	Eh4aWV3ZZqXqtnjpBBXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLTbm-000553-RB; Fri, 18 Oct 2019 14:52:02 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iMU2y-000457-Id; Mon, 21 Oct 2019 09:32:16 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLTD5-00021p-Hk
- for linux-afs@lists.infradead.org; Fri, 18 Oct 2019 14:26:33 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 2558AAC10;
- Fri, 18 Oct 2019 14:26:29 +0000 (UTC)
-Date: Fri, 18 Oct 2019 16:26:26 +0200
-From: Petr Mladek <pmladek@suse.com>
-To: Kefeng Wang <wangkefeng.wang@huawei.com>
+ id 1iLU5M-0008FU-8o
+ for linux-afs@lists.infradead.org; Fri, 18 Oct 2019 15:22:37 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id E74F668BFE; Fri, 18 Oct 2019 17:22:26 +0200 (CEST)
+Date: Fri, 18 Oct 2019 17:22:26 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Petr Mladek <pmladek@suse.com>
 Subject: Re: [PATCH v2 00/33] Kill pr_warning in the whole linux code
-Message-ID: <20191018142626.vmbgclelw23h5pdn@pathway.suse.cz>
+Message-ID: <20191018152226.GA32150@lst.de>
 References: <20191018031710.41052-1-wangkefeng.wang@huawei.com>
+ <20191018142626.vmbgclelw23h5pdn@pathway.suse.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191018031710.41052-1-wangkefeng.wang@huawei.com>
-User-Agent: NeoMutt/20170912 (1.9.0)
+In-Reply-To: <20191018142626.vmbgclelw23h5pdn@pathway.suse.cz>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_072631_879463_E54FF930 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20191018_082236_461747_A00BDFC0 
+X-CRM114-Status: UNSURE (   7.27  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-X-Mailman-Approved-At: Fri, 18 Oct 2019 07:52:01 -0700
+X-Mailman-Approved-At: Mon, 21 Oct 2019 02:32:15 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,8 +61,8 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-fbdev@vger.kernel.org,
- Rich Felker <dalias@libc.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kefeng Wang <wangkefeng.wang@huawei.com>, Rich Felker <dalias@libc.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Palmer Dabbelt <palmer@sifive.com>, Alexei Starovoitov <ast@kernel.org>,
@@ -88,10 +87,11 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-fbdev@vger.kernel.org,
  Steven Rostedt <rostedt@goodmis.org>,
  Arnaldo Carvalho de Melo <acme@redhat.com>, Rob Herring <robh+dt@kernel.org>,
  Borislav Petkov <bp@alien8.de>, Lars Ellenberg <lars.ellenberg@linbit.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Andy Whitcroft <apw@canonical.com>,
- Takashi Iwai <tiwai@suse.com>, bpf@vger.kernel.org,
- Jens Axboe <axboe@kernel.dk>, Karsten Keil <isdn@linux-pingi.de>,
- Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-fbdev@vger.kernel.org, Paul Walmsley <paul.walmsley@sifive.com>,
+ Andy Whitcroft <apw@canonical.com>, Takashi Iwai <tiwai@suse.com>,
+ bpf@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
+ Karsten Keil <isdn@linux-pingi.de>, Tony Luck <tony.luck@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
  "Martin K. Petersen" <martin.petersen@oracle.com>,
  Sangbeom Kim <sbkim73@samsung.com>, Robin Murphy <robin.murphy@arm.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
@@ -106,38 +106,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Fri 2019-10-18 11:17:10, Kefeng Wang wrote:
-> There are pr_warning and pr_warng to show WARNING level message,
-> most of the code using pr_warn, number based on next-20191017,
-> 
-> pr_warn: 5206   pr_warning: 546 (tools: 399, others: 147)
-> 
-> Let's carry on with the work to standardize the logging macro,
-> kill pr_warning in the whole linux code.
-> 
-> Patch[01-28]: simply sed and ajust formats
-
-All these patches have been commited in printk.git,
-branch for-5.5-pr-warn.
-
-> patch[29]:    drop pr_warning definition in printk
-> patch[33]:    cleanup the checkpatch.pl
-
-I'll wait with these two until I am sure that the are no
-pr_warning() users in linux-next.
-
-
-> patch[30-32]: tools api/bpf/perf, rename and make manually changes
-
-Only the tool api patch is commited in printk.git.
-
-The other two (bpf and perf) will need to go via the related
-subsystems to avoid conflicts nightmare. The good thing is
-that these are userspace tools. They do not block removing
-pr_warning() from the internal kernel API.
-
-Best Regards,
-Petr
+As I said before: please just send Linus a scripted conversion after
+the next -rc1.  There is no point in creating all this churn.
 
 _______________________________________________
 linux-afs mailing list
