@@ -2,56 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD0C6E4CC0
-	for <lists+linux-afs@lfdr.de>; Fri, 25 Oct 2019 15:55:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F10FE4CF3
+	for <lists+linux-afs@lfdr.de>; Fri, 25 Oct 2019 15:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RoyUerwOi1dRk4O5wOgHAl0sbu+Go8tMvG4a0nZxPQQ=; b=qAH4GZX9Juhtsk
-	jzIyAsd3BjC3jRte99XHzeU+QRswJmmRBA5Biyt0iua8v1u5OSmNPebjZI6FVBcV8HjOpeAqvDyaT
-	hWZRH31BHWBMUbI86Sn7nFG9VDjfVILZISi3ZACL0XsSKUNjJMxKzRkqKkfN/NKuds1gFhwVHZIqJ
-	e4tvAjLODdF6omy1T46OPZXiN5f96jiThkYpfpGp68WOblbcYL5Hsx5DY9hvvwcVTfOiKAiRKL+IH
-	23fPWUc3fScTvnwvxtP+uaBIIRO8S70ATflWpxp/fEoCQK1ct0LFsyOu7w4n0dB71ZMWx1ORJM50S
-	pIT/hdtpDzp7BnfFgr8g==;
+	List-Owner; bh=lUmXD+p6+sC2m3juhLW3Eh1oYuaEaaRWJ/cbr1HXiPI=; b=C6HXOzO8frM3np
+	GPd+bqO2KxweI+q79pUGKEvpLyPZZMQl+8KUjyQTU3QsZdENs5L6XIEeM0KcsLVAyx7XTVdgTYyw2
+	eceWd96zvSCHi/nQZVRwcEo2FA5fL/n22O7cGKn8h2HOEvLFNVbCgL3q/OsgLTAf+yPbC7AP6GrDy
+	q2Jn1FQOFMc9PTYWwSoD4zYYE3qbxiWUdycCs1ZN22DLcTetz8z+SVjWDAeLuPUoJnsRULn25ej52
+	hQTsxkvWvdO3kPLTnx2/E1PsaP0x35r9R45X+5aaycTG8cgC6EqqD9eBCB7adAYobZ6kcIEpCWC94
+	KP98mLq0ne5U+W7aVAjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO03g-00028D-7m; Fri, 25 Oct 2019 13:55:16 +0000
+	id 1iO056-0002zr-Pc; Fri, 25 Oct 2019 13:56:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO03d-00025p-Pa
- for linux-afs@lists.infradead.org; Fri, 25 Oct 2019 13:55:15 +0000
+ id 1iO052-0002yN-TU
+ for linux-afs@lists.infradead.org; Fri, 25 Oct 2019 13:56:42 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B96EA21D7F;
- Fri, 25 Oct 2019 13:55:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D450E222CD;
+ Fri, 25 Oct 2019 13:56:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572011713;
- bh=i6OBQan2kKE6S0mHWye64Z4OOzcnSu3pGuUf59jIpnk=;
+ s=default; t=1572011800;
+ bh=1oQgUWXsnyNQ3oyHEoHZ3MyPQnHIg/LZon8cKAsd5ik=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HTMRv6yq+fSN0QAS6EgWgiunXXw4Zs6YEPEukiQMf/aJpwR5RxBrAeJvvdL4aidqu
- hXxVKR9PQuO0FlzzZgwxp93ggrs6Z8K/4LcSNNkSDUqC1GgJ6VmneVRhjYQRCI+Bvi
- rdXKBBZmXYLDT3S5MtA/NRLi/i2002CqjaiXj8/8=
+ b=h+oJ3TBRVLiLaRbs1vyKTZjrnDP7nkD1tl9pWX3Qtb+zCQqCJ7fRKrMElejVn1LUY
+ /Z10jG3B3S7UHVuQeWbDoCfC06ITDghiSdoKTimvZGNoaHebuSXkqNFY3RRidTLypO
+ VG3j5zm9KH7YjRY81s1iVYGDw4cD9GqwSASJ1NMM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.3 06/33] rxrpc: rxrpc_peer needs to hold a ref on
- the rxrpc_local record
-Date: Fri, 25 Oct 2019 09:54:38 -0400
-Message-Id: <20191025135505.24762-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 21/37] rxrpc: Fix call ref leak
+Date: Fri, 25 Oct 2019 09:55:45 -0400
+Message-Id: <20191025135603.25093-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191025135505.24762-1-sashal@kernel.org>
-References: <20191025135505.24762-1-sashal@kernel.org>
+In-Reply-To: <20191025135603.25093-1-sashal@kernel.org>
+References: <20191025135603.25093-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_065513_855635_02667A3E 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20191025_065640_982494_4FBDA2A5 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,8 +80,8 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- netdev@vger.kernel.org, syzbot+b9be979c55f2bea8ed30@syzkaller.appspotmail.com,
- linux-afs@lists.infradead.org
+ syzbot+d850c266e3df14da1d31@syzkaller.appspotmail.com,
+ linux-afs@lists.infradead.org, netdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
@@ -90,70 +89,47 @@ Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 From: David Howells <dhowells@redhat.com>
 
-[ Upstream commit 9ebeddef58c41bd700419cdcece24cf64ce32276 ]
+[ Upstream commit c48fc11b69e95007109206311b0187a3090591f3 ]
 
-The rxrpc_peer record needs to hold a reference on the rxrpc_local record
-it points as the peer is used as a base to access information in the
-rxrpc_local record.
+When sendmsg() finds a call to continue on with, if the call is in an
+inappropriate state, it doesn't release the ref it just got on that call
+before returning an error.
 
-This can cause problems in __rxrpc_put_peer(), where we need the network
-namespace pointer, and in rxrpc_send_keepalive(), where we need to access
-the UDP socket, leading to symptoms like:
+This causes the following symptom to show up with kasan:
 
-    BUG: KASAN: use-after-free in __rxrpc_put_peer net/rxrpc/peer_object.c:411
-    [inline]
-    BUG: KASAN: use-after-free in rxrpc_put_peer+0x685/0x6a0
-    net/rxrpc/peer_object.c:435
-    Read of size 8 at addr ffff888097ec0058 by task syz-executor823/24216
+	BUG: KASAN: use-after-free in rxrpc_send_keepalive+0x8a2/0x940
+	net/rxrpc/output.c:635
+	Read of size 8 at addr ffff888064219698 by task kworker/0:3/11077
 
-Fix this by taking a ref on the local record for the peer record.
+where line 635 is:
 
-Fixes: ace45bec6d77 ("rxrpc: Fix firewall route keepalive")
-Fixes: 2baec2c3f854 ("rxrpc: Support network namespacing")
-Reported-by: syzbot+b9be979c55f2bea8ed30@syzkaller.appspotmail.com
+	whdr.epoch	= htonl(peer->local->rxnet->epoch);
+
+The local endpoint (which cannot be pinned by the call) has been released,
+but not the peer (which is pinned by the call).
+
+Fix this by releasing the call in the error path.
+
+Fixes: 37411cad633f ("rxrpc: Fix potential NULL-pointer exception")
+Reported-by: syzbot+d850c266e3df14da1d31@syzkaller.appspotmail.com
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- net/rxrpc/peer_object.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ net/rxrpc/sendmsg.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/net/rxrpc/peer_object.c b/net/rxrpc/peer_object.c
-index b700b7ecaa3d8..64830d8c1fdb5 100644
---- a/net/rxrpc/peer_object.c
-+++ b/net/rxrpc/peer_object.c
-@@ -216,7 +216,7 @@ struct rxrpc_peer *rxrpc_alloc_peer(struct rxrpc_local *local, gfp_t gfp)
- 	peer = kzalloc(sizeof(struct rxrpc_peer), gfp);
- 	if (peer) {
- 		atomic_set(&peer->usage, 1);
--		peer->local = local;
-+		peer->local = rxrpc_get_local(local);
- 		INIT_HLIST_HEAD(&peer->error_targets);
- 		peer->service_conns = RB_ROOT;
- 		seqlock_init(&peer->service_conn_lock);
-@@ -307,7 +307,6 @@ void rxrpc_new_incoming_peer(struct rxrpc_sock *rx, struct rxrpc_local *local,
- 	unsigned long hash_key;
- 
- 	hash_key = rxrpc_peer_hash_key(local, &peer->srx);
--	peer->local = local;
- 	rxrpc_init_peer(rx, peer, hash_key);
- 
- 	spin_lock(&rxnet->peer_hash_lock);
-@@ -417,6 +416,7 @@ static void __rxrpc_put_peer(struct rxrpc_peer *peer)
- 	list_del_init(&peer->keepalive_link);
- 	spin_unlock_bh(&rxnet->peer_hash_lock);
- 
-+	rxrpc_put_local(peer->local);
- 	kfree_rcu(peer, rcu);
- }
- 
-@@ -453,6 +453,7 @@ void rxrpc_put_peer_locked(struct rxrpc_peer *peer)
- 	if (n == 0) {
- 		hash_del_rcu(&peer->hash_link);
- 		list_del_init(&peer->keepalive_link);
-+		rxrpc_put_local(peer->local);
- 		kfree_rcu(peer, rcu);
- 	}
- }
+diff --git a/net/rxrpc/sendmsg.c b/net/rxrpc/sendmsg.c
+index 5d6ab4f6fd7ab..3e54ead1e921a 100644
+--- a/net/rxrpc/sendmsg.c
++++ b/net/rxrpc/sendmsg.c
+@@ -661,6 +661,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
+ 		case RXRPC_CALL_SERVER_PREALLOC:
+ 		case RXRPC_CALL_SERVER_SECURING:
+ 		case RXRPC_CALL_SERVER_ACCEPTING:
++			rxrpc_put_call(call, rxrpc_call_put);
+ 			ret = -EBUSY;
+ 			goto error_release_sock;
+ 		default:
 -- 
 2.20.1
 
