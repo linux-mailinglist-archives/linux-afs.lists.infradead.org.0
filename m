@@ -2,55 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 588C8E4D13
-	for <lists+linux-afs@lfdr.de>; Fri, 25 Oct 2019 15:57:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E71E1E5AAB
+	for <lists+linux-afs@lfdr.de>; Sat, 26 Oct 2019 15:16:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ap0Syg3B80auHcsXfWbRErnNj5lzuZMXlYSob3ifBoY=; b=a6ArBTGNHomvyj
-	q+XqNP0buUvf/tNMhd6nRyVbmDAR0V9ajwcOEGZbd1q3SdztvMOvjmEy54lczoF55JQB+LGut/kz2
-	1954S/cm9uB5lAwuu1TXqpRMI6v1ZuAmvEx0i3FkHf+VIFg/5o7FkngMAQk3VkH+exqGRvfcVpemV
-	3j/7oPOZU1YCXOWx9QaYpql+nxRNXHs+lA7+G5mavCY6yZ7S+n8Eg1DSVL8V9u9vbyKk2S8qq3oub
-	AFB7dNSj7OP8Zaxcfjwd6rnljxEVIEtQE1NDFMlm4PWra2xISmvcWQ/lcfHRk3R6dCMi63nX0Fa1+
-	wpg6tHBjGTA0V+9LZwzg==;
+	List-Owner; bh=n7QS3PdXlelUSrnPOPFezBIyGdkXBvP+eHCwI8avCBc=; b=pZhADzh/EATaoX
+	VooIy9NmcOnR8IL17yWQIuS0cGzonXQUaWl2exBCsythQvBxaZ4o9xSlwFeCFnWthz63QM/4CAxO2
+	5zWTryIe80DDEDEGa3iTOgLPCZCCuu31xco8SrEp85UrvQWci2i8d/BWIS5bbJ8+4eRRIMWFk8Oeq
+	wFOnLb5GGQaqSOTGpIBWhIfhXP761Fo3Su2IzZZrM7b/ORdpKnY8Wz6gOdXjuk+lfpetId6qyifuJ
+	W1G+pbHLz827fCc7usWOa7XYwlEUfgYFpn2IDOCD1NNGniH14aSxuPfMw51veECrQR/GDMsfPHY/9
+	N3Gtiky8JPt/gleSWx9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO05z-0003gY-K5; Fri, 25 Oct 2019 13:57:39 +0000
+	id 1iOLw0-0006vZ-6l; Sat, 26 Oct 2019 13:16:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO05v-0003dY-Ug
- for linux-afs@lists.infradead.org; Fri, 25 Oct 2019 13:57:38 +0000
+ id 1iOLvi-0006b7-Nu
+ for linux-afs@lists.infradead.org; Sat, 26 Oct 2019 13:16:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B181D222CB;
- Fri, 25 Oct 2019 13:57:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9C5002070B;
+ Sat, 26 Oct 2019 13:16:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572011855;
- bh=DPX5Xd1J8hqUFZgtTHhYIe6T0e8+tX+LXmSYcR1K0nE=;
+ s=default; t=1572095788;
+ bh=SDGyo0NT2cQC5avrsBr7kyb3jRJsCnz9UDUEz/Zvzg8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zITL3r+PEJBFfuwlUrILmwQq79TutHGj1NJ7kPhHAs/n2mN0Z+TZv9BId5ER80Atd
- 225jFWGhTrfWVcw25W50Hf795Kh7MwQNstp9+IC3o881Zotihc6JvVWn9p+o0bYBpg
- jFsx2T1NFe9oo9bCvtFpTTpE8RDVFEL3LzmFqGMA=
+ b=RmS1aFPB1sQ5bhvwwv9loD27u5ySn1wJowHvWB5Cuyd+FG4I1xGH8cTyStVOfmX2u
+ +didjmDetN4A4eNNbz0jZW9vojUrNdIz9c1mojqHgURsmXPXb1wJQMMeo40wRRuu6r
+ AL/xaX6APe97zH/sl4aV2YnUy6+TDcxFDhMK/pw0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 13/25] rxrpc: Fix call ref leak
-Date: Fri, 25 Oct 2019 09:57:01 -0400
-Message-Id: <20191025135715.25468-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.3 16/99] rxrpc: Fix call ref leak
+Date: Sat, 26 Oct 2019 09:14:37 -0400
+Message-Id: <20191026131600.2507-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191025135715.25468-1-sashal@kernel.org>
-References: <20191025135715.25468-1-sashal@kernel.org>
+In-Reply-To: <20191026131600.2507-1-sashal@kernel.org>
+References: <20191026131600.2507-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_065736_030432_D7E2171C 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20191026_061631_100868_4844F299 
+X-CRM114-Status: GOOD (  10.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -58,15 +58,15 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -119,10 +119,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/net/rxrpc/sendmsg.c b/net/rxrpc/sendmsg.c
-index 016e293681b8c..a980b49d7a4f8 100644
+index 6a1547b270fef..22f51a7e356ee 100644
 --- a/net/rxrpc/sendmsg.c
 +++ b/net/rxrpc/sendmsg.c
-@@ -586,6 +586,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
+@@ -661,6 +661,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
  		case RXRPC_CALL_SERVER_PREALLOC:
  		case RXRPC_CALL_SERVER_SECURING:
  		case RXRPC_CALL_SERVER_ACCEPTING:
