@@ -2,73 +2,70 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81C5FF51F5
-	for <lists+linux-afs@lfdr.de>; Fri,  8 Nov 2019 18:04:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFDDDFB893
+	for <lists+linux-afs@lfdr.de>; Wed, 13 Nov 2019 20:14:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:MIME-Version:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GTfE7HyVt+RqTBSvfm6PpRcWbBno5qiLXZw7VfoEzQA=; b=OYiyiS3MKkA6uo
-	vi6wT2UEKgZCCDDSKfbTzV4/chbfMKh4L3mefmAALGNlR9pDRCkI70xajsXXzPd2/+1jK3F+ySCTi
-	KDFcp3+78bAtdmCeUDC/wjQ2jd/h6soxvtV4Q1fQoXkzi0f8FuYQwNPRxPr96BwJEyfwZbsjhmkV2
-	A3Dl40/ESQ53UvSq6/AmYyqrX5fz+Z/lnTaI2U5kPTgSl96nw0PccnxrOwNGl7LxgMpq4pC5rSEGI
-	/gra5qZvkEvLP6Qb/GwdUyG4+3rq5FhvJ4UtaZYlvGN8QX64VavCh+F42WyYeIFX8nHYsAixRosjR
-	MhblzrwY0uDQmE/TwCcQ==;
+	List-Owner; bh=Q3VEnT78+gvsFlIIfTBdJrLMC5C1E7CFVwFsFfg9nlU=; b=rPWarIB9orwIaO
+	876+rB/A3TkHDOzmrzJ6IWMpuJphEsBNI25Pxlk1cJO7FJEHM64pvBi1li2IUNLfVJ6mqyf6A3fbf
+	yi/Ee0msvgeoLi1vS8kxI1B8PBoelgP40llD38SIeLYnNQFSy/W4Z+iGbIU0NsgsmDEQC8PLy47oW
+	M/T04xpLjX/haP0pcZ7voFzknh049L2ezyxOy+VuufgygVxr9T86XKrsfvaIqyBzKk8UsJFqaELuq
+	eLnJIo1IkBU3eQ789lkoevgaMTnkZdbXoJ2zC0rqD2AY2rxWpuNO6k+VvvlDTp1VtieVeUK15wW58
+	Tb9GXX5cb1obFpN4ANig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7gG-0007Uv-CY; Fri, 08 Nov 2019 17:04:16 +0000
-Received: from mail-il1-f198.google.com ([209.85.166.198])
+	id 1iUy5O-0001a2-Lr; Wed, 13 Nov 2019 19:13:50 +0000
+Received: from package.cnf.cornell.edu ([128.253.198.225])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7gD-0007Sz-KP
- for linux-afs@lists.infradead.org; Fri, 08 Nov 2019 17:04:15 +0000
-Received: by mail-il1-f198.google.com with SMTP id t23so7480640ila.19
- for <linux-afs@lists.infradead.org>; Fri, 08 Nov 2019 09:04:12 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=Qf6/971redFg5+hNvL72Agdhn9HP6mUxpqJ1caev7c4=;
- b=qL9h794117Ye0ZEcPBZLpobEqProCHfHDy5rehXerED4aFEN2aGkSqD1e0GuyZk43S
- NOQyFngQ96NUOLuTEk/aVr91XQT3cfqY/kKNSi51eL8Erb7dMjy23tFMAOeC4s/coGLS
- uF0KNrch7XyvMERcd7Ab6bMDF0iC1ZOwfdhYhaaSfWiwQ8ESGvt3vhKZEHcTI/Tvi10b
- 5T3NBlJ6v7f6lMFH/jG641hCA+uUhVdRSZjbtnwp1WMJeDxIbV0n1oFToCOTlxgK6mNM
- 9cgeRhT+9NP9VoDo5uThNjEZwLqrgg8dDxtSWOSn9ie9QdSDPY3w8iKkDJsCqaZC6j25
- E2Sw==
-X-Gm-Message-State: APjAAAVBIIeGKJXwUuh1ddPMk7jDEqQmbaq1sMshgM0MDjYqKuWsMl/U
- eh974cU4xYryxGwb13bZWv7xrOyCMryyVIKl/vRgEDaQElCN
-X-Google-Smtp-Source: APXvYqyQmUieY6KPbHUN5J96vU2WE/TqY+EHvMAdv6Rn77xwW31IsVLTeBCAUL6lDnbae9trKVf56uhf2kJ3gOe5Gj5kN6pHTyGF
+ id 1iUy5L-0001Ze-OK
+ for linux-afs@lists.infradead.org; Wed, 13 Nov 2019 19:13:49 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by package.cnf.cornell.edu (Postfix) with ESMTP id B6D671FB3F
+ for <linux-afs@lists.infradead.org>; Wed, 13 Nov 2019 14:03:48 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
+ envelope.cnf.cornell.edu; h=content-transfer-encoding:user-agent
+ :content-disposition:content-type:content-type:mime-version
+ :message-id:subject:subject:to:from:from:date:date; s=dkim; t=
+ 1573671827; x=1574535828; bh=ugONwWPzZLwsFvdSAd0COqgbdr1rAEYDGNt
+ cxDRE8NE=; b=aARrzv1V3TE7xHOR4vRggbPPv2OZkl4q+Sj+yYlirqeMPNzWtym
+ TxXIZPDT/Brniszk287g9gNFrdEvw1mC+DGMWPMHGWJn3JwuQROVt+mst6nJm/9q
+ wHLXumYrMsUdKxBG8igEnqIZfMekpobFzslTbo0w95fceOUG0LgG9Fzk=
+X-Virus-Scanned: amavisd-new at package.cnf.cornell.edu
+Received: from package.cnf.cornell.edu ([127.0.0.1])
+ by localhost (package.cnf.cornell.edu [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id XTmYcebYFFhT for <linux-afs@lists.infradead.org>;
+ Wed, 13 Nov 2019 14:03:47 -0500 (EST)
+Received: from cnf.cornell.edu (wave.cnf.cornell.edu [128.253.198.20])
+ by package.cnf.cornell.edu (Postfix) with ESMTPSA id B2CDD1FB3C;
+ Wed, 13 Nov 2019 14:03:46 -0500 (EST)
+Date: Wed, 13 Nov 2019 14:03:45 -0500
+From: Dave Botsch <botsch@cnf.cornell.edu>
+To: foundation-discuss@openafs.org, openafs-info@openafs.org,
+ openafs-devel@openafs.org, openafs-announce@openafs.org,
+ linux-afs@lists.infradead.org
+Subject: Call for Talks - 2020 AFS Technologies Workshop
+Message-ID: <20191113190343.GK2394@cnf.cornell.edu>
 MIME-Version: 1.0
-X-Received: by 2002:a6b:6512:: with SMTP id z18mr10894907iob.282.1573232651747; 
- Fri, 08 Nov 2019 09:04:11 -0800 (PST)
-Date: Fri, 08 Nov 2019 09:04:11 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000005b4a6c0596d8c5a8@google.com>
-Subject: KMSAN: use-after-free in rxrpc_send_keepalive
-From: syzbot <syzbot+2e7168a4d3c4ec071fdc@syzkaller.appspotmail.com>
-To: davem@davemloft.net, dhowells@redhat.com, glider@google.com, 
- linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org, 
- netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com
+Content-Disposition: inline
+User-Agent: Mutt/1.5.20 (2009-12-10)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_090413_670436_D0436AD8 
-X-CRM114-Status: UNSURE (   3.95  )
+X-CRM114-CacheID: sfid-20191113_111347_869153_4E7E9205 
+X-CRM114-Status: UNSURE (   3.38  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.198 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.198 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,105 +77,41 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hello,
-
-syzbot found the following crash on:
-
-HEAD commit:    c38191cb kmsan: fixed unaligned origin handling in kmsan_m..
-git tree:       https://github.com/google/kmsan.git master
-console output: https://syzkaller.appspot.com/x/log.txt?x=10c518e3600000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=49548798e87d32d7
-dashboard link: https://syzkaller.appspot.com/bug?extid=2e7168a4d3c4ec071fdc
-compiler:       clang version 9.0.0 (/home/glider/llvm/clang  
-80fee25776c2fb61e74c1ecb1a523375c2500b69)
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13c4fec7600000
-
-IMPORTANT: if you fix the bug, please add the following tag to the commit:
-Reported-by: syzbot+2e7168a4d3c4ec071fdc@syzkaller.appspotmail.com
-
-=====================================================
-BUG: KMSAN: use-after-free in rxrpc_peer_keepalive_dispatch  
-net/rxrpc/peer_event.c:369 [inline]
-BUG: KMSAN: use-after-free in rxrpc_peer_keepalive_worker+0xb82/0x1510  
-net/rxrpc/peer_event.c:430
-CPU: 1 PID: 3995 Comm: kworker/1:2 Not tainted 5.4.0-rc2+ #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS  
-Google 01/01/2011
-Workqueue: krxrpcd rxrpc_peer_keepalive_worker
-Call Trace:
-  __dump_stack lib/dump_stack.c:77 [inline]
-  dump_stack+0x191/0x1f0 lib/dump_stack.c:113
-  kmsan_report+0x153/0x2c0 mm/kmsan/kmsan_report.c:113
-  __msan_warning+0x73/0xe0 mm/kmsan/kmsan_instr.c:250
-  rxrpc_send_keepalive+0x53c/0x830 net/rxrpc/output.c:634
-  rxrpc_peer_keepalive_dispatch net/rxrpc/peer_event.c:369 [inline]
-  rxrpc_peer_keepalive_worker+0xb82/0x1510 net/rxrpc/peer_event.c:430
-  process_one_work+0x1572/0x1ef0 kernel/workqueue.c:2269
-  worker_thread+0x111b/0x2460 kernel/workqueue.c:2415
-  kthread+0x4b5/0x4f0 kernel/kthread.c:256
-  ret_from_fork+0x35/0x40 arch/x86/entry/entry_64.S:355
-
-Uninit was created at:
-  kmsan_save_stack_with_flags mm/kmsan/kmsan.c:154 [inline]
-  kmsan_internal_poison_shadow+0x60/0x120 mm/kmsan/kmsan.c:137
-  kmsan_slab_free+0x8d/0x100 mm/kmsan/kmsan_hooks.c:123
-  slab_free_freelist_hook mm/slub.c:1473 [inline]
-  slab_free mm/slub.c:3040 [inline]
-  kfree+0x4c1/0x2db0 mm/slub.c:3982
-  rxrpc_local_rcu+0x7a/0xe0 net/rxrpc/local_object.c:499
-  __rcu_reclaim kernel/rcu/rcu.h:222 [inline]
-  rcu_do_batch kernel/rcu/tree.c:2157 [inline]
-  rcu_core+0xc99/0x1b10 kernel/rcu/tree.c:2377
-  rcu_core_si+0xe/0x10 kernel/rcu/tree.c:2386
-  __do_softirq+0x4a1/0x83a kernel/softirq.c:293
-  invoke_softirq kernel/softirq.c:375 [inline]
-  irq_exit+0x230/0x280 kernel/softirq.c:416
-  exiting_irq+0xe/0x10 arch/x86/include/asm/apic.h:536
-  smp_apic_timer_interrupt+0x48/0x70 arch/x86/kernel/apic/apic.c:1139
-  apic_timer_interrupt+0x2e/0x40 arch/x86/entry/entry_64.S:837
-  native_restore_fl arch/x86/include/asm/irqflags.h:41 [inline]
-  arch_local_irq_restore arch/x86/include/asm/irqflags.h:84 [inline]
-  kmsan_slab_free+0xac/0x100 mm/kmsan/kmsan_hooks.c:127
-  slab_free_freelist_hook mm/slub.c:1473 [inline]
-  slab_free mm/slub.c:3040 [inline]
-  kmem_cache_free+0x2d1/0x2b70 mm/slub.c:3056
-  anon_vma_chain_free mm/rmap.c:134 [inline]
-  unlink_anon_vmas+0x3c1/0xb70 mm/rmap.c:401
-  free_pgtables+0x2e2/0x6a0 mm/memory.c:396
-  exit_mmap+0x53f/0xa00 mm/mmap.c:3162
-  __mmput+0x148/0x590 kernel/fork.c:1081
-  mmput+0x83/0x90 kernel/fork.c:1102
-  exec_mmap fs/exec.c:1048 [inline]
-  flush_old_exec+0xfaf/0x2180 fs/exec.c:1281
-  load_elf_binary+0x1121/0x5f10 fs/binfmt_elf.c:847
-  search_binary_handler+0x2f4/0xac0 fs/exec.c:1659
-  exec_binprm fs/exec.c:1702 [inline]
-  __do_execve_file+0x2218/0x2e90 fs/exec.c:1822
-  do_execveat_common fs/exec.c:1868 [inline]
-  do_execve fs/exec.c:1885 [inline]
-  __do_sys_execve fs/exec.c:1961 [inline]
-  __se_sys_execve+0xec/0x110 fs/exec.c:1956
-  __x64_sys_execve+0x4a/0x70 fs/exec.c:1956
-  do_syscall_64+0xb6/0x160 arch/x86/entry/common.c:291
-  entry_SYSCALL_64_after_hwframe+0x63/0xe7
-=====================================================
-
-
----
-This bug is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
-
-syzbot will keep track of this bug report. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-syzbot can test patches for this bug, for details see:
-https://goo.gl/tpsmEJ#testing-patches
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+VGhlIDIwMjAgQUZTIFRlY2hub2xvZ2llcyBXb3Jrc2hvcCBpcyBhIGNvbW11bml0eSBiYXNlZCBl
+ZmZvcnQgdG8KcHJvbW90ZSB0aGUgc3RhYmlsaXR5IGFuZCBncm93dGggb2YgdGhlIEFGUyBkaXN0
+cmlidXRlZCBmaWxlIHN5c3RlbSBhbmQKcmVsYXRlZCB0ZWNobm9sb2dpZXMuIFRoZSB3b3Jrc2hv
+cCB0YWtlcyBwbGFjZSBNb25kYXksIEp1bmUgMTUgLQpXZWRuZXNkYXksIEp1bmUgMTcgaW4gQ29s
+dW1idXMsIE9IIGF0IE9oaW8gU3RhdGUgVW5pdmVyc2l0eS4KCldlIGJlbGlldmUgdGhhdCBhbGwg
+bWVtYmVycyBvZiB0aGUgQUZTIGNvbW11bml0eSBoYXZlIHNvbWV0aGluZyB2YWx1YWJsZQp0byBz
+aGFyZSB3aXRoIG90aGVycy4gV2UgaW52aXRlIHlvdSB0byBzdWJtaXQgYSBzZXNzaW9uIHByb3Bv
+c2FsIHRvCnNoYXJlIHlvdXIgZXhwZXJpZW5jZSB3aXRoIGNvbGxlYWd1ZXMgaW4gdGhlIEFGUyBj
+b21tdW5pdHkuIFNlc3Npb25zCnR5cGVzIGF0IHRoZSB3b3Jrc2hvcCBpbmNsdWRlIHByZXNlbnRh
+dGlvbnMsIHBhbmVscywgdHV0b3JpYWxzLCBhbmQKcm91bmR0YWJsZSBkaXNjdXNzaW9ucy4KCkV2
+ZXJ5b25lIGlzIGVuY291cmFnZWQgdG8gc3BlYWsuCgpXaHkgUHJlc2VudAoK4oCiIEZyaWVuZGx5
+IEF1ZGllbmNlcwrigKIgUmV3YXJkaW5nIEV4cGVyaWVuY2UK4oCiIFNoYXJlIFlvdXIgS25vd2xl
+ZGdlCuKAoiBDb250cmlidXRlIHRvIHRoZSBDb21tdW5pdHkKClRvcGljcyBvZiBJbnRlcmVzdAoK
+SGF2ZSBhIG5lYXQgbmV3IHRvb2wgeW91IHdyb3RlIHRoYXQgc2F2ZXMgeW91IHRpbWUgYW5kIGVm
+Zm9ydD8gVGVsbCB1cwphYm91dCBpdC4gSGF2ZSBhbiBpZGVhIHlvdSB3YW50IHRvIHRyeSBvdXQg
+b24gYSBidW5jaCBvZiBwZW9wbGU/IFRlbGwgdXMKYWJvdXQgaXQuIEhhdmUgeW91IGRvbmUgc29t
+ZSBwZXJmb3JtYW5jZSB0dW5pbmcsIGJlbmNobWFya2luZywgb3IKYXV0b21hdGVkIHRlc3Rpbmc/
+IFdlIHdvdWxkIGxvdmUgdG8gaGVhciBtb3JlIQoK4oCiIFNpdGUgUmVwb3J0cwrigKIgQmVzdCBQ
+cmFjdGljZXMK4oCiIENhc2Ugc3R1ZGllcyBhbmQgdXNlIGNhc2VzIGZvciBBRlMK4oCiIOKAnEJp
+cmRzIG9mIGEgRmVhdGhlcuKAnSAoQk9GKSBzZXNzaW9ucwrigKIgQUZTIHByb2plY3RzCuKAoiBU
+cmFpbmluZyAmIHR1dG9yaWFscwrigKIgT3IgYW55dGhpbmcgZWxzZSB5b3Ugd291bGQgbGlrZSB0
+byBkaXNjdXNzIG9yIHNob3djYXNlLgoKUHJvcG9zYWxzIHNob3VsZCBjb250YWluOgoK4oCiIFlv
+dXIgbmFtZSBhbmQgYWZmaWxpYXRpb24K4oCiIFNlc3Npb24gdGl0bGUK4oCiIEEgYnJpZWYgc3Vt
+bWFyeSBvZiB0aGUgdG9waWMK4oCiIFRpbWUgcmVxdWlyZW1lbnRzCgpNdWx0aXBsZSBwcm9wb3Nh
+bHMgYXJlIHdlbGNvbWUgZnJvbSB0aGUgc2FtZSBpbmRpdmlkdWFsIG9yIG9yZ2FuaXphdGlvbi4K
+U3BlYWtlcnMgc2hvdWxkIGFsc28gcmVnaXN0ZXIgZm9yIHRoZSBXb3Jrc2hvcC4KClBsZWFzZSBz
+ZW5kIHlvdXIgcHJvcG9zYWxzIGZvciBjb25zaWRlcmF0aW9uIHRvCm9wZW5hZnMud29ya3Nob3BA
+Z21haWwuY29tIHdpdGggdGhlIHN1YmplY3QgMjAyMCBjZnAuCgoKCi0tIAoqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKgpEYXZpZCBXaWxsaWFtIEJvdHNjaApPbiBiZWhhbGYgb2YgdGhl
+IEJvYXJkLApPcGVuQUZTIEZvdW5kYXRpb24sIEluYy4KKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hZnMgbWFpbGluZyBsaXN0Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYWZzCg==
