@@ -2,82 +2,91 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73083FCDF4
-	for <lists+linux-afs@lfdr.de>; Thu, 14 Nov 2019 19:41:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDDE7FE54C
+	for <lists+linux-afs@lfdr.de>; Fri, 15 Nov 2019 19:52:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fHVwPDCVO8pwyZCKhK7A6OsBtTXk0HXZs1v7cuU0fXY=; b=UT8j5c3FohHKrB
-	jnJSsDRPvmEAzhsJfrQzga7AsLIzwfgNdyPhMuWi7IzCS5+6cqcvY2mj4y9wUvKiGY41HXG/2eYJt
-	sNXw7hpcrXA+Qjh/rBlKSCbIpZcAmEbQTvPISvyuoUnIw8xbZX1bCzUJT1QGWX/l9I/n8KKyB4Qaq
-	qsU4nzptmAqbVfqo6TlGBgSIc8WyAgkCSttdFjQgJUKnJ1AMh7s2BOSnJZUhBCJKiEnplwEYiwBXP
-	l+b83VNuvOm14NUos4bVdEzI7Mo+YLZZJEBhpLxqYERE7vCC5jXhsGlQ4ohg/JjMH49sgI2J7PYza
-	Toq+mozlaqZN57SFqo0w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8UewA/BV5iIVuZw3gOmyjqjeDHqmv7x6BiKJ2TFpZzA=; b=KvAfhT8KHIsZ9W
+	500CVSAIPdjnO/++ZeBEFpzAs5UfgleKakf9bpf1F1C7K17eqsGgMWvtdqHpWLgwrU48A0PgxxMDf
+	Jw8prNo9XtKM7yQsU7ojfXH2aq4BIOjZENnh6Cdz7TLxqVHtyjNiIhoDuULC5ItL5Oxb6XY0WrHO9
+	mQLyoqIGBJITmSDVCfiw25Y1RZy3ABtTVlPjpa7nKLMY67oHweLELyEBrJuzGej5cLOgH5rk5v9fb
+	xu4QNpG7xiAJKwcOxAw+48rF+DUI+gIsruuTzYhxQTaqP1WEsUR196iCTTTYXzu2ROal0enyfog8l
+	/DT1WLaTEsa0xV7Z/tbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVK3R-0007tZ-Ba; Thu, 14 Nov 2019 18:41:17 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iVghh-00028V-JP; Fri, 15 Nov 2019 18:52:21 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVK3O-0007sJ-JB
- for linux-afs@lists.infradead.org; Thu, 14 Nov 2019 18:41:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1573756871;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=UgtGbn1eYbgjdPbHsvL18nU6iPqWM6qO3qr2Grv4XiM=;
- b=Emp3Rpx/gDAwpEohUrp9ksH1hc2eSvC9nT7R7OPCsTMRhYLqQYws+JLkwGPyM08tFe1Iv3
- cQh+Olw4OLJspw0pZeHFkuSA+80W5n0k7E4g+er/SA8e3WvqE6Cowq5AB517wDUCXayWsk
- j9bB7VTr6z1VXeccCqm1R4INDPlGJu0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-58-mUKNquzEO-ewlXXwfAUERw-1; Thu, 14 Nov 2019 13:41:07 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4ECA31005500;
- Thu, 14 Nov 2019 18:41:06 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-254.rdu2.redhat.com
- [10.10.120.254])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 956A45C219;
- Thu, 14 Nov 2019 18:41:04 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH] afs: Fix race in commit bulk status fetch
-From: David Howells <dhowells@redhat.com>
-To: torvalds@linux-foundation.org
-Date: Thu, 14 Nov 2019 18:41:03 +0000
-Message-ID: <157375686331.16781.5317786612607603165.stgit@warthog.procyon.org.uk>
-User-Agent: StGit/unknown-version
+ id 1iVghe-00027V-9g
+ for linux-afs@lists.infradead.org; Fri, 15 Nov 2019 18:52:19 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j14so8749217lfb.8
+ for <linux-afs@lists.infradead.org>; Fri, 15 Nov 2019 10:52:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=M4xtaCr8bksk7hZhv5KKTwu+2iaD2qyURktvDZXazkc=;
+ b=egY2spLHGrR8gGG3xgZthsV14T8zMUbAEU8nKs0WE79SJJeYlT6diMl1apCO7hfIfO
+ tSqtul8DRPTMZKBrjOt/ltN4StE8fYapzmVL9CihIAD7zosIaWJTZpUQeSumxCyfstuN
+ J7W82IwYXTpcy8GJO0MisBQrqCmUiCr69scXk=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=M4xtaCr8bksk7hZhv5KKTwu+2iaD2qyURktvDZXazkc=;
+ b=kds5B43rPGHoVgO3K0QsjC2mReg6FUsyXwU/qxX6PZmTAIEXlRr7W4ekHAdHIMucLk
+ lxFmDMIBRmr0X+m1lGFv206EeGfjaNXAngz91/Kq/+oLGzohH6dIy1kfaBFIK44sFWeb
+ kyP5ppBJEQIEGWnZQQPN2WrBHz4dSxaS8oOqlUU2Yo5eizvPOP4u+MJemJwtEAqe1Axj
+ 4OG7PIU5e7qb9KtfDVx+Ir1coknmm8ajjJcrhIkRf6BBWqeZzX7PkzbqMacnDpf529ZO
+ q/UvlMm9wKnZzE02twMNuOnbsqkQuaj+oQfYRy/oDEWbeax3iwuf0sBnDupNUUtTD6Bz
+ Owmg==
+X-Gm-Message-State: APjAAAWqnsNUfP+CtzLhG9BqMjXnskmRrXhejrCJ2/TJiGzeGgRpnjNE
+ 52otkS+iiRMfNlvx92hP1292HGhrlR8=
+X-Google-Smtp-Source: APXvYqxTej4gpRODO9cFJpPjDiGcSBK6A+MMlRkiBrXihqxRdLOi9Ur2LjpGIL/sdK5uogWNqsXDrg==
+X-Received: by 2002:ac2:5637:: with SMTP id b23mr12230355lff.73.1573843932611; 
+ Fri, 15 Nov 2019 10:52:12 -0800 (PST)
+Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com.
+ [209.85.208.170])
+ by smtp.gmail.com with ESMTPSA id 143sm1274105lfj.67.2019.11.15.10.52.11
+ for <linux-afs@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 15 Nov 2019 10:52:11 -0800 (PST)
+Received: by mail-lj1-f170.google.com with SMTP id d5so11758984ljl.4
+ for <linux-afs@lists.infradead.org>; Fri, 15 Nov 2019 10:52:11 -0800 (PST)
+X-Received: by 2002:a2e:9a8f:: with SMTP id p15mr12453823lji.148.1573843931177; 
+ Fri, 15 Nov 2019 10:52:11 -0800 (PST)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: mUKNquzEO-ewlXXwfAUERw-1
-X-Mimecast-Spam-Score: 0
+References: <157375686331.16781.5317786612607603165.stgit@warthog.procyon.org.uk>
+In-Reply-To: <157375686331.16781.5317786612607603165.stgit@warthog.procyon.org.uk>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Fri, 15 Nov 2019 10:51:55 -0800
+X-Gmail-Original-Message-ID: <CAHk-=wgJMHz=vsvMLGb8q3ECk5odJkO5Sp438+rs6r30FUbP0A@mail.gmail.com>
+Message-ID: <CAHk-=wgJMHz=vsvMLGb8q3ECk5odJkO5Sp438+rs6r30FUbP0A@mail.gmail.com>
+Subject: Re: [PATCH] afs: Fix race in commit bulk status fetch
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_104114_705223_A1733764 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191115_105218_337376_EDAED384 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -90,63 +99,22 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, marc.dionne@auristor.com,
- linux-fsdevel@vger.kernel.org, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Marc Dionne <marc.dionne@auristor.com>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>, linux-afs@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-When a lookup is done, the afs filesystem will perform a bulk status-fetch
-operation on the requested vnode (file) plus the next 49 other vnodes from
-the directory list (in AFS, directory contents are downloaded as blobs and
-parsed locally).  When the results are received, it will speculatively
-populate the inode cache from the extra data.
+On Thu, Nov 14, 2019 at 10:41 AM David Howells <dhowells@redhat.com> wrote:
+>
+> Fix this by skipping the update if the inode is being created as the
+> creator will presumably set up the inode with the same information.
 
-However, if the lookup races with another lookup on the same directory, but
-for a different file - one that's in the 49 extra fetches, then if the bulk
-status-fetch operation finishes first, it will try and update the inode
-from the other lookup.
+Applied,
 
-If this other inode is still in the throes of being created, however, this
-will cause an assertion failure in afs_apply_status():
-
-	BUG_ON(test_bit(AFS_VNODE_UNSET, &vnode->flags));
-
-on or about fs/afs/inode.c:175 because it expects data to be there already
-that it can compare to.
-
-Fix this by skipping the update if the inode is being created as the
-creator will presumably set up the inode with the same information.
-
-Fixes: 39db9815da48 ("afs: Fix application of the results of a inline bulk status fetch")
-Signed-off-by: David Howells <dhowells@redhat.com>
-Reviewed-by: Marc Dionne <marc.dionne@auristor.com>
----
-
- fs/afs/dir.c |    7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/fs/afs/dir.c b/fs/afs/dir.c
-index cc12772d0a4d..497f979018c2 100644
---- a/fs/afs/dir.c
-+++ b/fs/afs/dir.c
-@@ -803,7 +803,12 @@ static struct inode *afs_do_lookup(struct inode *dir, struct dentry *dentry,
- 			continue;
- 
- 		if (cookie->inodes[i]) {
--			afs_vnode_commit_status(&fc, AFS_FS_I(cookie->inodes[i]),
-+			struct afs_vnode *iv = AFS_FS_I(cookie->inodes[i]);
-+
-+			if (test_bit(AFS_VNODE_UNSET, &iv->flags))
-+				continue;
-+
-+			afs_vnode_commit_status(&fc, iv,
- 						scb->cb_break, NULL, scb);
- 			continue;
- 		}
-
+          Linus
 
 _______________________________________________
 linux-afs mailing list
