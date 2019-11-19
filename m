@@ -2,92 +2,68 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDDE7FE54C
-	for <lists+linux-afs@lfdr.de>; Fri, 15 Nov 2019 19:52:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04D311012A0
+	for <lists+linux-afs@lfdr.de>; Tue, 19 Nov 2019 05:44:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8UewA/BV5iIVuZw3gOmyjqjeDHqmv7x6BiKJ2TFpZzA=; b=KvAfhT8KHIsZ9W
-	500CVSAIPdjnO/++ZeBEFpzAs5UfgleKakf9bpf1F1C7K17eqsGgMWvtdqHpWLgwrU48A0PgxxMDf
-	Jw8prNo9XtKM7yQsU7ojfXH2aq4BIOjZENnh6Cdz7TLxqVHtyjNiIhoDuULC5ItL5Oxb6XY0WrHO9
-	mQLyoqIGBJITmSDVCfiw25Y1RZy3ABtTVlPjpa7nKLMY67oHweLELyEBrJuzGej5cLOgH5rk5v9fb
-	xu4QNpG7xiAJKwcOxAw+48rF+DUI+gIsruuTzYhxQTaqP1WEsUR196iCTTTYXzu2ROal0enyfog8l
-	/DT1WLaTEsa0xV7Z/tbA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ITNKI8FTM1zm2S3KHNzg1MZPdrDINXr2wBD6EpeyCKU=; b=LxIRAcSoBaWz7s
+	CMbgz/jKY2Y7rn1z7koI+MdYdEzaMK7ZMMfvYXuiUCa01J3/C3+sIhC0Tx0D4dHvf8MdpIZxPoc/1
+	V4KMlcu8dIjtC5Vq6Sgt+IWcqcqYbxCYENglJKjV8qETJuYb8nuvQsJybak1X/e3yId6Z2zdB4hH9
+	Mh+a6a4K+iJTuxt115kj1NvvTqQPcil+ZkVaxqV+iFUW3ezHvVP4J0Vxcm9hOa7XoNhXDgamVsNmn
+	XtKNoSOYdaWsuEj/9SR3vzqcGt4xQZDwxFGO35cCn1pL38X09wAwMslOnd5EXdiNhIv0BoLl/Y+Cj
+	/zt9J3lgGsbhhM+w3c0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVghh-00028V-JP; Fri, 15 Nov 2019 18:52:21 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iWvN1-0004rA-4v; Tue, 19 Nov 2019 04:44:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVghe-00027V-9g
- for linux-afs@lists.infradead.org; Fri, 15 Nov 2019 18:52:19 +0000
-Received: by mail-lf1-x144.google.com with SMTP id j14so8749217lfb.8
- for <linux-afs@lists.infradead.org>; Fri, 15 Nov 2019 10:52:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=M4xtaCr8bksk7hZhv5KKTwu+2iaD2qyURktvDZXazkc=;
- b=egY2spLHGrR8gGG3xgZthsV14T8zMUbAEU8nKs0WE79SJJeYlT6diMl1apCO7hfIfO
- tSqtul8DRPTMZKBrjOt/ltN4StE8fYapzmVL9CihIAD7zosIaWJTZpUQeSumxCyfstuN
- J7W82IwYXTpcy8GJO0MisBQrqCmUiCr69scXk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=M4xtaCr8bksk7hZhv5KKTwu+2iaD2qyURktvDZXazkc=;
- b=kds5B43rPGHoVgO3K0QsjC2mReg6FUsyXwU/qxX6PZmTAIEXlRr7W4ekHAdHIMucLk
- lxFmDMIBRmr0X+m1lGFv206EeGfjaNXAngz91/Kq/+oLGzohH6dIy1kfaBFIK44sFWeb
- kyP5ppBJEQIEGWnZQQPN2WrBHz4dSxaS8oOqlUU2Yo5eizvPOP4u+MJemJwtEAqe1Axj
- 4OG7PIU5e7qb9KtfDVx+Ir1coknmm8ajjJcrhIkRf6BBWqeZzX7PkzbqMacnDpf529ZO
- q/UvlMm9wKnZzE02twMNuOnbsqkQuaj+oQfYRy/oDEWbeax3iwuf0sBnDupNUUtTD6Bz
- Owmg==
-X-Gm-Message-State: APjAAAWqnsNUfP+CtzLhG9BqMjXnskmRrXhejrCJ2/TJiGzeGgRpnjNE
- 52otkS+iiRMfNlvx92hP1292HGhrlR8=
-X-Google-Smtp-Source: APXvYqxTej4gpRODO9cFJpPjDiGcSBK6A+MMlRkiBrXihqxRdLOi9Ur2LjpGIL/sdK5uogWNqsXDrg==
-X-Received: by 2002:ac2:5637:: with SMTP id b23mr12230355lff.73.1573843932611; 
- Fri, 15 Nov 2019 10:52:12 -0800 (PST)
-Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com.
- [209.85.208.170])
- by smtp.gmail.com with ESMTPSA id 143sm1274105lfj.67.2019.11.15.10.52.11
- for <linux-afs@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 Nov 2019 10:52:11 -0800 (PST)
-Received: by mail-lj1-f170.google.com with SMTP id d5so11758984ljl.4
- for <linux-afs@lists.infradead.org>; Fri, 15 Nov 2019 10:52:11 -0800 (PST)
-X-Received: by 2002:a2e:9a8f:: with SMTP id p15mr12453823lji.148.1573843931177; 
- Fri, 15 Nov 2019 10:52:11 -0800 (PST)
+ id 1iWvMu-0004qZ-Ow
+ for linux-afs@lists.infradead.org; Tue, 19 Nov 2019 04:44:05 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 38F0020857;
+ Tue, 19 Nov 2019 04:44:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574138640;
+ bh=r1miNHm6DvVdkExPWVghi1jSIGW9FyGBUl8+tB/j1qU=;
+ h=Date:From:To:Cc:Subject:From;
+ b=pDMOPkD6Hewjoibcz9WX2n1Tnv3Ulhlj8y+VcUhUtXZSvro3/JNGPsun1mThaqaxf
+ AnOO5BjT6ByLYUbZQLxYNIbJOGomwPe5C+NOHI9ZSQrwbEomMpMh/p/gzNFHaO8UPe
+ GnfWujPnyikgLSGYTZqYdKzynDResu5gi+7dkCc0=
+Date: Mon, 18 Nov 2019 20:43:58 -0800
+From: Eric Biggers <ebiggers@kernel.org>
+To: linux-afs@lists.infradead.org, David Howells <dhowells@redhat.com>
+Subject: Reminder: 2 open syzbot reports in "net/rxrpc" subsystem
+Message-ID: <20191119044358.GF163020@sol.localdomain>
 MIME-Version: 1.0
-References: <157375686331.16781.5317786612607603165.stgit@warthog.procyon.org.uk>
-In-Reply-To: <157375686331.16781.5317786612607603165.stgit@warthog.procyon.org.uk>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Fri, 15 Nov 2019 10:51:55 -0800
-X-Gmail-Original-Message-ID: <CAHk-=wgJMHz=vsvMLGb8q3ECk5odJkO5Sp438+rs6r30FUbP0A@mail.gmail.com>
-Message-ID: <CAHk-=wgJMHz=vsvMLGb8q3ECk5odJkO5Sp438+rs6r30FUbP0A@mail.gmail.com>
-Subject: Re: [PATCH] afs: Fix race in commit bulk status fetch
-To: David Howells <dhowells@redhat.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_105218_337376_EDAED384 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191118_204400_834401_F8432E7C 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,22 +75,68 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dionne <marc.dionne@auristor.com>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, linux-afs@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 10:41 AM David Howells <dhowells@redhat.com> wrote:
->
-> Fix this by skipping the update if the inode is being created as the
-> creator will presumably set up the inode with the same information.
+[This email was generated by a script.  Let me know if you have any suggestions
+to make it better, or if you want it re-generated with the latest status.]
 
-Applied,
+Of the currently open syzbot reports against the upstream kernel, I've manually
+marked 2 of them as possibly being bugs in the "net/rxrpc" subsystem.  I've
+listed these bug reports below.
 
-          Linus
+If you believe a bug is no longer valid, please close it by sending a '#syz
+fix', '#syz dup', or '#syz invalid' command in reply to the original thread, as
+explained at https://goo.gl/tpsmEJ#status
+
+If you believe I misattributed a bug to the "net/rxrpc" subsystem, please let me
+know and (if possible) forward it to the correct place.
+
+Here are the bug reports:
+
+--------------------------------------------------------------------------------
+Title:              memory leak in rxrpc_lookup_local
+Last occurred:      0 days ago
+Reported:           27 days ago
+Branches:           Mainline
+Dashboard link:     https://syzkaller.appspot.com/bug?id=80b2343d6c19226dfa59e33b151c168d96253420
+Original thread:    https://lore.kernel.org/lkml/000000000000065d240595878a92@google.com/T/#u
+
+This bug has a C reproducer.
+
+No one has replied to the original thread for this bug yet.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+305326672fed51b205f7@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please consider replying to the
+original thread.  For the git send-email command to use, or tips on how to reply
+if the thread isn't in your mailbox, see the "Reply instructions" at
+https://lore.kernel.org/r/000000000000065d240595878a92@google.com
+
+--------------------------------------------------------------------------------
+Title:              KMSAN: use-after-free in rxrpc_send_keepalive
+Last occurred:      7 days ago
+Reported:           10 days ago
+Branches:           https://github.com/google/kmsan.git master
+Dashboard link:     https://syzkaller.appspot.com/bug?id=428e72dc175d0f4b23a1fb9b7d3d16fad7ef2a4b
+Original thread:    https://lore.kernel.org/lkml/0000000000005b4a6c0596d8c5a8@google.com/T/#u
+
+This bug has a syzkaller reproducer only.
+
+No one has replied to the original thread for this bug yet.
+
+If you fix this bug, please add the following tag to the commit:
+    Reported-by: syzbot+2e7168a4d3c4ec071fdc@syzkaller.appspotmail.com
+
+If you send any email or patch for this bug, please reply to the original
+thread.  For the git send-email command to use, or tips on how to reply if the
+thread isn't in your mailbox, see the "Reply instructions" at
+https://lore.kernel.org/r/0000000000005b4a6c0596d8c5a8@google.com
+
 
 _______________________________________________
 linux-afs mailing list
