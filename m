@@ -2,74 +2,78 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C95791055BD
-	for <lists+linux-afs@lfdr.de>; Thu, 21 Nov 2019 16:37:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC47D105624
+	for <lists+linux-afs@lfdr.de>; Thu, 21 Nov 2019 16:56:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IK22i+NUCmNZlAiXt2n/mJi1p3ZjNxv6ZE1vrn2eX5I=; b=KKrpKmYk1FF0GU
-	tPtiNXVfPAq42bI7rTePKDra6qVDh+pOfdTtp9aZgnopgssJv++ivwV0lQ+VG1Jgx8el6bekOdnMm
-	QbDxWILkMP7eOc+WelbPcBY5HIIX6UDu7dAGwQe1CIFCNXgxPv2NA4ejyG61lmdYTcRokmV2q0TVO
-	BshPU7NkSwn2FUV6nGHqdBjdAUz/DsLvLFn99lll9RoJu28n+w/fzbQIrQeMS5g1ThV/hgx48wRUz
-	a4GD/f8/QyCeH+Y7i1MoWg0i7WegCqNTw8x/WwAA/4f1JeDHW2v1gzbnm+FTMsS+3Xp8tBct9/R7C
-	3/PLTHxhdGqOjWzNaRNA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fpe9JNfUmTKodsc889JpO2k1cvmTFbcXPsaU+LqX6ac=; b=tFDjbt+hWuuHFI
+	8inCINbDm5gpigtscohgyaHYJiZlz1SAw2YWkoW/7/5YCiPwlWVMMXgk0PFfCJeSJOAujemdeoRp5
+	n6EzJcUoxahwSKE7LDuPAjvh6cg264zZX5DyraC2xNBHc1y26iXTm892G3NhhFulWWvXuzg7zoQ9H
+	tJ32lTjkAzM6RghUUAsS49pzVwiXNc+PefnxHy2LoMyuGvmLwgPNCLtJVN3K3/BTbOUKnaewIfhDm
+	PTpeMX+Fc6ZX97so60mDBxeKvt7ug0M0M038Nf9JGFkgJnKIQuOwBbnSP8khbQX02E8N7Ja6IMmR2
+	6PmzbWXVk0g0RxSIUKtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXoWY-0001qy-F4; Thu, 21 Nov 2019 15:37:38 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+	id 1iXooM-000154-1Q; Thu, 21 Nov 2019 15:56:02 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXoWV-0001o0-H9
- for linux-afs@lists.infradead.org; Thu, 21 Nov 2019 15:37:36 +0000
+ id 1iXooI-00011Q-SR
+ for linux-afs@lists.infradead.org; Thu, 21 Nov 2019 15:56:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574350653;
+ s=mimecast20190719; t=1574351757;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=jCutdT9TaQdIImo/1AFgCrOpVjlugrWqMw96TD3dGTc=;
- b=Old+/sSgsNYi7vmHy2rmXPV99Oz4J4ZSe56Fo3JP/h8gF6aj2v/LONxnAElJTPDCb1ZRYo
- zfuaXmZ81WPEwzJNxGpcl5OMRaCJP6BlKCB9ryAytYLpmuhhpzMlAnrAoyDXHJRmxO0dij
- ac7H4m5OdrnOLpna6Ne9t19SIjAEoCA=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=lWsgKVybaH+JezO0Xvxir4xXLVYM64AtUYc2fCA9+9I=;
+ b=By0CE3CcYIO4Q/0kecZ0zeir23N4bTGWY81g8d/rI5ExOk2AZ2iSuzGKAg2SK7TJ8j5USD
+ nPwzQNL1FVECGZSc6VxKqSYy1j3dcRKCYGuivsVPBKYELA22xCqUWbGUkFjzTEcACcbQnW
+ pzq0RV4sxPOc3TpWnXDyCpFu0WILFuw=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-128-0jpKBEWHNDKHOS8NdKZ-Dg-1; Thu, 21 Nov 2019 10:37:29 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-181-XW1zfSQvObO2k-13Np5W9Q-1; Thu, 21 Nov 2019 10:55:53 -0500
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 67F3C10171AB;
- Thu, 21 Nov 2019 15:37:28 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 09526593A1;
+ Thu, 21 Nov 2019 15:55:52 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-161.rdu2.redhat.com
  [10.10.120.161])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 5229E692AE;
- Thu, 21 Nov 2019 15:37:27 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id C5ABF60F8B;
+ Thu, 21 Nov 2019 15:55:50 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH] afs: Fix large file support
 From: David Howells <dhowells@redhat.com>
+In-Reply-To: <157435064653.9583.16369826233033888377.stgit@warthog.procyon.org.uk>
+References: <157435064653.9583.16369826233033888377.stgit@warthog.procyon.org.uk>
 To: torvalds@linux-foundation.org
-Date: Thu, 21 Nov 2019 15:37:26 +0000
-Message-ID: <157435064653.9583.16369826233033888377.stgit@warthog.procyon.org.uk>
-User-Agent: StGit/unknown-version
+Subject: Re: [PATCH] afs: Fix large file support
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: 0jpKBEWHNDKHOS8NdKZ-Dg-1
+Content-ID: <11835.1574351749.1@warthog.procyon.org.uk>
+Date: Thu, 21 Nov 2019 15:55:49 +0000
+Message-ID: <11836.1574351749@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-MC-Unique: XW1zfSQvObO2k-13Np5W9Q-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_073735_642555_4AE0C79B 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20191121_075558_996571_4C6F8E52 
+X-CRM114-Status: UNSURE (   7.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,40 +102,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Marc Dionne <marc.dionne@auristor.com>
+Hi Linus,
 
-By default s_maxbytes is set to MAX_NON_LFS, which limits the usable
-file size to 2GB, enforced by the vfs.
+> By default s_maxbytes is set to MAX_NON_LFS, which limits the usable
+> file size to 2GB, enforced by the vfs.
 
-Commit b9b1f8d5930a ("AFS: write support fixes") added support for the
-64-bit fetch and store server operations, but did not change this value.
-As a result, attempts to write past the 2G mark result in EFBIG errors:
+Note that this isn't fixing a critical failure, so you might want to punt it
+to the next cycle.
 
- $ dd if=/dev/zero of=foo bs=1M count=1 seek=2048
- dd: error writing 'foo': File too large
-
-Set s_maxbytes to MAX_LFS_FILESIZE.
-
-Fixes: b9b1f8d5930a ("AFS: write support fixes")
-Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
-Signed-off-by: David Howells <dhowells@redhat.com>
----
-
- fs/afs/super.c |    1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/fs/afs/super.c b/fs/afs/super.c
-index f18911e8d770..488641b1a418 100644
---- a/fs/afs/super.c
-+++ b/fs/afs/super.c
-@@ -435,6 +435,7 @@ static int afs_fill_super(struct super_block *sb, struct afs_fs_context *ctx)
- 	/* fill in the superblock */
- 	sb->s_blocksize		= PAGE_SIZE;
- 	sb->s_blocksize_bits	= PAGE_SHIFT;
-+	sb->s_maxbytes		= MAX_LFS_FILESIZE;
- 	sb->s_magic		= AFS_FS_MAGIC;
- 	sb->s_op		= &afs_super_ops;
- 	if (!as->dyn_root)
+David
 
 
 _______________________________________________
