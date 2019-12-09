@@ -2,78 +2,77 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91F65117205
-	for <lists+linux-afs@lfdr.de>; Mon,  9 Dec 2019 17:42:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47C11117208
+	for <lists+linux-afs@lfdr.de>; Mon,  9 Dec 2019 17:42:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OnGeVR7N6tyne4Oi2pN8RxmiV4wOVOYHL38uMFa4AHo=; b=LqFvJt+uX27Dy1
-	3mNPHh/M+fJ2oaOM5CwizPb8qOq0PGno9gm/D1vwr0YSvb16Ki+KJhSe/nfCvHX31gPl1B43H6xd8
-	BKEIa0LfNkz2TCmrmHCry5FWz5K7KniT+MaXb1TBp/LxTwsZXgrnihEtBoJmBF4T96B/7F+gu0/QH
-	QeQ+GZuXUInriJwu9YzKw2z/356QggIcOkAFKIMexgA+st6UToRWKapn0UWZaicWjkFCzdje2yBbP
-	uWET8iz/OIIFYyinm+BBp7lDVDtEXOR0bPpVh4fFFmlwfZ74U37PdY/MosIHPS9PawiXfzJcQgkJP
-	bFROnecRspEzRFrGUf5w==;
+	List-Owner; bh=WjcrQ3xteUEQRqJyH+de1GRNXe/1ltOCS/xhMWuJ9KY=; b=orl3TpYfyEIiZY
+	8St8gs9yTsWStPDV0sSbVIqRfUANT75yJYNxH4wVCUGOIcd/wLJDaD9AXoKUL/lmaSCB2UJ+VnnE7
+	vo1zeRCcQ2hgzNQVafjNxZDgIGv6Y5UPGLcjXck6MUW8R+Ib8pv/FnytcnPKtReYzlISKHVy76uoT
+	a3MLgw6PyzzjB73IF0LoOCz6lQLnWM2xZ+/PseICCqlF45bw4sIg5+jhnxcWomMYFksybHDfTiNu2
+	5Ik1qF7cOg9gOwuibIj6KVt6myv/isOCV5p5qgxpKlpirLsqK7qsBljcyt2RvDqCr1fkV+R6MkN51
+	FXw3e4qpSmhaLJtKMeLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieM6v-0002Dy-17; Mon, 09 Dec 2019 16:42:13 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1ieM73-0002H7-Cd; Mon, 09 Dec 2019 16:42:21 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieM6r-0002DD-Ug
- for linux-afs@lists.infradead.org; Mon, 09 Dec 2019 16:42:11 +0000
+ id 1ieM70-0002Gc-Qp
+ for linux-afs@lists.infradead.org; Mon, 09 Dec 2019 16:42:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1575909728;
+ s=mimecast20190719; t=1575909737;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=c4SF3WqZ5J+usMWRpKtPwx9YglQMg4qMbI0BFoz1pRc=;
- b=HdFoTdaeu0+jTWFrna9pGD3gGtdlgsk3nE+zuZU16UopJ0Rt2rY2fzDKbsuSPA8b0ofypn
- 4mGkN1hzNQjeWbIk2vkG4gFQIvYzcJSjA3G19jWkxx5Vv7a1/RXXgs+ISMiYFeJpGaR66F
- KTPtVeKdUtLPahSBVpd54W+Y+L37hd0=
+ bh=3QfTiZcuCKcH+VjhtgFbzq1uB/NfPyi/hMtZJDy3xCo=;
+ b=NCvszBbQVKvJY3gWyLsycV9yOmu1Uw64hNW5N+BR83PnPfrAWA+lIifh4rYfD6c9FWxLKw
+ J+yQ/SN7FdOjKcgCWqEcFRq2cq8pVhVAyC625bGiw99g4+943iY5EKAj2yKsIEhEzIKKjC
+ K5SKbiYZq2ts8+KnfA/HOE324T5RS00=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-201-UEpP9VIeN5eNdDDWEPPVqw-1; Mon, 09 Dec 2019 11:42:07 -0500
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ us-mta-282-_AInsoT-MJG5VjTBV28-nQ-1; Mon, 09 Dec 2019 11:42:14 -0500
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 557BF80589E
- for <linux-afs@lists.infradead.org>; Mon,  9 Dec 2019 16:42:06 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1FDD1A4FB0;
+ Mon,  9 Dec 2019 16:42:13 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-250.rdu2.redhat.com
  [10.10.120.250])
- by smtp.corp.redhat.com (Postfix) with ESMTP id D0FF16055B;
- Mon,  9 Dec 2019 16:42:05 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4E6D05C21A;
+ Mon,  9 Dec 2019 16:42:12 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 3/4] afs: Backup and readonly volumes should be marked
- SB_RDONLY
+Subject: [PATCH 4/4] afs: Fix mountpoint parsing
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Mon, 09 Dec 2019 16:42:05 +0000
-Message-ID: <157590972512.21604.4037745781609091311.stgit@warthog.procyon.org.uk>
+Date: Mon, 09 Dec 2019 16:42:11 +0000
+Message-ID: <157590973154.21604.8333566998009820791.stgit@warthog.procyon.org.uk>
 In-Reply-To: <157590971161.21604.14727023636839480425.stgit@warthog.procyon.org.uk>
 References: <157590971161.21604.14727023636839480425.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-MC-Unique: UEpP9VIeN5eNdDDWEPPVqw-1
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-MC-Unique: _AInsoT-MJG5VjTBV28-nQ-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_084210_067031_98C22C70 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20191209_084218_940495_EBAC342D 
+X-CRM114-Status: GOOD (  16.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,35 +94,63 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com
+Cc: dhowells@redhat.com, Jonathan Billings <jsbillings@jsbillings.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Fix the AFS mount code to mark superblocks for backup and readonly volumes
-as being SB_RDONLY.
+Each AFS mountpoint has strings that define the target to be mounted.  This
+is required to end in a dot that is supposed to be stripped off.  The
+string can include suffixes of ".readonly" or ".backup" - which are
+supposed to come before the terminal dot.  To add to the confusion, the "fs
+lsmount" afs utility does not show the terminal dot when displaying the
+string.
 
+The kernel mount source string parser, however, assumes that the terminal
+dot marks the suffix and that the suffix is always "" and is thus ignored.
+In most cases, there is no suffix and this is not a problem - but if there
+is a suffix, it is lost and this affects the ability to mount the correct
+volume.
+
+The command line mount command, on the other hand, is expected not to
+include a terminal dot - so the problem doesn't arise there.
+
+Fix this by making sure that the dot exists and then stripping it when
+passing the string to the mount configuration.
+
+Fixes: bec5eb614130 ("AFS: Implement an autocell mount capability [ver #2]")
+Reported-by: Jonathan Billings <jsbillings@jsbillings.org>
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/afs/super.c |    3 +++
- 1 file changed, 3 insertions(+)
+ fs/afs/mntpt.c |    6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/fs/afs/super.c b/fs/afs/super.c
-index d9a6036b70b9..dbcdf7512bec 100644
---- a/fs/afs/super.c
-+++ b/fs/afs/super.c
-@@ -371,6 +371,9 @@ static int afs_validate_fc(struct fs_context *fc)
- 			return -EDESTADDRREQ;
+diff --git a/fs/afs/mntpt.c b/fs/afs/mntpt.c
+index f532d6d3bd28..79bc5f1338ed 100644
+--- a/fs/afs/mntpt.c
++++ b/fs/afs/mntpt.c
+@@ -126,7 +126,7 @@ static int afs_mntpt_set_params(struct fs_context *fc, struct dentry *mntpt)
+ 		if (src_as->cell)
+ 			ctx->cell = afs_get_cell(src_as->cell);
+ 
+-		if (size > PAGE_SIZE - 1)
++		if (size < 2 || size > PAGE_SIZE - 1)
+ 			return -EINVAL;
+ 
+ 		page = read_mapping_page(d_inode(mntpt)->i_mapping, 0, NULL);
+@@ -140,7 +140,9 @@ static int afs_mntpt_set_params(struct fs_context *fc, struct dentry *mntpt)
  		}
  
-+		if (ctx->type != AFSVL_RWVOL)
-+			fc->sb_flags |= SB_RDONLY;
-+
- 		/* We try to do the mount securely. */
- 		key = afs_request_key(ctx->cell);
- 		if (IS_ERR(key))
+ 		buf = kmap(page);
+-		ret = vfs_parse_fs_string(fc, "source", buf, size);
++		ret = -EINVAL;
++		if (buf[size - 1] == '.')
++			ret = vfs_parse_fs_string(fc, "source", buf, size - 1);
+ 		kunmap(page);
+ 		put_page(page);
+ 		if (ret < 0)
 
 
 _______________________________________________
