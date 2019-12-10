@@ -2,77 +2,75 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47C11117208
-	for <lists+linux-afs@lfdr.de>; Mon,  9 Dec 2019 17:42:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98E62118F12
+	for <lists+linux-afs@lfdr.de>; Tue, 10 Dec 2019 18:33:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WjcrQ3xteUEQRqJyH+de1GRNXe/1ltOCS/xhMWuJ9KY=; b=orl3TpYfyEIiZY
-	8St8gs9yTsWStPDV0sSbVIqRfUANT75yJYNxH4wVCUGOIcd/wLJDaD9AXoKUL/lmaSCB2UJ+VnnE7
-	vo1zeRCcQ2hgzNQVafjNxZDgIGv6Y5UPGLcjXck6MUW8R+Ib8pv/FnytcnPKtReYzlISKHVy76uoT
-	a3MLgw6PyzzjB73IF0LoOCz6lQLnWM2xZ+/PseICCqlF45bw4sIg5+jhnxcWomMYFksybHDfTiNu2
-	5Ik1qF7cOg9gOwuibIj6KVt6myv/isOCV5p5qgxpKlpirLsqK7qsBljcyt2RvDqCr1fkV+R6MkN51
-	FXw3e4qpSmhaLJtKMeLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SCfDYvk/s8Eb7l5sPPLOdaw4J/nkTD/x6EAvEbk/AQA=; b=XFoqyGbzIHR1w7
+	GUo4/0673tiFfabqFv7S563WpAruTrW+f9tj9x/PB1hI09KUhRs+nnMxodfonrG+aTPN7m0fL064J
+	KfdhEAZpa270YpnN+FseOn+q4OF8Q9Cy5zhj/L27YnGpQ8WdmVaL4mH2DrwYBlNx+h1CuRR7oriMo
+	fi14+pmj2PZ1QfI6ZRyKrYPB/Bpz8uUNYu15N5Bo4N4W4onZ5tWS+YdufyRTY5d0quT/ugbQmCpm3
+	6cLPjdBsMDEMr4J392Tgti1cSpAvxEG0R3V0u8498nsDZ2m81tduJrYhxvKtN8E2LxxgWrcxauWiD
+	pYTLZQPoXoZJ67ryBY5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieM73-0002H7-Cd; Mon, 09 Dec 2019 16:42:21 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iejNn-0000n8-Sk; Tue, 10 Dec 2019 17:33:11 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieM70-0002Gc-Qp
- for linux-afs@lists.infradead.org; Mon, 09 Dec 2019 16:42:20 +0000
+ id 1iejNk-0000m6-IW
+ for linux-afs@lists.infradead.org; Tue, 10 Dec 2019 17:33:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1575909737;
+ s=mimecast20190719; t=1575999186;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=3QfTiZcuCKcH+VjhtgFbzq1uB/NfPyi/hMtZJDy3xCo=;
- b=NCvszBbQVKvJY3gWyLsycV9yOmu1Uw64hNW5N+BR83PnPfrAWA+lIifh4rYfD6c9FWxLKw
- J+yQ/SN7FdOjKcgCWqEcFRq2cq8pVhVAyC625bGiw99g4+943iY5EKAj2yKsIEhEzIKKjC
- K5SKbiYZq2ts8+KnfA/HOE324T5RS00=
+ content-transfer-encoding:content-transfer-encoding;
+ bh=Mc+1ZWYckmEINCQCi8L572ppP+X1bue4gLkgV0ncgKQ=;
+ b=KWC1d+e70wGoxXlXfNUXioX9ZAhNzXI/fcPmsZBMjoP9NOJH7ueC5TcpjqabA905tCnDnE
+ 4dkIqZVXegudtoiDJiXjg5VsLbncimhJfDyq5l0chwqfzaeA+i7DbXxgtVTJ0G/muNwpSr
+ ruJ/SjmrJUwgZeM5+jgXd9tCiEJHTj8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-282-_AInsoT-MJG5VjTBV28-nQ-1; Mon, 09 Dec 2019 11:42:14 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-119-XlJrKLk6NwqwirH8g0hjEQ-1; Tue, 10 Dec 2019 12:33:02 -0500
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1FDD1A4FB0;
- Mon,  9 Dec 2019 16:42:13 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 197EC1005512;
+ Tue, 10 Dec 2019 17:33:01 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-250.rdu2.redhat.com
  [10.10.120.250])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 4E6D05C21A;
- Mon,  9 Dec 2019 16:42:12 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9A5821001B09;
+ Tue, 10 Dec 2019 17:32:59 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 4/4] afs: Fix mountpoint parsing
+Subject: [PATCH] rxrpc: Mutexes are unusable from softirq context,
+ so use rwsem instead
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Mon, 09 Dec 2019 16:42:11 +0000
-Message-ID: <157590973154.21604.8333566998009820791.stgit@warthog.procyon.org.uk>
-In-Reply-To: <157590971161.21604.14727023636839480425.stgit@warthog.procyon.org.uk>
-References: <157590971161.21604.14727023636839480425.stgit@warthog.procyon.org.uk>
+Date: Tue, 10 Dec 2019 17:32:58 +0000
+Message-ID: <157599917879.6327.69195741890962065.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: _AInsoT-MJG5VjTBV28-nQ-1
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-MC-Unique: XlJrKLk6NwqwirH8g0hjEQ-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_084218_940495_EBAC342D 
-X-CRM114-Status: GOOD (  16.45  )
+X-CRM114-CacheID: sfid-20191210_093308_698377_358D3B5E 
+X-CRM114-Status: GOOD (  19.63  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,63 +92,306 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, Jonathan Billings <jsbillings@jsbillings.org>
+Cc: Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ dhowells@redhat.com, Ingo Molnar <mingo@redhat.com>,
+ linux-fsdevel@vger.kernel.org, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Each AFS mountpoint has strings that define the target to be mounted.  This
-is required to end in a dot that is supposed to be stripped off.  The
-string can include suffixes of ".readonly" or ".backup" - which are
-supposed to come before the terminal dot.  To add to the confusion, the "fs
-lsmount" afs utility does not show the terminal dot when displaying the
-string.
+rxrpc_call::user_mutex is of type struct mutex, but it's required to start
+off locked on an incoming call as it is being set up in softirq context to
+prevent sendmsg and recvmsg interfering with it until it is ready.  It is
+then unlocked in rxrpc_input_packet() to make the call live.
 
-The kernel mount source string parser, however, assumes that the terminal
-dot marks the suffix and that the suffix is always "" and is thus ignored.
-In most cases, there is no suffix and this is not a problem - but if there
-is a suffix, it is lost and this affects the ability to mount the correct
-volume.
+Unfortunately, commit a0855d24fc22d49cdc25664fb224caee16998683
+("locking/mutex: Complain upon mutex API misuse in IRQ contexts") causes
+big warnings to be splashed in dmesg for each a new call that comes in from
+the server.
 
-The command line mount command, on the other hand, is expected not to
-include a terminal dot - so the problem doesn't arise there.
+It *seems* like it should be okay, since the accept path trylocks the mutex
+when no one else can see it and drops the mutex before it leaves softirq
+context.
 
-Fix this by making sure that the dot exists and then stripping it when
-passing the string to the mount configuration.
+Fix this by switching to using an rw_semaphore instead as that is permitted
+to be used in softirq context.
 
-Fixes: bec5eb614130 ("AFS: Implement an autocell mount capability [ver #2]")
-Reported-by: Jonathan Billings <jsbillings@jsbillings.org>
+Fixes: 540b1c48c37a ("rxrpc: Fix deadlock between call creation and sendmsg/recvmsg")
 Signed-off-by: David Howells <dhowells@redhat.com>
+cc: Peter Zijlstra <peterz@infradead.org>
+cc: Ingo Molnar <mingo@redhat.com>
+cc: Will Deacon <will@kernel.org>
 ---
 
- fs/afs/mntpt.c |    6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ net/rxrpc/af_rxrpc.c    |   10 +++++-----
+ net/rxrpc/ar-internal.h |    2 +-
+ net/rxrpc/call_accept.c |    4 ++--
+ net/rxrpc/call_object.c |    6 +++---
+ net/rxrpc/input.c       |    2 +-
+ net/rxrpc/recvmsg.c     |   14 +++++++-------
+ net/rxrpc/sendmsg.c     |   16 ++++++++--------
+ 7 files changed, 27 insertions(+), 27 deletions(-)
 
-diff --git a/fs/afs/mntpt.c b/fs/afs/mntpt.c
-index f532d6d3bd28..79bc5f1338ed 100644
---- a/fs/afs/mntpt.c
-+++ b/fs/afs/mntpt.c
-@@ -126,7 +126,7 @@ static int afs_mntpt_set_params(struct fs_context *fc, struct dentry *mntpt)
- 		if (src_as->cell)
- 			ctx->cell = afs_get_cell(src_as->cell);
+diff --git a/net/rxrpc/af_rxrpc.c b/net/rxrpc/af_rxrpc.c
+index d72ddb67bb74..17e55e12376c 100644
+--- a/net/rxrpc/af_rxrpc.c
++++ b/net/rxrpc/af_rxrpc.c
+@@ -322,7 +322,7 @@ struct rxrpc_call *rxrpc_kernel_begin_call(struct socket *sock,
+ 	/* The socket has been unlocked. */
+ 	if (!IS_ERR(call)) {
+ 		call->notify_rx = notify_rx;
+-		mutex_unlock(&call->user_mutex);
++		up_write(&call->user_mutex);
+ 	}
  
--		if (size > PAGE_SIZE - 1)
-+		if (size < 2 || size > PAGE_SIZE - 1)
- 			return -EINVAL;
+ 	rxrpc_put_peer(cp.peer);
+@@ -351,7 +351,7 @@ void rxrpc_kernel_end_call(struct socket *sock, struct rxrpc_call *call)
+ {
+ 	_enter("%d{%d}", call->debug_id, atomic_read(&call->usage));
  
- 		page = read_mapping_page(d_inode(mntpt)->i_mapping, 0, NULL);
-@@ -140,7 +140,9 @@ static int afs_mntpt_set_params(struct fs_context *fc, struct dentry *mntpt)
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 	rxrpc_release_call(rxrpc_sk(sock->sk), call);
+ 
+ 	/* Make sure we're not going to call back into a kernel service */
+@@ -361,7 +361,7 @@ void rxrpc_kernel_end_call(struct socket *sock, struct rxrpc_call *call)
+ 		spin_unlock_bh(&call->notify_lock);
+ 	}
+ 
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	rxrpc_put_call(call, rxrpc_call_put_kernel);
+ }
+ EXPORT_SYMBOL(rxrpc_kernel_end_call);
+@@ -456,14 +456,14 @@ void rxrpc_kernel_set_max_life(struct socket *sock, struct rxrpc_call *call,
+ {
+ 	unsigned long now;
+ 
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	now = jiffies;
+ 	hard_timeout += now;
+ 	WRITE_ONCE(call->expect_term_by, hard_timeout);
+ 	rxrpc_reduce_call_timer(call, hard_timeout, now, rxrpc_timer_set_for_hard);
+ 
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ }
+ EXPORT_SYMBOL(rxrpc_kernel_set_max_life);
+ 
+diff --git a/net/rxrpc/ar-internal.h b/net/rxrpc/ar-internal.h
+index 7c7d10f2e0c1..1701f2406463 100644
+--- a/net/rxrpc/ar-internal.h
++++ b/net/rxrpc/ar-internal.h
+@@ -557,7 +557,7 @@ struct rxrpc_call {
+ 	struct rxrpc_sock __rcu	*socket;	/* socket responsible */
+ 	struct rxrpc_net	*rxnet;		/* Network namespace to which call belongs */
+ 	const struct rxrpc_security *security;	/* applied security module */
+-	struct mutex		user_mutex;	/* User access mutex */
++	struct rw_semaphore	user_mutex;	/* User access mutex */
+ 	unsigned long		ack_at;		/* When deferred ACK needs to happen */
+ 	unsigned long		ack_lost_at;	/* When ACK is figured as lost */
+ 	unsigned long		resend_at;	/* When next resend needs to happen */
+diff --git a/net/rxrpc/call_accept.c b/net/rxrpc/call_accept.c
+index 135bf5cd8dd5..fb9a751e3c35 100644
+--- a/net/rxrpc/call_accept.c
++++ b/net/rxrpc/call_accept.c
+@@ -378,7 +378,7 @@ struct rxrpc_call *rxrpc_new_incoming_call(struct rxrpc_local *local,
+ 	 * event and userspace is prevented from doing so until the state is
+ 	 * appropriate.
+ 	 */
+-	if (!mutex_trylock(&call->user_mutex))
++	if (!down_write_trylock(&call->user_mutex))
+ 		BUG();
+ 
+ 	/* Make the call live. */
+@@ -493,7 +493,7 @@ struct rxrpc_call *rxrpc_accept_call(struct rxrpc_sock *rx,
+ 	 * We are, however, still holding the socket lock, so other accepts
+ 	 * must wait for us and no one can add the user ID behind our backs.
+ 	 */
+-	if (mutex_lock_interruptible(&call->user_mutex) < 0) {
++	if (down_write_killable(&call->user_mutex) < 0) {
+ 		release_sock(&rx->sk);
+ 		kleave(" = -ERESTARTSYS");
+ 		return ERR_PTR(-ERESTARTSYS);
+diff --git a/net/rxrpc/call_object.c b/net/rxrpc/call_object.c
+index a31c18c09894..7a5d48b23fce 100644
+--- a/net/rxrpc/call_object.c
++++ b/net/rxrpc/call_object.c
+@@ -115,7 +115,7 @@ struct rxrpc_call *rxrpc_alloc_call(struct rxrpc_sock *rx, gfp_t gfp,
+ 	if (!call->rxtx_annotations)
+ 		goto nomem_2;
+ 
+-	mutex_init(&call->user_mutex);
++	init_rwsem(&call->user_mutex);
+ 
+ 	/* Prevent lockdep reporting a deadlock false positive between the afs
+ 	 * filesystem and sys_sendmsg() via the mmap sem.
+@@ -247,7 +247,7 @@ struct rxrpc_call *rxrpc_new_client_call(struct rxrpc_sock *rx,
+ 	/* We need to protect a partially set up call against the user as we
+ 	 * will be acting outside the socket lock.
+ 	 */
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	/* Publish the call, even though it is incompletely set up as yet */
+ 	write_lock(&rx->call_lock);
+@@ -317,7 +317,7 @@ struct rxrpc_call *rxrpc_new_client_call(struct rxrpc_sock *rx,
+ 	trace_rxrpc_call(call->debug_id, rxrpc_call_error,
+ 			 atomic_read(&call->usage), here, ERR_PTR(ret));
+ 	rxrpc_release_call(rx, call);
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	rxrpc_put_call(call, rxrpc_call_put);
+ 	_leave(" = %d", ret);
+ 	return ERR_PTR(ret);
+diff --git a/net/rxrpc/input.c b/net/rxrpc/input.c
+index 157be1ff8697..6955ad66433b 100644
+--- a/net/rxrpc/input.c
++++ b/net/rxrpc/input.c
+@@ -1397,7 +1397,7 @@ int rxrpc_input_packet(struct sock *udp_sk, struct sk_buff *skb)
+ 		if (!call)
+ 			goto reject_packet;
+ 		rxrpc_send_ping(call, skb);
+-		mutex_unlock(&call->user_mutex);
++		up_write(&call->user_mutex);
+ 	}
+ 
+ 	/* Process a call packet; this either discards or passes on the ref
+diff --git a/net/rxrpc/recvmsg.c b/net/rxrpc/recvmsg.c
+index 8578c39ec839..e6bf52fb0ad8 100644
+--- a/net/rxrpc/recvmsg.c
++++ b/net/rxrpc/recvmsg.c
+@@ -511,12 +511,12 @@ int rxrpc_recvmsg(struct socket *sock, struct msghdr *msg, size_t len,
+ 	/* We're going to drop the socket lock, so we need to lock the call
+ 	 * against interference by sendmsg.
+ 	 */
+-	if (!mutex_trylock(&call->user_mutex)) {
++	if (!down_write_trylock(&call->user_mutex)) {
+ 		ret = -EWOULDBLOCK;
+ 		if (flags & MSG_DONTWAIT)
+ 			goto error_requeue_call;
+ 		ret = -ERESTARTSYS;
+-		if (mutex_lock_interruptible(&call->user_mutex) < 0)
++		if (down_write_killable(&call->user_mutex) < 0)
+ 			goto error_requeue_call;
+ 	}
+ 
+@@ -591,7 +591,7 @@ int rxrpc_recvmsg(struct socket *sock, struct msghdr *msg, size_t len,
+ 	ret = copied;
+ 
+ error_unlock_call:
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	rxrpc_put_call(call, rxrpc_call_put);
+ 	trace_rxrpc_recvmsg(call, rxrpc_recvmsg_return, 0, 0, 0, ret);
+ 	return ret;
+@@ -651,7 +651,7 @@ int rxrpc_kernel_recv_data(struct socket *sock, struct rxrpc_call *call,
+ 
+ 	ASSERTCMP(call->state, !=, RXRPC_CALL_SERVER_ACCEPTING);
+ 
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	switch (READ_ONCE(call->state)) {
+ 	case RXRPC_CALL_CLIENT_RECV_REPLY:
+@@ -704,7 +704,7 @@ int rxrpc_kernel_recv_data(struct socket *sock, struct rxrpc_call *call,
+ 
+ 	if (_service)
+ 		*_service = call->service_id;
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	_leave(" = %d [%zu,%d]", ret, iov_iter_count(iter), *_abort);
+ 	return ret;
+ 
+@@ -744,7 +744,7 @@ bool rxrpc_kernel_get_reply_time(struct socket *sock, struct rxrpc_call *call,
+ 	rxrpc_seq_t hard_ack, top, seq;
+ 	bool success = false;
+ 
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	if (READ_ONCE(call->state) != RXRPC_CALL_CLIENT_RECV_REPLY)
+ 		goto out;
+@@ -766,7 +766,7 @@ bool rxrpc_kernel_get_reply_time(struct socket *sock, struct rxrpc_call *call,
+ 	success = true;
+ 
+ out:
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	return success;
+ }
+ EXPORT_SYMBOL(rxrpc_kernel_get_reply_time);
+diff --git a/net/rxrpc/sendmsg.c b/net/rxrpc/sendmsg.c
+index 813fd6888142..d3a4749a2f8a 100644
+--- a/net/rxrpc/sendmsg.c
++++ b/net/rxrpc/sendmsg.c
+@@ -38,9 +38,9 @@ static int rxrpc_wait_for_tx_window_intr(struct rxrpc_sock *rx,
+ 			return sock_intr_errno(*timeo);
+ 
+ 		trace_rxrpc_transmit(call, rxrpc_transmit_wait);
+-		mutex_unlock(&call->user_mutex);
++		up_write(&call->user_mutex);
+ 		*timeo = schedule_timeout(*timeo);
+-		if (mutex_lock_interruptible(&call->user_mutex) < 0)
++		if (down_write_killable(&call->user_mutex) < 0)
+ 			return sock_intr_errno(*timeo);
+ 	}
+ }
+@@ -668,7 +668,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
+ 			break;
  		}
  
- 		buf = kmap(page);
--		ret = vfs_parse_fs_string(fc, "source", buf, size);
-+		ret = -EINVAL;
-+		if (buf[size - 1] == '.')
-+			ret = vfs_parse_fs_string(fc, "source", buf, size - 1);
- 		kunmap(page);
- 		put_page(page);
- 		if (ret < 0)
+-		ret = mutex_lock_interruptible(&call->user_mutex);
++		ret = down_write_killable_nested(&call->user_mutex, 1);
+ 		release_sock(&rx->sk);
+ 		if (ret < 0) {
+ 			ret = -ERESTARTSYS;
+@@ -737,7 +737,7 @@ int rxrpc_do_sendmsg(struct rxrpc_sock *rx, struct msghdr *msg, size_t len)
+ 	}
+ 
+ out_put_unlock:
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ error_put:
+ 	rxrpc_put_call(call, rxrpc_call_put);
+ 	_leave(" = %d", ret);
+@@ -772,7 +772,7 @@ int rxrpc_kernel_send_data(struct socket *sock, struct rxrpc_call *call,
+ 	ASSERTCMP(msg->msg_name, ==, NULL);
+ 	ASSERTCMP(msg->msg_control, ==, NULL);
+ 
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	_debug("CALL %d USR %lx ST %d on CONN %p",
+ 	       call->debug_id, call->user_call_ID, call->state, call->conn);
+@@ -796,7 +796,7 @@ int rxrpc_kernel_send_data(struct socket *sock, struct rxrpc_call *call,
+ 		break;
+ 	}
+ 
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	_leave(" = %d", ret);
+ 	return ret;
+ }
+@@ -820,13 +820,13 @@ bool rxrpc_kernel_abort_call(struct socket *sock, struct rxrpc_call *call,
+ 
+ 	_enter("{%d},%d,%d,%s", call->debug_id, abort_code, error, why);
+ 
+-	mutex_lock(&call->user_mutex);
++	down_write(&call->user_mutex);
+ 
+ 	aborted = rxrpc_abort_call(why, call, 0, abort_code, error);
+ 	if (aborted)
+ 		rxrpc_send_abort_packet(call);
+ 
+-	mutex_unlock(&call->user_mutex);
++	up_write(&call->user_mutex);
+ 	return aborted;
+ }
+ EXPORT_SYMBOL(rxrpc_kernel_abort_call);
 
 
 _______________________________________________
