@@ -2,57 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846CB119099
-	for <lists+linux-afs@lfdr.de>; Tue, 10 Dec 2019 20:30:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4731119F6B
+	for <lists+linux-afs@lfdr.de>; Wed, 11 Dec 2019 00:31:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yxRJjF5AK3WF3Qb13V/T/ujmjzYKO8R6cDpig0zgUFs=; b=g4QHJlC4SqGdXI
-	7yqSQYGuZ+AqpyIY4AxQX7Ej//8t5qnXNiGCPGygglbByvPTolpMbcwPrZeaGGrXbXSC1Xf6/2lHk
-	QPlGFlWMC1GeiOV8opUegcUyw/aUJctTBCJIuGRx/KIsb84KmRdRKC6eiTI6JjG1yAHpQJtVAesyO
-	vDvD+Sq6kYgcp2I/gyZrwLP2w3btM3XyS562Gnt6actLxenfX9zPivohwzI2cvet9Lo+SVEHuv8u/
-	9YDVUv0QYN/yFh8PwVzkIm/wmJ4QoNk+l2Y7bMFR47uSiGUVUy+E6nkU8XCIgdR+jc0842uFlNW+C
-	9nMRuNSi5X7DG8o1iHiw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=pClwnJTcuJla2obWcvnA+A3FbDJYAG2hBc4+P1VAd8U=; b=ntlz4RI4oEmXkEyZbdOMPn77qn
+	W/ELDuaNYbd2wFe65oeslEYl1YYh9rkvjNw/m18Jy0JbdllgUbS85VquvDS9nm2eBCqYKOZw/XHR1
+	1kbaf+dxaDNgfjEdNruLiqVGF5eyLw1C0fKJtRzyVTPoHLOxcD4yDativjnaPfVMWia/xNpIa5S+/
+	+4gL7UsyR3t2oqrx9TVoY21McSthCbCQkX5q+uBv0DrQXePDJH/IEUKqg63MYHT6/yVgrjW9I0JUC
+	j07XaPHmUgcFc9Nzvv8jHnxvNEDi2q0K92r6utWBBwFzsTOAXYFQRbdXTW2G6s1cBBdZZChvpUaOu
+	xYPfWGSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielD8-0004qt-44; Tue, 10 Dec 2019 19:30:18 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1ieoyU-0001Ow-96; Tue, 10 Dec 2019 23:31:26 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielD5-0004qe-T8
- for linux-afs@bombadil.infradead.org; Tue, 10 Dec 2019 19:30:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Tw2JPIMYDsfgukvM8WXHM1nu5JQP5vubIup8mX2xa3Y=; b=OHQtieOKJ3KsSxH0XLa2EtTsh
- XAnLaFDGOgNiQCq63QIcZzsCqoyHH0w0ataQ3lJhpbatDvRxXkLrFwL/6ycEWDG1V5dUNk1p+rbBx
- RsHnzwKVc/XXESf1jD+CW2exZ3u5t3U5A/mxjfmN+ZM/GMa8zYBIN1oLTXlW+pHEY2ykRHxACV1G+
- bfpGOMKesC5bHP/dr8uU4QVWUPHfvlSja7190Ge7YmC/iJJNGu3mM7KMSLwIe4Ezpz8mU8kvPgaFf
- X/YQHWctWfaPlrTclyGn4vRJTXPbKpNacgsXe7mGLBIn5pyzi368hMnchEhtTcf+Qq4DZZFKsuE3e
- Ud3Unr15g==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=worktop.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielD3-0002k5-Kt; Tue, 10 Dec 2019 19:30:14 +0000
-Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
- id CC80F980D21; Tue, 10 Dec 2019 20:30:11 +0100 (CET)
-Date: Tue, 10 Dec 2019 20:30:11 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH] rxrpc: Mutexes are unusable from softirq context, so use
- rwsem instead
-Message-ID: <20191210193011.GA11802@worktop.programming.kicks-ass.net>
-References: <157599917879.6327.69195741890962065.stgit@warthog.procyon.org.uk>
- <20191210191009.GA11457@worktop.programming.kicks-ass.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191210191009.GA11457@worktop.programming.kicks-ass.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1ienkQ-0005lq-Ld
+ for linux-afs@lists.infradead.org; Tue, 10 Dec 2019 22:12:52 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 903DCAD2B;
+ Tue, 10 Dec 2019 22:12:45 +0000 (UTC)
+From: Davidlohr Bueso <dave@stgolabs.net>
+To: peterz@infradead.org
+Subject: [PATCH] Revert "locking/mutex: Complain upon mutex API misuse in IRQ
+ contexts"
+Date: Tue, 10 Dec 2019 14:05:23 -0800
+Message-Id: <20191210220523.28540-1-dave@stgolabs.net>
+X-Mailer: git-send-email 2.16.4
+In-Reply-To: <20191210193011.GA11802@worktop.programming.kicks-ass.net>
+References: <20191210193011.GA11802@worktop.programming.kicks-ass.net>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191210_141250_851802_F8D28FA5 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-1.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Mailman-Approved-At: Tue, 10 Dec 2019 15:31:25 -0800
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,48 +62,62 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Davidlohr Bueso <dave@stgolabs.net>, linux-kernel@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-fsdevel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+Cc: Davidlohr Bueso <dave@stgolabs.net>, Davidlohr Bueso <dbueso@suse.de>,
+ linux-kernel@vger.kernel.org, dhowells@redhat.com, mingo@redhat.com,
+ linux-fsdevel@vger.kernel.org, tglx@linutronix.de, will@kernel.org,
  linux-afs@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 08:10:09PM +0100, Peter Zijlstra wrote:
-> On Tue, Dec 10, 2019 at 05:32:58PM +0000, David Howells wrote:
-> > rxrpc_call::user_mutex is of type struct mutex, but it's required to start
-> > off locked on an incoming call as it is being set up in softirq context to
-> > prevent sendmsg and recvmsg interfering with it until it is ready.  It is
-> > then unlocked in rxrpc_input_packet() to make the call live.
-> > 
-> > Unfortunately, commit a0855d24fc22d49cdc25664fb224caee16998683
-> > ("locking/mutex: Complain upon mutex API misuse in IRQ contexts") causes
-> > big warnings to be splashed in dmesg for each a new call that comes in from
-> > the server.
-> > 
-> > It *seems* like it should be okay, since the accept path trylocks the mutex
-> > when no one else can see it and drops the mutex before it leaves softirq
-> > context.
-> > 
-> > Fix this by switching to using an rw_semaphore instead as that is permitted
-> > to be used in softirq context.
-> 
-> This really has the very same problem. It just avoids the WARN. We do PI
-> boosting for rwsem write side identical to what we do for mutexes.
-> 
-> I would rather we revert David's patch for now and more carefully
-> consider what to do about this.
+This ended up causing some noise in places such as rxrpc running in softirq.
 
-To clarify (I only just reliazed David is a bit ambiguous here), take
-this patch out for now:
+The warning is misleading in this case as the mutex trylock and unlock
+operations are done within the same context; and therefore we need not
+worry about the PI-boosting issues that comes along with no single-owner
+lock guarantees.
 
-  a0855d24fc22 ("locking/mutex: Complain upon mutex API misuse in IRQ contexts")
+While we don't want to support this in mutexes, there is no way out of
+this yet; so lets get rid of the WARNs for now, as it is only fair to
+code that has historically relied on non-preemptible softirq guarantees.
+In addition, changing the lock type is also unviable: exclusive rwsems
+have the same issue (just not the WARN_ON) and counting semaphores
+would introduce a performance hit as mutexes are a lot more optimized.
 
-The RXRPC code has been there for a while... and like I wrote, both
-mutex and rwsem have the exact same issue, the rwsem code just doesn't
-have a WARN on it.
+This reverts commit 5d4ebaa87329ef226e74e52c80ac1c62e4948987.
+
+Signed-off-by: Davidlohr Bueso <dbueso@suse.de>
+---
+ kernel/locking/mutex.c | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/kernel/locking/mutex.c b/kernel/locking/mutex.c
+index 54cc5f9286e9..5352ce50a97e 100644
+--- a/kernel/locking/mutex.c
++++ b/kernel/locking/mutex.c
+@@ -733,9 +733,6 @@ static noinline void __sched __mutex_unlock_slowpath(struct mutex *lock, unsigne
+  */
+ void __sched mutex_unlock(struct mutex *lock)
+ {
+-#ifdef CONFIG_DEBUG_MUTEXES
+-	WARN_ON(in_interrupt());
+-#endif
+ #ifndef CONFIG_DEBUG_LOCK_ALLOC
+ 	if (__mutex_unlock_fast(lock))
+ 		return;
+@@ -1416,7 +1413,6 @@ int __sched mutex_trylock(struct mutex *lock)
+ 
+ #ifdef CONFIG_DEBUG_MUTEXES
+ 	DEBUG_LOCKS_WARN_ON(lock->magic != lock);
+-	WARN_ON(in_interrupt());
+ #endif
+ 
+ 	locked = __mutex_trylock(lock);
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-afs mailing list
