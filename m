@@ -2,41 +2,60 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B6BC1251A9
-	for <lists+linux-afs@lfdr.de>; Wed, 18 Dec 2019 20:16:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03E59125385
+	for <lists+linux-afs@lfdr.de>; Wed, 18 Dec 2019 21:34:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RH4RNzsjhwN+rz1pGul3pdS4HAZ9ZLajqkPiFhckoe0=; b=CyMYsgHwXf49ur
-	vS0tnsVytZ+U+6yAIHjS7ZrIUJ8fzD5XxNpgFxbhm4iLyMu08lFfWKTWhl4WOH6Kt8Lb4lKUPEMuC
-	oH0p7zS8gE0JZnZyTujOvazA5BSUYse7LPQBYieyzcWSSiFkz99fubtOMxmIX2PvbXOTc8k520b+H
-	9jnjGklk0oe44qy0RbPXVedrzFd1R8IH8ZHAIq3UPlQKoXoijFatCtUOf6AZvdRJJ8XQNQKjcGP+2
-	m7vyW3APRFdlbb4S7kVS4JdzrVxy7S7ynlWA3VPc3XmYLoGmDgyO8c9Vl2KKbxyff6UWQ3WWgG3rY
-	MaPcZcjHeaaiaegqPbyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RjQljgYcTQVHsH1UkbXoXHV7P31ri0bH+/oQi/x2+9g=; b=oFbiqzgU5vG0cV6WuoqHTgDiI
+	JNPEx+ZgpTaaZgysOAjVsWWE/5PLUXbzMJSty5hCwQ8S0JKvtLjTY8bThLAH4Wd1LTIDjDAHgBFlr
+	ADEkNsz5snVSJjOvDTbLXfNtElm4pt8NNel0CDwkVxgXVPlHz6MxPUKbHXJvgOwsS7cBjgU5KjgBq
+	OPVP3xxnsqKjjQ4d5axnRYQVUaQ6DEgrqRPbqsR3GLu/VnQwm0Nz4w12MCsvWCeo3wSllaZlzJ9+D
+	dglSuJQ/lut2iwdCvmVAE8kE78pVtAUzBIUE3UqIh53URJIiv7LwI6LcHlUrp+qVs/rlYyScC6FtE
+	k3dzTVOwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iheo0-0004oB-FR; Wed, 18 Dec 2019 19:16:20 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=worktop.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihenq-0004dy-6L; Wed, 18 Dec 2019 19:16:10 +0000
-Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
- id 174F6980E35; Wed, 18 Dec 2019 20:16:08 +0100 (CET)
-Date: Wed, 18 Dec 2019 20:16:08 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH 2/2] rxrpc: Don't take call->user_mutex in
- rxrpc_new_incoming_call()
-Message-ID: <20191218191608.GG11457@worktop.programming.kicks-ass.net>
-References: <157669169065.21991.15207045893761573624.stgit@warthog.procyon.org.uk>
- <157669169826.21991.16708899415880562587.stgit@warthog.procyon.org.uk>
+	id 1ihg1l-0001Cq-L0; Wed, 18 Dec 2019 20:34:37 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihg1j-0001CC-KK
+ for linux-afs@lists.infradead.org; Wed, 18 Dec 2019 20:34:37 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id B7E24AEE0;
+ Wed, 18 Dec 2019 20:34:33 +0000 (UTC)
+Date: Wed, 18 Dec 2019 12:28:01 -0800
+From: Davidlohr Bueso <dave@stgolabs.net>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH] rxrpc: struct mutex cannot be used for
+ rxrpc_call::user_mutex
+Message-ID: <20191218202801.wokf6hcvbafmjnkd@linux-p48b>
+References: <157659672074.19580.11641288666811539040.stgit@warthog.procyon.org.uk>
+ <20191218135047.GS2844@hirez.programming.kicks-ass.net>
+ <20191218190833.ufpxjrvin5jvp3m5@linux-p48b>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <157669169826.21991.16708899415880562587.stgit@warthog.procyon.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191218190833.ufpxjrvin5jvp3m5@linux-p48b>
+User-Agent: NeoMutt/20180716
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191218_123435_812619_0F547CBE 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-1.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,47 +67,46 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Davidlohr Bueso <dave@stgolabs.net>, linux-kernel@vger.kernel.org,
+Cc: linux-kernel@vger.kernel.org, David Howells <dhowells@redhat.com>,
  Ingo Molnar <mingo@redhat.com>, linux-fsdevel@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-afs@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ linux-afs@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Dec 18, 2019 at 05:54:58PM +0000, David Howells wrote:
-> Standard kernel mutexes cannot be used in any way from interrupt or softirq
-> context, so the user_mutex which manages access to a call cannot be a mutex
-> since on a new call the mutex must start off locked and be unlocked within
-> the softirq handler to prevent userspace interfering with a call we're
-> setting up.
-> 
-> Commit a0855d24fc22d49cdc25664fb224caee16998683 ("locking/mutex: Complain
-> upon mutex API misuse in IRQ contexts") causes big warnings to be splashed
-> in dmesg for each a new call that comes in from the server.  Whilst it
-> *seems* like it should be okay, since the accept path uses trylock, there
-> are issues with PI boosting and marking the wrong task as the owner.
-> 
-> Fix this by not taking the mutex in the softirq path at all.  It's not
-> obvious that there should be any need for it as the state is set before the
-> first notification is generated for the new call.
-> 
-> There's also no particular reason why the link-assessing ping should be
-> triggered inside the mutex.  It's not actually transmitted there anyway,
-> but rather it has to be deferred to a workqueue.
-> 
-> Further, I don't think that there's any particular reason that the socket
-> notification needs to be done from within rx->incoming_lock, so the amount
-> of time that lock is held can be shortened too and the ping prepared before
-> the new call notification is sent.
-> 
+On Wed, 18 Dec 2019, Davidlohr Bueso wrote:
 
-Assuming this works, this is the best solution possible! Excellent work.
+>On Wed, 18 Dec 2019, Peter Zijlstra wrote:
+>
+>>On Tue, Dec 17, 2019 at 03:32:00PM +0000, David Howells wrote:
+>>>Standard kernel mutexes cannot be used in any way from interrupt or softirq
+>>>context, so the user_mutex which manages access to a call cannot be a mutex
+>>>since on a new call the mutex must start off locked and be unlocked within
+>>>the softirq handler to prevent userspace interfering with a call we're
+>>>setting up.
+>>>
+>>>Commit a0855d24fc22d49cdc25664fb224caee16998683 ("locking/mutex: Complain
+>>>upon mutex API misuse in IRQ contexts") causes big warnings to be splashed
+>>>in dmesg for each a new call that comes in from the server.
+>>
+>>FYI that patch has currently been reverted.
+>>
+>>commit c571b72e2b845ca0519670cb7c4b5fe5f56498a5 (tip/locking/urgent, tip/locking-urgent-for-linus)
+>
+>Will we ever want to re-add this warning (along with writer rwsems) at some point?
+>
+>It seems that having it actually prompts things getting fixed, as opposed to
+>just sitting there forever borken (at least in -rt).
 
-(I was about to suggest something based on wait_var_event() inside each
-mutex_lock(), but this is _much_ nicer)
+Hmm so fyi __crash_kexec() is another one, but can be called in hard-irq, and
+it's extremely obvious that the trylock+unlock occurs in the same context.
 
-Thanks!
+It would be nice to automate this...
+
+Thanks,
+Davidlohr
 
 _______________________________________________
 linux-afs mailing list
