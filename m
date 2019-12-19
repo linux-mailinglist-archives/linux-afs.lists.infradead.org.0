@@ -2,65 +2,62 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 651D9126338
-	for <lists+linux-afs@lfdr.de>; Thu, 19 Dec 2019 14:16:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 366A1126871
+	for <lists+linux-afs@lfdr.de>; Thu, 19 Dec 2019 18:51:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KtLurxCDKBAFhVnaUt/BDOLXyME2BSFPuwN2h5UwISo=; b=QRAA6rQ+sq+EAu
-	8vs/47zWXcnpKdmuSimTtQk+bZ7k59CjPYFrUJVc0fEkqWkKXfdYaB+jDzKFLl+Sbaf6R3I+5KthE
-	hTfDRdPlD5daBftRU+dfoVaTPfh9CTeRobeAu5EDySNKQqyPUvKvFPDffkNvAtliFRAMwhC5IDYT2
-	3EfH84/O9ZwwgKwgcdnRD4GMnui3kv7hfVycS8C8LfnI8/jkZfhAM31q5J9lzN38PD3505DVQeOTx
-	QWJ1ebhBSKnAbVRBsr5r625J+SIKDc4JThDYbbHTbhu94dS9jrHRDg7UHaRXSkyn++hCR/UrkrMV/
-	Mnvy9GL8nvd0r/d2xHZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GVnmQyXN+Z9+LDU8AJV7w1ED5aQRU4eUsS4OYDq0ySM=; b=fnld809+Rr9J2qKJ6EHvVETl3
+	6rj06pLHkv+mKFYZWj2X8XSMNq8R6DdPxATJqjsuKoDkpPPaTibzBqJhdnPG96zOk+DG/wdg1AfRz
+	rIJdki3TYyE8qPK7mm3T3JlhMWqi6JbBSU6EPjxTxBNTkpU93vStp87XhgwjDFLeiomALa8FIP5eb
+	9OmQcyZelzDoeyRYfwLAe3MxR9UkAsEiAr7xNKft5utuaY97Xb/7ctvKj5BmJKuECAvPFbaLpYcc1
+	clljv3ccQM0I+zkJMAYVl7TSKBlWUkkku03hIWCnlq3+Jk21haiuxLtjyGuV+b9OFt/hjkDVxLE7r
+	2hyrrmquQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihvej-0002E5-19; Thu, 19 Dec 2019 13:15:53 +0000
-Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihvee-0002CL-Ho
- for linux-afs@lists.infradead.org; Thu, 19 Dec 2019 13:15:51 +0000
-Received: from linux.localdomain (unknown [123.138.236.242])
- by mail.loongson.cn (Coremail) with SMTP id AQAAf9DxjxTod_tdXZIMAA--.55S2;
- Thu, 19 Dec 2019 21:15:20 +0800 (CST)
-From: Tiezhu Yang <yangtiezhu@loongson.cn>
-To: David Howells <dhowells@redhat.com>
-Subject: [PATCH] afs: Fix compile warning in afs_dynroot_lookup()
-Date: Thu, 19 Dec 2019 21:14:51 +0800
-Message-Id: <1576761291-30121-1-git-send-email-yangtiezhu@loongson.cn>
-X-Mailer: git-send-email 2.1.0
+	id 1ihzwv-0006pY-U9; Thu, 19 Dec 2019 17:50:57 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihzwt-0006oy-2H
+ for linux-afs@lists.infradead.org; Thu, 19 Dec 2019 17:50:56 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id EFE88ACF2;
+ Thu, 19 Dec 2019 17:50:52 +0000 (UTC)
+Date: Thu, 19 Dec 2019 09:44:17 -0800
+From: Davidlohr Bueso <dave@stgolabs.net>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH] rxrpc: struct mutex cannot be used for
+ rxrpc_call::user_mutex
+Message-ID: <20191219174417.jax2fy3fvrvrrpsq@linux-p48b>
+References: <157659672074.19580.11641288666811539040.stgit@warthog.procyon.org.uk>
+ <20191218135047.GS2844@hirez.programming.kicks-ass.net>
+ <20191218190833.ufpxjrvin5jvp3m5@linux-p48b>
+ <20191218202801.wokf6hcvbafmjnkd@linux-p48b>
+ <20191219090535.GV2844@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-X-CM-TRANSID: AQAAf9DxjxTod_tdXZIMAA--.55S2
-X-Coremail-Antispam: 1UD129KBjvdXoW7Jw4xuFW7ZrW3Jw4fXr1xuFg_yoWfJwcEyF
- 47K3s5CrWUJr92yF4FgFWUtFs5Wws8GF4DurZxWr4DKayUAa15t3WDArZxJF47Gwnayr98
- Cw18KrsxJry7KjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
- 9fnUUIcSsGvfJTRUUUb7AYjsxI4VWDJwAYFVCjjxCrM7AC8VAFwI0_Jr0_Gr1l1xkIjI8I
- 6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
- 8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW5JVW7JwA2z4x0Y4vE2Ix0
- cI8IcVCY1x0267AKxVWxJVW8Jr1l84ACjcxK6I8E87Iv67AKxVWxJr0_GcWl84ACjcxK6I
- 8E87Iv6xkF7I0E14v26rxl6s0DM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI
- 64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r106r15McIj6I8E87Iv67AKxVW8JVWxJw
- Am72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lc2xSY4AK67AK6ry8MxAIw28I
- cxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2
- IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUXVWUAwCIc40Y0x0EwIxGrwCI
- 42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42
- IY6xAIw20EY4v20xvaj40_Zr0_Wr1UMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2
- jsIEc7CjxVAFwI0_Jr0_GrUvcSsGvfC2KfnxnUUI43ZEXa7IU0rgA7UUUUU==
-X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
+Content-Disposition: inline
+In-Reply-To: <20191219090535.GV2844@hirez.programming.kicks-ass.net>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_051549_052753_EE0DA662 
-X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-CacheID: sfid-20191219_095055_249278_71EF0028 
+X-CRM114-Status: UNSURE (   6.72  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,27 +69,25 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-kernel@vger.kernel.org, David Howells <dhowells@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-fsdevel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ linux-afs@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Rml4IHRoZSBmb2xsb3dpbmcgY29tcGlsZSB3YXJuaW5nOgoKICBDQyAgICAgIGZzL2Fmcy9keW5y
-b290Lm8KZnMvYWZzL2R5bnJvb3QuYzogSW4gZnVuY3Rpb24g4oCYYWZzX2R5bnJvb3RfbG9va3Vw
-4oCZOgpmcy9hZnMvZHlucm9vdC5jOjExNzo2OiB3YXJuaW5nOiDigJhsZW7igJkgbWF5IGJlIHVz
-ZWQgdW5pbml0aWFsaXplZCBpbiB0aGlzIGZ1bmN0aW9uIFstV21heWJlLXVuaW5pdGlhbGl6ZWRd
-CiAgcmV0ID0gbG9va3VwX29uZV9sZW4obmFtZSwgZGVudHJ5LT5kX3BhcmVudCwgbGVuKTsKICAg
-ICAgXgpmcy9hZnMvZHlucm9vdC5jOjkxOjY6IG5vdGU6IOKAmGxlbuKAmSB3YXMgZGVjbGFyZWQg
-aGVyZQogIGludCBsZW47CiAgICAgIF4KClNpZ25lZC1vZmYtYnk6IFRpZXpodSBZYW5nIDx5YW5n
-dGllemh1QGxvb25nc29uLmNuPgotLS0KIGZzL2Fmcy9keW5yb290LmMgfCAyICstCiAxIGZpbGUg
-Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9mcy9h
-ZnMvZHlucm9vdC5jIGIvZnMvYWZzL2R5bnJvb3QuYwppbmRleCA3NTAzODk5Li4zMDNmNzEyIDEw
-MDY0NAotLS0gYS9mcy9hZnMvZHlucm9vdC5jCisrKyBiL2ZzL2Fmcy9keW5yb290LmMKQEAgLTg4
-LDcgKzg4LDcgQEAgc3RhdGljIHN0cnVjdCBkZW50cnkgKmFmc19sb29rdXBfYXRjZWxsKHN0cnVj
-dCBkZW50cnkgKmRlbnRyeSkKIAlzdHJ1Y3QgZGVudHJ5ICpyZXQ7CiAJdW5zaWduZWQgaW50IHNl
-cSA9IDA7CiAJY2hhciAqbmFtZTsKLQlpbnQgbGVuOworCWludCBsZW4gPSAwOwogCiAJaWYgKCFu
-ZXQtPndzX2NlbGwpCiAJCXJldHVybiBFUlJfUFRSKC1FTk9FTlQpOwotLSAKMi4xLjAKCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hZnMgbWFp
-bGluZyBsaXN0Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYWZzCg==
+On Thu, 19 Dec 2019, Peter Zijlstra wrote:
+
+>Automate what exactly?
+
+What I meant was automating finding cases that are 'false positives' such
+as rxrpc and kexec _before_ re-adding the warn.
+
+Thanks,
+Davidlohr
+
+_______________________________________________
+linux-afs mailing list
+http://lists.infradead.org/mailman/listinfo/linux-afs
