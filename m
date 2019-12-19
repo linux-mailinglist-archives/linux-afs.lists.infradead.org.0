@@ -2,49 +2,65 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27906125D3C
-	for <lists+linux-afs@lfdr.de>; Thu, 19 Dec 2019 10:05:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 651D9126338
+	for <lists+linux-afs@lfdr.de>; Thu, 19 Dec 2019 14:16:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R3KKlOGwcSXomhyMQ/LJC/z4bwDjdDJgNGmFP3i/ZeQ=; b=MB9Qosx05Yeh0v
-	0FUwt8uzhbaY0lY3vWhntCHEgPYaPqPPgJ/iF6Mp6CSNiv2lL7S5CXxAt5VSRX77tix6bqYGpH+/f
-	rFMGxwl+BGtXzi2AmPNd1E1XnErmJyr9tFP7SCPO1boi8j7NE3XESRJDVFIywpMY0H0hGWTsMvhCe
-	Hp9DOqMn7dVP3S+XgfuGGn1iBLtsAt8eYX+Wv+ef1fYINXSZeI5GEdbIT02YRwnV1UjAr5DyG/p46
-	d3DTO2bZqocjPEENd0fYvI5N2FdPcu+Q6UtBJMhHtcxd2pA+YrouOTrjhzUNUbpoSM4pznI4vzVEq
-	afyaLWMRXltFqlw0MxRA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KtLurxCDKBAFhVnaUt/BDOLXyME2BSFPuwN2h5UwISo=; b=QRAA6rQ+sq+EAu
+	8vs/47zWXcnpKdmuSimTtQk+bZ7k59CjPYFrUJVc0fEkqWkKXfdYaB+jDzKFLl+Sbaf6R3I+5KthE
+	hTfDRdPlD5daBftRU+dfoVaTPfh9CTeRobeAu5EDySNKQqyPUvKvFPDffkNvAtliFRAMwhC5IDYT2
+	3EfH84/O9ZwwgKwgcdnRD4GMnui3kv7hfVycS8C8LfnI8/jkZfhAM31q5J9lzN38PD3505DVQeOTx
+	QWJ1ebhBSKnAbVRBsr5r625J+SIKDc4JThDYbbHTbhu94dS9jrHRDg7UHaRXSkyn++hCR/UrkrMV/
+	Mnvy9GL8nvd0r/d2xHZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihrka-0001C5-BO; Thu, 19 Dec 2019 09:05:40 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihrkX-0001Bm-UA; Thu, 19 Dec 2019 09:05:38 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id CDE8A304C1B;
- Thu, 19 Dec 2019 10:04:11 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 48D762B0D9745; Thu, 19 Dec 2019 10:05:35 +0100 (CET)
-Date: Thu, 19 Dec 2019 10:05:35 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Davidlohr Bueso <dave@stgolabs.net>
-Subject: Re: [PATCH] rxrpc: struct mutex cannot be used for
- rxrpc_call::user_mutex
-Message-ID: <20191219090535.GV2844@hirez.programming.kicks-ass.net>
-References: <157659672074.19580.11641288666811539040.stgit@warthog.procyon.org.uk>
- <20191218135047.GS2844@hirez.programming.kicks-ass.net>
- <20191218190833.ufpxjrvin5jvp3m5@linux-p48b>
- <20191218202801.wokf6hcvbafmjnkd@linux-p48b>
+	id 1ihvej-0002E5-19; Thu, 19 Dec 2019 13:15:53 +0000
+Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihvee-0002CL-Ho
+ for linux-afs@lists.infradead.org; Thu, 19 Dec 2019 13:15:51 +0000
+Received: from linux.localdomain (unknown [123.138.236.242])
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9DxjxTod_tdXZIMAA--.55S2;
+ Thu, 19 Dec 2019 21:15:20 +0800 (CST)
+From: Tiezhu Yang <yangtiezhu@loongson.cn>
+To: David Howells <dhowells@redhat.com>
+Subject: [PATCH] afs: Fix compile warning in afs_dynroot_lookup()
+Date: Thu, 19 Dec 2019 21:14:51 +0800
+Message-Id: <1576761291-30121-1-git-send-email-yangtiezhu@loongson.cn>
+X-Mailer: git-send-email 2.1.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191218202801.wokf6hcvbafmjnkd@linux-p48b>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CM-TRANSID: AQAAf9DxjxTod_tdXZIMAA--.55S2
+X-Coremail-Antispam: 1UD129KBjvdXoW7Jw4xuFW7ZrW3Jw4fXr1xuFg_yoWfJwcEyF
+ 47K3s5CrWUJr92yF4FgFWUtFs5Wws8GF4DurZxWr4DKayUAa15t3WDArZxJF47Gwnayr98
+ Cw18KrsxJry7KjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUb7AYjsxI4VWDJwAYFVCjjxCrM7AC8VAFwI0_Jr0_Gr1l1xkIjI8I
+ 6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+ 8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVW5JVW7JwA2z4x0Y4vE2Ix0
+ cI8IcVCY1x0267AKxVWxJVW8Jr1l84ACjcxK6I8E87Iv67AKxVWxJr0_GcWl84ACjcxK6I
+ 8E87Iv6xkF7I0E14v26rxl6s0DM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI
+ 64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r106r15McIj6I8E87Iv67AKxVW8JVWxJw
+ Am72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lc2xSY4AK67AK6ry8MxAIw28I
+ cxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2
+ IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUXVWUAwCIc40Y0x0EwIxGrwCI
+ 42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42
+ IY6xAIw20EY4v20xvaj40_Zr0_Wr1UMIIF0xvEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2
+ jsIEc7CjxVAFwI0_Jr0_GrUvcSsGvfC2KfnxnUUI43ZEXa7IU0rgA7UUUUU==
+X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191219_051549_052753_EE0DA662 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,136 +72,27 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, David Howells <dhowells@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, linux-fsdevel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- linux-afs@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Dec 18, 2019 at 12:28:01PM -0800, Davidlohr Bueso wrote:
-> Hmm so fyi __crash_kexec() is another one, but can be called in hard-irq, and
-> it's extremely obvious that the trylock+unlock occurs in the same context.
-
-Hurmph, that unlock 'never' happens if I read it right :-) Still,
-something like the below ought to cure it I suppose.
-
-> It would be nice to automate this...
-
-Automate what exactly? We'll stick your WARN back in on the next round.
-
-
----
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index 15d70a90b50d..2faf2ec33032 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -47,6 +47,26 @@
- 
- DEFINE_MUTEX(kexec_mutex);
- 
-+static void kexec_lock(void)
-+{
-+	/*
-+	 * LOCK kexec_mutex		cmpxchg(&panic_cpu, INVALID, cpu)
-+	 *   MB				  MB
-+	 * panic_cpu == INVALID		kexec_mutex == LOCKED
-+	 *
-+	 * Ensures either we observe the cmpxchg, or crash_kernel() observes
-+	 * our lock acquisition.
-+	 */
-+	mutex_lock(&kexec_mutex);
-+	smp_mb();
-+	atomic_cond_load_acquire(&panic_cpu, VAL == PANIC_CPU_INVALID);
-+}
-+
-+static void kexec_unlock(void)
-+{
-+	mutex_unlock(&kexec_mutex);
-+}
-+
- /* Per cpu memory for storing cpu states in case of system crash. */
- note_buf_t __percpu *crash_notes;
- 
-@@ -937,24 +957,13 @@ int kexec_load_disabled;
-  */
- void __noclone __crash_kexec(struct pt_regs *regs)
- {
--	/* Take the kexec_mutex here to prevent sys_kexec_load
--	 * running on one cpu from replacing the crash kernel
--	 * we are using after a panic on a different cpu.
--	 *
--	 * If the crash kernel was not located in a fixed area
--	 * of memory the xchg(&kexec_crash_image) would be
--	 * sufficient.  But since I reuse the memory...
--	 */
--	if (mutex_trylock(&kexec_mutex)) {
--		if (kexec_crash_image) {
--			struct pt_regs fixed_regs;
--
--			crash_setup_regs(&fixed_regs, regs);
--			crash_save_vmcoreinfo();
--			machine_crash_shutdown(&fixed_regs);
--			machine_kexec(kexec_crash_image);
--		}
--		mutex_unlock(&kexec_mutex);
-+	if (kexec_crash_image) {
-+		struct pt_regs fixed_regs;
-+
-+		crash_setup_regs(&fixed_regs, regs);
-+		crash_save_vmcoreinfo();
-+		machine_crash_shutdown(&fixed_regs);
-+		machine_kexec(kexec_crash_image);
- 	}
- }
- STACK_FRAME_NON_STANDARD(__crash_kexec);
-@@ -973,7 +982,11 @@ void crash_kexec(struct pt_regs *regs)
- 	if (old_cpu == PANIC_CPU_INVALID) {
- 		/* This is the 1st CPU which comes here, so go ahead. */
- 		printk_safe_flush_on_panic();
--		__crash_kexec(regs);
-+		/*
-+		 * Orders against kexec_lock(), see the comment there.
-+		 */
-+		if (!mutex_is_locked(&kexec_mutex))
-+			__crash_kexec(regs);
- 
- 		/*
- 		 * Reset panic_cpu to allow another panic()/crash_kexec()
-@@ -987,10 +1000,10 @@ size_t crash_get_memory_size(void)
- {
- 	size_t size = 0;
- 
--	mutex_lock(&kexec_mutex);
-+	kexec_lock();
- 	if (crashk_res.end != crashk_res.start)
- 		size = resource_size(&crashk_res);
--	mutex_unlock(&kexec_mutex);
-+	kexec_unlock();
- 	return size;
- }
- 
-@@ -1010,7 +1023,7 @@ int crash_shrink_memory(unsigned long new_size)
- 	unsigned long old_size;
- 	struct resource *ram_res;
- 
--	mutex_lock(&kexec_mutex);
-+	kexec_lock();
- 
- 	if (kexec_crash_image) {
- 		ret = -ENOENT;
-@@ -1048,7 +1061,7 @@ int crash_shrink_memory(unsigned long new_size)
- 	insert_resource(&iomem_resource, ram_res);
- 
- unlock:
--	mutex_unlock(&kexec_mutex);
-+	kexec_unlock();
- 	return ret;
- }
- 
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+Rml4IHRoZSBmb2xsb3dpbmcgY29tcGlsZSB3YXJuaW5nOgoKICBDQyAgICAgIGZzL2Fmcy9keW5y
+b290Lm8KZnMvYWZzL2R5bnJvb3QuYzogSW4gZnVuY3Rpb24g4oCYYWZzX2R5bnJvb3RfbG9va3Vw
+4oCZOgpmcy9hZnMvZHlucm9vdC5jOjExNzo2OiB3YXJuaW5nOiDigJhsZW7igJkgbWF5IGJlIHVz
+ZWQgdW5pbml0aWFsaXplZCBpbiB0aGlzIGZ1bmN0aW9uIFstV21heWJlLXVuaW5pdGlhbGl6ZWRd
+CiAgcmV0ID0gbG9va3VwX29uZV9sZW4obmFtZSwgZGVudHJ5LT5kX3BhcmVudCwgbGVuKTsKICAg
+ICAgXgpmcy9hZnMvZHlucm9vdC5jOjkxOjY6IG5vdGU6IOKAmGxlbuKAmSB3YXMgZGVjbGFyZWQg
+aGVyZQogIGludCBsZW47CiAgICAgIF4KClNpZ25lZC1vZmYtYnk6IFRpZXpodSBZYW5nIDx5YW5n
+dGllemh1QGxvb25nc29uLmNuPgotLS0KIGZzL2Fmcy9keW5yb290LmMgfCAyICstCiAxIGZpbGUg
+Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9mcy9h
+ZnMvZHlucm9vdC5jIGIvZnMvYWZzL2R5bnJvb3QuYwppbmRleCA3NTAzODk5Li4zMDNmNzEyIDEw
+MDY0NAotLS0gYS9mcy9hZnMvZHlucm9vdC5jCisrKyBiL2ZzL2Fmcy9keW5yb290LmMKQEAgLTg4
+LDcgKzg4LDcgQEAgc3RhdGljIHN0cnVjdCBkZW50cnkgKmFmc19sb29rdXBfYXRjZWxsKHN0cnVj
+dCBkZW50cnkgKmRlbnRyeSkKIAlzdHJ1Y3QgZGVudHJ5ICpyZXQ7CiAJdW5zaWduZWQgaW50IHNl
+cSA9IDA7CiAJY2hhciAqbmFtZTsKLQlpbnQgbGVuOworCWludCBsZW4gPSAwOwogCiAJaWYgKCFu
+ZXQtPndzX2NlbGwpCiAJCXJldHVybiBFUlJfUFRSKC1FTk9FTlQpOwotLSAKMi4xLjAKCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hZnMgbWFp
+bGluZyBsaXN0Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYWZzCg==
