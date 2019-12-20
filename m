@@ -2,61 +2,61 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 258CB128552
-	for <lists+linux-afs@lfdr.de>; Sat, 21 Dec 2019 00:05:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8BA9128555
+	for <lists+linux-afs@lfdr.de>; Sat, 21 Dec 2019 00:05:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h3MH4LIKlXOmDEhTPvZmAKHqqTXwVs8uojKiJu2DRTQ=; b=k6+nAwHboINPDy
-	HX9C3FihYZncsSu9WFjFgVSGx0xo5Z7bFCnIuDDNLAUU+heL8kyOsi62TZ32TpRkdL0NMPzFRTIai
-	80jAzzQtvmgcnxSxHeMdhWFrBMKNoUQ10ckfn9rnsdXkme+YkqmWDbtPmJIcCTFkAgfN/ZMTkQdnS
-	wS1CtT+EhcMh38/Gw7bIZqasOQnLovb2e09W2PsN1rpud2axP6XT6lVkRfYLpoqWGvOduVyuK7xpc
-	CWWtHAEA7zBy0/ksJSdZ/1KL5UNHFItehTTZTHmArnoyRdmCXb7YOCfdzZ6x4uq/E1n6sx9GBLghn
-	EGDsyHoKqrvLOCpLALUg==;
+	List-Owner; bh=h3MH4LIKlXOmDEhTPvZmAKHqqTXwVs8uojKiJu2DRTQ=; b=X1h8VF/rBqf5iE
+	26QEps1eawKPjmWTHRzVYEM5Jjd5sYvqpXwTncpx1nVUo+7VdYaJq16zlgOsoIM+kdP1JW/IgMVNd
+	97nZvOfvcOgjJLIDUAFvrq9XHXWETMEByk3Uginryna9zZtG1v4qXav2ri7AwOZyEHRTusjeuciCN
+	nvoJtwggUADbLixv6yj+hdy/mrU97UOH7keJN6jfbCyxeMVcmQk2MqW4vYT6D+X2tfKCHFxx6SXbo
+	T7zyA+sIE3qFfYo+bfVseEMTx3jfjumaO2QSF2DBIyPgnud7KU5Vkp63RB42ha9NauQmzZRrW69vD
+	STZ5hyJ68lpGGiGCn7vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiRKs-0000Ql-0y; Fri, 20 Dec 2019 23:05:30 +0000
+	id 1iiRL6-0000TS-6Q; Fri, 20 Dec 2019 23:05:44 +0000
 Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiRKp-0000Pj-9X
- for linux-afs@lists.infradead.org; Fri, 20 Dec 2019 23:05:29 +0000
+ id 1iiRL2-0000Sm-UZ
+ for linux-afs@lists.infradead.org; Fri, 20 Dec 2019 23:05:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576883124;
+ s=mimecast20190719; t=1576883140;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding;
  bh=qL/Mm3oMnQqw/MILDz90PSbUAcYZcAXsXZfzb5qXcZE=;
- b=QWAfIAh4+c54hXdXlQlmyQMmI6XqT7SG0TDDHvQhCX4eHLAhmvsevtLkUIYwdeiNXJSmdE
- Ce31WJdtq02s5zbmbXpchB+2bfuXDLVd2hxv/nmDqHPfpZsxs42ejBr0D4JXfXzSiTkYuk
- bXoAap5Ar047QZLTNb302vQPb9ck0Jk=
+ b=cW1hj7MXx0cQLIC66YG1cAZvPuVStWPR0vc3Suvm1sv29DIoKPRteqfure8J+ICOelKmv7
+ AufIa1MuVC2d/yp0XZOWm2KS8Hm1/Z4wcZYgIbs9zrCciK58WEjM6nK4TuQHkvDo6q12E6
+ lZ4SaAeiB3vJTilDdJvOb798eIdtlg0=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-256-oFn70SybO2SwwV1GYYDK-Q-1; Fri, 20 Dec 2019 18:05:22 -0500
-X-MC-Unique: oFn70SybO2SwwV1GYYDK-Q-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-394-PKXINDOpPDewNjJM9XoBvg-1; Fri, 20 Dec 2019 18:05:37 -0500
+X-MC-Unique: PKXINDOpPDewNjJM9XoBvg-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5FCFA107ACC4;
- Fri, 20 Dec 2019 23:05:21 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D67EDDB21;
+ Fri, 20 Dec 2019 23:05:36 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-52.rdu2.redhat.com
  [10.10.120.52])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 918A61001902;
- Fri, 20 Dec 2019 23:05:20 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0DBC85C1B0;
+ Fri, 20 Dec 2019 23:05:35 +0000 (UTC)
 Subject: [PATCH net 0/3] rxrpc: Fixes
 From: David Howells <dhowells@redhat.com>
 To: netdev@vger.kernel.org
-Date: Fri, 20 Dec 2019 23:05:19 +0000
-Message-ID: <157688311975.18694.10870615714269857980.stgit@warthog.procyon.org.uk>
+Date: Fri, 20 Dec 2019 23:05:35 +0000
+Message-ID: <157688313527.18782.11664545318996365146.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/unknown-version
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_150527_471289_C9063699 
+X-CRM114-CacheID: sfid-20191220_150541_055060_40F94E52 
 X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
