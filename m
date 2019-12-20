@@ -2,47 +2,47 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57513127CBB
-	for <lists+linux-afs@lfdr.de>; Fri, 20 Dec 2019 15:31:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 833F6127CBD
+	for <lists+linux-afs@lfdr.de>; Fri, 20 Dec 2019 15:31:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q6FDxt/FZtDBb2/6/jS4YxWdl83ow430hE99MUX5amQ=; b=g9+1PGXhwWoB5+
-	mAO7sqa0WgBA9Pcwjdmm5q3fh24b3MLE7NTO+8n2MBc03+yybC39nQ1Jsz2ywHRWmUs68AxOrQhrk
-	KeTc0vPoiT+p4P1wOa26Pne3uFqJSdDrU56deMVglkSxMrh0Cq05Qn2k63YC16GC8qjWPH1vmijAY
-	/4bVoRaO/m6ThoxwG1sMMA9bDEvjP/87E1pSi+SNlMm8CoK2Ecx4aD+YQqRmq9XHnV5uLEchSDGLb
-	eHdlfygLPuQkmdMdjJp0SpNtTzKA+zlvdgNHZ6i+zU5fvhfKiYC2F4fFwmHzH/BhmPHxth6GynPMu
-	kwlGUfNY65/II7B9UEPA==;
+	List-Owner; bh=DdfHdpd1evGs+D3ks6DrJiGcUM4ethsmjv2G+aYfm80=; b=iLwFE71Iq00RBx
+	L7kzLjF/9oqDFJbMSVeM3WbirGWEDxY0c32Q+imnYCoGHoBsSArk1DTwM2xo8AliBN/HQAAQBUmkr
+	A4/3+O5hi1W6EjwhXSBLPBjdnxC4BNMX33t6srhJ33wkU91V3w9jPhE4aamMyD+uJnIgkPindTIq8
+	cU90iGm+L3LxN9Y1/krQ/XjNdsGdZPY9GCoRK08KPepHnNnz9g3NxQBwwkW04Q9fFoLaA7QdKk4Hw
+	ACw9h32xRpLb9PUp6x9zU0r2GuyB4W7iZS5ADn3fyBl8kGBlintmS042vsVTPrUakbAD9z9I9lErt
+	qTvI1jPAaBMEccbr4i3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiJIy-0002Cy-VN; Fri, 20 Dec 2019 14:31:00 +0000
+	id 1iiJIx-0002BV-4d; Fri, 20 Dec 2019 14:30:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiJIL-0001df-LD
+ id 1iiJIM-0001fR-Rr
  for linux-afs@lists.infradead.org; Fri, 20 Dec 2019 14:30:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0308624687;
- Fri, 20 Dec 2019 14:30:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 17BAB2468A;
+ Fri, 20 Dec 2019 14:30:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576852220;
- bh=qv6nHl3U2UK+MBIiMPGf+saM44ZLTVoUgETDroEouvg=;
+ s=default; t=1576852222;
+ bh=pR3v+Fh3eBiXXgY0dmnmsCMTsRR48ZYQyo4tV0b7a3M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=llPaCHswqe3qEvERiZkulS07251d66u9HyzKRBd4RMzR7Zo1eUbFwpWvuamflQf65
- SkXYtj0FTksciTxi+82CgtNyg6b+g2ba/pXxX1s1VScpNsiAxYIwR/WKH7FPhl8+pU
- Vmt9FPw2VTQA0gyZneCXLTzYDgzb6iHRHXPdWwzA=
+ b=n1Hdnpvy9Pi7xGYcT6yanm0DaOszTLf1yoJj8Pyry/P6NhlswKyl7r+6OpcMnAcUY
+ T9Ex2/F+dzcwmGEZMPrTK/llduVr1voabpVMDAPE6ICVQrS9jk5gp0U1ldWZoa8k40
+ tO6yfMOpAElbHfmBDx7YmsOprPnlKsNUN2YcDaGA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 19/52] afs: Fix afs_find_server lookups for ipv4
- peers
-Date: Fri, 20 Dec 2019 09:29:21 -0500
-Message-Id: <20191220142954.9500-19-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 20/52] afs: Fix SELinux setting security label on
+ /afs
+Date: Fri, 20 Dec 2019 09:29:22 -0500
+Message-Id: <20191220142954.9500-20-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191220142954.9500-1-sashal@kernel.org>
 References: <20191220142954.9500-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_063021_762675_123A4582 
-X-CRM114-Status: GOOD (  14.07  )
+X-CRM114-CacheID: sfid-20191220_063022_944942_EFE4E085 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,100 +80,48 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dionne <marc.dionne@auristor.com>, David Howells <dhowells@redhat.com>,
- linux-afs@lists.infradead.org, Sasha Levin <sashal@kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>, selinux@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
+ Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Marc Dionne <marc.dionne@auristor.com>
+From: David Howells <dhowells@redhat.com>
 
-[ Upstream commit 9bd0160d12370a076e44f8d1320cde9c83f2c647 ]
+[ Upstream commit bcbccaf2edcf1b76f73f890e968babef446151a4 ]
 
-afs_find_server tries to find a server that has an address that
-matches the transport address of an rxrpc peer.  The code assumes
-that the transport address is always ipv6, with ipv4 represented
-as ipv4 mapped addresses, but that's not the case.  If the transport
-family is AF_INET, srx->transport.sin6.sin6_addr.s6_addr32[] will
-be beyond the actual ipv4 address and will always be 0, and all
-ipv4 addresses will be seen as matching.
+Make the AFS dynamic root superblock R/W so that SELinux can set the
+security label on it.  Without this, upgrades to, say, the Fedora
+filesystem-afs RPM fail if afs is mounted on it because the SELinux label
+can't be (re-)applied.
 
-As a result, the first ipv4 address seen on any server will be
-considered a match, and the server returned may be the wrong one.
+It might be better to make it possible to bypass the R/O check for LSM
+label application through setxattr.
 
-One of the consequences is that callbacks received over ipv4 will
-only be correctly applied for the server that happens to have the
-first ipv4 address on the fs_addresses4 list.  Callbacks over ipv4
-from all other servers are dropped, causing the client to serve stale
-data.
-
-This is fixed by looking at the transport family, and comparing ipv4
-addresses based on a sockaddr_in structure rather than a sockaddr_in6.
-
-Fixes: d2ddc776a458 ("afs: Overhaul volume and server record caching and fileserver rotation")
-Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
+Fixes: 4d673da14533 ("afs: Support the AFS dynamic root")
 Signed-off-by: David Howells <dhowells@redhat.com>
+Reviewed-by: Marc Dionne <marc.dionne@auristor.com>
+cc: selinux@vger.kernel.org
+cc: linux-security-module@vger.kernel.org
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/server.c | 21 ++++++++-------------
- 1 file changed, 8 insertions(+), 13 deletions(-)
+ fs/afs/super.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/fs/afs/server.c b/fs/afs/server.c
-index 64d440aaabc04..ca8115ba1724b 100644
---- a/fs/afs/server.c
-+++ b/fs/afs/server.c
-@@ -32,18 +32,11 @@ static void afs_dec_servers_outstanding(struct afs_net *net)
- struct afs_server *afs_find_server(struct afs_net *net,
- 				   const struct sockaddr_rxrpc *srx)
- {
--	const struct sockaddr_in6 *a = &srx->transport.sin6, *b;
- 	const struct afs_addr_list *alist;
- 	struct afs_server *server = NULL;
- 	unsigned int i;
--	bool ipv6 = true;
- 	int seq = 0, diff;
- 
--	if (srx->transport.sin6.sin6_addr.s6_addr32[0] == 0 ||
--	    srx->transport.sin6.sin6_addr.s6_addr32[1] == 0 ||
--	    srx->transport.sin6.sin6_addr.s6_addr32[2] == htonl(0xffff))
--		ipv6 = false;
--
- 	rcu_read_lock();
- 
- 	do {
-@@ -52,7 +45,8 @@ struct afs_server *afs_find_server(struct afs_net *net,
- 		server = NULL;
- 		read_seqbegin_or_lock(&net->fs_addr_lock, &seq);
- 
--		if (ipv6) {
-+		if (srx->transport.family == AF_INET6) {
-+			const struct sockaddr_in6 *a = &srx->transport.sin6, *b;
- 			hlist_for_each_entry_rcu(server, &net->fs_addresses6, addr6_link) {
- 				alist = rcu_dereference(server->addresses);
- 				for (i = alist->nr_ipv4; i < alist->nr_addrs; i++) {
-@@ -68,15 +62,16 @@ struct afs_server *afs_find_server(struct afs_net *net,
- 				}
- 			}
- 		} else {
-+			const struct sockaddr_in *a = &srx->transport.sin, *b;
- 			hlist_for_each_entry_rcu(server, &net->fs_addresses4, addr4_link) {
- 				alist = rcu_dereference(server->addresses);
- 				for (i = 0; i < alist->nr_ipv4; i++) {
--					b = &alist->addrs[i].transport.sin6;
--					diff = ((u16 __force)a->sin6_port -
--						(u16 __force)b->sin6_port);
-+					b = &alist->addrs[i].transport.sin;
-+					diff = ((u16 __force)a->sin_port -
-+						(u16 __force)b->sin_port);
- 					if (diff == 0)
--						diff = ((u32 __force)a->sin6_addr.s6_addr32[3] -
--							(u32 __force)b->sin6_addr.s6_addr32[3]);
-+						diff = ((u32 __force)a->sin_addr.s_addr -
-+							(u32 __force)b->sin_addr.s_addr);
- 					if (diff == 0)
- 						goto found;
- 				}
+diff --git a/fs/afs/super.c b/fs/afs/super.c
+index 488641b1a418d..d9a6036b70b9f 100644
+--- a/fs/afs/super.c
++++ b/fs/afs/super.c
+@@ -448,7 +448,6 @@ static int afs_fill_super(struct super_block *sb, struct afs_fs_context *ctx)
+ 	/* allocate the root inode and dentry */
+ 	if (as->dyn_root) {
+ 		inode = afs_iget_pseudo_dir(sb, true);
+-		sb->s_flags	|= SB_RDONLY;
+ 	} else {
+ 		sprintf(sb->s_id, "%llu", as->volume->vid);
+ 		afs_activate_volume(as->volume);
 -- 
 2.20.1
 
