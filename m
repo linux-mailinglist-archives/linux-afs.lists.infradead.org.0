@@ -2,47 +2,47 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD55D13E6A7
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:21:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0D0513E6C7
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:22:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yrLXbRuwudcYFVkIZtyliJdVQq5pkudabTsmQDXAdAo=; b=hL0z6b1ZvEb3Gd
-	kEBe/pKCs+aFEqGtX5isjh2XWKtAKfG7JxseJwgp8DBUMwAl3iZh3LD6EsEYOY/Ew6nE4ySGg1kJ6
-	0hAb75SRVBYAkrTgLWdDWjqIygEr7O2503qBhrz6jW0KcHj3IyrGW9H9BlC93YV74Vh8NNtFMWkx0
-	v8qD5pZQGtKJAqAXactb/qrvN8YD5zmO4fc6ZrOZqZjomqlpASFAJTxsI1AfcrGBzYK9vYqKFAk1B
-	mWdiP7jpZX6krF63fAZUdjNEVTSzz8z7A95Z/ZOOrzgFBU/OKlEqpMzRmEsG5LRW40z1VYjNZnYh/
-	i9n+pVHjkLpKFeu5Y/jA==;
+	List-Owner; bh=8ATvafI2M/LuIp4RA7v3Nu168EY1BCtiB/xuYtiFm3I=; b=UUoFESMpstefMc
+	af9zJewODMajfeyZHcTg8AjrvWiKRfcyeCBQr6xrUjg4qJUSwsVriIE/leR81JRFYXHALYyQMdiiQ
+	yDJGa/HjUQxRjpQTNYywWamuXI4J19MuwF4AiAz/6c+XHfnniINktkS+y7/ogBUnQpyV7l6GAs9wM
+	kM7HEVaOUPsmejDZuEb+ZVv2bCZgEhBAFk3j4FCvjl2gEpuyu4KsRNj/IO8qw2AKs31zGS63EL9Gn
+	13jfJExJho64qYgIiFR0A3K5zn4zp0ZGdXxOpXmGrvEuxMcrQ6HHHEfIygUD9DWsmOPPuUiPrQ2ls
+	WXqZY1Gw7pknrTOjFXcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8pz-0007Vu-AP; Thu, 16 Jan 2020 17:21:43 +0000
+	id 1is8qs-00006y-Mb; Thu, 16 Jan 2020 17:22:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8bj-0008UF-OD
- for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:07:05 +0000
+ id 1is8cE-0000Zr-Lt
+ for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:07:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 16F3D205F4;
- Thu, 16 Jan 2020 17:06:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69DD32081E;
+ Thu, 16 Jan 2020 17:07:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194418;
- bh=COOgvLUEYjIY+BaRuxdYDVUyhbOxDqzVx1UrB8R+Wk4=;
+ s=default; t=1579194450;
+ bh=9e5byxJIih88ju7Q5B5t6AA+zLK+ZzuP/KEvyl4o2mQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=X3XaHFYZu0fal9hzRFnPMJ4kqRGzR+JmFYlMwlK9524i6QjbZUxBw282iwy7IodzQ
- q9ScW4FcInXXxsc1crYLwcV2efLO6TIFza0X2bOIJNjsFzJem4vC9f5ex+zi1C8xbf
- 3xosOhmstNixTjZIshPGi9UctxSIJh7i3UtR1evc=
+ b=NjAHG8TUPKQ6ek3lDq8+EyVOwHb8G3C1NKEMFCaqib7D7MfUgpKrsgpglIxBYmBpS
+ AYnTmMshOI9F2E4FJYUGpMVX+pv1G4ij+p+iMuGraHMzv/XIDdFpNmTvWav3MDp3i8
+ NPM88Drkm274Yc5ag0McSrO/UrRqeM3qcad4tM78=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 339/671] afs: Fix the afs.cell and afs.volume
- xattr handlers
-Date: Thu, 16 Jan 2020 11:59:37 -0500
-Message-Id: <20200116170509.12787-76-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 360/671] afs: Fix key leak in afs_release() and
+ afs_evict_inode()
+Date: Thu, 16 Jan 2020 11:59:58 -0500
+Message-Id: <20200116170509.12787-97-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090659_910091_F29A9028 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20200116_090730_796554_618C9FA4 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,42 +89,65 @@ Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 From: David Howells <dhowells@redhat.com>
 
-[ Upstream commit c73aa4102f5b9f261a907c3b3df94cd2c478504d ]
+[ Upstream commit a1b879eefc2b34cd3f17187ef6fc1cf3960e9518 ]
 
-Fix the ->get handlers for the afs.cell and afs.volume xattrs to pass the
-source data size to memcpy() rather than target buffer size.
+Fix afs_release() to go through the cleanup part of the function if
+FMODE_WRITE is set rather than exiting through vfs_fsync() (which skips the
+cleanup).  The cleanup involves discarding the refs on the key used for
+file ops and the writeback key record.
 
-Overcopying the source data occasionally causes the kernel to oops.
+Also fix afs_evict_inode() to clean up any left over wb keys attached to
+the inode/vnode when it is removed.
 
-Fixes: d3e3b7eac886 ("afs: Add metadata xattrs")
+Fixes: 5a8132761609 ("afs: Do better accretion of small writes on newly created content")
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/xattr.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ fs/afs/file.c  | 7 ++++---
+ fs/afs/inode.c | 1 +
+ 2 files changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/fs/afs/xattr.c b/fs/afs/xattr.c
-index cfcc674e64a5..411f67c79f09 100644
---- a/fs/afs/xattr.c
-+++ b/fs/afs/xattr.c
-@@ -50,7 +50,7 @@ static int afs_xattr_get_cell(const struct xattr_handler *handler,
- 		return namelen;
- 	if (namelen > size)
- 		return -ERANGE;
--	memcpy(buffer, cell->name, size);
-+	memcpy(buffer, cell->name, namelen);
- 	return namelen;
+diff --git a/fs/afs/file.c b/fs/afs/file.c
+index 843d3b970b84..0bd78df6a64e 100644
+--- a/fs/afs/file.c
++++ b/fs/afs/file.c
+@@ -169,11 +169,12 @@ int afs_release(struct inode *inode, struct file *file)
+ {
+ 	struct afs_vnode *vnode = AFS_FS_I(inode);
+ 	struct afs_file *af = file->private_data;
++	int ret = 0;
+ 
+ 	_enter("{%x:%u},", vnode->fid.vid, vnode->fid.vnode);
+ 
+ 	if ((file->f_mode & FMODE_WRITE))
+-		return vfs_fsync(file, 0);
++		ret = vfs_fsync(file, 0);
+ 
+ 	file->private_data = NULL;
+ 	if (af->wb)
+@@ -181,8 +182,8 @@ int afs_release(struct inode *inode, struct file *file)
+ 	key_put(af->key);
+ 	kfree(af);
+ 	afs_prune_wb_keys(vnode);
+-	_leave(" = 0");
+-	return 0;
++	_leave(" = %d", ret);
++	return ret;
  }
  
-@@ -104,7 +104,7 @@ static int afs_xattr_get_volume(const struct xattr_handler *handler,
- 		return namelen;
- 	if (namelen > size)
- 		return -ERANGE;
--	memcpy(buffer, volname, size);
-+	memcpy(buffer, volname, namelen);
- 	return namelen;
- }
+ /*
+diff --git a/fs/afs/inode.c b/fs/afs/inode.c
+index 0726e40db0f8..718fab2f151a 100644
+--- a/fs/afs/inode.c
++++ b/fs/afs/inode.c
+@@ -541,6 +541,7 @@ void afs_evict_inode(struct inode *inode)
+ 	}
+ #endif
  
++	afs_prune_wb_keys(vnode);
+ 	afs_put_permits(rcu_access_pointer(vnode->permit_cache));
+ 	key_put(vnode->lock_key);
+ 	vnode->lock_key = NULL;
 -- 
 2.20.1
 
