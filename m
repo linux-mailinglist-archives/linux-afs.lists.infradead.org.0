@@ -2,70 +2,74 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE53913CCEE
-	for <lists+linux-afs@lfdr.de>; Wed, 15 Jan 2020 20:17:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A18F313E2A4
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 17:57:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tSjUQtm46khEVPASXVnnUmi+pPvs15miheME5+Uli68=; b=eGVGVtV/p0gVK1
-	bQ5v67flD7CicE3yxN+ti91Eh/uOeNqv47lk2Nj4sVNVgpALTQJTVN2O/CVVrdVLJQnVEso5NNug9
-	MWVWB9OI21RQQvOu0gY/sW+RuuH3w4+xbg5yHK9TQQI0bTDUmExXOL8g5xNFTE1fL4MU2byMZwqk+
-	oikQqCKqaLu9ZFtVoEL+HVfm7Bp8X4NTkrOThKEHw7q+vxrsse+znbXUsUzhW57bMudTGrM5o8S3l
-	db31/Y8FexE0nnChxhmozUiT1SV2u2HvVSSq8y9+RLiDTV+hSo89V48qbU17g7d8hyJEoCHN1J4lx
-	LPu//ZPzjO0PpOYv8Spw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P8NytWh4hnV/sUHecKKBKMe4CR1hXfyGXDbShb62l8k=; b=mL33Cukp20xBVP
+	7Ij4K8eTYY+WURC3HIPVpomgpwR+26MXw7SVmkgfwRv4kGCQuvJe7LdlOF/U3EUVcDWNUOb5Cp/0s
+	UQg1m/rZIwMUjdEDuw1UhmKKLhmVNLK3+24BHtCPdzs6CLBA9WWoESp0vVHHhgTY6QoYO9zUe4xlj
+	kNsNW90JmhcQg0aVVOxJbUV+etqdcnI8QAlsWcDC3bQFsQ3UNo/+JmuZDmuDY94xpU+QZoFCynZZ0
+	CqYyOTcZm+Y5R0H+YK2FRTDGy2iJYNh6VIfC3RmBfD6YqqWjqC8kE1rYDWp/cPICaiz9v6n0Wyspp
+	OQyS+sCs4Hd4NCVnfRlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iroAR-00042h-Et; Wed, 15 Jan 2020 19:17:27 +0000
-Received: from package.cnf.cornell.edu ([128.253.198.225])
+	id 1is8SI-00055Q-Lu; Thu, 16 Jan 2020 16:57:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iroAK-00041k-UF
- for linux-afs@lists.infradead.org; Wed, 15 Jan 2020 19:17:25 +0000
-Received: from localhost (localhost [127.0.0.1])
- by package.cnf.cornell.edu (Postfix) with ESMTP id EC2671FB3F
- for <linux-afs@lists.infradead.org>; Wed, 15 Jan 2020 14:17:16 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- envelope.cnf.cornell.edu; h=content-transfer-encoding:user-agent
- :content-disposition:content-type:content-type:mime-version
- :message-id:subject:subject:to:from:from:date:date; s=dkim; t=
- 1579115835; x=1579979836; bh=ZNastMPxfDsxjyL8HlNjW9jNBkAb3Coh3jK
- cbCZdioM=; b=HMvVx7Yn8FHORFREbIpnpzEF+nHWGNhc/RNC+dFWYHciMKV0gpQ
- xOA8dP7MlgTns7Qx7SNIiAuJ0EYcLAUOGfGt4lVvXC7WY67X7eIWd9MIqPfYA3Wh
- qm7m3gfAsTDEvtOcTf8C6Wu/UcHohSsTJBtCvAuwOeeXh30QUmrHo5Bc=
-X-Virus-Scanned: amavisd-new at package.cnf.cornell.edu
-Received: from package.cnf.cornell.edu ([127.0.0.1])
- by localhost (package.cnf.cornell.edu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id RIKznIYYV1Ju for <linux-afs@lists.infradead.org>;
- Wed, 15 Jan 2020 14:17:15 -0500 (EST)
-Received: from cnf.cornell.edu (wave.cnf.cornell.edu [128.253.198.20])
- by package.cnf.cornell.edu (Postfix) with ESMTPSA id EBF6A1FB3C;
- Wed, 15 Jan 2020 14:17:13 -0500 (EST)
-Date: Wed, 15 Jan 2020 14:17:12 -0500
-From: Dave Botsch <botsch@cnf.cornell.edu>
-To: openafs-announce@openafs.org, openafs-info@openafs.org,
- openafs-devel@openafs.org, linux-afs@lists.infradead.org
-Subject: Call For Talks - Feb 15 Deadline *Note Change* - OpenAFS
- Technologies Workshop 2020
-Message-ID: <20200115191711.GH2394@cnf.cornell.edu>
+ id 1is8Oz-0000QV-Sc
+ for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 16:53:54 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B12042192A;
+ Thu, 16 Jan 2020 16:53:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579193629;
+ bh=zDAU3zdg56Op0y9hgZ6+K6YfYt2ZaPQvD1Ak0eTJDJs=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=s3M/4/dGNbPUP3x1y3R546JKXzhinOYlJwx7stXgHN6pPILhXX8jvcuyEX3o8SWss
+ uPX8UCx1MF52+NfhzwpJnfPiEy99dhRq0awv4r7NhlcdXdRFzZSuQAUMw0X4eYHPm4
+ uXvag45+M6pnw5cPYHH8guty27CI8Pr2C6k0QXDY=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.4 163/205] afs: Remove set but not used variables
+ 'before', 'after'
+Date: Thu, 16 Jan 2020 11:42:18 -0500
+Message-Id: <20200116164300.6705-163-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200116164300.6705-1-sashal@kernel.org>
+References: <20200116164300.6705-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.20 (2009-12-10)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200115_111721_130442_8FFC650F 
-X-CRM114-Status: UNSURE (   4.00  )
+X-CRM114-CacheID: sfid-20200116_085349_991082_41E9F9E8 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,46 +81,96 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: zhengbin <zhengbin13@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ David Howells <dhowells@redhat.com>, linux-afs@lists.infradead.org,
+ Sasha Levin <sashal@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-U28gdGhhdCB3ZSBjYW4gYW5ub3VuY2UgdGFsa3Mgd2l0aCB0aW1lIGZvciBhdHRlbmRlZXMgdG8g
-bWFrZSB0cmF2ZWwKcGxhbnMsIHdlIGhhdmUgbW92ZWQgdGhlIENhbGwgZm9yIFRhbGtzIGRlYWRs
-aW5lIHRvICpGZWJydWFyeSAxNSogLgpUYWxrcyB3aWxsIGJlIGFubm91bmNlZCB0aGUgZm9sbG93
-aW5nIHdlZWsgYnkgRmVicnVhcnkgMjIuCgpQbGVhc2Ugc2VuZCB5b3VyIHByb3Bvc2FscyBmb3Ig
-Y29uc2lkZXJhdGlvbiB0bwpvcGVuYWZzLndvcmtzaG9wQGdtYWlsLmNvbSB3aXRoIHRoZSBzdWJq
-ZWN0IDIwMjAgY2ZwLgoKVGhlIDIwMjAgQUZTIFRlY2hub2xvZ2llcyBXb3Jrc2hvcCBpcyBhIGNv
-bW11bml0eSBiYXNlZCBlZmZvcnQgdG8KcHJvbW90ZSB0aGUgc3RhYmlsaXR5IGFuZCBncm93dGgg
-b2YgdGhlIEFGUyBkaXN0cmlidXRlZCBmaWxlIHN5c3RlbSBhbmQKcmVsYXRlZCB0ZWNobm9sb2dp
-ZXMuIFRoZSB3b3Jrc2hvcCB0YWtlcyBwbGFjZSBNb25kYXksIEp1bmUgMTUgLQpXZWRuZXNkYXks
-IEp1bmUgMTcgaW4gQ29sdW1idXMsIE9IIGF0IE9oaW8gU3RhdGUgVW5pdmVyc2l0eS4KCldlIGJl
-bGlldmUgdGhhdCBhbGwgbWVtYmVycyBvZiB0aGUgQUZTIGNvbW11bml0eSBoYXZlIHNvbWV0aGlu
-ZyB2YWx1YWJsZQp0byBzaGFyZSB3aXRoIG90aGVycy4gV2UgaW52aXRlIHlvdSB0byBzdWJtaXQg
-YSBzZXNzaW9uIHByb3Bvc2FsIHRvCnNoYXJlIHlvdXIgZXhwZXJpZW5jZSB3aXRoIGNvbGxlYWd1
-ZXMgaW4gdGhlIEFGUyBjb21tdW5pdHkuIFNlc3Npb25zCnR5cGVzIGF0IHRoZSB3b3Jrc2hvcCBp
-bmNsdWRlIHByZXNlbnRhdGlvbnMsIHBhbmVscywgdHV0b3JpYWxzLCBhbmQKcm91bmR0YWJsZSBk
-aXNjdXNzaW9ucy4KCkV2ZXJ5b25lIGlzIGVuY291cmFnZWQgdG8gc3BlYWsuCgpXaHkgUHJlc2Vu
-dAoK4oCiIEZyaWVuZGx5IEF1ZGllbmNlcwrigKIgUmV3YXJkaW5nIEV4cGVyaWVuY2UK4oCiIFNo
-YXJlIFlvdXIgS25vd2xlZGdlCuKAoiBDb250cmlidXRlIHRvIHRoZSBDb21tdW5pdHkKClRvcGlj
-cyBvZiBJbnRlcmVzdAoKSGF2ZSBhIG5lYXQgbmV3IHRvb2wgeW91IHdyb3RlIHRoYXQgc2F2ZXMg
-eW91IHRpbWUgYW5kIGVmZm9ydD8gVGVsbCB1cwphYm91dCBpdC4gSGF2ZSBhbiBpZGVhIHlvdSB3
-YW50IHRvIHRyeSBvdXQgb24gYSBidW5jaCBvZiBwZW9wbGU/IFRlbGwgdXMKYWJvdXQgaXQuIEhh
-dmUgeW91IGRvbmUgc29tZSBwZXJmb3JtYW5jZSB0dW5pbmcsIGJlbmNobWFya2luZywgb3IKYXV0
-b21hdGVkIHRlc3Rpbmc/IFdlIHdvdWxkIGxvdmUgdG8gaGVhciBtb3JlIQoK4oCiIFNpdGUgUmVw
-b3J0cwrigKIgQmVzdCBQcmFjdGljZXMK4oCiIENhc2Ugc3R1ZGllcyBhbmQgdXNlIGNhc2VzIGZv
-ciBBRlMK4oCiIOKAnEJpcmRzIG9mIGEgRmVhdGhlcuKAnSAoQk9GKSBzZXNzaW9ucwrigKIgQUZT
-IHByb2plY3RzCuKAoiBUcmFpbmluZyAmIHR1dG9yaWFscwrigKIgT3IgYW55dGhpbmcgZWxzZSB5
-b3Ugd291bGQgbGlrZSB0byBkaXNjdXNzIG9yIHNob3djYXNlLgoKUHJvcG9zYWxzIHNob3VsZCBj
-b250YWluOgoK4oCiIFlvdXIgbmFtZSBhbmQgYWZmaWxpYXRpb24K4oCiIFNlc3Npb24gdGl0bGUK
-4oCiIEEgYnJpZWYgc3VtbWFyeSBvZiB0aGUgdG9waWMK4oCiIFRpbWUgcmVxdWlyZW1lbnRzCgpN
-dWx0aXBsZSBwcm9wb3NhbHMgYXJlIHdlbGNvbWUgZnJvbSB0aGUgc2FtZSBpbmRpdmlkdWFsIG9y
-IG9yZ2FuaXphdGlvbi4KU3BlYWtlcnMgc2hvdWxkIGFsc28gcmVnaXN0ZXIgZm9yIHRoZSBXb3Jr
-c2hvcC4KClBsZWFzZSBzZW5kIHlvdXIgcHJvcG9zYWxzIGZvciBjb25zaWRlcmF0aW9uIHRvCm9w
-ZW5hZnMud29ya3Nob3BAZ21haWwuY29tIHdpdGggdGhlIHN1YmplY3QgMjAyMCBjZnAuCgoKLS0g
-CioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqCkRhdmlkIFdpbGxpYW0gQm90c2NoCk9u
-IGJlaGFsZiBvZiB0aGUgQm9hcmQKT3BlbkFGUyBGb3VuZGF0aW9uLCBJbmMuCmJvdHNjaEBjbmYu
-Y29ybmVsbC5lZHUKKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFmcyBtYWlsaW5nIGxp
-c3QKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hZnMK
+From: zhengbin <zhengbin13@huawei.com>
+
+[ Upstream commit 51590df4f3306cb1f43dca54e3ccdd121ab89594 ]
+
+Fixes gcc '-Wunused-but-set-variable' warning:
+
+fs/afs/dir_edit.c: In function afs_set_contig_bits:
+fs/afs/dir_edit.c:75:20: warning: variable after set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_set_contig_bits:
+fs/afs/dir_edit.c:75:12: warning: variable before set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_clear_contig_bits:
+fs/afs/dir_edit.c:100:20: warning: variable after set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_clear_contig_bits:
+fs/afs/dir_edit.c:100:12: warning: variable before set but not used [-Wunused-but-set-variable]
+
+They are never used since commit 63a4681ff39c.
+
+Fixes: 63a4681ff39c ("afs: Locally edit directory data for mkdir/create/unlink/...")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: zhengbin <zhengbin13@huawei.com>
+Signed-off-by: David Howells <dhowells@redhat.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ fs/afs/dir_edit.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
+
+diff --git a/fs/afs/dir_edit.c b/fs/afs/dir_edit.c
+index d4fbe5f85f1b..b108528bf010 100644
+--- a/fs/afs/dir_edit.c
++++ b/fs/afs/dir_edit.c
+@@ -68,13 +68,11 @@ static int afs_find_contig_bits(union afs_xdr_dir_block *block, unsigned int nr_
+ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ 				int bit, unsigned int nr_slots)
+ {
+-	u64 mask, before, after;
++	u64 mask;
+ 
+ 	mask = (1 << nr_slots) - 1;
+ 	mask <<= bit;
+ 
+-	before = *(u64 *)block->hdr.bitmap;
+-
+ 	block->hdr.bitmap[0] |= (u8)(mask >> 0 * 8);
+ 	block->hdr.bitmap[1] |= (u8)(mask >> 1 * 8);
+ 	block->hdr.bitmap[2] |= (u8)(mask >> 2 * 8);
+@@ -83,8 +81,6 @@ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ 	block->hdr.bitmap[5] |= (u8)(mask >> 5 * 8);
+ 	block->hdr.bitmap[6] |= (u8)(mask >> 6 * 8);
+ 	block->hdr.bitmap[7] |= (u8)(mask >> 7 * 8);
+-
+-	after = *(u64 *)block->hdr.bitmap;
+ }
+ 
+ /*
+@@ -93,13 +89,11 @@ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ static void afs_clear_contig_bits(union afs_xdr_dir_block *block,
+ 				  int bit, unsigned int nr_slots)
+ {
+-	u64 mask, before, after;
++	u64 mask;
+ 
+ 	mask = (1 << nr_slots) - 1;
+ 	mask <<= bit;
+ 
+-	before = *(u64 *)block->hdr.bitmap;
+-
+ 	block->hdr.bitmap[0] &= ~(u8)(mask >> 0 * 8);
+ 	block->hdr.bitmap[1] &= ~(u8)(mask >> 1 * 8);
+ 	block->hdr.bitmap[2] &= ~(u8)(mask >> 2 * 8);
+@@ -108,8 +102,6 @@ static void afs_clear_contig_bits(union afs_xdr_dir_block *block,
+ 	block->hdr.bitmap[5] &= ~(u8)(mask >> 5 * 8);
+ 	block->hdr.bitmap[6] &= ~(u8)(mask >> 6 * 8);
+ 	block->hdr.bitmap[7] &= ~(u8)(mask >> 7 * 8);
+-
+-	after = *(u64 *)block->hdr.bitmap;
+ }
+ 
+ /*
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-afs mailing list
+http://lists.infradead.org/mailman/listinfo/linux-afs
