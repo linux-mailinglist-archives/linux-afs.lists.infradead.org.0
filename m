@@ -2,46 +2,47 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C728213EA39
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:43:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FC2913EB10
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:48:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jlvuha/ezOZYc2yJyjzlnlFzXjrlZkFdAupdNIa8Hjk=; b=NZtsSkObWRUsm1
-	ptzsgi8CR2tVTOgwLsWUJjurR0pxFgWghkXBfLKtvqwEmDGa/yAewV1+9jFiP3cao5nfVUQfjLf38
-	9CHX8WxWyNsrABi3JXQmquwzRkby42+dzU/xODHzjcTRdZq1uGljfJGfFs/RzH/zF/+iZix5IZCyY
-	lEj6NM8e4SHHCwcmcDEKfZXl3ZGHqDclG30xfCtPwOodUSEtBUWyYTulPiWVld36MA1xBQhKrGdvd
-	Pe2QsDHKOumeDwmWlx5j3ApWuPGtkYKjoE9hpClC+ZZxDjuOK0KOOEtKSWP9NyctVYzIRFSGl2Pgg
-	a0k8Nag/1Ci/l5RbAVfg==;
+	List-Owner; bh=ycJqMrk7a7vDr8+BQEEmKaYkqqWBjWgbIoXi2JB/IZo=; b=Qv9lm181v9kYuj
+	wRO/CbQ9Togn7nbZRlpiFewsWKVJ8JevLRIvgRrd1tvzxnBM1QtmEVrFE7cje/gbEv5+XM+sem9tg
+	mr9sYvvKYhf/WNcBRi1IsladafTq/4mej3KZaIUfCW+vgav6H67PVtwf1TvROOV61c11ha7WvkLlp
+	HQ01pCTnxHH7MZOHD1CK5ucQ9kPYl3W8SrJKtkmLxNcJmaXPaaonw2SBHWzbUAtpB5uQf91Ci1wSS
+	akeF0Bghr4ruaDd/cW7C/mmBfRcKVPKrI2Tgqxz2H1BBhfptvnpxvxKbVOUYHtUnnTkaicOytmI41
+	ajE8tzkYkV36Re68gdBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Ak-0003Pm-0J; Thu, 16 Jan 2020 17:43:10 +0000
+	id 1is9FW-0007jD-IU; Thu, 16 Jan 2020 17:48:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8ho-0006f6-Oo
- for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:13:21 +0000
+ id 1is8is-0007ol-4o
+ for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:14:26 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF0972469A;
- Thu, 16 Jan 2020 17:13:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 112A12469C;
+ Thu, 16 Jan 2020 17:14:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194795;
- bh=4XgRwJjdaT9v50Us/qimCOCaYydDYuMvSVczem6Zueo=;
+ s=default; t=1579194861;
+ bh=CZoEm34k2yxC/ZLFQYNkpC/eieyvEaKqF77ghZX9gVg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FosxYqMro8lYtZnSREgtUtVmsvqiOXNjYBRy7ryQcCY6n9ifsvj03lHfMUzAWhXJd
- PnJMrQx9XPjQGT7goZw3NAB8FSjqWOldRt5ZT3i2urqji8Ok2qDRR6nYg/QvnLFmk+
- Ko4d7FxMDlbtYv+u6xRqgEgDzYIPCkUwhUb9G/+g=
+ b=fs26R41MoQh2V8sSsDVW+GEJaDDWdXLYrlmxFjc9zvqoOZia4SUEe8c7a3fLLPYx1
+ RqnwwzO3tNHRjFkCA62n64gXDbnxg7m2xi62kml3bQdhnrlopqPcmxFBfqwje/PZr0
+ ltIBYUfuaIFdTJ+2QkK8KkexqAAbzJz6Avp8zoSQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 608/671] afs: Fix large file support
-Date: Thu, 16 Jan 2020 12:04:06 -0500
-Message-Id: <20200116170509.12787-345-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 656/671] afs: Remove set but not used variables
+ 'before', 'after'
+Date: Thu, 16 Jan 2020 12:04:54 -0500
+Message-Id: <20200116170509.12787-393-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_091316_959500_57D3E15B 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200116_091422_237367_7A03D06A 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,51 +81,92 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dionne <marc.dionne@auristor.com>, David Howells <dhowells@redhat.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, linux-afs@lists.infradead.org,
+Cc: zhengbin <zhengbin13@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ David Howells <dhowells@redhat.com>, linux-afs@lists.infradead.org,
  Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Marc Dionne <marc.dionne@auristor.com>
+From: zhengbin <zhengbin13@huawei.com>
 
-[ Upstream commit b485275f1aca8a9da37fd35e4fad673935e827da ]
+[ Upstream commit 51590df4f3306cb1f43dca54e3ccdd121ab89594 ]
 
-By default s_maxbytes is set to MAX_NON_LFS, which limits the usable
-file size to 2GB, enforced by the vfs.
+Fixes gcc '-Wunused-but-set-variable' warning:
 
-Commit b9b1f8d5930a ("AFS: write support fixes") added support for the
-64-bit fetch and store server operations, but did not change this value.
-As a result, attempts to write past the 2G mark result in EFBIG errors:
+fs/afs/dir_edit.c: In function afs_set_contig_bits:
+fs/afs/dir_edit.c:75:20: warning: variable after set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_set_contig_bits:
+fs/afs/dir_edit.c:75:12: warning: variable before set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_clear_contig_bits:
+fs/afs/dir_edit.c:100:20: warning: variable after set but not used [-Wunused-but-set-variable]
+fs/afs/dir_edit.c: In function afs_clear_contig_bits:
+fs/afs/dir_edit.c:100:12: warning: variable before set but not used [-Wunused-but-set-variable]
 
- $ dd if=/dev/zero of=foo bs=1M count=1 seek=2048
- dd: error writing 'foo': File too large
+They are never used since commit 63a4681ff39c.
 
-Set s_maxbytes to MAX_LFS_FILESIZE.
-
-Fixes: b9b1f8d5930a ("AFS: write support fixes")
-Signed-off-by: Marc Dionne <marc.dionne@auristor.com>
+Fixes: 63a4681ff39c ("afs: Locally edit directory data for mkdir/create/unlink/...")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: zhengbin <zhengbin13@huawei.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
-Signed-off-by: Linus Torvalds <torvalds@linux-foundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/super.c | 1 +
- 1 file changed, 1 insertion(+)
+ fs/afs/dir_edit.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
 
-diff --git a/fs/afs/super.c b/fs/afs/super.c
-index bd2608297473..9e0ab2be27f7 100644
---- a/fs/afs/super.c
-+++ b/fs/afs/super.c
-@@ -392,6 +392,7 @@ static int afs_fill_super(struct super_block *sb,
- 	/* fill in the superblock */
- 	sb->s_blocksize		= PAGE_SIZE;
- 	sb->s_blocksize_bits	= PAGE_SHIFT;
-+	sb->s_maxbytes		= MAX_LFS_FILESIZE;
- 	sb->s_magic		= AFS_FS_MAGIC;
- 	sb->s_op		= &afs_super_ops;
- 	if (!as->dyn_root)
+diff --git a/fs/afs/dir_edit.c b/fs/afs/dir_edit.c
+index 8b400f5aead5..0e7162527db8 100644
+--- a/fs/afs/dir_edit.c
++++ b/fs/afs/dir_edit.c
+@@ -72,13 +72,11 @@ static int afs_find_contig_bits(union afs_xdr_dir_block *block, unsigned int nr_
+ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ 				int bit, unsigned int nr_slots)
+ {
+-	u64 mask, before, after;
++	u64 mask;
+ 
+ 	mask = (1 << nr_slots) - 1;
+ 	mask <<= bit;
+ 
+-	before = *(u64 *)block->hdr.bitmap;
+-
+ 	block->hdr.bitmap[0] |= (u8)(mask >> 0 * 8);
+ 	block->hdr.bitmap[1] |= (u8)(mask >> 1 * 8);
+ 	block->hdr.bitmap[2] |= (u8)(mask >> 2 * 8);
+@@ -87,8 +85,6 @@ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ 	block->hdr.bitmap[5] |= (u8)(mask >> 5 * 8);
+ 	block->hdr.bitmap[6] |= (u8)(mask >> 6 * 8);
+ 	block->hdr.bitmap[7] |= (u8)(mask >> 7 * 8);
+-
+-	after = *(u64 *)block->hdr.bitmap;
+ }
+ 
+ /*
+@@ -97,13 +93,11 @@ static void afs_set_contig_bits(union afs_xdr_dir_block *block,
+ static void afs_clear_contig_bits(union afs_xdr_dir_block *block,
+ 				  int bit, unsigned int nr_slots)
+ {
+-	u64 mask, before, after;
++	u64 mask;
+ 
+ 	mask = (1 << nr_slots) - 1;
+ 	mask <<= bit;
+ 
+-	before = *(u64 *)block->hdr.bitmap;
+-
+ 	block->hdr.bitmap[0] &= ~(u8)(mask >> 0 * 8);
+ 	block->hdr.bitmap[1] &= ~(u8)(mask >> 1 * 8);
+ 	block->hdr.bitmap[2] &= ~(u8)(mask >> 2 * 8);
+@@ -112,8 +106,6 @@ static void afs_clear_contig_bits(union afs_xdr_dir_block *block,
+ 	block->hdr.bitmap[5] &= ~(u8)(mask >> 5 * 8);
+ 	block->hdr.bitmap[6] &= ~(u8)(mask >> 6 * 8);
+ 	block->hdr.bitmap[7] &= ~(u8)(mask >> 7 * 8);
+-
+-	after = *(u64 *)block->hdr.bitmap;
+ }
+ 
+ /*
 -- 
 2.20.1
 
