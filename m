@@ -2,47 +2,46 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3555913E6EB
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:22:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16C7913E6CA
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 18:22:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSZauXwidTVNS/QRU0ofMaPuPhEClONZFw+DmL65lgY=; b=B7qpXMGPs9KbPs
-	uZAonT3r40TemkNcU2roZQt9YrDMpbgo3Icthja5GtCcJrovyl0g1ssLOK1Hs3vYPEi7XOQnxpTOb
-	F9Y00gJ0nQ2hdZCaXTwUO471XEQY6tZoYNRYb5FkoCX/sr8gb14uyqnwtRA1cWoN6eS1El7J0+4+f
-	tBl4AffjTWDkOdbrmskoILBX+0HDn6XPz9dmD4lnwN8Z9Ntnbbl7EiWYq4LA1R+VmEOJxaMNFqCp0
-	AzJKJjlLa5UyLrXGimrVEMNLmXoKwC4PI84CEwGNGFFLRVwaqTR36YpAfvLmgmtGdE9N+IEkVK6zl
-	aWN2eEXHNH/o6o9KsY+A==;
+	List-Owner; bh=YVJI5RWZc3YW1OZ5uyaQgXFwerDTPKG+99VpoMfvdXo=; b=Zxaf0WBR2r1okF
+	Btj766nAVuH+deeOGWOS7Jp2mNqPy+bRU7nroBCXoc9qBX3XsRliuZYo1ZwpEb9WP3tZO9T39n3vh
+	Dok5ZYndlYhI/L+5KsBjqxZZOV/nzgWCIf9WJzkHdRtyjxEnGfoDI0h9lm+OLeYhbfNeYYnw5Lrpu
+	CFHQFcEtcXzVR0VwuYtl9HQZAKXqZXSCZlVffyC+NvW7L0kuXcdlO647101KHdUxcLyNxdeIbmuyn
+	BSUTrt7vpU5HTFV+ONJc2KOJJCvmaO36zXa3NeE2SC+CJ38n28O2dfR6Q1Ji+jobE2JlxoPBBIxGf
+	0Wk4YnaK4Sb+rjDWf/ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is8r5-0000Nn-Ud; Thu, 16 Jan 2020 17:22:51 +0000
+	id 1is8qt-00007N-6S; Thu, 16 Jan 2020 17:22:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8cG-0000c0-V2
+ id 1is8cI-0000cr-7B
  for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:07:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8897821582;
- Thu, 16 Jan 2020 17:07:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D79B24679;
+ Thu, 16 Jan 2020 17:07:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579194452;
- bh=9ffIg72vfAL9XOeRGbQvUSJeUprb7SNydkmcRf2SO2o=;
+ s=default; t=1579194453;
+ bh=eiozgSvE0P6s9NMNgVO9mWYQC/RhfGeUjT37ObuwHHk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0XcO2XazkZ77b+AhN+4jzVvtfR5ZJ4h3cWJh9X/76aBXYTLBtCfQgGb50/lHAgomB
- vyRVb24VOqQtTSGa+uRFDyrXjJ6BhlNrHslsjHE0NaK0G07r9MeyB9r/uuB+YrUFPF
- HywCBsxzMjrk4YJMFUKqJQJlLV+UDpPcj+S492LA=
+ b=DSsw2DKDUjn1Q0RaxXGrVACyeJsqu5aVyzCUMYau2736JUnPJIzOsV/uDluIZ6gz1
+ +3aUwsDiS5+TScvU/LEUTAmPy6NBMQPky+TwoGJi401I/e97aMYS0yLrsYkUsyMtz4
+ tDW0O72DUPUjIe961O+U7Sb56p1auBKKycCPn71Q=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 362/671] afs: Fix lock-wait/callback-break double
- locking
-Date: Thu, 16 Jan 2020 12:00:00 -0500
-Message-Id: <20200116170509.12787-99-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 363/671] afs: Fix double inc of vnode->cb_break
+Date: Thu, 16 Jan 2020 12:00:01 -0500
+Message-Id: <20200116170509.12787-100-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116170509.12787-1-sashal@kernel.org>
 References: <20200116170509.12787-1-sashal@kernel.org>
@@ -50,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_090733_169356_FDEDA7DE 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200116_090734_312487_7ACE45C1 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,60 +88,42 @@ Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 From: David Howells <dhowells@redhat.com>
 
-[ Upstream commit c7226e407b6065d3bda8bd9dc627663d2c505ea3 ]
+[ Upstream commit fd711586bb7d63f257da5eff234e68c446ac35ea ]
 
-__afs_break_callback() holds vnode->lock around its call of
-afs_lock_may_be_available() - which also takes that lock.
+When __afs_break_callback() clears the CB_PROMISED flag, it increments
+vnode->cb_break to trigger a future refetch of the status and callback -
+however it also calls afs_clear_permits(), which also increments
+vnode->cb_break.
 
-Fix this by not taking the lock in __afs_break_callback().
+Fix this by removing the increment from afs_clear_permits().
 
-Also, there's no point checking the granted_locks and pending_locks queues;
-it's sufficient to check lock_state, so move that check out of
-afs_lock_may_be_available() into __afs_break_callback() to replace the
-queue checks.
+Whilst we're at it, fix the conditional call to afs_put_permits() as the
+function checks to see if the argument is NULL, so the check is redundant.
 
-Fixes: e8d6c554126b ("AFS: implement file locking")
+Fixes: be080a6f43c4 ("afs: Overhaul permit caching");
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/afs/callback.c | 8 +-------
- fs/afs/flock.c    | 3 ---
- 2 files changed, 1 insertion(+), 10 deletions(-)
+ fs/afs/security.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/fs/afs/callback.c b/fs/afs/callback.c
-index 4ad701250299..97283b04fa6f 100644
---- a/fs/afs/callback.c
-+++ b/fs/afs/callback.c
-@@ -221,14 +221,8 @@ void afs_break_callback(struct afs_vnode *vnode)
- 		vnode->cb_break++;
- 		afs_clear_permits(vnode);
+diff --git a/fs/afs/security.c b/fs/afs/security.c
+index 81dfedb7879f..66042b432baa 100644
+--- a/fs/afs/security.c
++++ b/fs/afs/security.c
+@@ -87,11 +87,9 @@ void afs_clear_permits(struct afs_vnode *vnode)
+ 	permits = rcu_dereference_protected(vnode->permit_cache,
+ 					    lockdep_is_held(&vnode->lock));
+ 	RCU_INIT_POINTER(vnode->permit_cache, NULL);
+-	vnode->cb_break++;
+ 	spin_unlock(&vnode->lock);
  
--		spin_lock(&vnode->lock);
--
--		_debug("break callback");
--
--		if (list_empty(&vnode->granted_locks) &&
--		    !list_empty(&vnode->pending_locks))
-+		if (vnode->lock_state == AFS_VNODE_LOCK_WAITING_FOR_CB)
- 			afs_lock_may_be_available(vnode);
--		spin_unlock(&vnode->lock);
- 	}
+-	if (permits)
+-		afs_put_permits(permits);
++	afs_put_permits(permits);
+ }
  
- 	write_sequnlock(&vnode->cb_lock);
-diff --git a/fs/afs/flock.c b/fs/afs/flock.c
-index 075fe7f94810..457ce62e5c0f 100644
---- a/fs/afs/flock.c
-+++ b/fs/afs/flock.c
-@@ -39,9 +39,6 @@ void afs_lock_may_be_available(struct afs_vnode *vnode)
- {
- 	_enter("{%x:%u}", vnode->fid.vid, vnode->fid.vnode);
- 
--	if (vnode->lock_state != AFS_VNODE_LOCK_WAITING_FOR_CB)
--		return;
--
- 	spin_lock(&vnode->lock);
- 	if (vnode->lock_state == AFS_VNODE_LOCK_WAITING_FOR_CB)
- 		afs_next_locker(vnode, 0);
+ /*
 -- 
 2.20.1
 
