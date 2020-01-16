@@ -2,47 +2,47 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADA1113ED4D
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 19:02:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C556B13EDD4
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Jan 2020 19:05:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RU/9Mt2q6HKGhXCe1ksrXYNfv62QwL83WIEixZ7DLcA=; b=o7QaqevPrvSPQz
-	JiAuGm7wysVu5P4e71us4koameILLnOcWE803H1/GtX3/dsCVVoEnvaj12WtZeWuse1QS4sI3qOo2
-	sjlAQ82/5hS1n+S5CWhTuwYMxG2pSYGXZaHHUyWkxTdA6lPsl3nOf0LjHzYzY3EmRcsObQ1N3pqwA
-	ZDNdWbvuH2BmLXDGpUK4zpNsOFf25spzyq6pH6VmengyozWUM8sTd8SMrwE5S7dE8EFarm2pJ7cUv
-	gLej3eLwOrmexByFeR08Wpo2s2pHCF2VZFVS603NG3bwny8YlhVjJ+ASvF+/niK/eortLdvAfpV8U
-	Y2ap+HBAj9kdZAaxPqFg==;
+	List-Owner; bh=+cAWgQ0zjVYpUTvyX2aiD8NJXuVj+5xqolSCAF5crlQ=; b=XqA/NvjSrpav5T
+	qcBK0IVfhScKq+2aNb/FMQW0tavyJjOaf2L/bTXI67OdAKQgNNVtR1dgsQFcCS1q5qnVb8FlPu79z
+	c55r1PXFOgyG/ZV5zFGAkvJbPLCYGWtuF6OgdSagglacxEcqQinZnN0x51l7OUSXR8qxNFNEkW485
+	guiPc6BfX4D+GV+6MT3OP6LPY1uaahWTWF4th7XKzDOlU3pTXpQvTFmEkKf6Zk6gvnCa/SLiKg2+T
+	ry0r4EMdV7gCR924g08/tDIJztxgwhglt/K8ckfSGE4K1d549RYkPW0/uWgOCkjs6iTtdIBx/9ZtY
+	YcE1n+2V0QfZ7usKuJZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is9Sz-0007Gh-BW; Thu, 16 Jan 2020 18:02:01 +0000
+	id 1is9WY-0003mY-Qv; Thu, 16 Jan 2020 18:05:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is8v3-0004WR-Bn
- for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:27:03 +0000
+ id 1is8wJ-0005cz-93
+ for linux-afs@lists.infradead.org; Thu, 16 Jan 2020 17:28:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 244FA246C8;
- Thu, 16 Jan 2020 17:26:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6B414246D7;
+ Thu, 16 Jan 2020 17:28:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579195616;
- bh=mHu7FcEcH7ZTqsu4AfsnGL48Fe7PrHeLWBDhrp1hE4s=;
+ s=default; t=1579195694;
+ bh=tMVDp8rNj4vWf/qGzy/RdOINQJk3zZMVBehdyYEx/7Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=c9ve+a8GcQcMxsTJ9NUJASM9OE4EUwX5ipK0z2tS64mcrHxuPACc1CKBGp4uBJKOs
- wui7F0JZQ2Yb6k+Sak18AE/t9lPYCckS1N3tr4Y+t1WZIwrQsu9VeK56lDO35B2+L2
- SMFgi6pN/+K/DmQ7yUiWyhJrduxjVhVKjuB2JNmo=
+ b=IOXRZErkKRRC+8vGQ6gGEHeBXfpaCCsmg+5JluXkOB3gTrvil2fYjAqoNzL0qproB
+ 5hzUUQ6KVekNgoszaKPoToOC/Igy6DMZMZ5xBGy9URSdQmI/dIbwKOjH3EU89J/Rnu
+ n3fC5dTsuSsqHbOUsXFNQdLfOXPwFNWCfsRoZRLc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 189/371] afs: Fix the afs.cell and afs.volume
- xattr handlers
-Date: Thu, 16 Jan 2020 12:21:01 -0500
-Message-Id: <20200116172403.18149-132-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 244/371] rxrpc: Fix uninitialized error code in
+ rxrpc_send_data_packet()
+Date: Thu, 16 Jan 2020 12:21:56 -0500
+Message-Id: <20200116172403.18149-187-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200116172403.18149-1-sashal@kernel.org>
 References: <20200116172403.18149-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_092657_542585_A19DBC46 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20200116_092815_466051_CA658A13 
+X-CRM114-Status: GOOD (  10.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,55 +80,39 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- linux-afs@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ linux-afs@lists.infradead.org, David Howells <dhowells@redhat.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "David S . Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
-
-[ Upstream commit c73aa4102f5b9f261a907c3b3df94cd2c478504d ]
-
-Fix the ->get handlers for the afs.cell and afs.volume xattrs to pass the
-source data size to memcpy() rather than target buffer size.
-
-Overcopying the source data occasionally causes the kernel to oops.
-
-Fixes: d3e3b7eac886 ("afs: Add metadata xattrs")
-Signed-off-by: David Howells <dhowells@redhat.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- fs/afs/xattr.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/fs/afs/xattr.c b/fs/afs/xattr.c
-index 2830e4f48d85..7c6b62a94e7e 100644
---- a/fs/afs/xattr.c
-+++ b/fs/afs/xattr.c
-@@ -50,7 +50,7 @@ static int afs_xattr_get_cell(const struct xattr_handler *handler,
- 		return namelen;
- 	if (namelen > size)
- 		return -ERANGE;
--	memcpy(buffer, cell->name, size);
-+	memcpy(buffer, cell->name, namelen);
- 	return namelen;
- }
- 
-@@ -104,7 +104,7 @@ static int afs_xattr_get_volume(const struct xattr_handler *handler,
- 		return namelen;
- 	if (namelen > size)
- 		return -ERANGE;
--	memcpy(buffer, volname, size);
-+	memcpy(buffer, volname, namelen);
- 	return namelen;
- }
- 
--- 
-2.20.1
-
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+RnJvbTogRGF2aWQgSG93ZWxscyA8ZGhvd2VsbHNAcmVkaGF0LmNvbT4KClsgVXBzdHJlYW0gY29t
+bWl0IDM0MjdiZWI2Mzc1ZDA0ZTk2MjdjNjczNDM4NzJlNzkzNDFhNjg0ZWEgXQoKV2l0aCBnY2Mg
+NC4xOgoKICAgIG5ldC9yeHJwYy9vdXRwdXQuYzogSW4gZnVuY3Rpb24g4oCYcnhycGNfc2VuZF9k
+YXRhX3BhY2tldOKAmToKICAgIG5ldC9yeHJwYy9vdXRwdXQuYzozMzg6IHdhcm5pbmc6IOKAmHJl
+dOKAmSBtYXkgYmUgdXNlZCB1bmluaXRpYWxpemVkIGluIHRoaXMgZnVuY3Rpb24KCkluZGVlZCwg
+aWYgdGhlIGZpcnN0IGp1bXAgdG8gdGhlIHNlbmRfZnJhZ21lbnRhYmxlIGxhYmVsIGlzIG1hZGUs
+IGFuZAp0aGUgYWRkcmVzcyBmYW1pbHkgaXMgbm90IGhhbmRsZWQgaW4gdGhlIHN3aXRjaCgpIHN0
+YXRlbWVudCwgcmV0IHdpbGwgYmUKdXNlZCB1bmluaXRpYWxpemVkLgoKRml4IHRoaXMgYnkgQlVH
+KCknaW5nIGFzIGlzIGRvbmUgaW4gb3RoZXIgcGxhY2VzIGluIHJ4cnBjIHdoZXJlIGludGVybmFs
+CnN1cHBvcnQgZm9yIGZ1dHVyZSBhZGRyZXNzIGZhbWlsaWVzIHdpbGwgbmVlZCBhZGRpbmcuICBJ
+dCBzaG91bGQgbm90IGJlCnBvc3NpYmxlIHRvIHJlYWNoIHRoaXMgbm9ybWFsbHkgYXMgdGhlIGFk
+ZHJlc3MgZmFtaWxpZXMgYXJlIGNoZWNrZWQKdXAtZnJvbnQuCgpGaXhlczogNWE5MjRiODk1MWY4
+MzViNSAoInJ4cnBjOiBEb24ndCBzdG9yZSB0aGUgcnhycGMgaGVhZGVyIGluIHRoZSBUeCBxdWV1
+ZSBza19idWZmcyIpClJlcG9ydGVkLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0QGxpbnV4
+LW02OGsub3JnPgpTaWduZWQtb2ZmLWJ5OiBEYXZpZCBIb3dlbGxzIDxkaG93ZWxsc0ByZWRoYXQu
+Y29tPgpTaWduZWQtb2ZmLWJ5OiBEYXZpZCBTLiBNaWxsZXIgPGRhdmVtQGRhdmVtbG9mdC5uZXQ+
+ClNpZ25lZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVsLm9yZz4KLS0tCiBuZXQv
+cnhycGMvb3V0cHV0LmMgfCAzICsrKwogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKQoK
+ZGlmZiAtLWdpdCBhL25ldC9yeHJwYy9vdXRwdXQuYyBiL25ldC9yeHJwYy9vdXRwdXQuYwppbmRl
+eCA1YjY3Y2I1ZDQ3ZjAuLmVkZGRiYWNmMzNiYyAxMDA2NDQKLS0tIGEvbmV0L3J4cnBjL291dHB1
+dC5jCisrKyBiL25ldC9yeHJwYy9vdXRwdXQuYwpAQCAtNDA0LDYgKzQwNCw5IEBAIGludCByeHJw
+Y19zZW5kX2RhdGFfcGFja2V0KHN0cnVjdCByeHJwY19jYWxsICpjYWxsLCBzdHJ1Y3Qgc2tfYnVm
+ZiAqc2tiLAogCQl9CiAJCWJyZWFrOwogI2VuZGlmCisKKwlkZWZhdWx0OgorCQlCVUcoKTsKIAl9
+CiAKIAl1cF93cml0ZSgmY29ubi0+cGFyYW1zLmxvY2FsLT5kZWZyYWdfc2VtKTsKLS0gCjIuMjAu
+MQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFmcyBtYWlsaW5nIGxpc3QKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hZnMK
