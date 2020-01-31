@@ -2,72 +2,76 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B7F514ED41
-	for <lists+linux-afs@lfdr.de>; Fri, 31 Jan 2020 14:29:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC00C14ED42
+	for <lists+linux-afs@lfdr.de>; Fri, 31 Jan 2020 14:29:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qBaefMh5fqnn2lDZaKzilNoq5q2i49s9K6fWnekEk+0=; b=F8kIFfCbgo1GZQ
-	LNcJgcsKFV8b82JFWHCmeTuhhPc4tiDohDuiB0emvW+r3F4dIWQ5UxpIuT/ARpa/iZKD8g73CpUC0
-	6SgUy2vedHG6O95O7VHzAEO5qu9+1j+ZMNJFsRX17FPBITss8sEjUqbhSmDaO5k9+XnWwNxR5Ns76
-	nnQcvCIyd4UZr8YWvj1rBZxaPIilRU1QOVkj0hwB+VCV33fnczoDGohhFubD4Wotd+eeUiadIL6Yy
-	i6bMV3OfTQ4FmdhvpGJ3HK78yhN+1RFld2QLvZ8j10AE4obwQugAJVKJ2ZKkK0gzNeZYd5Gn4sYQ1
-	nDgobjprT9z0wdx0C6XA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qit0p7zI9RespPtDdjlALoDE1LNxzKYBAoE0VLZ9gpU=; b=T0g8pFl4oZCWNe
+	mdTNaBMy7WPp+q23pgX0xzC2cepHyfv1pvmO4qixAR4rgAjTzTL4aL4N+TxIaiS9iQOLtduRGpJ9U
+	Ezd3Mmlzpa+ryCrYIXIPAKzLFFDqaO8AvQI3ZbiaVSPEZs1I1xIZohNJqfPAAZjhbGhlOBw3NZEu8
+	ayjkZFyhrctHPE7S9aoJFtkwxBeFiITrooIo/90wXKNgKwZA3W5epbLG5RqWL3NVFvVxPn3zmQ9OK
+	F+fCI5B4BxlvobptHjzZ2HXwQfs951sAJ7i/tMpjiWBAM7MdgN0iLIrNKTTFaabY0XDbuAOVOxJTl
+	Lul3I9f7qGCw7ZCB6kBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixWMW-0003eU-Jb; Fri, 31 Jan 2020 13:29:32 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ixWMc-0003gL-UP; Fri, 31 Jan 2020 13:29:38 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixWMT-0003dc-FP
- for linux-afs@lists.infradead.org; Fri, 31 Jan 2020 13:29:31 +0000
+ id 1ixWMa-0003fB-7A
+ for linux-afs@lists.infradead.org; Fri, 31 Jan 2020 13:29:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580477365;
+ s=mimecast20190719; t=1580477374;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=EPKHGr6xuM3J9RdQvWXSCooAuR6v7QRFVj7XHGuW5Ak=;
- b=U1kpnzlzTwZAIpYPHtha7LLLve5JOXcQYO0BPoAxPN6OoaNKbi6TwIptSMrDeZMvp/WHlH
- 4iqLHQe26QEUXO/QrEBiZfxpBYLP7A0rbfx4ZjWQWw2NMFMiduyRpf1oa2vdNMvT8oAcMk
- oLhldGDdbd3HIIHR+FYLms2detkE+k8=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=pCLKGSqMaV4qZrcygd/MqiNrWGKg5U4tuMzI7W//FPE=;
+ b=WfAirpd1NceZZUVUTzGU3Ru6WOYZHUDFktNmNdzPaMxgidO6pxVgbrMooZWGGSg1qAdVEA
+ mRcz6aaz7VuzN6keZbby8Ji/9VnQPO0tJ1LUhqf2yFMGAUFjvdVcaHWjSpaiv4akHjQgWb
+ M5v0rzzLDsE9or+z/Vrlt7z8WDJ6yhw=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-32-f8Ql-XF0OD-IsCbu9PPmcQ-1; Fri, 31 Jan 2020 08:29:18 -0500
-X-MC-Unique: f8Ql-XF0OD-IsCbu9PPmcQ-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-278-uRuAU9q3NxOQN0uRqdt1lQ-1; Fri, 31 Jan 2020 08:29:25 -0500
+X-MC-Unique: uRuAU9q3NxOQN0uRqdt1lQ-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id AB524DB60;
- Fri, 31 Jan 2020 13:29:17 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9E64D18B5FA0;
+ Fri, 31 Jan 2020 13:29:24 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-120-218.rdu2.redhat.com
  [10.10.120.218])
- by smtp.corp.redhat.com (Postfix) with ESMTP id DBAE05C299;
- Fri, 31 Jan 2020 13:29:16 +0000 (UTC)
-Subject: [PATCH net 0/4] rxrpc: Fixes
+ by smtp.corp.redhat.com (Postfix) with ESMTP id C3B9F86CC2;
+ Fri, 31 Jan 2020 13:29:23 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+Subject: [PATCH net 1/4] rxrpc: Fix use-after-free in rxrpc_put_local()
 From: David Howells <dhowells@redhat.com>
 To: netdev@vger.kernel.org
-Date: Fri, 31 Jan 2020 13:29:16 +0000
-Message-ID: <158047735578.133127.17728061182258449164.stgit@warthog.procyon.org.uk>
+Date: Fri, 31 Jan 2020 13:29:23 +0000
+Message-ID: <158047736293.133127.4706435864450024685.stgit@warthog.procyon.org.uk>
+In-Reply-To: <158047735578.133127.17728061182258449164.stgit@warthog.procyon.org.uk>
+References: <158047735578.133127.17728061182258449164.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/0.19
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_052929_593690_149A8135 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200131_052936_359343_C762A46D 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.120 listed in wl.mailspike.net]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,52 +100,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
+Fix rxrpc_put_local() to not access local->debug_id after calling
+atomic_dec_return() as, unless that returned n==0, we no longer have the
+right to access the object.
 
-Here are a number of fixes for AF_RXRPC:
-
- (1) Fix a potential use after free in rxrpc_put_local() where it was
-     accessing the object just put to get tracing information.
-
- (2) Fix insufficient notifications being generated by the function that
-     queues data packets on a call.  This occasionally causes recvmsg() to
-     stall indefinitely.
-
- (3) Fix a number of packet-transmitting work functions to hold an active
-     count on the local endpoint so that the UDP socket doesn't get
-     destroyed whilst they're calling kernel_sendmsg() on it.
-
- (4) Fix a NULL pointer deref that stemmed from a call's connection pointer
-     being cleared when the call was disconnected.
-
-The patches are tagged here:
-
-	git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
-	rxrpc-fixes-20200130
-
-and can also be found on the following branch:
-
-	http://git.kernel.org/cgit/linux/kernel/git/dhowells/linux-fs.git/log/?h=rxrpc-fixes
-
-David
+Fixes: 06d9532fa6b3 ("rxrpc: Fix read-after-free in rxrpc_queue_local()")
+Signed-off-by: David Howells <dhowells@redhat.com>
 ---
-David Howells (4):
-      rxrpc: Fix use-after-free in rxrpc_put_local()
-      rxrpc: Fix insufficient receive notification generation
-      rxrpc: Fix missing active use pinning of rxrpc_local object
-      rxrpc: Fix NULL pointer deref due to call->conn being cleared on disconnect
 
+ net/rxrpc/local_object.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
- net/rxrpc/af_rxrpc.c     |    2 ++
- net/rxrpc/ar-internal.h  |   11 +++++++++++
- net/rxrpc/call_object.c  |    4 ++--
- net/rxrpc/conn_client.c  |    3 +--
- net/rxrpc/conn_event.c   |   32 ++++++++++++++++++++++----------
- net/rxrpc/conn_object.c  |    4 ++--
- net/rxrpc/input.c        |    6 ++----
- net/rxrpc/local_object.c |   23 +++++++++++------------
- net/rxrpc/output.c       |   27 +++++++++------------------
- net/rxrpc/peer_event.c   |   42 +++++++++++++++++++++++-------------------
- 10 files changed, 85 insertions(+), 69 deletions(-)
+diff --git a/net/rxrpc/local_object.c b/net/rxrpc/local_object.c
+index 36587260cabd..3aa179efcda4 100644
+--- a/net/rxrpc/local_object.c
++++ b/net/rxrpc/local_object.c
+@@ -364,11 +364,14 @@ void rxrpc_queue_local(struct rxrpc_local *local)
+ void rxrpc_put_local(struct rxrpc_local *local)
+ {
+ 	const void *here = __builtin_return_address(0);
++	unsigned int debug_id;
+ 	int n;
+ 
+ 	if (local) {
++		debug_id = local->debug_id;
++
+ 		n = atomic_dec_return(&local->usage);
+-		trace_rxrpc_local(local->debug_id, rxrpc_local_put, n, here);
++		trace_rxrpc_local(debug_id, rxrpc_local_put, n, here);
+ 
+ 		if (n == 0)
+ 			call_rcu(&local->rcu, rxrpc_local_rcu);
 
 
 
