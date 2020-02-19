@@ -2,56 +2,40 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3B12164720
-	for <lists+linux-afs@lfdr.de>; Wed, 19 Feb 2020 15:36:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D0E7164946
+	for <lists+linux-afs@lfdr.de>; Wed, 19 Feb 2020 16:54:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TheDt3exhSdc1HbTvhEWFgEclrDgJ4eidu8+BXcCt1g=; b=TowUy8eqXF2xU3
-	PCqKvBXiEaNCmnmLWoltzCceueYISJBI+x0HJe/bct6XWtcGHmYMM91/Vo19M/5OLAD8RVvui1hrP
-	lmGsRHVkL0KEUgQl9w5+uxCbYYRQnsvkGPDyksje5khL2TRLDlfYW0R6U8K2RXnqaPJO1eRLCo0pv
-	H+OOX1wsv40i5t+jZO3phdFAW/6FHfVem/bQb738ghmSxNfAlB5FSXCNLQk2er23zKJC8M51Ssvl4
-	AAdE71RCg7x5rKi3drBjUNMP91WWXlKUU285V1yz6ljkQQvqOAtvT8lVJUvVe95UWWCcD5qAa2CL8
-	MXWCH56+xOPcUUJml/QQ==;
+	List-Owner; bh=A8tGzEgiDnGogt8N5C/kJAmd888jliPYogfuu8D96CU=; b=ATcefYzXRKOiTA
+	cFZKLEZ6lbdZ65OoAXS0tUpp4OY8BDDWQ0SmscT0uAlt+aHNkcPnbcj/c8cG2AIGi46OzFB1tIDgT
+	jlzrVEz1HW0OPNpdREe1veNH+tyEkAee3+C6M6vOsRZ7z7Uaqfpao6wIPSY2z9IZioRgLD7nh2aUS
+	UFnE3BqwC2SdMJESp+Q+OVivTuJrUUwJ900Yz+pM+2EcjWTK+Cqd/ojMUAqdFOs8qSxMwqM9HU7a9
+	Ubdsa6UFsZ+S4gVarL+4LxS5XtaCWMrP/ij+X3BHyxZ+eo9mEfEOPAUDELZA6wNXtsR4j/wKnR0HA
+	7EZLrVwPNXMuqTklDBTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4QSo-0002AV-5r; Wed, 19 Feb 2020 14:36:34 +0000
-Received: from ms.lwn.net ([45.79.88.28])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Lj3-0005ts-Uc; Wed, 19 Feb 2020 09:33:03 +0000
-Received: from localhost.localdomain (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id 558BA2DC;
- Wed, 19 Feb 2020 09:32:40 +0000 (UTC)
-Date: Wed, 19 Feb 2020 02:32:34 -0700
-From: Jonathan Corbet <corbet@lwn.net>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+	id 1j4RgM-0004ms-Ck; Wed, 19 Feb 2020 15:54:38 +0000
+Received: from tmo-109-126.customers.d1-online.com ([80.187.109.126]
+ helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4R0Y-0000UF-OT; Wed, 19 Feb 2020 15:11:26 +0000
+Date: Wed, 19 Feb 2020 16:11:13 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Jonathan Corbet <corbet@lwn.net>
 Subject: Re: [PATCH 00/44] Manually convert filesystem FS documents to ReST
-Message-ID: <20200219023234.7b704acb@lwn.net>
-In-Reply-To: <20200218110406.098fdc09@kernel.org>
+Message-ID: <20200219161113.41add6e4@kernel.org>
+In-Reply-To: <20200219023234.7b704acb@lwn.net>
 References: <cover.1581955849.git.mchehab+huawei@kernel.org>
  <20200218040146.GM7778@bombadil.infradead.org>
  <20200218110406.098fdc09@kernel.org>
-Organization: LWN.net
+ <20200219023234.7b704acb@lwn.net>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_013301_989506_B1B008F1 
-X-CRM114-Status: GOOD (  10.72  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [45.79.88.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Mailman-Approved-At: Wed, 19 Feb 2020 06:36:32 -0800
+X-Mailman-Approved-At: Wed, 19 Feb 2020 07:54:36 -0800
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,21 +81,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Tue, 18 Feb 2020 11:04:06 +0100
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
+Em Wed, 19 Feb 2020 02:32:34 -0700
+Jonathan Corbet <corbet@lwn.net> escreveu:
 
-> Then, do a second pass at files outside the new directories (like
-> admin-guide), in order to better organize things, eventually splitting
-> some files into kAPI, uAPI and/or admin-guide.
+> On Tue, 18 Feb 2020 11:04:06 +0100
+> Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
+> 
+> > Then, do a second pass at files outside the new directories (like
+> > admin-guide), in order to better organize things, eventually splitting
+> > some files into kAPI, uAPI and/or admin-guide.  
+> 
+> I'm looking forward to this phase!  Yes it is harder, and it often
+> requires selling the idea to skeptical maintainers.  But that is how,
+> IMO, we get from where we're at now to something closer to a set of
+> coherent kernel docs.
 
-I'm looking forward to this phase!  Yes it is harder, and it often
-requires selling the idea to skeptical maintainers.  But that is how,
-IMO, we get from where we're at now to something closer to a set of
-coherent kernel docs.
+Yeah, fully agreed that this is an important step.
 
-Thanks,
+I'm even more anxious for a third phase: filling the gaps. I'm pretty sure
+that several important parts of the Kernel aren't properly represented
+at Documentation.
 
-jon
+Yet, before start writing new things, we should first organizing what we
+already have, making them well-organized.
+
+Cheers,
+Mauro
 
 _______________________________________________
 linux-afs mailing list
