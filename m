@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF42F1651CE
+	by mail.lfdr.de (Postfix) with ESMTPS id EB34F1651D0
 	for <lists+linux-afs@lfdr.de>; Wed, 19 Feb 2020 22:40:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,56 +10,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fDtHjUFhUwMysoysDpujmO12BLE9ShgjVn6MKHuq5fk=; b=ldsfbHypAc12kr
-	/kHEYts1Ru2mZ4Ts1UmQP9c6Es4UPzDZT+vUVA5Wu3lmsCPiHrCA941CLGBZcP9ZU3B4tYNMVkNga
-	2Ow05aVA8VjgnIau67OT1KRsNpTBoABkwIypBsFZg1P7Ix1s7dDdpr3KM7/nazUTcMIYaZWsvka/Y
-	+QJPpaSoqD93yeoBlQ9PyHX6ZB4S3fps5crSkp/mvXypu3JMNORJdjMbEttC9wugmxdmi06/eEtmV
-	PCI8qegouNfyG+WndkWnvM0DaVvYhL7U1ErisL5HvJxMcTqqaFblMUItsR5IfoJofA3+1VtsQkoIA
-	dEsEQj8VljFszlzagO1w==;
+	List-Owner; bh=9b8kjH3jptOoHtDLUxeM7lVDfsBsZ3tZ+qbTxAct/ME=; b=Aff+FhsvFnTGO7
+	JTrWd6f/KLa9SbuKPeyTQRXB9C4tWTytNbd4P5HfENHheGYH5GXqCr9Hbl6lSDY4EmoxZebaiHkdH
+	YDgDCKyOsQJWAqJR+QT0/iCjZ0z9qJTkhLe2UaSVjUMLP2iqj6Ywypb+rOIhktz9g+3UZksnGnmC0
+	xoURhG3X2iElkY/n8GFCZDwNPYndXwpLnixT5K1t9XahbhebYQWjW5qrV6XHt8a//AM2GO8kg6SU1
+	h/gkM1HwNhYMZjAP0uT1YOQT4kfraqJdCgE1OQIShYNS9oXotFMNauIiluk9otMVdBhH2yGICf9uD
+	2uV2dPBtlwijRmk4DhGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4X5J-0007Sd-GQ; Wed, 19 Feb 2020 21:40:45 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j4X5J-0007So-MU; Wed, 19 Feb 2020 21:40:45 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4UhJ-0007uw-Rf
- for linux-afs@lists.infradead.org; Wed, 19 Feb 2020 19:07:51 +0000
-Received: by mail-lj1-x243.google.com with SMTP id q8so1552244ljb.2
- for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 11:07:49 -0800 (PST)
+ id 1j4UzY-0007DN-DI
+ for linux-afs@lists.infradead.org; Wed, 19 Feb 2020 19:26:41 +0000
+Received: by mail-lj1-x244.google.com with SMTP id o15so1587393ljg.6
+ for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 11:26:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PW7lNRLaUwWMkxjmDviGmCx98DZMFUxSA3+XY1xBUHc=;
- b=Hx1j/CCXthRsFcYUkCqUCZKHuALKrv53PhNO0/eSPdI55ETBuvMT4Bzt7Qa//aT+Xq
- pbz3LbAT0K7mf2O2wl4T+6nDRq33OiFGxtJRkEnoPAzmD/q8ILz+w8fB+i5OEbDM4aTv
- V5D7jcX/IJAfFXSwG3AgccJqFA6k9pBx+DkqY=
+ :cc; bh=1fTub4GYfjONmIT82CPg1N7dCoXEnM2Sw2O8KqYucXw=;
+ b=TTXA143+I9mRmEBx9/1NhLISHKMsH6waUZcmcpT1BguCNEKTR0hF7JmV5HoBZEGz3o
+ db9fi0sUaay+pAz0CQoHWY2cCDHTPEMKkMTVnGzY174vOn3S+TeHtv27+wikNuljtZEX
+ gzePqVGy4l+pJiMwf4qLcoz9ecA3N8Y267gYc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=PW7lNRLaUwWMkxjmDviGmCx98DZMFUxSA3+XY1xBUHc=;
- b=OriPckKtxWz0grPPYDwErwBkBc1DShJjgBJJQuZtTGpVji/UrqeIuzfXkGPQks6mAG
- +gw2VrHOlHj9EcCnzp32s1E1OLLujwdb/5zTabXdHq4QqFLoAMBppUQVOOn4OWTBgkhB
- x6RreqwbU1cLV8Kdng1/f5EXw6huuD/nhfxSG+UQaCj97KytNK7VCvnC7iLSDIEqfVd9
- vyZ3wK2gPPGD2cdahmvprUa0UK62WTm9PBzZ3P5Vp5/CK6uIV8Kuwum/T6f9Xph7wPiI
- ppoLa7usdyX95qY0xTruohve3Gr/fLc9Oq1MNkh93l+kAjzgiAKV82I7R3c2RNVtKjuy
- CWVA==
-X-Gm-Message-State: APjAAAWca8T3Oio/D4Lz+YsGqTK3zu9crqPGk99lZZh6POYegDVoUztj
- 5gz3cRJpQI3ISeg87Y/WtcMlt/H5mQ0=
-X-Google-Smtp-Source: APXvYqzCrrDcN8ihTuUyLfzDp0cj0aq3rr9Vs5r4j0KGRDDEj45xJohYAKMEUbu04FCm7LA3IjWF9A==
-X-Received: by 2002:a05:651c:120d:: with SMTP id
- i13mr16657489lja.173.1582139266542; 
- Wed, 19 Feb 2020 11:07:46 -0800 (PST)
-Received: from mail-lf1-f43.google.com (mail-lf1-f43.google.com.
- [209.85.167.43])
- by smtp.gmail.com with ESMTPSA id t21sm334344ljh.14.2020.02.19.11.07.44
+ bh=1fTub4GYfjONmIT82CPg1N7dCoXEnM2Sw2O8KqYucXw=;
+ b=crOAlKUmvtjse/4JcM17xeaj7CvCn1YwtKxfKhJ2OvnIznvERFmuDHeO/9PGhUvxeK
+ Td5eqmvAgim8zhdQ8YmEjCNzL23JoGbEHhy0IMqYIajc4ZJJphgJ6MhwRw4ejs/EbVZZ
+ q91H7km5m1gkI+g/s+Ak5V5c1LuIAj+rUce7k8XMR/DdSCEfc4yp0x2k/ZV35dS7AJz/
+ FJ6BCh3EI7Bw+ZGT5Z1LPiqJn+BDB+erCEptqhhewS6ss55izWyllZilnpUgs0EDImz0
+ cFawqT385DnXZt9LJ2IAXkhSw4ASKDMOQ2Zl/2yj7d+7OR+OmBWtJlJk7IHBhjGQy6I5
+ 0gpw==
+X-Gm-Message-State: APjAAAXaMeCo7JDwcCyZsITfZWa7N8XK5nhKf3WNEuUStZaR2X3DfgZ7
+ 7tN8AP7d9oFvLS3bjWph3rTTf6HOtn4=
+X-Google-Smtp-Source: APXvYqyEKd9jV3oFOYT0XCxu7WqevrWrKCMgjQN18hsm7EA64PGUfvYas2DgoK174B/sJSX9NjP52w==
+X-Received: by 2002:a2e:8944:: with SMTP id b4mr15647215ljk.90.1582140396001; 
+ Wed, 19 Feb 2020 11:26:36 -0800 (PST)
+Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com.
+ [209.85.208.178])
+ by smtp.gmail.com with ESMTPSA id m11sm308319lfj.42.2020.02.19.11.26.34
  for <linux-afs@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 19 Feb 2020 11:07:45 -0800 (PST)
-Received: by mail-lf1-f43.google.com with SMTP id c23so994248lfi.7
- for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 11:07:44 -0800 (PST)
-X-Received: by 2002:a05:6512:687:: with SMTP id
- t7mr14685091lfe.30.1582139264476; 
- Wed, 19 Feb 2020 11:07:44 -0800 (PST)
+ Wed, 19 Feb 2020 11:26:35 -0800 (PST)
+Received: by mail-lj1-f178.google.com with SMTP id q8so1561326ljj.11
+ for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 11:26:34 -0800 (PST)
+X-Received: by 2002:a2e:909a:: with SMTP id l26mr16050682ljg.209.1582140394436; 
+ Wed, 19 Feb 2020 11:26:34 -0800 (PST)
 MIME-Version: 1.0
 References: <158212290024.224464.862376690360037918.stgit@warthog.procyon.org.uk>
  <CAMuHMdV+H0p3qFV=gDz0dssXVhzd+L_eEn6s0jzrU5M79_50HQ@mail.gmail.com>
@@ -67,25 +65,25 @@ References: <158212290024.224464.862376690360037918.stgit@warthog.procyon.org.uk
  <CAHk-=wjFwT-fRw0kH-dYS9M5eBz3Jg0FeUfhf6VnGrPMVDDCBg@mail.gmail.com>
  <241568.1582134931@warthog.procyon.org.uk>
  <CAHk-=wi=UbOwm8PMQUB1xaXRWEhhoVFdsKDSz=bX++rMQOUj0w@mail.gmail.com>
-In-Reply-To: <CAHk-=wi=UbOwm8PMQUB1xaXRWEhhoVFdsKDSz=bX++rMQOUj0w@mail.gmail.com>
+ <CAHk-=whfoWHvL29PPXncxV6iprC4e_m6CQWQJ1G4-JtR+uGVUA@mail.gmail.com>
+In-Reply-To: <CAHk-=whfoWHvL29PPXncxV6iprC4e_m6CQWQJ1G4-JtR+uGVUA@mail.gmail.com>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 19 Feb 2020 11:07:28 -0800
-X-Gmail-Original-Message-ID: <CAHk-=whfoWHvL29PPXncxV6iprC4e_m6CQWQJ1G4-JtR+uGVUA@mail.gmail.com>
-Message-ID: <CAHk-=whfoWHvL29PPXncxV6iprC4e_m6CQWQJ1G4-JtR+uGVUA@mail.gmail.com>
+Date: Wed, 19 Feb 2020 11:26:18 -0800
+X-Gmail-Original-Message-ID: <CAHk-=whE0uzJy1C5z-GB-s7YioW_yhiEaes4cNa6tLJwyx19gA@mail.gmail.com>
+Message-ID: <CAHk-=whE0uzJy1C5z-GB-s7YioW_yhiEaes4cNa6tLJwyx19gA@mail.gmail.com>
 Subject: Re: [RFC PATCH] vfs: syscalls: Add create_automount() and
  remove_automount()
 To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_110749_896774_5ACC48E7 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200219_112640_454016_CE30FC8D 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -119,24 +117,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 10:55 AM Linus Torvalds
+On Wed, Feb 19, 2020 at 11:07 AM Linus Torvalds
 <torvalds@linux-foundation.org> wrote:
 >
-> Why don't you just use mkdir with S_ISVTX set, or something like that?
+> Actually, since this is apparently a different filetype, the _logical_
+> thing to do is to use "mknod()".
 
-Actually, since this is apparently a different filetype, the _logical_
-thing to do is to use "mknod()".
+Btw, don't get me wrong. I realize that you want to send other
+information too in order to fill in all the metadata for what the
+mountpoint then _does_.
 
-Yes, yes, it will require a new case (and maybe a per-filesystem
-callback or a flag or something) in "may_mknod()" and "do_mknodat()"
-to let those new kinds through, but it sounds like mknod() is actually
-what you're doing.
+So the "mknod()" thing would be just to create a local placeholder
+(and an exclusive name) on the client - and then you do the ioctl on
+that (or whatever) that sends over the metadata to the server along
+with the name.
 
-You presumably need a new type _anyway_ for stat() and/or the filldir
-d_type field. Or do you always want to make it look exactly like a
-directory to all user space?
+Think of it as a way to get a place to hook into things, and a (local
+only) reservation for the name.
 
-                  Linus
+               Linus
 
 _______________________________________________
 linux-afs mailing list
