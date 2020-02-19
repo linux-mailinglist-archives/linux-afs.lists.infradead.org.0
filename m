@@ -2,64 +2,59 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 311A11651D1
+	by mail.lfdr.de (Postfix) with ESMTPS id B54351651D2
 	for <lists+linux-afs@lfdr.de>; Wed, 19 Feb 2020 22:40:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=huTlDcMIPSQTMwtFJpRg8A6KGY8VbbFA2k55i40yTME=; b=nF4ZLAvLUwy87o
-	U8uPywUJ7ecHDRW5JNPBK6DUTNL4f/7fTB1diDBzd+lHgDoILiJlMPsJY8lk9A3mhHXV+bRkW/hCI
-	8D6CmmzzOVURxdCAjP3p4nN15ltsqftQTH0v5Equc1HSQP3WkAXZMewJwHZBGzD8HCcv5eFEbq9/6
-	G9PIpEhYk8fT5w+a48RYtEXMRMQshRFWBq0BBdDM7HL1VYnSCIae5nq5BtQukEwjA/TaWjY4qAT8W
-	HyBCMMm7LNeiHTF0hN0VT7rIAUtOmn5qPizhxDThxLDv3JCDU52nF9W08UhxWj2VljQAIFgwPlBmb
-	kuOmPvzOUWwoaecOu5EQ==;
+	List-Owner; bh=qLuN6zD/SKMN/MEDTPt92G7X5608jbVbXF47hTjmd/E=; b=su7/jVJ7Gi7KHL
+	76NV2E8Oz/J4ceZ6uWNULIzfPI4b0gWhU1OyALyK9KBh+n014jg8REHn3LVBPFKmSOgMco2WDcJ/a
+	IRk4lJyNnxKumr4L1wSc1rzAVJGKZya0V0FmuqufVicr4hEBFcMwedlIujsvs9sxrzDxVAgqLp//n
+	1suUtUTFYe3U6Tz7TXsZoYWcaVe+VP+JSmLOoNkla7fnkdMwy7bWhmw//h0dmCLGIcWd+wZGqFEhG
+	rJrfSHYylrixuwjalRrVeeXfXev8FKUc/Gh2LVt0BRxxA+yE6Pngy2ReC/DsVl1CUxnlP/qk/hC/G
+	hzmlX52TWP3yGeYgG/GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4X5K-0007U9-A3; Wed, 19 Feb 2020 21:40:46 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1j4X5K-0007Ui-QE; Wed, 19 Feb 2020 21:40:46 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Vig-0003pM-Jh
- for linux-afs@lists.infradead.org; Wed, 19 Feb 2020 20:13:19 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q8so1704281ljj.11
- for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 12:13:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bgq6Y7b2zz3iA7vvFl1zD3iuBLDCnggP0uD/ReDPtoY=;
- b=L1xcjpv9tg4ovUYUrEvMleJYYGnxMSzUIGeTIEI8pb3Dp4HZy1mT2JTLUJYr+nQrPs
- RkPEHZFY1/xrXLf8wYx0g7zYXtc/srkM5eYLE0fb8urwD0Hu/6f09qRJUwi9vY+uxkbK
- MkE8Vg3sCpw9CxMHOqUIpxk4GiRP39hrEEF6A=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bgq6Y7b2zz3iA7vvFl1zD3iuBLDCnggP0uD/ReDPtoY=;
- b=lnB2HZSDVeDjjSVLEA47f2Ss24em7rUcLPhWjOnImsd7UZ/nuVqL/uD1l+Rah0euNf
- 1JcoKh9ydumcUdOX7nmwTNFXbxiMMwBJEX+Lgs0kXD5i07oTawUkZNX+53gPEmLU7JL3
- OtahdlOjAu7cg8DUiemSNda76KKoDN45kXSGBd+3h0+nqYtLzwYi+gaNEfrfGdIgyHFo
- T8A+qst3BPMp1+WnXPvjhlsdjNyA8p0iFw9lRdL4pWLycxdup/F01kaXsODgkQGMVaTP
- 5f6ur2UzMItaQpbTbMrFPoyM7mWTtnUBE9lQDBEQ+0t7aR5UAtUOtpZd5W37Btl4UfOT
- iSNA==
-X-Gm-Message-State: APjAAAWstXbFpP94VKJMqORPVc7Fqc0vBYvmaAeWlaVWSeRkH6lYs33H
- EuJ407+R7hyjQBqX1jLR75xqhiRODug=
-X-Google-Smtp-Source: APXvYqzKeP0t6E3+KDW7uz3Rp56bYRTMGFk8HB5fg3yXUaK7oE/WeTz0nHg+3yca7U2FF1vbEv56Jg==
-X-Received: by 2002:a2e:7816:: with SMTP id t22mr16771365ljc.161.1582143196452; 
- Wed, 19 Feb 2020 12:13:16 -0800 (PST)
-Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com.
- [209.85.208.179])
- by smtp.gmail.com with ESMTPSA id y7sm357929lfk.83.2020.02.19.12.13.15
- for <linux-afs@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 19 Feb 2020 12:13:15 -0800 (PST)
-Received: by mail-lj1-f179.google.com with SMTP id r19so1751674ljg.3
- for <linux-afs@lists.infradead.org>; Wed, 19 Feb 2020 12:13:15 -0800 (PST)
-X-Received: by 2002:a2e:9d92:: with SMTP id c18mr17708042ljj.265.1582143194731; 
- Wed, 19 Feb 2020 12:13:14 -0800 (PST)
-MIME-Version: 1.0
-References: <158212290024.224464.862376690360037918.stgit@warthog.procyon.org.uk>
+ id 1j4X4c-0006BT-Fv
+ for linux-afs@lists.infradead.org; Wed, 19 Feb 2020 21:40:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582148401;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=Akm5nZ5Nk5RDJvPlHXdmc1pTXqzcrHwStmylDtS4kdo=;
+ b=cD6CMwlQM0OJsp1JzhHuJqeXtPLT8H5zzEaBUHr9zrSzhBYMLXmCX3hDGJzdk9IQf+st5k
+ roXzrl0WHzh++ouGdsFuLES3giEAh3DIaPf0AFhvpXa1QNN+sjktyy62yUiDrLK1tb8xfX
+ g246lyvm0qj0566do/CAAGbmF+kHr50=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-271-lYV3sqb5NxSus3qboGNwYQ-1; Wed, 19 Feb 2020 16:39:58 -0500
+X-MC-Unique: lYV3sqb5NxSus3qboGNwYQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CF399800D50;
+ Wed, 19 Feb 2020 21:39:56 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-122-163.rdu2.redhat.com
+ [10.10.122.163])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A04215C1B0;
+ Wed, 19 Feb 2020 21:39:54 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <CAHk-=wgtAEvD6J_zVPKXHDjZ7rNe3piRzD_bX2HcVgY3AMGhjw@mail.gmail.com>
+References: <CAHk-=wgtAEvD6J_zVPKXHDjZ7rNe3piRzD_bX2HcVgY3AMGhjw@mail.gmail.com>
+ <158212290024.224464.862376690360037918.stgit@warthog.procyon.org.uk>
  <CAMuHMdV+H0p3qFV=gDz0dssXVhzd+L_eEn6s0jzrU5M79_50HQ@mail.gmail.com>
  <227117.1582124888@warthog.procyon.org.uk>
  <CAHk-=wjFwT-fRw0kH-dYS9M5eBz3Jg0FeUfhf6VnGrPMVDDCBg@mail.gmail.com>
@@ -67,34 +62,34 @@ References: <158212290024.224464.862376690360037918.stgit@warthog.procyon.org.uk
  <CAHk-=wi=UbOwm8PMQUB1xaXRWEhhoVFdsKDSz=bX++rMQOUj0w@mail.gmail.com>
  <CAHk-=whfoWHvL29PPXncxV6iprC4e_m6CQWQJ1G4-JtR+uGVUA@mail.gmail.com>
  <252465.1582142281@warthog.procyon.org.uk>
-In-Reply-To: <252465.1582142281@warthog.procyon.org.uk>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 19 Feb 2020 12:12:58 -0800
-X-Gmail-Original-Message-ID: <CAHk-=wgtAEvD6J_zVPKXHDjZ7rNe3piRzD_bX2HcVgY3AMGhjw@mail.gmail.com>
-Message-ID: <CAHk-=wgtAEvD6J_zVPKXHDjZ7rNe3piRzD_bX2HcVgY3AMGhjw@mail.gmail.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
 Subject: Re: [RFC PATCH] vfs: syscalls: Add create_automount() and
  remove_automount()
-To: David Howells <dhowells@redhat.com>
+MIME-Version: 1.0
+Content-ID: <260917.1582148393.1@warthog.procyon.org.uk>
+Date: Wed, 19 Feb 2020 21:39:53 +0000
+Message-ID: <260918.1582148393@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_121318_653158_0A4CEAD0 
+X-CRM114-CacheID: sfid-20200219_134002_627730_1F2DA510 
 X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-Mailman-Approved-At: Wed, 19 Feb 2020 13:40:43 -0800
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -109,8 +104,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: CIFS <linux-cifs@vger.kernel.org>, "open list:NFS, SUNRPC,
  AND..." <linux-nfs@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, coda@cs.cmu.edu,
- Geert Uytterhoeven <geert@linux-m68k.org>, Al Viro <viro@zeniv.linux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ coda@cs.cmu.edu, Al Viro <viro@zeniv.linux.org.uk>,
  Linux FS Devel <linux-fsdevel@vger.kernel.org>, linux-afs@lists.infradead.org,
  linux-btrfs <linux-btrfs@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -118,56 +113,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 11:58 AM David Howells <dhowells@redhat.com> wrote:
->
-> Actually, in many ways, they're more akin to symlinks (and are implemented as
-> symlinks with funny attributes).  It's a shame that symlinkat() doesn't have
-> an at_flags parameter.
+Linus Torvalds <torvalds@linux-foundation.org> wrote:
 
-Interesting. Then you'd get the metadata as the symlink data. Is the
-size of the available buffer (PATH_MAX) sufficient?
+> so you _could_ actually just make the rule be something simple like
+> 
+>    symlink(target, "//datagoeshere")
+> 
+> being the "create magic autolink directory using "datagoeshere".
 
-In fact, would PATH_MAX-2 be sufficient?
+Interesting.  I'll ask around to see if this is feasible.  Some applications
+(emacs being one maybe) sometimes appear to store information in symlink
+bodies - I'm not sure if any of those could be a problem.
 
-Because POSIX actually says that a double slash at the beginning of a
-filename is special:
+Since the mountpoint body is formulaic:
 
- "A pathname consisting of a single slash shall resolve to the root
-directory of the process. A null pathname shall not be successfully
-resolved. A pathname that begins with two successive slashes may be
-interpreted in an implementation-defined manner, although more than
-two leading slashes shall be treated as a single slash"
+	[%#](<cellname>:)?<volumename>(.readonly|.backup)?.
 
-so you _could_ actually just make the rule be something simple like
+maybe I can use that pattern.
 
-   symlink(target, "//datagoeshere")
+symlink() would be returning a dentry that appears to be a directory, but it
+doesn't look like that should be a problem.
 
-being the "create magic autolink directory using "datagoeshere".
+> So then you could again script things with
+> 
+>    mknod dirname c X Y
+>    echo "datagoeshere" > dirname
 
-The advantage of that interface is that now you can do things from
-simple perl/shell scripts etc, instead of using any magic at all.
+This would be tricky to get right as it's not atomic and the second part could
+fail to happen.  For extra fun, another client could interfere between the
+steps (setxattr would be safer than write here).
 
-> mknod() isn't otherwise supported on AFS as there aren't any UNIX special
-> files.
+David
 
-Well, arguably that's a feature. You _could_ decide that a S_IFCHR
-mknod (with a special number pattern too, just as a special check)
-becomes that special node that you can then write the data to to
-create it.
-
-So then you could again script things with
-
-   mknod dirname c X Y
-   echo "datagoeshere" > dirname
-
-if that's what it takes.
-
-But the symlink thing strikes me as not unreasonable. It's POSIXy,
-even if Linux hasn't really traditionally treated two slashes
-specially (we've discussed it, and there may be _tools_ that already
-do, though)
-
-         Linus
 
 _______________________________________________
 linux-afs mailing list
