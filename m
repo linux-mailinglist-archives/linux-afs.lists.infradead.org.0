@@ -2,71 +2,87 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E15174CEF
-	for <lists+linux-afs@lfdr.de>; Sun,  1 Mar 2020 12:20:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F8B9175FB6
+	for <lists+linux-afs@lfdr.de>; Mon,  2 Mar 2020 17:33:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=b1tqlNRFWKfehyFnv2doh+6jiKsdw+yfUonzTE11+hM=; b=sjO
-	LPQoNb5fswiZDc2KE+3K/P0x1CCAHD5pR7pPm3JcVEH9zVNUdSU0mdhElC6iob4AKt2skDdOvaEa7
-	Yb1Kg1CIgRMJAN83vxiVNL8bCPGRZwnUL0zh43lJcMfmntGPDXOhArtWkks5fJVJmBH6LGYEDzbp4
-	NNUuM/8BEBt7rk5hVj4mCP62b6365Sco4B+pIqth1faqen0LikkuTAyKrS30c70B4TmfUVhibPFLx
-	YFU0pEzzBJ57foN7r8DU6/owBXxULT67oZBA9tyG5ll+MMlGpcpFt7qdbCxM7mY95x6ukLFzF7cuO
-	EllwulIi7rKYZ+CpMn9YwJiNHG8tzqg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h7poXgYE0JPNuBBME31aME7s1p7Q5lv6MUyLeNNBnAM=; b=tOjFN8vVSyA/5s
+	tAC96vRqNab8q2M4t6Jr1kV0opwZuOuxkiqVCP0jeVNHBwkhHsVMqStvYo/FvYXL+MrvVipqidcc2
+	7Q+hL03D8B19X94ps77UYB1Rx1q8D9R0UFvzg/fqHnwaMRIE6dhgKECgjgZEGAm0mEE0Tcg/gxwO0
+	AO0bViA+zRAtUaQIWHTZs/A3ZpAK0maNq9I+aUqhful/Iu7n4UzZQDLTQfyFFDWrNF0fkjuMJvk3V
+	phN+Eivtbpln9jE+EphIR2IPR3V/4iB4g8nt1oArnR3wI3isYb2MSbeEx9BtbIaQQT2G4eXRH94mU
+	zkMHcpaELjZ0vyRcIi2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Mdt-0007OO-9A; Sun, 01 Mar 2020 11:20:17 +0000
-Received: from mail-il1-f199.google.com ([209.85.166.199])
+	id 1j8nzu-0006hc-FJ; Mon, 02 Mar 2020 16:32:50 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Mdq-0007Ne-PS
- for linux-afs@lists.infradead.org; Sun, 01 Mar 2020 11:20:16 +0000
-Received: by mail-il1-f199.google.com with SMTP id a4so6644707ili.14
- for <linux-afs@lists.infradead.org>; Sun, 01 Mar 2020 03:20:13 -0800 (PST)
+ id 1j8nzq-0006ga-P0
+ for linux-afs@lists.infradead.org; Mon, 02 Mar 2020 16:32:48 +0000
+Received: by mail-ed1-x543.google.com with SMTP id c62so597071edf.0
+ for <linux-afs@lists.infradead.org>; Mon, 02 Mar 2020 08:32:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=umich.edu; s=google-2016-06-03;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=md11bwOKEakFXKu3QY8x1RHti2GVIdi3Oo714Bw2GlQ=;
+ b=Nk9uis29bVV2FlwcDpdHFVWRX02bbXYsjpVDQKkV7DdRRNuJ+ZPudiWTuEZvhcZwa8
+ KWYYb89ep4HqONII1HPhwaUeg++iG0+WCjJjUlOQiD6xkgCFLCRHQm3frl1q07JiPzg2
+ Qq4VKjfhkWjfNSyIxeNiIoxUi30k4SUlqHZsej705QPh9SpxKj4MjjZJ0DPQlLfBKHe8
+ jPXpwmp/AmNDnYtQ1kSfoy9Y/goKavW87chQA/IcvIyJ7kDMO8+m97RU+7NcVpPb094q
+ 220DS2n7OWvho+auCOZHHvl7/WrU1dlsOIQMEVkd8ICyy1CCVOszWJHsXYNa9og5jBi6
+ 0ayA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=go2em9Ljthkh8bv+66gOflgqR5R40xw32D6uaPu+fbI=;
- b=jWM3JZTZBGCsphU33Dy+U3nNPvUbU9PyjXJGMB9VTk1n14SIG9GSQ/uc7myIoDY9aD
- 7yM0nE7y2yAuDbwYxWHnliN89zouUB6LT8INzKVqRRcUnNJEO5gAfv3ExUoav0r5LkBv
- hwSfhZzCDdA9CiTLbtSrsnbwbBHNkc8ImFjaGHzHhc7Qa72L+u1epZ23n4avFhycKlq/
- ksZBaSrSnn35EJ4tZZlUdRYK9FesZJds+NaTg3SBQNE+P6qYSVquO9FH9JGMiHaMmoo0
- mbsYmgvGVJxRQyyLXq9Ctl1LiEACgXisdHcNs6s8zHRGFfg60t+6ByszEB1klLNYfsFm
- BxZQ==
-X-Gm-Message-State: APjAAAViv78NEwmalGzKGCSEdUVLVZTW18bu7awFBoHH/8dHt3bAcgqm
- 4Q3PP9OMso7H1Bq6dqvqnLGrClDC+1VguEHT+Wye/2maneYl
-X-Google-Smtp-Source: APXvYqwJxUnpzxQiBIGgDtlghCiY2StwSPCfO+F1kKjYNbYS9qb1J0ILqr5ldyu5AH+4SAYqz5qTkT3zTF5IXR8zg2oTBkLDvzGV
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=md11bwOKEakFXKu3QY8x1RHti2GVIdi3Oo714Bw2GlQ=;
+ b=sKoRxe/qrkussnwV4XncilEMzWHucOBRxEcNQboPlKAKTwB0jh+urQNq+RjwBute/L
+ ngMEb52bm8UOj/js0oO7fcIWUXfF9LLJuTL8jNtjuV80mOzASXu138GRbkYasvp54twg
+ ssCcFwDnSohner+nJsiHCGPXDn1J1Ae8H5Tri3xjtRGsN0dNJNCcaeYiiyqRSaZT0ESY
+ r1f6klXKhj6D3Rxjqio1ft+0o6daBwn6JF7GI8eYNoBNpCeLeBKUbylSdx/LsCpdXvWX
+ FP/J2ITw+7hnOB+WksQSGevVPBOBNFJHesIL9s31o7j9P8De2p+E16oAcj47p5DQ4CpS
+ MZug==
+X-Gm-Message-State: ANhLgQ2c/8XuCeC+LJrKrbxX4EzX50kb3DtwqoJHbCqxAnLQ18+M5P3C
+ /ihTtq5bKeSYaFrEAUftsNuXVcvoVoVHZ/rDJHFU/g==
+X-Google-Smtp-Source: ADFU+vtZBXpvF7+PVoU4fnrDQ5j0G0/6ACUnnk05Knv8vijtaDgmr94GVFmF7TmlKjZWwlz7KnZUQgzjP1yBUZ7/h2k=
+X-Received: by 2002:aa7:cf0a:: with SMTP id a10mr84815edy.333.1583166760589;
+ Mon, 02 Mar 2020 08:32:40 -0800 (PST)
 MIME-Version: 1.0
-X-Received: by 2002:a92:8458:: with SMTP id l85mr12379683ild.296.1583061612450; 
- Sun, 01 Mar 2020 03:20:12 -0800 (PST)
-Date: Sun, 01 Mar 2020 03:20:12 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000001156d8059fc94130@google.com>
-Subject: KASAN: use-after-free Read in afs_deactivate_cell
-From: syzbot <syzbot+14ebf5bd30d222b5745c@syzkaller.appspotmail.com>
-To: dhowells@redhat.com, linux-afs@lists.infradead.org, 
- linux-kernel@vger.kernel.org, syzkaller-bugs@googlegroups.com
+References: <20200229092155.23965-1-olsonse@umich.edu>
+ <005EF5A0-4D79-4355-9DD3-DEDF0FA68326@auristor.com>
+ <5176a0ceacc80e2ac54b0865cd58b8b4@ca-zephyr.org>
+ <CAOx9Pehr_s8vQuccvQ35ksveYYMAsE2B2Q6oDruvtcO-ev2tTg@mail.gmail.com>
+ <949b4e71141cc66ed1dfcc9d35018506@ca-zephyr.org>
+In-Reply-To: <949b4e71141cc66ed1dfcc9d35018506@ca-zephyr.org>
+From: Spencer Olson <olsonse@umich.edu>
+Date: Mon, 2 Mar 2020 09:32:29 -0700
+Message-ID: <CAOx9PejTuEYDC3Nz2kp7p-9g5heVh6FrbX1TnbdBMsUyjVfxhw@mail.gmail.com>
+Subject: Re: [PATCH] Add debian build package
+To: Bill MacAllister <bill@ca-zephyr.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_032014_827845_ECB18767 
-X-CRM114-Status: UNSURE (   4.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200302_083246_884452_75303524 
+X-CRM114-Status: GOOD (  22.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.199 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.199 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,116 +94,128 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
+Cc: David Howells <dhowells@redhat.com>, Bill MacAllister <mac@ca-zephyr.org>,
+ linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hello,
+On Sun, Mar 1, 2020 at 2:59 AM Bill MacAllister <bill@ca-zephyr.org> wrote:
+>
+> On 2020-02-29 11:46, Spencer Olson wrote:
+> > Not a problem.  In any case, the error that you are seeing is the same
+> > error that I am seeing.  I hadn't been using kafs for some time, so I
+> > can't tell when this started.  I've tried using the dyn mount option,
+> > mounting the root.afs and root.cell, all with the same result.  I've
+> > tried using existing afsdb entries and also manually specifying
+> > servers.  I normally have my firewall very restrictive, but I tried
+> > disabling it entirely.
+> >
+> > If you figure out what is going on, let me know.
+> >
+> >> $ ls /afs/cs.stanford.edu [2]
+> >> ls: cannot open directory '/afs/cs.stanford.edu [2]': Destination
+> >> address
+> >> required
+>
+> The problem that I was having was because I moved kafs-dns to /usr/sbin
+> and didn't adjust the kafs_dns.conf file. But, that wasn't the only
+> configuration mistake I made. Once I got all the configuration files
+> in the right directories magic happened.
+>
+> >> Your work made my progress possible. Thanks a lot for sharing it.
+> >> Once we get a working package I will see that it gets pushed into
+> >> Debian.
+>
+> I now have a working package.  I have tested on buster and bullseye.
+> I will need to spin up a 20.04 ubuntu test system to make sure it works
+> on Ubuntu.  There are still some rough edges that need to be addressed,
+> but I am ready to start working with Russ Allbery to get it uploaded
+> into Debian.
+>
+> Thanks again for your work.
+>
+> Bill
+>
+> --
+> Bill MacAllister <bill@ca-zephyr.org>
 
-syzbot found the following crash on:
+These comments are probably as much for the entire group as for BIll.
 
-HEAD commit:    bdc5461b Add linux-next specific files for 20200224
-git tree:       linux-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=100c3645e00000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=8402e437f1eeea92
-dashboard link: https://syzkaller.appspot.com/bug?extid=14ebf5bd30d222b5745c
-compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+Bottom line up front:
+1) Status of my packaging (not combined with Bill's efforts)
+2) Some feedback on debian packaging
+3) Some feedback on redhat packaging
 
-Unfortunately, I don't have any reproducer for this crash yet.
+__
+1) Status of my debian packaging:
 
-IMPORTANT: if you fix the bug, please add the following tag to the commit:
-Reported-by: syzbot+14ebf5bd30d222b5745c@syzkaller.appspotmail.com
+My config did produce a working package:
+  * On Ubuntu 20.04 : works great
+  * On Ubuntu 18.04 : only works if you tweak request-key.d/kafs_dns.conf
+     It looks like 18.04 is still using an older version of keyutils where
+     the naming of the items in request-key.d/* are very important.
+     To temporarily fix this, either:
+     -  add contents of kafs_dns.conf to the top of request-key.conf
+     *or*
+     -  rename kafs_dns.conf or make a symlink to it with the name
+"dnsresolver.conf"
 
-==================================================================
-BUG: KASAN: use-after-free in hlist_del_rcu include/linux/rculist.h:487 [inline]
-BUG: KASAN: use-after-free in afs_deactivate_cell+0x17d/0x1e0 fs/afs/cell.c:632
-Read of size 8 at addr ffff888094430468 by task kworker/1:3/18047
+    After doing this, my "Destination Address required" problem went away.
 
-CPU: 1 PID: 18047 Comm: kworker/1:3 Not tainted 5.6.0-rc2-next-20200224-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-Workqueue: afs afs_manage_cell
-Call Trace:
- __dump_stack lib/dump_stack.c:77 [inline]
- dump_stack+0x197/0x210 lib/dump_stack.c:118
- print_address_description.constprop.0.cold+0xd4/0x30b mm/kasan/report.c:374
- __kasan_report.cold+0x1b/0x32 mm/kasan/report.c:506
- kasan_report+0x12/0x20 mm/kasan/common.c:641
- __asan_report_load8_noabort+0x14/0x20 mm/kasan/generic_report.c:135
- hlist_del_rcu include/linux/rculist.h:487 [inline]
- afs_deactivate_cell+0x17d/0x1e0 fs/afs/cell.c:632
- afs_manage_cell+0x35e/0x1400 fs/afs/cell.c:706
- process_one_work+0xa05/0x17a0 kernel/workqueue.c:2266
- worker_thread+0x98/0xe40 kernel/workqueue.c:2412
- kthread+0x361/0x430 kernel/kthread.c:255
- ret_from_fork+0x24/0x30 arch/x86/entry/entry_64.S:352
+   Is it in order to attempt to push the updated version of keyutils
+through to 18.04
+   (I won't personally care much longer, since I'll move entirely to 20.04)
 
-Allocated by task 26432:
- save_stack+0x23/0x90 mm/kasan/common.c:72
- set_track mm/kasan/common.c:80 [inline]
- __kasan_kmalloc mm/kasan/common.c:515 [inline]
- __kasan_kmalloc.constprop.0+0xcf/0xe0 mm/kasan/common.c:488
- kasan_kmalloc+0x9/0x10 mm/kasan/common.c:529
- kmem_cache_alloc_trace+0x158/0x790 mm/slab.c:3551
- kmalloc include/linux/slab.h:555 [inline]
- kzalloc include/linux/slab.h:669 [inline]
- afs_alloc_cell fs/afs/cell.c:151 [inline]
- afs_lookup_cell+0x645/0x1310 fs/afs/cell.c:250
- afs_parse_source fs/afs/super.c:290 [inline]
- afs_parse_param fs/afs/super.c:326 [inline]
- afs_parse_param+0x440/0x920 fs/afs/super.c:314
- vfs_parse_fs_param+0x2b4/0x610 fs/fs_context.c:147
- vfs_parse_fs_string+0x10a/0x170 fs/fs_context.c:191
- do_new_mount fs/namespace.c:2816 [inline]
- do_mount+0x6b4/0x1b50 fs/namespace.c:3107
- __do_sys_mount fs/namespace.c:3316 [inline]
- __se_sys_mount fs/namespace.c:3293 [inline]
- __x64_sys_mount+0x192/0x230 fs/namespace.c:3293
- do_syscall_64+0xfa/0x790 arch/x86/entry/common.c:295
- entry_SYSCALL_64_after_hwframe+0x49/0xbe
+2) Debian Packaging feedback
+Cloned Bill's repo and I have some feedback:
+  - you missed installing some libraries that are necessary for the client
+  - your debian config seems a bit more complicated than mine without producing
+    significantly different results (aside from mine working and yours not)
+  - you changed the location of various installed components differently from
+    the normal install.  I don't think these changes are necessary and only
+    make the packaging more complicated/different from the Makefile install.
+    In any case, there does not seem to be a debian reason for making these
+    changes.
 
-Freed by task 13356:
- save_stack+0x23/0x90 mm/kasan/common.c:72
- set_track mm/kasan/common.c:80 [inline]
- kasan_set_free_info mm/kasan/common.c:337 [inline]
- __kasan_slab_free+0x102/0x150 mm/kasan/common.c:476
- kasan_slab_free+0xe/0x10 mm/kasan/common.c:485
- __cache_free mm/slab.c:3426 [inline]
- kfree+0x10a/0x2c0 mm/slab.c:3757
- afs_cell_destroy+0xf1/0x130 fs/afs/cell.c:486
- rcu_do_batch kernel/rcu/tree.c:2207 [inline]
- rcu_core+0x5e3/0x1440 kernel/rcu/tree.c:2434
- rcu_core_si+0x9/0x10 kernel/rcu/tree.c:2443
- __do_softirq+0x262/0x98c kernel/softirq.c:292
+Either I miscommunicated or you (and perhaps David) misunderstood the
+purpose of my patch:
 
-The buggy address belongs to the object at ffff888094430400
- which belongs to the cache kmalloc-512 of size 512
-The buggy address is located 104 bytes inside of
- 512-byte region [ffff888094430400, ffff888094430600)
-The buggy address belongs to the page:
-page:ffffea0002510c00 refcount:1 mapcount:0 mapping:00000000872b8291 index:0x0
-flags: 0xfffe0000000200(slab)
-raw: 00fffe0000000200 ffffea0002887048 ffffea00029f3fc8 ffff8880aa400a80
-raw: 0000000000000000 ffff888094430000 0000000100000004 0000000000000000
-page dumped because: kasan: bad access detected
+The reason for my patch/commits was *not* to help create a quilt solution
+for kafs-cilent, where we have to update from upstream.  Rather, my
+intention was to create a debian build configuration that can live *with*
+the primary source code similar to the redhat/ subdirectory.  This is done by:
+    - *not* duplicating any package information in the debian/ sub-directory
+    -  only performing the actions that were necessary to take the
+       installation, as given by the original Makefile, and produce from it a
+       debian package meeting the debian layout and requirements.
+       These actions include:
+        *  Using my mk_changelog script to generate a changelog that is
+           pulled directly from the git history (not wanting to duplicate any
+           information)
+        *  Copying over the license info from the root dir (yes, I realize that
+           debian packages like to just have meta info on packages, but this
+           was the easiest to do in short order following my rule:
+           "dont' duplicate package info"
+        *  Do *as little* manual packaging as possible.  In other words, use
+           as much of deb_helper to package things appropriately.
 
-Memory state around the buggy address:
- ffff888094430300: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
- ffff888094430380: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
->ffff888094430400: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-                                                          ^
- ffff888094430480: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
- ffff888094430500: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-==================================================================
+2) Redhat Packaging:
+  Following my personal rule of trying to avoid duplicating
+information just for packaging,
+  I'd like to recommend doing something to make the changelog
+automatic in the rpm.spec file.
+  Looking online, it seems that rpm.spec does support an %include
+directive.  Might I suggest
+  that an option be added to my mk_changelog script to output the
+changelog formatted for
+  redhat where the content of that output can be included by an
+%include directive?
 
-
----
-This bug is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
-
-syzbot will keep track of this bug report. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+  Take these comments with a grain of salt, since I've not built any
+redhat packages
+  for several years and don't have an rpm system to test with.
 
 _______________________________________________
 linux-afs mailing list
