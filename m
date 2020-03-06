@@ -2,8 +2,8 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC5A017C277
-	for <lists+linux-afs@lfdr.de>; Fri,  6 Mar 2020 17:04:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11D7B17C278
+	for <lists+linux-afs@lfdr.de>; Fri,  6 Mar 2020 17:04:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jOgMplqvY+1reNNhF5lhmdN641kNxxQyoCajJwsgGGo=; b=Vm43fmmGarP5yIrI5ipSBHtvE7
-	ep4BXT2xzTpouMGkWi5f+NXI+ZmGNLv9wALcXyrza7lOg0P4zHRGFeJMZJpGXpXgxkn04BEWZ7zoV
-	Ctp/UWS7khGzKbNrlHoR2MajSnj99mdmrWyJpS0Cnb9zbHq+MPlvJ92DHt0qGj/JcyGmUOp6eI/QQ
-	7I5V137YhPTizSZEhZjyldU+hZ9K1jxwxhM+JGEcwDnxMducwTylSDQq7JpbSRLbkmq/ZCVKgzUow
-	PMnbVtDptFHU3XtI6Hnzzm+/aEkLJthLNITHyXdULVsrLRvWBWz82Z/obCLHVvnVJfLCtcYo9nfIx
-	lZ8dZ8GA==;
+	bh=zWGYlPbDLQD+uUBXhsuPYJEC2zDkfy7KF2i/JIlY/0g=; b=HC5qWUHkNOUAesoEeia17w201S
+	S9KzmY+TaoukHkxeXy9AA1M1xWRn/PYop0sz2oUJjq3s00ezqUIB752YN9jYcmbBXhSRx2pkLJxpZ
+	skvJu/Z9wnjCVUC8b+EgGJoqZMaKckc+JqgEVPCfOxG17K2M+WccrYzhxcWRych5ycXfi1Sw1rRa3
+	3pO6iL8CG+MMmaB0U40Vj8OklLL66C96Ay2DRZBPu+IXAUbe7+Wm4aCG2ACUDLQMjNIfpF4TuK/9k
+	1fwpjU10Bhv9PDs+PH8UxTkdH0j+nqPT9obXHyP8eW/0flG9geuEC+tzRqnQt+hqBE9LJxKQARf5H
+	UGVN+4bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAFSD-0002zj-2J; Fri, 06 Mar 2020 16:04:01 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1jAFSD-0002zw-CC; Fri, 06 Mar 2020 16:04:01 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAFS9-0002xB-9w
+ id 1jAFS9-0002xF-3v
  for linux-afs@lists.infradead.org; Fri, 06 Mar 2020 16:03:59 +0000
-Received: by mail-il1-x143.google.com with SMTP id j69so2455782ila.11
- for <linux-afs@lists.infradead.org>; Fri, 06 Mar 2020 08:03:51 -0800 (PST)
+Received: by mail-il1-x141.google.com with SMTP id g126so2496586ilh.2
+ for <linux-afs@lists.infradead.org>; Fri, 06 Mar 2020 08:03:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=umich.edu; s=google-2016-06-03;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=RWLPIzFZ9h0ZVDXP2mgyX3njN6wfJjY76vvtb4utlFc=;
- b=AYKVajQeO9Vgbx+tU/XMWrsfjEJsVEMIXjhVZtYYLbDQ13OuasHlCW8nzsDguGo7R5
- 6lz6aoyVk/GYtYCVwGr4wBOUL24jatxCxGjbzz2m/uB8nEzIBImNUwcQ4UWFD5fGvGBJ
- KR0vMo/q703H8r/zRAXHrwNK/6zUeYVJ47ZpCATwHmLyUDbMPW9eGjEH9k+2do6ePtA7
- IZTe/VPkPiAQhsBH5FwuU9nSJ7Oe9V6yAl5B+d9NVokGIx709bShEhVtM+Bzy0gsbfBL
- K4HIpU00ptSKZG5+vfaPDtIArDRgKL9paiDg+DEvI1PEhyaQoskQiDx9yfOsDNmyJdEW
- w26A==
+ bh=tWR5Ylh+7em+7FHZqWQWADSiK4tBNU8C0zmeu+pTOiU=;
+ b=FyVXknvhONi80RPxcivtAtiqC9eS/MqlCV2Xnug9+BCV6EzDLsrmAcKK6cqgnZOLwi
+ O884pN/D94NJGNdB0zADi5i4UX0TSNGQfDENOrDAUYMLl0fA9aWvpbkLABSr/poZz332
+ RIW54ioYgpdTPl0/G18T2plwb0NFpqAxuOEAKFxwCMA+qR/Q5YfsGmo5LABWgsUwNiUx
+ 5fwbnLCFd4WjpSBEjCW5tr+CeY5WUjpEPDe+e1jjUzYM8gnOI4m40BCiLuVHPP3mYP1P
+ Ee/pTu09ddcVvMSlFsjHxwUXQDvFnS/c/Zvy3MpnoP1fFC4VJTaVVb5rlWAt8Mm5L2mt
+ egaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=RWLPIzFZ9h0ZVDXP2mgyX3njN6wfJjY76vvtb4utlFc=;
- b=bQVrXTwNzTqiCeTROYAwo23qxlitWTwbQ/xUX9nRPFKXUa2xhQL1oLzY3YQiVemsV+
- TqnyVrlV1VO7H9M2Lc9za/BZJJV4Ukv3duMuH8xXR/+3xemuS7CLSZ8xc/b3Xem/exFr
- aigPfxA3HYTa4Y0ZDomRCegD3C/7qbkwLbpK9/+PlHawq+Irk2LW6vmmWxqAa9Q2gfPm
- 1NlVKUxiBhPbmRg3Qqibqux1Bsmwy5NZMykFx6M+coBlTt/Dfx/y+XZMNbagwDucgqGh
- +FWXRVtxw6NjxEqjJU3+t1pikMz04Dfk7IQ68rZqT0Y4Q2xGn5ipnSVtrIrGAQfXnGcY
- GQmw==
-X-Gm-Message-State: ANhLgQ2K0cVKpp6NF8lU+P/rsS0A0coTqZD6jMRlhcSkvlN5XmYZzSbX
- 7UkaFX59tbqLOoOXm9Wcf3THgNY61/0v7pLhImrZbjqaxBMilD2RnNRJYqf4qVwaK8vWmbZpar1
- CXdy/Cx9FfhvuDejO1mQ4kr2V1asfIMb7HPkwiy+oLu3Q/dKHlBfgAstklpqDMpEOhCje6Z7k
-X-Google-Smtp-Source: ADFU+vtOWIZzpJEB9Sy41Z+f2liyFlWzk/KSl+JhKNqGp6UtbpTnpb0N4qJv7GuGgra0H/5oJqpbWw==
-X-Received: by 2002:a92:d341:: with SMTP id a1mr3866127ilh.257.1583510630236; 
- Fri, 06 Mar 2020 08:03:50 -0800 (PST)
+ bh=tWR5Ylh+7em+7FHZqWQWADSiK4tBNU8C0zmeu+pTOiU=;
+ b=HSz9bP3PO7nFjZOz3xRblOlxFmyET8tic84qdRFA+LK4PJfp1rPY5Yj+OHX+29QqR0
+ zsNHZjRkRDUCnWZA9LvF57tjlh+Dy8XAytBTiXYK8eWmaqKK84xo5TRuv1SzTyyt3KnT
+ /Kj5FRozF1F3s1YZcdZAx5IHvvk+7/kN5ETupqA2kYK+ZymcRyuhcL8vDnwDC2bqfd7i
+ +uWRgHzaUQfEUzEdKc+QWM/Qm5tC81BTYKEOOfgc0AQHMsYUuSRYTh0A+3F3GyJdNh1C
+ x4HiIRr+j5XVR9EeZcHNplBJ0k1CQk4PzuR36p6F4GeH9smcUPS5znA6gXTGOCPdIbKX
+ 8xCA==
+X-Gm-Message-State: ANhLgQ02g9C4/7lrW5jURc9n0pNiD073qTBxd7Pomkn5FX/a2af1zkAW
+ 7PXgOjCrO8phSo1CLy1lnNfNy6mNtmcJf4sBaVZBWzI8OmBMFMbNQIylALPBY9yE4ELWTjbKe4K
+ RhRIr0ToX2C95L2HeWwQqqdnqp7lBXlcC5DCSC/yO9skgI5yPL+5ml75iXcap+e3CCbXUSRxW
+X-Google-Smtp-Source: ADFU+vuHgbA5muJ1f+danAfIuj3u5+8i2lCwbvBjz23SNQQ4cMUAwqbRPOu7MWzYHPwOQxGZwEPDIw==
+X-Received: by 2002:a92:d745:: with SMTP id e5mr3750048ilq.285.1583510631885; 
+ Fri, 06 Mar 2020 08:03:51 -0800 (PST)
 Received: from aurum.olson.home (174-28-234-179.albq.qwest.net.
  [174.28.234.179])
- by smtp.gmail.com with ESMTPSA id e133sm7382062ioa.17.2020.03.06.08.03.48
+ by smtp.gmail.com with ESMTPSA id e133sm7382062ioa.17.2020.03.06.08.03.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 08:03:49 -0800 (PST)
+ Fri, 06 Mar 2020 08:03:51 -0800 (PST)
 From: "Spencer E. Olson" <olsonse@umich.edu>
 To: linux-afs@lists.infradead.org
-Subject: [PATCH v2 0/3] Add debian packaging to kafs-client
-Date: Fri,  6 Mar 2020 09:03:11 -0700
-Message-Id: <20200306160314.22047-1-olsonse@umich.edu>
+Subject: [PATCH v2 1/3] Add debian build package
+Date: Fri,  6 Mar 2020 09:03:12 -0700
+Message-Id: <20200306160314.22047-2-olsonse@umich.edu>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <809786c0ed8ecfde410e3635e4c6b6fa@ca-zephyr.org>
+In-Reply-To: <20200306160314.22047-1-olsonse@umich.edu>
 References: <809786c0ed8ecfde410e3635e4c6b6fa@ca-zephyr.org>
+ <20200306160314.22047-1-olsonse@umich.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_080357_347169_C7FFB143 
-X-CRM114-Status: GOOD (  10.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200306_080357_219172_0AA0A2CF 
+X-CRM114-Status: GOOD (  13.98  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org] 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
+ [URI: self.date (date)]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,47 +107,290 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-This is a second iteration of a patch to add debian packaging for kafs-client.
-
-Bill:  This second iteration really just adds two more patches...
-
-This patchset doesn't yet squash all the changes into one commit:
-0001: First (original) patch adds debian packaging to kafs-client.
-0002: This patch upgrades the dh compatibility to 11 and hence uses
-      dh_installsystemd.  Makes systemd installing slightly more
-      straight-forward.
-0003: Try to make a Debian-type copyright file with copyrights auto-pulled from
-      git log.  This is certainly not perfect and not too fine-grained.  But at
-      least alleviates the need to manually update the copyright file (as long
-      as we are not too picky about how find-grained the info is).
-
-Spencer E. Olson (3):
-  Add debian build package
-  Cleanup systemd install
-  debian: Add script to create copyright file in debian format
-
+Signed-off-by: Spencer E. Olson <olsonse@umich.edu>
+---
  debian/.gitignore              |  15 +++++
  debian/compat                  |   1 +
  debian/control                 |  28 ++++++++
- debian/copyright.tmpl          |  26 +++++++
  debian/kafs-client-dev.install |   2 +
  debian/kafs-client.docs        |   1 +
  debian/kafs-client.install     |   8 +++
  debian/mk_changelog            | 119 +++++++++++++++++++++++++++++++++
- debian/mk_copyright            |  55 +++++++++++++++
- debian/rules                   |  46 +++++++++++++
- 10 files changed, 301 insertions(+)
+ debian/rules                   |  42 ++++++++++++
+ 8 files changed, 216 insertions(+)
  create mode 100644 debian/.gitignore
  create mode 100644 debian/compat
  create mode 100644 debian/control
- create mode 100644 debian/copyright.tmpl
  create mode 100644 debian/kafs-client-dev.install
  create mode 100644 debian/kafs-client.docs
  create mode 100644 debian/kafs-client.install
  create mode 100755 debian/mk_changelog
- create mode 100755 debian/mk_copyright
  create mode 100755 debian/rules
 
+diff --git a/debian/.gitignore b/debian/.gitignore
+new file mode 100644
+index 0000000..03a5df2
+--- /dev/null
++++ b/debian/.gitignore
+@@ -0,0 +1,15 @@
++changelog
++copyright
++kafs-client/
++kafs-client.afs.mount
++kafs-client.service
++kafs-client-dev/
++*.log
++*.substvars
++files
++debhelper-build-stamp
++*.postinst.debhelper
++*.prerm.debhelper
++*.postrm.debhelper
++*.swp
++tmp/
+diff --git a/debian/compat b/debian/compat
+new file mode 100644
+index 0000000..ec63514
+--- /dev/null
++++ b/debian/compat
+@@ -0,0 +1 @@
++9
+diff --git a/debian/control b/debian/control
+new file mode 100644
+index 0000000..4789270
+--- /dev/null
++++ b/debian/control
+@@ -0,0 +1,28 @@
++Source: kafs-client
++Section: net
++Priority: optional
++Build-Depends: debhelper (>= 9), libkrb5-dev, libkeyutils-dev, libssl-dev
++Maintainer: Spencer E. Olson <olsonse@umich.edu>
++Standards-Version: 3.9.2
++Homepage: https://www.infradead.org/~dhowells/kafs/
++Vcs-Git: git://git.infradead.org/users/dhowells/kafs-client.git
++
++Package: kafs-client
++Architecture: any
++Depends: ${shlibs:Depends}, ${misc:Depends}
++Description: The basic tools for kAFS and mounter for the AFS dynamic root
++ Provide basic AFS-compatible tools for kAFS and systemd scripts to mount the
++ dynamic root on /afs and preload the cell database.
++ .
++ This package also provides a library of shareable routines for dealing with the
++ kAFS filesystem.  These provide things like configuration parsing and DNS
++ lookups.
++
++Package: kafs-client-dev
++Architecture: any
++Depends: ${shlibs:Depends}, ${misc:Depends}, kafs-client
++Description: The basic tools for kAFS and mounter for the AFS dynamic root
++ Provide basic AFS-compatible tools for kAFS and systemd scripts to mount the
++ dynamic root on /afs and preload the cell database.
++ .
++ Provides headers for kafs-client libraries.
+diff --git a/debian/kafs-client-dev.install b/debian/kafs-client-dev.install
+new file mode 100644
+index 0000000..d9b5ef6
+--- /dev/null
++++ b/debian/kafs-client-dev.install
+@@ -0,0 +1,2 @@
++usr/include
++usr/*/*/*.so
+diff --git a/debian/kafs-client.docs b/debian/kafs-client.docs
+new file mode 100644
+index 0000000..e845566
+--- /dev/null
++++ b/debian/kafs-client.docs
+@@ -0,0 +1 @@
++README
+diff --git a/debian/kafs-client.install b/debian/kafs-client.install
+new file mode 100644
+index 0000000..0244810
+--- /dev/null
++++ b/debian/kafs-client.install
+@@ -0,0 +1,8 @@
++afs/
++etc/
++usr/bin
++usr/sbin
++usr/libexec
++usr/share/man
++usr/share/kafs-client/cellservdb.conf usr/share/kafs
++usr/lib/*/*.so.*
+diff --git a/debian/mk_changelog b/debian/mk_changelog
+new file mode 100755
+index 0000000..7bec001
+--- /dev/null
++++ b/debian/mk_changelog
+@@ -0,0 +1,119 @@
++#!/usr/bin/env python3
++# vim: ts=2:sw=2:et:tw=80:nowrap
++
++from subprocess import Popen, PIPE
++import re, io
++from datetime import datetime
++
++class GitVersion(object):
++  PACKAGE_FMT = 'v(?P<version>[0-9].*)'
++  PACKAGE_NAME= 'kafs-client'
++
++  def __init__(self, tag=None):
++    self.date = None
++
++    if tag is None:
++      p = Popen(['git', 'describe', '--tags'], stdout=PIPE)
++      self.current_git_version = p.communicate()[0].decode().strip()
++
++      p = Popen(['git', 'describe', '--tags', '--abbrev=0'], stdout=PIPE)
++      self.current_git_tag = p.communicate()[0].decode().strip()
++
++      # let's set the date for this version to the last commit
++      p = Popen(['git','log','-1','--format=%cD',self.current_git_version],
++                stdout=PIPE)
++      self.date = p.communicate()[0].decode().strip()
++    else:
++      self.current_git_version = self.current_git_tag = tag
++
++    p = Popen(['git', 'describe', '--tags', self.current_git_version + '~1', '--abbrev=0'],
++              stdout=PIPE, stderr=PIPE)
++    self.last_git_version = p.communicate()[0].decode().strip()
++
++    p = Popen(['git','show',self.current_git_tag], stdout=PIPE)
++    tag_commit = p.communicate()[0].decode()
++    if 'Tagger:' in tag_commit:
++      # this is an annotated tag
++      m = re.search('\nTagger:\s*(?P<name>[^\n]*)\nDate:\s*(?P<date>[^\n]*)\n', tag_commit)
++    else:
++      # this is a non-annotated tag
++      m = re.search('\nAuthor:\s*(?P<name>[^\n]*)\nDate:\s*(?P<date>[^\n]*)\n', tag_commit)
++
++    self.maintainer = m.groupdict()['name']
++    if not self.date:
++      date = datetime.strptime(m.groupdict()['date'], '%a %b %d %H:%M:%S %Y %z')
++      self.date = date.strftime('%a, %d %b %Y %H:%M:%S %z')
++
++  def match_version(self):
++    try:
++      D = re.match(self.PACKAGE_FMT, self.current_git_version).groupdict()
++      D.setdefault('name', self.PACKAGE_NAME)
++      return D
++    except:
++      return dict(name='unknown', version='0.0.0')
++
++  @property
++  def version_number(self):
++    m = self.match_version()
++    if '-g' in m['version']:
++      return m['version'].rpartition('-g')[0]
++    else:
++      return m['version']
++
++  @property
++  def package_name(self):
++    return self.match_version()['name']
++
++  @property
++  def changes(self):
++    if self.last_git_version:
++      p = Popen(['git','log',self.last_git_version+'..'+self.current_git_version,
++                 '--format=<log-header>* %s%n%b'], stdout=PIPE)
++      psed = Popen(['sed','-e','s/^/    /', '-e', 's/\\s*<log-header>\\*/  */'],
++                   stdin=p.stdout, stdout=PIPE)
++      return psed.communicate()[0].decode()
++    else:
++      return '  * Initial version\n'
++
++  @property
++  def chlog_first_line(self):
++    return '{} ({}) unstable; urgency=low' \
++      .format(self.package_name, self.version_number)
++
++  @property
++  def chlog_last_line(self):
++    return ' -- {}  {}\n'.format(self.maintainer, self.date)
++
++  def __call__(self):
++    return '{}\n{}{}\n' \
++      .format(self.chlog_first_line, self.changes, self.chlog_last_line)
++
++
++class GitVersionCollection(object):
++  def __init__(self):
++    p = Popen(['git', 'tag'], stdout=PIPE)
++    self.tags = p.communicate()[0].decode().splitlines()
++    self.tags.reverse()
++
++    self.has_untagged_changes = False
++    p = Popen(['git', 'describe', '--tags'], stdout=PIPE)
++    current = p.communicate()[0].decode().strip()
++    if current not in self.tags:
++      self.has_untagged_changes = True
++
++  def __call__(self):
++    out = io.StringIO()
++    if self.has_untagged_changes:
++      out.write(GitVersion()())
++    for tag in self.tags:
++      out.write(GitVersion(tag)())
++
++    return out.getvalue()
++
++
++def main():
++  c = GitVersionCollection()
++  print(c())
++
++if __name__=='__main__':
++  main()
+diff --git a/debian/rules b/debian/rules
+new file mode 100755
+index 0000000..c0eb5c6
+--- /dev/null
++++ b/debian/rules
+@@ -0,0 +1,42 @@
++#!/usr/bin/make -f
++# See debhelper(7) (uncomment to enable)
++# output every command that modifies files on the build system.
++DH_VERBOSE = 1
++export DESTDIR=$(CURDIR)/debian/kafs-client/
++export SBINDIR=/usr/sbin/
++export LIBDIR=/usr/lib/x86_64-linux-gnu
++
++# see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*
++DPKG_EXPORT_BUILDFLAGS = 1
++include /usr/share/dpkg/default.mk
++
++# see FEATURE AREAS in dpkg-buildflags(1)
++#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
++
++# see ENVIRONMENT in dpkg-buildflags(1)
++# package maintainers to append CFLAGS
++#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
++# package maintainers to append LDFLAGS
++#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
++
++# main packaging script based on dh7 syntax
++%:
++	dh $@ --with systemd
++
++build binary :  $(CURDIR)/debian/changelog $(CURDIR)/debian/copyright
++
++override_dh_auto_install:
++	mkdir -p $(CURDIR)/debian/tmp/afs
++	dh_auto_install
++	cp $(CURDIR)/conf/kafs-config.service  \
++	   $(CURDIR)/debian/kafs-client.service
++	cat $(CURDIR)/conf/afs.mount | sed -e 's/kafs-config/kafs-client/' \
++	   > $(CURDIR)/debian/kafs-client.afs.mount
++	dh_systemd_enable --name=afs
++	rm $(CURDIR)/debian/tmp/usr/share/man/man1/aklog.1
++
++$(CURDIR)/debian/changelog : $(CURDIR)/debian/mk_changelog
++	$(CURDIR)/debian/mk_changelog > $(CURDIR)/debian/changelog
++
++$(CURDIR)/debian/copyright : $(CURDIR)/LICENCE.GPL
++	cp $(CURDIR)/LICENCE.GPL $(CURDIR)/debian/copyright
 -- 
 2.17.1
 
