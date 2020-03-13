@@ -2,84 +2,93 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E0B9183B7A
-	for <lists+linux-afs@lfdr.de>; Thu, 12 Mar 2020 22:37:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52176184DEB
+	for <lists+linux-afs@lfdr.de>; Fri, 13 Mar 2020 18:48:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IYQrgslUAP/PnWfAL8gKIKAawol15ZMwf1Brc7gfwIg=; b=jE17Eh6y8QX1Yw
-	AV0snqPoxZggaT7EWq2jINfLqCXOTUN14rUfVB4W569KdZY5XgldgT5j9pGZ7gvS7MYaTKnCcHSVr
-	G4/iGQ37GFM4m5IY/q16vqlr4b/tFgywj6D4ysXRGE2iviw3u9tA+0Y1MYTzJuvToB0SRzobhFnIq
-	/gS9QG8WKPvxLZda53KLjDw5ADpXcQ9gPhE8VRV2vK1RJXDomvYVnuxvj3j/FxinqrW9fjDP58rEy
-	jTVcBY1qOKe/riMz5wMsDE8gDE/DZUV/gxHKUnNID33AtlzAQOi0CMX0PPaOPLRSqO86Xk6A/C2cU
-	TjvUEageCs8cEmCsPUig==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xbkym3NrgMLZKTemBZhQdoIo+6vDFGSrs4erpGIyCCo=; b=sLc0yAdmjtfZKK
+	tEExyEirpftxvaj3uQn23tDq/AAUQWCpBa/9zg1X093UvNM12bZVTiBCfJPkEGKzB60jLjGvaDNB3
+	715L7iC5rC1AppnvoCsPg2f9TXecjHmLd5u7u9mFwQdzOuTK5z7fSiabKkpgmcpjaCAR2UZ35LjdS
+	l+gmOtlsPrDq3rwSolHHlQ8jivE1344LZYVNd1x0a8BJJEeuBtwYdu0u0T5USr57LqILJq6sKk1Qp
+	blLKBolhkUrQzcokOabAC8+bzw2llxVeaXHusfueGj/xHe2tIZPhwv1WijgBfwLz9QxF/gTnjuX02
+	Fmv++EMcTMeNjsl1MsZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCVVr-0000Nu-SI; Thu, 12 Mar 2020 21:37:07 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jCoQE-0004bQ-83; Fri, 13 Mar 2020 17:48:34 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCVVo-0000Mc-DV
- for linux-afs@lists.infradead.org; Thu, 12 Mar 2020 21:37:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584049021;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=o0KJvs5Tn9ZRXYpDxYyGbc0Z0po25d7YTKzjpj8ERqU=;
- b=iS2bU8JtQtDB9jbEN7yXOX7R5oxdDQznTKOmFCktFl/JhAYnamTHc2/nxRPjNbPBezEli1
- 240IAGrL1ux14CSYqGLD5rxXUsfc5o34Gps5eZr7Qs3eYeDytS6lwohnjxjwquM+cRtnb4
- FssrOw4Y079GkoH17jonFN/9w+wfe8o=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-217-jGvZjzwnPsqBl7sVisqPlA-1; Thu, 12 Mar 2020 17:36:57 -0400
-X-MC-Unique: jGvZjzwnPsqBl7sVisqPlA-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 03599107ACC9;
- Thu, 12 Mar 2020 21:36:56 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-182.rdu2.redhat.com
- [10.10.120.182])
- by smtp.corp.redhat.com (Postfix) with ESMTP id BE89292D1C;
- Thu, 12 Mar 2020 21:36:54 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH] afs: Use kfree_rcu() instead of casting kfree() to
- rcu_callback_t
-From: David Howells <dhowells@redhat.com>
-To: torvalds@linux-foundation.org
-Date: Thu, 12 Mar 2020 21:36:53 +0000
-Message-ID: <158404901390.1220563.13542240512778767032.stgit@warthog.procyon.org.uk>
-User-Agent: StGit/0.21
+ id 1jCoQB-0004au-Ol
+ for linux-afs@lists.infradead.org; Fri, 13 Mar 2020 17:48:33 +0000
+Received: by mail-lj1-x241.google.com with SMTP id g12so11509822ljj.3
+ for <linux-afs@lists.infradead.org>; Fri, 13 Mar 2020 10:48:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=vBLQZt8yXSmQFbpabglArI1vUJ7UPF/XypjmyBfvyVk=;
+ b=DPlzu1PSzh+CHwPP/zN3dycxfFl9ZQkPe7eHqGyTGrPmz2GX+kTVwJrfWppBrAsi2F
+ oD7Co+2bcJ9FjInhrR6aToEaP2w9vUXc0nphKSGAWXW+HMGODA+bMmLGYkYiZKmofQRd
+ cvRhC1A5ChaKqZ+RaaPrjc/tF3zB+f1Aiios0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vBLQZt8yXSmQFbpabglArI1vUJ7UPF/XypjmyBfvyVk=;
+ b=oXth1F+14/9rtEC8tqd8sVZ7nR13FYcJI02SJRoVN4U/GZgCco5sr+Za2gvq0XChRL
+ 7yChHcOfona61+OVWJw//K/p1qu2wAXoNWZSXOg1PPFn9WrtfVDluBt5Gjc3JzdPxS+6
+ 6503ag1Lh8VWY6TZ216sz3AGIKSsO9QTtRp8sfAX2HOmR4rW5M/ekxg1eZTXIt+EzpvS
+ k7Td4qgQRjd3ZOxhNlc2A/81OC1hjQEiSse2ZlXJ2anWefe6j5rZnoZFQ4lbIHKZxWvw
+ adpDkOdjyS8t+ilz8d1vC94ykxidVqTEEZW4LCdwVP3/BKC/tD75VC613EtDYD0z82TD
+ 4eoQ==
+X-Gm-Message-State: ANhLgQ3ys8oCwpU5yzFg3FdIDGA88pLmGdYAmzTvKRZEoGKn6G8geQKK
+ I1E4aFI5Iup3I6GOMiBniDP1lSCpO7o=
+X-Google-Smtp-Source: ADFU+vsEwGimJK+5aCTUUSIscEKZo4GWMwCWnwnI4mb9KbV/Tmx7vXvXZMoskFLGl9R6w8aDW73GfA==
+X-Received: by 2002:a2e:9094:: with SMTP id l20mr7617918ljg.285.1584121707671; 
+ Fri, 13 Mar 2020 10:48:27 -0700 (PDT)
+Received: from mail-lf1-f48.google.com (mail-lf1-f48.google.com.
+ [209.85.167.48])
+ by smtp.gmail.com with ESMTPSA id d4sm6167490lfa.75.2020.03.13.10.48.26
+ for <linux-afs@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 13 Mar 2020 10:48:27 -0700 (PDT)
+Received: by mail-lf1-f48.google.com with SMTP id q10so8566243lfo.8
+ for <linux-afs@lists.infradead.org>; Fri, 13 Mar 2020 10:48:26 -0700 (PDT)
+X-Received: by 2002:ac2:5203:: with SMTP id a3mr9170677lfl.152.1584121706541; 
+ Fri, 13 Mar 2020 10:48:26 -0700 (PDT)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+References: <158404901390.1220563.13542240512778767032.stgit@warthog.procyon.org.uk>
+In-Reply-To: <158404901390.1220563.13542240512778767032.stgit@warthog.procyon.org.uk>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Fri, 13 Mar 2020 10:48:10 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wj0NiejjfLkcZaChHqEt9b+NzRjYWOsoC0vsRMHLYMs8A@mail.gmail.com>
+Message-ID: <CAHk-=wj0NiejjfLkcZaChHqEt9b+NzRjYWOsoC0vsRMHLYMs8A@mail.gmail.com>
+Subject: Re: [PATCH] afs: Use kfree_rcu() instead of casting kfree() to
+ rcu_callback_t
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_143704_541336_1A5A63F6 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200313_104831_810372_4CEE71FE 
+X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,58 +100,20 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-kernel@vger.kernel.org,
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  linux-afs@lists.infradead.org, Jann Horn <jannh@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Jann Horn <jannh@google.com>
+On Thu, Mar 12, 2020 at 2:37 PM David Howells <dhowells@redhat.com> wrote:
+>
+> Use kfree_rcu() instead, it's simpler and more correct.
 
-afs_put_addrlist() casts kfree() to rcu_callback_t. Apart from being wrong
-in theory, this might also blow up when people start enforcing function
-types via compiler instrumentation, and it means the rcu_head has to be
-first in struct afs_addr_list.
+Applied,
 
-Use kfree_rcu() instead, it's simpler and more correct.
-
-Signed-off-by: Jann Horn <jannh@google.com>
-Signed-off-by: David Howells <dhowells@redhat.com>
----
-
- fs/afs/addr_list.c |    2 +-
- fs/afs/internal.h  |    2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/fs/afs/addr_list.c b/fs/afs/addr_list.c
-index df415c05939e..de1ae0bead3b 100644
---- a/fs/afs/addr_list.c
-+++ b/fs/afs/addr_list.c
-@@ -19,7 +19,7 @@
- void afs_put_addrlist(struct afs_addr_list *alist)
- {
- 	if (alist && refcount_dec_and_test(&alist->usage))
--		call_rcu(&alist->rcu, (rcu_callback_t)kfree);
-+		kfree_rcu(alist, rcu);
- }
- 
- /*
-diff --git a/fs/afs/internal.h b/fs/afs/internal.h
-index 1d81fc4c3058..35f951ac296f 100644
---- a/fs/afs/internal.h
-+++ b/fs/afs/internal.h
-@@ -81,7 +81,7 @@ enum afs_call_state {
-  * List of server addresses.
-  */
- struct afs_addr_list {
--	struct rcu_head		rcu;		/* Must be first */
-+	struct rcu_head		rcu;
- 	refcount_t		usage;
- 	u32			version;	/* Version */
- 	unsigned char		max_addrs;
-
-
+            Linus
 
 _______________________________________________
 linux-afs mailing list
