@@ -2,69 +2,87 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 841DD18C8E6
-	for <lists+linux-afs@lfdr.de>; Fri, 20 Mar 2020 09:22:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1910518C8E5
+	for <lists+linux-afs@lfdr.de>; Fri, 20 Mar 2020 09:22:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TI6lbMwCwvMP8M/CNzHzbkeqMVs6v99EzFwNL8HuTCo=; b=qxeNXQjGua8nU+
-	O/ALSQ3k0cmdO2d6qoa/WfaJHqxC3LvfTYimM6V8w7cnq9dV5DJr3okxF/4jy8tr1UNMvOZuam1d5
-	8aIo78GyomwJ/BHglIwuj/+6cHufxtOrnwIVIfVgIiEpTQfBPD1eLZv8cLyQ6hJNPc/jt0QfAN4+E
-	YfI6o/rPwMj/NojPlII+YHIRBkbYyDFO5Ab71NrVWiilFxCQ0EuYdtB0sKKjaZ5gTMAmBjBTQ9Frb
-	RWDEuNgXXmUpVmfR6JWV6N+ymhF/pMzijrbMeCs+AaFwAaQtERQurKLW5bKojcbfwhE+/Pbn7xWSD
-	qWzVaHGd8FGZTLMppS/Q==;
+	List-Owner; bh=Yk1NiyZ2NfE6d4ypKyCKz4BAKBDOh6wfwGNLH/4Pgi4=; b=a+7iDgpiZL+rc/
+	a/THj5qyQ6D+rG56KlxXRXzQfA+5CFa8HoLzUkiuPTm1MP4rrM7VLtJxRkUoPDetVOLebuhD3ym5p
+	RNswyTqZ/Ru2EDLPdJpCATl3JLMOFK854Ietv4n81w1MX3LbAkHxWkvh5iyxx4da4f8F1OCkAwE/L
+	6vlQ9nZJze6cpfurY5yeCBNfDRy8zGzxvW7bTIICPDQOYQldvvxEJcAI8EQhB70r46EW55xT6Q+L8
+	+irzNA0Y3AdD5ySWr9iYD8cWPdjoehv6eD0EQBge8ceW2Ue8ZfXXmrEIm9lja39aoEb0wz2YkKD/G
+	IYvGMo4/3D7Z3wkhOeFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFCuw-0006qn-7A; Fri, 20 Mar 2020 08:22:10 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jFCuw-0006qy-CW; Fri, 20 Mar 2020 08:22:10 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF74K-0000aZ-Gx
- for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 02:07:30 +0000
-IronPort-SDR: 2usb/F4RG17Kbj5ph2BhVo55W6aoT5uFTTgyKmIGpzFwCR0mYKaAXsmS99qotVNGi4QLRqwZ+M
- PsFGP0XRiy7g==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 19 Mar 2020 19:07:27 -0700
-IronPort-SDR: WiEzzFWd7aTAoICAsN40XtyFpCM6ZL+d1ZkXNh3BJ3Vi1nV2R8/rxwplPDE8ycxCDCxG4UTI9x
- XiL+wxuMpEeg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,282,1580803200"; d="scan'208";a="245348348"
-Received: from anakash-mobl2.ger.corp.intel.com (HELO localhost)
- ([10.251.183.74])
- by orsmga003.jf.intel.com with ESMTP; 19 Mar 2020 19:07:18 -0700
-Date: Fri, 20 Mar 2020 04:07:17 +0200
-From: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+ id 1jFCtK-0006lP-Um
+ for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 08:20:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1584692429;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=VVZY6TeI0YOm1FYG0w30u2dqA8tug6BHP6KzUJXch3w=;
+ b=QCoGdzyya9ukt/wRDa4wC3ON5V3UK13QfXp55/FjzVJYzpv/molcLNQzJ91RkCw63Vy6Y+
+ tHIU3/ROUyPes0IBFUb4fdKlQUhk+2J5TDLi83vZpZkyWLzdMAl+U66u6RaCPbVm3mAh7n
+ WUyq3n9UiaD1igLOdDQ64g5ZaVpdsjc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-111-Nm9VmDiBOxqeGfERJwsHVA-1; Fri, 20 Mar 2020 04:20:27 -0400
+X-MC-Unique: Nm9VmDiBOxqeGfERJwsHVA-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B69A7800D5A;
+ Fri, 20 Mar 2020 08:20:24 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-113-126.rdu2.redhat.com
+ [10.10.113.126])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 5E2B85D9CA;
+ Fri, 20 Mar 2020 08:20:20 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <20200318221457.1330-2-longman@redhat.com>
+References: <20200318221457.1330-2-longman@redhat.com>
+ <20200318221457.1330-1-longman@redhat.com>
 To: Waiman Long <longman@redhat.com>
-Subject: Re: [PATCH v5 2/2] KEYS: Avoid false positive ENOMEM error on key read
-Message-ID: <20200320020717.GC183331@linux.intel.com>
-References: <20200318221457.1330-1-longman@redhat.com>
- <20200318221457.1330-3-longman@redhat.com>
- <20200319194650.GA24804@linux.intel.com>
- <f22757ad-4d6f-ffd2-eed5-6b9bd1621b10@redhat.com>
+Subject: Re: [PATCH v5 1/2] KEYS: Don't write out to userspace while holding
+ key semaphore
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f22757ad-4d6f-ffd2-eed5-6b9bd1621b10@redhat.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+Content-ID: <3251034.1584692419.1@warthog.procyon.org.uk>
+Date: Fri, 20 Mar 2020 08:20:19 +0000
+Message-ID: <3251035.1584692419@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_190728_948403_30AD55CD 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200320_012031_074443_9623229E 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.205.24.74 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-Mailman-Approved-At: Fri, 20 Mar 2020 01:22:09 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,11 +97,12 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: Sumit Garg <sumit.garg@linaro.org>,
  Chris von Recklinghausen <crecklin@redhat.com>, linux-afs@lists.infradead.org,
- Eric Biggers <ebiggers@google.com>, netdev@vger.kernel.org,
- Jerry Snitselaar <jsnitsel@redhat.com>, James Morris <jmorris@namei.org>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, Roberto Sassu <roberto.sassu@huawei.com>,
+ Roberto Sassu <roberto.sassu@huawei.com>, Eric Biggers <ebiggers@google.com>,
+ netdev@vger.kernel.org, Jerry Snitselaar <jsnitsel@redhat.com>,
+ James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
  Jakub Kicinski <kuba@kernel.org>, linux-integrity@vger.kernel.org,
  "David S. Miller" <davem@davemloft.net>, "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -91,32 +110,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Thu, Mar 19, 2020 at 08:07:55PM -0400, Waiman Long wrote:
-> On 3/19/20 3:46 PM, Jarkko Sakkinen wrote:
-> > On Wed, Mar 18, 2020 at 06:14:57PM -0400, Waiman Long wrote:
-> >> +			 * It is possible, though unlikely, that the key
-> >> +			 * changes in between the up_read->down_read period.
-> >> +			 * If the key becomes longer, we will have to
-> >> +			 * allocate a larger buffer and redo the key read
-> >> +			 * again.
-> >> +			 */
-> >> +			if (!tmpbuf || unlikely(ret > tmpbuflen)) {
-> > Shouldn't you check that tmpbuflen stays below buflen (why else
-> > you had made copy of buflen otherwise)?
-> 
-> The check above this thunk:
-> 
-> if ((ret > 0) && (ret <= buflen)) {
-> 
-> will make sure that ret will not be larger than buflen. So tmpbuflen
-> will never be bigger than buflen.
+Waiman Long <longman@redhat.com> wrote:
 
-Ah right, of course, thanks.
+> +		if ((ret > 0) && (ret <= buflen)) {
 
-What would go wrong if the condition was instead
-((ret > 0) && (ret <= tmpbuflen))?
+That's a bit excessive on the bracketage, btw, but don't worry about it unless
+you respin the patches.
 
-/Jarkko
+David
+
 
 _______________________________________________
 linux-afs mailing list
