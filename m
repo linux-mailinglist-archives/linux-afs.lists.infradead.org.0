@@ -2,55 +2,86 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7FCB18C5C7
-	for <lists+linux-afs@lfdr.de>; Fri, 20 Mar 2020 04:29:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43C0118C8E8
+	for <lists+linux-afs@lfdr.de>; Fri, 20 Mar 2020 09:22:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dhyjNqOWOSGqs/UHLpBhsZNWNksB/aZ+5/W6kGi/8VE=; b=rbkWAhf0RWQq6U
-	cMv69nIDF6OD+2A10keMR8f5utvzLMvTztdpndeswSPhcXrA7jrcHV8g+IYt0hvulsuD/pQ+taFzG
-	m/htBrEg6wju1HF1wv3iZCQaQWJfvfbIwpyOcpxzfgKWMEWb5Qgly7bibdUABdhhWCPbbfqZbu2yT
-	LbBV2YG0c/bHz7SFJeSwPZmsbu9N3objzn9odNbFEDHHWzBCGYyDLc9jVgEEPFV9+H+dVm+JaZce4
-	Mo17NsWnQ3Htht6pTkGl0dtyBElFnsDafoC5ZV6Pk0/BfBy+EA8PtASJXcfuihnuayk/9oXenLtM2
-	tc1F104BiytPjEyIv5WA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Gcez/hUrSJoRsb3yvWorkVCV5+VupJA8Qss+UKGTeo=; b=NPoaeEIc3r2T9C
+	et8/8S6SQy9vA3asj/cIzqpn0GkMnmckqe9FiGBU+lD5ud62G+uxf5WeK4tDvXP25nf/ChSr9718x
+	wPNkmm8tcJ40ECXnFSggP5PsGKI7Hjl8t8xTReT76+RwyOUv/TINerBR6fF/11rVLlz9hTRSUyKnF
+	X+hodSr1IiY9fuiZdCSFgNiV+pL1rsz7WSL1RfSSvsM9eU5ATANz7Q+oJcQGXlxA32Nx8FY5PrBB+
+	/I/Uz/R9rD/McOFvwy9t/ZbUi65nKN1jx2PPydmOEnu/S8GLkhIew1BGCam29Ok0QVuMoq0U0bDfK
+	BmA2Mev2DE0hHo74wGWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF8LN-0002NG-F7; Fri, 20 Mar 2020 03:29:09 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jFCuw-0006qc-2j; Fri, 20 Mar 2020 08:22:10 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF8LJ-0002MR-UA
- for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 03:29:08 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 84615158EC784;
- Thu, 19 Mar 2020 20:28:56 -0700 (PDT)
-Date: Thu, 19 Mar 2020 20:28:55 -0700 (PDT)
-Message-Id: <20200319.202855.777232170285897789.davem@davemloft.net>
-To: dhowells@redhat.com
-Subject: Re: [PATCH net 0/6] rxrpc, afs: Interruptibility fixes
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <158461880968.3094720.5019510060910604912.stgit@warthog.procyon.org.uk>
-References: <158461880968.3094720.5019510060910604912.stgit@warthog.procyon.org.uk>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Thu, 19 Mar 2020 20:28:56 -0700 (PDT)
+ id 1jF5Cn-0002U6-PT
+ for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 00:08:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1584662883;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=Anb5LRo8xpBF1QOjWwn5JazocJjB3iK3v4+s87FrK8A=;
+ b=UEvzJ4NbUVFJ0b37HCB8L+FhTkbAmEeDz6h72T+m4muyPzPbAWdTcAOh8U5gdLHIUQ/0hX
+ /n3pX5Xv6LC0N3lA8547MbzO/cWa3Pi7ycGXaJKuxk9cgVKw/sFwxFXrFedzabgFGAcZVK
+ t+UH3212IQiKDLOt0CB9C0AcAaSzEzM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-100-f_JiBXiuMQ2zkpAPZ_nSSw-1; Thu, 19 Mar 2020 20:08:01 -0400
+X-MC-Unique: f_JiBXiuMQ2zkpAPZ_nSSw-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DC5D4107ACC7;
+ Fri, 20 Mar 2020 00:07:58 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-113-139.rdu2.redhat.com [10.10.113.139])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 8BC6719C58;
+ Fri, 20 Mar 2020 00:07:55 +0000 (UTC)
+Subject: Re: [PATCH v5 2/2] KEYS: Avoid false positive ENOMEM error on key read
+To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+References: <20200318221457.1330-1-longman@redhat.com>
+ <20200318221457.1330-3-longman@redhat.com>
+ <20200319194650.GA24804@linux.intel.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <f22757ad-4d6f-ffd2-eed5-6b9bd1621b10@redhat.com>
+Date: Thu, 19 Mar 2020 20:07:55 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <20200319194650.GA24804@linux.intel.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_202905_972122_5323DB51 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200319_170805_902531_9B7D0EEB 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Mailman-Approved-At: Fri, 20 Mar 2020 01:22:09 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,52 +93,42 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Sumit Garg <sumit.garg@linaro.org>,
+ Chris von Recklinghausen <crecklin@redhat.com>, linux-afs@lists.infradead.org,
+ Eric Biggers <ebiggers@google.com>, netdev@vger.kernel.org,
+ Jerry Snitselaar <jsnitsel@redhat.com>, James Morris <jmorris@namei.org>,
+ Mimi Zohar <zohar@linux.ibm.com>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
+ keyrings@vger.kernel.org, Roberto Sassu <roberto.sassu@huawei.com>,
+ Jakub Kicinski <kuba@kernel.org>, linux-integrity@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, "Serge E. Hallyn" <serge@hallyn.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
-Date: Thu, 19 Mar 2020 11:53:29 +0000
+On 3/19/20 3:46 PM, Jarkko Sakkinen wrote:
+> On Wed, Mar 18, 2020 at 06:14:57PM -0400, Waiman Long wrote:
+>> +			 * It is possible, though unlikely, that the key
+>> +			 * changes in between the up_read->down_read period.
+>> +			 * If the key becomes longer, we will have to
+>> +			 * allocate a larger buffer and redo the key read
+>> +			 * again.
+>> +			 */
+>> +			if (!tmpbuf || unlikely(ret > tmpbuflen)) {
+> Shouldn't you check that tmpbuflen stays below buflen (why else
+> you had made copy of buflen otherwise)?
 
-> Here are a number of fixes for AF_RXRPC and AFS that make AFS system calls
-> less interruptible and so less likely to leave the filesystem in an
-> uncertain state.  There's also a miscellaneous patch to make tracing
-> consistent.
-> 
->  (1) Firstly, abstract out the Tx space calculation in sendmsg.  Much the
->      same code is replicated in a number of places that subsequent patches
->      are going to alter, including adding another copy.
-> 
->  (2) Fix Tx interruptibility by allowing a kernel service, such as AFS, to
->      request that a call be interruptible only when waiting for a call slot
->      to become available (ie. the call has not taken place yet) or that a
->      call be not interruptible at all (e.g. when we want to do writeback
->      and don't want a signal interrupting a VM-induced writeback).
-> 
->  (3) Increase the minimum delay on MSG_WAITALL for userspace sendmsg() when
->      waiting for Tx buffer space as a 2*RTT delay is really small over 10G
->      ethernet and a 1 jiffy timeout might be essentially 0 if at the end of
->      the jiffy period.
-> 
->  (4) Fix some tracing output in AFS to make it consistent with rxrpc.
-> 
->  (5) Make sure aborted asynchronous AFS operations are tidied up properly
->      so we don't end up with stuck rxrpc calls.
-> 
->  (6) Make AFS client calls uninterruptible in the Rx phase.  If we don't
->      wait for the reply to be fully gathered, we can't update the local VFS
->      state and we end up in an indeterminate state with respect to the
->      server.
-> 
-> The patches are tagged here:
-> 
-> 	git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
-> 	rxrpc-fixes-20200319
+The check above this thunk:
 
-Pulled, thanks David.
+if ((ret > 0) && (ret <= buflen)) {
+
+will make sure that ret will not be larger than buflen. So tmpbuflen
+will never be bigger than buflen.
+
+Cheers,
+Longman
+
 
 _______________________________________________
 linux-afs mailing list
