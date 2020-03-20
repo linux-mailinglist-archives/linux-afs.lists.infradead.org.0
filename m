@@ -2,72 +2,61 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B05018E81E
-	for <lists+linux-afs@lfdr.de>; Sun, 22 Mar 2020 11:57:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD32A18E826
+	for <lists+linux-afs@lfdr.de>; Sun, 22 Mar 2020 11:57:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h8TFnwwVSnVqxsAbbzH35KMUVjPk4DnY0o8g0nGB5p0=; b=oLOjtVglQ1+sah
-	abV4qRCYhX7hAhN7lxSVS8VyB9OUOrzbsTGsBHHJnMdVyLo0+b5WBTsUcOfztm/R0/anJ9UocwLOw
-	oZf5YrgIx1vNN97j1bGHJWc45eZ9btVJmRH4b2eVCXLoVPeyvJ/SJLH/X4gnUa76GznbQE0HYRPh6
-	h5Wp73jycunLcGS3QDeDET9KO2U5AyIMWcB7fNvMD1leQ6UbJACLo80bPDCGU4ChLRHr3MwszFBux
-	oJhkfIhSuL5G1NNamciTOTKJdraLr4mBmNnI3uAQs9LWAnSiWIHjfy0od+xGmkxDrPmwFkzIJDBUP
-	Pr0yjHBKLyAeV3+RuJRA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ataS+KNGFsf0ZaG8eoV6eD4hNJ8/MbphLflmRX9mvoA=; b=RCO
+	8x3hk5CW+xQPoMQOHxfG7Br2GYzL4BEGtRmAVnoUCw++n3awIPpJ61UicCrIbWa9XqlAUNI4bhw0S
+	3PFnOrK7Y0vEIP1lPF0BVSD00a808/bnbBFNVroEDn4AnkMMlvrScJsbbJhfsuSaSVE1XAcP7SiBN
+	+N+aONQ1eRV2Aw0BkQ4doWWQjRaQmuIquvKBBHWQsQJ9nHNTh2WAcmRE/H1CV1yWv1jzoPD4lnq60
+	JahIftXtHXGiQIgl2OHHtcmDJi4OHohJXm7qok8l1MTqVhVZKKaDl2wnVjrIXoj526BObbRYGkfL4
+	HA4NXHQKFGkP05+d9J2+xAbbZkdf7Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jFyHg-0004jV-07; Sun, 22 Mar 2020 10:56:48 +0000
+	id 1jFyHg-0004kN-7n; Sun, 22 Mar 2020 10:56:48 +0000
 Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jFJHN-0000ne-F0
- for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 15:09:46 +0000
+ id 1jFNAw-0002UY-IT
+ for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 19:19:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584716980;
+ s=mimecast20190719; t=1584731960;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=5+aUM1Yn2Y/IYb21uZgrRPO9zmI5FLmUctu7OcB3Czc=;
- b=W2QyzFaLigQjVC3dxyvg2bbE5i05wz6+FL/MNUwJAC1ayUyucytoldJuirsrfRh7PjbEay
- ZG0jR0GMqyb4yjreV/DTgfSGp9g9pvL8YqfpdAjhJDpk6W23nQWRLcGOuMNBpR3YWNOWKP
- +53wqF4rlr67etwInWe31DZkhZzVLXc=
+ to:to:cc:cc; bh=+XPAoEW7/aQaCwyJ8m3ZuKBIeslANj/gOeGSexPCoFw=;
+ b=MEUKUQz+efL/K3p2uNXO2qwssFgszpj+WlJbANDS8cTCtb0avnVElupOk+AhOoAQ05zLo8
+ bgFgfwB8APhzIxMX8J98YKTOeqisa2BxuejfdMVgYynt/sbswpMJInHeTzATKM/5DngpLO
+ RSf5jVaq+RTG78axeDX7LnHV52NO4o8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-339-t2-NJVv6NAmkytbnxuHV-w-1; Fri, 20 Mar 2020 11:09:39 -0400
-X-MC-Unique: t2-NJVv6NAmkytbnxuHV-w-1
+ us-mta-5-VH2bTlNsPcqN0b-3DN_dRw-1; Fri, 20 Mar 2020 15:19:18 -0400
+X-MC-Unique: VH2bTlNsPcqN0b-3DN_dRw-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 354B018AB2C4;
- Fri, 20 Mar 2020 15:09:36 +0000 (UTC)
-Received: from llong.remote.csb (ovpn-118-190.rdu2.redhat.com [10.10.118.190])
- by smtp.corp.redhat.com (Postfix) with ESMTP id ACDE25C1B8;
- Fri, 20 Mar 2020 15:09:32 +0000 (UTC)
-Subject: Re: [PATCH v5 2/2] KEYS: Avoid false positive ENOMEM error on key read
-To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
-References: <20200318221457.1330-1-longman@redhat.com>
- <20200318221457.1330-3-longman@redhat.com>
- <20200319194650.GA24804@linux.intel.com>
- <f22757ad-4d6f-ffd2-eed5-6b9bd1621b10@redhat.com>
- <20200320020717.GC183331@linux.intel.com>
- <7dbc524f-6c16-026a-a372-2e80b40eab30@redhat.com>
- <20200320143547.GB3629@linux.intel.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C472CDB61;
+ Fri, 20 Mar 2020 19:19:15 +0000 (UTC)
+Received: from llong.com (ovpn-118-190.rdu2.redhat.com [10.10.118.190])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D91BF7E301;
+ Fri, 20 Mar 2020 19:19:09 +0000 (UTC)
 From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <ab411cce-e8dd-c81c-fec4-b59624f66d76@redhat.com>
-Date: Fri, 20 Mar 2020 11:09:32 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <20200320143547.GB3629@linux.intel.com>
-Content-Language: en-US
+To: David Howells <dhowells@redhat.com>,
+ Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
+ James Morris <jmorris@namei.org>, "Serge E. Hallyn" <serge@hallyn.com>,
+ Mimi Zohar <zohar@linux.ibm.com>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>
+Subject: [PATCH v6 0/2] KEYS: Read keys to internal buffer & then copy to
+ userspace
+Date: Fri, 20 Mar 2020 15:19:01 -0400
+Message-Id: <20200320191903.19494-1-longman@redhat.com>
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200320_080945_595492_68079ADD 
-X-CRM114-Status: GOOD (  17.56  )
+X-CRM114-CacheID: sfid-20200320_121922_691093_E619959C 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,67 +87,80 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: Sumit Garg <sumit.garg@linaro.org>,
- Chris von Recklinghausen <crecklin@redhat.com>, linux-afs@lists.infradead.org,
+ Chris von Recklinghausen <crecklin@redhat.com>,
  Eric Biggers <ebiggers@google.com>, netdev@vger.kernel.org,
- Jerry Snitselaar <jsnitsel@redhat.com>, James Morris <jmorris@namei.org>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, Roberto Sassu <roberto.sassu@huawei.com>,
- Jakub Kicinski <kuba@kernel.org>, linux-integrity@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, "Serge E. Hallyn" <serge@hallyn.com>
+ Jerry Snitselaar <jsnitsel@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Roberto Sassu <roberto.sassu@huawei.com>, Waiman Long <longman@redhat.com>,
+ linux-integrity@vger.kernel.org, linux-afs@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On 3/20/20 10:35 AM, Jarkko Sakkinen wrote:
-> On Fri, Mar 20, 2020 at 09:27:03AM -0400, Waiman Long wrote:
->> On 3/19/20 10:07 PM, Jarkko Sakkinen wrote:
->>> On Thu, Mar 19, 2020 at 08:07:55PM -0400, Waiman Long wrote:
->>>> On 3/19/20 3:46 PM, Jarkko Sakkinen wrote:
->>>>> On Wed, Mar 18, 2020 at 06:14:57PM -0400, Waiman Long wrote:
->>>>>> +			 * It is possible, though unlikely, that the key
->>>>>> +			 * changes in between the up_read->down_read period.
->>>>>> +			 * If the key becomes longer, we will have to
->>>>>> +			 * allocate a larger buffer and redo the key read
->>>>>> +			 * again.
->>>>>> +			 */
->>>>>> +			if (!tmpbuf || unlikely(ret > tmpbuflen)) {
->>>>> Shouldn't you check that tmpbuflen stays below buflen (why else
->>>>> you had made copy of buflen otherwise)?
->>>> The check above this thunk:
->>>>
->>>> if ((ret > 0) && (ret <= buflen)) {
->>>>
->>>> will make sure that ret will not be larger than buflen. So tmpbuflen > >> will never be bigger than buflen.  > > Ah right, of course, thanks.
->>> What would go wrong if the condition was instead
->>> ((ret > 0) && (ret <= tmpbuflen))?
->> That if statement is a check to see if the actual key length is longer
->> than the user-supplied buffer (buflen). If that is the case, it will
->> just return the expected length without storing anything into the user
->> buffer. For the case that buflen >= ret > tmpbuflen, the revised check
->> above will incorrectly skip the storing step causing the caller to
->> incorrectly think the key is there in the buffer.
->>
->> Maybe I should clarify that a bit more in the comment.
-> OK, right because it is possible in-between tmpbuflen could be
-> larger. Got it.
->
-> I think that longish key_data and key_data_len would be better
-> names than tmpbuf and tpmbuflen.
->
-> Also the comments are somewat overkill IMHO.
->
-> I'd replace them along the lines of
->
-> /* Cap the user supplied buffer length to PAGE_SIZE. */
->
-> /* Key data can change as we don not hold key->sem. */
+v6:
+ - Make some variable name changes and revise comments as suggested by
+   Jarkko. No functional change from v5.
 
-I am fine with the rename, will sent out a v6 soon.
+v5:
+ - Merge v4 patches 2 and 3 into 1 to avoid sparse warning. Merge some of 
+   commit logs into patch 1 as well. There is no further change.
 
-Cheers,
-Longman
+v4:
+ - Remove the __user annotation from big_key_read() and user_read() in
+   patch 1.
+ - Add a new patch 2 to remove __user annotation from rxrpc_read().
+ - Add a new patch 3 to remove __user annotation from dns_resolver_read().
+ - Merge the original patches 2 and 3 into a single patch 4 and refactor
+   it as suggested by Jarkko and Eric.
+
+v3:
+ - Reorganize the keyctl_read_key() code to make it more readable as
+   suggested by Jarkko Sakkinen.
+ - Add patch 3 to use kvmalloc() for safer large buffer allocation as
+   suggested by David Howells.
+
+v2:
+ - Handle NULL buffer and buflen properly in patch 1.
+ - Fix a bug in big_key.c.
+ - Add patch 2 to handle arbitrary large user-supplied buflen.
+
+The current security key read methods are called with the key semaphore
+held.  The methods then copy out the key data to userspace which is
+subjected to page fault and may acquire the mmap semaphore. That can
+result in circular lock dependency and hence a chance to get into
+deadlock.
+
+To avoid such a deadlock, an internal buffer is now allocated for getting
+out the necessary data first. After releasing the key semaphore, the
+key data are then copied out to userspace sidestepping the circular
+lock dependency.
+
+The keyutils test suite was run and the test passed with these patchset
+applied without any falure.
+
+Waiman Long (2):
+  KEYS: Don't write out to userspace while holding key semaphore
+  KEYS: Avoid false positive ENOMEM error on key read
+
+ include/keys/big_key-type.h               |  2 +-
+ include/keys/user-type.h                  |  3 +-
+ include/linux/key-type.h                  |  2 +-
+ net/dns_resolver/dns_key.c                |  2 +-
+ net/rxrpc/key.c                           | 27 +++-----
+ security/keys/big_key.c                   | 11 ++-
+ security/keys/encrypted-keys/encrypted.c  |  7 +-
+ security/keys/internal.h                  | 12 ++++
+ security/keys/keyctl.c                    | 84 ++++++++++++++++++++---
+ security/keys/keyring.c                   |  6 +-
+ security/keys/request_key_auth.c          |  7 +-
+ security/keys/trusted-keys/trusted_tpm1.c | 14 +---
+ security/keys/user_defined.c              |  5 +-
+ 13 files changed, 114 insertions(+), 68 deletions(-)
+
+-- 
+2.18.1
 
 
 _______________________________________________
