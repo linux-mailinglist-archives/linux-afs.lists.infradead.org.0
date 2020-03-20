@@ -2,66 +2,55 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72BA118C202
-	for <lists+linux-afs@lfdr.de>; Thu, 19 Mar 2020 22:00:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7FCB18C5C7
+	for <lists+linux-afs@lfdr.de>; Fri, 20 Mar 2020 04:29:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cZ77CG44jfzxQTCitK8tS+3hH6hvK3og7FhLz15Nv5w=; b=Ei4DlD1w8OGsDj
-	FFxRC1XL2HxKDZYEn7o+FeMi35Rr9Y7hQFoQoYMPxz+kg7Z2G16RPhkA1fFYQuwYBVnlG8ezBKpP5
-	OZRA4+cNIRKxYs9fmluJ47pyd1aacITLX+o2xRZkQEJuwn0+UnRlPuR1pfmQ9DxLIGTgzUymo3x4o
-	mxqqiimOuuRbU4s5HBicVMxtAfWOmmxrjMMpjkRgUtnhL35B58XOe81nymQGXfyHlIEUggTJs2tiW
-	xZZb0YU7YYfl9Q+NgXJHta7YlxeSH2cAzYvPlK9KhkgMXIjx559M3R57pscbdasoeXb9rMZK2OH5Q
-	db6/T1ew5wO6/pOtYDug==;
+	List-Owner; bh=dhyjNqOWOSGqs/UHLpBhsZNWNksB/aZ+5/W6kGi/8VE=; b=rbkWAhf0RWQq6U
+	cMv69nIDF6OD+2A10keMR8f5utvzLMvTztdpndeswSPhcXrA7jrcHV8g+IYt0hvulsuD/pQ+taFzG
+	m/htBrEg6wju1HF1wv3iZCQaQWJfvfbIwpyOcpxzfgKWMEWb5Qgly7bibdUABdhhWCPbbfqZbu2yT
+	LbBV2YG0c/bHz7SFJeSwPZmsbu9N3objzn9odNbFEDHHWzBCGYyDLc9jVgEEPFV9+H+dVm+JaZce4
+	Mo17NsWnQ3Htht6pTkGl0dtyBElFnsDafoC5ZV6Pk0/BfBy+EA8PtASJXcfuihnuayk/9oXenLtM2
+	tc1F104BiytPjEyIv5WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jF2Gv-0004nQ-HU; Thu, 19 Mar 2020 21:00:09 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1jF8LN-0002NG-F7; Fri, 20 Mar 2020 03:29:09 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jF18D-0000eZ-Sz
- for linux-afs@lists.infradead.org; Thu, 19 Mar 2020 19:47:07 +0000
-IronPort-SDR: eMY4Ob521Q9L5Iz2yVAhFEbsdbpvq115e9jC+/I5Oynq5ja3da+d6YwwYL9UPtRNUTyJQb1zCt
- au3/h+cA3Sdg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 19 Mar 2020 12:46:58 -0700
-IronPort-SDR: a6SaYj/xeKftbSen3LWYA6qWR9ApLeeTa+v5cjiVyF9UB9Q7xyMMQqIfWGC7lVjo5Zg0E1J0nu
- 0ljRFqFI0wdQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,572,1574150400"; d="scan'208";a="391910291"
-Received: from oamor-mobl1.ger.corp.intel.com (HELO localhost)
- ([10.251.182.181])
- by orsmga004.jf.intel.com with ESMTP; 19 Mar 2020 12:46:51 -0700
-Date: Thu, 19 Mar 2020 21:46:50 +0200
-From: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
-To: Waiman Long <longman@redhat.com>
-Subject: Re: [PATCH v5 2/2] KEYS: Avoid false positive ENOMEM error on key read
-Message-ID: <20200319194650.GA24804@linux.intel.com>
-References: <20200318221457.1330-1-longman@redhat.com>
- <20200318221457.1330-3-longman@redhat.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200318221457.1330-3-longman@redhat.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+ id 1jF8LJ-0002MR-UA
+ for linux-afs@lists.infradead.org; Fri, 20 Mar 2020 03:29:08 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 84615158EC784;
+ Thu, 19 Mar 2020 20:28:56 -0700 (PDT)
+Date: Thu, 19 Mar 2020 20:28:55 -0700 (PDT)
+Message-Id: <20200319.202855.777232170285897789.davem@davemloft.net>
+To: dhowells@redhat.com
+Subject: Re: [PATCH net 0/6] rxrpc, afs: Interruptibility fixes
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <158461880968.3094720.5019510060910604912.stgit@warthog.procyon.org.uk>
+References: <158461880968.3094720.5019510060910604912.stgit@warthog.procyon.org.uk>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 19 Mar 2020 20:28:56 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_124705_952469_BFA50565 
-X-CRM114-Status: UNSURE (   8.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200319_202905_972122_5323DB51 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Mailman-Approved-At: Thu, 19 Mar 2020 14:00:08 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,33 +62,52 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>,
- Chris von Recklinghausen <crecklin@redhat.com>, linux-afs@lists.infradead.org,
- Eric Biggers <ebiggers@google.com>, netdev@vger.kernel.org,
- Jerry Snitselaar <jsnitsel@redhat.com>, James Morris <jmorris@namei.org>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
- keyrings@vger.kernel.org, Roberto Sassu <roberto.sassu@huawei.com>,
- Jakub Kicinski <kuba@kernel.org>, linux-integrity@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, "Serge E. Hallyn" <serge@hallyn.com>
+Cc: netdev@vger.kernel.org, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, Mar 18, 2020 at 06:14:57PM -0400, Waiman Long wrote:
-> +			 * It is possible, though unlikely, that the key
-> +			 * changes in between the up_read->down_read period.
-> +			 * If the key becomes longer, we will have to
-> +			 * allocate a larger buffer and redo the key read
-> +			 * again.
-> +			 */
-> +			if (!tmpbuf || unlikely(ret > tmpbuflen)) {
+From: David Howells <dhowells@redhat.com>
+Date: Thu, 19 Mar 2020 11:53:29 +0000
 
-Shouldn't you check that tmpbuflen stays below buflen (why else
-you had made copy of buflen otherwise)?
+> Here are a number of fixes for AF_RXRPC and AFS that make AFS system calls
+> less interruptible and so less likely to leave the filesystem in an
+> uncertain state.  There's also a miscellaneous patch to make tracing
+> consistent.
+> 
+>  (1) Firstly, abstract out the Tx space calculation in sendmsg.  Much the
+>      same code is replicated in a number of places that subsequent patches
+>      are going to alter, including adding another copy.
+> 
+>  (2) Fix Tx interruptibility by allowing a kernel service, such as AFS, to
+>      request that a call be interruptible only when waiting for a call slot
+>      to become available (ie. the call has not taken place yet) or that a
+>      call be not interruptible at all (e.g. when we want to do writeback
+>      and don't want a signal interrupting a VM-induced writeback).
+> 
+>  (3) Increase the minimum delay on MSG_WAITALL for userspace sendmsg() when
+>      waiting for Tx buffer space as a 2*RTT delay is really small over 10G
+>      ethernet and a 1 jiffy timeout might be essentially 0 if at the end of
+>      the jiffy period.
+> 
+>  (4) Fix some tracing output in AFS to make it consistent with rxrpc.
+> 
+>  (5) Make sure aborted asynchronous AFS operations are tidied up properly
+>      so we don't end up with stuck rxrpc calls.
+> 
+>  (6) Make AFS client calls uninterruptible in the Rx phase.  If we don't
+>      wait for the reply to be fully gathered, we can't update the local VFS
+>      state and we end up in an indeterminate state with respect to the
+>      server.
+> 
+> The patches are tagged here:
+> 
+> 	git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
+> 	rxrpc-fixes-20200319
 
-/Jarkko
+Pulled, thanks David.
 
 _______________________________________________
 linux-afs mailing list
