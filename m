@@ -2,86 +2,70 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0E801A118F
-	for <lists+linux-afs@lfdr.de>; Tue,  7 Apr 2020 18:36:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47BD11A368E
+	for <lists+linux-afs@lfdr.de>; Thu,  9 Apr 2020 17:05:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h5ui+7BXYgFotwnnQnU3eJzNsLQ1HeQ7AzVCdI8ipO0=; b=kA+KGgVuaVT6zw
-	MPwEI0ZtKU6wWuyR3G1FAqmuLoFpwj5O/k1wovOZAFFD2A505/6ma47w+jCY50ONSU1WOEKpN+ZmC
-	RCF/90Zbg9kLhFRFrwVKTHTfDHSbzJ7HQk5bQ944DkTRFTrI9bFboF/giShLvhZlBAHYxjFyNlX9T
-	PioENfcdvRTtw9XZzV8IqbEmPc/1Wi7M2erEvYC5bdJKtXtZzwx6D7H1DAdHOozGtOOkW9/7OysYz
-	zm8v7PEY9NgfIwiuvHlBHSpg/DmF3KIHNFuRIVjvJdv6k8Ljpls719DKA6VR3ibnDvO77MeI1JFSd
-	WD05QqZlbUxOWJv3/1RA==;
+	List-Owner; bh=zKwF43UpxwvlgZ3+ZzQi8TYD337uFGkV9LhunCfnkAQ=; b=D3LNYdKGdLP3qK
+	SyUwEALIYT3MA4JuU3k5+1TXMW8fkHZFnGW8/9Llhzxj9wnnp/bmspjx1Itd7gBjH6PnvpWI0Umhx
+	Mv4Ym3AiHmfJ/cVFmK6XJkAPtWHcavrqqqH72ugInO+44Q6jC4SGSGfBw1e+rYCEyx38Inc0oRiib
+	pDurGYDyulsEMdSqTdsiseu4HldaO+Cyliy8A7/Wb9pXcod5CAkm8K6UuhEWptrNLEJzr5foxOsgt
+	B87J1SIXPIvAjCyqeatjZlj8Of9FRq1HcBf4LZ+f1A89+e2pikoBFeRuWNYukmH1cOoywimINv+yO
+	rjKiwjpLQ9q5BOKaezDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLrCh-0004Ph-QS; Tue, 07 Apr 2020 16:35:59 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jMYkD-00075Z-QC; Thu, 09 Apr 2020 15:05:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLrCe-0004PI-Bi
- for linux-afs@lists.infradead.org; Tue, 07 Apr 2020 16:35:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586277353;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=V3NdXt5j91OdzEdR0VgjDCzD1GLAatLbsvAj/WIuzTY=;
- b=aZsEn4xC4Seyuzvb6QG5OzH9GjeCQfrMfMJj4+uUiNQOsII98pN23eqChlaJ5KZQy2v6u9
- ahTi4YCgGmVLepOuOc/Wm83IfdFn0jFZ/eGyGZYt9dw3zegkAP272PV+UvNGk/cBsy2vQ9
- nICQ9+Sv43yjqFdXmrRjJCpZcB27IN0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-370-Hjfz4m_WMEqUG6HMQqyVQQ-1; Tue, 07 Apr 2020 12:35:51 -0400
-X-MC-Unique: Hjfz4m_WMEqUG6HMQqyVQQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1jMCuQ-0006mu-0w; Wed, 08 Apr 2020 15:46:35 +0000
+Received: from mail.kernel.org (ip5f5ad4d8.dynamic.kabel-deutschland.de
+ [95.90.212.216])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0FB43149C0
- for <linux-afs@lists.infradead.org>; Tue,  7 Apr 2020 16:35:51 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-112-224.rdu2.redhat.com
- [10.10.112.224])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 669555DA60;
- Tue,  7 Apr 2020 16:35:50 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-To: linux-afs@lists.infradead.org
-Subject: [RFC kafs-client PATCH] aklog: Use AF_ALG and own DES functions for
- crypto instead of OpenSSL
+ by mail.kernel.org (Postfix) with ESMTPSA id E436F20769;
+ Wed,  8 Apr 2020 15:46:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586360791;
+ bh=NGLDDtyN8RZKYu/2cTSKBLZPkCz8Mr0c9YVBRHz1zys=;
+ h=From:To:Cc:Subject:Date:From;
+ b=I3LVCc26/VdF24AsOrt+PHJ6A8shQrFjca47izBLXO8vl1fetOmpTsay+HfFnjRDn
+ ELpq2el4OVbLL0QQpHim4bJ4r72BlEiJ9tHPbEFlZ/E6g9CVUSW9fzJZn0GNpSqQLs
+ eoPTB+ArHDBqNWFtK9BnG7DerSf9cD29j4b39qq4=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1jMCuK-000cAH-Vl; Wed, 08 Apr 2020 17:46:28 +0200
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH 00/35] Documentation fixes for Kernel 5.8
+Date: Wed,  8 Apr 2020 17:45:52 +0200
+Message-Id: <cover.1586359676.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.25.2
 MIME-Version: 1.0
-Content-ID: <661006.1586277349.1@warthog.procyon.org.uk>
-Date: Tue, 07 Apr 2020 17:35:49 +0100
-Message-ID: <661007.1586277349@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_093556_471883_7E9546FA 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200408_084634_116304_0235490B 
+X-CRM114-Status: GOOD (  17.94  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Mailman-Approved-At: Thu, 09 Apr 2020 08:05:28 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,222 +77,249 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com
+Cc: kvm@vger.kernel.org, linux-pci@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ linux-unionfs@vger.kernel.org, linux-mm@kvack.org, netdev@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
+ kvmarm@lists.cs.columbia.edu, linux-arch@vger.kernel.org,
+ Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-scsi@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Sandeep Maheswaram <sanm@codeaurora.org>, MPT-FusionLinux.pdl@broadcom.com,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ ecryptfs@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
+ Matthias Brugger <mbrugger@suse.com>, Yuti Amonkar <yamonkar@cadence.com>,
+ linux-ide@vger.kernel.org, linux-ntfs-dev@lists.sourceforge.net,
+ freedreno@lists.freedesktop.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rdma@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-fsdevel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Use AF_ALG to access the HMAC(MD5) function needed for key derivation and
-provide the missing DES functions which mean that OpenSSL is no longer
-required.
-    
-Signed-off-by: David Howells <dhowells@redhat.com>
----
-diff --git a/src/Makefile b/src/Makefile
-index 16365b7..16984e2 100644
---- a/src/Makefile
-+++ b/src/Makefile
-@@ -57,7 +57,7 @@ progs: \
- 	kafs-dns
- 
- aklog-kafs: aklog-kafs.o
--	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $< -lkrb5 -lcrypto -lkeyutils
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $< -lkrb5 -lkeyutils
- 
- kafs-check-config: kafs-check-config.o $(DEVELLIB)
- 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ kafs-check-config.o -lkafs_client
-diff --git a/src/aklog-kafs.c b/src/aklog-kafs.c
-index 4cee509..7b56417 100644
---- a/src/aklog-kafs.c
-+++ b/src/aklog-kafs.c
-@@ -20,6 +20,7 @@
-  */
- 
- #define _GNU_SOURCE
-+#include <stdbool.h>
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
-@@ -27,12 +28,10 @@
- #include <fcntl.h>
- #include <ctype.h>
- #include <keyutils.h>
-+#include <byteswap.h>
-+#include <sys/socket.h>
- #include <krb5/krb5.h>
--#include <openssl/hmac.h>
--#include <openssl/evp.h>
--#include <openssl/des.h>
--#include <openssl/md5.h>
--#include <openssl/err.h>
-+#include <linux/if_alg.h>
- 
- struct rxrpc_key_sec2_v1 {
-         uint32_t        kver;                   /* key payload interface version */
-@@ -44,30 +43,58 @@ struct rxrpc_key_sec2_v1 {
-         uint8_t         ticket[0];              /* the encrypted ticket */
- };
- 
-+#define MD5_DIGEST_SIZE		16
-+
- #define RXKAD_TKT_TYPE_KERBEROS_V5              256
- #define OSERROR(X, Y) do { if ((long)(X) == -1) { perror(Y); exit(1); } } while(0)
- #define OSZERROR(X, Y) do { if ((long)(X) == 0) { perror(Y); exit(1); } } while(0)
- #define KRBERROR(X, Y) do { if ((X) != 0) { const char *msg = krb5_get_error_message(k5_ctx, (X)); fprintf(stderr, "%s: %s\n", (Y), msg); krb5_free_error_message(k5_ctx, msg); exit(1); } } while(0)
- 
--/*
-- * Report an error from the crypto lib.
-- */
--static void crypto_error(const char *msg)
-+static const uint64_t des_weak_keys[16] = {
-+	0x0101010101010101ULL,
-+	0xFEFEFEFEFEFEFEFEULL,
-+	0xE0E0E0E0F1F1F1F1ULL,
-+	0x1F1F1F1F0E0E0E0EULL,
-+	0x011F011F010E010EULL,
-+	0x1F011F010E010E01ULL,
-+	0x01E001E001F101F1ULL,
-+	0xE001E001F101F101ULL,
-+	0x01FE01FE01FE01FEULL,
-+	0xFE01FE01FE01FE01ULL,
-+	0x1FE01FE00EF10EF1ULL,
-+	0xE01FE01FF10EF10EULL,
-+	0x1FFE1FFE0EFE0EFEULL,
-+	0xFE1FFE1FFE0EFE0EULL,
-+	0xE0FEE0FEF1FEF1FEULL,
-+	0xFEE0FEE0FEF1FEF1ULL
-+};
-+
-+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
-+
-+static bool des_is_weak_key(uint64_t des)
- {
--	const char *file;
--	char buf[120];
--	int e, line;
-+	size_t i;
- 
--	if (ERR_peek_error() == 0)
--		return;
--	fprintf(stderr, "aklog: %s:\n", msg);
-+#if __BYTE_ORDER == __LITTLE_ENDIAN
-+	des = bswap_64(des);
-+#endif
- 
--	while ((e = ERR_get_error_line(&file, &line))) {
--		ERR_error_string(e, buf);
--		fprintf(stderr, "- SSL %s: %s:%d\n", buf, file, line);
--	}
-+	for (i = 0; i < ARRAY_SIZE(des_weak_keys); i++)
-+		if (des_weak_keys[i] == des)
-+			return true;
-+	return false;
-+}
- 
--	exit(1);
-+static void des_set_odd_parity(uint64_t *p)
-+{
-+	uint64_t x = *p, y, z;
-+
-+	y = x | 0x0101010101010101ULL;
-+	y ^= y >> 4;
-+	y ^= y >> 2;
-+	y ^= y >> 1;
-+	z = x | (y & 0x0101010101010101ULL);
-+	*p = z;
- }
- 
- /*
-@@ -113,6 +140,34 @@ static unsigned int des3_key_to_random(void *random, const void *key, unsigned i
- 	return new_len;
- }
- 
-+/*
-+ * Do HMAC(MD5).
-+ */
-+static size_t HMAC_MD5(const void *key, size_t key_len,
-+		       const void *data, size_t data_len,
-+		       unsigned char *md, size_t md_len)
-+{
-+	static struct sockaddr_alg sa = {
-+		.salg_family	= AF_ALG,
-+		.salg_type	= "hash",
-+		.salg_name	= "hmac(md5)",
-+	};
-+	int alg, sock, ret;
-+
-+	alg = socket(AF_ALG, SOCK_SEQPACKET, 0);
-+	OSERROR(alg, "AF_ALG");
-+	OSERROR(bind(alg, (struct sockaddr *)&sa, sizeof(sa)), "bind/AF_ALG");
-+	OSERROR(setsockopt(alg, SOL_ALG, ALG_SET_KEY, key, key_len), "setsockopt/AF_ALG");
-+	sock = accept(alg, NULL, 0);
-+	OSERROR(sock, "AF_ALG");
-+	OSERROR(write(sock, data, data_len), "write/AF_ALG");
-+	ret = read(sock, md, md_len);
-+	OSERROR(ret, "read/AF_ALG");
-+	close(sock);
-+	close(alg);
-+	return ret;
-+}
-+
- /*
-  * The data to pass into the key derivation function.
-  */
-@@ -138,33 +193,29 @@ static const struct kdf_data rxkad_kdf_data = {
-  */
- static void key_derivation_function(krb5_creds *creds, uint8_t *session_key)
- {
-+	struct kdf_data kdf_data = rxkad_kdf_data;
- 	unsigned int i, len;
- 	union {
--		unsigned char md5[MD5_DIGEST_LENGTH];
--		DES_cblock des;
-+		unsigned char md5[MD5_DIGEST_SIZE];
-+		uint64_t n_des;
- 	} buf;
--	const EVP_MD *algo = EVP_md5(); /* We use HMAC-MD5 */
--
--	struct kdf_data kdf_data = rxkad_kdf_data;
- 
- 	for (i = 1; i <= 255; i++) {
- 		/* K(i) = PRF(Ks, [i]_2 || Label || 0x00 || [L]_2) */
- 		kdf_data.i_2 = i;
--		len = sizeof(buf.md5);
--		if (!HMAC(algo,
--			  creds->keyblock.contents, creds->keyblock.length,
--			  (unsigned char *)&kdf_data, sizeof(kdf_data),
--			  buf.md5, &len))
--			    crypto_error("HMAC");
--
--		if (len < sizeof(buf.des)) {
-+		len = HMAC_MD5(creds->keyblock.contents, creds->keyblock.length,
-+			       (unsigned char *)&kdf_data, sizeof(kdf_data),
-+			       buf.md5, sizeof(buf.md5));
-+
-+		if (len < sizeof(buf.n_des)) {
- 			fprintf(stderr, "aklog: HMAC returned short result\n");
- 			exit(1);
- 		}
- 
- 		/* Overlay the DES parity. */
--		DES_set_odd_parity(&buf.des);
--		if (!DES_is_weak_key(&buf.des))
-+		buf.n_des &= 0xfefefefefefefefeULL;
-+		des_set_odd_parity(&buf.n_des);
-+		if (!des_is_weak_key(buf.n_des))
- 			goto success;
- 	}
- 
-@@ -172,7 +223,7 @@ static void key_derivation_function(krb5_creds *creds, uint8_t *session_key)
- 	exit(1);
- 
- success:
--	memcpy(session_key, buf.des, sizeof(buf.des));
-+	memcpy(session_key, &buf.n_des, sizeof(buf.n_des));
- }
- 
- /*
+Hi Jon,
+
+I have a large list of patches this time for the Documentation/. So, I'm
+starting sending them a little earier. Yet, those are meant to be applied
+after the end of the merge window. They're based on today's linux-next,
+with has only 49 patches pending to be applied upstream touching
+Documentation/, so I don't expect much conflicts if applied early at
+-rc cycle.
+
+Most of the patches here were already submitted, but weren't
+merged yet at next. So, it seems that nobody picked them yet.
+
+In any case, most of those patches here are independent from 
+the others.
+
+The number of doc build warnings have been rising with time.
+The main goal with this series is to get rid of most Sphinx warnings
+and other errors.
+
+Patches 1 to 5: fix broken references detected by this tool:
+
+        ./scripts/documentation-file-ref-check
+
+The other patches fix other random errors due to tags being
+mis-interpreted or mis-used.
+
+You should notice that several patches touch kernel-doc scripts.
+IMHO, some of the warnings are actually due to kernel-doc being
+too pedantic. So, I ended by improving some things at the toolset,
+in order to make it smarter. That's the case of those patches:
+
+	docs: scripts/kernel-doc: accept blank lines on parameter description
+	scripts: kernel-doc: accept negation like !@var
+	scripts: kernel-doc: proper handle @foo->bar()
+
+The last 4 patches address problems with PDF building.
+
+The first one address a conflict that will rise during the merge
+window: Documentation/media will be removed. Instead of
+just drop it from the list of PDF documents, I opted to drop the
+entire list, as conf.py will auto-generate from the sources:
+
+	docs: LaTeX/PDF: drop list of documents
+
+Also, right now, PDF output is broken due to a namespace conflict 
+at I2c (two pdf outputs there will have the same name).
+
+	docs: i2c: rename i2c.svg to i2c_bus.svg
+
+The third PDF patch is not really a fix, but it helps a lot to identify
+if the build succeeded or not, by placing the final PDF output on
+a separate dir:
+
+	docs: Makefile: place final pdf docs on a separate dir
+
+Finally, the last one solves a bug since the first supported Sphinx
+version, with also impacts PDF output: basically while nested tables
+are valid with ReST notation, the toolset only started supporting
+it on PDF output since version 2.4:
+
+	docs: update recommended Sphinx version to 2.4.4
+
+PS.: Due to the large number of C/C, I opted to keep a smaller
+set of C/C at this first e-mail (only e-mails with "L:" tag from
+MAINTAINERS file).
+
+Mauro Carvalho Chehab (35):
+  MAINTAINERS: dt: update display/allwinner file entry
+  docs: dt: fix broken reference to phy-cadence-torrent.yaml
+  docs: fix broken references to text files
+  docs: fix broken references for ReST files that moved around
+  docs: filesystems: fix renamed references
+  docs: amu: supress some Sphinx warnings
+  docs: arm64: booting.rst: get rid of some warnings
+  docs: pci: boot-interrupts.rst: improve html output
+  futex: get rid of a kernel-docs build warning
+  firewire: firewire-cdev.hL get rid of a docs warning
+  scripts: kernel-doc: proper handle @foo->bar()
+  lib: bitmap.c: get rid of some doc warnings
+  ata: libata-core: fix a doc warning
+  fs: inode.c: get rid of docs warnings
+  docs: ras: get rid of some warnings
+  docs: ras: don't need to repeat twice the same thing
+  docs: watch_queue.rst: supress some Sphinx warnings
+  scripts: kernel-doc: accept negation like !@var
+  docs: infiniband: verbs.c: fix some documentation warnings
+  docs: scripts/kernel-doc: accept blank lines on parameter description
+  docs: spi: spi.h: fix a doc building warning
+  docs: drivers: fix some warnings at base/platform.c when building docs
+  docs: fusion: mptbase.c: get rid of a doc build warning
+  docs: mm: slab.h: fix a broken cross-reference
+  docs mm: userfaultfd.rst: use ``foo`` for literals
+  docs: mm: userfaultfd.rst: use a cross-reference for a section
+  docs: vm: index.rst: add an orphan doc to the building system
+  docs: dt: qcom,dwc3.txt: fix cross-reference for a converted file
+  MAINTAINERS: dt: fix pointers for ARM Integrator, Versatile and
+    RealView
+  docs: dt: fix a broken reference for a file converted to json
+  powerpc: docs: cxl.rst: mark two section titles as such
+  docs: LaTeX/PDF: drop list of documents
+  docs: i2c: rename i2c.svg to i2c_bus.svg
+  docs: Makefile: place final pdf docs on a separate dir
+  docs: update recommended Sphinx version to 2.4.4
+
+ Documentation/ABI/stable/sysfs-devices-node   |   2 +-
+ Documentation/ABI/testing/procfs-smaps_rollup |   2 +-
+ Documentation/Makefile                        |   6 +-
+ Documentation/PCI/boot-interrupts.rst         |  34 +--
+ Documentation/admin-guide/cpu-load.rst        |   2 +-
+ Documentation/admin-guide/mm/userfaultfd.rst  | 209 +++++++++---------
+ Documentation/admin-guide/nfs/nfsroot.rst     |   2 +-
+ Documentation/admin-guide/ras.rst             |  18 +-
+ Documentation/arm64/amu.rst                   |   5 +
+ Documentation/arm64/booting.rst               |  36 +--
+ Documentation/conf.py                         |  38 ----
+ .../bindings/net/qualcomm-bluetooth.txt       |   2 +-
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        |   2 +-
+ .../devicetree/bindings/usb/qcom,dwc3.txt     |   4 +-
+ .../doc-guide/maintainer-profile.rst          |   2 +-
+ .../driver-api/driver-model/device.rst        |   4 +-
+ .../driver-api/driver-model/overview.rst      |   2 +-
+ Documentation/filesystems/dax.txt             |   2 +-
+ Documentation/filesystems/dnotify.txt         |   2 +-
+ .../filesystems/ramfs-rootfs-initramfs.rst    |   2 +-
+ Documentation/filesystems/sysfs.rst           |   2 +-
+ Documentation/i2c/{i2c.svg => i2c_bus.svg}    |   2 +-
+ Documentation/i2c/summary.rst                 |   2 +-
+ Documentation/memory-barriers.txt             |   2 +-
+ Documentation/powerpc/cxl.rst                 |   2 +
+ .../powerpc/firmware-assisted-dump.rst        |   2 +-
+ Documentation/process/adding-syscalls.rst     |   2 +-
+ Documentation/process/submit-checklist.rst    |   2 +-
+ Documentation/sphinx/requirements.txt         |   2 +-
+ .../it_IT/process/adding-syscalls.rst         |   2 +-
+ .../it_IT/process/submit-checklist.rst        |   2 +-
+ .../translations/ko_KR/memory-barriers.txt    |   2 +-
+ .../translations/zh_CN/filesystems/sysfs.txt  |   8 +-
+ .../zh_CN/process/submit-checklist.rst        |   2 +-
+ Documentation/virt/kvm/arm/pvtime.rst         |   2 +-
+ Documentation/virt/kvm/devices/vcpu.rst       |   2 +-
+ Documentation/virt/kvm/hypercalls.rst         |   4 +-
+ Documentation/virt/kvm/mmu.rst                |   2 +-
+ Documentation/virt/kvm/review-checklist.rst   |   2 +-
+ Documentation/vm/index.rst                    |   1 +
+ Documentation/watch_queue.rst                 |  34 ++-
+ MAINTAINERS                                   |   7 +-
+ arch/powerpc/include/uapi/asm/kvm_para.h      |   2 +-
+ arch/x86/kvm/mmu/mmu.c                        |   2 +-
+ drivers/ata/libata-core.c                     |   2 +-
+ drivers/base/core.c                           |   2 +-
+ drivers/base/platform.c                       |   6 +-
+ .../allwinner/sun8i-ce/sun8i-ce-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ce/sun8i-ce-core.c |   2 +-
+ .../allwinner/sun8i-ss/sun8i-ss-cipher.c      |   2 +-
+ .../crypto/allwinner/sun8i-ss/sun8i-ss-core.c |   2 +-
+ drivers/gpu/drm/Kconfig                       |   2 +-
+ drivers/gpu/drm/drm_ioctl.c                   |   2 +-
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.h       |   2 +-
+ drivers/hwtracing/coresight/Kconfig           |   2 +-
+ drivers/infiniband/core/verbs.c               |   7 +-
+ drivers/media/v4l2-core/v4l2-fwnode.c         |   2 +-
+ drivers/message/fusion/mptbase.c              |   8 +-
+ fs/Kconfig                                    |   2 +-
+ fs/Kconfig.binfmt                             |   2 +-
+ fs/adfs/Kconfig                               |   2 +-
+ fs/affs/Kconfig                               |   2 +-
+ fs/afs/Kconfig                                |   6 +-
+ fs/bfs/Kconfig                                |   2 +-
+ fs/cramfs/Kconfig                             |   2 +-
+ fs/ecryptfs/Kconfig                           |   2 +-
+ fs/fat/Kconfig                                |   8 +-
+ fs/fuse/Kconfig                               |   2 +-
+ fs/fuse/dev.c                                 |   2 +-
+ fs/hfs/Kconfig                                |   2 +-
+ fs/hpfs/Kconfig                               |   2 +-
+ fs/inode.c                                    |   6 +-
+ fs/isofs/Kconfig                              |   2 +-
+ fs/namespace.c                                |   2 +-
+ fs/notify/inotify/Kconfig                     |   2 +-
+ fs/ntfs/Kconfig                               |   2 +-
+ fs/ocfs2/Kconfig                              |   2 +-
+ fs/overlayfs/Kconfig                          |   6 +-
+ fs/proc/Kconfig                               |   4 +-
+ fs/romfs/Kconfig                              |   2 +-
+ fs/sysfs/dir.c                                |   2 +-
+ fs/sysfs/file.c                               |   2 +-
+ fs/sysfs/mount.c                              |   2 +-
+ fs/sysfs/symlink.c                            |   2 +-
+ fs/sysv/Kconfig                               |   2 +-
+ fs/udf/Kconfig                                |   2 +-
+ include/linux/kobject.h                       |   2 +-
+ include/linux/kobject_ns.h                    |   2 +-
+ include/linux/mm.h                            |   4 +-
+ include/linux/relay.h                         |   2 +-
+ include/linux/slab.h                          |   2 +-
+ include/linux/spi/spi.h                       |   1 +
+ include/linux/sysfs.h                         |   2 +-
+ include/uapi/linux/ethtool_netlink.h          |   2 +-
+ include/uapi/linux/firewire-cdev.h            |   2 +-
+ include/uapi/linux/kvm.h                      |   4 +-
+ include/uapi/rdma/rdma_user_ioctl_cmds.h      |   2 +-
+ kernel/futex.c                                |   3 +
+ kernel/relay.c                                |   2 +-
+ lib/bitmap.c                                  |  27 +--
+ lib/kobject.c                                 |   4 +-
+ mm/gup.c                                      |  12 +-
+ scripts/kernel-doc                            |  41 ++--
+ tools/include/uapi/linux/kvm.h                |   4 +-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c              |   2 +-
+ virt/kvm/arm/vgic/vgic.h                      |   4 +-
+ 106 files changed, 373 insertions(+), 338 deletions(-)
+ rename Documentation/i2c/{i2c.svg => i2c_bus.svg} (99%)
+
+-- 
+2.25.2
+
 
 
 _______________________________________________
