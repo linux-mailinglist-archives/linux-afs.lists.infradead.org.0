@@ -2,53 +2,54 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E6141A8A81
-	for <lists+linux-afs@lfdr.de>; Tue, 14 Apr 2020 21:05:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9B651A8C24
+	for <lists+linux-afs@lfdr.de>; Tue, 14 Apr 2020 22:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LSZhM5n7SsovFSlbF8xLNNaHpOUsk/aqUCejtfYa/qA=; b=pXr75t9/uVNqWr
-	Rty8cNdEpSAUpfp07/qdL0KSNhBVfZku4WSuYwWl2M/VmDVslJHgGhF5kH6aHzbmiMJHm5vpOYFzr
-	LeAW05RIx3AN/K6pUh3iWLRtGsvYTrpGaYFJgr3k0TlOvAAW15OdpiWcO0mR6tVQLujLhFj9hP/Kd
-	w2YRHe03ItRY3HXz38kZMMzek6bZkR9PI5VaId5j2DlkZeZu04JkA+2dLAhVfW6Xo2JirA9NGPtUZ
-	7zYmXKuxQs4KCRwm+vrCEbihSYNnfiSmxwYtHhObeeQLduMarEsDc6iD4g2srYX5F/orgjcRRGEWb
-	DKx8RBCZk3p3tztQrO8g==;
+	List-Owner; bh=2nihWUAW7mczMtXwvSgQ3ETyj/h6EGhNxXmJBZownyA=; b=QHIUyLe4ylRzoO
+	uwfhvGfdbdOh3pBMuXJCQTy7ez5vN44z3K/jrk2TCPqJuevZe3ZZMptCYe7rHR0Tgr/NFCx1ANKDg
+	kw8sGRmje3ZNGBsc1M8tDjDxA2hHgSCDka7gNlgPMQrCDAihlhy3of54ky0b3CFxAJYgfH6w0NnJL
+	mVvnbiQ2u8r0Bn/TL12r6F9E35xwO9bjyE9k8aQsyB3gII166fa3HHAQQbjgQEkPXxjoVxTNG8tgy
+	0Lo7FMg56Mrq6AO6XIcBsjmAv+wyTnkAaHqn9yQ/fR1Nf3hq5R8le7OtKvyYNHNUsxzQXGtVIY4Mw
+	MriPFEAxN0POusQIJVbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOQrr-0000ck-F4; Tue, 14 Apr 2020 19:05:07 +0000
+	id 1jORzd-0002Aa-V6; Tue, 14 Apr 2020 20:17:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOQro-0007xk-EB
- for linux-afs@lists.infradead.org; Tue, 14 Apr 2020 19:05:06 +0000
-Subject: Re: [GIT PULL] afs: Fixes
+ id 1jORyb-0000s9-NP
+ for linux-afs@lists.infradead.org; Tue, 14 Apr 2020 20:16:14 +0000
+Received: from tleilax.poochiereds.net
+ (68-20-15-154.lightspeed.rlghnc.sbcglobal.net [68.20.15.154])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CF082074D;
+ Tue, 14 Apr 2020 20:16:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586891103;
- bh=rxcX3bkiTxcRaV5uIf1VGYjtryE+LFQC/F5AUl8hJtU=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=XI+iFxHGSPhXA/9OrrwIZrvl/P2DJD/HXbStttid4I4GR425ULpTi4CfsNJI1sbHi
- QAnVkjMGiwLa7oxFhOdjEN2Foo0UjGV55A9Y4zx+Bls24yg+cmxafxD/1VniON6Mc4
- ORC+YNntjo/4ow7v7GyxPiPAXC2uV9xZV0QmkpTA=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <2940559.1586789415@warthog.procyon.org.uk>
-References: <2940559.1586789415@warthog.procyon.org.uk>
-X-PR-Tracked-List-Id: <linux-fsdevel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <2940559.1586789415@warthog.procyon.org.uk>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
- tags/afs-fixes-20200413
-X-PR-Tracked-Commit-Id: 40fc81027f892284ce31f8b6de1e497f5b47e71f
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: f4cd66682b2728734b2fc44f5f1e83a5c740b5cf
-Message-Id: <158689110356.29674.8805335271309740535.pr-tracker-bot@kernel.org>
-Date: Tue, 14 Apr 2020 19:05:03 +0000
-To: David Howells <dhowells@redhat.com>
+ s=default; t=1586895367;
+ bh=4W3gIsYx8mNRm7hQccmDcfI7rVeS0PCbsqaEor2jO1A=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=C4uL/J0pV22/gMFfSQyw7mxFz8RSAoHxrbABKat2YAnbqmLdyT1HH96qxNFf6MwZe
+ lIYaRIqET3RZlaHuohQThMMnmG3sDfVZdwqkNMQvxZC4N7NbE8Z0K7NUQ1pCA/ZW6r
+ 0z3amCpYG+5IOToFbZUiDdjckJlO8mLeqbvDwegw=
+Message-ID: <e751977dac616d93806d98f4ad3ce144bb1eb244.camel@kernel.org>
+Subject: Re: What's a good default TTL for DNS keys in the kernel
+From: Jeff Layton <jlayton@kernel.org>
+To: David Howells <dhowells@redhat.com>, linux-nfs@vger.kernel.org, 
+ linux-cifs@vger.kernel.org, linux-afs@lists.infradead.org, 
+ ceph-devel@vger.kernel.org
+Date: Tue, 14 Apr 2020 16:16:05 -0400
+In-Reply-To: <3865908.1586874010@warthog.procyon.org.uk>
+References: <3865908.1586874010@warthog.procyon.org.uk>
+User-Agent: Evolution 3.34.4 (3.34.4-1.fc31) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_120504_518270_82B7FF7E 
-X-CRM114-Status: UNSURE (   1.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200414_131609_865937_FE04ECBD 
+X-CRM114-Status: GOOD (  14.89  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,27 +78,44 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-fsdevel@vger.kernel.org,
- torvalds@linux-foundation.org, linux-afs@lists.infradead.org,
+Cc: fweimer@redhat.com, netdev@vger.kernel.org, keyrings@vger.kernel.org,
  linux-kernel@vger.kernel.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-The pull request you sent on Mon, 13 Apr 2020 15:50:15 +0100:
+On Tue, 2020-04-14 at 15:20 +0100, David Howells wrote:
+> Since key.dns_resolver isn't given a TTL for the address information obtained
+> for getaddrinfo(), no expiry is set on dns_resolver keys in the kernel for
+> NFS, CIFS or Ceph.  AFS gets one if it looks up a cell SRV or AFSDB record
+> because that is looked up in the DNS directly, but it doesn't look up A or
+> AAAA records, so doesn't get an expiry for the addresses themselves.
+> 
+> I've previously asked the libc folks if there's a way to get this information
+> exposed in struct addrinfo, but I don't think that ended up going anywhere -
+> and, in any case, would take a few years to work through the system.
+> 
+> For the moment, I think I should put a default on any dns_resolver keys and
+> have it applied either by the kernel (configurable with a /proc/sys/ setting)
+> or by the key.dnf_resolver program (configurable with an /etc file).
+> 
+> Any suggestion as to the preferred default TTL?  10 minutes?
+> 
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-fixes-20200413
+Typical DNS TTL values are on the order of a day but it can vary widely.
+There's really no correct answer for this, since you have no way to tell
+how long the entry has been sitting in the DNS server's cache before you
+queried for it.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/f4cd66682b2728734b2fc44f5f1e83a5c740b5cf
+So, you're probably down to just finding some value that doesn't hammer
+the DNS server too much, but that allows you to get new entries in a
+reasonable amount of time.
 
-Thank you!
-
+10 mins sounds like a reasonable default to me.
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Jeff Layton <jlayton@kernel.org>
+
 
 _______________________________________________
 linux-afs mailing list
