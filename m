@@ -2,56 +2,83 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 220091A8F16
-	for <lists+linux-afs@lfdr.de>; Wed, 15 Apr 2020 01:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 174321A9939
+	for <lists+linux-afs@lfdr.de>; Wed, 15 Apr 2020 11:47:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iQ/QMYYpnWSWXAuI7LjC47LTDBZjL40i3+eaPgVdKdQ=; b=QwBKv6jK7DTts4
-	lq877RRqyoHYFWi7lvHdad0yYz95EhD7ZdCUJkrewZkrSX/f9ZUZtNojaB2wCcVA9+nikZ+v00w1H
-	8Qsj83UBkyFMAMOdTDneATkSVGwlCoR3nEaHJaepptBJhH1VIqLP0rG05d6mrtZRBBqt1DcdQs6Vp
-	eHU7e9Z+0kKfF762ufY2FzkfgFhzSyEarjBAa14GXmGRA9p2Vg0O3hNuCS6Dfsecdj+J94EAffBOf
-	DhpZuwV82isBoDoMIlUz0EEROUuGhjwnBjzxoxMQnEP0S+eFqDbTXreL7gy3DB6NdaYBs8ZR2P2tQ
-	g1/rMCqWhkcJEmuMHvZg==;
+	List-Owner; bh=7rjs79YttT3gp3rfW1ByTqYeirjGPXcOydRnce/6PPQ=; b=VxsKqd65SJunD+
+	O3uRmUaGVnG33Mt9K3ypia6FpgNAeYIKgfP8rBfZAuW1pYxF/eEb/AgoGsfAGYg2i+0TEiwP2seSw
+	TY/Lmpvkw3GeTUfcxI7BqmV/rO6oEuOlzf1Pymurg3L4xaN8qt06+k/s+Q7MC9PUtSW6ShhXFIPCo
+	MkS7KVNaB/ulBCUUB2J46IBycbEX0kk1AHtd4uvlBmOdMwp1v4t6mE5/mEH9BR+8EkoyVrw+xZufF
+	vSLcekaEeK5S1fNBS6fL9pURr8zhPWuahY/mRMEOOTKsUxkiKgbX4E4T3pGq3cWPy/V9h58LBhR4W
+	bQuzWrniHBmyIctOoDsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOUyb-0003ZQ-Qg; Tue, 14 Apr 2020 23:28:21 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jOedG-0005nJ-TV; Wed, 15 Apr 2020 09:46:58 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOUyZ-0003Yv-Ax
- for linux-afs@lists.infradead.org; Tue, 14 Apr 2020 23:28:20 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id B2AE41280C044;
- Tue, 14 Apr 2020 16:28:08 -0700 (PDT)
-Date: Tue, 14 Apr 2020 16:27:15 -0700 (PDT)
-Message-Id: <20200414.162715.162785138701944842.davem@davemloft.net>
-To: dhowells@redhat.com
-Subject: Re: [PATCH net] rxrpc: Fix DATA Tx to disable nofrag for UDP on
- AF_INET6 socket
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <158678263441.2860393.4171676680352045929.stgit@warthog.procyon.org.uk>
-References: <158678263441.2860393.4171676680352045929.stgit@warthog.procyon.org.uk>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Tue, 14 Apr 2020 16:28:08 -0700 (PDT)
+ id 1jOedE-0002lw-MR
+ for linux-afs@lists.infradead.org; Wed, 15 Apr 2020 09:46:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586943878;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=bKa8snlnDryG0vgt7Fg/rdv6w9fg6r4FpdXiLIxnEdE=;
+ b=AdhJXXlV/+qPI1sD24Ht8F67XLwlJBO5HQHLMOEXl2ug8Qj+ge/0Fw+OxjeIrnmVu1EnW6
+ 6K9bcJGYaLfSkrByAVS/QRHEnDxo+i+W6q/PZKxvKQx4YuCiIEoG46uMs5PdsSuiYbcg+p
+ N/0+J5XZqnKr7z8D01qVHjzsu0OueB0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-508-olUJzS60OsClk0RUhQWf4A-1; Wed, 15 Apr 2020 05:44:34 -0400
+X-MC-Unique: olUJzS60OsClk0RUhQWf4A-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 216EB800D5C;
+ Wed, 15 Apr 2020 09:44:33 +0000 (UTC)
+Received: from oldenburg2.str.redhat.com (ovpn-114-61.ams2.redhat.com
+ [10.36.114.61])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 0E8D72B479;
+ Wed, 15 Apr 2020 09:44:30 +0000 (UTC)
+From: Florian Weimer <fweimer@redhat.com>
+To: David Howells <dhowells@redhat.com>
+Subject: Re: What's a good default TTL for DNS keys in the kernel
+References: <3865908.1586874010@warthog.procyon.org.uk>
+Date: Wed, 15 Apr 2020 11:44:29 +0200
+In-Reply-To: <3865908.1586874010@warthog.procyon.org.uk> (David Howells's
+ message of "Tue, 14 Apr 2020 15:20:10 +0100")
+Message-ID: <874ktl2ide.fsf@oldenburg2.str.redhat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_162819_375631_E272B5FE 
-X-CRM114-Status: GOOD (  11.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200415_024656_806887_5AE144C7 
+X-CRM114-Status: GOOD (  18.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,40 +90,45 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-cifs@vger.kernel.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, keyrings@vger.kernel.org,
+ ceph-devel@vger.kernel.org, linux-afs@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
-Date: Mon, 13 Apr 2020 13:57:14 +0100
-
-> Fix the DATA packet transmission to disable nofrag for UDPv4 on an AF_INET6
-> socket as well as UDPv6 when trying to transmit fragmentably.
-> 
-> Without this, packets filled to the normal size used by the kernel AFS
-> client of 1412 bytes be rejected by udp_sendmsg() with EMSGSIZE
-> immediately.  The ->sk_error_report() notification hook is called, but
-> rxrpc doesn't generate a trace for it.
-> 
-> This is a temporary fix; a more permanent solution needs to involve
-> changing the size of the packets being filled in accordance with the MTU,
-> which isn't currently done in AF_RXRPC.  The reason for not doing so was
-> that, barring the last packet in an rx jumbo packet, jumbos can only be
-> assembled out of 1412-byte packets - and the plan was to construct jumbos
-> on the fly at transmission time.
-> 
-> Also, there's no point turning on IPV6_MTU_DISCOVER, since IPv6 has to
-> engage in this anyway since fragmentation is only done by the sender.  We
-> can then condense the switch-statement in rxrpc_send_data_packet().
-> 
-> Fixes: 75b54cb57ca3 ("rxrpc: Add IPv6 support")
-> Signed-off-by: David Howells <dhowells@redhat.com>
-
-Applied, thanks David.
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+KiBEYXZpZCBIb3dlbGxzOgoKPiBTaW5jZSBrZXkuZG5zX3Jlc29sdmVyIGlzbid0IGdpdmVuIGEg
+VFRMIGZvciB0aGUgYWRkcmVzcyBpbmZvcm1hdGlvbiBvYnRhaW5lZAo+IGZvciBnZXRhZGRyaW5m
+bygpLCBubyBleHBpcnkgaXMgc2V0IG9uIGRuc19yZXNvbHZlciBrZXlzIGluIHRoZSBrZXJuZWwg
+Zm9yCj4gTkZTLCBDSUZTIG9yIENlcGguICBBRlMgZ2V0cyBvbmUgaWYgaXQgbG9va3MgdXAgYSBj
+ZWxsIFNSViBvciBBRlNEQiByZWNvcmQKPiBiZWNhdXNlIHRoYXQgaXMgbG9va2VkIHVwIGluIHRo
+ZSBETlMgZGlyZWN0bHksIGJ1dCBpdCBkb2Vzbid0IGxvb2sgdXAgQSBvcgo+IEFBQUEgcmVjb3Jk
+cywgc28gZG9lc24ndCBnZXQgYW4gZXhwaXJ5IGZvciB0aGUgYWRkcmVzc2VzIHRoZW1zZWx2ZXMu
+Cj4KPiBJJ3ZlIHByZXZpb3VzbHkgYXNrZWQgdGhlIGxpYmMgZm9sa3MgaWYgdGhlcmUncyBhIHdh
+eSB0byBnZXQgdGhpcyBpbmZvcm1hdGlvbgo+IGV4cG9zZWQgaW4gc3RydWN0IGFkZHJpbmZvLCBi
+dXQgSSBkb24ndCB0aGluayB0aGF0IGVuZGVkIHVwIGdvaW5nIGFueXdoZXJlIC0KPiBhbmQsIGlu
+IGFueSBjYXNlLCB3b3VsZCB0YWtlIGEgZmV3IHllYXJzIHRvIHdvcmsgdGhyb3VnaCB0aGUgc3lz
+dGVtLgo+Cj4gRm9yIHRoZSBtb21lbnQsIEkgdGhpbmsgSSBzaG91bGQgcHV0IGEgZGVmYXVsdCBv
+biBhbnkgZG5zX3Jlc29sdmVyIGtleXMgYW5kCj4gaGF2ZSBpdCBhcHBsaWVkIGVpdGhlciBieSB0
+aGUga2VybmVsIChjb25maWd1cmFibGUgd2l0aCBhIC9wcm9jL3N5cy8gc2V0dGluZykKPiBvciBi
+eSB0aGUga2V5LmRuZl9yZXNvbHZlciBwcm9ncmFtIChjb25maWd1cmFibGUgd2l0aCBhbiAvZXRj
+IGZpbGUpLgo+Cj4gQW55IHN1Z2dlc3Rpb24gYXMgdG8gdGhlIHByZWZlcnJlZCBkZWZhdWx0IFRU
+TD8gIDEwIG1pbnV0ZXM/CgpZb3UgY2FuIGdldCB0aGUgcmVhbCBUVEwgaWYgeW91IGRvIGEgRE5T
+IHJlc29sdXRpb24gb24gdGhlIG5hbWUgYW5kCm1hdGNoIHRoZSBhZGRyZXNzZXMgYWdhaW5zdCB3
+aGF0IHlvdSBnZXQgb3V0IG9mIHRoZSBOU1MgZnVuY3Rpb25zLiAgSWYKdGhleSBtYXRjaCwgeW91
+IGNhbiB1c2UgdGhlIFRUTCBmcm9tIEROUy4gIEhhY2tpc2gsIGJ1dCBpdCBkb2VzIGdpdmUgeW91
+Cipzb21lKiBUVEwgdmFsdWUuCgpUaGUgcXVlc3Rpb24gcmVtYWlucyB3aGF0IHRoZSBleHBlY3Rl
+ZCBpbXBhY3Qgb2YgVFRMIGV4cGlyeSBpcy4gIFdpbGwKdGhlIGtlcm5lbCBqdXN0IHBlcmZvcm0g
+YSBuZXcgRE5TIHF1ZXJ5IGlmIGl0IG5lZWRzIG9uZT8gIE9yIHdvdWxkIHlvdQpleHBlY3QgdGhh
+dCAoc2F5KSB0aGUgTkZTIGNsaWVudCByZWNoZWNrcyB0aGUgYWRkcmVzc2VzIGFmdGVyIFRUTCBl
+eHBpcnkKYW5kIGlmIHRoZXkgY2hhbmdlLCByZWNvbm5lY3QgdG8gYSBuZXcgTkZTIHNlcnZlcj8K
+CklmIGEgVFRMIGV4cGlyYXRpb24gZG9lcyBub3QgdHJpZ2dlciBhbnl0aGluZywgdGhhbiBpdCBz
+ZWVtcyBwdXJlbHkgYW4Kb3B0aW1pemF0aW9uIHRvIGF2b2lkIGtlcm5lbCDihpIgdXNlcnNwYWNl
+IGNhbGxiYWNrcy4gIEkgdGhpbmsgeW91IGNhbiBkbwp3aXRoIGEgdmVyeSBzaG9ydCBUVEwgaW4g
+dGhpcyBjYXNlLCBvbiB0aGUgb3JkZXIgb2Ygc2Vjb25kcyAob3Igbm8KY2FjaGluZyBhdCBhbGwp
+LgoKTmVnYXRpdmUgY2FjaGluZyBpcyBhbHNvIHdvcnRoeSBvZiBjb25zaWRlcmF0aW9uIGFuZCBj
+YW4gYmUgY29uc2lkZXJhYmx5Cm1vcmUgdHJpY2t5LgoKVGhhbmtzLApGbG9yaWFuCgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYWZzIG1haWxp
+bmcgbGlzdApodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFmcwo=
