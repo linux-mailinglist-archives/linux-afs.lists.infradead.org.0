@@ -2,80 +2,94 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBC2E1AC1F5
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Apr 2020 15:02:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 335331AC34B
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Apr 2020 15:41:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w75/BZecUWTuAVm+sDi5Q476ppRSnTkolEsCAh8aNDU=; b=PZZuCE2Le/yEU1
-	1mEXGcFtZfEvmJjuhBF6aXs1fgJ8LYLG/2z7LXRoL61v9J185+cboeNTxQ+IkDPuFrLffm1vM6+mZ
-	LSrCJEoGX6w4A43cYZjWwzFZWaMtsPHUT8KjNfBbt2Gnt5jZoe9I4ZajfIfz4Y9b1TvcXfsOLOmYU
-	XPOAHN6BMbkdRT0W6YEUVK16ss8IWkXNvVw1WobO0v80rp8TYkPnOyk5PBG4eJJqmVyDjDLGP9rsD
-	YvfJOqdpSxF8iV1LaTCUinbk8yb07hGeUuMmFmbpWJFvP2zUB6VEQ1iR05Zq0hEiCqAoCMADrOnEi
-	wuxSGci/4m5FPyd03epw==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iq96CYvqbWDxebQn9GI51jiVXBWZFqbotluzKUGGMkI=; b=GQW/Iyebaau7/n
+	Mm8Q5fTwRGm/ZdLt03Asn2NBxq07QuNYrOgXlBNz/uyJxVew3SIrUy8gVh3uGC9rKO7J3hfkvR6yM
+	MwXm8Ap3Sgt25FZAc5F+3P6ecGrQDi0Z4HKPfweoOXofYRABGp44L951tj+NVubcvl4duwbxMuKRU
+	lK9kW5A4B9xMDScRMScyJbtq4sByW4BNYv1sIvpHtNzDZ37mf53i4FXOevtSrf1AEsGYi0Xn7zCuf
+	f+U5vH9mhX/j43o9ZeqKiQLzDTY3nGRXLbRrDAGfmLykMcSXc2zfeshtZwav0uNRGORJ8LACL8Wfq
+	H1qYOzhr40wRaAsmADXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP49S-0006YJ-MU; Thu, 16 Apr 2020 13:01:54 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jP4l1-0001up-R0; Thu, 16 Apr 2020 13:40:43 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP49P-0006Q8-Dq
- for linux-afs@lists.infradead.org; Thu, 16 Apr 2020 13:01:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587042106;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Eu6b6HDAloa0ypWgaxME9iI3u+iDHWfSGslG1thqHSI=;
- b=CrgntKjq2ddR6K/On7+2pCuCjd5xXKsLsEzkCp2rqHytjHnWPHShT8kfr6X1XVcO1DYPRu
- S7SqDQ7aYAcGu0LXADo+ZBLGHVbCGfSoBiqBMYrfnAgSWGkx1gXgRjHFWl7h19syeB7E3n
- 0bYxBQrPYjnrtP4g3dF2SNToyYuTolA=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-135-hChMLAzGMqqPJHzgmWdWww-1; Thu, 16 Apr 2020 09:01:43 -0400
-X-MC-Unique: hChMLAzGMqqPJHzgmWdWww-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A7B32802564;
- Thu, 16 Apr 2020 13:01:41 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-113-129.rdu2.redhat.com
- [10.10.113.129])
- by smtp.corp.redhat.com (Postfix) with ESMTP id C45B75DA89;
- Thu, 16 Apr 2020 13:01:39 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <87v9lzu3cx.fsf@oldenburg2.str.redhat.com>
-References: <87v9lzu3cx.fsf@oldenburg2.str.redhat.com>
- <874ktl2ide.fsf@oldenburg2.str.redhat.com>
+ id 1jP4ky-0001u2-5m
+ for linux-afs@lists.infradead.org; Thu, 16 Apr 2020 13:40:41 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03GDcKwv084649;
+ Thu, 16 Apr 2020 13:40:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2020-01-29; bh=+FwckwE718nnFr/35g3gcj/92E89oTBl1ZMCTR5KEIM=;
+ b=iqUrY2H9ib6Tqb8czeWAPq4BibUWiDCpkkPRWOnjSVYxuYoossgOsmNXjtBStklxsrN/
+ BOrP9qPYV44t2frUqNHruNf9bA99+R1qP05U+WRC7YzNrDD4UzCq2QgGT4EAt3bshHe6
+ uvecHlGvvSUAozs7pESH75q4v9OcVMlmTfFEh0f+eEkP2GqqF+jBS5y6ULF4Gts0ilKP
+ UQfVBSJ7cQ7MzwTlxH2YR1ArDYswN+/zbvf8AinEnvTOh0UOv/IUc/kzXkl9LS1QrkrD
+ UccoJqRh/62a5sd4sXPR5SXu9rhd4Vp7QE2zsD71SkinXrPHQBHbDi4LQL4ew9aox85j 2Q== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 30dn95sfm5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Apr 2020 13:40:34 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03GDc55R134095;
+ Thu, 16 Apr 2020 13:40:33 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 30dynyqbr5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 16 Apr 2020 13:40:33 +0000
+Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03GDeWWD019065;
+ Thu, 16 Apr 2020 13:40:32 GMT
+Received: from anon-dhcp-153.1015granger.net (/68.61.232.219)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 16 Apr 2020 06:40:32 -0700
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: What's a good default TTL for DNS keys in the kernel
+From: Chuck Lever <chuck.lever@oracle.com>
+In-Reply-To: <128769.1587032833@warthog.procyon.org.uk>
+Date: Thu, 16 Apr 2020 09:40:30 -0400
+Message-Id: <8DC44895-E904-4155-B7B8-B109A777F23C@oracle.com>
+References: <874ktl2ide.fsf@oldenburg2.str.redhat.com>
  <3865908.1586874010@warthog.procyon.org.uk>
  <128769.1587032833@warthog.procyon.org.uk>
-To: Florian Weimer <fweimer@redhat.com>
-Subject: Re: What's a good default TTL for DNS keys in the kernel
-MIME-Version: 1.0
-Content-ID: <142354.1587042098.1@warthog.procyon.org.uk>
-Date: Thu, 16 Apr 2020 14:01:38 +0100
-Message-ID: <142355.1587042098@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+To: David Howells <dhowells@redhat.com>
+X-Mailer: Apple Mail (2.3445.104.11)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9592
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ suspectscore=0
+ malwarescore=0 phishscore=0 spamscore=0 adultscore=0 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004160097
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9592
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ clxscore=1011
+ malwarescore=0 bulkscore=0 priorityscore=1501 lowpriorityscore=0
+ mlxscore=0 phishscore=0 spamscore=0 impostorscore=0 suspectscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004160097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_060151_548308_7A9E22E0 
-X-CRM114-Status: GOOD (  22.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200416_064040_306528_DDAD8196 
+X-CRM114-Status: GOOD (  22.97  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,6 +98,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,85 +112,76 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, linux-nfs@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
- keyrings@vger.kernel.org, ceph-devel@vger.kernel.org,
- linux-afs@lists.infradead.org
+Cc: Florian Weimer <fweimer@redhat.com>, linux-cifs@vger.kernel.org,
+ Linux NFS Mailing List <linux-nfs@vger.kernel.org>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, keyrings@vger.kernel.org,
+ ceph-devel@vger.kernel.org, linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Florian Weimer <fweimer@redhat.com> wrote:
+Hi David-
 
-> > Florian Weimer <fweimer@redhat.com> wrote:
-> >
-> >> You can get the real TTL if you do a DNS resolution on the name and
-> >> match the addresses against what you get out of the NSS functions.  If
-> >> they match, you can use the TTL from DNS.  Hackish, but it does give you
-> >> *some* TTL value.
-> >
-> > I guess I'd have to do that in parallel.
+> On Apr 16, 2020, at 6:27 AM, David Howells <dhowells@redhat.com> wrote:
 > 
-> Not necessary.  You can do the getaddrinfo lookup first and then perform
-> the query.
-
-That means that the latency of both is added together and causes the first
-mount to take longer - though as long as you have a local DNS cache, that's
-fine.
-
-> > AFS keeps track of the expiration on the record and will issue a new lookup
-> > when the data expires, but NFS doesn't make use of this information.
+> Florian Weimer <fweimer@redhat.com> wrote:
 > 
-> And it will switch servers at that point?  Or only if the existing
-> server association fails/times out?
-
-AFS will switch servers at the next operation if the server list changes.  And
-if the current op tries to access an old server and gets bounced, this should
-trigger an immediate reevaluation.  It also regularly probes the servers and
-interfaces it knows about to find which one's accessible and which has the
-best response and can switch servers on that basis also.
-
-I should also note that AFS deletes the dns_resolver key after reading it and
-maintains the expiry information in its internal structs.
-
-Note also that in AFS this only applies to locating the Volume Location
-servers (which is a layer of abstraction that hides which server(s) a volume
-resides on and what their addresses are).  The VL service is queried to find
-out where file servers are (giving you their addresses itself so you don't
-need to access the DNS there).
-
-> > The keyring subsystem will itself dispose of dns_resolver keys that
-> > expire and request_key() will only upcall again if the key has
-> > expired.
+>> You can get the real TTL if you do a DNS resolution on the name and
+>> match the addresses against what you get out of the NSS functions.  If
+>> they match, you can use the TTL from DNS.  Hackish, but it does give you
+>> *some* TTL value.
 > 
-> What's are higher-level effects of that?
+> I guess I'd have to do that in parallel.  Would calling something like
+> res_mkquery() use local DNS caching?
+> 
+>> The question remains what the expected impact of TTL expiry is.  Will
+>> the kernel just perform a new DNS query if it needs one?  Or would you
+>> expect that (say) the NFS client rechecks the addresses after TTL expiry
+>> and if they change, reconnect to a new NFS server?
+> 
+> It depends on the filesystem.
 
-If the record never expires (the current case), the address lookup in the
-kernel (dns_query()) will always return the same address until someone
-manually evicts it.
+Agreed. For example:
 
-Otherwise, once the record expires, the kernel will just upcall again.
+The Linux NFS client won't connect to a new server when the server's
+DNS information changes. A fresh mount operation would be needed for
+the client to recognize and make use of it.
 
-> I'm still not convinced that the kernel *needs* accurate TTL
-> information.  The benefit from upcall avoidance likely vanishes quickly
-> after the in-kernel TTL increases beyond 5 or so.  That's just my guess,
-> though.
+There are mechanisms in the NFSv4 protocol to collect server IP addresses
+from the server itself (fs_locations) and then try those locations if the
+current server fails to respond. But currently that is not implemented in
+Linux (and servers would need to be ready to provide that kind of update).
 
-You might be right - certainly for NFS and CIFS where the address ascribed to
-a superblock is hard to change as it partly defines the superblock.  Change
-the address and your superblock in now a different thing as far as the VFS is
-concerned.
 
-This makes fscache indexing tricky for NFS.  How do you define a superblock?
-Is it address?  Is it hostname?  What happens if one or the other changes?
-What happens if there are two or more addresses (say ipv4 and ipv6 addrs)?
+> AFS keeps track of the expiration on the record and will issue a new lookup
+> when the data expires, but NFS doesn't make use of this information.  The
+> keyring subsystem will itself dispose of dns_resolver keys that expire and
+> request_key() will only upcall again if the key has expired.
 
-AFS defined some abstractions for this: the cell name and the volume ID
-number.  The physical location of the volume doesn't matter - and the volume
-can even be moved around whilst in use.
+Our NFS colleagues working on Solaris have noted that handling the expiry
+of DNS information can be tricky. It is usually desirable to continue using
+expired information when a new DNS query fails temporarily (times out, or
+the network is partitioned, etc). That makes for a more robust network file
+service.
 
-David
+
+> The problem for NFS is that the host IP address is the primary key for the
+> superblock (see nfs_compare_super_address()).
+
+I thought that NFSv4.1 and newer have server-provided unique information
+that might be used in place of the server's IP address. This information
+is supposed to be independent of a server's network addresses.
+
+
+> CIFS also doesn't make direct use of the TTL, and again this may be because it
+> uses the server address as part of the primary key for the superblock (see
+> cifs_match_super()).
+
+--
+Chuck Lever
+
+
 
 
 _______________________________________________
