@@ -2,78 +2,76 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70B751AC6F7
-	for <lists+linux-afs@lfdr.de>; Thu, 16 Apr 2020 16:47:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19A3A1ABDD8
+	for <lists+linux-afs@lfdr.de>; Thu, 16 Apr 2020 12:27:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
 	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3KOW9A1qBfNBoE043XGBFNEMBKCdmyC0TXLfDzKxFl4=; b=olt6SBZfzIS6ND
-	9zzvZ5TV89cSWAFOigEjAj3Q1Q02YIORjA9lkyf+Kjsz8W/2HOB2+ur9mZOxXdIlfeKSut80ZYmSY
-	z3rWgmgcjx38yRleXwT+dBR7EcJ5IUYr3m7fXxLmRDh6aYbHJNBhaSqcRcArBBdKIA2XPqr77Iugq
-	Gb1u455gfcVSla8SjVywNqATBkFmI4AkYJHyBm2hl1T5WfCK1XjLC3/XjXGjviO8Q2J+SO6L8vJdl
-	T8B8P4IG9YPbIQkh0iOyqQX1pSHs82AGmJmyofgPR9W6Hq3L8g2pK9ZaFXZP3DgXYVOdwwSp6HJps
-	sTqkewRCiHdHKT56lSRg==;
+	List-Owner; bh=upA2H1c5Zl4Yq15YWwP0m15ibKxs1To5jhAZl9fvJeM=; b=hi9y2JfxiCT6uK
+	EiBXNl+E9hat2KOHabjnWgoiqGkH0AyrY9onOgN7MuakMq/0yzX1kh3Fjx+6OqxDTbjBmNHUqnrHs
+	HD7v4peIuDz8HKgadK8piV/ynWdrcMJ72dQmesp7YWRjTd3E6/mVGu6t1+FaehOuLPYvmSDwHSzJV
+	KOZt9E7jFzQVrQhRTMrsRm3esnm17Tg5YOoGnnjXauYWsUpb8TjoiXsj6FQBGffjzpWs782F82IxX
+	IR8bosp1dLUFZ+rxCtxPS3CdXqCEMp39qCdzMHiSXbYxXMWoe291/LziCPWtGZssni6Ka43otd8Jk
+	VdZKiAQ0+bM+9xgvG/NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP5nd-0001hs-F8; Thu, 16 Apr 2020 14:47:29 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jP1jz-0001rp-My; Thu, 16 Apr 2020 10:27:27 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jP1YP-0001dh-Pt
- for linux-afs@lists.infradead.org; Thu, 16 Apr 2020 10:15:31 +0000
+ id 1jP1jv-0001nZ-PB
+ for linux-afs@lists.infradead.org; Thu, 16 Apr 2020 10:27:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587032127;
+ s=mimecast20190719; t=1587032842;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=duQdUsOOdHGiX8X+SSFFtnhQDtBYHM0gSY3ojiBRAto=;
- b=jME7/jt1K/4ELsgAoKvluDxwiHMLOcTB3G81EKkooBMBg7Uw/obiPuHXN37cOBjSvhfcM0
- qX8x6Qvb49B5TK9HCAHlmMqkBK7E4ixfebeTfebYFpFyUozB8ZRiVy5DAcio9oRsGKYdvb
- zDwKvaDLvuJrlblJHXWb2PyV8TeacTs=
+ bh=DM6k/0BvmOX6t724NGkINWqm7Df0IRyLKBF1DXuH/q0=;
+ b=g1VX12aIx+6Ib+AoiKvvR6MHClI5YNY4n9RkXCVQOzbFK5L0i2cs6Nryr9SrVlzVvGKW5G
+ DOrLx8WCm9cPbbj9EQmpdDdfjFBYHysCg5aoq5YHtVEwjnW6FSSot6jzuKPRseBK7TZcCR
+ fagfvdfck0JvoMT4shCsQqRp1pIfVgo=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-341-lvRNdSpjMxOevcxPakXQlg-1; Thu, 16 Apr 2020 06:15:23 -0400
-X-MC-Unique: lvRNdSpjMxOevcxPakXQlg-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-50-LzQOBPtSNCKB7AltKEzm1A-1; Thu, 16 Apr 2020 06:27:17 -0400
+X-MC-Unique: LzQOBPtSNCKB7AltKEzm1A-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3A21218C8C02;
- Thu, 16 Apr 2020 10:15:22 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id BDC918017F6;
+ Thu, 16 Apr 2020 10:27:15 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-113-129.rdu2.redhat.com
  [10.10.113.129])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 7175E5C1D6;
- Thu, 16 Apr 2020 10:15:20 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 1A7C87E7C1;
+ Thu, 16 Apr 2020 10:27:13 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
 From: David Howells <dhowells@redhat.com>
-In-Reply-To: <CAH2r5mvj7GF3i8AE6E=+5f_Vigtb3uw=665F2uuBOgGzUhHObQ@mail.gmail.com>
-References: <CAH2r5mvj7GF3i8AE6E=+5f_Vigtb3uw=665F2uuBOgGzUhHObQ@mail.gmail.com>
+In-Reply-To: <874ktl2ide.fsf@oldenburg2.str.redhat.com>
+References: <874ktl2ide.fsf@oldenburg2.str.redhat.com>
  <3865908.1586874010@warthog.procyon.org.uk>
- <e751977dac616d93806d98f4ad3ce144bb1eb244.camel@kernel.org>
-To: Steve French <smfrench@gmail.com>
+To: Florian Weimer <fweimer@redhat.com>
 Subject: Re: What's a good default TTL for DNS keys in the kernel
 MIME-Version: 1.0
-Content-ID: <127742.1587032119.1@warthog.procyon.org.uk>
-Date: Thu, 16 Apr 2020 11:15:19 +0100
-Message-ID: <127743.1587032119@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+Content-ID: <128768.1587032833.1@warthog.procyon.org.uk>
+Date: Thu, 16 Apr 2020 11:27:13 +0100
+Message-ID: <128769.1587032833@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200416_031529_923102_B643D6C0 
-X-CRM114-Status: UNSURE (   7.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200416_032723_917789_07A2F67A 
+X-CRM114-Status: GOOD (  15.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Mailman-Approved-At: Thu, 16 Apr 2020 07:47:27 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,10 +93,8 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: fweimer@redhat.com, CIFS <linux-cifs@vger.kernel.org>,
- linux-nfs <linux-nfs@vger.kernel.org>,
- Network Development <netdev@vger.kernel.org>, Jeff Layton <jlayton@kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+Cc: linux-cifs@vger.kernel.org, linux-nfs@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
  keyrings@vger.kernel.org, ceph-devel@vger.kernel.org,
  linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -107,15 +102,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Steve French <smfrench@gmail.com> wrote:
+Florian Weimer <fweimer@redhat.com> wrote:
 
-> > 10 mins sounds like a reasonable default to me.
-> 
-> I would lean toward slightly longer (20 minutes?) but aren't there
-> usually different timeouts for 'static' vs. 'dynamic' DNS records (so
-> static records would have longer timeouts)?
+> You can get the real TTL if you do a DNS resolution on the name and
+> match the addresses against what you get out of the NSS functions.  If
+> they match, you can use the TTL from DNS.  Hackish, but it does give you
+> *some* TTL value.
 
-Unfortunately, getaddrinfo() doesn't give me that information.
+I guess I'd have to do that in parallel.  Would calling something like
+res_mkquery() use local DNS caching?
+
+> The question remains what the expected impact of TTL expiry is.  Will
+> the kernel just perform a new DNS query if it needs one?  Or would you
+> expect that (say) the NFS client rechecks the addresses after TTL expiry
+> and if they change, reconnect to a new NFS server?
+
+It depends on the filesystem.
+
+AFS keeps track of the expiration on the record and will issue a new lookup
+when the data expires, but NFS doesn't make use of this information.  The
+keyring subsystem will itself dispose of dns_resolver keys that expire and
+request_key() will only upcall again if the key has expired.
+
+The problem for NFS is that the host IP address is the primary key for the
+superblock (see nfs_compare_super_address()).
+
+CIFS also doesn't make direct use of the TTL, and again this may be because it
+uses the server address as part of the primary key for the superblock (see
+cifs_match_super()).
 
 David
 
