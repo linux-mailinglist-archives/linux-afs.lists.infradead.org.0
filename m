@@ -2,50 +2,90 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA09D1B1FC4
-	for <lists+linux-afs@lfdr.de>; Tue, 21 Apr 2020 09:30:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 467DC1B1FC7
+	for <lists+linux-afs@lfdr.de>; Tue, 21 Apr 2020 09:30:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YvxvlP5vlE4GnGGZlVuyBfFKQ1l+eD7uo/QoRlpAjLg=; b=CmV5HdEjN+KaUd
-	X89CVS2p5ksnXYOFtHqfiwqHivAHpsZwgoeo2YY4DQgl8aQjbkAQwh+7QCMuJusGKcPLplAzJttHH
-	TPb+TzGdOiqZfqpd70RizcPAB08DoFLLOKcWMv3yNY1GXI7Kx2kfqS8zMqrYD1BemV9Do5fRTziQn
-	t4WchBmHQTlEdyXEdM4Wix3m7Yctn52TDVDPALUV9w2zq1csRxvM627Sxd1LLTT6AxNzdGSor75vu
-	xcdwzp0+rky43kcTQH/k/80MddqI9ODGtDqfQWnLPn3+ygnw3G/wSV1vedsHpFR6PNfo1psroNuep
-	03HjrdBggjdg/11SgpCQ==;
+	List-Owner; bh=0EUpxOoHcVUX6hiK0EnORotz4LHbMy9S9R3cXLIZmtg=; b=uxa2i38pnQK85l
+	FJ1SQJ7StqV7o/Jpv02xMldNFyZzeFA591DTnsPNpN3pHLmniD0/1nerKLpW393aiPpKooSUuxD6O
+	s0FGGM+Ovf1gc2KXO/aKsKs3fZFhGzEgxJsMRBH9nUKLsgbFKsn3QsJbBTCPSdiiSJDPG6TN4a0/L
+	BKTwuoFfpiK+H8iyu7S5+bBUXCEiA4o+wsJc/OH04oKWyLZieFCIemiP7CxjKnXgl4mPoBvE51Cbe
+	vsA9MY4Klj8QqlPnomzs0gHO29hpHplhhAAFw66HnQND+4dKf9yrwNQwUP+bN6ltjPB/egdbQKS/8
+	28lDwO3EzqplVyy2Wtfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQnLl-0007gw-10; Tue, 21 Apr 2020 07:29:45 +0000
-Received: from ms.lwn.net ([2600:3c01:e000:3a1::42])
+	id 1jQnLl-0007h8-78; Tue, 21 Apr 2020 07:29:45 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQeCJ-0000Jz-Cp; Mon, 20 Apr 2020 21:43:24 +0000
-Received: from lwn.net (localhost [127.0.0.1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jQegj-0007i8-Ln
+ for linux-afs@lists.infradead.org; Mon, 20 Apr 2020 22:14:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587420886;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=MiSDbiTo+2+0bF+oftBWtRobU1R64CceTEeiiGvXzRk=;
+ b=WeENLdUECtNUJblMqbb/nZmabXuDc+QE8ThLrx5QTdYx3eueUaDGnaS8dIJUB/6qUT7mOA
+ U7Pad0ZTIfXupxjIKqa07/aeew6MN84qyGRt31t3xcGxZJCWdSaBBc2pY3HCeUW5R5fhng
+ SRDZIFHRjrGcs6g9a97Nxyg/ggyTax0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-78-aoNIUofJN7OwJncvIaYdTg-1; Mon, 20 Apr 2020 18:14:44 -0400
+X-MC-Unique: aoNIUofJN7OwJncvIaYdTg-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by ms.lwn.net (Postfix) with ESMTPSA id 632E4823;
- Mon, 20 Apr 2020 21:43:17 +0000 (UTC)
-Date: Mon, 20 Apr 2020 15:43:16 -0600
-From: Jonathan Corbet <corbet@lwn.net>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH v2 00/33] Documentation fixes for Kernel 5.8
-Message-ID: <20200420154316.28e42905@lwn.net>
-In-Reply-To: <cover.1586881715.git.mchehab+huawei@kernel.org>
-References: <cover.1586881715.git.mchehab+huawei@kernel.org>
-Organization: LWN.net
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 893061005509;
+ Mon, 20 Apr 2020 22:14:42 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-113-129.rdu2.redhat.com
+ [10.10.113.129])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D8BB676E60;
+ Mon, 20 Apr 2020 22:14:39 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <878siq587w.fsf@cjr.nz>
+References: <878siq587w.fsf@cjr.nz> <87imhvj7m6.fsf@cjr.nz>
+ <CAH2r5mv5p=WJQu2SbTn53FeTsXyN6ke_CgEjVARQ3fX8QAtK_w@mail.gmail.com>
+ <3865908.1586874010@warthog.procyon.org.uk>
+ <927453.1587285472@warthog.procyon.org.uk>
+ <1136024.1587388420@warthog.procyon.org.uk>
+To: Paulo Alcantara <pc@cjr.nz>
+Subject: cifs - Race between IP address change and sget()?
 MIME-Version: 1.0
+Content-ID: <1986039.1587420879.1@warthog.procyon.org.uk>
+Date: Mon, 20 Apr 2020 23:14:39 +0100
+Message-ID: <1986040.1587420879@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_144323_449085_118D0CAB 
-X-CRM114-Status: GOOD (  11.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200420_151449_787376_AA1AE80F 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-Mailman-Approved-At: Tue, 21 Apr 2020 00:29:44 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,63 +98,59 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- linux-pci@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- dri-devel@lists.freedesktop.org, linux-unionfs@vger.kernel.org,
- linux-mm@kvack.org, netdev@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux1394-devel@lists.sourceforge.net, kvmarm@lists.cs.columbia.edu,
- linux-arch@vger.kernel.org, Rob Herring <robh@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-rdma@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
- Matthias Kaehlcke <mka@chromium.org>, Sandeep Maheswaram <sanm@codeaurora.org>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-afs@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- ecryptfs@vger.kernel.org, kvm-ppc@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
- Matthias Brugger <mbrugger@suse.com>, Yuti Amonkar <yamonkar@cadence.com>,
- linux-ide@vger.kernel.org, linux-ntfs-dev@lists.sourceforge.net,
- freedreno@lists.freedesktop.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-crypto@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- ocfs2-devel@oss.oracle.com
+Cc: fweimer@redhat.com, CIFS <linux-cifs@vger.kernel.org>,
+ linux-nfs <linux-nfs@vger.kernel.org>, jlayton@redhat.com,
+ Network Development <netdev@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ Steve French <smfrench@gmail.com>, keyrings@vger.kernel.org,
+ viro@zeniv.linux.org.uk, ceph-devel@vger.kernel.org,
+ linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Tue, 14 Apr 2020 18:48:26 +0200
-Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
+Paulo Alcantara <pc@cjr.nz> wrote:
 
-> Patches 1 to 5 contain changes to the documentation toolset:
+> >> > What happens if the IP address the superblock is going to changes, then
+> >> > another mount is made back to the original IP address?  Does the second
+> >> > mount just pick the original superblock?
+> >> 
+> >> It is going to transparently reconnect to the new ip address, SMB share,
+> >> and cifs superblock is kept unchanged.  We, however, update internal
+> >> TCP_Server_Info structure to reflect new destination ip address.
+> >> 
+> >> For the second mount, since the hostname (extracted out of the UNC path
+> >> at mount time) resolves to a new ip address and that address was saved
+> >> earlier in TCP_Server_Info structure during reconnect, we will end up
+> >> reusing same cifs superblock as per fs/cifs/connect.c:cifs_match_super().
+> >
+> > Would that be a bug?
 > 
-> - The first 3 patches help to reduce a lot the number of reported
->   kernel-doc issues, by making the tool more smart.
+> Probably.
 > 
-> - Patches 4 and 5 are meant to partially address the PDF
->   build, with now requires Sphinx version 2.4 or upper.
-> 
-> The remaining patches fix broken references detected by
-> this tool:
-> 
->         ./scripts/documentation-file-ref-check
-> 
-> and address other random errors due to tags being mis-interpreted
-> or mis-used.
-> 
-> They are independent each other, but some may depend on
-> the kernel-doc improvements.
-> 
-> PS.: Due to the large number of C/C, I opted to keep a smaller
-> set of C/C at this first e-mail (only e-mails with "L:" tag from
-> MAINTAINERS file).
+> I'm not sure how that code is supposed to work, TBH.
 
-OK, I've applied this set, minus #17 which was applied elsewhere.
+Hmmm...  I think there may be a race here then - but I'm not sure it can be
+avoided or if it matters.
 
-Thanks,
+Since the address is part of the primary key to sget() for cifs, changing the
+IP address will change the primary key.  Jeff tells me that this is governed
+by a spinlock taken by cifs_match_super().  However, sget() may be busy
+attaching a new mount to the old superblock under the sb_lock core vfs lock,
+having already found a match.
 
-jon
+Should the change of parameters made by cifs be effected with sb_lock held to
+try and avoid ending up using the wrong superblock?
+
+However, because the TCP_Server_Info is apparently updated, it looks like my
+original concern is not actually a problem (the idea that if a mounted server
+changes its IP address and then a new server comes online at the old IP
+address, it might end up sharing superblocks because the IP address is part of
+the key).
+
+David
+
 
 _______________________________________________
 linux-afs mailing list
