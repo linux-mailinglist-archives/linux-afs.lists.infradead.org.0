@@ -2,84 +2,93 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6D661B7B38
-	for <lists+linux-afs@lfdr.de>; Fri, 24 Apr 2020 18:12:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC4741B7CE6
+	for <lists+linux-afs@lfdr.de>; Fri, 24 Apr 2020 19:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w0nXsjdj4AlXtt0gydz3qaoRe5ymQOWXHlo34WVtFnk=; b=r//Q0QKiwnz4OT
-	q9klrwiUA3ycDYcYiuD5ZDfuIVIFv2G0N1TyTUBhqiSs1lvvICt7UeHTQlQAcAzwrZS9jirKxQ6VA
-	6sUbvDvAdj8wOtI38hLOiiG3j2Fd4N/gmCjShUWeBoxW3yxb3tNtPMcqeAPFVXZPPREZoJNuZ/bT0
-	yIEqeAqx+9bTzcB1M2Z5ckDOFB/Fsn04mGWBqI+5GKmaZJuZxrcSEU2xEsZieP3B/31Xsk9f9LOSO
-	eqHZb6eOCT92/zYPY9zFMoAvQk9bbmK+69VB+eqbjUZLF/JNkVQ2GUCDRubQujQPCNrndnpxo08nb
-	a7KgWPO8SK8VREl8LXKw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+oEGGJHubsKlv/xBOxgz23yRLKpAGJ0tk1B5jK9nJCc=; b=u9fiXJYMI6oJZR
+	/OadoDp0Dl7h04WU6hylLku/USs9odK/SlkBeGzyZ9OIiN0RVqxm9nXH917+YPD1V6RhkHglovg4E
+	Iz+h44LTVa1+Yscx6HDk4sm5KJ+tppdqw8FzwmzziN/oWToDQI5NMGjzeUwlaqhs6vj48e9SciYXk
+	SmNCyfyJRHeTLWJQ1SERSFjs/BsZekzBjiL5WewJJFcXsrYnJR/o87MOB/X9N74V5Uj6eecReOnfd
+	OG/mqR+BZxP7WQgJ9AmrX5BU7gU6LYGs2eJpSjyySauOHKyVlMwV6gpXi63fN0YElJNtC/7NE/aWx
+	oXoylsDAgn/cEPaJyajw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jS0wJ-0005AV-3m; Fri, 24 Apr 2020 16:12:31 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jS2Ev-0005g1-Ie
+	for lists+linux-afs@lfdr.de; Fri, 24 Apr 2020 17:35:49 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jS0wG-00059x-Jo
- for linux-afs@lists.infradead.org; Fri, 24 Apr 2020 16:12:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587744747;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=5OM2DPWHYM7y/6bsE5cL+3KwCNnH0bhlvscHbPBdZpg=;
- b=c65viZWzPBRCKHifj+zwCIlQONhuMpa4apoNOJSm8zqPXOn+ra5bht0pkkH6nLJTgZypQg
- wlZ6WaAPmnLz6PgkxFv5L0dw19TV58/sgSA7C3WZU8B2P8DucUaVhoGv9gr4HyzziN3vGy
- qsRCpTp9aO/QetYCNesclgV/NtlBCSw=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-407-tLRd7sxgNXGK1lxtdLGmnA-1; Fri, 24 Apr 2020 12:12:25 -0400
-X-MC-Unique: tLRd7sxgNXGK1lxtdLGmnA-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F1A2B107B7C4;
- Fri, 24 Apr 2020 16:12:23 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-113-129.rdu2.redhat.com
- [10.10.113.129])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 002201001B2C;
- Fri, 24 Apr 2020 16:12:22 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] afs: Miscellaneous fixes
+ id 1jS2Et-0005eU-MA
+ for linux-afs@lists.infradead.org; Fri, 24 Apr 2020 17:35:48 +0000
+Received: by mail-lf1-x141.google.com with SMTP id u10so8362208lfo.8
+ for <linux-afs@lists.infradead.org>; Fri, 24 Apr 2020 10:35:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=17Kg1dRas/M0sQXVRI4F1cdrQ//6hjmUk/mclI6heeY=;
+ b=d+qcaZcbU1H0AzDGp+UTOcPWUOR9HjuA25jpYxyTWS0ttqCFnGFEDZb7W8gtA+8q7Q
+ DUnPsJgjbJ8jo2hCYbfGpWCBX4F5xcNqH+cIGSxuDfBaMWgLONIW6hJ8WQHyGftwdtXB
+ H8XP2ZEiiiYTC5NDB9zm0db/DQyW0/Ezlxt8k=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=17Kg1dRas/M0sQXVRI4F1cdrQ//6hjmUk/mclI6heeY=;
+ b=ZoIA08wwVQzyFx9j4n3dTyb2wp3WIAmVPPtqYYDcYWGi6SPHnNMLacYRZnu1YUDFRu
+ yjJsD59F/mzPawEC045UXDN1wyuKkt3KOO0/2HDtYxNAwHgRdF3L6npwaJCSwitxxM32
+ 798i8eIJUe0y7J+PQ4h1Jf5wNMGIVEnwyaY04wamPUCGHHHBKBYYMnPEIamt4+TVEl+Q
+ /AJqX62WbORJFSNJq+8jYmUseI0/qeiVVqYlBnRQfsO8YLNRtSHnd08HbYxoX5SGFx1z
+ XwkoSXpeBABsRhfAhYATAYqooH+2TH9ER75f1N2fNSGAfduZkduVbb5GEP3OXyCFuP7r
+ wuMw==
+X-Gm-Message-State: AGi0PuaPYT1PRg4iDgTGPsAeJ1bRTaxSJg8fsG9pUw4dxtFpBRRx7nPT
+ 6WRz164ge/J3Eef3woskFuQFNL1bf3k=
+X-Google-Smtp-Source: APiQypKWMhOdsJ6ssL1I1eo3XL/YUGGx22xVcbdBjUCkBbq4ul/uke5igU3JTmkhFHI+2TSDe/cNOQ==
+X-Received: by 2002:ac2:52b9:: with SMTP id r25mr7129498lfm.156.1587749744681; 
+ Fri, 24 Apr 2020 10:35:44 -0700 (PDT)
+Received: from mail-lf1-f52.google.com (mail-lf1-f52.google.com.
+ [209.85.167.52])
+ by smtp.gmail.com with ESMTPSA id t8sm5187732lfe.31.2020.04.24.10.35.43
+ for <linux-afs@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 24 Apr 2020 10:35:43 -0700 (PDT)
+Received: by mail-lf1-f52.google.com with SMTP id r17so8378998lff.2
+ for <linux-afs@lists.infradead.org>; Fri, 24 Apr 2020 10:35:43 -0700 (PDT)
+X-Received: by 2002:a19:240a:: with SMTP id k10mr7152809lfk.30.1587749743463; 
+ Fri, 24 Apr 2020 10:35:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-ID: <3632015.1587744742.1@warthog.procyon.org.uk>
-Date: Fri, 24 Apr 2020 17:12:22 +0100
-Message-ID: <3632016.1587744742@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+References: <3632016.1587744742@warthog.procyon.org.uk>
+In-Reply-To: <3632016.1587744742@warthog.procyon.org.uk>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Fri, 24 Apr 2020 10:35:27 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wi_0Fye2U+AXjScpgd_hh=pFu3GJvgsUqCk-4=ckcHhhw@mail.gmail.com>
+Message-ID: <CAHk-=wi_0Fye2U+AXjScpgd_hh=pFu3GJvgsUqCk-4=ckcHhhw@mail.gmail.com>
+Subject: Re: [GIT PULL] afs: Miscellaneous fixes
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_091228_733865_0571794C 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200424_103547_728570_7D8265D2 
+X-CRM114-Status: UNSURE (   7.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ valid
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,59 +100,24 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-fsdevel@vger.kernel.org,
- linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ linux-afs@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Fri, Apr 24, 2020 at 9:12 AM David Howells <dhowells@redhat.com> wrote:
+>
+>  (3) Make a couple of waits uninterruptible if they're done for an
+>      operation that isn't supposed to be interruptible.
 
-Could you pull these three miscellaneous fixes to the afs filesystem:
+Should they not even be killable?
 
- (1) Remove some struct members that aren't used, aren't set or aren't
-     read, plus a wake up that nothing ever waits for.
+Anyway, pulled.
 
- (2) Actually set the AFS_SERVER_FL_HAVE_EPOCH flag so that the code that
-     depends on it can work.
-
- (3) Make a couple of waits uninterruptible if they're done for an
-     operation that isn't supposed to be interruptible.
-
-Thanks,
-David
----
-The following changes since commit ae83d0b416db002fe95601e7f97f64b59514d936:
-
-  Linux 5.7-rc2 (2020-04-19 14:35:30 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-fixes-20200424
-
-for you to fetch changes up to c4bfda16d1b40d1c5941c61b5aa336bdd2d9904a:
-
-  afs: Make record checking use TASK_UNINTERRUPTIBLE when appropriate (2020-04-24 16:33:32 +0100)
-
-----------------------------------------------------------------
-AFS miscellany
-
-----------------------------------------------------------------
-David Howells (3):
-      afs: Remove some unused bits
-      afs: Fix to actually set AFS_SERVER_FL_HAVE_EPOCH
-      afs: Make record checking use TASK_UNINTERRUPTIBLE when appropriate
-
- fs/afs/cmservice.c | 2 +-
- fs/afs/fs_probe.c  | 5 +----
- fs/afs/internal.h  | 4 +---
- fs/afs/rotate.c    | 6 +++---
- fs/afs/server.c    | 7 ++-----
- fs/afs/vl_rotate.c | 4 ++--
- fs/afs/volume.c    | 8 +++++---
- 7 files changed, 15 insertions(+), 21 deletions(-)
-
+             Linus
 
 _______________________________________________
 linux-afs mailing list
