@@ -2,56 +2,56 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 678F71B73CB
-	for <lists+linux-afs@lfdr.de>; Fri, 24 Apr 2020 14:22:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C20781B73F3
+	for <lists+linux-afs@lfdr.de>; Fri, 24 Apr 2020 14:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bDORujp19jR2MHsFWjlcA4KDXBT191ZMkvIVBTDLG64=; b=MqE/L/bgFKuBkL
-	GCPK9GHa8550GuLFY+RrCLoSSLArXAEMgjcOPh1aj762KKeW29+Jk72vr0v2ypy45azLe/1hiDhEZ
-	ENAJYWRVioRUwGn2kM9EBO+P8+wBcwCcMpHeDsIOYzFFReHBn/5SYsyuLuuapcw1q0dcBEq0ig5mQ
-	nB1/Yyh6j4dCKII4OsdnJEJ+HBk7LkSxF/bnylQE+y4S7E6X2x8rm2w4swlXQKfLQSAKuJ8iDoTHA
-	UGCX4Rwiav/CuoiFFYj2npIKqkADKxvtSz30rBLSP0yMCbriFmYSRQjfO6yYXqFy7e0D4tPgSIIsG
-	1n9X0Rth3mkyfWyqe1Vw==;
+	List-Owner; bh=UWeUlfMcJFbwGL9TVJWlrPDuTvsi24Vpm6Mq58FCdlY=; b=ISf0IS+kSYiQz8
+	EP9fsNyPsgozdwdFfZ/gM2hQv8K/Gc7sYoq+FLraWD1Yzf2mIoBYHKj6ekSBnpLxX9VG/f0ycjMN1
+	Nem1hn0whbIljr6JI0NJDgSNWvUzFVy8Q34nry42CnWMfbScsR8VGFjUP1xLEa/VRfdI8O4rbzFMp
+	+onRyYUY/1QCHi2MtBFkZwtWXK3gfIeBmx/9vTDG2Ufdi/LAO5A6mG/3pbxQpIrNldj0FfYz0EuT4
+	1ri0sX6ltlBPL3cW1X1wiOrv2gPctXQ3FTmTfdl6ssYBAS3GQcgMFo00D6Wt6NOCo8d+BE+XnHmIx
+	hoGnqs3ecDcJ8k/OnAPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRxM1-0004WE-0f
-	for lists+linux-afs@lfdr.de; Fri, 24 Apr 2020 12:22:49 +0000
+	id 1jRxMx-0005Rk-MT
+	for lists+linux-afs@lfdr.de; Fri, 24 Apr 2020 12:23:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRxLy-0004V6-De
- for linux-afs@lists.infradead.org; Fri, 24 Apr 2020 12:22:47 +0000
+ id 1jRxMh-00055Q-2l
+ for linux-afs@lists.infradead.org; Fri, 24 Apr 2020 12:23:35 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA27E20776;
- Fri, 24 Apr 2020 12:22:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5863521569;
+ Fri, 24 Apr 2020 12:23:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587730965;
- bh=d9R2OtnCbzy2kZlftOg/kItqCRyQPnSNX2spNt3uGCI=;
+ s=default; t=1587731009;
+ bh=17Z6ur9/JVGYgU+ovwJDkUoJXP5IFKxDcHNAtxzeoZ4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=MqJ0s99ZS279dLxcwdms5uvcXgUfu4GJPPgBfkymBsFQYgt8j2qrEOOP7hNC+92H9
- SEj9++lzEgaHUhojmgeS1IJoGNaA1k72bfk5cFacVB4/OnTwM4wF04OZiE485vIvO0
- 7b0ziFaYt1OpJ5ktteVpiOJacRuFtGQ2xGNgQaMU=
+ b=KBlyRuCiUynDv20CC259Yv9vAje/kEht69KMZX8HGIKEbqrLW/HlXa3ZYFVOfr6X/
+ PdcmNV9baHoGyYIjI58+8WX0rNKu23vhTv9CEAFxiN0tUghVj34aNNsPh8PNa4Y8K1
+ dgPR6LvRW+bz0BlOJCGO3/SQamhNl6RkVz3kxwyI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 07/38] afs: Fix length of dump of bad
+Subject: [PATCH AUTOSEL 5.4 05/26] afs: Fix length of dump of bad
  YFSFetchStatus record
-Date: Fri, 24 Apr 2020 08:22:05 -0400
-Message-Id: <20200424122237.9831-7-sashal@kernel.org>
+Date: Fri, 24 Apr 2020 08:23:02 -0400
+Message-Id: <20200424122323.10194-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200424122237.9831-1-sashal@kernel.org>
-References: <20200424122237.9831-1-sashal@kernel.org>
+In-Reply-To: <20200424122323.10194-1-sashal@kernel.org>
+References: <20200424122323.10194-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200424_052246_481276_7287EED8 
+X-CRM114-CacheID: sfid-20200424_052331_394328_A543488C 
 X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -103,7 +103,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/fs/afs/yfsclient.c b/fs/afs/yfsclient.c
-index 83b6d67325f6c..b5b45c57e1b1d 100644
+index 31b236c6b1f76..39230880f372b 100644
 --- a/fs/afs/yfsclient.c
 +++ b/fs/afs/yfsclient.c
 @@ -165,15 +165,15 @@ static void xdr_dump_bad(const __be32 *bp)
