@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 533A71C45F6
+	by mail.lfdr.de (Postfix) with ESMTPS id 487111C45F5
 	for <lists+linux-afs@lfdr.de>; Mon,  4 May 2020 20:30:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,73 +10,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dsO68xreY6VEYUnJ20+sC+ruPW6ZB10N4pnZTkfWeKU=; b=JTi33YXgAtF+ZS
-	a0DiPW6VrEnX5Q9OG3q8cIk2KaG886YC7APYm++loK0lEx8IPn409PrpDCZasdTbD1Fg5Ex9q0lXh
-	xfHZuhx30MVSyGHwu8eaP3G35Xs7Bq+y+Vr+FHmzah5QggJi58On5Up5+UXTx1VHE1pKjM/H62sh/
-	jehMlEWPbBQvtc4naYb4FSY0yP00giQHTMk8rNZslr8gW2asSFrMT6tE5Nq6y++RZ/wddIHYrs/2X
-	iD7xrMNWsVHcjq8/UsfxATDYsuHq3IykL/3GaY5VWD0VIVjaDT5sPbLRYssIcgAaHbCkBwFDJDRAx
-	t+NYCgvAP+iay0Jmny3A==;
+	List-Owner; bh=o/vfqJbPmyfbVvo+WCIU1rLIARjEP/SBQPj6z3b2iG8=; b=SXyCiKhSuvWTEh
+	DmOKkvU9HOtWEA/qC0qseU+6QPzkcEeeolDGQw5IbTYsrnSYCmJDakkEo8crOkCgThVZ/etG9BgXj
+	nzKLCzMTsXMsn3MNmgYVK6WIKZ5mULSlXXXgZ+0t6Qi/OsF4/J9MZm+an9SGWFIW+UUJ6kMxwsjgZ
+	DR6OEDHTVGnmKet0ZafsHAxjnJkUo4QRp5cSaa4nZn/6Y5Mf4e1GQtYD8OwGMrkuNf125XHz16qd2
+	yZDJo+/gOmBryCPkRtWbheh5vH/RXQa3jteqX/0ISnyFRjs3CAi3sJX85UzsdyTxoQ98CRKz75Ol+
+	xbatiDvAOJPxCUQyR6fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVfrE-0002Q3-Hl; Mon, 04 May 2020 18:30:24 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jVfrE-0002Qm-OW; Mon, 04 May 2020 18:30:24 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVegw-0002OM-QT
- for linux-afs@lists.infradead.org; Mon, 04 May 2020 17:15:47 +0000
+ id 1jVehA-0002Ui-GE
+ for linux-afs@lists.infradead.org; Mon, 04 May 2020 17:15:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588612541;
+ s=mimecast20190719; t=1588612555;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=CWQJK7zPeDPdYhDwPYU8xq1x4O/xcEWQo3ZiKiG6jyk=;
- b=XUSGoNasfOFdUGC1v5nyndw/oPwEaDGw5VQ45BhJrMCWXPfLWGGEpSJ6gMj22J+ghj1Hex
- bjDLQq+EOTN0uvv+bVElj5/ZYNRC3uLE4603Mgf6wNLKowbNBX0/cPlKHMl4yyq7hWxkxf
- iUm+KtxndyDzvk9+jGRVFu7wg+KqZfI=
+ bh=sddjXKpZxcXQQuBLBFY/iI3K5+5GC8wkFIjIChuKYww=;
+ b=cRbeIxopBJuWclSbMXrQ3Mx/aVS8bMVD8Q3b0Wt/9HGwO6Rfr4neKByFV6aNNWAQdjaCeH
+ nthxF9dJr5+rzTfNukxotK5ALvpiEOhGXtFTFWb6nSlH3n5yf2UkWhnALHoszDftpfMGlB
+ aaQb+9Po/L0+lmpDN+gBlD7ouTe8j94=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-470-2suybqQwNsyAxzX2F4_yfw-1; Mon, 04 May 2020 13:15:36 -0400
-X-MC-Unique: 2suybqQwNsyAxzX2F4_yfw-1
+ us-mta-247-FY5NbUxaNiON-t9Je8Ylfg-1; Mon, 04 May 2020 13:15:46 -0400
+X-MC-Unique: FY5NbUxaNiON-t9Je8Ylfg-1
 Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
  [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5647680BE32;
- Mon,  4 May 2020 17:15:34 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2BB7C107ACCA;
+ Mon,  4 May 2020 17:15:44 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-118-225.rdu2.redhat.com
  [10.10.118.225])
- by smtp.corp.redhat.com (Postfix) with ESMTP id F146D5C1BD;
- Mon,  4 May 2020 17:15:31 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6D99A5C1BD;
+ Mon,  4 May 2020 17:15:40 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [RFC PATCH 53/61] afs: Note the amount transferred in fetch-data
- delivery
+Subject: [RFC PATCH 54/61] afs: Wait on PG_fscache before modifying/releasing
+ a page
 From: David Howells <dhowells@redhat.com>
 To: Trond Myklebust <trondmy@hammerspace.com>,
  Anna Schumaker <anna.schumaker@netapp.com>, Steve French <sfrench@samba.org>, 
  Jeff Layton <jlayton@redhat.com>
-Date: Mon, 04 May 2020 18:15:31 +0100
-Message-ID: <158861253114.340223.7031203580922376614.stgit@warthog.procyon.org.uk>
+Date: Mon, 04 May 2020 18:15:39 +0100
+Message-ID: <158861253957.340223.7465334678444521655.stgit@warthog.procyon.org.uk>
 In-Reply-To: <158861203563.340223.7585359869938129395.stgit@warthog.procyon.org.uk>
 References: <158861203563.340223.7585359869938129395.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/0.21
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_101542_954564_5458D386 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20200504_101556_619927_F72A97C9 
+X-CRM114-Status: GOOD (  15.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -107,86 +109,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Note the amount of data transferred in the fscache request op structure in
-the delivery/decode routines for the various FetchData operations.
+PG_fscache is going to be used to indicate that a page is being written to
+the cache, and that the page should not be modified or released until it's
+finished.
 
-Also, we need to exclude the excess from this value and then we need to use
-this in directory read rather than actual_len.
+Make afs_invalidatepage() and afs_releasepage() wait for it.
 
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/afs/dir.c       |    9 ++++-----
- fs/afs/fsclient.c  |    5 +++++
- fs/afs/yfsclient.c |    5 +++++
- 3 files changed, 14 insertions(+), 5 deletions(-)
+ fs/afs/file.c  |   13 +++++++++++++
+ fs/afs/write.c |    9 +++++++++
+ 2 files changed, 22 insertions(+)
 
-diff --git a/fs/afs/dir.c b/fs/afs/dir.c
-index 0b3f33269fdd..577c975c13b0 100644
---- a/fs/afs/dir.c
-+++ b/fs/afs/dir.c
-@@ -211,9 +211,8 @@ static void afs_dir_dump(struct afs_vnode *dvnode, struct afs_read *req)
- 	pr_warn("DIR %llx:%llx f=%llx l=%llx al=%llx\n",
- 		dvnode->fid.vid, dvnode->fid.vnode,
- 		req->file_size, req->cache.len, req->actual_len);
--	pr_warn("DIR %llx %x %zx %zx\n",
--		req->cache.pos, req->cache.nr_pages,
--		req->iter->iov_offset,  iov_iter_count(req->iter));
-+	pr_warn("DIR %llx %x %llx\n",
-+		req->cache.pos, req->cache.nr_pages, req->cache.transferred);
+diff --git a/fs/afs/file.c b/fs/afs/file.c
+index ea9f6d45d9ff..b25c5ab1f4e1 100644
+--- a/fs/afs/file.c
++++ b/fs/afs/file.c
+@@ -548,6 +548,11 @@ static void afs_invalidatepage(struct page *page, unsigned int offset,
  
- 	xas_for_each(&xas, page, last) {
- 		if (xas_retry(&xas, page))
-@@ -323,7 +322,7 @@ static struct afs_read *afs_read_dir(struct afs_vnode *dvnode, struct key *key)
+ 	/* we clean up only if the entire page is being invalidated */
+ 	if (offset == 0 && length == PAGE_SIZE) {
++#ifdef CONFIG_AFS_FSCACHE
++		if (PageFsCache(page))
++			wait_on_page_fscache(page);
++#endif
++
+ 		if (PagePrivate(page)) {
+ 			priv = page_private(page);
+ 			trace_afs_page_dirty(vnode, tracepoint_string("inval"),
+@@ -575,6 +580,14 @@ static int afs_releasepage(struct page *page, gfp_t gfp_flags)
  
- 	nr_pages = (i_size + PAGE_SIZE - 1) / PAGE_SIZE;
- 
--	req->actual_len = i_size; /* May change */
-+	req->cache.transferred = i_size; /* May change */
- 	req->cache.len = nr_pages * PAGE_SIZE; /* We can ask for more than there is */
- 	req->data_version = dvnode->status.data_version; /* May change */
- 	iov_iter_mapping(&req->def_iter, READ, dvnode->vfs_inode.i_mapping,
-@@ -548,7 +547,7 @@ static int afs_dir_iterate(struct inode *dir, struct dir_context *ctx,
- 
- 	/* walk through the blocks in sequence */
- 	ret = 0;
--	while (ctx->pos < req->actual_len) {
-+	while (ctx->pos < req->cache.transferred) {
- 		blkoff = ctx->pos & ~(sizeof(union afs_xdr_dir_block) - 1);
- 
- 		/* Fetch the appropriate page from the directory and re-add it
-diff --git a/fs/afs/fsclient.c b/fs/afs/fsclient.c
-index c9789294fc68..62cc8072874b 100644
---- a/fs/afs/fsclient.c
-+++ b/fs/afs/fsclient.c
-@@ -417,6 +417,11 @@ static int afs_deliver_fs_fetch_data(struct afs_call *call)
- 		break;
+ 	/* deny if page is being written to the cache and the caller hasn't
+ 	 * elected to wait */
++#ifdef CONFIG_AFS_FSCACHE
++	if (PageFsCache(page)) {
++		if (!(gfp_flags & __GFP_DIRECT_RECLAIM) || !(gfp_flags & __GFP_FS))
++			return false;
++		wait_on_page_fscache(page);
++	}
++#endif
++
+ 	if (PagePrivate(page)) {
+ 		priv = page_private(page);
+ 		trace_afs_page_dirty(vnode, tracepoint_string("rel"),
+diff --git a/fs/afs/write.c b/fs/afs/write.c
+index 390fee44446c..3632909fcd91 100644
+--- a/fs/afs/write.c
++++ b/fs/afs/write.c
+@@ -111,6 +111,10 @@ int afs_write_begin(struct file *file, struct address_space *mapping,
+ 		SetPageUptodate(page);
  	}
  
-+	/* Pass the call's ref on the read request descriptor to the completion
-+	 * handler.
-+	 */
-+	req->cache.transferred = min(req->actual_len, req->cache.len);
-+	set_bit(FSCACHE_IO_DATA_FROM_SERVER, &req->cache.flags);
- 	if (req->cache.io_done)
- 		req->cache.io_done(&req->cache);
++#ifdef CONFIG_AFS_FSCACHE
++	wait_on_page_fscache(page);
++#endif
++
+ 	/* page won't leak in error case: it eventually gets cleaned off LRU */
+ 	*pagep = page;
  
-diff --git a/fs/afs/yfsclient.c b/fs/afs/yfsclient.c
-index 6ea97233c0d2..fb3f006be31c 100644
---- a/fs/afs/yfsclient.c
-+++ b/fs/afs/yfsclient.c
-@@ -531,6 +531,11 @@ static int yfs_deliver_fs_fetch_data64(struct afs_call *call)
- 		break;
- 	}
+@@ -786,6 +790,11 @@ vm_fault_t afs_page_mkwrite(struct vm_fault *vmf)
+ 	/* Wait for the page to be written to the cache before we allow it to
+ 	 * be modified.  We then assume the entire page will need writing back.
+ 	 */
++#ifdef CONFIG_AFS_FSCACHE
++	if (PageFsCache(vmf->page) &&
++	    wait_on_page_bit_killable(vmf->page, PG_fscache) < 0)
++		return VM_FAULT_RETRY;
++#endif
  
-+	/* Pass the call's ref on the read request descriptor to the completion
-+	 * handler.
-+	 */
-+	req->cache.transferred = min(req->actual_len, req->cache.len);
-+	set_bit(FSCACHE_IO_DATA_FROM_SERVER, &req->cache.flags);
- 	if (req->cache.io_done)
- 		req->cache.io_done(&req->cache);
- 
+ 	if (PageWriteback(vmf->page) &&
+ 	    wait_on_page_bit_killable(vmf->page, PG_writeback) < 0)
 
 
 
