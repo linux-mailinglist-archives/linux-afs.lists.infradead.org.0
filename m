@@ -2,81 +2,83 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FC511C428F
-	for <lists+linux-afs@lfdr.de>; Mon,  4 May 2020 19:23:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2796B1C428C
+	for <lists+linux-afs@lfdr.de>; Mon,  4 May 2020 19:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gq7zPhDpl7wU4yAFbnEb4RWI8eLEPrGWn7NReCqdyf8=; b=T24TzlRp+4G/Ct
-	o1oJkZ1ycTfbwhSL91XcNXOMjw8fcnShhJCNUSYvbBwbs8HCbFFcUCv2o9VYsNtpbMaZ5qyNIB3UM
-	Pl5hMZKR2pVrrq34mlHPbvtD1uYwPL170ZViPmpPX89twLssD6R7s3JtjViaBPcfZHByEl3Yo74pM
-	d30Qus08LTcqDmTEF9W8R5gDXvwOboT8QlR8xjRsEpjBt9T3uS6yOKck83us0pQCLE6sSJcrBGgrh
-	T/fPkBrdf7KPyZlWvH4gBoEVdh2VM5wyaMaNLc+oPAYy9mmROUFbndeF0CTYCWYjRlnOjIDfwk4rt
-	OnzvWBXan25Elo49grrg==;
+	List-Owner; bh=qac+me7Ag8RupzUG98x4UxOHYf8bv0HImlzsuXvONiE=; b=uOZggTfOGUSDA7
+	pu0NMscWFs/C5xBMTACqeK4EIPiZUOzijDLEYoB78El+/Uhul5I5gkmGKTin0yoZ7AVmu0UhLt3v6
+	pn34D8YOPAybMBPPrYQWyMq41SrCM2Yp7dyuk4QsKWP3TLTJM7/5Jqn361vlMWUXFyjIm1PVdyvMy
+	ytcuZAO5qPv/xeHCbKExM3jtEtfFAcdOOL3jnzXwm0lm2hpxRwp0mAjrNlj2OQ9jrewkPK6XfPaXu
+	k6VoXSFe79JZJ4iwgBRdsaT8cSOuQI9GC+HZsQzTJC7CebS6L8v7CAeU5NmSzPKd2tEqHkgahlUHG
+	uY2UTowcHszxodb1gJow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVeoc-0000dr-WB; Mon, 04 May 2020 17:23:39 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jVeod-0000f6-NU; Mon, 04 May 2020 17:23:39 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVeeE-0006qI-87
- for linux-afs@lists.infradead.org; Mon, 04 May 2020 17:12:55 +0000
+ id 1jVeeS-0006vp-S6
+ for linux-afs@lists.infradead.org; Mon, 04 May 2020 17:13:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588612373;
+ s=mimecast20190719; t=1588612387;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=T7b2fIkLVJvfWt//FA5c9sEHNsqfvA45BwMJ8r7y02E=;
- b=EDk0gVruMb0zTVgsJrs36OzUSrkli8y8xTmljRqkhBVDy390YXshPcYMXBFCecS0bao3aW
- IMjj2Ug2wdN6cRSOfXfysTEBqeE2d9bXyiUx7gZgbpI1xVZAU+W8mpP/9581MDs8gYqzdF
- GCoC2MSv0WjD3qZRFV/BfhyolRT5DJ4=
+ bh=TD8IvGU/cs1ejkxvD4Als159+boOBcHJ/ANKfYOUjVo=;
+ b=Yhjz5V9LO2cdKb3AQFNCSQvvBQE8DSjxDBmdS0K+XNsDWakIkjWuBYgCN1mEKjRe/LJoG+
+ Zxh5d6+Hua/SE0DIT+9Wkcnoug8FBn39Ek5fCG7XDunZYRJccwx13pm+AbJ30XEz5sHIB3
+ H731KFSUSJItQnZWNLkIykZkkuXclfE=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-330-MmaHYRaTN82UeFMmWRJkiQ-1; Mon, 04 May 2020 13:12:51 -0400
-X-MC-Unique: MmaHYRaTN82UeFMmWRJkiQ-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ us-mta-9-AOKbFEc9PmWYUEvwg5nZjg-1; Mon, 04 May 2020 13:13:04 -0400
+X-MC-Unique: AOKbFEc9PmWYUEvwg5nZjg-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C35BB107ACF3;
- Mon,  4 May 2020 17:12:49 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 30A0B108BD0A;
+ Mon,  4 May 2020 17:13:01 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-118-225.rdu2.redhat.com
  [10.10.118.225])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0466C63F61;
- Mon,  4 May 2020 17:12:45 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id DD9D160C80;
+ Mon,  4 May 2020 17:12:55 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [RFC PATCH 35/61] cachefiles: Round the cachefile size up to DIO
- block size
+Subject: [RFC PATCH 36/61] cachefiles: Implement read and write parts of new
+ I/O API
 From: David Howells <dhowells@redhat.com>
 To: Trond Myklebust <trondmy@hammerspace.com>,
  Anna Schumaker <anna.schumaker@netapp.com>, Steve French <sfrench@samba.org>, 
  Jeff Layton <jlayton@redhat.com>
-Date: Mon, 04 May 2020 18:12:45 +0100
-Message-ID: <158861236514.340223.3729118853361763383.stgit@warthog.procyon.org.uk>
+Date: Mon, 04 May 2020 18:12:55 +0100
+Message-ID: <158861237502.340223.8393701975417626960.stgit@warthog.procyon.org.uk>
 In-Reply-To: <158861203563.340223.7585359869938129395.stgit@warthog.procyon.org.uk>
 References: <158861203563.340223.7585359869938129395.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/0.21
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_101254_366594_B82040C9 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200504_101308_986104_515E9FE7 
+X-CRM114-Status: GOOD (  18.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -107,53 +109,256 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Round the size of a cachefile up to DIO block size so that we can always
-read back the last partial page of a file using direct I/O.
+Implement writing into the cache and reading back from the cache inside
+cachefiles using asynchronous direct I/O from the specified iterator.  The
+size and position of the request should be aligned to the reported
+dio_block_size.
+
+Errors and completion are reported by callback.
 
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/cachefiles/interface.c |   13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ fs/cachefiles/io.c |  208 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 202 insertions(+), 6 deletions(-)
 
-diff --git a/fs/cachefiles/interface.c b/fs/cachefiles/interface.c
-index d820051a9960..aa063857272a 100644
---- a/fs/cachefiles/interface.c
-+++ b/fs/cachefiles/interface.c
-@@ -184,6 +184,17 @@ static void cachefiles_update_object(struct fscache_object *_object)
- 			cachefiles_remove_object_xattr(cache, object->dentry);
- 			goto out;
- 		}
+diff --git a/fs/cachefiles/io.c b/fs/cachefiles/io.c
+index ddb44ec5a199..42e0d620d778 100644
+--- a/fs/cachefiles/io.c
++++ b/fs/cachefiles/io.c
+@@ -12,30 +12,226 @@
+ #include <linux/xattr.h>
+ #include "internal.h"
+ 
++struct cachefiles_kiocb {
++	struct kiocb			iocb;
++	struct fscache_io_request	*req;
++	refcount_t			ki_refcnt;
++};
 +
-+		object_size = round_up(object_size, CACHEFILES_DIO_BLOCK_SIZE);
-+		_debug("trunc %llx -> %llx", i_size_read(d_inode(object->dentry)), object_size);
-+		if (i_size_read(d_inode(object->dentry)) < object_size) {
-+			ret = vfs_truncate(&path, object_size);
-+			if (ret < 0) {
-+				cachefiles_io_error_obj(object, "Trunc-to-dio-size failed");
-+				cachefiles_remove_object_xattr(cache, object->dentry);
-+				goto out;
-+			}
-+		}
- 	}
++static inline void cachefiles_put_kiocb(struct cachefiles_kiocb *ki)
++{
++	if (refcount_dec_and_test(&ki->ki_refcnt)) {
++		fscache_put_io_request(ki->req);
++		fput(ki->iocb.ki_filp);
++		kfree(ki);
++	}
++}
++
++/*
++ * Handle completion of a read from the cache.
++ */
++static void cachefiles_read_complete(struct kiocb *iocb, long ret, long ret2)
++{
++	struct cachefiles_kiocb *ki = container_of(iocb, struct cachefiles_kiocb, iocb);
++	struct fscache_io_request *req = ki->req;
++
++	_enter("%llx,%ld,%ld", req->len, ret, ret2);
++
++	fscache_end_io_operation(req->cookie);
++
++	if (ret < 0) {
++		req->error = ret;
++	} else if (ret != req->len) {
++		req->error = -ENODATA;
++	} else {
++		req->transferred = ret;
++		set_bit(FSCACHE_IO_DATA_FROM_CACHE, &req->flags);
++	}
++	if (req->io_done)
++		req->io_done(req);
++	cachefiles_put_kiocb(ki);
++}
++
+ /*
+  * Initiate a read from the cache.
+  */
+-int cachefiles_read(struct fscache_object *object,
++int cachefiles_read(struct fscache_object *obj,
+ 		    struct fscache_io_request *req,
+ 		    struct iov_iter *iter)
+ {
+-	req->error = -ENODATA;
++	struct cachefiles_object *object =
++		container_of(obj, struct cachefiles_object, fscache);
++	struct cachefiles_kiocb *ki;
++	struct file *file = object->backing_file;
++	ssize_t ret = -ENOBUFS;
++
++	_enter("%pD,%li,%llx,%llx/%llx",
++	       file, file_inode(file)->i_ino, req->pos, req->len, i_size_read(file->f_inode));
++
++	ki = kzalloc(sizeof(struct cachefiles_kiocb), GFP_KERNEL);
++	if (!ki)
++		goto presubmission_error;
++
++	refcount_set(&ki->ki_refcnt, 2);
++	ki->iocb.ki_filp	= get_file(file);
++	ki->iocb.ki_pos		= req->pos;
++	ki->iocb.ki_flags	= IOCB_DIRECT;
++	ki->iocb.ki_hint	= ki_hint_validate(file_write_hint(file));
++	ki->iocb.ki_ioprio	= get_current_ioprio();
++	ki->req			= req;
++
++	if (req->io_done)
++		ki->iocb.ki_complete = cachefiles_read_complete;
++
++	ret = rw_verify_area(READ, file, &ki->iocb.ki_pos, iov_iter_count(iter));
++	if (ret < 0)
++		goto presubmission_error_free;
++
++	fscache_get_io_request(req);
++	ret = call_read_iter(file, &ki->iocb, iter);
++	switch (ret) {
++	case -EIOCBQUEUED:
++		goto in_progress;
++
++	case -ERESTARTSYS:
++	case -ERESTARTNOINTR:
++	case -ERESTARTNOHAND:
++	case -ERESTART_RESTARTBLOCK:
++		/* There's no easy way to restart the syscall since other AIO's
++		 * may be already running. Just fail this IO with EINTR.
++		 */
++		ret = -EINTR;
++		/* Fall through */
++	default:
++		cachefiles_read_complete(&ki->iocb, ret, 0);
++		if (ret > 0)
++			ret = 0;
++		break;
++	}
++
++in_progress:
++	cachefiles_put_kiocb(ki);
++	_leave(" = %zd", ret);
++	return ret;
++
++presubmission_error_free:
++	fput(file);
++	kfree(ki);
++presubmission_error:
++	req->error = -ENOMEM;
++	if (req->io_done)
++		req->io_done(req);
++	return -ENOMEM;
++}
++
++/*
++ * Handle completion of a write to the cache.
++ */
++static void cachefiles_write_complete(struct kiocb *iocb, long ret, long ret2)
++{
++	struct cachefiles_kiocb *ki = container_of(iocb, struct cachefiles_kiocb, iocb);
++	struct fscache_io_request *req = ki->req;
++	struct inode *inode = file_inode(ki->iocb.ki_filp);
++
++	_enter("%llx,%ld,%ld", req->len, ret, ret2);
++
++	/* Tell lockdep we inherited freeze protection from submission thread */
++	__sb_writers_acquired(inode->i_sb, SB_FREEZE_WRITE);
++	__sb_end_write(inode->i_sb, SB_FREEZE_WRITE);
++
++	fscache_end_io_operation(req->cookie);
++
++	if (ret < 0)
++		req->error = ret;
++	else if (ret != req->len)
++		req->error = -ENOBUFS;
++	else
++		cachefiles_mark_content_map(req);
+ 	if (req->io_done)
+ 		req->io_done(req);
+-	return -ENODATA;
++	cachefiles_put_kiocb(ki);
+ }
  
- 	cachefiles_set_object_xattr(object, XATTR_REPLACE);
-@@ -358,6 +369,7 @@ static int cachefiles_attr_changed(struct cachefiles_object *object)
- 	int ret;
+ /*
+  * Initiate a write to the cache.
+  */
+-int cachefiles_write(struct fscache_object *object,
++int cachefiles_write(struct fscache_object *obj,
+ 		     struct fscache_io_request *req,
+ 		     struct iov_iter *iter)
+ {
+-	req->error = -ENOBUFS;
++	struct cachefiles_object *object =
++		container_of(obj, struct cachefiles_object, fscache);
++	struct cachefiles_kiocb *ki;
++	struct inode *inode;
++	struct file *file = object->backing_file;
++	ssize_t ret = -ENOBUFS;
++
++	_enter("%pD,%li,%llx,%llx/%llx",
++	       file, file_inode(file)->i_ino, req->pos, req->len, i_size_read(file->f_inode));
++
++	ki = kzalloc(sizeof(struct cachefiles_kiocb), GFP_KERNEL);
++	if (!ki)
++		goto presubmission_error;
++
++	refcount_set(&ki->ki_refcnt, 2);
++	ki->iocb.ki_filp	= get_file(file);
++	ki->iocb.ki_pos		= req->pos;
++	ki->iocb.ki_flags	= IOCB_DIRECT | IOCB_WRITE;
++	ki->iocb.ki_hint	= ki_hint_validate(file_write_hint(file));
++	ki->iocb.ki_ioprio	= get_current_ioprio();
++	ki->req			= req;
++
++	if (req->io_done)
++		ki->iocb.ki_complete = cachefiles_write_complete;
++
++	ret = rw_verify_area(WRITE, file, &ki->iocb.ki_pos, iov_iter_count(iter));
++	if (ret < 0)
++		goto presubmission_error_free;
++
++	/* Open-code file_start_write here to grab freeze protection, which
++	 * will be released by another thread in aio_complete_rw().  Fool
++	 * lockdep by telling it the lock got released so that it doesn't
++	 * complain about the held lock when we return to userspace.
++	 */
++	inode = file_inode(file);
++	__sb_start_write(inode->i_sb, SB_FREEZE_WRITE, true);
++	__sb_writers_release(inode->i_sb, SB_FREEZE_WRITE);
++
++	fscache_get_io_request(req);
++	ret = call_write_iter(file, &ki->iocb, iter);
++	switch (ret) {
++	case -EIOCBQUEUED:
++		goto in_progress;
++
++	case -ERESTARTSYS:
++	case -ERESTARTNOINTR:
++	case -ERESTARTNOHAND:
++	case -ERESTART_RESTARTBLOCK:
++		/* There's no easy way to restart the syscall since other AIO's
++		 * may be already running. Just fail this IO with EINTR.
++		 */
++		ret = -EINTR;
++		/* Fall through */
++	default:
++		cachefiles_write_complete(&ki->iocb, ret, 0);
++		if (ret > 0)
++			ret = 0;
++		break;
++	}
++
++in_progress:
++	cachefiles_put_kiocb(ki);
++	_leave(" = %zd", ret);
++	return ret;
++
++presubmission_error_free:
++	fput(file);
++	kfree(ki);
++presubmission_error:
++	req->error = -ENOMEM;
+ 	if (req->io_done)
+ 		req->io_done(req);
+-	return -ENOBUFS;
++	return -ENOMEM;
+ }
  
- 	ni_size = object->fscache.cookie->object_size;
-+	ni_size = round_up(ni_size, CACHEFILES_DIO_BLOCK_SIZE);
- 
- 	_enter("{OBJ%x},[%llu]",
- 	       object->fscache.debug_id, (unsigned long long) ni_size);
-@@ -426,6 +438,7 @@ static void cachefiles_invalidate_object(struct fscache_object *_object)
- 			     struct cachefiles_cache, cache);
- 
- 	ni_size = object->fscache.cookie->object_size;
-+	ni_size = round_up(ni_size, CACHEFILES_DIO_BLOCK_SIZE);
- 
- 	_enter("{OBJ%x},[%llu]",
- 	       object->fscache.debug_id, (unsigned long long)ni_size);
+ /*
 
 
 
