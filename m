@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE2C1D13D0
+	by mail.lfdr.de (Postfix) with ESMTPS id 28BF61D13CF
 	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 15:01:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,23 +10,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HLXN7fIG39CkV85nPAeGgdG8FD0s2GwySrW+HWVEjaA=; b=pEWivSWFTImXFw
-	quzCqMQ13IodzwiUsxpeZzXQ4iWYm0Def9rJ/J+8c9p+fVhWhBzcLMR+XkrQ8+edBXdyOSb+OA4ti
-	eLhCVWOQVEMuI0W2uLQ9R26IdofrlvAGfvPUlSzp8kkX9GcjT6FeFuJbJq3jB87+6ZjGWDMcDz/Tf
-	R2fkVZavG/g/dW3bdRm6sB5VEY1CswyXiATQzWiBtfpKFOLsePzKe7tQuKkY8GxKRA2kAC1PyOQ/B
-	dRbyzbbS5/R4WuXde/ztXBqVl/F1dE7tNLh+g3CeXpcxbQ8HerMnpglQcYj6VFR5alFVPOluHvpvk
-	PfY1GVrqtETkMx3a7XEw==;
+	List-Owner; bh=Ys4cQlf7dXyo37rh75REYQTBQgGp7B3j73xOfHyU/wE=; b=mixsjN+2ilCJf7
+	QBdCx8PdL+FCX+pODWa93Oqm6j7+Lhm32wFZi8lIWLp0PazIqNy3q8SKOcx6wwsoD98vP4bVShYUu
+	oAFJFY7qG5q7SutjEHpqtfY28RCxoKNugEw+rArIjcV2zh1Jn1AcPT1yesDGdVy8+Ou+OHnHV0dhL
+	BUZVEvpBFagAV5BFRKkat/NFbkWvAFne0sea2N5WILml9pJsWW29tLHwVIYQoSZ4e45HdaoXoE8J+
+	3JU4ygJv1TbfMdv86DSbiu21lR3aRHUP8GoOPT+mVbVhG94qbEaGEw3Lif722QbWNYIQJCrpDWivi
+	JRwxJDxOoTeab29DrFiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYr0W-0008CS-CV; Wed, 13 May 2020 13:01:08 +0000
+	id 1jYr0X-0008Ft-Gb; Wed, 13 May 2020 13:01:09 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYkrl-0004Vk-QO; Wed, 13 May 2020 06:27:42 +0000
+ id 1jYkro-0004YK-Ju; Wed, 13 May 2020 06:27:45 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH 17/33] tcp: add tcp_sock_set_keepcnt
-Date: Wed, 13 May 2020 08:26:32 +0200
-Message-Id: <20200513062649.2100053-18-hch@lst.de>
+Subject: [PATCH 18/33] ipv4: add ip_sock_set_tos
+Date: Wed, 13 May 2020 08:26:33 +0200
+Message-Id: <20200513062649.2100053-19-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200513062649.2100053-1-hch@lst.de>
 References: <20200513062649.2100053-1-hch@lst.de>
@@ -61,125 +61,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Add a helper to directly set the TCP_KEEPCNT sockopt from kernel space
-without going through a fake uaccess.
+Add a helper to directly set the IP_TOS sockopt from kernel space without
+going through a fake uaccess.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- include/linux/tcp.h   |  1 +
- net/ipv4/tcp.c        | 12 ++++++++++++
- net/rds/tcp.h         |  2 +-
- net/rds/tcp_listen.c  | 17 +++--------------
- net/sunrpc/xprtsock.c |  3 +--
- 5 files changed, 18 insertions(+), 17 deletions(-)
+ drivers/nvme/host/tcp.c   | 14 +++-----------
+ drivers/nvme/target/tcp.c | 10 ++--------
+ include/net/ip.h          |  2 ++
+ net/ipv4/ip_sockglue.c    | 30 +++++++++++++++++++++---------
+ 4 files changed, 28 insertions(+), 28 deletions(-)
 
-diff --git a/include/linux/tcp.h b/include/linux/tcp.h
-index dad18ca361c01..ff2aa165b5c02 100644
---- a/include/linux/tcp.h
-+++ b/include/linux/tcp.h
-@@ -501,5 +501,6 @@ int tcp_sock_set_syncnt(struct sock *sk, int val);
- void tcp_sock_set_user_timeout(struct sock *sk, u32 val);
- int tcp_sock_set_keepidle(struct sock *sk, int val);
- int tcp_sock_set_keepintvl(struct sock *sk, int val);
-+int tcp_sock_set_keepcnt(struct sock *sk, int val);
- 
- #endif	/* _LINUX_TCP_H */
-diff --git a/net/ipv4/tcp.c b/net/ipv4/tcp.c
-index b714f2b2fa54e..a0406df42ef39 100644
---- a/net/ipv4/tcp.c
-+++ b/net/ipv4/tcp.c
-@@ -2935,6 +2935,18 @@ int tcp_sock_set_keepintvl(struct sock *sk, int val)
- }
- EXPORT_SYMBOL(tcp_sock_set_keepintvl);
- 
-+int tcp_sock_set_keepcnt(struct sock *sk, int val)
-+{
-+	if (val < 1 || val > MAX_TCP_KEEPCNT)
-+		return -EINVAL;
-+
-+	lock_sock(sk);
-+	tcp_sk(sk)->keepalive_probes = val;
-+	release_sock(sk);
-+	return 0;
-+}
-+EXPORT_SYMBOL(tcp_sock_set_keepcnt);
-+
- /*
-  *	Socket option code for TCP.
-  */
-diff --git a/net/rds/tcp.h b/net/rds/tcp.h
-index 39ac666d09c6c..ae18568bce233 100644
---- a/net/rds/tcp.h
-+++ b/net/rds/tcp.h
-@@ -70,7 +70,7 @@ struct socket *rds_tcp_listen_init(struct net *net, bool isv6);
- void rds_tcp_listen_stop(struct socket *sock, struct work_struct *acceptor);
- void rds_tcp_listen_data_ready(struct sock *sk);
- int rds_tcp_accept_one(struct socket *sock);
--int rds_tcp_keepalive(struct socket *sock);
-+void rds_tcp_keepalive(struct socket *sock);
- void *rds_tcp_listen_sock_def_readable(struct net *net);
- void rds_tcp_set_linger(struct socket *sock);
- 
-diff --git a/net/rds/tcp_listen.c b/net/rds/tcp_listen.c
-index a5db2f8bb7339..f6d2b4c9f445a 100644
---- a/net/rds/tcp_listen.c
-+++ b/net/rds/tcp_listen.c
-@@ -38,27 +38,19 @@
- #include "rds.h"
- #include "tcp.h"
- 
--int rds_tcp_keepalive(struct socket *sock)
-+void rds_tcp_keepalive(struct socket *sock)
+diff --git a/drivers/nvme/host/tcp.c b/drivers/nvme/host/tcp.c
+index 8417eeb83fcd2..6c069e982989e 100644
+--- a/drivers/nvme/host/tcp.c
++++ b/drivers/nvme/host/tcp.c
+@@ -1313,7 +1313,7 @@ static int nvme_tcp_alloc_queue(struct nvme_ctrl *nctrl,
  {
- 	/* values below based on xs_udp_default_timeout */
- 	int keepidle = 5; /* send a probe 'keepidle' secs after last data */
- 	int keepcnt = 5; /* number of unack'ed probes before declaring dead */
--	int ret = 0;
+ 	struct nvme_tcp_ctrl *ctrl = to_tcp_ctrl(nctrl);
+ 	struct nvme_tcp_queue *queue = &ctrl->queues[qid];
+-	int ret, opt, rcv_pdu_size;
++	int ret, rcv_pdu_size;
  
- 	sock_set_keepalive(sock->sk, true);
+ 	queue->ctrl = ctrl;
+ 	INIT_LIST_HEAD(&queue->send_list);
+@@ -1352,16 +1352,8 @@ static int nvme_tcp_alloc_queue(struct nvme_ctrl *nctrl,
+ 		sock_set_priority(queue->sock->sk, so_priority);
+ 
+ 	/* Set socket type of service */
+-	if (nctrl->opts->tos >= 0) {
+-		opt = nctrl->opts->tos;
+-		ret = kernel_setsockopt(queue->sock, SOL_IP, IP_TOS,
+-				(char *)&opt, sizeof(opt));
+-		if (ret) {
+-			dev_err(nctrl->device,
+-				"failed to set IP_TOS sock opt %d\n", ret);
+-			goto err_sock;
+-		}
+-	}
++	if (nctrl->opts->tos >= 0)
++		ip_sock_set_tos(queue->sock->sk, nctrl->opts->tos);
+ 
+ 	queue->sock->sk->sk_allocation = GFP_ATOMIC;
+ 	nvme_tcp_set_queue_io_cpu(queue);
+diff --git a/drivers/nvme/target/tcp.c b/drivers/nvme/target/tcp.c
+index b2bfa791c5cb2..4296fe3c745bf 100644
+--- a/drivers/nvme/target/tcp.c
++++ b/drivers/nvme/target/tcp.c
+@@ -1452,14 +1452,8 @@ static int nvmet_tcp_set_queue_sock(struct nvmet_tcp_queue *queue)
+ 		sock_set_priority(sock->sk, so_priority);
+ 
+ 	/* Set socket type of service */
+-	if (inet->rcv_tos > 0) {
+-		int tos = inet->rcv_tos;
 -
--	ret = kernel_setsockopt(sock, IPPROTO_TCP, TCP_KEEPCNT,
--				(char *)&keepcnt, sizeof(keepcnt));
--	if (ret < 0)
--		goto bail;
--
-+	tcp_sock_set_keepcnt(sock->sk, keepcnt);
- 	tcp_sock_set_keepidle(sock->sk, keepidle);
- 	/* KEEPINTVL is the interval between successive probes. We follow
- 	 * the model in xs_tcp_finish_connecting() and re-use keepidle.
- 	 */
- 	tcp_sock_set_keepintvl(sock->sk, keepidle);
--bail:
--	return ret;
+-		ret = kernel_setsockopt(sock, SOL_IP, IP_TOS,
+-				(char *)&tos, sizeof(tos));
+-		if (ret)
+-			return ret;
+-	}
++	if (inet->rcv_tos > 0)
++		ip_sock_set_tos(sock->sk, inet->rcv_tos);
+ 
+ 	write_lock_bh(&sock->sk->sk_callback_lock);
+ 	sock->sk->sk_user_data = queue;
+diff --git a/include/net/ip.h b/include/net/ip.h
+index 5b317c9f4470a..2fc52e26fa88b 100644
+--- a/include/net/ip.h
++++ b/include/net/ip.h
+@@ -765,4 +765,6 @@ static inline bool inetdev_valid_mtu(unsigned int mtu)
+ 	return likely(mtu >= IPV4_MIN_MTU);
  }
  
- /* rds_tcp_accept_one_path(): if accepting on cp_index > 0, make sure the
-@@ -145,10 +137,7 @@ int rds_tcp_accept_one(struct socket *sock)
- 	new_sock->ops = sock->ops;
- 	__module_get(new_sock->ops->owner);
++void ip_sock_set_tos(struct sock *sk, int val);
++
+ #endif	/* _IP_H */
+diff --git a/net/ipv4/ip_sockglue.c b/net/ipv4/ip_sockglue.c
+index 8206047d70b6b..1733ac78c21aa 100644
+--- a/net/ipv4/ip_sockglue.c
++++ b/net/ipv4/ip_sockglue.c
+@@ -560,6 +560,26 @@ int ip_recv_error(struct sock *sk, struct msghdr *msg, int len, int *addr_len)
+ 	return err;
+ }
  
--	ret = rds_tcp_keepalive(new_sock);
--	if (ret < 0)
--		goto out;
--
-+	rds_tcp_keepalive(new_sock);
- 	rds_tcp_tune(new_sock);
++static void __ip_sock_set_tos(struct sock *sk, int val)
++{
++	if (sk->sk_type == SOCK_STREAM) {
++		val &= ~INET_ECN_MASK;
++		val |= inet_sk(sk)->tos & INET_ECN_MASK;
++	}
++	if (inet_sk(sk)->tos != val) {
++		inet_sk(sk)->tos = val;
++		sk->sk_priority = rt_tos2priority(val);
++		sk_dst_reset(sk);
++	}
++}
++
++void ip_sock_set_tos(struct sock *sk, int val)
++{
++	lock_sock(sk);
++	__ip_sock_set_tos(sk, val);
++	release_sock(sk);
++}
++EXPORT_SYMBOL(ip_sock_set_tos);
  
- 	inet = inet_sk(new_sock->sk);
-diff --git a/net/sunrpc/xprtsock.c b/net/sunrpc/xprtsock.c
-index e20de4a52edb7..88aa198456858 100644
---- a/net/sunrpc/xprtsock.c
-+++ b/net/sunrpc/xprtsock.c
-@@ -2109,8 +2109,7 @@ static void xs_tcp_set_socket_timeouts(struct rpc_xprt *xprt,
- 	sock_set_keepalive(sock->sk, 1);
- 	tcp_sock_set_keepidle(sock->sk, keepidle);
- 	tcp_sock_set_keepintvl(sock->sk, keepidle);
--	kernel_setsockopt(sock, SOL_TCP, TCP_KEEPCNT,
--			(char *)&keepcnt, sizeof(keepcnt));
-+	tcp_sock_set_keepcnt(sock->sk, keepcnt);
- 
- 	/* TCP user timeout (see RFC5482) */
- 	tcp_sock_set_user_timeout(sock->sk, timeo);
+ /*
+  *	Socket option code for IP. This is the end of the line after any
+@@ -743,15 +763,7 @@ static int do_ip_setsockopt(struct sock *sk, int level,
+ 			inet->cmsg_flags &= ~IP_CMSG_RECVFRAGSIZE;
+ 		break;
+ 	case IP_TOS:	/* This sets both TOS and Precedence */
+-		if (sk->sk_type == SOCK_STREAM) {
+-			val &= ~INET_ECN_MASK;
+-			val |= inet->tos & INET_ECN_MASK;
+-		}
+-		if (inet->tos != val) {
+-			inet->tos = val;
+-			sk->sk_priority = rt_tos2priority(val);
+-			sk_dst_reset(sk);
+-		}
++		__ip_sock_set_tos(sk, val);
+ 		break;
+ 	case IP_TTL:
+ 		if (optlen < 1)
 -- 
 2.26.2
 
