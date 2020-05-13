@@ -2,55 +2,70 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 262C91D2021
-	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 22:22:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BE6A1D2F4B
+	for <lists+linux-afs@lfdr.de>; Thu, 14 May 2020 14:14:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6N0BUz4Xl0OVcxZrojxeIkbahk6JYx/JWxgx+5vSS8=; b=oRNvnj7vQ+eb5e
-	XcpnqFOiLKlXoJOnD8QocDfqHogICbqPlK1jb41HnUcPDgOGmqsIQl0Z661nFvfYswG5SvHm/HRVF
-	8XpcGZ4zCyb6BAEdLTDUP2EojAeATmyduRCgHMSZRK8m49P41a20ZiX66a8nBtlURmU2kYioYUW51
-	SsNVjbwd2yCRIwqfjiP4qXk5hDKm9VG3XJLZ9jzWxmsoQehIg2c5n9SlChfC+S/UDfHPV2W9Qg1Vv
-	59jz78ZjDToEM20WT49gZXh5Wh6D9GY0nrNoUjA5fXa/4iGFhK/uf3UJeP/kTVzHbHVYgpSDQbTaq
-	YKYmGqxRxhTzPW96eb+Q==;
+	List-Owner; bh=r0HkOX+aaaDU85kcXF+3/Rux6ccnBTWepvjDsxC6hBU=; b=Cat8SiKCxybL6N
+	Jxs7WoHvYmP6YGOXAoZKEvvjS+wgKvgjggO7etb68u6q3Vmfvx8g2kAh7OgE/LoWnqcZnnArVnDUC
+	Miz3z3SncPaRciYq3t37pfWe/ryUUMI/MoR5G19gNpw+LhWCUXkj7Bn72ieqZY0gsSs85kZ30u3TR
+	4KEP1R5JuSS6U/N2sTxb0yKVf8+Z3wae8/x4kDY9FsKrahBhFnkeUT46KOYTdVcUNpxZKHON3o/sx
+	PUpfrxnXeRJI0m5mUNJQdCpP18OV3n7Nu4dDqmKUEOO7yKajCZC5wqw+iGyznq82gGhZWPlGpCDG3
+	GI3r6wLJRC3qj63n4/GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYxtI-00065f-8j; Wed, 13 May 2020 20:22:08 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1jZCkv-0004hJ-Q1; Thu, 14 May 2020 12:14:29 +0000
+Received: from smtprelay0082.hostedemail.com ([216.40.44.82]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYwnk-0001SZ-65; Wed, 13 May 2020 19:12:21 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 6900A127DD751;
- Wed, 13 May 2020 12:12:11 -0700 (PDT)
-Date: Wed, 13 May 2020 12:12:10 -0700 (PDT)
-Message-Id: <20200513.121210.1508400748648949138.davem@davemloft.net>
-To: hch@lst.de
-Subject: Re: remove kernel_setsockopt and kernel_getsockopt
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200513062649.2100053-1-hch@lst.de>
+ id 1jYyUl-0007uc-5L; Wed, 13 May 2020 21:00:52 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay08.hostedemail.com (Postfix) with ESMTP id CA6F0182CED34;
+ Wed, 13 May 2020 21:00:48 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:960:966:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2194:2196:2199:2200:2393:2559:2562:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3871:3874:4250:4321:4385:5007:6742:6743:10004:10400:10848:11026:11232:11473:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13311:13357:13439:14096:14097:14659:14721:21080:21627:21987:30012:30054:30059:30062:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:2, LUA_SUMMARY:none
+X-HE-Tag: mist41_5dde648048f06
+X-Filterd-Recvd-Size: 3554
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf01.hostedemail.com (Postfix) with ESMTPA;
+ Wed, 13 May 2020 21:00:44 +0000 (UTC)
+Message-ID: <0ee5acfaca4cf32d4efad162046b858981a4dae3.camel@perches.com>
+Subject: Re: [PATCH 20/33] ipv4: add ip_sock_set_recverr
+From: Joe Perches <joe@perches.com>
+To: Christoph Hellwig <hch@lst.de>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>
+Date: Wed, 13 May 2020 14:00:43 -0700
+In-Reply-To: <20200513062649.2100053-21-hch@lst.de>
 References: <20200513062649.2100053-1-hch@lst.de>
-X-Mailer: Mew version 6.8 on Emacs 26.3
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Wed, 13 May 2020 12:12:12 -0700 (PDT)
+ <20200513062649.2100053-21-hch@lst.de>
+User-Agent: Evolution 3.36.1-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_121220_229193_1123F5CA 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200513_140051_274683_7C35C332 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.82 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.82 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-X-Mailman-Approved-At: Wed, 13 May 2020 13:22:06 -0700
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Mailman-Approved-At: Thu, 14 May 2020 05:14:29 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,53 +77,81 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: marcelo.leitner@gmail.com, edumazet@google.com,
- linux-nvme@lists.infradead.org, linux-sctp@vger.kernel.org,
- target-devel@vger.kernel.org, linux-afs@lists.infradead.org,
- drbd-dev@lists.linbit.com, linux-cifs@vger.kernel.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, cluster-devel@redhat.com,
- kuznet@ms2.inr.ac.ru, linux-block@vger.kernel.org, kuba@kernel.org,
- ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org, nhorman@tuxdriver.com,
- yoshfuji@linux-ipv6.org, netdev@vger.kernel.org, vyasevich@gmail.com,
- linux-kernel@vger.kernel.org, jmaloy@redhat.com, ying.xue@windriver.com,
+Cc: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>,
+ Eric Dumazet <edumazet@google.com>, linux-nvme@lists.infradead.org,
+ linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
+ linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
+ linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+ linux-rdma@vger.kernel.org, cluster-devel@redhat.com,
+ Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>, linux-block@vger.kernel.org,
+ ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org,
+ Neil Horman <nhorman@tuxdriver.com>,
+ Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>, netdev@vger.kernel.org,
+ Vlad Yasevich <vyasevich@gmail.com>, linux-kernel@vger.kernel.org,
+ Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
  ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Christoph Hellwig <hch@lst.de>
-Date: Wed, 13 May 2020 08:26:15 +0200
+On Wed, 2020-05-13 at 08:26 +0200, Christoph Hellwig wrote:
+> Add a helper to directly set the IP_RECVERR sockopt from kernel space
+> without going through a fake uaccess.
 
-> Hi Dave,
-> 
-> this series removes the kernel_setsockopt and kernel_getsockopt
-> functions, and instead switches their users to small functions that
-> implement setting (or in one case getting) a sockopt directly using
-> a normal kernel function call with type safety and all the other
-> benefits of not having a function call.
-> 
-> In some cases these functions seem pretty heavy handed as they do
-> a lock_sock even for just setting a single variable, but this mirrors
-> the real setsockopt implementation - counter to that a few kernel
-> drivers just set the fields directly already.
-> 
-> Nevertheless the diffstat looks quite promising:
-> 
->  42 files changed, 721 insertions(+), 799 deletions(-)
+This seems used only with true as the second arg.
+Is there reason to have that argument at all?
 
-Overall I'm fine with these changes, but three things need to happen
-before I can think about applying this:
+> diff --git a/include/net/ip.h b/include/net/ip.h
+[]
+> @@ -767,5 +767,6 @@ static inline bool inetdev_valid_mtu(unsigned int mtu)
+>  
+>  void ip_sock_set_tos(struct sock *sk, int val);
+>  void ip_sock_set_freebind(struct sock *sk, bool val);
+> +void ip_sock_set_recverr(struct sock *sk, bool val);
+>  
+>  #endif	/* _IP_H */
+> diff --git a/net/ipv4/ip_sockglue.c b/net/ipv4/ip_sockglue.c
+> index 0c40887a817f8..9abecc3195520 100644
+> --- a/net/ipv4/ip_sockglue.c
+> +++ b/net/ipv4/ip_sockglue.c
+> @@ -589,6 +589,16 @@ void ip_sock_set_freebind(struct sock *sk, bool val)
+>  }
+>  EXPORT_SYMBOL(ip_sock_set_freebind);
+>  
+> +void ip_sock_set_recverr(struct sock *sk, bool val)
+> +{
+> +	lock_sock(sk);
+> +	inet_sk(sk)->recverr = val;
+> +	if (!val)
+> +		skb_queue_purge(&sk->sk_error_queue);
+> +	release_sock(sk);
+> +}
+> +EXPORT_SYMBOL(ip_sock_set_recverr);
+> +
+>  /*
+>   *	Socket option code for IP. This is the end of the line after any
+>   *	TCP,UDP etc options on an IP socket.
+> diff --git a/net/rxrpc/local_object.c b/net/rxrpc/local_object.c
+> index 562ea36c96b0f..1b87b8a9ff725 100644
+> --- a/net/rxrpc/local_object.c
+> +++ b/net/rxrpc/local_object.c
+> @@ -171,13 +171,7 @@ static int rxrpc_open_socket(struct rxrpc_local *local, struct net *net)
+>  		/* Fall through */
+>  	case AF_INET:
+>  		/* we want to receive ICMP errors */
+> -		opt = 1;
+> -		ret = kernel_setsockopt(local->socket, SOL_IP, IP_RECVERR,
+> -					(char *) &opt, sizeof(opt));
+> -		if (ret < 0) {
+> -			_debug("setsockopt failed");
+> -			goto error;
+> -		}
+> +		ip_sock_set_recverr(local->socket->sk, true);
+>  
+>  		/* we want to set the don't fragment bit */
+>  		opt = IP_PMTUDISC_DO;
 
-1) Address David's feedback about the ip_mtu*() calls that can occur
-   on ipv6 sockets too.
-
-2) Handle the feedback about dlm now bringing in sctp even if sctp
-   sockets are not even used because of the symbol dependency.
-
-3) Add the rxrpc documentation requested by David.
-
-Thank you.
 
 _______________________________________________
 linux-afs mailing list
