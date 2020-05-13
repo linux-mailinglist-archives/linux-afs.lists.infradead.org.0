@@ -2,79 +2,79 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 027CC1D14DD
-	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 15:28:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAA841D14DA
+	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 15:28:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
 	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52SkNairwkMrXfy/O4rjuqPyIayFWmiHbmR6xGHfZ8w=; b=qrPh2WNKM4Lb/B
-	9wYF5CS1C4iG9YlRRZVc9REuRX+v5am7oDln+4P4mU4fFBw+bAkzOVIdYY8SnhVTk9ea51Eq0MWF8
-	m0+UcWTuGv+D7hB1IjkHgK9pdktbrV49cNJHbmrTGFKJ94XAQaQ+d+3Tr8B/rAinPZevyyB5K3Dne
-	tthsragsjJBwYSfGtlWs07C3lrbQ3+8RwDDkBkFRe81KD8/nHnP2Zro42UzEyx0kB8xEwCXEeYFZn
-	iVatFK9zPYJfa9yAuQ0HAdLNoR98zUJoAlE+jT2/c6QR3nT8DX8GCwxiUdXG7mI/Z4ocxjc2/w6Xs
-	cQX1EYhOugTJDUJHdNXg==;
+	List-Owner; bh=3co/Xy+KY4ZSsUg+T4ohBMoh3IGF1DQMbU+ECvhqH7E=; b=q2AzTqcIdft+h8
+	kHZYSta2vsSVIxcU+38RrrWVBDPZm9mw4T+6BYUvqP8OKTrpFFvwMg7337g4UN+cKwh2CPIfb0oys
+	mY8ALtmcam/LPXbYtM8elVFR0RmT8iQHFSp7OeowJ14z5ke2t3cX1Qts/yLeNzfmznCQRff7wwj2H
+	HIjFN8ZWshccohV5X3BzPniAgW7DnxW8udz5JFr1lPsP52bN2g4TXS1ExsWXHPqltpuloALnNPNgX
+	d7AFhca8DBCJO92c9mqGXHSrOuGmoy1CSoqPcYq1VNvAXqVL2YniWqQAsT96h4KInrnC8UBi9OpkI
+	sM3xcTEB+pYIv3k9s9Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYrR2-0005lr-Gn; Wed, 13 May 2020 13:28:32 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jYrR2-0005mA-SK; Wed, 13 May 2020 13:28:32 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrGn-0005PO-3B
- for linux-afs@lists.infradead.org; Wed, 13 May 2020 13:17:58 +0000
+ id 1jYrNP-00024w-07
+ for linux-afs@lists.infradead.org; Wed, 13 May 2020 13:24:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589375876;
+ s=mimecast20190719; t=1589376285;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=uvCkRI/K32PIBqaQ7LcOfghe4diMRxEm5e5JsVQlwss=;
- b=dWr+7f/Bdr3hmO1a9/Nn9WhrC/QMSDEs4i0233mHMSoaEzNWDDzoJXZci57z+ycdKwuFQA
- PRIEi0XHd9moOyi8WPRbt/ZOIB5IjTGlbHuog2/Dg5zBdJ/T+uZkZRVjGhc8uniG96zH7L
- JluucYmdOUAJrcdPGnQWq+BIwHyInX8=
+ bh=rZ+0Q6w2JhCJ+YHhCDkagX+ViVcqBNbrqtWBcPXjIKM=;
+ b=Ev93lhdyc2zNzKYRGRHveb7cPXBOMpyh3+6zQ5kZVGjzCBPH2GA/HnqKQ4oHRkbeEK1RQ3
+ gs490AEmDsH+AHqetq9z5uhQxi4GgQpxKydB3R5Ewk0Xb9fwl1JDr1TL62aniwmKtadV3T
+ o2MjuFii2mdXMEL11MOgogdxtzo7s7M=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-133-9T7X1SL4M7u16KqBfljjIQ-1; Wed, 13 May 2020 09:17:52 -0400
-X-MC-Unique: 9T7X1SL4M7u16KqBfljjIQ-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ us-mta-78-DCqVM_IQOQWxrXa72KBQkg-1; Wed, 13 May 2020 09:24:43 -0400
+X-MC-Unique: DCqVM_IQOQWxrXa72KBQkg-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 53C148014C0;
- Wed, 13 May 2020 13:17:49 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 54B0D8015CF;
+ Wed, 13 May 2020 13:24:35 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-112-59.rdu2.redhat.com
  [10.10.112.59])
- by smtp.corp.redhat.com (Postfix) with ESMTP id E8A53610F2;
- Wed, 13 May 2020 13:17:41 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0FF671001920;
+ Wed, 13 May 2020 13:24:26 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
 From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20200513062649.2100053-22-hch@lst.de>
-References: <20200513062649.2100053-22-hch@lst.de>
+In-Reply-To: <20200513062649.2100053-21-hch@lst.de>
+References: <20200513062649.2100053-21-hch@lst.de>
  <20200513062649.2100053-1-hch@lst.de>
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 21/33] ipv4: add ip_sock_set_mtu_discover
+Subject: Re: [PATCH 20/33] ipv4: add ip_sock_set_recverr
 MIME-Version: 1.0
-Content-ID: <3123897.1589375861.1@warthog.procyon.org.uk>
-Date: Wed, 13 May 2020 14:17:41 +0100
-Message-ID: <3123898.1589375861@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+Content-ID: <3124488.1589376266.1@warthog.procyon.org.uk>
+Date: Wed, 13 May 2020 14:24:26 +0100
+Message-ID: <3124489.1589376266@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_061757_218735_B4332002 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20200513_062447_122253_BA5AB67E 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
+ [205.139.110.61 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -117,13 +117,13 @@ Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
 Christoph Hellwig <hch@lst.de> wrote:
 
-> +		ip_sock_set_mtu_discover(conn->params.local->socket->sk,
-> +				IP_PMTUDISC_DONT);
+> Add a helper to directly set the IP_RECVERR sockopt from kernel space
+> without going through a fake uaccess.
 
-Um... The socket in question could be an AF_INET6 socket, not an AF_INET4
-socket - I presume it will work in that case.  If so:
+It looks like if this is an AF_INET6 socket, it will just pass the message
+straight through to AF_INET4, so:
 
-Reviewed-by: David Howells <dhowells@redhat.com> [rxrpc bits]
+Reviewed-by: David Howells <dhowells@redhat.com>
 
 
 _______________________________________________
