@@ -2,90 +2,66 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8E4A1D14DC
-	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 15:28:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E1771D2020
+	for <lists+linux-afs@lfdr.de>; Wed, 13 May 2020 22:22:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1M/+jfiCI0V6U50Ap7ZqodORHc65uYLN1yKHeZxA3k4=; b=H2rlpIt4M9hKTE
-	69KHN92P2aj+5TwygDJEt1kMfaOMoUWHgiYAQ56L2PIQpZVT/3QlyxL1qqUXz/F8SftLrcvaicd+z
-	nmvGh3kIENOg3lM8Ylqi4rBrQzh2//LxcIUFw6VT7U+sIL6OtE9Ee0A0wqw9G9Uu0ReCcg4PXajx2
-	a6qZjm6FQVRhdYTIss1H3TPIQISjZzIDHKdc4jRLGfNDBRER1YpPmrdvmLMrn+UiMgZ520POFIe7X
-	tlk8LqUvlcKRZAXFJ4Y/t5lfvtnMhDnt6MGb6OAXlnqWTtsMqJ9aXVkH6ZVENX7P4x7eABfp1Xn7e
-	skTDg42TUc3dsOTgghGQ==;
+	List-Owner; bh=Sz+a6TX/tgA0yuKdLDtA3rKPzdEhlLLa1TiIBf2sR8U=; b=ZwS6YAtKBFYlh0
+	+cB53MT3MhwIAFN74EO/MbRw1Ohdy5E+O0+AuIFvXBNtdVitjisA1DsyH0AmXAxEZ4LfZl+jOiTGL
+	a5MpwTKwrKpgQ4KdB+7oyvNRF48tVkpOf619VUdVzRfSdu8wC9zKI+hlxavTnPnnV9kndYTuRRx71
+	CeNfQivkFJUmcD59Ka6nxblgmKspEpL8DPiY+D0dBZ7SL7580omaRoIF+ztBPPWYQ+KULlbaOmnei
+	7CUHqRJ1y7g7Bl9CvqFSrKh70mrmvLTMQLDAjCPTEn2+NPg5r7Wy6+BqBPvrL5rNQtaNHG9Ft03Xm
+	At7JIaashnw7O/bzIoRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYrR4-0005nf-Ar; Wed, 13 May 2020 13:28:34 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jYxtH-000647-H4; Wed, 13 May 2020 20:22:07 +0000
+Received: from smtprelay0004.hostedemail.com ([216.40.44.4]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrPw-0005GA-BY
- for linux-afs@lists.infradead.org; Wed, 13 May 2020 13:27:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589376443;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=OH0J8d3K3U+hQmWR8NPajZuhzGmc4mTANodrmCJL8cs=;
- b=hmIIzXq+0OW/u/cmfBWeH6p231chnMjtMPfCQaNvAGOxoX2Qcax5cyNVIiUg2aDGAuTf73
- hnbc/nB1iC43FXU/vr/+dQvjXgVxVKWLL3B4GgnBU3kdfbuvwuZ8vIH+iE8h0qUpChD/0h
- Ct+JEyFRWEOJiMD7IlPpNa6yzHVUECk=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-417-iyWGfh95OW-O_Gj4FkwCgg-1; Wed, 13 May 2020 09:27:19 -0400
-X-MC-Unique: iyWGfh95OW-O_Gj4FkwCgg-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A9855835B40;
- Wed, 13 May 2020 13:27:16 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-112-59.rdu2.redhat.com
- [10.10.112.59])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 811E61C92D;
- Wed, 13 May 2020 13:27:06 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20200513062649.2100053-7-hch@lst.de>
-References: <20200513062649.2100053-7-hch@lst.de>
- <20200513062649.2100053-1-hch@lst.de>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 06/33] net: add sock_set_timestamps
+ id 1jYvLX-0003qB-UB; Wed, 13 May 2020 17:39:09 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay05.hostedemail.com (Postfix) with ESMTP id 213E41802912F;
+ Wed, 13 May 2020 17:39:05 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:968:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:1801:2194:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3872:3874:4030:4321:4605:5007:6742:6743:7875:8603:8660:10004:10400:10848:11026:11232:11658:11914:12043:12296:12297:12679:12740:12760:12895:13019:13069:13146:13148:13156:13228:13230:13311:13357:13439:14040:14659:14721:21080:21627:30054:30070:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:1, LUA_SUMMARY:none
+X-HE-Tag: watch82_4eccc56996d20
+X-Filterd-Recvd-Size: 2964
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf13.hostedemail.com (Postfix) with ESMTPA;
+ Wed, 13 May 2020 17:39:01 +0000 (UTC)
+Message-ID: <ecc165c33962d964d518c80de605af632eee0474.camel@perches.com>
+Subject: Re: remove kernel_setsockopt and kernel_getsockopt
+From: Joe Perches <joe@perches.com>
+To: Christoph Hellwig <hch@lst.de>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>
+Date: Wed, 13 May 2020 10:38:59 -0700
+In-Reply-To: <20200513062649.2100053-1-hch@lst.de>
+References: <20200513062649.2100053-1-hch@lst.de>
+User-Agent: Evolution 3.36.1-2 
 MIME-Version: 1.0
-Content-ID: <3124743.1589376425.1@warthog.procyon.org.uk>
-Date: Wed, 13 May 2020 14:27:05 +0100
-Message-ID: <3124744.1589376425@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_062724_470917_124F8211 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_103908_027635_2716B537 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [216.40.44.4 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Mailman-Approved-At: Wed, 13 May 2020 06:28:31 -0700
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+X-Mailman-Approved-At: Wed, 13 May 2020 13:22:06 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,31 +74,61 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>,
- linux-nvme@lists.infradead.org, linux-kernel@vger.kernel.org,
- dhowells@redhat.com, linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
+ Eric Dumazet <edumazet@google.com>, linux-nvme@lists.infradead.org,
+ linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
  linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
  linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
  linux-rdma@vger.kernel.org, cluster-devel@redhat.com,
  Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>, linux-block@vger.kernel.org,
- Jakub Kicinski <kuba@kernel.org>, ceph-devel@vger.kernel.org,
- linux-nfs@vger.kernel.org, Neil Horman <nhorman@tuxdriver.com>,
+ ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org,
+ Neil Horman <nhorman@tuxdriver.com>,
  Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>, netdev@vger.kernel.org,
- Vlad Yasevich <vyasevich@gmail.com>, Eric Dumazet <edumazet@google.com>,
+ Vlad Yasevich <vyasevich@gmail.com>, linux-kernel@vger.kernel.org,
  Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
- "David S. Miller" <davem@davemloft.net>, ocfs2-devel@oss.oracle.com
+ ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Christoph Hellwig <hch@lst.de> wrote:
-
-> Add a helper to directly set the SO_TIMESTAMP* sockopts from kernel space
-> without going through a fake uaccess.
+On Wed, 2020-05-13 at 08:26 +0200, Christoph Hellwig wrote:
+> this series removes the kernel_setsockopt and kernel_getsockopt
+> functions, and instead switches their users to small functions that
+> implement setting (or in one case getting) a sockopt directly using
+> a normal kernel function call with type safety and all the other
+> benefits of not having a function call.
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> In some cases these functions seem pretty heavy handed as they do
+> a lock_sock even for just setting a single variable, but this mirrors
+> the real setsockopt implementation - counter to that a few kernel
+> drivers just set the fields directly already.
+> 
+> Nevertheless the diffstat looks quite promising:
+> 
+>  42 files changed, 721 insertions(+), 799 deletions(-)
 
-Reviewed-by: David Howells <dhowells@redhat.com>
+trivia:
+
+It might be useful to show overall object size change.
+
+More EXPORT_SYMBOL uses increase object size a little.
+
+And not sure it matters much except it reduces overall object
+size, but these patches remove (unnecessary) logging on error
+and that could be mentioned in the cover letter too.
+
+e.g.:
+
+-       ret = kernel_setsockopt(queue->sock, SOL_SOCKET, SO_LINGER,
+-                       (char *)&sol, sizeof(sol));
+-       if (ret) {
+-               dev_err(nctrl->device,
+-                       "failed to set SO_LINGER sock opt %d\n", ret);
+-               goto err_sock;
+-       }
++       sock_set_linger(queue->sock->sk, true, 0);
+
+
 
 
 _______________________________________________
