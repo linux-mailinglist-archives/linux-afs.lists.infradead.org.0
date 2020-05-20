@@ -2,86 +2,73 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 390221DC71F
-	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 08:45:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D0651DC2C3
+	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 01:22:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2LeaRhttQku8HoMEQnCbASteguvhF4eLYk24XyRWZwY=; b=IAbMtppcVNDyPL
-	V3H3SwiWSZLCDJkMqJVC2+pjoQ4msdpS57LWp+lrVNlC1q26JwYxqw0CtW1BwaGrKPx7SuwGz4Gm2
-	FbmrL3Ku4xrDXZ7DhvGlXDynOcPMSb+D9VDlL0d2TlisHdtwV6J0/47/y0MMmqMEAe8gNvVx2zDeI
-	dLqEws6KPdqpNDGLPIfOAozGnYTAhvUswfXa0e0CITKVgLobpbRBLtezkTuHY7o3e8xA+YW+KVKJ4
-	MPyyusDqNPR/4lTd61fsCKXZoc4P8lcyHApgq+U4CCY9UnaBSl95COoKaD3OfxbQSEP9Hnf9ZIEfd
-	I/3YdUmkyt9hNkXUPV/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dP7beXx8b/y7pRFiJ0AKmYVULsPEg0NOtx2RknI4m6U=; b=g23cNiazn9dkDC
+	g/+EuQf5llHf/3qg2/zHtSEeTEA62q/4noRWs4qNnclKHd8Jcv8Y1PEBw/pKCGXBY5cBfd+tBFe0V
+	764M3/ZW5YkCa1Fp9aTjQh2YyWdnayDlcsb+00zH5vKM3PuWdW1RL357Fue5+hd0Nkz4BAcB/xVGE
+	cpN0su9UT1JJs88AwGZyaOaW58O2nSJ0M/d6x1FGTw9lWT/oTc7RLJm9mx9VbncOtxjo42ofx8+77
+	yIY7RDD5OJ17/OqjWuQQlNBUvQLCP7qGQV+9kciRKzbGyPysD+uQNes2jYGjewIFBqzlm0c1WTu4v
+	UPKH+VDJ8XdfxyFWVdDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbex5-0006Zj-18; Thu, 21 May 2020 06:45:11 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jbY24-0005Xg-KI; Wed, 20 May 2020 23:21:52 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbXqh-0003bs-Pj; Wed, 20 May 2020 23:10:09 +0000
-Received: by mail-qt1-x841.google.com with SMTP id d7so4021480qtn.11;
- Wed, 20 May 2020 16:10:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=/qygMQEHgAHnXXlcBf3bWz8hekZtO5JE6hUpY/E6MlI=;
- b=P6nrdRt7oaMJFGVn8tdcieLX1Y0jzSKCiVAEYNtArrwifpga+dN5v83cMRIKerr4lw
- S6tkBAkA2pzBZjc0nUkbiuQyYHvOajF4yI1Q6trOeI35JHSiPIaxzZCbG3Qtsy2IBEa3
- 0u/0e0g7iT4mi/FhVlpzyBQ3hBLshkLlZGHWrVd+CnnFjHpAgBIE+8ymdFvfsvnw6oP1
- vrswReGAc6hPcqUAp+cE2FXwLqOAkzyS//X9yOiiedFgThmSWHlqXdSgAkTBcBgd7wGx
- VhCZmmEUAtG955eDuUNmBsKKkyJTq5OMaHqmy6az6aQ6f3SohaWpveT0RKHmFyEz+bny
- g7MA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=/qygMQEHgAHnXXlcBf3bWz8hekZtO5JE6hUpY/E6MlI=;
- b=Hk3u8AJ5+GHsmvUXHfrWzd1IvPFt2FNYAJ6tCgPHWcCbRlE5H1mud6Sq/wnbuaTsaT
- LzDOc8Hsc4lx0KlJnC4NOv7mb2uOHUvoOqaJlPux6LpzjN0upyPzDLgnM+S+v0TE+sJR
- sZIahhT4AacER0hiGXuc2dB6LSeASRsoQUiFa6OPsZFQgFAnUC+P1HniEoNamUOtYPka
- 9WpEfjqCZt42vT+FMJpEOS41GinbXHbqnJDqMK0BGwxA/zUIMx71JokN+kroiyEtuzPF
- 6G+arKvt6M/MHvTkRYdXTt92D3GUiHHb0Qcsm6+MEGmuD0TX9xv9Mg1CvrBPB6NGDi+3
- HDqQ==
-X-Gm-Message-State: AOAM530YLVkchk2MlPsBSDQRKh5SGqX72Hr4ACo0tx7RRRXJB503qMeR
- vAJj5hSoyTgEDsAoN60vuDo=
-X-Google-Smtp-Source: ABdhPJwRWSgggkzxnJn0dwyU2QDiQnm5wTM+hCXxxx8a5qFL0yi0c7Z5VunfQVgq58oD4bmA7XAdrQ==
-X-Received: by 2002:aed:3f7b:: with SMTP id q56mr7818149qtf.152.1590016204171; 
- Wed, 20 May 2020 16:10:04 -0700 (PDT)
-Received: from localhost.localdomain
- ([2001:1284:f013:b7f5:289f:a703:e466:2a27])
- by smtp.gmail.com with ESMTPSA id e28sm3451287qkn.17.2020.05.20.16.10.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 16:10:03 -0700 (PDT)
-Received: by localhost.localdomain (Postfix, from userid 1000)
- id 2EE17C0DAC; Wed, 20 May 2020 20:10:01 -0300 (-03)
-Date: Wed, 20 May 2020 20:10:01 -0300
-From: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 31/33] sctp: add sctp_sock_set_nodelay
-Message-ID: <20200520231001.GU2491@localhost.localdomain>
-References: <20200520195509.2215098-1-hch@lst.de>
- <20200520195509.2215098-32-hch@lst.de>
+ id 1jbY22-0005Wd-7A
+ for linux-afs@lists.infradead.org; Wed, 20 May 2020 23:21:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1590016908;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=QCvvSQse9uoRSN4nhne9pBMylRnmmLbVVrXB6qYkxWg=;
+ b=bpIvpfGCWFYYvna75vTXnOZ8ZwxT0CNhGb3eMQDHh8fHpDtLN/CACHkmF893qrQrBgVv9k
+ J9IrJzvZf8wtuv3NLszov1tUCD2BSBg0mLhJWnTGI4jcKmm3JViL06VDeVTLwIPukFGEUm
+ GgtMWOrW/eysKoiXzZEu2z9bxHzdsVI=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-375-HWe3uLGmPfWPMmwsfaXDtA-1; Wed, 20 May 2020 19:21:44 -0400
+X-MC-Unique: HWe3uLGmPfWPMmwsfaXDtA-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B18C4835B40;
+ Wed, 20 May 2020 23:21:43 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
+ [10.10.112.138])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id E48C782A2C;
+ Wed, 20 May 2020 23:21:42 +0000 (UTC)
+Subject: [PATCH net 0/3] rxrpc: Fix retransmission timeout and ACK discard
+From: David Howells <dhowells@redhat.com>
+To: netdev@vger.kernel.org
+Date: Thu, 21 May 2020 00:21:42 +0100
+Message-ID: <159001690181.18663.663730118645460940.stgit@warthog.procyon.org.uk>
+User-Agent: StGit/0.22
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520195509.2215098-32-hch@lst.de>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_161007_865323_7E2E6C4A 
-X-CRM114-Status: GOOD (  19.21  )
+X-CRM114-CacheID: sfid-20200520_162150_336391_E68C26FD 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [marcelo.leitner[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [207.211.31.81 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -89,7 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Mailman-Approved-At: Wed, 20 May 2020 23:45:09 -0700
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,98 +89,66 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Dumazet <edumazet@google.com>, linux-nvme@lists.infradead.org,
- linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
- linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
- linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
- linux-rdma@vger.kernel.org, cluster-devel@redhat.com,
- Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>, Jakub Kicinski <kuba@kernel.org>,
- ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org,
- Neil Horman <nhorman@tuxdriver.com>,
- Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>, netdev@vger.kernel.org,
- Vlad Yasevich <vyasevich@gmail.com>, linux-kernel@vger.kernel.org,
- Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
- "David S. Miller" <davem@davemloft.net>, ocfs2-devel@oss.oracle.com
+Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 09:55:07PM +0200, Christoph Hellwig wrote:
-> Add a helper to directly set the SCTP_NODELAY sockopt from kernel space
-> without going through a fake uaccess.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  fs/dlm/lowcomms.c       | 10 ++--------
->  include/net/sctp/sctp.h |  7 +++++++
->  2 files changed, 9 insertions(+), 8 deletions(-)
-> 
-> diff --git a/fs/dlm/lowcomms.c b/fs/dlm/lowcomms.c
-> index 69333728d871b..9f1c3cdc9d653 100644
-> --- a/fs/dlm/lowcomms.c
-> +++ b/fs/dlm/lowcomms.c
-> @@ -914,7 +914,6 @@ static int sctp_bind_addrs(struct connection *con, uint16_t port)
->  static void sctp_connect_to_sock(struct connection *con)
->  {
->  	struct sockaddr_storage daddr;
-> -	int one = 1;
->  	int result;
->  	int addr_len;
->  	struct socket *sock;
-> @@ -961,8 +960,7 @@ static void sctp_connect_to_sock(struct connection *con)
->  	log_print("connecting to %d", con->nodeid);
->  
->  	/* Turn off Nagle's algorithm */
-> -	kernel_setsockopt(sock, SOL_SCTP, SCTP_NODELAY, (char *)&one,
-> -			  sizeof(one));
-> +	sctp_sock_set_nodelay(sock->sk);
->  
->  	/*
->  	 * Make sock->ops->connect() function return in specified time,
-> @@ -1176,7 +1174,6 @@ static int sctp_listen_for_all(void)
->  	struct socket *sock = NULL;
->  	int result = -EINVAL;
->  	struct connection *con = nodeid2con(0, GFP_NOFS);
-> -	int one = 1;
->  
->  	if (!con)
->  		return -ENOMEM;
-> @@ -1191,10 +1188,7 @@ static int sctp_listen_for_all(void)
->  	}
->  
->  	sock_set_rcvbuf(sock->sk, NEEDED_RMEM);
-> -	result = kernel_setsockopt(sock, SOL_SCTP, SCTP_NODELAY, (char *)&one,
-> -				   sizeof(one));
-> -	if (result < 0)
-> -		log_print("Could not set SCTP NODELAY error %d\n", result);
-> +	sctp_sock_set_nodelay(sock->sk);
->  
->  	write_lock_bh(&sock->sk->sk_callback_lock);
->  	/* Init con struct */
-> diff --git a/include/net/sctp/sctp.h b/include/net/sctp/sctp.h
-> index 3ab5c6bbb90bd..f8bcb75bb0448 100644
-> --- a/include/net/sctp/sctp.h
-> +++ b/include/net/sctp/sctp.h
-> @@ -615,4 +615,11 @@ static inline bool sctp_newsk_ready(const struct sock *sk)
->  	return sock_flag(sk, SOCK_DEAD) || sk->sk_socket;
->  }
->  
-> +static inline void sctp_sock_set_nodelay(struct sock *sk)
-> +{
-> +	lock_sock(sk);
-> +	sctp_sk(sk)->nodelay = true;
-> +	release_sock(sk);
-> +}
-> +
 
-The duplication with sctp_setsockopt_nodelay() is quite silly/bad.
-Also, why have the 'true' hardcoded? It's what dlm uses, yes, but the
-API could be a bit more complete than that.
+Here are a couple of fixes and an extra tracepoint for AF_RXRPC:
 
-Like for the other patch, this one could build on David's patch, do
-the ternary check before calling sctp_setsockopt_nodelay and then move
-sctp_setsockopt_nodelay to the header, or something like that.
+ (1) Calculate the RTO pretty much as TCP does, rather than making
+     something up, including an initial 4s timeout (which causes return
+     probes from the fileserver to fail if a packet goes missing), and add
+     backoff.
+
+ (2) Fix the discarding of out-of-order received ACKs.  We mustn't let the
+     hard-ACK point regress, nor do we want to do unnecessary
+     retransmission because the soft-ACK list regresses.  This is not
+     trivial, however, due to some loose wording in various old protocol
+     specs, the ACK field that should be used for this sometimes has the
+     wrong information in it.
+
+ (3) Add a tracepoint to log a discarded ACK.
+
+The patches are tagged here:
+
+	git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
+	rxrpc-fixes-20200520
+
+and can also be found on the following branch:
+
+	http://git.kernel.org/cgit/linux/kernel/git/dhowells/linux-fs.git/log/?h=rxrpc-fixes
+
+David
+---
+David Howells (1):
+      rxrpc: Fix ack discard
+
+
+ fs/afs/fs_probe.c            |  18 ++--
+ fs/afs/vl_probe.c            |  18 ++--
+ include/net/af_rxrpc.h       |   2 +-
+ include/trace/events/rxrpc.h |  52 +++++++++---
+ net/rxrpc/Makefile           |   1 +
+ net/rxrpc/ar-internal.h      |  25 ++++--
+ net/rxrpc/call_accept.c      |   2 +-
+ net/rxrpc/call_event.c       |  22 ++---
+ net/rxrpc/input.c            |  44 ++++++++--
+ net/rxrpc/misc.c             |   5 --
+ net/rxrpc/output.c           |   9 +-
+ net/rxrpc/peer_event.c       |  46 ----------
+ net/rxrpc/peer_object.c      |  12 +--
+ net/rxrpc/proc.c             |   8 +-
+ net/rxrpc/rtt.c              | 195 +++++++++++++++++++++++++++++++++++++++++++
+ net/rxrpc/sendmsg.c          |  26 ++----
+ net/rxrpc/sysctl.c           |   9 --
+ 17 files changed, 335 insertions(+), 159 deletions(-)
+ create mode 100644 net/rxrpc/rtt.c
+
+
 
 _______________________________________________
 linux-afs mailing list
