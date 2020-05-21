@@ -2,82 +2,73 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BB631E1057
-	for <lists+linux-afs@lfdr.de>; Mon, 25 May 2020 16:19:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56AB21E21BE
+	for <lists+linux-afs@lfdr.de>; Tue, 26 May 2020 14:21:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C3vZEpv/rrSXWNVvr2Hni2h0U3S2aFecue091R2ZASQ=; b=JlB
-	dJ3ji8hxaxPZ/Zw1FekSWMDucdUBIU8bQc7PzcI2mg4ELGw5lMRXAzg9G3nDaTAHDEcr2Nt13TBpX
-	SIoxvKmZAQi2YKwF0qy/+b4iL2fO0XJ0RfoDge1KONrKVi2gidqD0721zeLl5Hy5GSro2a+5QfwPA
-	TbISchh/jJMGvFOaPg8t1g8ER1JJO6owJxEvRfEzk6au0xEbsFeHNeIvycvh9MS307pl0idBQiS9D
-	qE23rGA4sVcjWRl0Q2ZUokNAQ5SYi38nMRdYwbkcB6p7yEMzogvq+HVrGWLYIaWqBm3IOfBpzxJza
-	+8cjdDGEgFIFWKKJIGKHAKXTDxq5PAg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R6zeSTHrsONFntVOm1d6/5jGK8uBxsHd5X+T2ATvAs4=; b=kBQfScg264pmip
+	Is3z2Gm+f5CRCUJoUwHFaD0HnKon6MDpZ7MQq3Lmucsnn6eQrIrVj+FygPObbC1u+XrH3Au/vHD+k
+	qAe3/8ZgwdZp9O1MV0VYdMN9jqOAsTV+29A9xh2K8ZRRg2Uli6lOi6OOXH5uskZyDakLoXpSmpZIu
+	o4ILdgtYOGzX3bUisFgAfg/3uNaDtV9/+MXPNUPA4cmI/uFTQN8PRzb2Pd8e0vlVtg55gzrIknEgd
+	28F9HqjIL05Q6PL0ffVUT2Xg7zebVrUpS+58RjO995DyeMqmBK9q8OF9+WniZNsJSatNN8yoZ3JRB
+	6HTCn6yythuyjtWm3RhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdDwp-0004FG-Ew; Mon, 25 May 2020 14:19:23 +0000
-Received: from mail.fudan.edu.cn ([202.120.224.73] helo=fudan.edu.cn)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdDwm-0004EB-Ox
- for linux-afs@lists.infradead.org; Mon, 25 May 2020 14:19:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=fudan.edu.cn; s=dkim; h=Received:From:To:Cc:Subject:Date:
- Message-Id; bh=e35Z1aZcBpO4FjT4/OfXhJlClEKE3GlteSXg77ztYqc=; b=j
- PH55+5TSZQKrRnRs/Q6BFmo4bAVedI3XsuUqmNPn+LSJw31h84UiM5/J8FEVXMqf
- 6LgFoXk15SpIWDz00Fw8zirS4DN5oG6nUFUFAEPeCFsjcl2omNwKkGfSnLFs6Mnk
- ZrijSSneX648u0Oq5LuS57tHUXaFHZkTkUu9heakeo=
-Received: from localhost.localdomain (unknown [223.73.184.21])
- by app2 (Coremail) with SMTP id XQUFCgC3v+M90stetAqpAg--.14499S3;
- Mon, 25 May 2020 22:12:15 +0800 (CST)
-From: Xiyu Yang <xiyuyang19@fudan.edu.cn>
-To: David Howells <dhowells@redhat.com>, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] afs: Fix afs_cb_interest refcnt leak in
- afs_select_fileserver()
-Date: Mon, 25 May 2020 22:11:26 +0800
-Message-Id: <1590415886-52353-1-git-send-email-xiyuyang19@fudan.edu.cn>
-X-Mailer: git-send-email 2.7.4
-X-CM-TRANSID: XQUFCgC3v+M90stetAqpAg--.14499S3
-X-Coremail-Antispam: 1UD129KBjvJXoW7WF1xuF17tF47XrWrZFy3CFg_yoW8Jw1Dpr
- 4rCw1DKr98X348GwsxJa1rXa4rX393Xw42kFZxWw1rZws8CF4avr1vqryvgFW7u395Aw4U
- XF18K34Y9FZ8CFJanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
- 9KBjDU0xBIdaVrnRJUUUkC14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
- rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
- 1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4U
- JVW0owA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oV
- Cq3wAac4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
- 0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr
- 1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IE
- rcIFxwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14
- v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkG
- c2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI
- 0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rW3Jr0E3s1lIxAIcVC2z280aVAFwI0_Jr0_
- Gr1lIxAIcVC2z280aVCY1x0267AKxVWUJVW8JbIYCTnIWIevJa73UjIFyTuYvjfUOlksUU
- UUU
-X-CM-SenderInfo: irzsiiysuqikmy6i3vldqovvfxof0/
+	id 1jdYaT-0005Cv-Ap; Tue, 26 May 2020 12:21:41 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbiil-00051B-Mb
+ for linux-afs@lists.infradead.org; Thu, 21 May 2020 10:46:41 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-221-qFd0NAKZNGeARFK-F-oKaQ-1; Thu, 21 May 2020 11:46:34 +0100
+X-MC-Unique: qFd0NAKZNGeARFK-F-oKaQ-1
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Thu, 21 May 2020 11:46:33 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Thu, 21 May 2020 11:46:33 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Christoph Hellwig' <hch@lst.de>
+Subject: RE: remove kernel_setsockopt and kernel_getsockopt v2
+Thread-Topic: remove kernel_setsockopt and kernel_getsockopt v2
+Thread-Index: AQHWL0EWFDRlmpM/90uRt9jvD36P/KiyKtMAgAAFoACAACnvQA==
+Date: Thu, 21 May 2020 10:46:33 +0000
+Message-ID: <b7c7cf98999f4167b821f4425896e4e8@AcuMS.aculab.com>
+References: <20200520195509.2215098-1-hch@lst.de>
+ <138a17dfff244c089b95f129e4ea2f66@AcuMS.aculab.com>
+ <20200521091150.GA8401@lst.de>
+In-Reply-To: <20200521091150.GA8401@lst.de>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
+MIME-Version: 1.0
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: aculab.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_071921_293531_70600F3E 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20200521_034640_015235_90BAF869 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [146.101.78.151 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [146.101.78.151 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Mailman-Approved-At: Tue, 26 May 2020 05:21:39 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,50 +80,63 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Xin Tan <tanxin.ctf@gmail.com>, yuanxzhang@fudan.edu.cn, kjlu@umn.edu,
- Xiyu Yang <xiyuyang19@fudan.edu.cn>
-MIME-Version: 1.0
+Cc: Marcelo Ricardo
+ Leitner <marcelo.leitner@gmail.com>, Eric Dumazet <edumazet@google.com>,
+ "linux-nvme@lists.infradead.org" <linux-nvme@lists.infradead.org>,
+ "linux-sctp@vger.kernel.org" <linux-sctp@vger.kernel.org>,
+ "target-devel@vger.kernel.org" <target-devel@vger.kernel.org>,
+ "linux-afs@lists.infradead.org" <linux-afs@lists.infradead.org>,
+ "drbd-dev@lists.linbit.com" <drbd-dev@lists.linbit.com>,
+ "linux-cifs@vger.kernel.org" <linux-cifs@vger.kernel.org>,
+ "rds-devel@oss.oracle.com" <rds-devel@oss.oracle.com>,
+ "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
+ "cluster-devel@redhat.com" <cluster-devel@redhat.com>,
+ Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>, Jakub Kicinski <kuba@kernel.org>,
+ "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
+ "linux-nfs@vger.kernel.org" <linux-nfs@vger.kernel.org>,
+ Neil Horman <nhorman@tuxdriver.com>,
+ Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Vlad Yasevich <vyasevich@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ "ocfs2-devel@oss.oracle.com" <ocfs2-devel@oss.oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-afs_select_fileserver() invokes afs_get_cb_interest(), which returns a
-reference of the specified afs_cb_interest object to "fc->cbi" with
-increased refcnt.
+From: 'Christoph Hellwig'
+> Sent: 21 May 2020 10:12
+...
+> > I worried about whether getsockopt() should read the entire
+> > user buffer first. SCTP needs the some of it often (including a
+> > sockaddr_storage in one case), TCP needs it once.
+> > However the cost of reading a few words is small, and a big
+> > buffer probably needs setting to avoid leaking kernel
+> > memory if the structure has holes or fields that don't get set.
+> > Reading from userspace solves both issues.
+> 
+> As mention in the thread on the last series:  That was my first idea, but
+> we have way to many sockopts, especially in obscure protocols that just
+> hard code the size.  The chance of breaking userspace in a way that can't
+> be fixed without going back to passing user pointers to get/setsockopt
+> is way to high to commit to such a change unfortunately.
 
-The reference counting issue happens in one exception handling path of
-afs_select_fileserver(). When error occurred in
-afs_wait_for_fs_probes(), the function forgets to decrease the refcnt
-increased by afs_get_cb_interest(), causing a refcnt leak.
+Right the syscall stubs probably can't do it.
+But the per-protocol ones can for the main protocols.
 
-Fix this issue by calling afs_put_cb_interest() when error occurred in
-afs_wait_for_fs_probes().
+I posted a patch for SCTP yesterday that removes 800 lines
+of source and 8k of object code.
+Even that needs a horrid bodge for one request where the
+length returned has to be less than the data copied!
 
-Signed-off-by: Xiyu Yang <xiyuyang19@fudan.edu.cn>
-Signed-off-by: Xin Tan <tanxin.ctf@gmail.com>
----
- fs/afs/rotate.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+	David
 
-diff --git a/fs/afs/rotate.c b/fs/afs/rotate.c
-index 2a3305e42b14..f73af16cdb92 100644
---- a/fs/afs/rotate.c
-+++ b/fs/afs/rotate.c
-@@ -357,8 +357,10 @@ bool afs_select_fileserver(struct afs_fs_cursor *fc)
- 	_debug("pick [%lx]", fc->untried);
- 
- 	error = afs_wait_for_fs_probes(fc->server_list, fc->untried);
--	if (error < 0)
-+	if (error < 0) {
-+		afs_put_cb_interest(afs_v2net(vnode), fc->cbi);
- 		goto failed_set_error;
-+	}
- 
- 	/* Pick the untried server with the lowest RTT.  If we have outstanding
- 	 * callbacks, we stick with the server we're already using if we can.
--- 
-2.7.4
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 
 
 _______________________________________________
