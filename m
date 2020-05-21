@@ -2,71 +2,54 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D85681DCAA7
-	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 12:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E56ED1DCAA2
+	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 12:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vus2jfhpON9CQCHLzJTJ1dM2WA5yTUkFf1HoAu7JLzU=; b=Pbkn8MfIz9h7Ml
-	HPMR6F0djvUIC5nFKYU9CvRnAiQvij9lKRtiMcw3HpZ4inZdYZd97cMdlMG2Qr7ki+98r73YmFc9Y
-	7KjPIXczCl/iDty4LCSFunE+5y4JLy0ZxCItnaCX2jg5zSjxjfZCAV0NC7LzdxP8v1BZDc5oGpaWH
-	97Cxif0Zo9b2Qp9QaATcJrCV4ObsKUrLXpLyAxA8i0PkfuffFVQPqlhRo++/r9yjWkL4F7MZ8UsR1
-	A3VghyaxgF6OrizERib5euiWLNLf044+NsNCi5VbJMW6xAFc2IBZ+w12ep2nz3cWlsyJqFAXdnVcm
-	DWEZCJt5T3gD/Hh2NzXg==;
+	List-Owner; bh=/CVXbZBsIXJXwleHf2EIaTafNIp8QsKM5Cu4dPHtWDw=; b=Tqr4T0QyhB2w45
+	mxckFdovAM3xJNLs6+1kHzfxse5NKnO2dPa0c8YWawSXAzrWD0cp1dDU7xcLI6umldndd6XPvjxmN
+	PePcfjoqM/RGsgSq5jDQMzGCbp6Jvz0njz8JrLe0FSv8Y7VAuQspvHQCHaeV6tEzEhVSepFM6EP4u
+	jFlMlbmHS6YmgO4Jwtd+1I6KInNcy9/nUhQUQip8+EwfwWZyzZdbB6Y/hvZWjYse+KN3pEl1tQh2v
+	Z62twzlURDBYd3Etub6pLW6xBLQ/ee6f7FUlWOC1yrTLOBZrppHkv19Mtx6Vrzg6T9nQSlUCj4Xr3
+	g3fnlELTeMRGEcuFJJTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbi1V-0001dS-A5; Thu, 21 May 2020 10:01:57 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
+	id 1jbi1V-0001dd-Fm; Thu, 21 May 2020 10:01:57 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbg96-0002kW-IH
- for linux-afs@lists.infradead.org; Thu, 21 May 2020 08:01:42 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-186-4FoxtkRnOIu_oKGM1EEfFg-1; Thu, 21 May 2020 09:01:34 +0100
-X-MC-Unique: 4FoxtkRnOIu_oKGM1EEfFg-1
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Thu, 21 May 2020 09:01:33 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Thu, 21 May 2020 09:01:33 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Christoph Hellwig' <hch@lst.de>, "David S. Miller" <davem@davemloft.net>, 
- Jakub Kicinski <kuba@kernel.org>
-Subject: RE: remove kernel_setsockopt and kernel_getsockopt v2
-Thread-Topic: remove kernel_setsockopt and kernel_getsockopt v2
-Thread-Index: AQHWL0EWFDRlmpM/90uRt9jvD36P/KiyKtMA
-Date: Thu, 21 May 2020 08:01:33 +0000
-Message-ID: <138a17dfff244c089b95f129e4ea2f66@AcuMS.aculab.com>
+ id 1jbgf8-0005hE-L2; Thu, 21 May 2020 08:34:48 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 2946668BEB; Thu, 21 May 2020 10:34:43 +0200 (CEST)
+Date: Thu, 21 May 2020 10:34:42 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>
+Subject: Re: [PATCH 31/33] sctp: add sctp_sock_set_nodelay
+Message-ID: <20200521083442.GA7771@lst.de>
 References: <20200520195509.2215098-1-hch@lst.de>
-In-Reply-To: <20200520195509.2215098-1-hch@lst.de>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+ <20200520195509.2215098-32-hch@lst.de>
+ <20200520231001.GU2491@localhost.localdomain>
+ <20200520.162355.2212209708127373208.davem@davemloft.net>
+ <20200520233913.GV2491@localhost.localdomain>
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: aculab.com
+Content-Disposition: inline
+In-Reply-To: <20200520233913.GV2491@localhost.localdomain>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_010140_882043_50269FB7 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200521_013446_840928_21574760 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.82.80.151 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [207.82.80.151 listed in wl.mailspike.net]
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-Mailman-Approved-At: Thu, 21 May 2020 03:01:56 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,79 +62,54 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>,
- Eric Dumazet <edumazet@google.com>,
- "linux-nvme@lists.infradead.org" <linux-nvme@lists.infradead.org>,
- "linux-sctp@vger.kernel.org" <linux-sctp@vger.kernel.org>,
- "target-devel@vger.kernel.org" <target-devel@vger.kernel.org>,
- "linux-afs@lists.infradead.org" <linux-afs@lists.infradead.org>,
- "drbd-dev@lists.linbit.com" <drbd-dev@lists.linbit.com>,
- "linux-cifs@vger.kernel.org" <linux-cifs@vger.kernel.org>,
- "rds-devel@oss.oracle.com" <rds-devel@oss.oracle.com>,
- "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
- "cluster-devel@redhat.com" <cluster-devel@redhat.com>,
- Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>,
- "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
- "linux-nfs@vger.kernel.org" <linux-nfs@vger.kernel.org>,
- Neil Horman <nhorman@tuxdriver.com>,
- Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>, Vlad
- Yasevich <vyasevich@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
- "ocfs2-devel@oss.oracle.com" <ocfs2-devel@oss.oracle.com>
+Cc: edumazet@google.com, linux-nvme@lists.infradead.org,
+ linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
+ linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
+ linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+ linux-rdma@vger.kernel.org, hch@lst.de, cluster-devel@redhat.com,
+ kuznet@ms2.inr.ac.ru, kuba@kernel.org, ceph-devel@vger.kernel.org,
+ linux-nfs@vger.kernel.org, nhorman@tuxdriver.com, yoshfuji@linux-ipv6.org,
+ netdev@vger.kernel.org, vyasevich@gmail.com, linux-kernel@vger.kernel.org,
+ jmaloy@redhat.com, ying.xue@windriver.com, David Miller <davem@davemloft.net>,
+ ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Christoph Hellwig
-> Sent: 20 May 2020 20:55
+On Wed, May 20, 2020 at 08:39:13PM -0300, Marcelo Ricardo Leitner wrote:
+> On Wed, May 20, 2020 at 04:23:55PM -0700, David Miller wrote:
+> > From: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>
+> > Date: Wed, 20 May 2020 20:10:01 -0300
+> > 
+> > > The duplication with sctp_setsockopt_nodelay() is quite silly/bad.
+> > > Also, why have the 'true' hardcoded? It's what dlm uses, yes, but the
+> > > API could be a bit more complete than that.
+> > 
+> > The APIs are being designed based upon what in-tree users actually
+> > make use of.  We can expand things later if necessary.
 > 
-> this series removes the kernel_setsockopt and kernel_getsockopt
-> functions, and instead switches their users to small functions that
-> implement setting (or in one case getting) a sockopt directly using
-> a normal kernel function call with type safety and all the other
-> benefits of not having a function call.
+> Sometimes expanding things later can be though, thus why the worry.
+> But ok, I get it. Thanks.
 > 
-> In some cases these functions seem pretty heavy handed as they do
-> a lock_sock even for just setting a single variable, but this mirrors
-> the real setsockopt implementation unlike a few drivers that just set
-> set the fields directly.
+> The comment still applies, though. (re the duplication)
 
-How much does this increase the kernel code by?
+Where do you see duplication?
 
-You are also replicating a lot of code making it more
-difficult to maintain.
+sctp_setsockopt_nodelay does the following things:
 
-I don't think the performance of an socket option code
-really matters - it is usually done once when a socket
-is initialised and the other costs of establishing a
-connection will dominate.
+ - verifies optlen, returns -EINVAL if it doesn't match
+ - calls get_user, returns -EFAULT on error
+ - converts the value from get_user to a boolean and assigns it
+   to sctp_sk(sk)->nodelay
+ - returns 0.
 
-Pulling the user copies outside the [gs]etsocksopt switch
-statement not only reduces the code size (source and object)
-and trivially allows kernel_[sg]sockopt() to me added to
-the list of socket calls.
+sctp_sock_set_nodelay does:
 
-It probably isn't possible to pull the usercopies right
-out into the syscall wrapper because of some broken
-requests.
-
-I worried about whether getsockopt() should read the entire
-user buffer first. SCTP needs the some of it often (including a
-sockaddr_storage in one case), TCP needs it once.
-However the cost of reading a few words is small, and a big
-buffer probably needs setting to avoid leaking kernel
-memory if the structure has holes or fields that don't get set.
-Reading from userspace solves both issues.
-
-	David
-
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
-
+ - call lock_sock
+ - assign true to sctp_sk(sk)->nodelay
+ - call release_sock
+ - does not return an error code
 
 _______________________________________________
 linux-afs mailing list
