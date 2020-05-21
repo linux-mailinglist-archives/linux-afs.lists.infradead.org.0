@@ -2,90 +2,71 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F5CC1DCAA3
-	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 12:02:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D85681DCAA7
+	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 12:02:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gFpOH7QHWv0IRu5LRL5bxVPUBMfyiDGh9P5P2n+wY0M=; b=XgRuXP+nre8r3d
-	X3/XfBqoETjOe+fNidAgJ4SePiZeYxXIq1fsubebcEbLzjeL+9b3YG3lwgdWNqEDCthqkAcdBePig
-	Oue/JXgSY+QFluEh8VJ5SKURLfChj9wLCqH9bOymZB4UA8aHYpVm7oBUeUHjO7GTapObiclzSrXGz
-	JESoTWe3KzwtR11CGnJlXB+qYWd0j4gekRy5hft66b5HeuPSkiN2M8tM1OJJjp4mw3fD04L601Niy
-	paAhc6AHsfsl+bpyaXr8jt0JD312th9OffGD7hSnK4U2fJhWbIvx8TMQtRATFZct1Rr5W5D9wzdi4
-	w4v5VVRbw9W4fzi2U9Fw==;
+	List-Owner; bh=vus2jfhpON9CQCHLzJTJ1dM2WA5yTUkFf1HoAu7JLzU=; b=Pbkn8MfIz9h7Ml
+	HPMR6F0djvUIC5nFKYU9CvRnAiQvij9lKRtiMcw3HpZ4inZdYZd97cMdlMG2Qr7ki+98r73YmFc9Y
+	7KjPIXczCl/iDty4LCSFunE+5y4JLy0ZxCItnaCX2jg5zSjxjfZCAV0NC7LzdxP8v1BZDc5oGpaWH
+	97Cxif0Zo9b2Qp9QaATcJrCV4ObsKUrLXpLyAxA8i0PkfuffFVQPqlhRo++/r9yjWkL4F7MZ8UsR1
+	A3VghyaxgF6OrizERib5euiWLNLf044+NsNCi5VbJMW6xAFc2IBZ+w12ep2nz3cWlsyJqFAXdnVcm
+	DWEZCJt5T3gD/Hh2NzXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbi1V-0001dI-4g; Thu, 21 May 2020 10:01:57 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jbi1V-0001dS-A5; Thu, 21 May 2020 10:01:57 +0000
+Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbfsU-0007Nz-3n
- for linux-afs@lists.infradead.org; Thu, 21 May 2020 07:44:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590047069;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=E3GyhKojXVNo0Mooki74/Av48EK9IfzgPCl8v5tu8BM=;
- b=Ry1721/E9nA8LGArNxOlmWzDUYl2sb4S8tHEAFkXcnLq8UqAMepyWTexFCHb5bcyHXZkKm
- k+j4+CnLLrcOGhDkLt3MTMHNJ84dgymRIKWIf5s6KbQj59ck9Hel6GCkxkC87pZ9XTKSvh
- Yc8MjINkCb+9VMYsAwYHlItqZI8CnT8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-290-M92JCxb1Oi-ciaPgtC3hqA-1; Thu, 21 May 2020 03:44:24 -0400
-X-MC-Unique: M92JCxb1Oi-ciaPgtC3hqA-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6D59A835B42;
- Thu, 21 May 2020 07:44:20 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
- [10.10.112.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 1D7135C1B0;
- Thu, 21 May 2020 07:44:11 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20200520195509.2215098-30-hch@lst.de>
-References: <20200520195509.2215098-30-hch@lst.de>
- <20200520195509.2215098-1-hch@lst.de>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 29/33] rxrpc: add rxrpc_sock_set_min_security_level
+ id 1jbg96-0002kW-IH
+ for linux-afs@lists.infradead.org; Thu, 21 May 2020 08:01:42 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-186-4FoxtkRnOIu_oKGM1EEfFg-1; Thu, 21 May 2020 09:01:34 +0100
+X-MC-Unique: 4FoxtkRnOIu_oKGM1EEfFg-1
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Thu, 21 May 2020 09:01:33 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Thu, 21 May 2020 09:01:33 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Christoph Hellwig' <hch@lst.de>, "David S. Miller" <davem@davemloft.net>, 
+ Jakub Kicinski <kuba@kernel.org>
+Subject: RE: remove kernel_setsockopt and kernel_getsockopt v2
+Thread-Topic: remove kernel_setsockopt and kernel_getsockopt v2
+Thread-Index: AQHWL0EWFDRlmpM/90uRt9jvD36P/KiyKtMA
+Date: Thu, 21 May 2020 08:01:33 +0000
+Message-ID: <138a17dfff244c089b95f129e4ea2f66@AcuMS.aculab.com>
+References: <20200520195509.2215098-1-hch@lst.de>
+In-Reply-To: <20200520195509.2215098-1-hch@lst.de>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
 MIME-Version: 1.0
-Content-ID: <71190.1590047051.1@warthog.procyon.org.uk>
-Date: Thu, 21 May 2020 08:44:11 +0100
-Message-ID: <71191.1590047051@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: aculab.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_004430_233191_4E1031C8 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_010140_882043_50269FB7 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [207.82.80.151 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [207.82.80.151 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.120 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-Mailman-Approved-At: Thu, 21 May 2020 03:01:56 -0700
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -99,33 +80,77 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>,
- linux-nvme@lists.infradead.org, linux-kernel@vger.kernel.org,
- dhowells@redhat.com, linux-sctp@vger.kernel.org, target-devel@vger.kernel.org,
- linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
- linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
- linux-rdma@vger.kernel.org, cluster-devel@redhat.com,
- Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>, Jakub Kicinski <kuba@kernel.org>,
- ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org,
+ Eric Dumazet <edumazet@google.com>,
+ "linux-nvme@lists.infradead.org" <linux-nvme@lists.infradead.org>,
+ "linux-sctp@vger.kernel.org" <linux-sctp@vger.kernel.org>,
+ "target-devel@vger.kernel.org" <target-devel@vger.kernel.org>,
+ "linux-afs@lists.infradead.org" <linux-afs@lists.infradead.org>,
+ "drbd-dev@lists.linbit.com" <drbd-dev@lists.linbit.com>,
+ "linux-cifs@vger.kernel.org" <linux-cifs@vger.kernel.org>,
+ "rds-devel@oss.oracle.com" <rds-devel@oss.oracle.com>,
+ "linux-rdma@vger.kernel.org" <linux-rdma@vger.kernel.org>,
+ "cluster-devel@redhat.com" <cluster-devel@redhat.com>,
+ Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>,
+ "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
+ "linux-nfs@vger.kernel.org" <linux-nfs@vger.kernel.org>,
  Neil Horman <nhorman@tuxdriver.com>,
- Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>, netdev@vger.kernel.org,
- Vlad Yasevich <vyasevich@gmail.com>, Eric Dumazet <edumazet@google.com>,
+ Hideaki YOSHIFUJI <yoshfuji@linux-ipv6.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>, Vlad
+ Yasevich <vyasevich@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Jon Maloy <jmaloy@redhat.com>, Ying Xue <ying.xue@windriver.com>,
- "David S. Miller" <davem@davemloft.net>, ocfs2-devel@oss.oracle.com
+ "ocfs2-devel@oss.oracle.com" <ocfs2-devel@oss.oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Christoph Hellwig <hch@lst.de> wrote:
-
-> Add a helper to directly set the RXRPC_MIN_SECURITY_LEVEL sockopt from
-> kernel space without going through a fake uaccess.
+From: Christoph Hellwig
+> Sent: 20 May 2020 20:55
 > 
-> Thanks to David Howells for the documentation updates.
+> this series removes the kernel_setsockopt and kernel_getsockopt
+> functions, and instead switches their users to small functions that
+> implement setting (or in one case getting) a sockopt directly using
+> a normal kernel function call with type safety and all the other
+> benefits of not having a function call.
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> In some cases these functions seem pretty heavy handed as they do
+> a lock_sock even for just setting a single variable, but this mirrors
+> the real setsockopt implementation unlike a few drivers that just set
+> set the fields directly.
 
-Acked-by: David Howells <dhowells@redhat.com>
+How much does this increase the kernel code by?
+
+You are also replicating a lot of code making it more
+difficult to maintain.
+
+I don't think the performance of an socket option code
+really matters - it is usually done once when a socket
+is initialised and the other costs of establishing a
+connection will dominate.
+
+Pulling the user copies outside the [gs]etsocksopt switch
+statement not only reduces the code size (source and object)
+and trivially allows kernel_[sg]sockopt() to me added to
+the list of socket calls.
+
+It probably isn't possible to pull the usercopies right
+out into the syscall wrapper because of some broken
+requests.
+
+I worried about whether getsockopt() should read the entire
+user buffer first. SCTP needs the some of it often (including a
+sockaddr_storage in one case), TCP needs it once.
+However the cost of reading a few words is small, and a big
+buffer probably needs setting to avoid leaking kernel
+memory if the structure has holes or fields that don't get set.
+Reading from userspace solves both issues.
+
+	David
+
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
 
 
 _______________________________________________
