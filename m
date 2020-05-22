@@ -2,118 +2,142 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4535D1DDF18
-	for <lists+linux-afs@lfdr.de>; Fri, 22 May 2020 07:04:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AAB11DE004
+	for <lists+linux-afs@lfdr.de>; Fri, 22 May 2020 08:36:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rnXZJxrekl6MOx64lCVxen7L0cvUI0dH4g03qmxW/b0=; b=OTN
-	B5h/yL7aUHf8urU+7DdqtIWOmyUYbrracjOTQ6/ALTrOSYjxvD/m2lIRfGuNgA2jdmqaQIRnS+DK6
-	Q/oUzXoqddlvOrzDxk40sC0oK5Bb3++TP+AgzT3qdgD+sP+68VduM6TuD27hZvgc+SGEOdKOLvhWX
-	1JBTH+2TLQ1qKYJO9hRwZDBtPgorWlDQW0j2pFsxFit2aqA+6UkfQzjgEAvGUM9tLmjuzW4mIiaqM
-	JTpZ5phXiVIGGuEJYTmqq9wdTiaJGy9hkf3IKqR8+wN3/tzSXi3kuJWstlq/KtnpyztG5j7Rlt0k2
-	DYXFOFCpe/T2t0lBVGGN4a2RNT0FqIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p48a6n2LrwQv8bxSWyMNTpoALSdPTuzRPbL/kHWdKOg=; b=MUpDitKLsmHSRE
+	pGcgNMeiBW46TaCVfEokIevAhvEATKlEp26ug3kyGIYYPSczD/uU9FWKMOkcyjKQ5C9cWtoRbSkSp
+	VPJBt6dZHSqzj4aOKcVHor2L/lvlhBwHCdVQJoWAhqxhmfcLDnr2BPoWJchjfz6WDlceqYxw3Isn9
+	/2xFQVZNa6qJHddDhla/Fvtx/EKg89bHZOFY3mo4S4luLhPZ19QvcZGwlMNexSqLenHDfdRygRQox
+	M5rSpCRFcJ6al2pxlbKff69RcA5nl49QdrYsXv4y+4B74qVfGTqDHvAM/V0biRO1bMNAq3Vr2+qQ+
+	0T0xqzBfdBgEc8YKvTVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbzqJ-00023t-0U; Fri, 22 May 2020 05:03:35 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jc1IJ-0001sh-JZ; Fri, 22 May 2020 06:36:35 +0000
+Received: from mout.web.de ([212.227.15.4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbzqH-000235-6Y
- for linux-afs@bombadil.infradead.org; Fri, 22 May 2020 05:03:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:In-Reply-To:References;
- bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=; b=hcz09AQ4Uj4WShoObh3Y4Dv4lW
- rqv/fxCq91WFEwgFavs34MRCWX0xwQ6uibaUs0Lk8h8/xSiSe1m7QPYm169hPl3ynasDxb+4z8quW
- ML61Xod2erI9OGbOsnEtnm1CCpYBTm66z1I7zzINHT1wYBGtWX4Y7vxLM99efeB+4gyQiRoXEFjpZ
- u5itj9oRYXMVKjmFRD65iY+3oe1F0O5SSBpPK/Lz6TN/T2XlK9Wkp56FLXN/SDAFw/o4+PZemAQOu
- G6QbLZAJk3QjhdnsROkxp2xqAKHETyoRy/+JcXkbz30rijbi8M84vpaIDmk2jU4RvvBK+6imKse5W
- 02HXK2ig==;
-Received: from mta-p6.oit.umn.edu ([134.84.196.206])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbzqC-0004xZ-LM
- for linux-afs@lists.infradead.org; Fri, 22 May 2020 05:03:32 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-p6.oit.umn.edu (Postfix) with ESMTP id 49SvV50m3Qz9vcJn
- for <linux-afs@lists.infradead.org>; Fri, 22 May 2020 05:01:49 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at umn.edu
-Received: from mta-p6.oit.umn.edu ([127.0.0.1])
- by localhost (mta-p6.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id fwQlkLEqYDgG for <linux-afs@lists.infradead.org>;
- Fri, 22 May 2020 00:01:49 -0500 (CDT)
-Received: from mail-il1-f199.google.com (mail-il1-f199.google.com
- [209.85.166.199])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mta-p6.oit.umn.edu (Postfix) with ESMTPS id 49SvV46JWCz9vcJj
- for <linux-afs@lists.infradead.org>; Fri, 22 May 2020 00:01:47 -0500 (CDT)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p6.oit.umn.edu 49SvV46JWCz9vcJj
-DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p6.oit.umn.edu 49SvV46JWCz9vcJj
-Received: by mail-il1-f199.google.com with SMTP id b8so7614337ilr.11
- for <linux-afs@lists.infradead.org>; Thu, 21 May 2020 22:01:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=;
- b=gWX3bduAFtQnUWf4ap1h8sk1OX5aCUOFhenEC65fDEcuw0mzrWt7+M/2t9/aT6ngJx
- FPG41a5BJlAn4XgSJhybY1ScsSJlTC0GDZle/ROvDwB4jLLlaIpbrS0WfOuK49m/5RUf
- dL/SFr5MUX4bccLA4bq0cI/6bCIXHTU6ex/XQVljmGEA1fe1uHs5NXGgRZ4TSRTOYWru
- /jWxkuujky6gBYrdUGVqAnS41Rfl/XB7aUQtyGjb24wyvsP8oDqkupEaI4IlkGrR1s/z
- 2pyACcHa65CN2/L2UzLNFDS0b/EFgy6C2DSUXk0GBahpk05QffxLGjb7mMkhsd3vuoJG
- QwCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=;
- b=l08ZiiJXUBp8BnmWe3hvFX2uVKk2QDg7Au3L7jP7jKoh4paI3OZulr1QeOu2gT3A9x
- viVOI8ND6eIRURD1HhW/7zdB0OaC9XtDZoBUWi/FuoB6gMPjZ/6Z3LNYzC9W5rn59pqV
- nyGwqFyirdzH/yVv+mHrQ60SWELSYkrauWtouPGJPKOMQkD8ycy0GhcSprK/70djStr4
- 9UkgdJ3YofWRiduQ65dVaTUVqOp2yJ1ROEub4zrsT+wM9wedADnhc6gmKdwqI+nZkxR4
- jslpP5wwSktJpHxaeimIV8iO3ODVI9pZLUBzTtdoKnPV4k6g02eGdmPdjMtUkShB3GYJ
- jLxw==
-X-Gm-Message-State: AOAM531GlOBlcWKUow9aBhc+6yIwQnUKk8vOXeC3Byww6XmNQ18Liief
- eYK0ldNCYTKBomv+Kkj4fLdkgoTM8M+xRJCkcJJLehyW1CRfyiRPSFvVgKDoW6Uj6hEUV4QZYHV
- zx9aURGKIKtRtyDDSp6ouzf0G1n3PWg==
-X-Received: by 2002:a02:54ca:: with SMTP id t193mr7007999jaa.26.1590123706718; 
- Thu, 21 May 2020 22:01:46 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJzJwmNLYhrE/pUNUnqwv/haakA9gU7GWmulh8h6dkVQOIh2qLlZbtTntT/fT/VGWj/bte33nA==
-X-Received: by 2002:a02:54ca:: with SMTP id t193mr7007970jaa.26.1590123706362; 
- Thu, 21 May 2020 22:01:46 -0700 (PDT)
-Received: from qiushi.dtc.umn.edu (cs-kh5248-02-umh.cs.umn.edu.
- [128.101.106.4])
- by smtp.gmail.com with ESMTPSA id l16sm3998886ils.64.2020.05.21.22.01.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 22:01:45 -0700 (PDT)
-From: wu000273@umn.edu
-To: dhowells@redhat.com
-Subject: [PATCH] rxrpc: fix a memory leak bug.
-Date: Fri, 22 May 2020 00:01:29 -0500
-Message-Id: <20200522050129.30148-1-wu000273@umn.edu>
-X-Mailer: git-send-email 2.17.1
+ id 1jc1IG-0001rw-Tj
+ for linux-afs@lists.infradead.org; Fri, 22 May 2020 06:36:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1590129373;
+ bh=TTFsG8SgLaQVd1eKAWGA0N4CAmOJ8fhqNtjh5AXvU9E=;
+ h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
+ b=g9xfwbQSgloCLRYJvCYqenpiQ+6ukDtIRnJBpJpusXJsnOD6YzU54PY16HCwfgs+x
+ 4cUdlstHc/TjiwO74p0p51JZDPH7rAbY3Hyb8BwQ1Cuci+qOjMe4z4TDVF/mydbMLU
+ BsW9J5zeCDldpWVs2SxUn+t+EURFI+eldyD6HCsU=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([78.48.165.155]) by smtp.web.de (mrweb002
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 0MS1xS-1jUm0s3eeo-00TBXi; Fri, 22
+ May 2020 08:36:12 +0200
+Subject: Re: [PATCH] rxrpc: Fix a memory leak in rxkad_verify_response()
+From: Markus Elfring <Markus.Elfring@web.de>
+To: Qiushi Wu <wu000273@umn.edu>, linux-afs@lists.infradead.org,
+ netdev@vger.kernel.org
+References: <262bd413-9be4-3abe-9565-ac37a2e2e719@web.de>
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <a19d0395-c3d4-af1f-55bf-bc130e1ebadb@web.de>
+Date: Fri, 22 May 2020 08:36:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+MIME-Version: 1.0
+In-Reply-To: <262bd413-9be4-3abe-9565-ac37a2e2e719@web.de>
+Content-Language: en-GB
+X-Provags-ID: V03:K1:uDRaIi+45NtDoxvNVJ0gnIqt/HWV8xQa6W6/R7923HhKFr4vqnC
+ WWYOE0VnJ159ID/eW8EGJymHm4gh6pMJFVcSYHClS5wQJNwm2t71jwF896QteGC7mJ05lhT
+ WKoZRuvZm0OCvEgA2fQybB9fT40yZ6+cIkd43pFUdigWAIbz1q1H4E1j1m9KT5YFFBb6iIg
+ mGkZwWCva3UNos1H4q/ng==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:2dai1olasGA=:qUNYJ7qx87fAFTHD6CkFRx
+ W7UjFjQZJivS/OoFXh5swu0qKwHyKUtTQaVDLt/5MH3NarrikXjV1qvAzLf7ZC1Mkzug5luFw
+ uoYY6i7HMKXxAjlmD37H7+jK9on0O4Ve5siN0T8hgI9m9MVk03YpwJyBGi6YqQYFoB1av4hNt
+ QY/UVnPCU6tB0yg/n43ssKeHHb0jmnh/xOWBvnxKtxIuKs0tzqVXNExwnBqovfOUmuZ1lH4OX
+ nSqMigTmH9NBGsCiEQSRRYdHp8f5mzb/AkYkbAPo2iBLNbO94/NzNpmU85iTv3hAA5nRxfeFM
+ Deio5+YqHI9x9JUNIFRwG8rK6gSXI9qMGU6RaTdduznN/7+T+7PnhWWwwVQm1HLnTbcozfEPr
+ lxLhFE7TnjVgO+/Oq5y+amYG7STz4GKhplvyjmXJT5EOOk7uxuSUVdx15uRyj9hh4HuX+q2bA
+ nHKeXyCbKlTuzwLKFiKht9fGf5ZZEITPScyL69cAO94ylsgu8avdzb8yXLgwCdAHBcArCVDJk
+ bV9FqWwQkrzMfRWOJpvVybOX7VGXm4nx56/UMllAiRJzl1jKaD6qMa9/PDNgvwULZ5w9UGzMy
+ Ax2fE4yeaAFRhzfCkhVcrfbh8CzeW/iDVCU/N7MzsWmNFW7VgZEIyDcE0n/P6oBUiGRIDhikL
+ vW/8YkLRXOXowIQB6B/Tk5gfxpiRPGaYPyjxDmeu3x+JKYeFZFQWpjFo3Wv12UXSOXdaGztbE
+ fy/JaqZQu7gxXpoqskn1t5QaXpn2FVjwEHXkAK53JeNdxmgE2Sv4LQOT4TesMDkxnzqZnUGJN
+ mYlufKKI+pmGcvQic3pc28myL2nBPF9GDEA5ezqx0RrlwSHxlXpd0WE6wAL62bGdNHBScSfzh
+ 8b9fBMrmVzcD/HqB/xuSYX67E69UYwFFJQvUV4foQZ2nxSS/O7bmVuc5Vv2F40EOcyrCMZ7h8
+ eZ2+eyZLCyxdWSi2pPbq1R9PYsTBw/79vu5RPn3HBGEUCiSUWCWjw0jVbIRJHftHi4Q08Xj6x
+ dO2N+91c+hur1SD8n2IF0ZCpKIzX+WAME9tgm0zgfQuO6cK7S11W/JtzeWfciAOp0a4CKDPoy
+ ipnMP51tCSsaxtMtmBoM+x0BBC1Y0xgFBQxdpEr1Nn9l1iMnIm6iK38TAwCVV0rEDQFL2EVXF
+ 23GeGdBhdan8QNtgDU1Sw4SWSvewbsBYISse//l5bMtSW91NUSJ7+ZTJsXRvutQ3rkKnvBBqd
+ 38Q4BlbbaHZoZJL9q
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_060329_161085_80494261 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: -4.4 (----)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-4.4 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200521_233633_250503_91C9D7A6 
+X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.84.196.206 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.4 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [markus.elfring[at]web.de]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.15.4 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,52 +149,19 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
- linux-afs@lists.infradead.org, wu000273@umn.edu, kuba@kernel.org,
- davem@davemloft.net
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Howells <dhowells@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+ Kangjie Lu <kjlu@umn.edu>, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Qiushi Wu <wu000273@umn.edu>
-
-In function rxkad_verify_response(), pointer "ticket" is not released,
-when function rxkad_decrypt_ticket() returns an error, causing a
-memory leak bug.
-
-Fixes: 8c2f826dc3631 ("rxrpc: Don't put crypto buffers on the stack")
-Signed-off-by: Qiushi Wu <wu000273@umn.edu>
----
- net/rxrpc/rxkad.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/net/rxrpc/rxkad.c b/net/rxrpc/rxkad.c
-index 098f1f9ec53b..52a24d4ef5d8 100644
---- a/net/rxrpc/rxkad.c
-+++ b/net/rxrpc/rxkad.c
-@@ -1148,7 +1148,7 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
- 	ret = rxkad_decrypt_ticket(conn, skb, ticket, ticket_len, &session_key,
- 				   &expiry, _abort_code);
- 	if (ret < 0)
--		goto temporary_error_free_resp;
-+		goto temporary_error_free_ticket;
- 
- 	/* use the session key from inside the ticket to decrypt the
- 	 * response */
-@@ -1230,7 +1230,6 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
- 
- temporary_error_free_ticket:
- 	kfree(ticket);
--temporary_error_free_resp:
- 	kfree(response);
- temporary_error:
- 	/* Ignore the response packet if we got a temporary error such as
--- 
-2.17.1
-
-
-_______________________________________________
-linux-afs mailing list
-http://lists.infradead.org/mailman/listinfo/linux-afs
+PiBIb3cgZG8geW91IHRoaW5rIGFib3V0IGEgd29yZGluZyB2YXJpYW50IGxpa2UgdGhlIGZvbGxv
+d2luZz8KPgo+ICAgIEEgdGlja2V0IHdhcyBub3QgcmVsZWFzZWQgYWZ0ZXIgYSBjYWxsIG9mIHRo
+ZSBmdW5jdGlvbiDigJxwbGF0Zm9ybV9nZXRfaXJx4oCdIGZhaWxlZC4KCkkgc2hvdWxkIGhhdmUg
+c3BlY2lmaWVkIGFuIG90aGVyIGZ1bmN0aW9uIG5hbWUgaGVyZS4KCiAgIEEgdGlja2V0IHdhcyBu
+b3QgcmVsZWFzZWQgYWZ0ZXIgYSBjYWxsIG9mIHRoZSBmdW5jdGlvbiDigJxyeGthZF9kZWNyeXB0
+X3RpY2tldOKAnSBmYWlsZWQuCgoKUmVnYXJkcywKTWFya3VzCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hZnMgbWFpbGluZyBsaXN0Cmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYWZzCg==
