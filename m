@@ -2,82 +2,118 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE5F31DD2F6
-	for <lists+linux-afs@lfdr.de>; Thu, 21 May 2020 18:19:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4535D1DDF18
+	for <lists+linux-afs@lfdr.de>; Fri, 22 May 2020 07:04:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Njd8dbEeYmSzx8SV6NoMH6RFMZCUnEQx1od0AkXxSTI=; b=NjwfZoyJi3iCOoRd1fhrYdxm0
-	fSFqiD5xT4lEcMDhBLaJRFWSzxIhWN0jksOJ2O440mnJkLfxrUBF917BwqX1iATKX6srCMk4STVn4
-	LBvNS5Haw5duKAVXA7+YkN7VvSIyXh2tU5XpfWnPBo/MYPU201OxKNOenqViVnNNmbHZQi0jWsCXW
-	WK5fMOklCiA24AHG0q7ECbV70AdgPXldj5dsMiz/xlqkR6FEMutISkyuOmhMRTBzJyEb4w2BNy1SW
-	Nak/oR1VUahDJJQNxdzAH2qIfL+5Zbb8mum5ZZ96KivmqG+NuHFLsFCJXiXl2iWE8vNh207MPa17x
-	p9sFYrHfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rnXZJxrekl6MOx64lCVxen7L0cvUI0dH4g03qmxW/b0=; b=OTN
+	B5h/yL7aUHf8urU+7DdqtIWOmyUYbrracjOTQ6/ALTrOSYjxvD/m2lIRfGuNgA2jdmqaQIRnS+DK6
+	Q/oUzXoqddlvOrzDxk40sC0oK5Bb3++TP+AgzT3qdgD+sP+68VduM6TuD27hZvgc+SGEOdKOLvhWX
+	1JBTH+2TLQ1qKYJO9hRwZDBtPgorWlDQW0j2pFsxFit2aqA+6UkfQzjgEAvGUM9tLmjuzW4mIiaqM
+	JTpZ5phXiVIGGuEJYTmqq9wdTiaJGy9hkf3IKqR8+wN3/tzSXi3kuJWstlq/KtnpyztG5j7Rlt0k2
+	DYXFOFCpe/T2t0lBVGGN4a2RNT0FqIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbnuY-0007iV-RE; Thu, 21 May 2020 16:19:10 +0000
-Received: from forwardcorp1o.mail.yandex.net ([95.108.205.193])
+	id 1jbzqJ-00023t-0U; Fri, 22 May 2020 05:03:35 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbnuU-0007hq-10
- for linux-afs@lists.infradead.org; Thu, 21 May 2020 16:19:09 +0000
-Received: from mxbackcorp1g.mail.yandex.net (mxbackcorp1g.mail.yandex.net
- [IPv6:2a02:6b8:0:1402::301])
- by forwardcorp1o.mail.yandex.net (Yandex) with ESMTP id 6E47D2E15C3;
- Thu, 21 May 2020 19:18:51 +0300 (MSK)
-Received: from iva8-88b7aa9dc799.qloud-c.yandex.net
- (iva8-88b7aa9dc799.qloud-c.yandex.net [2a02:6b8:c0c:77a0:0:640:88b7:aa9d])
- by mxbackcorp1g.mail.yandex.net (mxbackcorp/Yandex) with ESMTP id
- kh9qBvqkCl-Io2mAhta; Thu, 21 May 2020 19:18:51 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex-team.ru;
- s=default; 
- t=1590077931; bh=3/fXS1yZELVqHOjMWUYQF7xXfk0B8q3bTrAmKQd4YFk=;
- h=In-Reply-To:Message-ID:From:Date:References:To:Subject:Cc;
- b=c64liwodnEQMeDtV3WXaCeBiL8yQO99nQ5c9AraJ2u5oAvVI9M0txxWOxxHAnyqJD
- 4qgIQ+LRuRTpnnaBHBSzBZzORBi5c9Y/daq7fLfCj/6utwRoXua/D+VAu6hT9LYIMG
- 3C05/e7NNhL5iIeJd7tSLbGBc0j7/RYi8xjHy3JE=
-Authentication-Results: mxbackcorp1g.mail.yandex.net;
- dkim=pass header.i=@yandex-team.ru
-Received: from dynamic-vpn.dhcp.yndx.net (dynamic-vpn.dhcp.yndx.net
- [2a02:6b8:b080:8116::1:9])
- by iva8-88b7aa9dc799.qloud-c.yandex.net (smtpcorp/Yandex) with ESMTPSA id
- F13RJleyjN-InX8CdkF; Thu, 21 May 2020 19:18:50 +0300
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (Client certificate not present)
-Subject: Re: [PATCH] vfs, afs, ext4: Make the inode hash table RCU searchable
-To: David Howells <dhowells@redhat.com>, Theodore Ts'o <tytso@mit.edu>,
- Andreas Dilger <adilger.kernel@dilger.ca>,
- Alexander Viro <viro@zeniv.linux.org.uk>
-References: <195849.1590075556@warthog.procyon.org.uk>
-From: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
-Message-ID: <8ac18259-ad47-5617-fa01-fba88349b82d@yandex-team.ru>
-Date: Thu, 21 May 2020 19:18:49 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <195849.1590075556@warthog.procyon.org.uk>
-Content-Language: en-CA
+ id 1jbzqH-000235-6Y
+ for linux-afs@bombadil.infradead.org; Fri, 22 May 2020 05:03:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=; b=hcz09AQ4Uj4WShoObh3Y4Dv4lW
+ rqv/fxCq91WFEwgFavs34MRCWX0xwQ6uibaUs0Lk8h8/xSiSe1m7QPYm169hPl3ynasDxb+4z8quW
+ ML61Xod2erI9OGbOsnEtnm1CCpYBTm66z1I7zzINHT1wYBGtWX4Y7vxLM99efeB+4gyQiRoXEFjpZ
+ u5itj9oRYXMVKjmFRD65iY+3oe1F0O5SSBpPK/Lz6TN/T2XlK9Wkp56FLXN/SDAFw/o4+PZemAQOu
+ G6QbLZAJk3QjhdnsROkxp2xqAKHETyoRy/+JcXkbz30rijbi8M84vpaIDmk2jU4RvvBK+6imKse5W
+ 02HXK2ig==;
+Received: from mta-p6.oit.umn.edu ([134.84.196.206])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbzqC-0004xZ-LM
+ for linux-afs@lists.infradead.org; Fri, 22 May 2020 05:03:32 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-p6.oit.umn.edu (Postfix) with ESMTP id 49SvV50m3Qz9vcJn
+ for <linux-afs@lists.infradead.org>; Fri, 22 May 2020 05:01:49 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at umn.edu
+Received: from mta-p6.oit.umn.edu ([127.0.0.1])
+ by localhost (mta-p6.oit.umn.edu [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id fwQlkLEqYDgG for <linux-afs@lists.infradead.org>;
+ Fri, 22 May 2020 00:01:49 -0500 (CDT)
+Received: from mail-il1-f199.google.com (mail-il1-f199.google.com
+ [209.85.166.199])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mta-p6.oit.umn.edu (Postfix) with ESMTPS id 49SvV46JWCz9vcJj
+ for <linux-afs@lists.infradead.org>; Fri, 22 May 2020 00:01:47 -0500 (CDT)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mta-p6.oit.umn.edu 49SvV46JWCz9vcJj
+DKIM-Filter: OpenDKIM Filter v2.11.0 mta-p6.oit.umn.edu 49SvV46JWCz9vcJj
+Received: by mail-il1-f199.google.com with SMTP id b8so7614337ilr.11
+ for <linux-afs@lists.infradead.org>; Thu, 21 May 2020 22:01:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=umn.edu; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=;
+ b=gWX3bduAFtQnUWf4ap1h8sk1OX5aCUOFhenEC65fDEcuw0mzrWt7+M/2t9/aT6ngJx
+ FPG41a5BJlAn4XgSJhybY1ScsSJlTC0GDZle/ROvDwB4jLLlaIpbrS0WfOuK49m/5RUf
+ dL/SFr5MUX4bccLA4bq0cI/6bCIXHTU6ex/XQVljmGEA1fe1uHs5NXGgRZ4TSRTOYWru
+ /jWxkuujky6gBYrdUGVqAnS41Rfl/XB7aUQtyGjb24wyvsP8oDqkupEaI4IlkGrR1s/z
+ 2pyACcHa65CN2/L2UzLNFDS0b/EFgy6C2DSUXk0GBahpk05QffxLGjb7mMkhsd3vuoJG
+ QwCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=PKNUiHK9Hb2/cZzi/FocwTzEpdCaBMxhZnTs6WEbQRc=;
+ b=l08ZiiJXUBp8BnmWe3hvFX2uVKk2QDg7Au3L7jP7jKoh4paI3OZulr1QeOu2gT3A9x
+ viVOI8ND6eIRURD1HhW/7zdB0OaC9XtDZoBUWi/FuoB6gMPjZ/6Z3LNYzC9W5rn59pqV
+ nyGwqFyirdzH/yVv+mHrQ60SWELSYkrauWtouPGJPKOMQkD8ycy0GhcSprK/70djStr4
+ 9UkgdJ3YofWRiduQ65dVaTUVqOp2yJ1ROEub4zrsT+wM9wedADnhc6gmKdwqI+nZkxR4
+ jslpP5wwSktJpHxaeimIV8iO3ODVI9pZLUBzTtdoKnPV4k6g02eGdmPdjMtUkShB3GYJ
+ jLxw==
+X-Gm-Message-State: AOAM531GlOBlcWKUow9aBhc+6yIwQnUKk8vOXeC3Byww6XmNQ18Liief
+ eYK0ldNCYTKBomv+Kkj4fLdkgoTM8M+xRJCkcJJLehyW1CRfyiRPSFvVgKDoW6Uj6hEUV4QZYHV
+ zx9aURGKIKtRtyDDSp6ouzf0G1n3PWg==
+X-Received: by 2002:a02:54ca:: with SMTP id t193mr7007999jaa.26.1590123706718; 
+ Thu, 21 May 2020 22:01:46 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzJwmNLYhrE/pUNUnqwv/haakA9gU7GWmulh8h6dkVQOIh2qLlZbtTntT/fT/VGWj/bte33nA==
+X-Received: by 2002:a02:54ca:: with SMTP id t193mr7007970jaa.26.1590123706362; 
+ Thu, 21 May 2020 22:01:46 -0700 (PDT)
+Received: from qiushi.dtc.umn.edu (cs-kh5248-02-umh.cs.umn.edu.
+ [128.101.106.4])
+ by smtp.gmail.com with ESMTPSA id l16sm3998886ils.64.2020.05.21.22.01.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 May 2020 22:01:45 -0700 (PDT)
+From: wu000273@umn.edu
+To: dhowells@redhat.com
+Subject: [PATCH] rxrpc: fix a memory leak bug.
+Date: Fri, 22 May 2020 00:01:29 -0500
+Message-Id: <20200522050129.30148-1-wu000273@umn.edu>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_091906_577816_877F42E9 
-X-CRM114-Status: GOOD (  31.40  )
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+X-CRM114-CacheID: sfid-20200522_060329_161085_80494261 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -4.4 (----)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-4.4 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [95.108.205.193 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.84.196.206 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,483 +125,51 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fsdevel@vger.kernel.org, linux-ext4@vger.kernel.org,
- linux-afs@lists.infradead.org
+Cc: netdev@vger.kernel.org, kjlu@umn.edu, linux-kernel@vger.kernel.org,
+ linux-afs@lists.infradead.org, wu000273@umn.edu, kuba@kernel.org,
+ davem@davemloft.net
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On 21/05/2020 18.39, David Howells wrote:
-> Hi Ted, Andreas, Konstantin,
-> 
-> Is this something that would be of interest to Ext4?
+From: Qiushi Wu <wu000273@umn.edu>
 
-For now, I've plugged this issue with try-lock in ext4 lazy time update.
-This solution is much better.
+In function rxkad_verify_response(), pointer "ticket" is not released,
+when function rxkad_decrypt_ticket() returns an error, causing a
+memory leak bug.
 
-I guess next step is rcu-protected fast-path in iget_locked()?
-(for scalable open_by_handle_at and nfs exports)
+Fixes: 8c2f826dc3631 ("rxrpc: Don't put crypto buffers on the stack")
+Signed-off-by: Qiushi Wu <wu000273@umn.edu>
+---
+ net/rxrpc/rxkad.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-> 
-> David
-> ---
-> vfs, afs, ext4: Make the inode hash table RCU searchable
-> 
-> Make the inode hash table RCU searchable so that searches that want to
-> access or modify an inode without taking a ref on that inode can do so
-> without taking the inode hash table lock.
-> 
-> The main thing this requires is some RCU annotation on the list
-> manipulation operations.  Inodes are already freed by RCU in most cases.
-> 
-> Users of this interface must take care as the inode may be still under
-> construction or may be being torn down around them.
-> 
-> There are at least two instances where this can be of use:
-> 
->   (1) Ext4 date stamp updating.
-> 
->   (2) AFS callback breaking.
-> 
-> Signed-off-by: David Howells <dhowells@redhat.com>
-> cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>
-> cc: linux-ext4@vger.kernel.org
-> ---
->   fs/afs/callback.c  |   12 ++-
->   fs/ext4/inode.c    |   44 ++++++-------
->   fs/inode.c         |  173 ++++++++++++++++++++++++++++++++++++++++++++---------
->   include/linux/fs.h |    3
->   4 files changed, 179 insertions(+), 53 deletions(-)
-> 
-> diff --git a/fs/afs/callback.c b/fs/afs/callback.c
-> index 2dca8df1a18d..0dcbd40732d1 100644
-> --- a/fs/afs/callback.c
-> +++ b/fs/afs/callback.c
-> @@ -252,6 +252,7 @@ static void afs_break_one_callback(struct afs_server *server,
->   	struct afs_vnode *vnode;
->   	struct inode *inode;
->   
-> +	rcu_read_lock();
->   	read_lock(&server->cb_break_lock);
->   	hlist_for_each_entry(vi, &server->cb_volumes, srv_link) {
->   		if (vi->vid < fid->vid)
-> @@ -287,12 +288,16 @@ static void afs_break_one_callback(struct afs_server *server,
->   		} else {
->   			data.volume = NULL;
->   			data.fid = *fid;
-> -			inode = ilookup5_nowait(cbi->sb, fid->vnode,
-> -						afs_iget5_test, &data);
-> +
-> +			/* See if we can find a matching inode - even an I_NEW
-> +			 * inode needs to be marked as it can have its callback
-> +			 * broken before we finish setting up the local inode.
-> +			 */
-> +			inode = find_inode_rcu(cbi->sb, fid->vnode,
-> +					       afs_iget5_test, &data);
->   			if (inode) {
->   				vnode = AFS_FS_I(inode);
->   				afs_break_callback(vnode, afs_cb_break_for_callback);
-> -				iput(inode);
->   			} else {
->   				trace_afs_cb_miss(fid, afs_cb_break_for_callback);
->   			}
-> @@ -301,6 +306,7 @@ static void afs_break_one_callback(struct afs_server *server,
->   
->   out:
->   	read_unlock(&server->cb_break_lock);
-> +	rcu_read_unlock();
->   }
->   
->   /*
-> diff --git a/fs/ext4/inode.c b/fs/ext4/inode.c
-> index 2a4aae6acdcb..2bbb55d05bb7 100644
-> --- a/fs/ext4/inode.c
-> +++ b/fs/ext4/inode.c
-> @@ -4860,21 +4860,22 @@ static int ext4_inode_blocks_set(handle_t *handle,
->   	return 0;
->   }
->   
-> -struct other_inode {
-> -	unsigned long		orig_ino;
-> -	struct ext4_inode	*raw_inode;
-> -};
-> -
-> -static int other_inode_match(struct inode * inode, unsigned long ino,
-> -			     void *data)
-> +static void __ext4_update_other_inode_time(struct super_block *sb,
-> +					   unsigned long orig_ino,
-> +					   unsigned long ino,
-> +					   struct ext4_inode *raw_inode)
->   {
-> -	struct other_inode *oi = (struct other_inode *) data;
-> +	struct inode *inode;
-> +
-> +	inode = find_inode_by_ino_rcu(sb, ino);
-> +	if (!inode)
-> +		return;
->   
-> -	if ((inode->i_ino != ino) ||
-> -	    (inode->i_state & (I_FREEING | I_WILL_FREE | I_NEW |
-> +	if ((inode->i_state & (I_FREEING | I_WILL_FREE | I_NEW |
->   			       I_DIRTY_INODE)) ||
->   	    ((inode->i_state & I_DIRTY_TIME) == 0))
-> -		return 0;
-> +		return;
-> +
->   	spin_lock(&inode->i_lock);
->   	if (((inode->i_state & (I_FREEING | I_WILL_FREE | I_NEW |
->   				I_DIRTY_INODE)) == 0) &&
-> @@ -4885,16 +4886,15 @@ static int other_inode_match(struct inode * inode, unsigned long ino,
->   		spin_unlock(&inode->i_lock);
->   
->   		spin_lock(&ei->i_raw_lock);
-> -		EXT4_INODE_SET_XTIME(i_ctime, inode, oi->raw_inode);
-> -		EXT4_INODE_SET_XTIME(i_mtime, inode, oi->raw_inode);
-> -		EXT4_INODE_SET_XTIME(i_atime, inode, oi->raw_inode);
-> -		ext4_inode_csum_set(inode, oi->raw_inode, ei);
-> +		EXT4_INODE_SET_XTIME(i_ctime, inode, raw_inode);
-> +		EXT4_INODE_SET_XTIME(i_mtime, inode, raw_inode);
-> +		EXT4_INODE_SET_XTIME(i_atime, inode, raw_inode);
-> +		ext4_inode_csum_set(inode, raw_inode, ei);
->   		spin_unlock(&ei->i_raw_lock);
-> -		trace_ext4_other_inode_update_time(inode, oi->orig_ino);
-> -		return -1;
-> +		trace_ext4_other_inode_update_time(inode, orig_ino);
-> +		return;
->   	}
->   	spin_unlock(&inode->i_lock);
-> -	return -1;
->   }
->   
->   /*
-> @@ -4904,24 +4904,24 @@ static int other_inode_match(struct inode * inode, unsigned long ino,
->   static void ext4_update_other_inodes_time(struct super_block *sb,
->   					  unsigned long orig_ino, char *buf)
->   {
-> -	struct other_inode oi;
->   	unsigned long ino;
->   	int i, inodes_per_block = EXT4_SB(sb)->s_inodes_per_block;
->   	int inode_size = EXT4_INODE_SIZE(sb);
->   
-> -	oi.orig_ino = orig_ino;
->   	/*
->   	 * Calculate the first inode in the inode table block.  Inode
->   	 * numbers are one-based.  That is, the first inode in a block
->   	 * (assuming 4k blocks and 256 byte inodes) is (n*16 + 1).
->   	 */
->   	ino = ((orig_ino - 1) & ~(inodes_per_block - 1)) + 1;
-> +	rcu_read_lock();
->   	for (i = 0; i < inodes_per_block; i++, ino++, buf += inode_size) {
->   		if (ino == orig_ino)
->   			continue;
-> -		oi.raw_inode = (struct ext4_inode *) buf;
-> -		(void) find_inode_nowait(sb, ino, other_inode_match, &oi);
-> +		__ext4_update_other_inode_time(sb, orig_ino, ino,
-> +					       (struct ext4_inode *)buf);
->   	}
-> +	rcu_read_unlock();
->   }
->   
->   /*
-> diff --git a/fs/inode.c b/fs/inode.c
-> index 93d9252a00ab..a9ae3a405a1f 100644
-> --- a/fs/inode.c
-> +++ b/fs/inode.c
-> @@ -497,7 +497,7 @@ void __insert_inode_hash(struct inode *inode, unsigned long hashval)
->   
->   	spin_lock(&inode_hash_lock);
->   	spin_lock(&inode->i_lock);
-> -	hlist_add_head(&inode->i_hash, b);
-> +	hlist_add_head_rcu(&inode->i_hash, b);
->   	spin_unlock(&inode->i_lock);
->   	spin_unlock(&inode_hash_lock);
->   }
-> @@ -513,7 +513,7 @@ void __remove_inode_hash(struct inode *inode)
->   {
->   	spin_lock(&inode_hash_lock);
->   	spin_lock(&inode->i_lock);
-> -	hlist_del_init(&inode->i_hash);
-> +	hlist_del_init_rcu(&inode->i_hash);
->   	spin_unlock(&inode->i_lock);
->   	spin_unlock(&inode_hash_lock);
->   }
-> @@ -808,8 +808,31 @@ long prune_icache_sb(struct super_block *sb, struct shrink_control *sc)
->   }
->   
->   static void __wait_on_freeing_inode(struct inode *inode);
-> +
->   /*
-> - * Called with the inode lock held.
-> + * Find an inode.  Can be called with either the RCU read lock or the
-> + * inode cache lock held.  No check is made as to the validity of the
-> + * inode found.
-> + */
-> +static struct inode *__find_inode_rcu(struct super_block *sb,
-> +				      struct hlist_head *head,
-> +				      int (*test)(struct inode *, void *),
-> +				      void *data)
-> +{
-> +	struct inode *inode;
-> +
-> +	hlist_for_each_entry_rcu(inode, head, i_hash) {
-> +		if (inode->i_sb == sb &&
-> +		    test(inode, data))
-> +			return inode;
-> +	}
-> +
-> +	return NULL;
-> +}
-> +
-> +/*
-> + * Called with the inode hash lock held.  Waits until dying inodes are freed,
-> + * dropping the inode hash lock temporarily to do so.
->    */
->   static struct inode *find_inode(struct super_block *sb,
->   				struct hlist_head *head,
-> @@ -819,11 +842,8 @@ static struct inode *find_inode(struct super_block *sb,
->   	struct inode *inode = NULL;
->   
->   repeat:
-> -	hlist_for_each_entry(inode, head, i_hash) {
-> -		if (inode->i_sb != sb)
-> -			continue;
-> -		if (!test(inode, data))
-> -			continue;
-> +	inode = __find_inode_rcu(sb, head, test, data);
-> +	if (inode) {
->   		spin_lock(&inode->i_lock);
->   		if (inode->i_state & (I_FREEING|I_WILL_FREE)) {
->   			__wait_on_freeing_inode(inode);
-> @@ -840,6 +860,26 @@ static struct inode *find_inode(struct super_block *sb,
->   	return NULL;
->   }
->   
-> +/*
-> + * Find an inode by inode number.  Can be called with either the RCU
-> + * read lock or the inode cache lock held.  No check is made as to the
-> + * validity of the inode found.
-> + */
-> +static struct inode *__find_inode_by_ino_rcu(struct super_block *sb,
-> +					     struct hlist_head *head,
-> +					     unsigned long ino)
-> +{
-> +	struct inode *inode;
-> +
-> +	hlist_for_each_entry_rcu(inode, head, i_hash) {
-> +		if (inode->i_ino == ino &&
-> +		    inode->i_sb == sb)
-> +			return inode;
-> +	}
-> +
-> +	return NULL;
-> +}
-> +
->   /*
->    * find_inode_fast is the fast path version of find_inode, see the comment at
->    * iget_locked for details.
-> @@ -850,11 +890,8 @@ static struct inode *find_inode_fast(struct super_block *sb,
->   	struct inode *inode = NULL;
->   
->   repeat:
-> -	hlist_for_each_entry(inode, head, i_hash) {
-> -		if (inode->i_ino != ino)
-> -			continue;
-> -		if (inode->i_sb != sb)
-> -			continue;
-> +	inode = __find_inode_by_ino_rcu(sb, head, ino);
-> +	if (inode) {
->   		spin_lock(&inode->i_lock);
->   		if (inode->i_state & (I_FREEING|I_WILL_FREE)) {
->   			__wait_on_freeing_inode(inode);
-> @@ -1107,7 +1144,7 @@ struct inode *inode_insert5(struct inode *inode, unsigned long hashval,
->   	 */
->   	spin_lock(&inode->i_lock);
->   	inode->i_state |= I_NEW;
-> -	hlist_add_head(&inode->i_hash, head);
-> +	hlist_add_head_rcu(&inode->i_hash, head);
->   	spin_unlock(&inode->i_lock);
->   	if (!creating)
->   		inode_sb_list_add(inode);
-> @@ -1201,7 +1238,7 @@ struct inode *iget_locked(struct super_block *sb, unsigned long ino)
->   			inode->i_ino = ino;
->   			spin_lock(&inode->i_lock);
->   			inode->i_state = I_NEW;
-> -			hlist_add_head(&inode->i_hash, head);
-> +			hlist_add_head_rcu(&inode->i_hash, head);
->   			spin_unlock(&inode->i_lock);
->   			inode_sb_list_add(inode);
->   			spin_unlock(&inode_hash_lock);
-> @@ -1245,15 +1282,9 @@ static int test_inode_iunique(struct super_block *sb, unsigned long ino)
->   	struct inode *inode;
->   
->   	spin_lock(&inode_hash_lock);
-> -	hlist_for_each_entry(inode, b, i_hash) {
-> -		if (inode->i_ino == ino && inode->i_sb == sb) {
-> -			spin_unlock(&inode_hash_lock);
-> -			return 0;
-> -		}
-> -	}
-> +	inode = __find_inode_by_ino_rcu(sb, b, ino);
->   	spin_unlock(&inode_hash_lock);
-> -
-> -	return 1;
-> +	return inode ? 0 : 1;
->   }
->   
->   /**
-> @@ -1325,6 +1356,7 @@ EXPORT_SYMBOL(igrab);
->    *
->    * Note: I_NEW is not waited upon so you have to be very careful what you do
->    * with the returned inode.  You probably should be using ilookup5() instead.
-> + * It may still sleep waiting for I_FREE and I_WILL_FREE, however.
->    *
->    * Note2: @test is called with the inode_hash_lock held, so can't sleep.
->    */
-> @@ -1456,6 +1488,86 @@ struct inode *find_inode_nowait(struct super_block *sb,
->   }
->   EXPORT_SYMBOL(find_inode_nowait);
->   
-> +/**
-> + * find_inode_rcu - find an inode in the inode cache
-> + * @sb:		Super block of file system to search
-> + * @hashval:	Key to hash
-> + * @test:	Function to test match on an inode
-> + * @data:	Data for test function
-> + *
-> + * Search for the inode specified by @hashval and @data in the inode cache,
-> + * where the helper function @test will return 0 if the inode does not match
-> + * and 1 if it does.  The @test function must be responsible for taking the
-> + * i_lock spin_lock and checking i_state for an inode being freed or being
-> + * initialized.
-> + *
-> + * If successful, this will return the inode for which the @test function
-> + * returned 1 and NULL otherwise.
-> + *
-> + * The @test function is not permitted to take a ref on any inode presented
-> + * unless the caller is holding the inode hashtable lock.  It is also not
-> + * permitted to sleep, since it may be called with the RCU read lock held.
-> + *
-> + * The caller must hold either the RCU read lock or the inode hashtable lock.
-> + */
-> +struct inode *find_inode_rcu(struct super_block *sb, unsigned long hashval,
-> +			     int (*test)(struct inode *, void *), void *data)
-> +{
-> +	struct hlist_head *head = inode_hashtable + hash(sb, hashval);
-> +	struct inode *inode;
-> +
-> +	RCU_LOCKDEP_WARN(!lockdep_is_held(&inode_hash_lock) && !rcu_read_lock_held(),
-> +			 "suspicious find_inode_by_ino_rcu() usage");
-> +
-> +	hlist_for_each_entry_rcu(inode, head, i_hash) {
-> +		if (inode->i_sb == sb &&
-> +		    !(READ_ONCE(inode->i_state) & (I_FREEING | I_WILL_FREE)) &&
-> +		    test(inode, data))
-> +			return inode;
-> +	}
-> +	return NULL;
-> +}
-> +EXPORT_SYMBOL(find_inode_rcu);
-> +
-> +/**
-> + * find_inode_by_rcu - Find an inode in the inode cache
-> + * @sb:		Super block of file system to search
-> + * @ino:	The inode number to match
-> + *
-> + * Search for the inode specified by @hashval and @data in the inode cache,
-> + * where the helper function @test will return 0 if the inode does not match
-> + * and 1 if it does.  The @test function must be responsible for taking the
-> + * i_lock spin_lock and checking i_state for an inode being freed or being
-> + * initialized.
-> + *
-> + * If successful, this will return the inode for which the @test function
-> + * returned 1 and NULL otherwise.
-> + *
-> + * The @test function is not permitted to take a ref on any inode presented
-> + * unless the caller is holding the inode hashtable lock.  It is also not
-> + * permitted to sleep, since it may be called with the RCU read lock held.
-> + *
-> + * The caller must hold either the RCU read lock or the inode hashtable lock.
-> + */
-> +struct inode *find_inode_by_ino_rcu(struct super_block *sb,
-> +				    unsigned long ino)
-> +{
-> +	struct hlist_head *head = inode_hashtable + hash(sb, ino);
-> +	struct inode *inode;
-> +
-> +	RCU_LOCKDEP_WARN(!lockdep_is_held(&inode_hash_lock) && !rcu_read_lock_held(),
-> +			 "suspicious find_inode_by_ino_rcu() usage");
-> +
-> +	hlist_for_each_entry_rcu(inode, head, i_hash) {
-> +		if (inode->i_ino == ino &&
-> +		    inode->i_sb == sb &&
-> +		    !(READ_ONCE(inode->i_state) & (I_FREEING | I_WILL_FREE)))
-> +		    return inode;
-> +	}
-> +	return NULL;
-> +}
-> +EXPORT_SYMBOL(find_inode_by_ino_rcu);
-> +
->   int insert_inode_locked(struct inode *inode)
->   {
->   	struct super_block *sb = inode->i_sb;
-> @@ -1480,7 +1592,7 @@ int insert_inode_locked(struct inode *inode)
->   		if (likely(!old)) {
->   			spin_lock(&inode->i_lock);
->   			inode->i_state |= I_NEW | I_CREATING;
-> -			hlist_add_head(&inode->i_hash, head);
-> +			hlist_add_head_rcu(&inode->i_hash, head);
->   			spin_unlock(&inode->i_lock);
->   			spin_unlock(&inode_hash_lock);
->   			return 0;
-> @@ -1540,6 +1652,7 @@ static void iput_final(struct inode *inode)
->   {
->   	struct super_block *sb = inode->i_sb;
->   	const struct super_operations *op = inode->i_sb->s_op;
-> +	unsigned long state;
->   	int drop;
->   
->   	WARN_ON(inode->i_state & I_NEW);
-> @@ -1555,16 +1668,20 @@ static void iput_final(struct inode *inode)
->   		return;
->   	}
->   
-> +	state = READ_ONCE(inode->i_state);
->   	if (!drop) {
-> -		inode->i_state |= I_WILL_FREE;
-> +		WRITE_ONCE(inode->i_state, state | I_WILL_FREE);
->   		spin_unlock(&inode->i_lock);
-> +
->   		write_inode_now(inode, 1);
-> +
->   		spin_lock(&inode->i_lock);
-> -		WARN_ON(inode->i_state & I_NEW);
-> -		inode->i_state &= ~I_WILL_FREE;
-> +		state = READ_ONCE(inode->i_state);
-> +		WARN_ON(state & I_NEW);
-> +		state &= ~I_WILL_FREE;
->   	}
->   
-> -	inode->i_state |= I_FREEING;
-> +	WRITE_ONCE(inode->i_state, state | I_FREEING);
->   	if (!list_empty(&inode->i_lru))
->   		inode_lru_list_del(inode);
->   	spin_unlock(&inode->i_lock);
-> diff --git a/include/linux/fs.h b/include/linux/fs.h
-> index 45cc10cdf6dd..5f9b2bb4b44f 100644
-> --- a/include/linux/fs.h
-> +++ b/include/linux/fs.h
-> @@ -3070,6 +3070,9 @@ extern struct inode *find_inode_nowait(struct super_block *,
->   				       int (*match)(struct inode *,
->   						    unsigned long, void *),
->   				       void *data);
-> +extern struct inode *find_inode_rcu(struct super_block *, unsigned long,
-> +				    int (*)(struct inode *, void *), void *);
-> +extern struct inode *find_inode_by_ino_rcu(struct super_block *, unsigned long);
->   extern int insert_inode_locked4(struct inode *, unsigned long, int (*test)(struct inode *, void *), void *);
->   extern int insert_inode_locked(struct inode *);
->   #ifdef CONFIG_DEBUG_LOCK_ALLOC
-> 
+diff --git a/net/rxrpc/rxkad.c b/net/rxrpc/rxkad.c
+index 098f1f9ec53b..52a24d4ef5d8 100644
+--- a/net/rxrpc/rxkad.c
++++ b/net/rxrpc/rxkad.c
+@@ -1148,7 +1148,7 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
+ 	ret = rxkad_decrypt_ticket(conn, skb, ticket, ticket_len, &session_key,
+ 				   &expiry, _abort_code);
+ 	if (ret < 0)
+-		goto temporary_error_free_resp;
++		goto temporary_error_free_ticket;
+ 
+ 	/* use the session key from inside the ticket to decrypt the
+ 	 * response */
+@@ -1230,7 +1230,6 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
+ 
+ temporary_error_free_ticket:
+ 	kfree(ticket);
+-temporary_error_free_resp:
+ 	kfree(response);
+ temporary_error:
+ 	/* Ignore the response packet if we got a temporary error such as
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-afs mailing list
