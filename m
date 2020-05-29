@@ -2,78 +2,79 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AA521E8AC0
-	for <lists+linux-afs@lfdr.de>; Sat, 30 May 2020 00:02:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37ADE1E8AC1
+	for <lists+linux-afs@lfdr.de>; Sat, 30 May 2020 00:02:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lo99mh8u3Jeji3r+aVt58oBPMxO1JhSU0hwXto+2Vtk=; b=PHgLTOdhJpYXFt
-	ZujwG+cpE/b0WyF2yc651F/dOgUaMx610dxcEmgz3Jz+O4skfLSCmvCuAPO77eeEBT/F49Tvywe5Y
-	dxl8S9kifDjpRr/Qm2umZrzeXXahf4XRVxy86+yqoXhl9J9nIiVykSr5whMUIw0TRXRBpZkd7Xjdm
-	Djx6vjdl6rAHWEhSXD7M6RyHcDi7VkLBUpmW9DhKhwQE/Hay9vKDwVyOSX3Y2QZypPs8w9vas/AVe
-	4j89tPZK5RsPkwPqEzJFsdt1B0o3pvWJnS0GUG0Y/Tn2duiuyc8u8bvAzrzJzfcIRdAh4YCeTpCmJ
-	ieI6eZqloF5SJe1pjv9Q==;
+	List-Owner; bh=Y0SpE9GNNU5LKE9Vc96Vn4ysH8KgtHcAvZ4JRwKVTOM=; b=JsObXe6uU4AbwG
+	ECj7FFRvo/GeXMdn0rl0pjWG2xEkZRqmJVmuekswCKHsyrgOsTQb9n6On3mEjnQXfPTeu5B9vETMA
+	lQMzDza3yCcrti4AZu4aWukY5yNAmFrVBCg8P1TuVkc1EacZm9gkGPutVubcilQ6+L+1NABkRhG7a
+	Z8CzQq8vj3407PZnfHAH5pEtAYg7n2TcCYM4PxxrxFAZCAKVDf1xAENOxphr/7kMAdz1+eyIJ+3wr
+	cltR8Kk2iA6WAKsAAyi5OarIkEdfPzvlg5nN4IR4y5v9bINQQCKTAlWQCoEl1PwrxjwFj8M7L+fgq
+	xB0FgvK8/HRoWa6bNKDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jen5C-0002MO-Ow; Fri, 29 May 2020 22:02:30 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jen5K-0002PT-2m; Fri, 29 May 2020 22:02:38 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jen59-0002Kk-Qe
- for linux-afs@lists.infradead.org; Fri, 29 May 2020 22:02:29 +0000
+ id 1jen5H-0002O5-Eq
+ for linux-afs@lists.infradead.org; Fri, 29 May 2020 22:02:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590789746;
+ s=mimecast20190719; t=1590789754;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=S6iq26DTUp2Z1AJJIG5b7C5kCeJcVWYfJVluYMMNUBA=;
- b=R0YKfUK+3X8fQuCj/x5/TeOKYLb9YxFqSB+3nhPhOBoA+WlDTMRboc7fwF9SzDTDjNTwCJ
- 8348j8yt76groMGw42Bhcv+Dm0i818UamfCsYPvjM+uXTHHhI4qqVPEoARGhE0uVnRFkRH
- 2q7DRdvJlsvl5L7k9vDnT/9o1jYWtWM=
+ bh=Fuuv3sz/GSmrMmZb6ByPJWoMyMT1uK7FLllTftkdgck=;
+ b=N2K/a7iOu+7T4ehR78FrKcrnaIEyoovyWulY6d9yp9m93SkALSAPBYx1BSNApLHkD/MR6o
+ hRhi7ehRvnN66GcmuHmMLsq9YJmdRo/rYMZIY1Yrmb5ux1ZaHo0NgTBjwf6D6W4+LrWYM3
+ Obrzgzit/q/swPKkXX1xWdCB913rigM=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-34-DYmdLWXcNgSk9QadL8mm5A-1; Fri, 29 May 2020 18:02:25 -0400
-X-MC-Unique: DYmdLWXcNgSk9QadL8mm5A-1
+ us-mta-402-wwG90mg_OYy0l5mMoSxtJQ-1; Fri, 29 May 2020 18:02:32 -0400
+X-MC-Unique: wwG90mg_OYy0l5mMoSxtJQ-1
 Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
  [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 352E780B712;
- Fri, 29 May 2020 22:02:24 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1259F18A8228;
+ Fri, 29 May 2020 22:02:31 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
  [10.10.112.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 31E4510013D4;
- Fri, 29 May 2020 22:02:23 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 42E26100164C;
+ Fri, 29 May 2020 22:02:30 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 19/27] afs: Detect cell aliases 2 - Cells with no root volumes
+Subject: [PATCH 20/27] afs: Detect cell aliases 3 - YFS Cells with a canonical
+ cell name op
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Fri, 29 May 2020 23:02:22 +0100
-Message-ID: <159078974233.679399.3000438365720326961.stgit@warthog.procyon.org.uk>
+Date: Fri, 29 May 2020 23:02:29 +0100
+Message-ID: <159078974944.679399.18369764508535302163.stgit@warthog.procyon.org.uk>
 In-Reply-To: <159078959973.679399.15496997680826127470.stgit@warthog.procyon.org.uk>
 References: <159078959973.679399.15496997680826127470.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/0.22
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_150227_940764_AB7457AE 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20200529_150235_570143_69AC31DA 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.120 listed in wl.mailspike.net]
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,8 +84,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,128 +105,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Implement the second phase of cell alias detection.  This part handles
-alias detection for cells that don't have root.cell volumes and so we have
-to find some other volume or fileserver to query.
-
-We take the first volume from each such cell and attempt to look it up in
-the new cell.  If found, we compare the records, if they are the same, we
-judge the cell names to be aliases.
+YFS Volume Location servers have an operation by which the cell name may be
+queried.  Use this to find out what a YFS server thinks the canonical cell
+name should be.
 
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/afs/vl_alias.c |   90 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 89 insertions(+), 1 deletion(-)
+ fs/afs/vl_alias.c  |   60 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ fs/afs/vl_rotate.c |    4 +++
+ 2 files changed, 64 insertions(+)
 
 diff --git a/fs/afs/vl_alias.c b/fs/afs/vl_alias.c
-index d1d91a25fbe0..76bfa4dde4a4 100644
+index 76bfa4dde4a4..1fcb63c65ba9 100644
 --- a/fs/afs/vl_alias.c
 +++ b/fs/afs/vl_alias.c
-@@ -180,6 +180,94 @@ static int afs_compare_cell_roots(struct afs_cell *cell)
+@@ -268,12 +268,72 @@ static int afs_query_for_alias(struct afs_cell *cell, struct key *key)
  	return 1;
  }
  
 +/*
-+ * Query the new cell for a volume from a cell we're already using.
++ * Look up a VLDB record for a volume.
 + */
-+static int afs_query_for_alias_one(struct afs_cell *cell, struct key *key,
-+				   struct afs_cell *p)
++static char *afs_vl_get_cell_name(struct afs_cell *cell, struct key *key)
 +{
-+	struct afs_volume *volume, *pvol = NULL;
++	struct afs_vl_cursor vc;
++	char *cell_name = ERR_PTR(-EDESTADDRREQ);
++	bool skipped = false, not_skipped = false;
 +	int ret;
 +
-+	/* Arbitrarily pick the first volume in the list. */
-+	read_lock(&p->proc_lock);
-+	if (!list_empty(&p->proc_volumes))
-+		pvol = afs_get_volume(list_first_entry(&p->proc_volumes,
-+						       struct afs_volume, proc_link));
-+	read_unlock(&p->proc_lock);
-+	if (!pvol)
-+		return 0;
++	if (!afs_begin_vlserver_operation(&vc, cell, key))
++		return ERR_PTR(-ERESTARTSYS);
 +
-+	_enter("%s:%s", cell->name, pvol->name);
-+
-+	/* And see if it's in the new cell. */
-+	volume = afs_sample_volume(cell, key, pvol->name, pvol->name_len);
-+	if (IS_ERR(volume)) {
-+		afs_put_volume(cell->net, pvol);
-+		if (PTR_ERR(volume) != -ENOMEDIUM)
-+			return PTR_ERR(volume);
-+		/* That volume is not in the new cell, so not an alias */
-+		return 0;
++	while (afs_select_vlserver(&vc)) {
++		if (!test_bit(AFS_VLSERVER_FL_IS_YFS, &vc.server->flags)) {
++			vc.ac.error = -EOPNOTSUPP;
++			skipped = true;
++			continue;
++		}
++		not_skipped = true;
++		cell_name = afs_yfsvl_get_cell_name(&vc);
 +	}
 +
-+	/* The new cell has a like-named volume also - compare volume ID,
-+	 * server and address lists.
-+	 */
-+	ret = 0;
-+	if (pvol->vid == volume->vid) {
-+		rcu_read_lock();
-+		if (afs_compare_volume_slists(volume, pvol))
-+			ret = 1;
-+		rcu_read_unlock();
-+	}
-+
-+	afs_put_volume(cell->net, volume);
-+	afs_put_volume(cell->net, pvol);
-+	return ret;
++	ret = afs_end_vlserver_operation(&vc);
++	if (skipped && !not_skipped)
++		ret = -EOPNOTSUPP;
++	return ret < 0 ? ERR_PTR(ret) : cell_name;
 +}
 +
-+/*
-+ * Query the new cell for volumes we know exist in cells we're already using.
-+ */
-+static int afs_query_for_alias(struct afs_cell *cell, struct key *key)
++static int yfs_check_canonical_cell_name(struct afs_cell *cell, struct key *key)
 +{
-+	struct afs_cell *p;
++	struct afs_cell *master;
++	char *cell_name;
 +
-+	_enter("%s", cell->name);
++	cell_name = afs_vl_get_cell_name(cell, key);
++	if (IS_ERR(cell_name))
++		return PTR_ERR(cell_name);
 +
-+	if (mutex_lock_interruptible(&cell->net->proc_cells_lock) < 0)
-+		return -ERESTARTSYS;
-+
-+	hlist_for_each_entry(p, &cell->net->proc_cells, proc_link) {
-+		if (p == cell || p->alias_of)
-+			continue;
-+		if (list_empty(&p->proc_volumes))
-+			continue;
-+		if (p->root_volume)
-+			continue; /* Ignore cells that have a root.cell volume. */
-+		afs_get_cell(p);
-+		mutex_unlock(&cell->net->proc_cells_lock);
-+
-+		if (afs_query_for_alias_one(cell, key, p) != 0)
-+			goto is_alias;
-+
-+		if (mutex_lock_interruptible(&cell->net->proc_cells_lock) < 0) {
-+			afs_put_cell(cell->net, p);
-+			return -ERESTARTSYS;
-+		}
-+
-+		afs_put_cell(cell->net, p);
++	if (strcmp(cell_name, cell->name) == 0) {
++		kfree(cell_name);
++		return 0;
 +	}
 +
-+	mutex_unlock(&cell->net->proc_cells_lock);
-+	_leave(" = 0");
-+	return 0;
++	master = afs_lookup_cell(cell->net, cell_name, strlen(cell_name),
++				 NULL, false);
++	kfree(cell_name);
++	if (IS_ERR(master)) {
++		kfree(cell_name);
++		return PTR_ERR(master);
++	}
 +
-+is_alias:
-+	cell->alias_of = p; /* Transfer our ref */
++	cell->alias_of = master; /* Transfer our ref */
 +	return 1;
 +}
 +
  static int afs_do_cell_detect_alias(struct afs_cell *cell, struct key *key)
  {
  	struct afs_volume *root_volume;
-@@ -199,7 +287,7 @@ static int afs_do_cell_detect_alias(struct afs_cell *cell, struct key *key)
- 	/* Okay, this cell doesn't have an root.cell volume.  We need to
- 	 * locate some other random volume and use that to check.
- 	 */
--	return -ENOMEDIUM;
-+	return afs_query_for_alias(cell, key);
- }
++	int ret;
  
- /*
+ 	_enter("%s", cell->name);
+ 
++	ret = yfs_check_canonical_cell_name(cell, key);
++	if (ret != -EOPNOTSUPP)
++		return ret;
++
+ 	/* Try and get the root.cell volume for comparison with other cells */
+ 	root_volume = afs_sample_volume(cell, key, "root.cell", 9);
+ 	if (!IS_ERR(root_volume)) {
+diff --git a/fs/afs/vl_rotate.c b/fs/afs/vl_rotate.c
+index 72eacc14e6e1..f405ca8b240a 100644
+--- a/fs/afs/vl_rotate.c
++++ b/fs/afs/vl_rotate.c
+@@ -151,6 +151,10 @@ bool afs_select_vlserver(struct afs_vl_cursor *vc)
+ 		vc->error = error;
+ 		vc->flags |= AFS_VL_CURSOR_RETRY;
+ 		goto next_server;
++
++	case -EOPNOTSUPP:
++		_debug("notsupp");
++		goto next_server;
+ 	}
+ 
+ restart_from_beginning:
 
 
 
