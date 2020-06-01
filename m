@@ -2,59 +2,88 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EBAA1EA4FE
-	for <lists+linux-afs@lfdr.de>; Mon,  1 Jun 2020 15:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C84961EA82A
+	for <lists+linux-afs@lfdr.de>; Mon,  1 Jun 2020 19:09:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=g4rlOTO+LoPgZXKQikL8QoKsmWBLZPiX2cKKxmYExHQ=; b=BoE3JeEYlQL8qI
-	F+DCc5U3A/YZ5Huw97iCcUZn0hDuVwW9h4/zb8lgCPoQCpiS/EBkKP/ohKACjR8vrGkEpE+Gp7Vta
-	J6yhyAOTj5557V8k10gATu2RIeFrpwfvKmxDnGRr5ONcgRb+GZ2tjIc8T3Ykli7n/eMt+Zt9bUMxj
-	UtgzzWmxGad+Ze/KHpP35JZIPNrWdmT6scJAr1q4ondvTFrL3FlaXOibighilvaB5GysG2V+HVjed
-	VTZjRhdQ5t/HuugNyUt9QkZnRtfgTJjjq6ovs7Dqf+uvVdz3ScTa0XQx01sDxTcQJG5XyH1ghrikj
-	/+8rDX7zf2NuGxRAgkbw==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
+	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5TggUHP3Xf34svKILMrR5h/5O4NwEJyQ2bhGyBJEGpk=; b=ts8r92kH6/d5AP
+	XaXG1ZXpPs5+0ox2cBlqs+gEu/y230nyrqU6b0QrpdBKS9rGblkMMdF71kLy6R2T6VCFDPzUbiUnU
+	e4tAR6F6M4mo9RNegVBvfbqwyXtDbwmgBLwHTsYU9inkTruQHQy7R7W13xxilIkE2zsI9DsQY8tbE
+	J/rykGshctgTBt2fLNNtaNiNWR7LbGEHaF80y6D6GFlli5h+avpRZUaoT+wnDdYveoFy82ZbvSwlu
+	yVoYnIp+mCrRUK2Y2UN2aQ2e3mDd5OHB51x5kKmzeloeVPxxHtSyY+GtchXTVje72gjOo84cwmr5W
+	V05IeblwhHWsafUhfVtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfkU7-00085G-BL; Mon, 01 Jun 2020 13:28:11 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jfnvk-0005Jf-8J; Mon, 01 Jun 2020 17:08:56 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfkU4-00083i-1H
- for linux-afs@lists.infradead.org; Mon, 01 Jun 2020 13:28:10 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 7C68A164AF3E1A136B09;
- Mon,  1 Jun 2020 21:28:01 +0800 (CST)
-Received: from huawei.com (10.175.104.175) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.487.0; Mon, 1 Jun 2020
- 21:27:54 +0800
-From: Zhihao Cheng <chengzhihao1@huawei.com>
-To: <linux-afs@lists.infradead.org>, <linux-fsdevel@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] afs: Fix memory leak in afs_put_sysnames()
-Date: Mon, 1 Jun 2020 21:27:34 +0800
-Message-ID: <20200601132734.4148325-1-chengzhihao1@huawei.com>
-X-Mailer: git-send-email 2.25.4
+ id 1jfnvh-0005Ij-O5
+ for linux-afs@lists.infradead.org; Mon, 01 Jun 2020 17:08:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1591031330;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=aBfVnLq9ec7IA3u5TWoDLJTmL8ZGnJcANeLd1J0lvVs=;
+ b=PSZDMiR1uVVtc3XhbOhUQ4zJD3pxwPbqg7wwH2Chw00qaWTlsuU4h1+q5VduG4BNxJ8thI
+ YUvhwWrqfyP7tY2bn0jWpAzfr8Ae6H1F/ueaqypRI80UKmAps2a8hcUmziZngu02/a9/5L
+ TxNEexpdJkSRRUcUoGM3hJwwBxPlRJc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-38-i0lRwKS8OGmsfJbPywpuyA-1; Mon, 01 Jun 2020 13:08:46 -0400
+X-MC-Unique: i0lRwKS8OGmsfJbPywpuyA-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6856C107ACCD;
+ Mon,  1 Jun 2020 17:08:45 +0000 (UTC)
+Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
+ [10.10.112.138])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id C954E7F0A4;
+ Mon,  1 Jun 2020 17:08:43 +0000 (UTC)
+Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
+ Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
+ Kingdom.
+ Registered in England and Wales under Company Registration No. 3798903
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <779b327f-b0fa-e21f-cbf6-5cadeca58581@web.de>
+References: <779b327f-b0fa-e21f-cbf6-5cadeca58581@web.de>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH v2] afs: Fix memory leak in afs_put_sysnames()
 MIME-Version: 1.0
-X-Originating-IP: [10.175.104.175]
-X-CFilter-Loop: Reflected
+Content-ID: <1346216.1591031323.1@warthog.procyon.org.uk>
+Date: Mon, 01 Jun 2020 18:08:43 +0100
+Message-ID: <1346217.1591031323@warthog.procyon.org.uk>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_062808_650460_E22DD452 
-X-CRM114-Status: UNSURE (   7.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200601_100853_861336_B4DCDBD5 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.191 listed in wl.mailspike.net]
+ [205.139.110.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,36 +95,36 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, yi.zhang@huawei.com
+Cc: Yi Zhang <yi.zhang@huawei.com>, linux-kernel@vger.kernel.org,
+ dhowells@redhat.com, linux-fsdevel@vger.kernel.org,
+ linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-sysnames should be freed after refcnt being decreased to zero in
-afs_put_sysnames().
+Markus Elfring <Markus.Elfring@web.de> wrote:
 
-Signed-off-by: Zhihao Cheng <chengzhihao1@huawei.com>
-Cc: <Stable@vger.kernel.org> # v4.17+
-Fixes: 6f8880d8e681557 ("afs: Implement @sys substitution handling")
----
- fs/afs/proc.c | 1 +
- 1 file changed, 1 insertion(+)
+> > sysnames should be freed after refcnt being decreased to zero in
+> > afs_put_sysnames().
+> 
+> How do you think about a wording variant like the following?
+> 
+>    Release the sysnames object after its reference counter was decreased
+>    to zero.
 
-diff --git a/fs/afs/proc.c b/fs/afs/proc.c
-index 468e1713bce1..6f34c84a0fd0 100644
---- a/fs/afs/proc.c
-+++ b/fs/afs/proc.c
-@@ -563,6 +563,7 @@ void afs_put_sysnames(struct afs_sysnames *sysnames)
- 			if (sysnames->subs[i] != afs_init_sysname &&
- 			    sysnames->subs[i] != sysnames->blank)
- 				kfree(sysnames->subs[i]);
-+		kfree(sysnames);
- 	}
- }
- 
--- 
-2.25.4
+I would say "reference count" not "reference counter" personally.  I would
+also say "afs_sysnames" rather than "sysnames".  Perhaps something like:
+
+	Fix afs_put_sysnames() to actually free the specified afs_sysnames
+	object after its reference count has been decreased to zero and its
+	contents have been released.
+
+> Will it matter to mention the size of the data structure "afs_sysnames"?
+
+Why is it necessary to do so?
+
+David
 
 
 _______________________________________________
