@@ -2,89 +2,58 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 240A11E9860
-	for <lists+linux-afs@lfdr.de>; Sun, 31 May 2020 17:09:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 326A11EA0EB
+	for <lists+linux-afs@lfdr.de>; Mon,  1 Jun 2020 11:22:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ypxluef8qBfihhFU46oxop0b/UnFmtMX6ow7a82nqFY=; b=Q82Ck9iZdc7QmM
-	XyKwbUdnr0Ma/qR+bfyHQtr++WvkDl2H7xDXh9dzRCRzA6BzyCz2hgfc2gK7yhEdKVwrjm0SXjiCp
-	GVAI2rgjbQScxjgClEkGS/Y3xczksvkJwoL9E2QiBiSsqarswnfPcCnvinBnmxjgbBSNyz3otunhe
-	2VAQm8xVEjn9AHnEOdo8rq7KSS3KIIQyxIGofXz5lnIwZNB91oLZTfBez86aPOG4UXFisyrHlh3SE
-	l5h5dlsicN/5+NMiqEhDLhr2CxEJ1RFASXy2NSrQeT+fOAtkG+6Lu6GDpyUbmlJpoanDEFBcZXrhk
-	vK/SvtdBLO6//XVNTN0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=I1tkW3DKtAWD1xOVO0VN/cvy9STnqdhfEhVPmWeBYmI=; b=XkRkNq3uzneTwE
+	Me//KwUo8Oq3eFOvD5Uevs1+kREhhLnem/mLkgR/EaYQ8+AHX3EDVO+AlArA4KzXBwiiuut/5NrVj
+	VjW9xKMFbucSRxqyjnuIvBfBhP7E4gh1QANr8SIUDJ7GyOjStxr5enGroi0IuZ3XIlp2uplbglEVF
+	iJ0h+ty9/BcI24zqNOGU6OsfCyTaiESqUKtNehSDexEjcMIUM0knz4UmNqaavr566RCLz30yjb1n2
+	9DYDaeFaOiJS0DcG99zr7YIdBmmDIpUyS8j6cvXDRtBvoI2JLNpw7sBakItkvtBIbgEiUOP0BAhw0
+	fT5mYjHXaKj8dj2I3aoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfPaN-0002H0-Nv; Sun, 31 May 2020 15:09:15 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jfgeM-0003m5-RI; Mon, 01 Jun 2020 09:22:30 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfPaK-0002G6-FK
- for linux-afs@lists.infradead.org; Sun, 31 May 2020 15:09:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590937751;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=yDUA+JUdTjFPwNW7cVcL/jAUJqXfAJ27+Lah22MRRXo=;
- b=WPeZmC8nC9xsv8EOqxJPzixC55QKQDXq03vAgwYxNs8Q07QULIn9RW9X3FLy43LA9VHSbC
- AxH6LiqOxokbESOTAfaI84LoEYzS/V9mzyOoToHB6DCtWaZOOufu/x10t/kWkqfET4qwb4
- ufmXErZJJWN1caS32IC3bCyhhzueuII=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-115-k7yVd-fmPneHxU-Pj9uOIA-1; Sun, 31 May 2020 11:09:07 -0400
-X-MC-Unique: k7yVd-fmPneHxU-Pj9uOIA-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1AF5A835B40;
- Sun, 31 May 2020 15:09:06 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
- [10.10.112.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CFD5F60F8D;
- Sun, 31 May 2020 15:09:04 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <CAFAFadCErKJ0mjkyKrVCCDAV7oShdA22O-TD6VEmFM0Mwfqahg@mail.gmail.com>
-References: <CAFAFadCErKJ0mjkyKrVCCDAV7oShdA22O-TD6VEmFM0Mwfqahg@mail.gmail.com>
-To: gaurav singh <gaurav1086@gmail.com>
-Subject: Re: [PATCH] conn_client: Add check for rxpc channel
+ id 1jfgeJ-0003l5-9z
+ for linux-afs@lists.infradead.org; Mon, 01 Jun 2020 09:22:29 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 1631E9C89EA068D77DAA;
+ Mon,  1 Jun 2020 17:22:20 +0800 (CST)
+Received: from huawei.com (10.175.104.175) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Mon, 1 Jun 2020
+ 17:22:11 +0800
+From: Zhihao Cheng <chengzhihao1@huawei.com>
+To: <linux-afs@lists.infradead.org>, <linux-fsdevel@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] afs: Fix memory leak in afs_put_sysnames()
+Date: Mon, 1 Jun 2020 17:21:50 +0800
+Message-ID: <20200601092150.3798343-1-chengzhihao1@huawei.com>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
-Content-ID: <1159569.1590937744.1@warthog.procyon.org.uk>
-Date: Sun, 31 May 2020 16:09:04 +0100
-Message-ID: <1159570.1590937744@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Originating-IP: [10.175.104.175]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_080912_591018_70C749F0 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200601_022227_559834_89C1CB41 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.35 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,35 +65,123 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: trivial@kernel.org, netdev@vger.kernel.org, linux-afs@lists.infradead.org,
- dhowells@redhat.com, kuba@kernel.org, davem@davemloft.net
+Cc: dhowells@redhat.com, yi.zhang@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hi,
+sysnames should be freed after refcnt being decreased to zero in
+afs_put_sysnames(). Besides, it would be better set net->sysnames
+to 'NULL' after net->sysnames being released if afs_put_sysnames()
+aims on an afs_sysnames object.
 
-Note that "conn_client:" isn't a suitable tag for the subject.  You should use
-"rxrpc:" instead.
+Signed-off-by: Zhihao Cheng <chengzhihao1@huawei.com>
+Cc: <Stable@vger.kernel.org> # v4.17+
+Fixes: 6f8880d8e681557 ("afs: Implement @sys substitution handling")
+---
+ fs/afs/dir.c      |  2 +-
+ fs/afs/internal.h |  2 ++
+ fs/afs/main.c     |  4 ++--
+ fs/afs/proc.c     | 25 ++++++++++++++++++++-----
+ 4 files changed, 25 insertions(+), 8 deletions(-)
 
-How did you find this by the way?  You shouldn't get a NULL pointer there.
-Either the call is waiting for a channel to be assigned (in which case the
-condition on:
-
-	if (!list_empty(&call->chan_wait_link)) {
-
-will be true) or it should have been assigned a channel, in which case chan
-will not be NULL.
-
-Note that the function takes the lock under which this is managed
-(conn->channel_lock) across this, so it shouldn't change.
-
-Even __rxrpc_disconnect_call(), which is called to implicitly close out a call
-that gets superseded on its channel, doesn't stop
-rxrpc_disconnect_client_call() from finding the channel.
-
-David
+diff --git a/fs/afs/dir.c b/fs/afs/dir.c
+index d1e1caa23c8b..cb9d8aa91048 100644
+--- a/fs/afs/dir.c
++++ b/fs/afs/dir.c
+@@ -894,7 +894,7 @@ static struct dentry *afs_lookup_atsys(struct inode *dir, struct dentry *dentry,
+ 	 */
+ 	ret = NULL;
+ out_s:
+-	afs_put_sysnames(subs);
++	afs_put_sysnames_and_null(net);
+ 	kfree(buf);
+ out_p:
+ 	key_put(key);
+diff --git a/fs/afs/internal.h b/fs/afs/internal.h
+index 80255513e230..615dd5f9ad6f 100644
+--- a/fs/afs/internal.h
++++ b/fs/afs/internal.h
+@@ -1093,12 +1093,14 @@ extern void __net_exit afs_proc_cleanup(struct afs_net *);
+ extern int afs_proc_cell_setup(struct afs_cell *);
+ extern void afs_proc_cell_remove(struct afs_cell *);
+ extern void afs_put_sysnames(struct afs_sysnames *);
++extern void afs_put_sysnames_and_null(struct afs_net *);
+ #else
+ static inline int afs_proc_init(struct afs_net *net) { return 0; }
+ static inline void afs_proc_cleanup(struct afs_net *net) {}
+ static inline int afs_proc_cell_setup(struct afs_cell *cell) { return 0; }
+ static inline void afs_proc_cell_remove(struct afs_cell *cell) {}
+ static inline void afs_put_sysnames(struct afs_sysnames *sysnames) {}
++static inline void afs_put_sysnames_and_null(struct afs_net *net) {}
+ #endif
+ 
+ /*
+diff --git a/fs/afs/main.c b/fs/afs/main.c
+index c9c45d7078bd..6bf73fc65fb5 100644
+--- a/fs/afs/main.c
++++ b/fs/afs/main.c
+@@ -132,7 +132,7 @@ static int __net_init afs_net_init(struct net *net_ns)
+ 	net->live = false;
+ 	afs_proc_cleanup(net);
+ error_proc:
+-	afs_put_sysnames(net->sysnames);
++	afs_put_sysnames_and_null(net);
+ error_sysnames:
+ 	net->live = false;
+ 	return ret;
+@@ -150,7 +150,7 @@ static void __net_exit afs_net_exit(struct net *net_ns)
+ 	afs_purge_servers(net);
+ 	afs_close_socket(net);
+ 	afs_proc_cleanup(net);
+-	afs_put_sysnames(net->sysnames);
++	afs_put_sysnames_and_null(net);
+ }
+ 
+ static struct pernet_operations afs_net_ops = {
+diff --git a/fs/afs/proc.c b/fs/afs/proc.c
+index 468e1713bce1..26e1e73281a6 100644
+--- a/fs/afs/proc.c
++++ b/fs/afs/proc.c
+@@ -554,15 +554,30 @@ static int afs_proc_sysname_write(struct file *file, char *buf, size_t size)
+ 	goto out;
+ }
+ 
+-void afs_put_sysnames(struct afs_sysnames *sysnames)
++static void afs_free_sysnames(struct afs_sysnames *sysnames)
+ {
+ 	int i;
+ 
++	for (i = 0; i < sysnames->nr; i++)
++		if (sysnames->subs[i] != afs_init_sysname &&
++		    sysnames->subs[i] != sysnames->blank)
++			kfree(sysnames->subs[i]);
++	kfree(sysnames);
++}
++
++void afs_put_sysnames(struct afs_sysnames *sysnames)
++{
++	if (sysnames && refcount_dec_and_test(&sysnames->usage))
++		afs_free_sysnames(sysnames);
++}
++
++void afs_put_sysnames_and_null(struct afs_net *net)
++{
++	struct afs_sysnames *sysnames = net->sysnames;
++
+ 	if (sysnames && refcount_dec_and_test(&sysnames->usage)) {
+-		for (i = 0; i < sysnames->nr; i++)
+-			if (sysnames->subs[i] != afs_init_sysname &&
+-			    sysnames->subs[i] != sysnames->blank)
+-				kfree(sysnames->subs[i]);
++		afs_free_sysnames(sysnames);
++		net->sysnames = NULL;
+ 	}
+ }
+ 
+-- 
+2.25.4
 
 
 _______________________________________________
