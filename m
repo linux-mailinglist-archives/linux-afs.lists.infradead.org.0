@@ -2,90 +2,59 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2E301EB0BD
-	for <lists+linux-afs@lfdr.de>; Mon,  1 Jun 2020 23:11:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97A941EB2FA
+	for <lists+linux-afs@lfdr.de>; Tue,  2 Jun 2020 03:31:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r2kBw//riXZeojIxOZwB23yVQPU0MaVb1/AJUuWbmyg=; b=WQ1w8Va75aMucL
-	uHkxeuHKFpAggZW9hg1ozdhX5/i5Z61oZ6xP6YdJsLo1M143OPUrNViTVrrVl6szWr7jV9D1Sdsfj
-	m10dZZWRzIHYVFCsA5J2oA3b17lSAaQptr01NVxZNtkA4MD1SqefcmusX9RJ+vasEtljQyFxfB3G+
-	k9QT1cfTMM7f56pI5CKSBNrG0yPxVflveTSklKPNLUrEL34w0ZrTc6yiHk0UxwFw0qc2DeqdorahB
-	2nvu/Gn+RaPfJPvVl6OCviYhYFzaLJY3miIkksGgSzi3I5A54Urg+2Sb7SitHAYP7e4yMuTt0AudH
-	cbYy56RTVqncUTtH19Dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NR+TF92NnFDlG6dG9KgkZOAnCrPfm7STEhFhhQMvKFw=; b=eM7D/rgorryQU+
+	BJ/fPWg9hL2byTne6qQfZrvH6l5Qzezuiq2xBowcyow+fXk2VQMkIW+TpLhH/BaCkjz4We1xcitPA
+	7D2rnGAXmDFO5fUcF7CBHoU/FtFfrFDHZ+O8YlfU9EdImCr7WNYqeK8twbVVaJ+h3zqSM47J/9bNw
+	szrNpG4E6QiT3qAedWwgISvbb4M1Y0Q32xa6RBw/HEY2uxtba5tcMneBqi19wE+u9d1b/B01Ou6Tm
+	rVujK8iSbtnJZeQVC/WuOOk8WdinFacZK5qfHxBHZRa04hwMFhQJrUG/g+YxmSnnuS6qPugtKFvYe
+	ldjAX66WQuiWAEc2vUaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfrig-00053k-RZ; Mon, 01 Jun 2020 21:11:42 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jfvlz-00065T-Lu; Tue, 02 Jun 2020 01:31:23 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfrid-000537-Ty
- for linux-afs@lists.infradead.org; Mon, 01 Jun 2020 21:11:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591045898;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=DbRzhG2LzWApjj8c+cePRghjnkrYYRcNMFSCvsXUZ8I=;
- b=AralpmOjEWIyTB9navhbDg72jp4sNdjC6SWkDhw0Hr+ftL0cNIpz35lIEwWTrv2gZTzykQ
- ehojKqW8rNQS7v8Hvb/8ycTv5cnM1pcuUL+5FQA9BL73xzj+s4DvjEpA2olwlWbOSJQcCy
- CB5yxm4k7Ksdribn6y4Gtgxx6icPkKQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-443-w1E6bmOQPuerdajZZdA_Yw-1; Mon, 01 Jun 2020 17:11:31 -0400
-X-MC-Unique: w1E6bmOQPuerdajZZdA_Yw-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id EE1D11883603;
- Mon,  1 Jun 2020 21:11:29 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-112-138.rdu2.redhat.com
- [10.10.112.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2C9D6D01EB;
- Mon,  1 Jun 2020 21:11:28 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <3cc663a5-088d-4d26-34cd-c96e362c1eb2@web.de>
-References: <3cc663a5-088d-4d26-34cd-c96e362c1eb2@web.de>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: afs: Improve exception handling in afs_net_init()
+ id 1jfvlv-00064B-Pq
+ for linux-afs@lists.infradead.org; Tue, 02 Jun 2020 01:31:22 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 4E73E4485C0BB0CF2468;
+ Tue,  2 Jun 2020 09:31:12 +0800 (CST)
+Received: from huawei.com (10.175.104.175) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Tue, 2 Jun 2020
+ 09:31:06 +0800
+From: Zhihao Cheng <chengzhihao1@huawei.com>
+To: <linux-afs@lists.infradead.org>, <linux-fsdevel@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v3] afs: Fix memory leak in afs_put_sysnames()
+Date: Tue, 2 Jun 2020 09:30:45 +0800
+Message-ID: <20200602013045.321855-1-chengzhihao1@huawei.com>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
-Content-ID: <1376358.1591045888.1@warthog.procyon.org.uk>
-Date: Mon, 01 Jun 2020 22:11:28 +0100
-Message-ID: <1376359.1591045888@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Originating-IP: [10.175.104.175]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_141140_043405_9341C1F5 
-X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-CacheID: sfid-20200601_183119_998944_8A49FEA9 
+X-CRM114-Status: UNSURE (   6.27  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.190 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,39 +66,37 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: dhowells@redhat.com, linux-afs@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>
+Cc: dhowells@redhat.com, yi.zhang@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Markus Elfring <Markus.Elfring@web.de> wrote:
+Fix afs_put_sysnames() to actually free the specified afs_sysnames
+object after its reference count has been decreased to zero and
+its contents have been released.
 
-> I have accidentally taken another look at the implementation of
-> the function "afs_net_init".
-> I noticed that the statement "net->live = false;" was specified three times
-> for exception handling at the end.
-> https://elixir.bootlin.com/linux/v5.7/source/fs/afs/main.c#L127
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/fs/afs/main.c?id=9bf9511e3d9f328c03f6f79bfb741c3d18f2f2c0#n127
-> 
-> Can it be that two of these assignments are redundant then?
+Signed-off-by: Zhihao Cheng <chengzhihao1@huawei.com>
+Cc: <Stable@vger.kernel.org> # v4.17+
+Fixes: 6f8880d8e681557 ("afs: Implement @sys substitution handling")
+---
+ fs/afs/proc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Kind of yes, but no.
-
-I want to set "net->live = false" as soon as an error occurs because there are
-various async mechanisms that check for it and abort their operation if they
-see it, but there are multiple error labels.
-
-So it needs to be cleared before afs_cell_purge() or afs_purge_servers() is
-called and it used to be required for something else as well, but that's now
-gone.
-
-In the afs_net_init() function, it now probably only needs to be cleared after
-"error_open_socket:".  I'm a bit leary of removing the clearances in case I
-add a new dependency on it later.
-
-David
+diff --git a/fs/afs/proc.c b/fs/afs/proc.c
+index 468e1713bce1..6f34c84a0fd0 100644
+--- a/fs/afs/proc.c
++++ b/fs/afs/proc.c
+@@ -563,6 +563,7 @@ void afs_put_sysnames(struct afs_sysnames *sysnames)
+ 			if (sysnames->subs[i] != afs_init_sysname &&
+ 			    sysnames->subs[i] != sysnames->blank)
+ 				kfree(sysnames->subs[i]);
++		kfree(sysnames);
+ 	}
+ }
+ 
+-- 
+2.25.4
 
 
 _______________________________________________
