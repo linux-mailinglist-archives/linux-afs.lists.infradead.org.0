@@ -2,42 +2,43 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2C671EBFB0
-	for <lists+linux-afs@lfdr.de>; Tue,  2 Jun 2020 18:11:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB0CB1EBFAE
+	for <lists+linux-afs@lfdr.de>; Tue,  2 Jun 2020 18:11:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:From:To:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/szsqlIAdRemmL9YHeFHivN/3Ct0jyQoDjBAvw3vNQU=; b=b+GdC99TceOW8U
-	iSR7Vhfvsn3AdV5XKUYHYBg4vbKVT1pveHHUD2e+IGcxvq7NPCJkuiaf1v3u+seFMRPCB1kqV50PF
-	zT0KH1dMsv1hVEl/rIcNdjVhdIp/KnzsrjSS6CAdMQnYfF/SLoZJT05ZSVjeKXy1OT9cLvTtRUSti
-	UY4LxFDgR1AHkUihROaGqHKNs2rt56eLAKu0VviOj8It1E+Iv1gheoXocgwlrHRku9y0iu9v/ljU4
-	FUiXTx1YSB/LqplmwrqWlVtPoONbnRqXA0hLYa7Ya+T0keX6WXISph3JURdTN7ZsHQYLK7ma8zEjD
-	UJ6LzTusylSbbU7Gwt0Q==;
+	List-Owner; bh=k3law5FWMvkt0hditRs16QEFuoM3GJxX3xnWTzOkHA8=; b=RX++yEcz137xNL
+	xCmHfqLuxg5lN5KOouYwO2uTqTq4kPp6HrK6Iy3CrK8P3+9uyJu4HdNsfFj+F0BWcMRxiPgMMCyb7
+	SO6RsnUlUrnO3BAFotMqHn5TP5SLWtm7g02hWvP3fCWAIff9mZ6yzti0/tw9BXOaikQ9N0az/uATF
+	ce9XUnxHq3dxrrYTgUlgFSQlx9Sq7Uo0OIoJptv9QmhS5moGndvfsQa8KRxQgWhJxm/lkoGlSTPa0
+	XP5c0UQPv7dEKsq+stmRuXQ3hPYFJTGqLWnFaipdAWwKm8E53rm6OYl6sMCFs9ZQ9Rs+00D+vw7dD
+	1zee0C/BcqVKoLniH4/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg9Vv-0005G4-LB; Tue, 02 Jun 2020 16:11:43 +0000
+	id 1jg9Vv-0005GJ-S4; Tue, 02 Jun 2020 16:11:43 +0000
 Received: from mout.web.de ([212.227.15.4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jflca-0005Kp-80
- for linux-afs@lists.infradead.org; Mon, 01 Jun 2020 14:41:01 +0000
+ id 1jfzyw-0001qm-EL
+ for linux-afs@lists.infradead.org; Tue, 02 Jun 2020 06:01:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1591022441;
- bh=GYixJJl+eyc0q3fXwyw3p+6RUj+8MkKKi7YziDYNgKs=;
- h=X-UI-Sender-Class:Cc:Subject:From:To:Date;
- b=VLme64G4xdV+B4m2ln4WMnxDDOFjTCE13uKFjf4dAFrPabATzS2rKi7GLfdO3EtPO
- tgMhx6eYwFa8EFPHtMMhhEYIbamoD7SDvdKZBXqILIF84meEswjnq4ZtgzNiIRa9jP
- KT1ND6ouwZLIGjEH5FYqoxylyf9zC0CcgixtevKQ=
+ s=dbaedf251592; t=1591077647;
+ bh=cS/9W9CXCgWwcg0d53s+ziCPsKxpjUUWXLeHZ+f0LOs=;
+ h=X-UI-Sender-Class:Cc:Subject:To:From:Date;
+ b=GizfZPVorUz9sJfIMAPeEpZlv1OtTiFm1GQQek8HN4n8POprGKMIC3KJC8TvVdg6E
+ h9FRofacUOZH9YkcTFm3DofKj9dd6prskkFnUVQSeo4buqvq5a6BxpBRsU7qe+mLw/
+ aRhvMfxUb+t/5s+f6VEeAqrtI4dYUB6JvEs8VQr0=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([78.49.133.32]) by smtp.web.de (mrweb003
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0Lvjoa-1iuhrp0Pdc-017UNL; Mon, 01
- Jun 2020 16:40:41 +0200
-Subject: Re: [PATCH v2] afs: Fix memory leak in afs_put_sysnames()
-From: Markus Elfring <Markus.Elfring@web.de>
-To: Zhihao Cheng <chengzhihao1@huawei.com>, linux-afs@lists.infradead.org,
+Received: from [192.168.1.2] ([2.243.186.246]) by smtp.web.de (mrweb006
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1MTOlk-1jYByF2MsG-00TjD4; Tue, 02
+ Jun 2020 08:00:47 +0200
+Subject: Re: [PATCH v3] afs: Fix memory leak in afs_put_sysnames()
+To: Zhihao Cheng <chengzhihao1@huawei.com>,
+ David Howells <dhowells@redhat.com>, linux-afs@lists.infradead.org,
  linux-fsdevel@vger.kernel.org
+From: Markus Elfring <Markus.Elfring@web.de>
 Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
  mQINBFg2+xABEADBJW2hoUoFXVFWTeKbqqif8VjszdMkriilx90WB5c0ddWQX14h6w5bT/A8
  +v43YoGpDNyhgA0w9CEhuwfZrE91GocMtjLO67TAc2i2nxMc/FJRDI0OemO4VJ9RwID6ltwt
@@ -81,40 +82,40 @@ Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
  Z/wsLiWTgKlih2QYULvW61XU+mWsK8+ZlYUrRMpkauN4CJ5yTpvp+Orcz5KixHQmc5tbkLWf
  x0n1QFc1xxJhbzN+r9djSGGN/5IBDfUqSANC8cWzHpWaHmSuU3JSAMB/N+yQjIad2ztTckZY
  pwT6oxng29LzZspTYUEzMz3wK2jQHw+U66qBFk8whA7B2uAU1QdGyPgahLYSOa4XAEGb6wbI FEE=
-Message-ID: <779b327f-b0fa-e21f-cbf6-5cadeca58581@web.de>
-Date: Mon, 1 Jun 2020 16:40:40 +0200
+Message-ID: <7ed2657a-bdef-2ce9-6a7e-7283e85e4e56@web.de>
+Date: Tue, 2 Jun 2020 08:00:46 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.1
 MIME-Version: 1.0
 Content-Language: en-GB
-X-Provags-ID: V03:K1:HuDV7hfpr+tWrow1bafEA/tCXUy8759Rc0x0dQuEig0BH9hVc7+
- 4K2TNZ1zxkgHIvOVqoCYizsP82qHOwpxh8kxg/1SST75eyX7DP2L5fNGCd5prG8aqSk9kAp
- lJCXqP4koGD2NTk0GNup3pr4LN/N3a9FciGGhjHh+9m2l6GrpWLQBO9nbrARgjyIXW/2aPd
- sOepHSrDDlN4PLfYr991g==
+X-Provags-ID: V03:K1:TqJYyepbDLQIjaIuRH8zgKRFrnKCwaZwcAoQtdD9HV2+bbKUev0
+ uGuHeBUQniky7DpgJiODltbP97J4ZYVZLKln8dN2m4XKEifbbXi+fdwaeZ+33EmK29x3Hp7
+ Ufo7/3S7Nevf9muKr7f1tG/HF25gm1DirPMFzBReeBxUNNCHypdhvXIR58l/YerjVad0Y99
+ /rC+UMMA9Hb0ezhcMpaQg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nqZJSZQvFL4=:zRNQCrIrHifOQBYMwf/oFv
- dADWoDN7nxVf+sZtmS74WDLHLOnxKuUg8p3Rv5SnAYWfGHROf6UXo3lOoXX+UZrHfakU6rlu0
- 5gnvEhuWfUvB+K1Pdscy0gFyiHZLNv0roIsjEWszHRds5o81qHi5tzaGlDhpX6H9+OVKK6MSk
- 8kkhx4mMg+3aplRA0oqP+KlR9hvJo61RwVePW4yA+DACykYP0W5iPspoSEe6EER0EMK2E3U8A
- XdDE6Sq2tJEP5Z2AAW1NTYSZJMCE4hFzq3Gp5Cio3kiT5un9iFWA8MEP0A7n03j8eaButqWtd
- CRx3+MhgMKsSs03GEkl1EZuWQU4oBlIHTzG3O6F+xnOTMwgbVaI+BQZj4U0FHgww92fdA3ZXi
- 8BuDtEiqRZbbWf8C8ZFjYN9cKjMHU/6TBSN2F/jZjH9AQ4tZUHAtTY2hpmu5cviYWBZIJlkbt
- kApW5dfOmXotkgbDCfZvmF9DcQD4xI+VvFfBSptjVVDt/v7mTGKDmxlHKt3mEQR1yFGPBX9Uv
- 9QqdEvS1zoGJX1yx/Xof/RyGJ9m2rLqHCczEEjq+nJQalZ2ahFPpJP7786w5BrLBPfT335V25
- eDqb/mRUIExjAoWwIvTBm18ILDT8Y1epwb517M+JL1Q3lowdWJ+lljYfhmttU2aeQy6v9G89A
- Zecfx16I8904t9hDlajcRNWcdwlS7nKQFaE8aEykKNE1gAPvQKpcQc/7HrVe54MULlJuxGZUn
- ZT/e4tWI6xeGTDX8G+hTzL6Q7GW2ii3FYOWPJi0VnlTSksUEuofrWF+D+y+5e2u6mw+MA0dRB
- XawcKbiiHL0DWqao98htZg0vBTmDBWBM7vheVgBiLW4w9NF3sB1QCHDFiHug5U6U5aAVcByIg
- kyTnjhoCrsETaSnJ3C5iO47RtWuyYH8ZG5DB548/HKqZGkX7ao5gSUwQtZPy6lUd9V+OplrFm
- Z8cy16G3jt2ESPoz5Yg0fky6p/d2FqDdLqQD3rtCFoAU3jsDrJmFzX9EolHceIgpvnWOFSBBQ
- JHwzfuH2eTXYFu0k7TbyPnwsbTGk/nUy/WpPdG3wxODJzogjHzRHGdspD9MvQloQf1CrHOr4T
- mX7QPegqryFsJjW3GXbqKI0nE0NBMMt/RZbWxuWYinkXHZzo1V0E8pF1V9++GUs3hKicP6Var
- +IBdo2VmXG44SjMsSEfzgukNmUubm0i83duTuR28a9ZFJDO4iw8kmG1b6f1lAr3/WcGAsiiHh
- EF7egx/W13cyVId98
+X-UI-Out-Filterresults: notjunk:1;V03:K0:6IZ8qZTynSA=:rdftmXCRK6lrMXdcZ2kBBR
+ 66L02Y1w7MH0YqlTJlJp79nxfDQ1JhynkxAbhayq7Z+vAW0ydD7v04LohULbCSQPEqF2eqVWJ
+ dVN9voU5Ps3fN7kWMp2a/1WQf869Y89E+nHTbvRxhrDHkbC0redmqOMiMdO7HUXnOg8s43zYW
+ 3ik3RGYvnocOcM0QS+OfF7EwbDXAWKHcB7nmpSf1Z4dnKVqv+QuiMlcO82tZOatOUJc76OY0w
+ sLXxD0YEorGkvDZnNM9r3GQ97lifOdqYRPBhn/5TN/dzqFYd3GYnpr03lE94nZoqJBqjMVQHy
+ Hv0aZN4CcN0jEVYz0Tma6zg6HAOO5LtuxEQbTnEnPXr5I7UfKO2xKTaWpAsfUWHvmLOan+ocT
+ TkA0wziTaBK1JmutPe2y6HWyeuve9O3Cn4mtllNbdibmzcUGxqj5C9VBW5E4Pz41KNOHzo/ll
+ 6Hu5nVfq5QCEOQkhGInuPpqFrZ2QJbeG05KPdktsngv/RlAckkSz6vIDd/Kl+IWanrgUWPMpx
+ MES0/I5q1Ebjfea4MCoG96DxiEVgjK5+O7L4fQfPzoehlSdmwZXyDAsODRi6LSKjg9rIUougn
+ qL6RsnqTlDSz1CRZXQwSgo7h6v+JlhSd3yocrhEfuQ22XyM0gGNZLQ7byhBcNe/Po0bxsMG+q
+ 1cOe/s+vrUQbwnqMAt3kN/rSi+GWp17qraMba+pNjTAelZYjYEisG01+NbiL8wrjqbZRrGL2k
+ ra7THHzyUX+4xdsdV+uiR1Jp+/7ScEE3efiP8CeoX3o8pMR3YWrpq3oXTgvbWwxLYvtXNDvBP
+ su+nyo/3zFXLsZqJYozwu5sW5e3x49BWirKbhduufPflG7O8fvexYaHWueN70oz93I5zEHrVV
+ rTn/hS5YeFtEcAxjpTtqKGy9WhWC6x1/16fnCw3fM7MrIC5txVppg+hms0SP206BKtzabwk3e
+ jfyWST4+jcDuYamB+l2UjYRS17qw2yLpILah29h9lQhR1KcfUxjpbKwYRQ2oapTBiOozcOUBg
+ j1614YvYiU08rrKNam0ziRM/BSjobc/0AYDjE637vvRtDp9DTcRY9t6nLVVIuYrEUb1MPSF8k
+ G3MEF9skRLEPzz4xnP3YIBNV/8f4qWSUmpqcy+5xp5mReleZGAx1Jx3oTgaTJf9VzWxJPxplp
+ FJ88Lv40uSgJ7s4XSgvwzKMA5vvSMOaYGkoKVjkDimpMqC+ukkOj8kh/HxcOqvLqZ/uHk5HSG
+ 7VeZTXBRJMFI6puoN
 X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_074100_688627_4DB689D8 
-X-CRM114-Status: UNSURE (   6.84  )
+X-CRM114-CacheID: sfid-20200601_230102_773634_E238F836 
+X-CRM114-Status: UNSURE (   4.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -149,23 +150,15 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: David Howells <dhowells@redhat.com>, linux-kernel@vger.kernel.org,
- Yi Zhang <yi.zhang@huawei.com>
+Cc: linux-kernel@vger.kernel.org, Yi Zhang <yi.zhang@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-> sysnames should be freed after refcnt being decreased to zero in
-> afs_put_sysnames().
+> Cc: <Stable@vger.kernel.org> # v4.17+
 
-How do you think about a wording variant like the following?
-
-   Release the sysnames object after its reference counter was decreased
-   to zero.
-
-
-Will it matter to mention the size of the data structure "afs_sysnames"?
+Are capital letters tolerated for this special email address?
 
 Regards,
 Markus
