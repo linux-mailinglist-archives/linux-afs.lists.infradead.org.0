@@ -2,92 +2,70 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F85A1F0389
-	for <lists+linux-afs@lfdr.de>; Sat,  6 Jun 2020 01:34:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D36321F03A6
+	for <lists+linux-afs@lfdr.de>; Sat,  6 Jun 2020 01:50:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=exYKLrz33bg/Qpt7F6kya8gLl2hTAMNiD22ddEO85L0=; b=SrmYFrC7p+OZUr
-	C43reNUSaOCRf9M3ydlgizSVAsfFUGO7uDewsJH71e8xytH6BY+qd3F+ND452ODsDLU1d1NZ0AvE7
-	uBl0ERDUhQiSHhH40YmC8PqsoNYpAbI3cQNipnZmierA2BH5OQD55LF2rDNi48VFsrVOK3vtmz6wy
-	USboSzIDOdeVw0cJ8g97+s7eQFa1hIKpq8MqUww+YwRTypn6RYyeRA3opmOXv6tin6eGvvVNNkF7G
-	kOjM4xQ31fvJd3PvV1cdZuBurh+GO/Fj9aAiJ4x0AB0Illaq1QZBNUu14dbJnkS7j8XRsHvh9qCRs
-	EndgflcXyhGkOm979c6w==;
+	List-Owner; bh=RE57RIgSsgJi10qPyscBF65yA/SN4fc+eFY00H0J+z8=; b=IM48t7Liip0hNM
+	7ZHP8dZIGS1t45bvY/ZC9dLHIO7SjB8gH3y4t/foY6NssKLQRDuxmlPQXvJdQpDSjp2TgDCp4NPcS
+	4JFpnDkhy4fvg+MyO77kseZf9rQTd5nWgVoVlxmh+83gGyNS3mv5By2smxWliF1js+ng7Kp5nzjDZ
+	MEFXneucOTogtgwZC9NfxbdJeazSxkUB9GYu/Q/Qxxt1lJnLbUjUAhY5DjUNHhwksoVPRw8EwRIUO
+	zC7EBFI+++DVcugbqPjm+1bVwKDaVAtAvIHrZfZOhOVCXwNHn1Ze29aJ77xgGCRjkMZZTDWDk0N/T
+	QTKByvCiK3mwk5JGD1JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhLqa-0004IC-AL; Fri, 05 Jun 2020 23:34:00 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jhM6B-0006dS-Dh; Fri, 05 Jun 2020 23:50:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhLqW-0004Gx-IP
- for linux-afs@lists.infradead.org; Fri, 05 Jun 2020 23:33:58 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j18so681915lji.2
- for <linux-afs@lists.infradead.org>; Fri, 05 Jun 2020 16:33:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ClAVloF54JIqrc+m+0ATOT37Q30+IcoX9urgdaodTTM=;
- b=HenIB/3KEnX6g7OVHqu+kSDDosed1DGCBW9BlMitBhtXu1qUftlTh0ByQYgIxxzPaJ
- v1BjKRoudpt4MRAW4isZGAyfXDO8MooDq35/5ak4ac6HzntoEvXpzd5SVBQKA2dAjkgz
- VEzncixfstBUoWrWg53pxL1hUYFIG0E2zxjFk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ClAVloF54JIqrc+m+0ATOT37Q30+IcoX9urgdaodTTM=;
- b=fMRxt4vF+Wb3zLqPw/hUFLT6rdYvm/dISxvXvkD3tRXm9UAlwYuFtxr7/q4puloSsa
- KnoOQvAoYbhThHmfC5Rm7mLbf+kyS0FQRD7M9iBD3fI4WtKbMj8VEy4ANFdZRvJnK7VF
- 3A48b998NGLx7vQT2+CdDwWh5NRrTyF4Yr3wM8A6n/4Nc0VuyWIwpR4t8+Tf8rqcSV6j
- QQxfhrWQDQIGBrfK7q7m+XIugIFrpYMnnkM/6JTYAfHdfW/X3sXwlj5HnadLBec1WNJn
- Pw6zWLGm+WNLgAUnxPb60aIA5KJgptIB+t0xEbwg21/el2x8TgNAAgd4yDnR4mR59J8P
- B11A==
-X-Gm-Message-State: AOAM530Eutb9Hcoutzj425slLbY9vBcX2+F9oY1dyJ8R/nrwGi3NrJ94
- JvIIqw/ywtxbenWCuzzhMRLv18/Ofnc=
-X-Google-Smtp-Source: ABdhPJyiZZnFuF1xIchcOfyWjxGnmScDf+S3GCCTF/1LHbluTCEmh3OH5c2Vbjin77nQH6OvlJgvUA==
-X-Received: by 2002:a2e:a548:: with SMTP id e8mr6096096ljn.76.1591400033796;
- Fri, 05 Jun 2020 16:33:53 -0700 (PDT)
-Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com.
- [209.85.208.170])
- by smtp.gmail.com with ESMTPSA id r13sm1294080ljh.66.2020.06.05.16.33.52
- for <linux-afs@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 05 Jun 2020 16:33:52 -0700 (PDT)
-Received: by mail-lj1-f170.google.com with SMTP id y11so12079193ljm.9
- for <linux-afs@lists.infradead.org>; Fri, 05 Jun 2020 16:33:52 -0700 (PDT)
-X-Received: by 2002:a2e:b5d7:: with SMTP id g23mr5449089ljn.70.1591400031826; 
- Fri, 05 Jun 2020 16:33:51 -0700 (PDT)
-MIME-Version: 1.0
-References: <2240660.1591289899@warthog.procyon.org.uk>
-In-Reply-To: <2240660.1591289899@warthog.procyon.org.uk>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Fri, 5 Jun 2020 16:33:35 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wgsxbn2QamOL_xu0F8srnpmsAZ-k6eJMCFazAKOcJ4t9w@mail.gmail.com>
-Message-ID: <CAHk-=wgsxbn2QamOL_xu0F8srnpmsAZ-k6eJMCFazAKOcJ4t9w@mail.gmail.com>
+ id 1jhM67-0005iO-UN
+ for linux-afs@lists.infradead.org; Fri, 05 Jun 2020 23:50:05 +0000
 Subject: Re: [GIT PULL] afs: Improvements for v5.8
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591401003;
+ bh=h0dhn9foy0oHVA9lAWRv6a28GFTGZK6615/30Nc0DcY=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=zc2VosVc5lbf2pyLupUAZhcn6FFli1byPX4c4hPU05z7P4x6WqXS2/jg5XBhROT0x
+ k9t62ceWhFsQ55OKBVtFfvN8OHjFUf9D8//6/10jz+q/MSwu6fc0XTat5Kow3RWESD
+ vaQbLX1rqUrRlWPYSgj/8n5l5P9vEJxcfAqwrkhI=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <2240660.1591289899@warthog.procyon.org.uk>
+References: <2240660.1591289899@warthog.procyon.org.uk>
+X-PR-Tracked-List-Id: <linux-fsdevel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <2240660.1591289899@warthog.procyon.org.uk>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git
+ tags/afs-next-20200604
+X-PR-Tracked-Commit-Id: 8409f67b6437c4b327ee95a71081b9c7bfee0b00
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 9daa0a27a0bce6596be287fb1df372ff80bb1087
+Message-Id: <159140100342.11239.8868355253372056432.pr-tracker-bot@kernel.org>
+Date: Fri, 05 Jun 2020 23:50:03 +0000
 To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_163356_613617_05587F37 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20200605_165004_006758_7583EFBD 
+X-CRM114-Status: UNSURE (   1.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,27 +78,27 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: Konstantin Khlebnikov <khlebnikov@yandex-team.ru>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Al Viro <viro@zeniv.linux.org.uk>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Ext4 Developers List <linux-ext4@vger.kernel.org>,
- linux-afs@lists.infradead.org
+ linux-kernel@vger.kernel.org, dhowells@redhat.com, viro@zeniv.linux.org.uk,
+ linux-fsdevel@vger.kernel.org, linux-ext4@vger.kernel.org,
+ torvalds@linux-foundation.org, linux-afs@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Thu, Jun 4, 2020 at 9:58 AM David Howells <dhowells@redhat.com> wrote:
->
->  (4) Improve Ext4's time updating.  Konstantin Khlebnikov said "For now,
->      I've plugged this issue with try-lock in ext4 lazy time update.  This
->      solution is much better."
+The pull request you sent on Thu, 04 Jun 2020 17:58:19 +0100:
 
-It would have been good to get acks on this from the ext4 people, but
-I've merged this as-is (but it's still going through my sanity tests,
-so if that triggers something it might get unpulled again).
+> git://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git tags/afs-next-20200604
 
-                  Linus
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/9daa0a27a0bce6596be287fb1df372ff80bb1087
+
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-afs mailing list
