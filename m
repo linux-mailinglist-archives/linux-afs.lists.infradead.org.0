@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2B491F25C7
+	by mail.lfdr.de (Postfix) with ESMTPS id CAD321F25C6
 	for <lists+linux-afs@lfdr.de>; Tue,  9 Jun 2020 01:30:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,39 +10,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w3akYoVWV864lgNRyCk/s58fOZZ929EfE18I4eyOwhs=; b=IxtVxPSVbzXzr8
-	EIu3F11YR2SE1TrYphgevFFSsjE8eR0lm55scoCqceSxkREJboLovO1k3QL6WQGmvqjxips50+bq+
-	6DJl7eLCS89nnSqrcNTmQ0JoLSF0hE5rH4QSuEvDhc/NRpBUpBdT/Y7Orec9/pNrXUJCHCAlRDofR
-	d1PgLmP+0NMy0mH8TrWvIwQR4SwbiLpXS1ATebrYIbYhBgziKUcfepglpkTsZdVvG4IlaCwJfYyKS
-	ySyTMGp60CvJmAJgFlgC0xpe9H2AtSc3eR8Q7fyQLWjaM/KhUwZheljQB3Y1flHbMByx6Z8EwjpWE
-	Z1syWeP9+fcUbQ1BIP+Q==;
+	List-Owner; bh=JTd1TF36hqrAS2loLpsGGgaUrUkzRF78QtPAUTJ7SBo=; b=Gd96n2AuRxdsUS
+	775bqYz901i1xmUYrSArL2ZpCVmV0X9ztLXHCg4B4297s6paMG42FjXG4463Ch9Amr1XmEJzp5bkt
+	7Dis0MccjuUUmv/lzgbE1MDhwRBjdLzO++Kk/3KM8920sHqmJwTf8XUX+s+88CyEH0ntPYwOY/7XH
+	nczVFBtUE4kwFrHFe9Y3qHlQlFoV0K9zKpLRaOlz0kMQx5qc2qGNEO9KTwyOmmlaegXJ6B+PIZ+VZ
+	EugEEZz3fwUJAKlcMT4x8Ct+ZsfVoXW8tulQAxgfCT4DWg0swrOag3uNgiErIQdAw7ECdoLcDc1AG
+	kHKqhwxJEgbGebrzf/6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRDr-0004mq-Eu; Mon, 08 Jun 2020 23:30:31 +0000
+	id 1jiRDs-0004o3-IX; Mon, 08 Jun 2020 23:30:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQzx-000354-1b
- for linux-afs@lists.infradead.org; Mon, 08 Jun 2020 23:16:19 +0000
+ id 1jiR02-0003B1-Lq
+ for linux-afs@lists.infradead.org; Mon, 08 Jun 2020 23:16:31 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2908120814;
- Mon,  8 Jun 2020 23:16:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A4CC2083E;
+ Mon,  8 Jun 2020 23:16:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658168;
- bh=A+2JaOpuAnOIT+qANT0NjlO+6c2TDnl9rdUJ6hBS1E0=;
+ s=default; t=1591658174;
+ bh=Oqu2yOvrwuOCvuThZiTy/2R+0TTTq6zMYRIblVN+r5c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RRMt6LsewQj/+j+L90xUsFbMLYo+9UiD69tvkvvxaGSMIZjSDw4amKhHPZTWZ+Iqe
- RUyQUT8NO10V2ulNKnXzTq1TG8+y+E7f6dZXK3csNoqMKWi/PqKuUH+iz06DzPQyfr
- qyjEX6HE8q//VbnxZ0Z6LGmHiD97v9a1QpgIIZTI=
+ b=abzJ4hCoxwQ8n7kqHrKIm8u5GRMpHuoOwie1z+NtFFgq7bqrY0Brl3eIgETuAhF5M
+ tX+wNo5uv4G3+ivUFOH8pjFA6NZO/48ji3QbTXEvxZVBFTWign/6de06YPWTWMric3
+ q2K8rupVf+xQShkCLKHOMIieaO7d7fW6H36nJeVc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 195/606] rxrpc: Fix a memory leak in
- rxkad_verify_response()
-Date: Mon,  8 Jun 2020 19:05:20 -0400
-Message-Id: <20200608231211.3363633-195-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 200/606] rxrpc: Trace discarded ACKs
+Date: Mon,  8 Jun 2020 19:05:25 -0400
+Message-Id: <20200608231211.3363633-200-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231211.3363633-1-sashal@kernel.org>
 References: <20200608231211.3363633-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161609_228766_73FADAFE 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20200608_161615_685125_8C2B1810 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,53 +79,105 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- David Howells <dhowells@redhat.com>, Markus Elfring <Markus.Elfring@web.de>,
- Qiushi Wu <wu000273@umn.edu>, netdev@vger.kernel.org,
- linux-afs@lists.infradead.org
+Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
+ linux-afs@lists.infradead.org, netdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: Qiushi Wu <wu000273@umn.edu>
+From: David Howells <dhowells@redhat.com>
 
-commit f45d01f4f30b53c3a0a1c6c1c154acb7ff74ab9f upstream.
+[ Upstream commit d1f129470e6cb79b8b97fecd12689f6eb49e27fe ]
 
-A ticket was not released after a call of the function
-"rxkad_decrypt_ticket" failed. Thus replace the jump target
-"temporary_error_free_resp" by "temporary_error_free_ticket".
+Add a tracepoint to track received ACKs that are discarded due to being
+outside of the Tx window.
 
-Fixes: 8c2f826dc3631 ("rxrpc: Don't put crypto buffers on the stack")
-Signed-off-by: Qiushi Wu <wu000273@umn.edu>
 Signed-off-by: David Howells <dhowells@redhat.com>
-cc: Markus Elfring <Markus.Elfring@web.de>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- net/rxrpc/rxkad.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ include/trace/events/rxrpc.h | 35 +++++++++++++++++++++++++++++++++++
+ net/rxrpc/input.c            | 12 ++++++++++--
+ 2 files changed, 45 insertions(+), 2 deletions(-)
 
-diff --git a/net/rxrpc/rxkad.c b/net/rxrpc/rxkad.c
-index 098f1f9ec53b..52a24d4ef5d8 100644
---- a/net/rxrpc/rxkad.c
-+++ b/net/rxrpc/rxkad.c
-@@ -1148,7 +1148,7 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
- 	ret = rxkad_decrypt_ticket(conn, skb, ticket, ticket_len, &session_key,
- 				   &expiry, _abort_code);
- 	if (ret < 0)
--		goto temporary_error_free_resp;
-+		goto temporary_error_free_ticket;
+diff --git a/include/trace/events/rxrpc.h b/include/trace/events/rxrpc.h
+index ab75f261f04a..ba9efdc848f9 100644
+--- a/include/trace/events/rxrpc.h
++++ b/include/trace/events/rxrpc.h
+@@ -1541,6 +1541,41 @@ TRACE_EVENT(rxrpc_notify_socket,
+ 		      __entry->serial)
+ 	    );
  
- 	/* use the session key from inside the ticket to decrypt the
- 	 * response */
-@@ -1230,7 +1230,6 @@ static int rxkad_verify_response(struct rxrpc_connection *conn,
++TRACE_EVENT(rxrpc_rx_discard_ack,
++	    TP_PROTO(unsigned int debug_id, rxrpc_serial_t serial,
++		     rxrpc_seq_t first_soft_ack, rxrpc_seq_t call_ackr_first,
++		     rxrpc_seq_t prev_pkt, rxrpc_seq_t call_ackr_prev),
++
++	    TP_ARGS(debug_id, serial, first_soft_ack, call_ackr_first,
++		    prev_pkt, call_ackr_prev),
++
++	    TP_STRUCT__entry(
++		    __field(unsigned int,	debug_id	)
++		    __field(rxrpc_serial_t,	serial		)
++		    __field(rxrpc_seq_t,	first_soft_ack)
++		    __field(rxrpc_seq_t,	call_ackr_first)
++		    __field(rxrpc_seq_t,	prev_pkt)
++		    __field(rxrpc_seq_t,	call_ackr_prev)
++			     ),
++
++	    TP_fast_assign(
++		    __entry->debug_id		= debug_id;
++		    __entry->serial		= serial;
++		    __entry->first_soft_ack	= first_soft_ack;
++		    __entry->call_ackr_first	= call_ackr_first;
++		    __entry->prev_pkt		= prev_pkt;
++		    __entry->call_ackr_prev	= call_ackr_prev;
++			   ),
++
++	    TP_printk("c=%08x r=%08x %08x<%08x %08x<%08x",
++		      __entry->debug_id,
++		      __entry->serial,
++		      __entry->first_soft_ack,
++		      __entry->call_ackr_first,
++		      __entry->prev_pkt,
++		      __entry->call_ackr_prev)
++	    );
++
+ #endif /* _TRACE_RXRPC_H */
  
- temporary_error_free_ticket:
- 	kfree(ticket);
--temporary_error_free_resp:
- 	kfree(response);
- temporary_error:
- 	/* Ignore the response packet if we got a temporary error such as
+ /* This part must be outside protection */
+diff --git a/net/rxrpc/input.c b/net/rxrpc/input.c
+index e438bfd3fdf5..2f22f082a66c 100644
+--- a/net/rxrpc/input.c
++++ b/net/rxrpc/input.c
+@@ -866,8 +866,12 @@ static void rxrpc_input_ack(struct rxrpc_call *call, struct sk_buff *skb)
+ 
+ 	/* Discard any out-of-order or duplicate ACKs (outside lock). */
+ 	if (before(first_soft_ack, call->ackr_first_seq) ||
+-	    before(prev_pkt, call->ackr_prev_seq))
++	    before(prev_pkt, call->ackr_prev_seq)) {
++		trace_rxrpc_rx_discard_ack(call->debug_id, sp->hdr.serial,
++					   first_soft_ack, call->ackr_first_seq,
++					   prev_pkt, call->ackr_prev_seq);
+ 		return;
++	}
+ 
+ 	buf.info.rxMTU = 0;
+ 	ioffset = offset + nr_acks + 3;
+@@ -879,8 +883,12 @@ static void rxrpc_input_ack(struct rxrpc_call *call, struct sk_buff *skb)
+ 
+ 	/* Discard any out-of-order or duplicate ACKs (inside lock). */
+ 	if (before(first_soft_ack, call->ackr_first_seq) ||
+-	    before(prev_pkt, call->ackr_prev_seq))
++	    before(prev_pkt, call->ackr_prev_seq)) {
++		trace_rxrpc_rx_discard_ack(call->debug_id, sp->hdr.serial,
++					   first_soft_ack, call->ackr_first_seq,
++					   prev_pkt, call->ackr_prev_seq);
+ 		goto out;
++	}
+ 	call->acks_latest_ts = skb->tstamp;
+ 
+ 	call->ackr_first_seq = first_soft_ack;
 -- 
 2.25.1
 
