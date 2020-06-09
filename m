@@ -2,69 +2,67 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1C301F4088
-	for <lists+linux-afs@lfdr.de>; Tue,  9 Jun 2020 18:19:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 591E61F41C3
+	for <lists+linux-afs@lfdr.de>; Tue,  9 Jun 2020 19:09:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y8pdr2skMoqaRLBcpZR0ab6YQVtjh7SmoUoyBHYIPEM=; b=GLH5phCTJ2A2O+
-	S5HTgxGB9aCKC15r9a4EPaJyuw3sXsdjwYa0IuB3EjvJ4EboM8cbtLqiKbIf4X0FwjW2APZMeVG21
-	JY5QCMUdgJuZq4BOdZ7wyUbKfvRa8Nmr5Sk5Z4WVSFvksjCu9BYPwTIW9rUs1zLkE2hzNba7dPB7D
-	jg5DOCsd65kPzwlotEDtMgULDF3Ta1HVdeOYo5qwR+aHV7G32Uh4QVxNI3T72kCUHqk9BRou4HnK8
-	vXT1ZP03WaeHz/uwBIeHr14xqZfJ46bxsYYPamIcbDw2aJ7SYPPkCeYotn9NaD24jnbLoqxAMK5m9
-	bYxdg6f2X0QMVLhVFadA==;
+	List-Owner; bh=TD4tzWbKfwv8YXoWEZ/Ayir8iKDMyjDhVbf+RlivVNY=; b=bfrqKC+dJzc+hp
+	EQow7+N6tvizIX1Wr7k6fUELnqUwJCysxqm9WhkbEpjZCcCsrFrJJ1hX2WqWYvZklOG1ioQATa+lA
+	rThg+icI38EimL15hQun/17naPbPiyj9RrU1TsbTX8xejDZMZFD35Lb+XRP6IrtgHpKI+LbR1rO3E
+	m4j+oGSDvFUaKBNS6vniauNys24wYDPPcq1W/mmsQtwhd9Qql9iXOjt20a24UgIa1WU7ixfRpCwNJ
+	W1RD680huOAQ0HMEy7vrE/ZyRdqG0Ai/U+dZJNxC1jZ2KxwEiGfL3ZaDYJEhn0ebvqDkOHsf/E1KG
+	ziNYfnQiGEIafBqvAo/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jigy9-0003K7-UX; Tue, 09 Jun 2020 16:19:21 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jihkB-0004Kb-3G; Tue, 09 Jun 2020 17:08:59 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jigy7-0003Jf-RU
- for linux-afs@lists.infradead.org; Tue, 09 Jun 2020 16:19:21 +0000
-Received: by mail-pg1-x544.google.com with SMTP id r10so10497006pgv.8
- for <linux-afs@lists.infradead.org>; Tue, 09 Jun 2020 09:19:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=ueyMjrt+cVmVw+FUtBmPoU2yNggdKKN+3InYLsTempU=;
- b=RZa4k0gdX/BrdYRuu5UbU3mCtRg5M7tITfvtIafMhGK1/7W6JOMfDwmDndeL2mMC31
- yNzF44u98E7F1ppN0a4sYDU8qBATLfUt2Vty8tAEUAUccnACIfrgaxemDDEGfchcknaB
- 393Rn4PtQDLfi9We9ITW6jDW26mZCgdYJxzh0=
+ id 1jihk8-0004Jv-R6
+ for linux-afs@lists.infradead.org; Tue, 09 Jun 2020 17:08:57 +0000
+Received: by mail-ed1-x542.google.com with SMTP id m21so16945999eds.13
+ for <linux-afs@lists.infradead.org>; Tue, 09 Jun 2020 10:08:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4p5Irg6Dzn2qLwF5HDdUraLZe46R8G3poyQBaNHtlzs=;
+ b=kNlpBp6u6KVQEvJ4vmJM0+s8WDGqNnE4bKe6zBVx6HH31p4KJOpHoIspUOe4UlWv/q
+ Md1608OMu1hHqQ6MV0jgH6BttxuQ7f75/wW2oZAPWr41bB0SotscqivF0NFngZ3HyPp3
+ f55S0Q5aHP9WiWMFPW+8P/CgLC5S1OkOSX13ZjhAr0ztKHuWFnkVozDpFWHsBtQLO42T
+ qwjkZVJ1iJXFdgkP0tNy1gaKle7IVaY8ADUM8tAgPycpRf0o2+jj5JTTBq+SN2TjI6SX
+ TZacSnO7breOdu/e1yPCbSiF74Ywdi8kie1YA4r4zKQ/KWWJjww9xzBw0UcajZ1ph2C8
+ RV9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=ueyMjrt+cVmVw+FUtBmPoU2yNggdKKN+3InYLsTempU=;
- b=R+9FZGzIW2upRCU3H11fZCRLFcFmJd1Fyf2LDonEJ5812FOc5KCrEC0ldGYD7dX95/
- lwS1e3H5BWjyHoTkz4/YMjn3ZYt0NY85+vc9S2U0eQZglhb9m9FOJLGmuHHOMCXIqjyl
- 6xQ+Oi3KpszbZgziAveoLYshjovvH8BA7MbL+JPNcUNW9suFoCydxiBK0HVR+rDmafLv
- ifNIqTMXpGrndQGVH0yQH1/ChlRFKL9VdHpsHlT9a2y+vpYZz5QBaraX8OWZzQ4XO6Jn
- TZHaxLbARHFni6ZPQUqQVqdGJdGgt9W+oF26Lj1ab379aCwf5u3P6EswarGrte1yds55
- R95A==
-X-Gm-Message-State: AOAM533zk2tSARAaweZPRaO0oCCiq3aGdnYJmWBEixO6zsG6qDDi53h+
- XoU9CMDg8mLoXOx9COjzS80lrdZ38NVyRg==
-X-Google-Smtp-Source: ABdhPJzE6yGQaAHR9+5KrWHmMMPB2+bwupzZamf+a74907NKzb6ugUkxgWCFch7ofwWEXhGReam42Q==
-X-Received: by 2002:a63:cc12:: with SMTP id x18mr24710834pgf.140.1591719558589; 
- Tue, 09 Jun 2020 09:19:18 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id j2sm10367405pfb.73.2020.06.09.09.19.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 09 Jun 2020 09:19:17 -0700 (PDT)
-Date: Tue, 9 Jun 2020 09:19:16 -0700
-From: Kees Cook <keescook@chromium.org>
-To: David Howells <dhowells@redhat.com>
-Subject: Re: [PATCH 3/6] afs: Fix use of BUG()
-Message-ID: <202006090919.3FAC6C7A@keescook>
-References: <159171918506.3038039.10915051218779105094.stgit@warthog.procyon.org.uk>
- <159171920664.3038039.18059422273265286162.stgit@warthog.procyon.org.uk>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4p5Irg6Dzn2qLwF5HDdUraLZe46R8G3poyQBaNHtlzs=;
+ b=spIwvFExqus5TJdLyQlmu23R2Z0cOi2M47y5w3LT6HnReIvSLAjP1asYWJICmmI0fb
+ FZO4SGNzN92SFFsWAfwb/qpvSbsAojsrgDAXui7mLBCpajHQmHFYD0vuiTTyb41vfwnD
+ HFxGM7oBd4O5/yO8Qw4/3gNRFLtyCpvFMOZWjJpztWkX6w6rrNeOVJu91hK60eYZKdD5
+ /ouDHo3jY3MH2tSeTxstSyelJxWOUmAYGHLcvJrdbjdN5rgVK1HUoMtzJDxn+pF9VYUD
+ RyfZVvbxVAtLyueES3H6LPsKIWIRYvof7cJuyBsXf2dQMPpxWzilxY0UVgc147GMkQ7D
+ JfLg==
+X-Gm-Message-State: AOAM53343Gg3py2/c+m+3Pj/7VHUPZNT9brhzE6XAlYmKovEVsPMPipm
+ yRpaA4mvBvXAwKc3N99220O5SNQRB8NLriqZNCY=
+X-Google-Smtp-Source: ABdhPJxIQpWRQjLFGlHZE6AbU18+SSFFpS2P6+r3lJPt3pUdjEciqDF05PyFD/cJ4DYgDVbiZ4EKc1Lw3JNlF4MA15E=
+X-Received: by 2002:a05:6402:1ca2:: with SMTP id
+ cz2mr26766668edb.15.1591722534934; 
+ Tue, 09 Jun 2020 10:08:54 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <159171920664.3038039.18059422273265286162.stgit@warthog.procyon.org.uk>
+References: <159171918506.3038039.10915051218779105094.stgit@warthog.procyon.org.uk>
+ <159171921360.3038039.10494245358653942664.stgit@warthog.procyon.org.uk>
+In-Reply-To: <159171921360.3038039.10494245358653942664.stgit@warthog.procyon.org.uk>
+From: Marc Dionne <marc.c.dionne@gmail.com>
+Date: Tue, 9 Jun 2020 14:08:43 -0300
+Message-ID: <CAB9dFdv_a_EoWOAaULD3fJpmpZdUbquKAFV7=LaZ1udAuDkFEA@mail.gmail.com>
+Subject: Re: [PATCH 4/6] afs: Fix debugging statements with %px to be %p
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_091919_891508_E01CD32D 
-X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-CacheID: sfid-20200609_100856_875626_F0B7A481 
+X-CRM114-Status: UNSURE (   8.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,8 +70,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [marc.c.dionne[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,32 +94,23 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fsdevel@vger.kernel.org, linux-afs@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: linux-fsdevel@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-afs@lists.infradead.org, Kees Cook <keescook@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-On Tue, Jun 09, 2020 at 05:13:26PM +0100, David Howells wrote:
-> Fix afs_compare_addrs() to use WARN_ON(1) instead of BUG() and return 1
-> (ie. srx_a > srx_b).
-> 
-> There's no point trying to put actual error handling in as this should not
-> occur unless a new transport address type is allowed by AFS.  And even if
-> it does, in this particular case, it'll just never match unknown types of
-> addresses.  This BUG() was more of a 'you need to add a case here'
-> indicator.
-> 
-> Reported-by: Kees Cook <keescook@chromium.org>
-> Signed-off-by: David Howells <dhowells@redhat.com>
+On Tue, Jun 9, 2020 at 1:13 PM David Howells <dhowells@redhat.com> wrote:
+>
+> Fix a couple of %px to be %x in debugging statements.
+>
 
-Reviewed-by: Kees Cook <keescook@chromium.org>
+Nothing critical, but as in the patch subject this should be "%px to
+be %p", not %x.
 
-Thanks!
-
--- 
-Kees Cook
+Marc
 
 _______________________________________________
 linux-afs mailing list
