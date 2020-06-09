@@ -2,69 +2,69 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEA6F1F4064
-	for <lists+linux-afs@lfdr.de>; Tue,  9 Jun 2020 18:13:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CF761F4065
+	for <lists+linux-afs@lfdr.de>; Tue,  9 Jun 2020 18:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lp+ntbmNgye6PPPByaGskWu+jv0XFdnBAVX/+qqKRSw=; b=Ss5SkbeYu1Jh2Q
-	qiSQ1orykrKB8uVSralphm+yFlevUKKIpf/4PQQm31XfFKHHpRlRFkyM2uvtj64LpKH41qUIJ83yN
-	PGtZczNZwb5CQjz0vFw/1/UzGJo78QuRiPoC7GM/quK5E2KvWsK8hk60GjT2IMMCwoLoEvfl+r3Ir
-	pXifN3ln66IDap8pglgFXLiPBwoGBM9pZM04mT3U/Mq5oXZJURObmyET8+HbKVtONqDy+dYvUM3Kg
-	GjgoIZGjdbWGa02wPLpPjtR7QsjjuhV5XpF7QMtLEsKKE2udKJ+H3ILOW7Z1VFDV5FxArTpjXqo7k
-	OIzFsKIAzCE98EHa/SCA==;
+	List-Owner; bh=Ttf1+a8BYS2IuDpmQrl+a0fenvy+MN+VZIzHiMxfdWE=; b=aeBIgCEX3T4j9j
+	i0HXRb8LczrZU9yLcRvNB9VZ+2dLs6iGsO/9BsupkyDGrMz7hsbPw/iux9YvQz1Tw0BXNy7f6UZEm
+	OeTgTRYlWFWNrGI6Iv2zBF0ozlwvhzdI2Xfk3wTwn+ZXp22cUovYl9F9xcwFwUBzKdmP05p6Dh3HB
+	c4iSeoQXFw9/iBXxTAkKwzEulwbKgoPn6VKLQqxs8JOp8E96MR2vVUJTgYQOpmA3GcoiM653grU8w
+	40a+zlyBF38CjuNl9Lf0ZCHvjs/uRFxIhBjMvHSJM6UYYJz4GA7DZ7fJuXVzFVUGQA37Fekcr+Un9
+	E66wVN8tU4De1+rNYmwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jigsZ-0000O9-I6; Tue, 09 Jun 2020 16:13:35 +0000
+	id 1jigsg-0000RA-1p; Tue, 09 Jun 2020 16:13:42 +0000
 Received: from us-smtp-2.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jigsW-0000Ms-FI
- for linux-afs@lists.infradead.org; Tue, 09 Jun 2020 16:13:33 +0000
+ id 1jigsd-0000Pd-12
+ for linux-afs@lists.infradead.org; Tue, 09 Jun 2020 16:13:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591719211;
+ s=mimecast20190719; t=1591719218;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=JUGhyhAM3xv/+2IOQidLA1A/yKCzpzQ3bL3njFAMOIs=;
- b=AuCsk62RuvQXn+b/oFfkWd69/W1qb041PlHeWy0vBT4yWK1YgfrfPzyVhjNrt4TxOTZcgs
- CRmUwIKqeXCPk2icuUIex6thgl/mjAibdCqBPMnb2FnmdVevbaCNqlse2F2flY+cGTqOO9
- 5D2KyS3uqA9hUlTUWWPHYgUSdlzJP1c=
+ bh=U5NH97ZcwEvgcbggB5cCoStGuDG8xCBT7rh0SCpAdEE=;
+ b=QBaLCWN2SAD/Ur71KEW98lUqBj2fc4RFbqOSFr9V1HLII44OjmYe0oMWH5sKA937g4e1tK
+ SS+rnepxppRu3fZwmYCasVhPJXqp7dppSDHEklbSnF/wGp7PWO/LysbH7zsaCnJMYePK/G
+ M0MWrES+K80mfyeR3LfiJ1QUWXCOtVM=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-91-eumuOTcrNTyyjj6fSpoEKg-1; Tue, 09 Jun 2020 12:13:29 -0400
-X-MC-Unique: eumuOTcrNTyyjj6fSpoEKg-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
+ us-mta-389-wdOCNE_SOFmOVkJqu5AyHg-1; Tue, 09 Jun 2020 12:13:36 -0400
+X-MC-Unique: wdOCNE_SOFmOVkJqu5AyHg-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5E3FB8014D4;
- Tue,  9 Jun 2020 16:13:28 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3D3388014D4;
+ Tue,  9 Jun 2020 16:13:35 +0000 (UTC)
 Received: from warthog.procyon.org.uk (ovpn-114-66.rdu2.redhat.com
  [10.10.114.66])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6BD81768DA;
- Tue,  9 Jun 2020 16:13:27 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 5982360C87;
+ Tue,  9 Jun 2020 16:13:34 +0000 (UTC)
 Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
  Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
  Kingdom.
  Registered in England and Wales under Company Registration No. 3798903
-Subject: [PATCH 3/6] afs: Fix use of BUG()
+Subject: [PATCH 4/6] afs: Fix debugging statements with %px to be %p
 From: David Howells <dhowells@redhat.com>
 To: linux-afs@lists.infradead.org
-Date: Tue, 09 Jun 2020 17:13:26 +0100
-Message-ID: <159171920664.3038039.18059422273265286162.stgit@warthog.procyon.org.uk>
+Date: Tue, 09 Jun 2020 17:13:33 +0100
+Message-ID: <159171921360.3038039.10494245358653942664.stgit@warthog.procyon.org.uk>
 In-Reply-To: <159171918506.3038039.10915051218779105094.stgit@warthog.procyon.org.uk>
 References: <159171918506.3038039.10915051218779105094.stgit@warthog.procyon.org.uk>
 User-Agent: StGit/0.22
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200609_091332_582369_0962E38E 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200609_091339_166206_4897C490 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -103,36 +103,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Fix afs_compare_addrs() to use WARN_ON(1) instead of BUG() and return 1
-(ie. srx_a > srx_b).
+Fix a couple of %px to be %x in debugging statements.
 
-There's no point trying to put actual error handling in as this should not
-occur unless a new transport address type is allowed by AFS.  And even if
-it does, in this particular case, it'll just never match unknown types of
-addresses.  This BUG() was more of a 'you need to add a case here'
-indicator.
-
+Fixes: e49c7b2f6de7 ("afs: Build an abstraction around an "operation" concept")
+Fixes: 8a070a964877 ("afs: Detect cell aliases 1 - Cells with root volumes")
 Reported-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: David Howells <dhowells@redhat.com>
 ---
 
- fs/afs/vl_alias.c |    3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ fs/afs/dir.c      |    2 +-
+ fs/afs/vl_alias.c |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/fs/afs/dir.c b/fs/afs/dir.c
+index 25cbe0aeeec5..aa1d34141ea3 100644
+--- a/fs/afs/dir.c
++++ b/fs/afs/dir.c
+@@ -980,7 +980,7 @@ static struct dentry *afs_lookup(struct inode *dir, struct dentry *dentry,
+ 	if (!IS_ERR_OR_NULL(inode))
+ 		fid = AFS_FS_I(inode)->fid;
+ 
+-	_debug("splice %px", dentry->d_inode);
++	_debug("splice %p", dentry->d_inode);
+ 	d = d_splice_alias(inode, dentry);
+ 	if (!IS_ERR_OR_NULL(d)) {
+ 		d->d_fsdata = dentry->d_fsdata;
 diff --git a/fs/afs/vl_alias.c b/fs/afs/vl_alias.c
-index 093895c49c21..136fc6164e00 100644
+index 136fc6164e00..5082ef04e99c 100644
 --- a/fs/afs/vl_alias.c
 +++ b/fs/afs/vl_alias.c
-@@ -73,7 +73,8 @@ static int afs_compare_addrs(const struct sockaddr_rxrpc *srx_a,
- 	}
+@@ -28,7 +28,7 @@ static struct afs_volume *afs_sample_volume(struct afs_cell *cell, struct key *k
+ 	};
  
- 	default:
--		BUG();
-+		WARN_ON(1);
-+		diff = 1;
- 	}
+ 	volume = afs_create_volume(&fc);
+-	_leave(" = %px", volume);
++	_leave(" = %p", volume);
+ 	return volume;
+ }
  
- out:
 
 
 
