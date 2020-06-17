@@ -2,7 +2,7 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846721FCBF5
+	by mail.lfdr.de (Postfix) with ESMTPS id 918CB1FCBF6
 	for <lists+linux-afs@lfdr.de>; Wed, 17 Jun 2020 13:14:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,49 +10,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:
 	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qhF1pYLhH3vbW3JoMjegmWXuBJZz99rJRVJTXxZ9COM=; b=kg9
-	WICaz+Pc+vJdw1OfWggmN4G+T7XiQVqH9Z2xHkg3/GE2ppvE+xLfeuFu45YrCqNdxIZliT78YXNyh
-	zlT1PI1KrKz0sy/D7GUQ/vWsWs1f2hWtkuf36W6pmTh95HJMUjJclsiMwO39K2EXubPMYFaWLAfYs
-	RzR7wKrF0/+XGws1tbAFyNvAMyFJeuCE4Mx3djrRpVGU0gtoRUAdJW6CSHOJmr0zxEhCAZYnSspHC
-	2iWLrhYN8OpaHWIyKrTZikgSP/XXGWeg2U0TzfpJcUT31bUfSzb513TRBSqkJ7jLzedpCjY1T1gRM
-	/nudjbHitLo57sKe1007UkwjSXPdGtA==;
+	References:List-Owner; bh=71ZL81sM/KqS96ZVbIdQhXCgKoz/csZBiKki2lFjMV4=; b=pbM
+	7S54qf0KYMfjpApZWXwIDxjUOR2yL/eXsvkTOm8mOEJCCs8SfsC4P1gQIKxE8Su++kGYoZTzugEr1
+	7Vkf0VdacrqgYUT6X6QEa+MultWgnhUiyv5Vjzk4zW6Wi14m0IXfqd9IdVbrWarB9oQLDrl+PSSju
+	pzV6q9f07wnk4feRpMEiOBhFeYB5EBsEzcylFbgD4cE62ApyWwMAnklqLhknFO082suLPuxqNRDUT
+	PP+7U1hEaRwaeEuKO9NbNdTWbDc/dttVjmqXUF7dyT16bEp75oeD955S/cXNNVekxef5OpqVSxTog
+	J43QUBjuTItC9KASNCvto6lfrfmWniQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlW1M-0001tC-4r; Wed, 17 Jun 2020 11:14:20 +0000
-Received: from mail-io1-f69.google.com ([209.85.166.69])
+	id 1jlW1L-0001t1-TU; Wed, 17 Jun 2020 11:14:19 +0000
+Received: from mail-il1-f197.google.com ([209.85.166.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlW1H-0001rl-Sp
+ id 1jlW1H-0001rk-RL
  for linux-afs@lists.infradead.org; Wed, 17 Jun 2020 11:14:17 +0000
-Received: by mail-io1-f69.google.com with SMTP id r11so1525608ioa.12
- for <linux-afs@lists.infradead.org>; Wed, 17 Jun 2020 04:14:15 -0700 (PDT)
+Received: by mail-il1-f197.google.com with SMTP id c29so1245516ilf.20
+ for <linux-afs@lists.infradead.org>; Wed, 17 Jun 2020 04:14:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=Gyew2n14ljcQ2DKykw2+8f7BA8G7wj1M+bEWLsz621g=;
- b=iFuKMFG9hl3lpDFPprBbLLK0WpOLu5Sbe5Idc5dR6supGPPEuGLZqgP98kcK2kT1ft
- q6aZiWWJxHOlrxvR6j2GGiAMsIXtaoYUOOjKi0oPohCf5wag/GmGOgzgBAM1AjsletSN
- g5pQvVdFDn1afNqCvPhnJQzCtjjfDI1ene7BUE/6tQTbHw8BRzTDwuexAF45bWS4tAJO
- U4qZvIcMuxTEUXENCApQKdZgYUiLATFYP5Z802xys0P+JTHq/v3Je90plXX00gtpNPhb
- /D6ChAKcK7dKs/bOvZwd0j1DDFlcVmTKpaX1t9oXjrKshlAlloLfFiODEUhoDtZsPGTe
- 4Sxw==
-X-Gm-Message-State: AOAM533TjJGGBsN6f1sZ1Np88MmfDOzcat2GM/mKB3r6yqmD2NE/2tbT
- MnaUTUqObOKrQ+3qsCl78gGuLmVIQTr7hIaXOP0+36V5bacH
-X-Google-Smtp-Source: ABdhPJxIFdw/XHxqd0shSJ72f41ob9wNyGZYR2f2zUcWARsXiv0SYTCgJ7rm0n3OBDoshrC/4J6/bQNXMWBMfyrGBr4EnYWE9qNr
+ bh=74zgtILYzJ4Q87way40PouYE06q/enXdI9CPRRVKbMw=;
+ b=e7rIwxETM6tW/CBruqylck6K8LiR8t9inAU2Ap1G2UxwcUOgs3/B9sDx/X4xU+5MP+
+ 2XWTHkSgcthXLlRupM/G9fNjLSxIi14EuoPoVuATxhyTcFno37v9y0lSuCBXr74+YhqT
+ Ur+ABz4D3oBSOAWrL7QPLCnVRa7b3yrxc2OnIiiYYrR26263XTbqxK2sejEkRSvGIvoJ
+ Npd1LgrNl1atC4N/ZWlYlxfDsgUr3OnrjgOSH5uE5I8Ol5sApIve80SXY3PW6YwsYpbe
+ Cu9sYItNt80W9GD6CiUe0VQBXXKMog+Fjr9PS1FKbWnbcWARG4NZeF33H+T+L2XcXHkj
+ PwQw==
+X-Gm-Message-State: AOAM531OZxvn8awq5YTqXOQC4dWT7BasgpgPmrqMHaCFSPOB0olxy10X
+ kMv9BhC5OZZVMCxfeI5lKp6Wk9Nivdl3QbxOYA3wdRSiDbfx
+X-Google-Smtp-Source: ABdhPJwUn7Urbx/hoTKHd4Gm1w2sqP4k6F6w3WvA7z3RQJFoKSEECvvFxhUKtO2/WV5p22MlP6XbgwIJ7XBZoOMCa4UnI10osKWZ
 MIME-Version: 1.0
-X-Received: by 2002:a92:ce48:: with SMTP id a8mr8033311ilr.23.1592392454376;
+X-Received: by 2002:a92:d3d0:: with SMTP id c16mr7623005ilh.181.1592392454048; 
  Wed, 17 Jun 2020 04:14:14 -0700 (PDT)
 Date: Wed, 17 Jun 2020 04:14:14 -0700
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000096141f05a845c246@google.com>
-Subject: net test error: KASAN: use-after-free Write in afs_wake_up_async_call
-From: syzbot <syzbot+5e590d73a9d01be6b1a1@syzkaller.appspotmail.com>
+Message-ID: <0000000000009111c005a845c2bc@google.com>
+Subject: net-next test error: KASAN: use-after-free Write in
+ afs_wake_up_async_call
+From: syzbot <syzbot+d3eccef36ddbd02713e9@syzkaller.appspotmail.com>
 To: davem@davemloft.net, dhowells@redhat.com, kuba@kernel.org, 
  linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org, 
  netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_041415_926255_30434E54 
-X-CRM114-Status: UNSURE (   3.62  )
+X-CRM114-CacheID: sfid-20200617_041415_880005_C96360EC 
+X-CRM114-Status: UNSURE (   3.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -60,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.69 listed in list.dnswl.org]
+ no trust [209.85.166.197 listed in list.dnswl.org]
  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -68,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.69 listed in wl.mailspike.net]
+ [209.85.166.197 listed in wl.mailspike.net]
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,21 +91,21 @@ Hello,
 syzbot found the following crash on:
 
 HEAD commit:    69119673 Merge git://git.kernel.org/pub/scm/linux/kernel/g..
-git tree:       net
-console output: https://syzkaller.appspot.com/x/log.txt?x=1054fc4e100000
+git tree:       net-next
+console output: https://syzkaller.appspot.com/x/log.txt?x=151b62f1100000
 kernel config:  https://syzkaller.appspot.com/x/.config?x=b8ad29058cb749bc
-dashboard link: https://syzkaller.appspot.com/bug?extid=5e590d73a9d01be6b1a1
+dashboard link: https://syzkaller.appspot.com/bug?extid=d3eccef36ddbd02713e9
 compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
 
 IMPORTANT: if you fix the bug, please add the following tag to the commit:
-Reported-by: syzbot+5e590d73a9d01be6b1a1@syzkaller.appspotmail.com
+Reported-by: syzbot+d3eccef36ddbd02713e9@syzkaller.appspotmail.com
 
 tipc: TX() has been purged, node left!
 ==================================================================
 BUG: KASAN: use-after-free in afs_wake_up_async_call+0x6aa/0x770 fs/afs/rxrpc.c:707
-Write of size 1 at addr ffff888096b199e4 by task kworker/u4:6/262
+Write of size 1 at addr ffff8880946c39e4 by task kworker/u4:1/21
 
-CPU: 1 PID: 262 Comm: kworker/u4:6 Not tainted 5.8.0-rc1-syzkaller #0
+CPU: 0 PID: 21 Comm: kworker/u4:1 Not tainted 5.8.0-rc1-syzkaller #0
 Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
 Workqueue: netns cleanup_net
 Call Trace:
@@ -129,7 +130,7 @@ Call Trace:
  kthread+0x3b5/0x4a0 kernel/kthread.c:291
  ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:293
 
-Allocated by task 6821:
+Allocated by task 6820:
  save_stack+0x1b/0x40 mm/kasan/common.c:48
  set_track mm/kasan/common.c:56 [inline]
  __kasan_kmalloc mm/kasan/common.c:494 [inline]
@@ -153,7 +154,7 @@ Allocated by task 6821:
  do_syscall_64+0x60/0xe0 arch/x86/entry/common.c:359
  entry_SYSCALL_64_after_hwframe+0x44/0xa9
 
-Freed by task 262:
+Freed by task 21:
  save_stack+0x1b/0x40 mm/kasan/common.c:48
  set_track mm/kasan/common.c:56 [inline]
  kasan_set_free_info mm/kasan/common.c:316 [inline]
@@ -172,24 +173,24 @@ Freed by task 262:
  kthread+0x3b5/0x4a0 kernel/kthread.c:291
  ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:293
 
-The buggy address belongs to the object at ffff888096b19800
+The buggy address belongs to the object at ffff8880946c3800
  which belongs to the cache kmalloc-1k of size 1024
 The buggy address is located 484 bytes inside of
- 1024-byte region [ffff888096b19800, ffff888096b19c00)
+ 1024-byte region [ffff8880946c3800, ffff8880946c3c00)
 The buggy address belongs to the page:
-page:ffffea00025ac640 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0
+page:ffffea000251b0c0 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0
 flags: 0xfffe0000000200(slab)
-raw: 00fffe0000000200 ffffea00025df7c8 ffffea000261efc8 ffff8880aa000c40
-raw: 0000000000000000 ffff888096b19000 0000000100000002 0000000000000000
+raw: 00fffe0000000200 ffffea0002546508 ffffea00024fa248 ffff8880aa000c40
+raw: 0000000000000000 ffff8880946c3000 0000000100000002 0000000000000000
 page dumped because: kasan: bad access detected
 
 Memory state around the buggy address:
- ffff888096b19880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
- ffff888096b19900: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->ffff888096b19980: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff8880946c3880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff8880946c3900: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+>ffff8880946c3980: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
                                                        ^
- ffff888096b19a00: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
- ffff888096b19a80: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff8880946c3a00: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff8880946c3a80: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
 ==================================================================
 
 
