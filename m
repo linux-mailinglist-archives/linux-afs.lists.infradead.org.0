@@ -2,74 +2,64 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 918CB1FCBF6
-	for <lists+linux-afs@lfdr.de>; Wed, 17 Jun 2020 13:14:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE5051FCE39
+	for <lists+linux-afs@lfdr.de>; Wed, 17 Jun 2020 15:17:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Message-ID:Date:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=71ZL81sM/KqS96ZVbIdQhXCgKoz/csZBiKki2lFjMV4=; b=pbM
-	7S54qf0KYMfjpApZWXwIDxjUOR2yL/eXsvkTOm8mOEJCCs8SfsC4P1gQIKxE8Su++kGYoZTzugEr1
-	7Vkf0VdacrqgYUT6X6QEa+MultWgnhUiyv5Vjzk4zW6Wi14m0IXfqd9IdVbrWarB9oQLDrl+PSSju
-	pzV6q9f07wnk4feRpMEiOBhFeYB5EBsEzcylFbgD4cE62ApyWwMAnklqLhknFO082suLPuxqNRDUT
-	PP+7U1hEaRwaeEuKO9NbNdTWbDc/dttVjmqXUF7dyT16bEp75oeD955S/cXNNVekxef5OpqVSxTog
-	J43QUBjuTItC9KASNCvto6lfrfmWniQ==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	Subject:To:From:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5vcdKgwIA5xV7/fgEBa+wd9mBxUHMe/jxWDoLScMdFs=; b=le0lSE3RHCouB4
+	vqrrY6p6m66TqI+hscELO3QSCbRTVePELCY4kkDMG8H41Y9lJPV89Wm2SQqEInLkgwU0upfd++11Y
+	OVq9CeUoOUv4MUrcqUNEaEKnY63h9pt9jMU/QURUXsa5LtxWS/zV5q0Y+SIzU1FxrgRkonAxf7BvA
+	OYlsDKTy3pynzzyx+e5JJc7476rPQ7Ldp8P/sx7lFkZ24nETe/jFBb3piQcLxR1DT6QDFnkYU14w/
+	7nmir4lv003fm989xmh6oMWG/WONEgJ34mdhkDSCeopKNM69dF8+/0cPERgtS3xidUyrzhbWT4ilN
+	g45JOc0m97mmdRMs0SxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlW1L-0001t1-TU; Wed, 17 Jun 2020 11:14:19 +0000
-Received: from mail-il1-f197.google.com ([209.85.166.197])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlW1H-0001rk-RL
- for linux-afs@lists.infradead.org; Wed, 17 Jun 2020 11:14:17 +0000
-Received: by mail-il1-f197.google.com with SMTP id c29so1245516ilf.20
- for <linux-afs@lists.infradead.org>; Wed, 17 Jun 2020 04:14:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=74zgtILYzJ4Q87way40PouYE06q/enXdI9CPRRVKbMw=;
- b=e7rIwxETM6tW/CBruqylck6K8LiR8t9inAU2Ap1G2UxwcUOgs3/B9sDx/X4xU+5MP+
- 2XWTHkSgcthXLlRupM/G9fNjLSxIi14EuoPoVuATxhyTcFno37v9y0lSuCBXr74+YhqT
- Ur+ABz4D3oBSOAWrL7QPLCnVRa7b3yrxc2OnIiiYYrR26263XTbqxK2sejEkRSvGIvoJ
- Npd1LgrNl1atC4N/ZWlYlxfDsgUr3OnrjgOSH5uE5I8Ol5sApIve80SXY3PW6YwsYpbe
- Cu9sYItNt80W9GD6CiUe0VQBXXKMog+Fjr9PS1FKbWnbcWARG4NZeF33H+T+L2XcXHkj
- PwQw==
-X-Gm-Message-State: AOAM531OZxvn8awq5YTqXOQC4dWT7BasgpgPmrqMHaCFSPOB0olxy10X
- kMv9BhC5OZZVMCxfeI5lKp6Wk9Nivdl3QbxOYA3wdRSiDbfx
-X-Google-Smtp-Source: ABdhPJwUn7Urbx/hoTKHd4Gm1w2sqP4k6F6w3WvA7z3RQJFoKSEECvvFxhUKtO2/WV5p22MlP6XbgwIJ7XBZoOMCa4UnI10osKWZ
+	id 1jlXwD-0006u3-Sv; Wed, 17 Jun 2020 13:17:09 +0000
+Received: from rdns4.delivers-solutions.com ([147.135.99.24])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jlXwA-0006su-SK
+ for linux-afs@lists.infradead.org; Wed, 17 Jun 2020 13:17:07 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default;
+ d=delivers-solutions.com; 
+ h=Reply-To:From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ i=info@delivers-solutions.com; 
+ bh=HfOzYHtXihvNe2PYgpNWZYop7xo=;
+ b=ln6DMCefL12MagbCj+Reu+V9h0BTmYZ3MrJ3wxhI/BkFkwtoZTJXLBaDHY+F87r13DgYAkHUi9cM
+ OeElrBMWjJ0QeScpXovE2r+ir1uVcMUVKcDNKr9JzzHm0QALlsdJafocP0IFGhT0WJygeqjLwxBG
+ cSBRR2g8p1e5F/9uUXY=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default;
+ d=delivers-solutions.com; 
+ b=BHgEwxinz7xxfNGI3CBO2IWGczj7Ch8u8AdJtNRAWGxiU4ARY6+0gadpfoxNZpGNFIDR4a5snROp
+ smLtkm61Hm8eE3Gxqt/MSCHtudhr7gom/xooImKmrU6IO0RGk9W61GFGzZeNKTQxf7WuREsqUMQ0
+ IMlorbhuI1qfBEyWeZM=;
+From: info@delivers-solutions.com
+To: linux-afs@lists.infradead.org
+Subject: Receipt For Goods Available
+Date: 17 Jun 2020 15:17:05 +0200
+Message-ID: <20200617151705.5A42CFA8CBC240B7@delivers-solutions.com>
 MIME-Version: 1.0
-X-Received: by 2002:a92:d3d0:: with SMTP id c16mr7623005ilh.181.1592392454048; 
- Wed, 17 Jun 2020 04:14:14 -0700 (PDT)
-Date: Wed, 17 Jun 2020 04:14:14 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000009111c005a845c2bc@google.com>
-Subject: net-next test error: KASAN: use-after-free Write in
- afs_wake_up_async_call
-From: syzbot <syzbot+d3eccef36ddbd02713e9@syzkaller.appspotmail.com>
-To: davem@davemloft.net, dhowells@redhat.com, kuba@kernel.org, 
- linux-afs@lists.infradead.org, linux-kernel@vger.kernel.org, 
- netdev@vger.kernel.org, syzkaller-bugs@googlegroups.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_041415_880005_C96360EC 
-X-CRM114-Status: UNSURE (   3.61  )
+X-CRM114-CacheID: sfid-20200617_061706_912300_6FE67D9D 
+X-CRM114-Status: UNSURE (   0.21  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.197 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.197 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-afs@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,126 +71,41 @@ List-Post: <mailto:linux-afs@lists.infradead.org>
 List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
+Reply-To: info@cocyflame.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-Hello,
+Hi
 
-syzbot found the following crash on:
+Hope this mail finds you well.
 
-HEAD commit:    69119673 Merge git://git.kernel.org/pub/scm/linux/kernel/g..
-git tree:       net-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=151b62f1100000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=b8ad29058cb749bc
-dashboard link: https://syzkaller.appspot.com/bug?extid=d3eccef36ddbd02713e9
-compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+Our company have not bought your products before but due to 
+excess demand of it here, so we decided to go for it.
 
-IMPORTANT: if you fix the bug, please add the following tag to the commit:
-Reported-by: syzbot+d3eccef36ddbd02713e9@syzkaller.appspotmail.com
+I still have other request to make but there all in my 
+specification.
 
-tipc: TX() has been purged, node left!
-==================================================================
-BUG: KASAN: use-after-free in afs_wake_up_async_call+0x6aa/0x770 fs/afs/rxrpc.c:707
-Write of size 1 at addr ffff8880946c39e4 by task kworker/u4:1/21
-
-CPU: 0 PID: 21 Comm: kworker/u4:1 Not tainted 5.8.0-rc1-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-Workqueue: netns cleanup_net
-Call Trace:
- __dump_stack lib/dump_stack.c:77 [inline]
- dump_stack+0x18f/0x20d lib/dump_stack.c:118
- print_address_description.constprop.0.cold+0xd3/0x413 mm/kasan/report.c:383
- __kasan_report mm/kasan/report.c:513 [inline]
- kasan_report.cold+0x1f/0x37 mm/kasan/report.c:530
- afs_wake_up_async_call+0x6aa/0x770 fs/afs/rxrpc.c:707
- rxrpc_notify_socket+0x1db/0x5d0 net/rxrpc/recvmsg.c:40
- __rxrpc_set_call_completion.part.0+0x172/0x410 net/rxrpc/recvmsg.c:76
- __rxrpc_call_completed net/rxrpc/recvmsg.c:112 [inline]
- rxrpc_call_completed+0xca/0xf0 net/rxrpc/recvmsg.c:111
- rxrpc_discard_prealloc+0x781/0xab0 net/rxrpc/call_accept.c:233
- rxrpc_listen+0x147/0x360 net/rxrpc/af_rxrpc.c:245
- afs_close_socket+0x95/0x320 fs/afs/rxrpc.c:110
- afs_net_exit+0x1bc/0x310 fs/afs/main.c:155
- ops_exit_list.isra.0+0xa8/0x150 net/core/net_namespace.c:186
- cleanup_net+0x511/0xa50 net/core/net_namespace.c:603
- process_one_work+0x965/0x1690 kernel/workqueue.c:2269
- worker_thread+0x96/0xe10 kernel/workqueue.c:2415
- kthread+0x3b5/0x4a0 kernel/kthread.c:291
- ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:293
-
-Allocated by task 6820:
- save_stack+0x1b/0x40 mm/kasan/common.c:48
- set_track mm/kasan/common.c:56 [inline]
- __kasan_kmalloc mm/kasan/common.c:494 [inline]
- __kasan_kmalloc.constprop.0+0xbf/0xd0 mm/kasan/common.c:467
- kmem_cache_alloc_trace+0x153/0x7d0 mm/slab.c:3551
- kmalloc include/linux/slab.h:555 [inline]
- kzalloc include/linux/slab.h:669 [inline]
- afs_alloc_call+0x55/0x630 fs/afs/rxrpc.c:141
- afs_charge_preallocation+0xe9/0x2d0 fs/afs/rxrpc.c:757
- afs_open_socket+0x292/0x360 fs/afs/rxrpc.c:92
- afs_net_init+0xa6c/0xe30 fs/afs/main.c:125
- ops_init+0xaf/0x420 net/core/net_namespace.c:151
- setup_net+0x2de/0x860 net/core/net_namespace.c:341
- copy_net_ns+0x293/0x590 net/core/net_namespace.c:482
- create_new_namespaces+0x3fb/0xb30 kernel/nsproxy.c:110
- unshare_nsproxy_namespaces+0xbd/0x1f0 kernel/nsproxy.c:231
- ksys_unshare+0x43d/0x8e0 kernel/fork.c:2983
- __do_sys_unshare kernel/fork.c:3051 [inline]
- __se_sys_unshare kernel/fork.c:3049 [inline]
- __x64_sys_unshare+0x2d/0x40 kernel/fork.c:3049
- do_syscall_64+0x60/0xe0 arch/x86/entry/common.c:359
- entry_SYSCALL_64_after_hwframe+0x44/0xa9
-
-Freed by task 21:
- save_stack+0x1b/0x40 mm/kasan/common.c:48
- set_track mm/kasan/common.c:56 [inline]
- kasan_set_free_info mm/kasan/common.c:316 [inline]
- __kasan_slab_free+0xf7/0x140 mm/kasan/common.c:455
- __cache_free mm/slab.c:3426 [inline]
- kfree+0x109/0x2b0 mm/slab.c:3757
- afs_put_call+0x585/0xa40 fs/afs/rxrpc.c:190
- rxrpc_discard_prealloc+0x764/0xab0 net/rxrpc/call_accept.c:230
- rxrpc_listen+0x147/0x360 net/rxrpc/af_rxrpc.c:245
- afs_close_socket+0x95/0x320 fs/afs/rxrpc.c:110
- afs_net_exit+0x1bc/0x310 fs/afs/main.c:155
- ops_exit_list.isra.0+0xa8/0x150 net/core/net_namespace.c:186
- cleanup_net+0x511/0xa50 net/core/net_namespace.c:603
- process_one_work+0x965/0x1690 kernel/workqueue.c:2269
- worker_thread+0x96/0xe10 kernel/workqueue.c:2415
- kthread+0x3b5/0x4a0 kernel/kthread.c:291
- ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:293
-
-The buggy address belongs to the object at ffff8880946c3800
- which belongs to the cache kmalloc-1k of size 1024
-The buggy address is located 484 bytes inside of
- 1024-byte region [ffff8880946c3800, ffff8880946c3c00)
-The buggy address belongs to the page:
-page:ffffea000251b0c0 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0
-flags: 0xfffe0000000200(slab)
-raw: 00fffe0000000200 ffffea0002546508 ffffea00024fa248 ffff8880aa000c40
-raw: 0000000000000000 ffff8880946c3000 0000000100000002 0000000000000000
-page dumped because: kasan: bad access detected
-
-Memory state around the buggy address:
- ffff8880946c3880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
- ffff8880946c3900: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->ffff8880946c3980: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-                                                       ^
- ffff8880946c3a00: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
- ffff8880946c3a80: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-==================================================================
+Please let me know if you still have stocks available.
 
 
----
-This bug is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+Waiting for your reply
 
-syzbot will keep track of this bug report. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+ 
+
+
+
+Warmest Regards,
+
+Angela Wilpert
+
+Sales Executives Dept
+
+HDT Sales & Merkating
+vasileos konstantinou 89 Paphos, Paphos, Cyprus
+Phone: +357 26 040001
+
 
 _______________________________________________
 linux-afs mailing list
