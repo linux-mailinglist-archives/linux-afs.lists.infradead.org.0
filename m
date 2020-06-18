@@ -2,47 +2,46 @@ Return-Path: <linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-afs@lfdr.de
 Delivered-To: lists+linux-afs@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF50B1FDE54
-	for <lists+linux-afs@lfdr.de>; Thu, 18 Jun 2020 03:33:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C72001FDE64
+	for <lists+linux-afs@lfdr.de>; Thu, 18 Jun 2020 03:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/SuP+fRP5/IlgEt0lxMdvtdQKIPM320lVCMtIS6vqs4=; b=aaCoLu98Kydvrx
-	C3Cb2sVYEl1i46W7esbCjuxgeffevHtixSPhGhKi7ICalBY0TZP0pE/L5uJn8ctZfM8D8YmjE/MRi
-	wbxFNAU3U89LmlxtJ6YM4rhiX/FTuNcaohPUVW5DHas/+x2Yhdl4WiTis8BRTI0iuo/JHvzC1SvPJ
-	mnhcYLz5JT1bnmYVTdeLcmawRNnqo6hW4T6IRvy0tJ+m80NoLLZ6Iz2eiYCJbxMcL4npmvJPJWr09
-	G7MHUlmLaFXsjyFPyKpy2x7jWYqIxDysydnjwCx+3o6/jPvuezJF7N+FXp3GRLg3LVuc1Z5f4MYya
-	+dUaSFvNh1tk0b8iR8jw==;
+	List-Owner; bh=iklSJPt+6uvqdVOdZARcCTfBxvn5taG4/RyKPBScfp8=; b=D2YXNWbccM9iMQ
+	uY2FYKS1Ot9C4eTKLzM3E2TjWpse7uUGOY//69WF9jP1YR1+plXSui/3DUZjwL/ffLk81wyk9Rsjs
+	smT2tinMLe75qX3aQzt3waVUHegrz8y8+1qsytY5jLa4SBT1tdIIKudUu1NkppScX7JCS+7Q+nXq/
+	E3JNrX3OiRfFmmniT4mk079S9xuNtRjbNuJ8Rq6zIMsaUauigAiVq2g+Z6xspxj28KnrwJwUCW4Sj
+	r6pSoieZO2rktd1n3w34gbvjRg7Ht6udtl/VvqWKohd80SZD5qlTsdOR8AeNnltvTvIHDOF7+lqjY
+	wQok+T0P67VmVDm9MGgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jljQJ-0002ae-GK; Thu, 18 Jun 2020 01:32:59 +0000
+	id 1jljSm-000742-HK; Thu, 18 Jun 2020 01:35:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlj8k-0003vJ-9a
- for linux-afs@lists.infradead.org; Thu, 18 Jun 2020 01:14:51 +0000
+ id 1jlj9l-00073x-Mj
+ for linux-afs@lists.infradead.org; Thu, 18 Jun 2020 01:15:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4A9E20EDD;
- Thu, 18 Jun 2020 01:14:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02D9A221F6;
+ Thu, 18 Jun 2020 01:15:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592442889;
- bh=lTf3psMkvzYLlXoW5mhe7q+SLED4DuOEqoOrFxakpfQ=;
+ s=default; t=1592442952;
+ bh=wSXH/t1nm9cYgnXHIJs3ya+RyoRsiYYIX2/TKeLDJgc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Mi+X8g9KwtoUf5wEK9Kdb9mU95tYdk+THgFZBo59VDO+C1xpYB47GZF9DXsb7A8tF
- 9SljUfqYp8Sb6jM1cD5/QR+AaBRQZjkmUfdoR6Oj4U99l0eGh3eJdKFjzpFfXQxtVv
- V6jPAvqYqAtJD6aS9U/+N69+2UzyFqgiDTWWYcUI=
+ b=H2Xa4GOGm8aVol+iRzuH6pyoI0M/NEfcxp/WD66rp/WE4kzaFM5KrKSzPXC5IfLBp
+ gE4iMaG/rOxsCAo8yNxbOIX0X03YMpEmF54KLXeVaRUP4hS8qZkxl/Dfjv26Dn9bz9
+ 2g3HZ7R9hjRGSMWaAY8XWJdQ9QFP5FrFMWxz+28w=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 312/388] rxrpc: Adjust /proc/net/rxrpc/calls to
- display call->debug_id not user_ID
-Date: Wed, 17 Jun 2020 21:06:49 -0400
-Message-Id: <20200618010805.600873-312-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 361/388] afs: Fix memory leak in afs_put_sysnames()
+Date: Wed, 17 Jun 2020 21:07:38 -0400
+Message-Id: <20200618010805.600873-361-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
 References: <20200618010805.600873-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200617_181450_424239_BAFDBFDC 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20200617_181553_879150_3EF8FC51 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,57 +81,40 @@ List-Help: <mailto:linux-afs-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-afs>,
  <mailto:linux-afs-request@lists.infradead.org?subject=subscribe>
 Cc: David Howells <dhowells@redhat.com>, Sasha Levin <sashal@kernel.org>,
- linux-afs@lists.infradead.org, netdev@vger.kernel.org
+ linux-afs@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-afs" <linux-afs-bounces@lists.infradead.org>
 Errors-To: linux-afs-bounces+lists+linux-afs=lfdr.de@lists.infradead.org
 
-From: David Howells <dhowells@redhat.com>
+From: Zhihao Cheng <chengzhihao1@huawei.com>
 
-[ Upstream commit 32f71aa497cfb23d37149c2ef16ad71fce2e45e2 ]
+[ Upstream commit 2ca068be09bf8e285036603823696140026dcbe7 ]
 
-The user ID value isn't actually much use - and leaks a kernel pointer or a
-userspace value - so replace it with the call debug ID, which appears in trace
-points.
+Fix afs_put_sysnames() to actually free the specified afs_sysnames
+object after its reference count has been decreased to zero and
+its contents have been released.
 
+Fixes: 6f8880d8e681557 ("afs: Implement @sys substitution handling")
+Signed-off-by: Zhihao Cheng <chengzhihao1@huawei.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- net/rxrpc/proc.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ fs/afs/proc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/net/rxrpc/proc.c b/net/rxrpc/proc.c
-index 8b179e3c802a..543afd9bd664 100644
---- a/net/rxrpc/proc.c
-+++ b/net/rxrpc/proc.c
-@@ -68,7 +68,7 @@ static int rxrpc_call_seq_show(struct seq_file *seq, void *v)
- 			 "Proto Local                                          "
- 			 " Remote                                         "
- 			 " SvID ConnID   CallID   End Use State    Abort   "
--			 " UserID           TxSeq    TW RxSeq    RW RxSerial RxTimo\n");
-+			 " DebugId  TxSeq    TW RxSeq    RW RxSerial RxTimo\n");
- 		return 0;
+diff --git a/fs/afs/proc.c b/fs/afs/proc.c
+index 468e1713bce1..6f34c84a0fd0 100644
+--- a/fs/afs/proc.c
++++ b/fs/afs/proc.c
+@@ -563,6 +563,7 @@ void afs_put_sysnames(struct afs_sysnames *sysnames)
+ 			if (sysnames->subs[i] != afs_init_sysname &&
+ 			    sysnames->subs[i] != sysnames->blank)
+ 				kfree(sysnames->subs[i]);
++		kfree(sysnames);
  	}
+ }
  
-@@ -100,7 +100,7 @@ static int rxrpc_call_seq_show(struct seq_file *seq, void *v)
- 	rx_hard_ack = READ_ONCE(call->rx_hard_ack);
- 	seq_printf(seq,
- 		   "UDP   %-47.47s %-47.47s %4x %08x %08x %s %3u"
--		   " %-8.8s %08x %lx %08x %02x %08x %02x %08x %06lx\n",
-+		   " %-8.8s %08x %08x %08x %02x %08x %02x %08x %06lx\n",
- 		   lbuff,
- 		   rbuff,
- 		   call->service_id,
-@@ -110,7 +110,7 @@ static int rxrpc_call_seq_show(struct seq_file *seq, void *v)
- 		   atomic_read(&call->usage),
- 		   rxrpc_call_states[call->state],
- 		   call->abort_code,
--		   call->user_call_ID,
-+		   call->debug_id,
- 		   tx_hard_ack, READ_ONCE(call->tx_top) - tx_hard_ack,
- 		   rx_hard_ack, READ_ONCE(call->rx_top) - rx_hard_ack,
- 		   call->rx_serial,
 -- 
 2.25.1
 
